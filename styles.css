@@ -75,32 +75,31 @@ img { max-width: 100%; }
 .text-link { color: var(--accent); font-weight: 600; text-decoration: underline; }
 .about-image { height: 400px; background-size: cover; background-position: center; border-radius: 8px; }
 
-/* --- Products (全新四宫格设计) --- */
+/* --- Products (6格布局升级版) --- */
 .products { padding: 100px 0; background: var(--bg-light); }
 .section-title { text-align: center; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto; }
 .section-title h2 { font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 15px; }
 
-/* 网格布局：PC端2x2，手机端1列 */
+/* 核心修改：这里改成了 repeat(3, 1fr) 也就是3列 */
 .category-grid { 
     display: grid; 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 30px; 
-    max-width: 1000px; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px; 
+    max-width: 1200px; 
     margin: 0 auto; 
 }
 
-/* 卡片整体样式 */
+/* 卡片样式保持不变 */
 .category-card { 
     position: relative; 
-    height: 350px; 
+    height: 320px; /* 稍微调低一点高度，更精致 */
     border-radius: 12px; 
     overflow: hidden; 
-    display: block; /* 让a标签充满 */
+    display: block; 
     color: var(--white);
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* 背景图层 (用于放大特效) */
 .category-bg {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background-size: cover; 
@@ -109,53 +108,46 @@ img { max-width: 100%; }
     z-index: 1;
 }
 
-/* 黑色渐变遮罩 (保证文字清晰) */
 .category-card::after {
     content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.1));
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.1));
     z-index: 2;
     transition: background 0.3s;
 }
 
-/* 文字内容层 */
 .category-content {
     position: relative; z-index: 3;
     height: 100%;
     display: flex; flex-direction: column; justify-content: flex-end;
-    padding: 30px;
+    padding: 25px;
 }
 
-.category-content h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 5px; color: #fff; }
-.category-content p { font-size: 0.95rem; opacity: 0.8; margin-bottom: 15px; color: #ddd; }
+.category-content h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 5px; color: #fff; }
+.category-content p { font-size: 0.9rem; opacity: 0.8; margin-bottom: 15px; color: #ddd; }
 
-/* 按钮样式 */
 .view-btn {
-    font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+    font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
     color: var(--accent); background: #fff;
-    padding: 8px 16px; border-radius: 20px;
+    padding: 6px 14px; border-radius: 20px;
     display: inline-block; width: fit-content;
-    opacity: 0; transform: translateY(20px); /* 默认隐藏 */
+    opacity: 0; transform: translateY(20px);
     transition: all 0.4s ease;
 }
 
-/* --- 鼠标悬停交互特效 (Hover Effects) --- */
-.category-card:hover .category-bg {
-    transform: scale(1.1); /* 图片放大 */
-}
-.category-card:hover::after {
-    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)); /* 遮罩加深 */
-}
-.category-card:hover .view-btn {
-    opacity: 1; transform: translateY(0); /* 按钮浮现 */
-}
+.category-card:hover .category-bg { transform: scale(1.1); }
+.category-card:hover::after { background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)); }
+.category-card:hover .view-btn { opacity: 1; transform: translateY(0); }
 
 .view-more-container { text-align: center; margin-top: 50px; }
 .view-more-container .btn-primary { background: var(--primary); color: var(--white); }
 .view-more-container .btn-primary:hover { background: var(--accent); }
 
-/* 移动端适配 */
-@media (max-width: 768px) {
-    .category-grid { grid-template-columns: 1fr; } /* 手机变成单列 */
+/* 移动端适配：手机上还是1列 */
+@media (max-width: 900px) {
+    .category-grid { grid-template-columns: repeat(2, 1fr); } /* 平板2列 */
+}
+@media (max-width: 600px) {
+    .category-grid { grid-template-columns: 1fr; } /* 手机1列 */
     .category-card { height: 250px; }
-    .view-btn { opacity: 1; transform: translateY(0); } /* 手机端默认显示按钮 */
+    .view-btn { opacity: 1; transform: translateY(0); }
 }
