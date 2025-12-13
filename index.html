@@ -3,115 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YiShen Global - Advanced Ergonomics Supply Chain</title>
+    <title>YiShen Global | Premier Ergonomic Furniture Supply Chain</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- 引入谷歌字体 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- 导航栏 -->
     <header class="navbar">
         <div class="container nav-wrapper">
             <div class="brand">YiShen Global</div>
             <nav class="nav-links">
                 <a href="#home">Home</a>
+                <a href="#about">About</a>
                 <a href="#products">Collection</a>
-                <a href="#solutions">Supply Chain</a>
+                <a href="#services">Services</a>
+                <a href="#faq">FAQ</a>
                 <a href="#contact" class="btn-nav">Contact Us</a>
             </nav>
             <button class="menu-toggle">☰</button>
         </div>
     </header>
 
+    <!-- 首屏海报 -->
     <section id="home" class="hero">
         <div class="hero-bg"></div>
         <div class="container hero-content">
-            <span class="subtitle">Global Furniture Supply Chain</span>
-            <h1>Engineering Comfort <br>For The World.</h1>
-            <p>Premium ergonomic seating and standing desks. Designed for health, engineered for durability.</p>
+            <span class="subtitle">Your Trusted Partner in China</span>
+            <h1>Engineering Comfort <br>For The Global Market.</h1>
+            <p>We provide end-to-end supply chain solutions for ergonomic seating and standing desks. From precision manufacturing to DDP delivery in the US & EU.</p>
             <div class="hero-btns">
-                <a href="#products" class="btn btn-primary">View Products</a>
-                <a href="#contact" class="btn btn-outline">Business Inquiry</a>
+                <a href="#products" class="btn btn-primary">View Collection</a>
+                <a href="#contact" class="btn btn-outline">Get A Quote</a>
             </div>
         </div>
     </section>
 
-    <section class="features">
-        <div class="container">
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <h3>Ergonomic Precision</h3>
-                    <p>Data-driven design that supports the natural curvature of the spine.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Global Logistics</h3>
-                    <p>Seamless DDP/LDP shipping solutions to US & EU markets.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Quality Control</h3>
-                    <p>BIFMA standard testing with < 1% defect rate.</p>
-                </div>
+    <!-- 数据信任条 -->
+    <section class="stats-bar">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Countries Served</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">500k+</span>
+                <span class="stat-label">Units Shipped</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">BIFMA</span>
+                <span class="stat-label">Certified Quality</span>
             </div>
         </div>
     </section>
 
+    <!-- 关于我们 -->
+    <section id="about" class="about-section">
+        <div class="container about-wrapper">
+            <div class="about-text">
+                <span class="section-tag">Who We Are</span>
+                <h2>More Than Just a Manufacturer.</h2>
+                <p>YiShen Global is a premier supply chain integrator based in Hangzhou, China. We bridge the gap between high-quality manufacturing and global retail needs.</p>
+                <p>Unlike traditional factories, we understand the complexities of cross-border e-commerce and B2B distribution. We offer predictable delivery, strict quality control, and ergonomic designs that sell.</p>
+                <a href="#contact" class="text-link">Learn about our factory &rarr;</a>
+            </div>
+            <div class="about-image" style="background-image: url('https://images.unsplash.com/photo-1565514020176-dbf2277026d3?auto=format&fit=crop&w=800&q=80');"></div>
+        </div>
+    </section>
+
+    <!-- 产品展示 -->
     <section id="products" class="products">
         <div class="container">
             <div class="section-title">
-                <h2>Signature Collection</h2>
-                <p>Curated for modern workspaces.</p>
+                <span class="section-tag">Our Collection</span>
+                <h2>Signature Ergonomics</h2>
+                <p>Designed for comfort, engineered for durability.</p>
             </div>
             <div class="product-grid">
+                <!-- 产品 1 -->
                 <div class="product-card">
                     <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?auto=format&fit=crop&w=800&q=80');"></div>
                     <div class="card-text">
                         <h3>Series X - Task Chair</h3>
-                        <p>High-performance mesh seating.</p>
+                        <p>High-tensile mesh, 4D armrests, and dynamic lumbar support. The perfect choice for modern offices.</p>
+                        <span class="product-tag">Best Seller</span>
                     </div>
                 </div>
+                <!-- 产品 2 -->
                 <div class="product-card">
                     <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=800&q=80');"></div>
                     <div class="card-text">
                         <h3>Smart Desk Pro</h3>
-                        <p>Dual-motor standing desk.</p>
+                        <p>Dual-motor standing desk with anti-collision technology and memory presets. Stable and quiet.</p>
                     </div>
                 </div>
+                <!-- 产品 3 -->
                 <div class="product-card">
                     <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1580480055273-228ff5388ef8?auto=format&fit=crop&w=800&q=80');"></div>
                     <div class="card-text">
                         <h3>Lounge Comfort</h3>
-                        <p>Minimalist leisure seating.</p>
+                        <p>Minimalist leisure seating for reception areas and home living spaces.</p>
                     </div>
+                </div>
+            </div>
+            <div class="view-more-container">
+                <a href="#contact" class="btn btn-primary">Request Full Catalog</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心服务 -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We handle the hard work, so you can focus on sales.</p>
+            </div>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="icon">🛠️</div>
+                    <h3>OEM & ODM</h3>
+                    <p>Custom branding, packaging, and design modifications to fit your market needs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">📦</div>
+                    <h3>Quality Control</h3>
+                    <p>Strict inspection standards (AQL 2.5) ensuring every unit meets BIFMA requirements.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🚢</div>
+                    <h3>Global Logistics</h3>
+                    <p>DDP/LDP solutions to US & EU. We handle customs clearance and last-mile delivery.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🤝</div>
+                    <h3>After-sales Support</h3>
+                    <p>Spare parts guarantee and dedicated support team for your peace of mind.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="footer">
-        <div class="container footer-content">
-            <div class="footer-col">
-                <h4>YiShen Global</h4>
-                <p>Your trusted partner in furniture manufacturing and global logistics.</p>
+    <!-- FAQ 常见问题 -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
             </div>
-            <div class="footer-col contact-info">
-                <h4>Contact</h4>
-                <div class="contact-item">
-                    <span>Global Business:</span>
-                    <a href="mailto:alex.yang@yishenglobal.net" class="main-email">alex.yang@yishenglobal.net</a>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>What is your MOQ?</h4>
+                    <p>For standard models, our MOQ starts from 50pcs. For OEM customization, it typically starts from 200pcs.</p>
                 </div>
-                <div class="contact-item">
-                    <span>WhatsApp:</span>
-                    <a href="https://wa.me/8618857277313">+86 188 5727 7313</a>
+                <div class="faq-item">
+                    <h4>What are your payment terms?</h4>
+                    <p>We usually accept T/T (30% deposit, 70% against BL copy) or L/C at sight for large orders.</p>
                 </div>
-                <div class="contact-item">
-                    <span>Location:</span>
-                    <p>Hangzhou, China</p>
+                <div class="faq-item">
+                    <h4>Do you offer samples?</h4>
+                    <p>Yes, samples can be shipped via air express (FedEx/DHL) within 7 days for your evaluation.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What is the warranty?</h4>
+                    <p>We offer a 3-5 year warranty on core components (gas lift, mechanism) and 2 years on upholstery.</p>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 YiShen Global. All rights reserved.</p>
+    </section>
+
+    <!-- 底部联系区 -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand-col">
+                    <h3>YiShen Global</h3>
+                    <p>Your strategic partner in the global furniture supply chain. Delivering excellence from Hangzhou to the world.</p>
+                </div>
+                <div class="footer-contact-col">
+                    <h4>Contact Alex Yang</h4>
+                    <p class="contact-desc">Ready to upgrade your supply chain? Let's talk.</p>
+                    
+                    <div class="contact-row">
+                        <span>📧 Email:</span>
+                        <a href="mailto:alex.yang@yishenglobal.net">alex.yang@yishenglobal.net</a>
+                    </div>
+                    <div class="contact-row">
+                        <span>📱 WhatsApp:</span>
+                        <a href="https://wa.me/8618857277313">+86 188 5727 7313</a>
+                    </div>
+                    <div class="contact-row">
+                        <span>📍 HQ:</span>
+                        <span>Hangzhou, Zhejiang, China</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 YiShen Global. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
