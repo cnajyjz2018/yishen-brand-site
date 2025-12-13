@@ -47,12 +47,28 @@ img { max-width: 100%; }
     height: 90vh; display: flex; align-items: center; position: relative;
     background-color: #0f172a; color: var(--white); margin-top: 80px;
 }
-.hero-bg {
+..hero-bg {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1950&q=80');
-    background-size: cover; background-position: center;
+    /* 这里换成了 banner2.jpg */
+    background-image: url('banner2.jpg');
+    background-size: cover; 
+    background-position: center;
+    /* 去掉了深色遮罩，让您的图片原色显示出来 */
+    opacity: 1; 
 }
-.hero-content { position: relative; z-index: 2; max-width: 800px; }
+
+/* 调整一下按钮的位置，让它不挡住图片里的文字 */
+.hero-content { 
+    position: relative; 
+    z-index: 2; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 按钮居中 */
+    justify-content: flex-end; /* 按钮靠下放 */
+    padding-bottom: 100px; /* 距离底部留点空隙 */
+    height: 100%;
+}
 .subtitle { text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; opacity: 0.9; display: block; margin-bottom: 10px; }
 .hero h1 { font-family: var(--font-serif); font-size: 3.5rem; line-height: 1.1; margin-bottom: 25px; }
 .hero p { font-size: 1.1rem; margin-bottom: 40px; opacity: 0.9; max-width: 600px; }
