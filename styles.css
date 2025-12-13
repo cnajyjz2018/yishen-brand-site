@@ -44,33 +44,51 @@ img { max-width: 100%; }
 .btn-nav:hover { background: #333; }
 .menu-toggle { display: none; border: none; background: none; font-size: 1.5rem; cursor: pointer; }
 
-/* --- Hero Section (背景调整) --- */
+/* --- Hero Section (背景图修复版) --- */
 .hero {
-    height: 90vh; display: flex; align-items: center; position: relative;
-    background-color: #0f172a; color: var(--white); margin-top: 80px;
+    height: 90vh; 
+    display: flex; 
+    align-items: center; 
+    position: relative;
+    /* 加一个深色底色，万一图片加载不出来，背景是黑色的，看起来也不算坏 */
+    background-color: #0f172a; 
+    color: var(--white); 
+    margin-top: 80px;
 }
+
 .hero-bg {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    /* 引用您上传的 banner2.jpg */
-    background-image: url('banner2.jpg');
+    
+    /* ⚠️ 请核对这里！必须和您GitHub上的文件名一模一样！区分大小写！ */
+    background-image: url('banner2.jpg'); 
+    
     background-size: cover; 
     background-position: center;
-    /* 移除遮罩，让图片原色显示 */
     opacity: 1; 
 }
+
 .hero-content { 
-    position: relative; z-index: 2; width: 100%; height: 100%;
-    display: flex; flex-direction: column; 
-    justify-content: flex-end; /* 按钮靠下 */
+    position: relative; 
+    z-index: 2; 
+    width: 100%; 
+    height: 100%;
+    display: flex; 
+    flex-direction: column; 
+    /* 让按钮靠下，不挡住图片里的文字 */
+    justify-content: flex-end; 
     align-items: center; 
-    padding-bottom: 80px;
+    padding-bottom: 80px; 
 }
-.hero-btns { display: flex; gap: 15px; }
-.btn { padding: 15px 30px; border-radius: 4px; font-weight: 500; display: inline-block; cursor: pointer; }
-.btn-primary { background: var(--white); color: var(--primary); }
-.btn-primary:hover { background: #f0f0f0; }
-.btn-outline { border: 1px solid var(--white); color: var(--white); }
-.btn-outline:hover { background: var(--white); color: var(--primary); }
+
+.hero-btns { 
+    display: flex; 
+    gap: 15px; 
+    /* 给按钮加个半透明黑色底，防止图片太花看不清按钮 */
+    padding: 20px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+}
 
 /* --- Stats Bar --- */
 .stats-bar { background: var(--primary); padding: 40px 0; color: var(--white); }
