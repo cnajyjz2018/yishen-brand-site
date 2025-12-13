@@ -1,17 +1,25 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // 平滑滚动
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
+// Mobile nav toggle
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".nav-links");
 
-    // 移动端菜单
-    const menuBtn = document.querySelector('.menu-toggle');
-    menuBtn.addEventListener('click', () => {
-        alert('Welcome to YiShen Global. (Mobile menu expanding...)');
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("open");
     });
+  }
+
+  // FAQ toggle (works on any page with .faq-item)
+  document.querySelectorAll(".faq-item h3").forEach((heading) => {
+    heading.addEventListener("click", () => {
+      const p = heading.nextElementSibling;
+      if (!p) return;
+      const visible = p.style.display === "block";
+      // close all
+      document.querySelectorAll(".faq-item p").forEach((el) => {
+        el.style.display = "none";
+      });
+      p.style.display = visible ? "none" : "block";
+    });
+  });
 });
