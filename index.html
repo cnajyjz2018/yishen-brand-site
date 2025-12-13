@@ -11,6 +11,7 @@
 </head>
 <body>
 
+    <!-- 导航栏 -->
     <header class="navbar">
         <div class="container nav-wrapper">
             <div class="brand">YiShen Global</div>
@@ -19,26 +20,27 @@
                 <a href="#about">About</a>
                 <a href="#products">Collection</a>
                 <a href="#services">Services</a>
-                <a href="#faq">FAQ</a>
                 <a href="#contact" class="btn-nav">Contact Us</a>
             </nav>
             <button class="menu-toggle">☰</button>
         </div>
     </header>
 
+    <!-- 首屏 Hero (背景使用 banner2.jpg) -->
     <section id="home" class="hero">
         <div class="hero-bg"></div>
         <div class="container hero-content">
-            <span class="subtitle">Your Trusted Partner in China</span>
-            <h1>Engineering Comfort <br>For The Global Market.</h1>
-            <p>We provide end-to-end supply chain solutions for ergonomic seating and standing desks. From precision manufacturing to DDP delivery in the US & EU.</p>
+            <!-- 这里的文字删除了，因为您的图片里已经有漂亮的文字了 -->
+            <div style="flex-grow: 1;"></div> <!-- 占位，把按钮推到底部 -->
+            
             <div class="hero-btns">
                 <a href="#products" class="btn btn-primary">View Collection</a>
-                <a href="#contact" class="btn btn-outline">Get A Quote</a>
+                <a href="#contact" class="btn btn-outline">Contact Us</a>
             </div>
         </div>
     </section>
 
+    <!-- 数据信任条 -->
     <section class="stats-bar">
         <div class="container stats-grid">
             <div class="stat-item">
@@ -60,20 +62,21 @@
         </div>
     </section>
 
+    <!-- 关于我们 -->
     <section id="about" class="about-section">
         <div class="container about-wrapper">
             <div class="about-text">
                 <span class="section-tag">Who We Are</span>
                 <h2>More Than Just a Manufacturer.</h2>
                 <p>YiShen Global is a premier supply chain integrator based in Hangzhou, China. We bridge the gap between high-quality manufacturing and global retail needs.</p>
-                <p>Unlike traditional factories, we understand the complexities of cross-border e-commerce and B2B distribution. We offer predictable delivery, strict quality control, and ergonomic designs that sell.</p>
+                <p>From component sourcing to final assembly and DDP logistics, we ensure predictable delivery for furniture brands worldwide.</p>
                 <a href="#contact" class="text-link">Learn about our factory &rarr;</a>
             </div>
-            <div class="about-image" style="background-image: url('https://images.unsplash.com/photo-1565514020176-dbf2277026d3?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="about-image" style="background-image: url('https://images.unsplash.com/photo-1565514020176-dbf2277026d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
         </div>
     </section>
 
-<!-- 6大核心品类展示区 (最终修复版 - 强制锁定正确图片) -->
+    <!-- 6大核心品类展示区 -->
     <section id="products" class="products">
         <div class="container">
             <div class="section-title">
@@ -83,9 +86,8 @@
             </div>
             
             <div class="category-grid">
-                <!-- 1. Mesh Chair (已强制修复：白框灰色人体工学网椅) -->
+                <!-- 1. Mesh Chair (专业网椅) -->
                 <a href="#contact" class="category-card">
-                    <!-- 这里的链接是人工锁定的办公椅图片 -->
                     <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
                     <div class="category-content">
                         <h3>Ergonomic Mesh Chair</h3>
@@ -94,9 +96,9 @@
                     </div>
                 </a>
 
-                <!-- 2. Standing Desk (保留您满意的图片) -->
+                <!-- 2. Standing Desk (电动升降桌) -->
                 <a href="#contact" class="category-card">
-                    <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
                     <div class="category-content">
                         <h3>Electric Standing Desk</h3>
                         <p>Dual-motor height adjustable workspace.</p>
@@ -104,9 +106,8 @@
                     </div>
                 </a>
 
-                <!-- 3. Gaming Chair (已强制修复：红黑赛车电竞椅) -->
+                <!-- 3. Gaming Chair (高端电竞椅) -->
                 <a href="#contact" class="category-card">
-                    <!-- 这里的链接是人工锁定的电竞椅图片 -->
                     <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1598550476439-c9212f5f454c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
                     <div class="category-content">
                         <h3>Pro Gaming Chair</h3>
@@ -115,7 +116,7 @@
                     </div>
                 </a>
 
-                <!-- 4. Power Recliner (保留您满意的图片) -->
+                <!-- 4. Power Recliner (电动功能椅) -->
                 <a href="#contact" class="category-card">
                     <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
                     <div class="category-content">
@@ -125,9 +126,9 @@
                     </div>
                 </a>
 
-                <!-- 5. Massage Chair (保留您满意的图片) -->
+                <!-- 5. Massage Chair (豪华按摩椅) -->
                 <a href="#contact" class="category-card">
-                    <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1519961655809-34fa156820ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
                     <div class="category-content">
                         <h3>Luxury Massage Chair</h3>
                         <p>4D AI full-body massage system.</p>
@@ -135,9 +136,9 @@
                     </div>
                 </a>
 
-                <!-- 6. Lounge Chair (保留您满意的图片) -->
+                <!-- 6. Lounge Chair (现代休闲椅) -->
                 <a href="#contact" class="category-card">
-                    <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1592078615290-033ee584e267?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
                     <div class="category-content">
                         <h3>Modern Lounge Chair</h3>
                         <p>Nordic style accent seating.</p>
@@ -151,17 +152,50 @@
             </div>
         </div>
     </section>
-    
+
+    <!-- 核心服务 -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We handle the hard work, so you can focus on sales.</p>
+            </div>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="icon">🛠️</div>
+                    <h3>OEM & ODM</h3>
+                    <p>Custom branding, packaging, and design modifications.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">📦</div>
+                    <h3>Quality Control</h3>
+                    <p>Strict inspection standards (AQL 2.5) ensuring BIFMA compliance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🚢</div>
+                    <h3>Global Logistics</h3>
+                    <p>DDP/LDP solutions to US & EU. We handle customs & delivery.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🤝</div>
+                    <h3>After-sales Support</h3>
+                    <p>Spare parts guarantee and dedicated support team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部联系区 -->
     <footer id="contact" class="footer">
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand-col">
                     <h3>YiShen Global</h3>
-                    <p>Your strategic partner in the global furniture supply chain. Delivering excellence from Hangzhou to the world.</p>
+                    <p>Your strategic partner in the global furniture supply chain.</p>
                 </div>
                 <div class="footer-contact-col">
-                    <h4>Contact Alex Yang</h4>
-                    <p class="contact-desc">Ready to upgrade your supply chain? Let's talk.</p>
+                    <h4>Contact Us</h4>
+                    <p class="contact-desc">Ready to upgrade your supply chain?</p>
                     
                     <div class="contact-row">
                         <span>📧 Email:</span>
