@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YiShen Global | Supply Chain Predictability</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    /* =========================================
+       1. CORE DESIGN SYSTEM (高端设计规范)
+       ========================================= */
+    :root {
+        /* 权威感配色：深海蓝 + 奢华金 + 科技蓝 */
+        --primary: #0F172A;       
+        --secondary: #475569;     
+        --accent: #0284C7;        
+        --gold: #D97706;          
+        --bg-light: #F8FAFC;      
+        --white: #ffffff;
+        --border: #E2E8F0;
+        --font-main: 'Inter', sans-serif;
+        --font-serif: 'Playfair Display', serif;
+    }
+
+    /* 基础重置 */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-main); color: var(--primary); line-height: 1.7; background-color: var(--white); -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+    ul { list-style: none; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* 布局工具 */
+    .container { width: 90%; max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+    .section-padding { padding: 100px 0; } /* 大量留白，提升高级感 */
+    .text-center { text-align: center; }
+    .flex-center { display: flex; align-items: center; justify-content: center; }
+    .bg-light { background-color: var(--bg-light); }
+
+    /* 排版系统 */
+    h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 700; line-height: 1.1; margin-bottom: 1rem; }
+    h1 { font-size: 4rem; letter-spacing: -1.5px; color: var(--white); }
+    h2 { font-size: 2.8rem; color: var(--primary); margin-bottom: 1.5rem; }
+    h3 { font-size: 1.6rem; }
+    p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+    
+    .section-tag {
+        display: inline-block; font-size: 0.85rem; font-weight: 800; letter-spacing: 2px;
+        text-transform: uppercase; color: var(--accent); margin-bottom: 20px;
+        border-bottom: 2px solid var(--accent); padding-bottom: 5px;
+    }
+
+    /* 按钮组件 (CTA) */
+    .btn { display: inline-block; padding: 16px 36px; border-radius: 4px; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; letter-spacing: 0.5px; }
+    .btn-gold { background: var(--gold); color: white; border: 2px solid var(--gold); box-shadow: 0 10px 20px rgba(217, 119, 6, 0.2); }
+    .btn-gold:hover { background: #b45309; border-color: #b45309; transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3); }
+    .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-primary:hover { background: var(--accent); }
+
+    /* =========================================
+       2. HEADER & NAVIGATION
+       ========================================= */
+    .navbar {
+        position: fixed; top: 0; left: 0; width: 100%; height: 90px;
+        background: rgba(255,255,255,0.98); border-bottom: 1px solid rgba(0,0,0,0.05);
+        z-index: 1000; display: flex; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    }
+    .nav-wrapper { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+    
+    .brand { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 12px; }
+    /* CSS绘制的 Logo 图标，保证不裂图 */
+    .logo-symbol { 
+        width: 36px; height: 36px; background: var(--primary); color: var(--gold); 
+        border-radius: 4px; display: flex; align-items: center; justify-content: center;
+        font-weight: 900; font-family: sans-serif; font-size: 1.2rem;
+    }
+
+    .nav-links { display: flex; gap: 40px; align-items: center; }
+    .nav-links a { font-weight: 600; font-size: 0.95rem; color: var(--primary); position: relative; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta { background: var(--primary); color: white !important; padding: 10px 24px; border-radius: 4px; transition: 0.3s; }
+    .nav-cta:hover { background: var(--gold); }
+    
+    .menu-toggle { display: none; font-size: 1.5rem; background: none; border: none; cursor: pointer; }
+
+    /* =========================================
+       3. HERO SECTION (首屏视觉)
+       ========================================= */
+    .hero {
+        position: relative; padding-top: 220px; padding-bottom: 180px;
+        background: #0f172a; text-align: center; color: white;
+        /* 使用 CSS 渐变作为背景，无需图片也能看 */
+        background: linear-gradient(135deg, #0F172A 0%, #1e293b 80%, #334155 100%);
+    }
+    .hero p { color: #cbd5e1; font-size: 1.3rem; max-width: 760px; margin-top: 20px; margin-bottom: 40px; }
+    
+    /* =========================================
+       4. STATS BAR (信任数据)
+       ========================================= */
+    .hero-stats {
+        display: grid; grid-template-columns: repeat(4, 1fr);
+        background: var(--white); color: var(--primary);
+        padding: 50px; margin-top: -80px; 
+        border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        position: relative; z-index: 20; width: 90%; max-width: 1200px; 
+        margin-left: auto; margin-right: auto;
+        border-bottom: 4px solid var(--gold);
+    }
+    .stat-box h3 { color: var(--accent); font-size: 3rem; margin-bottom: 5px; line-height: 1; }
+    .stat-box p { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--secondary); margin: 0; letter-spacing: 1px; }
+
+    /* =========================================
+       5. SECTIONS (业务板块)
+       ========================================= */
+    
+    /* TRUST LOGOS */
+    .trust-bar { padding: 80px 0 60px; border-bottom: 1px solid var(--border); text-align: center; }
+    .logo-grid { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; opacity: 0.5; margin-top: 30px; }
+    .trust-item { font-size: 1.5rem; font-weight: 800; color: #64748b; display: flex; align-items: center; gap: 10px; }
+
+    /* CARDS */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px; }
+    .card { background: white; border-radius: 8px; overflow: hidden; transition: 0.4s; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); }
+    .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: var(--accent); }
+    
+    /* 图片占位符 (防止裂图) */
+    .img-box { height: 240px; width: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2rem; letter-spacing: 2px; }
+    .bg-1 { background: linear-gradient(45deg, #F59E0B, #fbbf24); } /* Lifestyle */
+    .bg-2 { background: linear-gradient(45deg, #334155, #475569); } /* Industrial */
+    .bg-3 { background: linear-gradient(45deg, #0284C7, #38bdf8); } /* Tech */
+
+    .card-body { padding: 35px; }
+    .card-body h3 { margin-bottom: 15px; color: var(--primary); }
+    .card-body ul { margin: 20px 0; font-size: 0.95rem; color: var(--secondary); text-align: left; }
+    .card-body li { margin-bottom: 8px; padding-left: 20px; position: relative; }
+    .card-body li::before { content: '•'; color: var(--accent); position: absolute; left: 0; font-weight: bold; }
+
+    /* SPLIT SECTION */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .split-img { height: 500px; background: #ddd; border-radius: 8px; background-image: url('https://images.unsplash.com/photo-1565514020176-db76d54d4a89?auto=format&fit=crop&w=800'); background-size: cover; }
+    
+    /* PROCESS */
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 60px; }
+    .process-item { border-top: 1px solid #ddd; padding-top: 30px; position: relative; }
+    .p-num { font-size: 3rem; font-weight: 800; color: var(--border); position: absolute; top: -25px; background: white; padding-right: 10px; }
+    
+    /* FAQ */
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; text-align: left; margin-top: 50px; }
+    .faq-box { background: white; padding: 30px; border-radius: 6px; border: 1px solid var(--border); }
+    .faq-box h4 { color: var(--accent); margin-bottom: 10px; }
+
+    /* =========================================
+       6. FOOTER
+       ========================================= */
+    .footer { background: var(--primary); color: #94a3b8; padding: 80px 0 40px; margin-top: 100px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 50px; margin-bottom: 60px; }
+    .footer h4 { color: white; margin-bottom: 25px; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a:hover { color: var(--gold); }
+    .copyright { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; font-size: 0.9rem; }
+
+    /* =========================================
+       7. RESPONSIVE
+       ========================================= */
+    @media (max-width: 1024px) {
+        .hero-stats { grid-template-columns: 1fr 1fr; gap: 30px; }
+        .grid-3, .split, .process-grid, .faq-grid, .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+        .hero h1 { font-size: 3rem; }
+    }
+    @media (max-width: 768px) {
+        .navbar .nav-links { display: none; position: absolute; top: 90px; left: 0; width: 100%; background: white; flex-direction: column; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .navbar .nav-links.active { display: flex; }
+        .menu-toggle { display: block; }
+        .hero { padding-top: 140px; }
+        .hero h1 { font-size: 2.5rem; }
+    }
+</style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-wrapper">
+            <a href="#" class="brand">
+                <div class="logo-symbol">YS</div> YiShen Global
+            </a>
+            <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')"><i class="fas fa-bars"></i></button>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#about">Philosophy</a>
+                <a href="#divisions">Divisions</a>
+                <a href="#process">Protocol</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact" class="nav-cta">Start Project</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <span style="color: var(--gold); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; display: inline-block;">Strategic Supply Chain Partner</span>
+            <h1>Supply Chain Predictability.<br>Engineered for Growth.</h1>
+            <p>We bridge the gap between Asian Manufacturing Excellence and Global Market Reliability. Vertical control over 200+ SKUs across Lifestyle, Industrial, and High-Tech sectors.</p>
+            <div style="margin-top: 40px;">
+                <a href="#contact" class="btn btn-gold" style="margin-right: 20px;">Schedule Strategy Call</a>
+                <a href="#divisions" class="btn btn-outline">Explore Capabilities</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="hero-stats">
+            <div class="stat-box text-center"><h3>10+</h3><p>Years Experience</p></div>
+            <div class="stat-box text-center"><h3>200+</h3><p>Controlled SKUs</p></div>
+            <div class="stat-box text-center"><h3>99.8%</h3><p>Q.C. Pass Rate</p></div>
+            <div class="stat-box text-center"><h3>50+</h3><p>Global Partners</p></div>
+        </div>
+    </div>
+
+    <section class="trust-bar">
+        <div class="container">
+            <p style="font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px;">Trusted by Global Innovators & Retailers</p>
+            <div class="logo-grid">
+                <div class="trust-item"><i class="fas fa-building"></i> STAPLES</div>
+                <div class="trust-item"><i class="fas fa-layer-group"></i> Office Depot</div>
+                <div class="trust-item"><i class="fas fa-robot"></i> AUTONOMOUS</div>
+                <div class="trust-item"><i class="fas fa-shield-alt"></i> UL Certified</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding">
+        <div class="container split">
+            <div>
+                <span class="section-tag">THE YISHEN DIFFERENCE</span>
+                <h2>We Don't Just Source.<br>We Engineer Certainty.</h2>
+                <p>Most importers struggle with the "Invisible Gap"—the disconnect between a factory's output and a brand's expectation. This leads to hidden costs.</p>
+                <div style="background: var(--bg-light); border-left: 4px solid var(--accent); padding: 25px; margin: 30px 0;">
+                    <strong style="color: var(--accent); display:block; margin-bottom:5px;">Core Insight:</strong>
+                    <p style="margin:0; font-size:0.95rem;">The majority of quality issues in the US market stem from process failures, not product defects.</p>
+                </div>
+                <ul style="margin-top: 20px; font-weight: 600; color: var(--secondary);">
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> Raw Material Traceability</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> Modular SKU Engineering</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> Integrated Logistics (DDP)</li>
+                </ul>
+            </div>
+            <div class="split-img"></div>
+        </div>
+    </section>
+
+    <section id="divisions" class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Strategic Portfolio</span>
+                <h2>Three Divisions. One Standard.</h2>
+                <p>We segregate our operations to ensure specialized expertise in every sector.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <div class="img-box bg-1"><i class="fas fa-couch" style="margin-right: 10px;"></i> LIFESTYLE</div>
+                    <div class="card-body">
+                        <h3>Lifestyle & Design</h3>
+                        <p>High-end furniture and materials focused on aesthetics and DTC packaging efficiency.</p>
+                        <ul>
+                            <li>Ergonomic Mesh Chairs</li>
+                            <li>Standing Desks</li>
+                            <li>Bamboo Flooring</li>
+                        </ul>
+                        <a href="#contact" style="color: var(--gold); font-weight: bold;">View Catalog &rarr;</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-box bg-2"><i class="fas fa-tools" style="margin-right: 10px;"></i> INDUSTRIAL</div>
+                    <div class="card-body">
+                        <h3>Engineering & Rigor</h3>
+                        <p>Heavy industrial rigging and marine cables. Focus on load capacity and safety.</p>
+                        <ul>
+                            <li>G100 Chain Slings</li>
+                            <li>2-Ton Electric Hoists</li>
+                            <li>Marine Ropes</li>
+                        </ul>
+                        <a href="#contact" style="color: #333; font-weight: bold;">View Catalog &rarr;</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-box bg-3"><i class="fas fa-microchip" style="margin-right: 10px;"></i> HIGH-TECH</div>
+                    <div class="card-body">
+                        <h3>High-Tech & Bio</h3>
+                        <p>New energy ESS systems and medical consumables. Focus on purity and compliance.</p>
+                        <ul>
+                            <li>UL9540 ESS Systems</li>
+                            <li>Wafer Chemicals</li>
+                            <li>Medical PCR Plates</li>
+                        </ul>
+                        <a href="#contact" style="color: var(--accent); font-weight: bold;">View Catalog &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="section-padding" style="background: var(--primary); color: white;">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag" style="color: var(--gold); border-color: var(--gold);">THE YISHEN PROTOCOL</span>
+                <h2 style="color: white;">From Concept to Container.</h2>
+            </div>
+            <div class="process-grid">
+                <div class="process-item">
+                    <span class="p-num">01</span>
+                    <h3>Discovery</h3>
+                    <p style="color: #94a3b8;">We analyze market needs and define specs to reduce SKU complexity.</p>
+                </div>
+                <div class="process-item">
+                    <span class="p-num">02</span>
+                    <h3>Sourcing</h3>
+                    <p style="color: #94a3b8;">Audit raw materials (steel, foam, chips) at the source for consistency.</p>
+                </div>
+                <div class="process-item">
+                    <span class="p-num">03</span>
+                    <h3>Rigorous QC</h3>
+                    <p style="color: #94a3b8;">AQL 2.5 inspections and pre-shipment assembly checks.</p>
+                </div>
+                <div class="process-item">
+                    <span class="p-num">04</span>
+                    <h3>Logistics</h3>
+                    <p style="color: #94a3b8;">Seamless DDP delivery. We handle customs and tracking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section-padding">
+        <div class="container">
+            <div class="text-center"><h2>Common Questions</h2></div>
+            <div class="faq-grid">
+                <div class="faq-box">
+                    <h4>Do you handle DDP shipping?</h4>
+                    <p>Yes. We offer full DDP services, managing customs, duties, and inland freight directly to your warehouse.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>What is your standard MOQ?</h4>
+                    <p>For standardized SKUs, flexible MOQ (50-100 units). For custom OEM, starts at 1x 20GP container.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>Are products BIFMA/UL certified?</h4>
+                    <p>Yes. Furniture is BIFMA X5.1 tested; electronic components carry UL/ETL certifications.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>Can you provide private labeling?</h4>
+                    <p>Absolutely. We offer full white-label services, including custom box art and branding.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4 style="font-size: 1.5rem;">YiShen Global</h4>
+                    <p style="opacity: 0.8;">Your strategic partner in global supply chain excellence. From Anji/Hangzhou to the world.</p>
+                </div>
+                <div>
+                    <h4>Global HQ</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Anji & Hangzhou, China</li>
+                        <li><i class="fas fa-envelope"></i> alex.yang@yishenglobal.net</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Direct Contact</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +86 195 3039 4133</li>
+                        <li><i class="fab fa-weixin"></i> WeChat: 19530394133</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 YiShen Global. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
