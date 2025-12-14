@@ -4,17 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B2B Solutions | Risk Mitigation & Operational Efficiency - YiShen Global</title>
+    
     <meta name="description" content="We transform common import risks—from unpredictable quality to customs delays—into controlled, predictable advantages using end-to-end DDP and modular SKU strategies.">
     
     <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght=600;700&display=swap" rel="stylesheet">
-    
-    <style> /* ... (solutions.html CSS is omitted here for brevity, assumes external styles.css or similar) ... */ </style>
+
+    <style>
+        /* 样式定义 (通常应在 styles.css 中，此处为确保独立性而保留结构) */
+        :root {
+            --primary: #111111;    
+            --secondary: #555555;  
+            --accent: #0077B6;     
+            --bg-light: #f7f9fb;   
+            --white: #ffffff;
+            --border: #e0e0e0;
+            --font-main: 'Inter', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+        .solutions-hero {
+            padding: 150px 0 80px;
+            background: var(--accent);
+            color: var(--white);
+            text-align: center;
+        }
+        .solutions-hero h1 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .solution-sections {
+            padding: 80px 0;
+            background: var(--bg-light); 
+        }
+        .solution-block {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 60px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            transition: 0.3s;
+        }
+        .solution-block:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        .solution-block:nth-child(even) {
+            flex-direction: row-reverse; 
+        }
+        .block-content {
+            flex: 2;
+        }
+        .block-image {
+            flex: 1;
+            min-width: 300px;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            opacity: 0.9;
+        }
+        .block-content h2 {
+            font-family: var(--font-main);
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .block-content strong.pain-point {
+            display: block;
+            color: #d9534f; 
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .block-content ul {
+            margin-top: 15px;
+            padding-left: 0;
+        }
+        .block-content ul li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 8px;
+            color: var(--secondary);
+        }
+        .block-content ul li::before {
+            content: '✓';
+            position: absolute; left: 0; top: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        .block-cta {
+            margin-top: 25px;
+        }
+        @media (max-width: 900px) {
+            .solution-block, .solution-block:nth-child(even) {
+                flex-direction: column;
+                gap: 20px;
+                padding: 30px;
+            }
+            .block-image {
+                width: 100%;
+                min-width: unset;
+                order: -1;
+            }
+        }
+    </style>
 </head>
 <body>
+
     <header class="navbar" style="position: static; margin-bottom: 0; border-bottom: none;">
         <div class="container nav-wrapper">
             <div class="brand"><a href="index.html">YiShen Global</a></div>
@@ -41,14 +145,104 @@
 
     <section class="solution-sections">
         <div class="container">
+
             <div class="solution-block">
+                <div class="block-content">
+                    <strong class="pain-point"><i class="fas fa-exclamation-triangle"></i> Pain Point 1: Unpredictable Quality and Compliance Failure (Up to 15% Loss)</strong>
+                    <h2>Precision Quality Assurance & Digital Twin Compliance</h2>
+                    <p>
+                        核心风险在于供应链的**流程黑盒**导致批量缺陷和市场监管问题。我们通过集成 **Digital Twin** 概念，将 QA 从被动检查升级为主动的、可预测的风险管理。
+                    </p>
+                    <p style="font-weight: 600; color: var(--accent);">
+                        我们的解决方案: Digital Twin & BIFMA Protocol Management (99.8% Pass Rate)
+                    </p>
+                    <ul>
+                        <li>**Digital Twin Data:** 为核心 SKU 建立数字模型，实时追踪材料批次和疲劳测试数据，确保合规可追溯。</li>
+                        <li>**ESG/LEED Ready Documentation:** 提供符合 LEED 和 WELL 标准的材料认证，满足 2026 年大型商业项目合规要求。</li>
+                        <li>**Process Control (SPC):** 实施统计流程控制，确保质量从元件级别就保持一致，而非只依赖最终抽检。</li>
+                    </ul>
+                    <div class="block-cta">
+                        <a href="resources.html" class="btn btn-primary">Download Compliance Guide &rarr;</a>
+                    </div>
                 </div>
+                <div class="block-image" style="background-image: url('quality_control.jpg');">
+                    [Image: BIFMA stress testing with digital data overlay]
+                </div>
+            </div>
+
             <div class="solution-block">
+                <div class="block-content">
+                    <strong class="pain-point"><i class="fas fa-shipping-fast"></i> Pain Point 2: Costly Transit Damage & Unstable ETAs (Avg. 40% ETA Variance)</strong>
+                    <h2>Global Logistics Resilience and DDP/LDP Mastery</h2>
+                    <p>
+                        不可预测的物流会导致库存缺口、零售商罚款和 DTC 高昂的退货成本。我们提供端到端的物流**可预测性**。
+                    </p>
+                    <p style="font-weight: 600; color: var(--accent);">
+                        我们的解决方案: Predictive DDP/LDP with Low-Damage Assurance (Reduce Damage Rate to <1%)
+                    </p>
+                    <ul>
+                        <li>**Predictive ETA & Slot Locking:** 利用数据预测港口拥堵，允许客户提前锁定 Q3/Q4 的运力时段和 DDP 成本，规避波动。</li>
+                        <li>**DTC-Ready Packaging:** 针对亚马逊、沃尔玛等平台，提供跌落测试认证的包装方案，确保最后一公里交付安全。</li>
+                        <li>**Customs Flow Simplification:** 完整的 LDP (Landed Duty Paid) 服务，将所有费用捆绑，实现透明化和预算锁定。</li>
+                    </ul>
+                    <div class="block-cta">
+                        <a href="index.html#contact" class="btn btn-primary">Lock Your Q3/Q4 Shipping Slot &rarr;</a>
+                    </div>
                 </div>
+                <div class="block-image" style="background-image: url('logistics_drayage.jpg');">
+                    [Image: Container ships with DDP labels]
+                </div>
+            </div>
+
             <div class="solution-block">
+                <div class="block-content">
+                    <strong class="pain-point"><i class="fas fa-lightbulb"></i> Pain Point 3: Slow Product Iteration and High MOQ (Avg. 120 Days to Market)</strong>
+                    <h2>Agile Custom Engineering & Modular Design</h2>
+                    <p>
+                        市场反馈要求 DTC 品牌快速迭代。传统 OEM 模式周期长、MOQ 高，限制了市场敏捷性。
+                    </p>
+                    <p style="font-weight: 600; color: var(--accent);">
+                        我们的解决方案: Modular Product Development (New SKU Cycle Cut by 40%)
+                    </p>
+                    <ul>
+                        <li>**Modular Component System:** 基于标准化的底盘和机制，实现扶手、网布、头枕的快速互换，用最少的投入创建 20+ SKU 变体。</li>
+                        <li>**Low MOQ Trials:** 支持小批量试生产，加速产品市场验证 (P-MVP)，最小化新产品投资风险。</li>
+                        <li>**Design Trend Integration:** R&D 团队基于全球销售数据，主动推荐高增长潜力的设计调整。</li>
+                    </ul>
+                    <div class="block-cta">
+                        <a href="index.html#services" class="btn btn-primary">Start Modular Custom Project &rarr;</a>
+                    </div>
                 </div>
+                <div class="block-image" style="background-image: url('modular_design.jpg');">
+                    [Image: CAD rendering showing interchangeable components]
+                </div>
+            </div>
+            
             <div class="solution-block">
+                <div class="block-content">
+                    <strong class="pain-point"><i class="fas fa-wrench"></i> Pain Point 4: Retailer Chargebacks and End-User Dissatisfaction (Up to 8% Lost Revenue)</strong>
+                    <h2>Strategic Spare Parts Inventory & Warranty Support</h2>
+                    <p>
+                        售后服务效率低和备件供应不足直接损害零售商关系和品牌声誉，导致高额的罚款和差评。
+                    </p>
+                    <p style="font-weight: 600; color: var(--accent);">
+                        我们的解决方案: US/EU Buffer Stock Program (99% Same-Week Resolution)
+                    </p>
+                    <ul>
+                        <li>**US/EU Spare Parts Buffer:** 在目标市场预存高故障率部件（气压杆、轮子），实现快速的本地化替换，将解决时间从数周缩短至数天。</li>
+                        <li>**Warranty Claim Platform:** 提供清晰的数字化流程，简化零售商和最终用户的索赔过程，降低客服成本。</li>
+                        <li>**Training & Documentation:** 提供专业、品牌化的用户手册和简易安装视频，降低因用户错误操作导致的退货率。</li>
+                    </ul>
+                    <div class="block-cta">
+                        <a href="index.html#contact" class="btn btn-primary">Inquire About Support Program &rarr;</a>
+                    </div>
                 </div>
+                <div class="block-image" style="background-image: url('spare_parts_warehouse.jpg');">
+                    [Image: Organized warehouse shelf specifically labeled "Spare Parts Inventory"]
+                </div>
+            </div>
+
+
         </div>
     </section>
     
@@ -67,5 +261,6 @@
             <p>&copy; 2026 YiShen Global. All rights reserved. | <a href="index.html#contact" style="color: var(--accent);">Get in Touch</a></p>
         </div>
     </footer>
+
 </body>
 </html>
