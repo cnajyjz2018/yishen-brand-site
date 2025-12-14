@@ -1,145 +1,145 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SBU 战略解决方案 | 风险缓解与运营效率 - YiShen Global</title>
-    <meta name="description" content="我们提供跨越 Lifestyle, Engineering, High-Tech 三大部门的垂直解决方案。从预测质量缺陷到管理 DGR 危险品物流，将风险转化为可控优势。">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SBU 战略解决方案 | 风险缓解与运营效率 - YiShen Global</title>
+<meta name="description" content="我们提供跨越 Lifestyle, Engineering, High-Tech 三大部门的垂直解决方案。从预测质量缺陷到管理 DGR 危险品物流，将风险转化为可控优势。">
+
+<link rel="stylesheet" href="styles.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght{600;700}&display=swap" rel="stylesheet">
+
+<style>
+    /* 原有基础样式保留 */
+    :root {
+        --primary: #111111;
+        --secondary: #555555;
+        --accent: #0077B6;
+        --bg-light: #f7f9fb;
+        --white: #ffffff;
+        --border: #e0e0e0;
+        --color-lifestyle: #FFC300; /* 家具/零售强调色 */
+        --color-industrial: #333333; /* 工业/工程强调色 */
+        --color-hightech: #007bff; /* 高科技/医疗强调色 */
+    }
     
-    <link rel="stylesheet" href="styles.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    .solutions-hero {
+        padding: 150px 0 80px;
+        background: var(--accent); 
+        color: var(--white);
+        text-align: center;
+        margin-top: 0; 
+    }
+    .solutions-hero h1 {
+        font-size: 3rem;
+        font-family: var(--font-serif);
+        margin-top: 10px;
+    }
+    .solutions-grid {
+        padding: 80px 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 40px;
+    }
+    .solution-card {
+        border: 1px solid var(--border);
+        padding: 30px;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+    .solution-card h3 {
+        color: var(--accent);
+        font-family: var(--font-serif);
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+    }
+    /* 新增 CTA 样式 */
+    .aggressive-cta {
+        background: #FFDD00;
+        padding: 50px 0;
+        text-align: center;
+        margin-bottom: 50px;
+        border-radius: 8px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .aggressive-cta h2 {
+        font-family: var(--font-serif);
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 10px;
+    }
+    .aggressive-cta p {
+        font-size: 1.1rem;
+        color: var(--secondary);
+        margin-bottom: 30px;
+    }
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght{600;700}&display=swap" rel="stylesheet">
+    /* NEW: 战略风险模块样式 */
+    .risk-module {
+        border-left: 5px solid;
+        padding: 25px;
+        margin-bottom: 30px;
+        background: var(--bg-light);
+        border-radius: 0 8px 8px 0;
+    }
+    .risk-module h4 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .risk-module .risk-tags {
+        margin-top: 10px;
+    }
+    .risk-module .risk-tags span {
+        display: inline-block;
+        background: #eee;
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        margin-right: 5px;
+        color: #333;
+    }
+    .risk-module .solution-points li {
+        font-size: 0.95rem;
+        color: var(--primary);
+        margin-bottom: 5px;
+    }
 
-    <style>
-        /* 原有基础样式保留 */
-        :root {
-            --primary: #111111;
-            --secondary: #555555;
-            --accent: #0077B6;
-            --bg-light: #f7f9fb;
-            --white: #ffffff;
-            --border: #e0e0e0;
-            --color-lifestyle: #FFC300; /* 家具/零售强调色 */
-            --color-industrial: #333333; /* 工业/工程强调色 */
-            --color-hightech: #007bff; /* 高科技/医疗强调色 */
-        }
-        
-        .solutions-hero {
-            padding: 150px 0 80px;
-            background: var(--accent); 
-            color: var(--white);
-            text-align: center;
-            margin-top: 80px; /* NEW: Added margin for fixed navbar alignment */
-        }
-        .solutions-hero h1 {
-            font-size: 3rem;
-            font-family: var(--font-serif);
-            margin-top: 10px;
-        }
-        .solutions-grid {
-            padding: 80px 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-        }
-        .solution-card {
-            border: 1px solid var(--border);
-            padding: 30px;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-        .solution-card h3 {
-            color: var(--accent);
-            font-family: var(--font-serif);
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-        /* 新增 CTA 样式 */
-        .aggressive-cta {
-            background: #FFDD00;
-            padding: 50px 0;
-            text-align: center;
-            margin-bottom: 50px;
-            border-radius: 8px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        .aggressive-cta h2 {
-            font-family: var(--font-serif);
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-        .aggressive-cta p {
-            font-size: 1.1rem;
-            color: var(--secondary);
-            margin-bottom: 30px;
-        }
-        
-        /* NEW: 战略风险模块样式 */
-        .risk-module {
-            border-left: 5px solid;
-            padding: 25px;
-            margin-bottom: 30px;
-            background: var(--bg-light);
-            border-radius: 0 8px 8px 0;
-        }
-        .risk-module h4 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .risk-module .risk-tags {
-            margin-top: 10px;
-        }
-        .risk-module .risk-tags span {
-            display: inline-block;
-            background: #eee;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin-right: 5px;
-            color: #333;
-        }
-        .risk-module .solution-points li {
-            font-size: 0.95rem;
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
+    /* 风险模块颜色定制 */
+    .risk-lifestyle { border-left-color: var(--color-lifestyle); }
+    .risk-industrial { border-left-color: var(--color-industrial); }
+    .risk-hightech { border-left-color: var(--color-hightech); }
 
-        /* 风险模块颜色定制 */
-        .risk-lifestyle { border-left-color: var(--color-lifestyle); }
-        .risk-industrial { border-left-color: var(--color-industrial); }
-        .risk-hightech { border-left-color: var(--color-hightech); }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .solutions-grid { grid-template-columns: 1fr; }
-            .aggressive-cta h2 { font-size: 1.8rem; }
-        }
-    </style>
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .solutions-grid { grid-template-columns: 1fr; }
+        .aggressive-cta h2 { font-size: 1.8rem; }
+    }
+</style>
 </head>
 <body>
     <header class="navbar" style="position: static; margin-bottom: 0; border-bottom: none;">
-        <div class="container nav-wrapper">
-            <a href="index.html" class="brand">
-                <div class="logo-icon"></div>
-                YiShen Global
-            </a>
-            <nav class="nav-links">
-                <a href="index.html#home">Home</a>
-                <a href="index.html#about">About</a>
-                <a href="index.html#products">Collection</a>
-                <a href="solutions.html">Solutions</a>
-                <a href="resources.html">Resources</a>
-                <a href="index.html#contact" class="btn-nav">Contact Us</a>
-            </nav>
-        </div>
-    </header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="brand">
+                <div class="logo-icon"></div>
+                YiShen Global
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#products">Collection</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="resources.html">Resources</a>
+                <a href="index.html#contact" class="btn-nav">Contact Us</a>
+            </nav>
+        </div>
+    </header>
 
     <section class="solutions-hero">
         <div class="container">
