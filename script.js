@@ -1,6 +1,6 @@
 /* =========================================================================
    YiShen Global B2B - script.js
-   最终权威版脚本 (Tri-Channel Fusion 20 SKU 架构)
+   最终权威版脚本 (Tri-Channel Fusion 20 SKU 架构 - 已更新 SKU 链接)
    ========================================================================= */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -156,12 +156,14 @@ document.addEventListener('DOMContentLoaded', function() {
         card.setAttribute('data-lumber', sku.lumbar);
         card.setAttribute('data-bifma', sku.bifma);
 
-        // 核心渲染：展示 Tri-Channel 信号 (优先展示 DTC 和 Retail 信号)
         const primarySignal = sku.signals.dtc;
         const secondarySignal = sku.signals.retail;
         
+        // ⭐ 关键修改: 链接到 sku-detail.html 并传递 model 参数 (SKU ID) ⭐
+        const detailLink = `sku-detail.html?model=${sku.model}`;
+
         card.innerHTML = `
-            <a href="#contact" class="category-card" style="height: 250px;">
+            <a href="${detailLink}" class="category-card" style="height: 250px;">
                 <div class="category-bg" style="background-image: url('${sku.img}');"></div>
                 <div class="category-content" style="padding: 15px;">
                     <h3 style="font-size: 1.1rem;">Model ${sku.model}</h3>
@@ -169,6 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <p style="font-size: 0.8rem;">${sku.desc}</p>
                         <span class="product-tag">${primarySignal} | ${secondarySignal}</span>
                     </div>
+                    <span class="view-btn" style="font-size: 0.9rem; color: #FFC300; margin-top: 5px;">View Specs & Data Sheet &rarr;</span>
                 </div>
             </a>
         `;
