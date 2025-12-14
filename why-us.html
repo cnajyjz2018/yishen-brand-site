@@ -1,122 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Why YiShen | YiShen Global Logistics</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why YiShen Global | Quantifying B2B Partnership Value</title>
+    
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght=600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .why-us-hero {
+            padding: 150px 0 80px;
+            background: var(--primary); /* 深色背景，突出权威感 */
+            color: var(--white);
+            text-align: center;
+        }
+        .why-us-hero h1 {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        .value-sections {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+        .value-prop-block {
+            display: flex;
+            align-items: flex-start;
+            gap: 50px;
+            margin-bottom: 70px;
+            padding: 40px;
+            background: var(--white);
+            border-left: 5px solid var(--accent);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .value-prop-block:nth-child(even) {
+            border-left: none;
+            border-right: 5px solid var(--accent);
+            flex-direction: row-reverse;
+        }
+        .icon-box {
+            flex-shrink: 0;
+            font-size: 3rem;
+            color: var(--accent);
+            margin-top: 10px;
+        }
+        .content-box {
+            flex-grow: 1;
+        }
+        .content-box h2 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        .content-box .key-metric {
+            display: block;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #d9534f; /* 红色突出风险/节省 */
+            margin-bottom: 10px;
+        }
+        .content-box ul {
+            margin-top: 20px;
+            padding-left: 0;
+        }
+        .content-box ul li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 10px;
+            color: var(--secondary);
+            font-size: 0.95rem;
+        }
+        .content-box ul li::before {
+            content: '➤';
+            position: absolute; left: 0; top: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        /* 权威人物背书区 */
+        .authority-block {
+            text-align: center;
+            padding: 50px 0;
+            background: var(--white);
+            border-top: 1px solid var(--border);
+        }
+        .authority-block img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 4px solid var(--accent);
+        }
+        .authority-block h3 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        .authority-block p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 20px;
+            color: var(--secondary);
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 900px) {
+            .why-us-hero h1 { font-size: 2.5rem; }
+            .value-prop-block, .value-prop-block:nth-child(even) {
+                flex-direction: column;
+                gap: 20px;
+                padding: 25px;
+            }
+            .icon-box { margin-bottom: 15px; }
+            .content-box h2 { font-size: 1.6rem; }
+        }
+    </style>
 </head>
-<body class="page-why">
+<body>
 
-<header class="navbar">
-  <div class="logo">YiShen Global</div>
-  <div class="nav-toggle">
-    <span></span><span></span><span></span>
-  </div>
-  <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="solutions.html">Solutions</a>
-    <a href="industries.html">Industries</a>
-    <a href="why-us.html" class="active">Why Us</a>
-    <a href="resources.html">Resources</a>
-    <a href="contact.html" class="btn-primary btn-small">Get a Quote</a>
-  </nav>
-</header>
+    <header class="navbar" style="position: static; margin-bottom: 0; border-bottom: none;">
+        <div class="container nav-wrapper">
+            <div class="brand"><a href="index.html">YiShen Global</a></div>
+            <nav class="nav-links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#products">Collection</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#contact" class="btn-nav">Contact Us</a>
+            </nav>
+        </div>
+    </header>
 
-<main>
-  <section class="hero-inner">
-    <div class="container">
-      <h1 class="hero-title">Why Furniture Brands Choose YiShen</h1>
-      <p class="hero-subtitle">
-        We are built from the inside of the furniture and office chair industry — combining factory understanding with logistics engineering.
-      </p>
-    </div>
-  </section>
+    <section class="why-us-hero">
+        <div class="container">
+            <span class="section-tag" style="color: #FFDD00; background: var(--primary);">Your Strategic Advantage</span>
+            <h1>The YiShen Value Proposition: Quantified Trust.</h1>
+            <p style="font-size: 1.2rem; max-width: 1000px; margin: 20px auto 0;">
+                We are not a supplier; we are your dedicated operational partner. Our value is measured in the risks we eliminate and the efficiency we engineer into your bottom line.
+            </p>
+        </div>
+    </section>
 
-  <section class="section section-alt">
-    <div class="container">
-      <h2 class="section-title">Built Around Furniture</h2>
-      <div class="usp-grid">
-        <div class="usp-item">
-          <h3>Deep Product Understanding</h3>
-          <p>We know bases, gas lifts, mechanisms, mesh fabrics and how they behave under real-world transport.</p>
-        </div>
-        <div class="usp-item">
-          <h3>Inspired by Global Chair Brands</h3>
-          <p>We study brands like X-Chair, SIHOO, Noblechairs and leading Chinese manufacturers to refine our logistics models.</p>
-        </div>
-        <div class="usp-item">
-          <h3>Factory-Friendly SOPs</h3>
-          <p>Visual SOPs for packing, loading and labeling make it easy for your factory teams to execute correctly.</p>
-        </div>
-        <div class="usp-item">
-          <h3>Transparent Cost Logic</h3>
-          <p>Clear breakdown of freight, duties, taxes and local fees so you can price your SKUs with confidence.</p>
-        </div>
-      </div>
+    <section class="value-sections">
+        <div class="container">
+            
+            <div class="value-prop-block">
+                <div class="icon-box"><i class="fas fa-chart-line"></i></div>
+                <div class="content-box">
+                    <span class="key-metric">RISK ELIMINATED: Reduces ETA variance by 40%</span>
+                    <h2>Operational Predictability, Not Just Production.</h2>
+                    <p>
+                        The true cost of poor supply chain management lies in unpredictable ETAs (Estimated Time of Arrival) and stockouts. We use data intelligence to guarantee production transparency and logistics resilience.
+                    </p>
+                    <ul>
+                        <li>**Transit Resilience:** Proactive contingency planning to mitigate maritime delays and customs bottlenecks.</li>
+                        <li>**Data-Driven Sourcing:** Leveraging real-time data to guarantee material supply stability and price control.</li>
+                        <li>**Simplified Compliance:** Full DDP/LDP service, removing your team from complex international customs handling.</li>
+                    </ul>
+                    <a href="index.html#contact" class="text-link">Measure Your Current Supply Chain Risk &rarr;</a>
+                </div>
+            </div>
 
-      <div class="stats-row">
-        <div class="stat-item">
-          <strong>95%+</strong>
-          <span>On-time delivery on mature routes</span>
-        </div>
-        <div class="stat-item">
-          <strong>500+</strong>
-          <span>Furniture SKUs handled</span>
-        </div>
-        <div class="stat-item">
-          <strong>30+</strong>
-          <span>Destination countries</span>
-        </div>
-      </div>
-    </div>
-  </section>
+            <div class="value-prop-block">
+                <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
+                <div class="content-box">
+                    <span class="key-metric">METRIC: Guarantee AQL 2.5 and BIFMA X5.1 Compliance</span>
+                    <h2>Engineering Quality Beyond Industry Standards.</h2>
+                    <p>
+                        For major retailers (Staples/Office Depot) and high-end DTC brands (Nightingale/Autonomous), certification is non-negotiable. Our quality promise is embedded in the process, not just the inspection.
+                    </p>
+                    <ul>
+                        <li>**Zero Compromise Certification:** Every core product line is engineered to pass BIFMA, UL, and TUV standards, eliminating compliance liability for your brand.</li>
+                        <li>**Component Traceability:** Full record keeping on key components (gas lifts, mechanisms) to ensure long-term spare parts support.</li>
+                        <li>**DTC Durability:** Drop-test certified, eCommerce-ready packaging design that drastically lowers end-user returns due to transit damage.</li>
+                    </ul>
+                    <a href="resources.html" class="text-link">Download Our Latest Compliance Guide &rarr;</a>
+                </div>
+            </div>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Compliance & Risk Control</h2>
-      <div class="usp-grid">
-        <div class="usp-item">
-          <h3>HS & Policy Monitoring</h3>
-          <p>We monitor HS-code related changes and local import rules for furniture and chair categories.</p>
-        </div>
-        <div class="usp-item">
-          <h3>Pre-Check of Docs</h3>
-          <p>Invoices, packing lists, declarations and certificates are reviewed before departure to avoid surprises.</p>
-        </div>
-        <div class="usp-item">
-          <h3>Issue Handling Playbooks</h3>
-          <p>We maintain playbooks for common customs and last-mile issues, with predefined actions and communication templates.</p>
-        </div>
-        <div class="usp-item">
-          <h3>After-Sales Claim Support</h3>
-          <p>We help document cases, analyse root cause and adjust packaging or routes to avoid repeating problems.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+            <div class="value-prop-block">
+                <div class="icon-box"><i class="fas fa-drafting-compass"></i></div>
+                <div class="content-box">
+                    <span class="key-metric">EFFICIENCY GAIN: Cuts New SKU Development Cycle by 30%</span>
+                    <h2>The Power of Modular Custom Engineering.</h2>
+                    <p>
+                        To win in the modern retail landscape, you need rapid product iteration. We eliminate the slow, expensive prototype phase common with traditional manufacturers.
+                    </p>
+                    <ul>
+                        <li>**Modular Component Library:** Leverage our standardized library to mix-and-match key parts (seats, backs, bases), launching diverse SKUs quickly and efficiently.</li>
+                        <li>**Flexible MOQs:** We support smaller trial runs to help you test market viability before scaling, minimizing financial risk.</li>
+                        <li>**Trend Intelligence:** Our dedicated team provides proactive design suggestions based on current US/EU market sales data and ergonomic trends.</li>
+                    </ul>
+                    <a href="solutions.html" class="text-link">See Our Modular Solutions in Action &rarr;</a>
+                </div>
+            </div>
 
-  <section class="contact section-dark">
-    <div class="container contact-layout">
-      <div>
-        <h2>Let’s Build a Predictable Shipping Model</h2>
-        <p>Tell us your current pain points: delays, damages, unclear landed costs or compliance worries.</p>
-      </div>
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name">
-        <input type="text" placeholder="Company / Brand">
-        <input type="email" placeholder="Email or WhatsApp">
-        <textarea placeholder="What are your main logistics pain points?"></textarea>
-        <button type="submit" class="btn-primary">Share Your Scenario</button>
-      </form>
-    </div>
-  </section>
-</main>
+        </div>
+    </section>
+    
+    <section class="authority-block">
+        <div class="container">
+            <img src="alex_yang_profile.jpg" alt="Alex Yang, Head of Supply Chain Strategy">
+            <h3>Our Commitment is Personified.</h3>
+            <p>
+                "In global supply chain, stability is the currency. Our team doesn't just manage production; we actively manage the operational risks that impact your brand's profitability and reputation. We are here to partner with you for the long term."
+            </p>
+            <p style="font-weight: 700; color: var(--primary);">Alex C. Yang, Head of Supply Chain Strategy</p>
+            <a href="Alex C. Yang | LinkedIn 领英" target="_blank" class="text-link">View Alex's LinkedIn Profile &rarr;</a>
+        </div>
+    </section>
 
-<footer>
-  © 2025 YiShen Global Logistics. All rights reserved.
-</footer>
+    <section class="cta-banner" style="background: var(--accent); color: var(--white); padding: 50px 0; text-align: center;">
+        <div class="container">
+            <h2 style="font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 15px;">Ready to Engineer Your Predictable Supply Chain?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9;">
+                Take the first step toward a higher-certainty B2B partnership.
+            </p>
+            <a href="index.html#contact" class="btn btn-primary" style="background: #FFDD00; color: var(--primary); border-color: #FFDD00;">Schedule Your Strategy Session Now</a>
+        </div>
+    </section>
+    
+    <footer class="footer" style="padding: 40px 0 20px; background: #111;">
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2025 YiShen Global. All rights reserved. | <a href="index.html#contact" style="color: var(--accent);">Get in Touch</a></p>
+        </div>
+    </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
