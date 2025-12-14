@@ -40,7 +40,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- 热点动态渲染逻辑 (Data Injection & Interaction) ---
     function renderHotspots() {
-        // 创建信息浮窗 DOM 元素
+        // Hotspot Info Display is created by JS
+        if (!showcaseImage) return; // 安全检查
+
         const infoDisplay = document.createElement('div');
         infoDisplay.id = 'hotspot-display';
         infoDisplay.className = 'hotspot-info';
@@ -53,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
             hotspot.style.top = data.top;
             hotspot.style.left = data.left;
             
-            // 绑定事件和数据
+            // Binding events
             hotspot.addEventListener('mouseenter', (e) => handleHotspotHover(e, data, infoDisplay));
             hotspot.addEventListener('mouseleave', () => handleHotspotLeave(infoDisplay));
             showcaseImage.appendChild(hotspot);
@@ -83,12 +85,68 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 200);
     }
     
+    // --- SKU 筛选逻辑 (Filterable Catalog) ---
+    const priceFilter = document.getElementById('filter-price');
+    const lumberFilter = document.getElementById('filter-lumber');
+    const bifmaFilter = document.getElementById('filter-bifma');
+    const resetButton = document.getElementById('reset-filters');
+    const skuCards = document.querySelectorAll('.sku-card');
+    const noResultsMessage = document.getElementById('no-results-message');
+
+    function applyFilters() {
+        if (skuCards.length === 0) return;
+
+        const selectedPrice = priceFilter.value;
+        const selectedLumber = lumberFilter.value;
+        const selectedBifma = bifmaFilter.value;
+        let visibleCount = 0;
+
+        skuCards.forEach(card => {
+            const cardPrice = card.getAttribute('data-price');
+            const cardLumber = card.getAttribute('data-lumber');
+            const cardBifma = card.getAttribute('data-bifma');
+
+            const priceMatch = (selectedPrice === 'all' || selectedPrice === cardPrice);
+            const lumberMatch = (selectedLumber === 'all' || selectedLumber === cardLumber);
+            const bifmaMatch = (selectedBifma === 'all' || selectedBifma === cardBifma);
+
+            if (priceMatch && lumberMatch && bifmaMatch) {
+                card.style.display = 'block';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // 显示/隐藏无结果提示
+        if (visibleCount === 0) {
+            noResultsMessage.style.display = 'block';
+        } else {
+            noResultsMessage.style.display = 'none';
+        }
+    }
+
+    // 绑定事件监听器 (仅当筛选器存在时绑定)
+    if (priceFilter) priceFilter.addEventListener('change', applyFilters);
+    if (lumberFilter) lumberFilter.addEventListener('change', applyFilters);
+    if (bifmaFilter) bifmaFilter.addEventListener('change', applyFilters);
+    
+    // 重置按钮逻辑
+    if (resetButton) resetButton.addEventListener('click', () => {
+        if (priceFilter) priceFilter.value = 'all';
+        if (lumberFilter) lumberFilter.value = 'all';
+        if (bifmaFilter) bifmaFilter.value = 'all';
+        applyFilters();
+    });
+
+
     // --- 统一的脚本初始化 ---
     renderHotspots();
-
+    if (priceFilter) applyFilters(); // 仅当筛选器存在时才初始化 SKU 显示
+    
     // --- Sticky CTA 浮窗逻辑 ---
     window.addEventListener('scroll', function() {
-        // 当滚动超过 Hero Section 时显示 CTA
+        if (!stickyCta) return;
         const heroHeight = document.getElementById('home').offsetHeight;
         if (window.scrollY > heroHeight / 2) {
             stickyCta.style.display = 'block';
