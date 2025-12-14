@@ -268,13 +268,11 @@ img { 
     gap: 20px; 
 }
 .stat-item {
-    /* NEW: 增强交互性 */
-    transition: background 0.3s;
-    padding: 10px 0;
-    border-radius: 4px;
-    /* 关键修复: 确保统计项目本身是 flex item */
     display: flex; 
     flex-direction: column; 
+    transition: background 0.3s;
+    padding: 10px 0;
+    border-radius: 4px;
 }
 .stat-item:hover {
     background: rgba(255, 255, 255, 0.1);
