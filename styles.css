@@ -1,6 +1,6 @@
 /* =========================================
    YiShen Global B2B - styles.css
-   最终权威版样式表 (V11.0 终极修复版)
+   V11.0 终极排版修复版 (确保所有 Grid/Flex 布局生效)
    ========================================= */
 
 /* --- 基础设置与通用变量 --- */
@@ -183,7 +183,7 @@ img { 
 /* ⭐ LOGO 样式结束 ⭐ */
 
 .nav-links { 
-    /* 关键修复 2: 强制横向排列 */
+    /* 关键修复 2: 确保导航链接横向排列 */
     display: flex; 
     gap: 30px; 
     align-items: center; 
@@ -261,6 +261,7 @@ img { 
     color: var(--white); 
 }
 .stats-grid { 
+    /* 关键修复 3: 确保统计数据横向网格排列 */
     display: grid; 
     grid-template-columns: repeat(4, 1fr); 
     text-align: center; 
@@ -271,6 +272,9 @@ img { 
     transition: background 0.3s;
     padding: 10px 0;
     border-radius: 4px;
+    /* 关键修复: 确保统计项目本身是 flex item */
+    display: flex; 
+    flex-direction: column; 
 }
 .stat-item:hover {
     background: rgba(255, 255, 255, 0.1);
@@ -325,6 +329,7 @@ img { 
     background: var(--white); 
 }
 .about-wrapper { 
+    /* 关键修复 4: 确保 about 部分的网格布局生效 */
     display: grid; 
     grid-template-columns: 1fr 1fr; 
     gap: 70px; 
@@ -392,6 +397,7 @@ img { 
 
 /* NEW: Vertical Control Grid Styles */
 #vertical-control .expertise-grid {
+    display: grid; /* 关键修复 5: 确保此处 grid 生效 */
     grid-template-columns: repeat(2, 1fr);
     gap: 30px 20px;
 }
@@ -663,6 +669,7 @@ img { 
     padding: 80px 0 30px; 
 }
 .footer-top { 
+    /* 关键修复 6: 确保页脚顶部内容布局生效 */
     display: grid; 
     grid-template-columns: 1.5fr 1fr; 
     gap: 80px; 
@@ -680,6 +687,7 @@ img { 
     color: var(--accent);
 }
 .contact-row { 
+    /* 关键修复 7: 确保联系信息横向排列 */
     display: flex; 
     margin-bottom: 15px; 
     font-size: 0.9rem; 
@@ -766,6 +774,7 @@ img { 
 
 /* NEW: Cross-SBU Case Study Styles */
 #cross-sbu-case .about-wrapper {
+    display: grid; /* 关键修复 8: 确保 Cross-SBU 网格布局生效 */
     grid-template-columns: 1fr 1.5fr; /* Adjust column ratio for case study */
     gap: 70px;
 }
