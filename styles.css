@@ -125,7 +125,7 @@ img { max-width: 100%; height: auto; }
     background-size: cover; 
     background-position: center;
     opacity: 1; 
-    background-image: url('banner2.jpg'); /* 默认路径 */
+    background-image: url('banner2.jpg'); 
 }
 
 .hero-content { 
@@ -231,7 +231,13 @@ img { max-width: 100%; height: auto; }
    --- 3. 产品展示 (Products) ---
    ========================================= */
 .products { padding: 100px 0; background: var(--bg-light); }
-.section-title { text-align: center; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto; }
+.section-title { 
+    text-align: center; 
+    margin-bottom: 80px; 
+    max-width: 700px; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
 .section-title h2 { font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 15px; }
 
 /* 3列布局 */
@@ -290,19 +296,17 @@ img { max-width: 100%; height: auto; }
     margin: 0;
 }
 
-/* ⭐ CTA/Hook Signal 标签样式 (统一) ⭐ */
+/* CTA/Hook Signal 标签样式 (统一) */
 .product-tag { 
     font-size: 0.8rem; 
     font-weight: 600; 
-    color: var(--accent); /* 使用强调蓝 */
+    color: var(--accent); 
     background: var(--white);
     padding: 3px 8px;
     border-radius: 4px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    /* 增加科技感边框 */
     border: 1px solid var(--accent); 
-    /* 模仿 Autonomous/科技感 */
     box-shadow: 0 0 5px rgba(0, 119, 182, 0.5); 
 }
 
@@ -321,6 +325,93 @@ img { max-width: 100%; height: auto; }
 .category-card:hover .view-btn { opacity: 1; transform: translateY(0); }
 
 .view-more-container { text-align: center; margin-top: 50px; }
+        
+/* =========================================
+   --- 沉浸式产品展示 (Showcase) ---
+   ========================================= */
+.product-showcase-container {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.showcase-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.showcase-image {
+    position: relative;
+    height: 550px;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* 模仿 X-Chair 的技术热点 (Hotspots) */
+.hotspot {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: var(--accent); 
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid var(--white);
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 10;
+}
+
+.hotspot:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(0, 119, 182, 0.8);
+}
+
+.hotspot-info {
+    position: absolute;
+    background: rgba(17, 17, 17, 0.95); 
+    color: var(--white);
+    padding: 15px;
+    border-radius: 8px;
+    width: 250px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    z-index: 20;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.hotspot-info.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.hotspot-info h5 {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.hotspot-info span {
+    display: block;
+    margin-top: 5px;
+    font-weight: 500;
+}
+/* 垂直专家卖点标签 (Loctek/Nightingale 借鉴) */
+.tech-spec {
+    display: block; 
+    color: var(--primary); 
+    background: #FFDD00; 
+    padding: 3px 8px; 
+    border-radius: 2px; 
+    margin-bottom: 10px; 
+    font-size: 0.85rem; 
+    font-weight: 700; 
+    width: fit-content;
+}
+
 
 /* =========================================
    --- 4. 服务板块 (Services) ---
@@ -354,7 +445,10 @@ img { max-width: 100%; height: auto; }
     font-weight: 600; 
     margin-right: 15px; 
     flex-shrink: 0; 
-    width: 80px; /* 固定标签宽度 */
+    width: 100px; 
+    display: flex; 
+    align-items: center;
+    gap: 8px; 
 }
 .contact-row a { 
     color: #fff; 
@@ -365,17 +459,60 @@ img { max-width: 100%; height: auto; }
     border-color: var(--accent); 
 }
 /* 针对邮箱多行显示的容器样式 */
-.contact-row div {
+.contact-rows-group {
+    padding-bottom: 10px;
+}
+.contact-emails {
     display: flex; 
     flex-direction: column; 
     gap: 5px;
 }
+/* 优化 Contact Row 中的图标颜色 */
+.contact-row i {
+    color: var(--white); 
+}
 
 .footer-bottom { border-top: 1px solid #333; padding-top: 30px; text-align: center; font-size: 0.8rem; opacity: 0.5; }
+        
+/* 快速询价浮窗样式 */
+.sticky-cta {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary);
+    color: var(--white);
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    z-index: 900;
+    display: none; 
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.sticky-cta:hover {
+    background: var(--accent);
+    box-shadow: 0 8px 25px rgba(0, 119, 182, 0.5);
+}
 
 /* =========================================
    --- 响应式调整 (Responsive Design) ---
    ========================================= */
+
+/* 移动端菜单状态 (关键优化点) */
+.nav-links.is-open {
+    display: flex !important; /* 使用 !important 确保覆盖媒体查询中 display: none */
+    position: absolute; 
+    top: 80px; 
+    left: 0; 
+    width: 100%; 
+    background: var(--white); 
+    flex-direction: column; 
+    padding: 20px 0; 
+    border-top: 1px solid var(--border);
+}
+
 
 /* 平板设备 (最大 1024px) */
 @media (max-width: 1024px) {
@@ -384,6 +521,13 @@ img { max-width: 100%; height: auto; }
     }
     .footer-top { grid-template-columns: 1fr; gap: 40px; }
     .footer-brand-col { margin-bottom: 20px; }
+    .showcase-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .showcase-image {
+        height: 400px;
+    }
 }
 
 
@@ -399,15 +543,7 @@ img { max-width: 100%; height: auto; }
     
     /* Navbar */
     .nav-links { 
-        display: none; 
-        position: absolute; 
-        top: 80px; 
-        left: 0; 
-        width: 100%; 
-        background: var(--white); 
-        flex-direction: column; 
-        padding: 20px 0; 
-        border-top: 1px solid var(--border);
+        display: none; /* 默认隐藏，等待 JS 切换 .is-open */
     }
     .nav-links a { width: 100%; padding: 10px 20px; text-align: center; }
     .nav-links .btn-nav { margin: 10px auto; width: fit-content; }
@@ -427,6 +563,12 @@ img { max-width: 100%; height: auto; }
 
     /* Footer: 联系行样式调整 */
     .contact-row span:first-child { width: 60px; } 
+    
+    /* Hotspot 浮窗调整 */
+     .hotspot-info {
+        width: 180px;
+        font-size: 0.8rem;
+    }
 }
 
 /* 极小屏幕 (最大 480px) */
