@@ -1,132 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Industries | YiShen Global Logistics</title
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industries Served | Specialized Supply Chain Solutions - YiShen Global</title>
+    
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght=600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css">
+    <style>
+        .industries-hero {
+            padding: 150px 0 80px;
+            background: #2a3d4f; /* 沉稳的深色调 */
+            color: var(--white);
+            text-align: center;
+        }
+        .industries-hero h1 {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        .industry-sections {
+            padding: 80px 0;
+            background: var(--bg-light); 
+        }
+        .industry-block {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 60px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .industry-block:nth-child(even) {
+            flex-direction: row-reverse; 
+        }
+        .block-content {
+            flex: 2;
+        }
+        .block-content h2 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        .block-content .key-challenge {
+            display: block;
+            color: #f0ad4e; /* 警告色突出挑战 */
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .block-content ul {
+            margin-top: 15px;
+            padding-left: 0;
+        }
+        .block-content ul li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 8px;
+            color: var(--secondary);
+            font-size: 0.95rem;
+        }
+        .block-content ul li::before {
+            content: '★';
+            position: absolute; left: 0; top: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        .industry-image {
+            flex: 1;
+            min-width: 280px;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 900px) {
+            .industry-block, .industry-block:nth-child(even) {
+                flex-direction: column;
+                gap: 20px;
+                padding: 30px;
+            }
+            .industry-image {
+                width: 100%;
+                min-width: unset;
+                order: -1;
+            }
+            .industries-hero h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
-<body class="page-industries">
+<body>
 
-<header class="navbar">
-  <div class="logo">YiShen Global</div>
-  <div class="nav-toggle">
-    <span></span><span></span><span></span>
-  </div>
-  <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="solutions.html">Solutions</a>
-    <a href="industries.html" class="active">Industries</a>
-    <a href="why-us.html">Why Us</a>
-    <a href="resources.html">Resources</a>
-    <a href="contact.html" class="btn-primary btn-small">Get a Quote</a>
-  </nav>
-</header>
+    <header class="navbar" style="position: static; margin-bottom: 0; border-bottom: none;">
+        <div class="container nav-wrapper">
+            <div class="brand"><a href="index.html">YiShen Global</a></div>
+            <nav class="nav-links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#products">Collection</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#contact" class="btn-nav">Contact Us</a>
+            </nav>
+        </div>
+    </header>
 
-<main>
-  <section class="hero-inner">
-    <div class="container">
-      <h1 class="hero-title">Industries We Serve</h1>
-      <p class="hero-subtitle">
-        YiShen Global focuses on furniture and home-related categories, with tailored playbooks for different buyer types.
-      </p>
-    </div>
-  </section>
+    <section class="industries-hero">
+        <div class="container">
+            <span class="section-tag" style="color: #FFDD00; background: #2a3d4f;">Strategic Market Alignment</span>
+            <h1>Engineered Solutions for Your Business Model.</h1>
+            <p style="font-size: 1.2rem; max-width: 1000px; margin: 20px auto 0;">
+                We specialize in adapting our global supply chain to meet the unique operational demands of E-commerce, Large-Scale Retail, and Enterprise channels.
+            </p>
+        </div>
+    </section>
 
-  <section class="section section-alt">
-    <div class="container">
-      <h2 class="section-title">Furniture & Office</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Office & Mesh Chairs</h3>
-          <p>Logistics tuned for ergonomic office chairs, task chairs and mesh chairs — inspired by global brands like X-Chair and SIHOO.</p>
-        </div>
-        <div class="card">
-          <h3>Gaming Chairs</h3>
-          <p>Routes designed for gaming chair brands and distributors looking to scale into USA, EU and GCC markets.</p>
-        </div>
-        <div class="card">
-          <h3>Sofas & Recliners</h3>
-          <p>Compression and bulk shipping strategies for modern recliners, motion sofas and accent chairs.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section class="industry-sections">
+        <div class="container">
 
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">E-Commerce Sellers</h2>
-      <p class="section-subtitle">
-        From single-brand Shopify stores to omni-channel Amazon / Walmart / Noon sellers.
-      </p>
-      <div class="usp-grid">
-        <div class="usp-item">
-          <h3>Amazon / Walmart Sellers</h3>
-          <p>FBA/FBM compliant cartons, labeling and appointments, plus stock-out protection via hybrid air/sea.</p>
-        </div>
-        <div class="usp-item">
-          <h3>Shopify & DTC Brands</h3>
-          <p>Door-to-door DDP with branded unboxing and returns workflows for direct-to-consumer brands.</p>
-        </div>
-        <div class="usp-item">
-          <h3>Regional Marketplaces</h3>
-          <p>Routes optimized for GCC marketplaces (Noon, local players) and SE Asia platforms.</p>
-        </div>
-        <div class="usp-item">
-          <h3>Component & Parts Sellers</h3>
-          <p>Parcel and small-lot solutions for bases, gas lifts, armrests and other chair components.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+            <div class="industry-block">
+                <div class="industry-image" style="background-image: url('industry_dtc.jpg');">
+                    
+                </div>
+                <div class="block-content">
+                    <strong class="key-challenge"><i class="fas fa-rocket"></i> Challenge: High Return Rates & Rapid Iteration Cycles</strong>
+                    <h2>DTC E-Commerce: Agility and Consumer Trust.</h2>
+                    <p>
+                        For brands like Secretlab and Autonomous, speed, aesthetic control, and minimizing returns due to transit damage are critical. Our solution centers on agility and consumer-grade logistics.
+                    </p>
+                    <p style="font-weight: 600; color: var(--accent);">
+                        YiShen Value Proposition:
+                    </p>
+                    <ul>
+                        <li>**DTC-Ready Packaging:** Drop-test certification, ensuring products survive last-mile delivery and minimize costly returns.</li>
+                        <li>**Modular Private Labeling:** Fast-track development of new SKUs by leveraging our modular component system for quick market testing.</li>
+                        <li>**End-User Support Buffer:** Strategic US/EU spare parts inventory to quickly resolve component failures, protecting your brand's consumer ratings.</li>
+                    </ul>
+                    <a href="solutions.html" class="btn btn-primary">See DTC-Specific Solutions &rarr;</a>
+                </div>
+            </div>
 
-  <section class="section section-alt">
-    <div class="container">
-      <h2 class="section-title">Trade & OEM Partners</h2>
-      <p class="section-subtitle">Support for manufacturers, trading companies and sourcing offices.</p>
-      <div class="usp-grid">
-        <div class="usp-item">
-          <h3>Manufacturers & OEM Factories</h3>
-          <p>We help your factory offer logistics-inclusive quotes to overseas buyers with clear landed-cost models.</p>
-        </div>
-        <div class="usp-item">
-          <h3>Trading Companies</h3>
-          <p>Bundle multi-factory shipments into one controlled route with unified documents and tracking.</p>
-        </div>
-        <div class="usp-item">
-          <h3>Sourcing Offices</h3>
-          <p>Centralize your furniture logistics policy and tracking while working with multiple suppliers in China.</p>
-        </div>
-        <div class="usp-item">
-          <h3>Retail & Chain Buyers</h3>
-          <p>Store delivery plans, ASN and appointment management for domestic distribution networks.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+            <div class="industry-block">
+                <div class="industry-image" style="background-image: url('industry_retail.jpg');">
+                    
+                </div>
+                <div class="block-content">
+                    <strong class="key-challenge"><i class="fas fa-boxes"></i> Challenge: Inventory Depth, SKU Volume, and Compliance Audit</strong>
+                    <h2>Retail & Distribution: Volume, Compliance, and Depth.</h2>
+                    <p>
+                        Mass-market retailers (Staples, Office Depot) and distributors demand immense stock depth, consistent quality across massive volumes, and iron-clad regulatory compliance (BIFMA).
+                    </p>
+                    <p style="font-weight: 600; color: var(--accent);">
+                        YiShen Value Proposition:
+                    </p>
+                    <ul>
+                        <li>**Ready-to-Ship Inventory:** Access to a large buffer of common SKU inventory, meeting aggressive in-stock and restocking requirements.</li>
+                        <li>**Scale & Stability:** Verified factory capacity and multi-vendor integration (Henglin) to ensure stable supply even during peak demand cycles.</li>
+                        <li>**Predictable Global Logistics:** Comprehensive DDP solutions to manage complex import procedures and ensure compliance for all mass-market products.</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-primary">Request Ready-to-Ship Catalog &rarr;</a>
+                </div>
+            </div>
 
-  <section class="contact">
-    <div class="container contact-layout">
-      <div>
-        <h2>Not Sure Which Profile You Fit?</h2>
-        <p>Tell us briefly about your business model and target markets. We’ll map you to the right solution set.</p>
-      </div>
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name">
-        <input type="text" placeholder="Company / Brand">
-        <input type="email" placeholder="Email or WhatsApp">
-        <textarea placeholder="Describe your products and sales channels"></textarea>
-        <button type="submit" class="btn-primary">Talk to a Specialist</button>
-      </form>
-    </div>
-  </section>
-</main>
+            <div class="industry-block">
+                <div class="industry-image" style="background-image: url('industry_enterprise.jpg');">
+                    
+                </div>
+                <div class="block-content">
+                    <strong class="key-challenge"><i class="fas fa-building"></i> Challenge: Sustainability Demands & Large Project Logistics</strong>
+                    <h2>Commercial & Enterprise: Specification and ESG.</h2>
+                    <p>
+                        Large corporations and contract furniture dealers (Global Furniture Group) require high-spec, premium solutions, often with strict ESG (Environmental, Social, Governance) and sustainability requirements.
+                    </p>
+                    <p style="font-weight: 600; color: var(--accent);">
+                        YiShen Value Proposition:
+                    </p>
+                    <ul>
+                        <li>**Sustainability Certifications:** Access to materials (e.g., recycled polymers, patented foam) and documentation required for LEED or WELL Building standards.</li>
+                        <li>**High-Spec Customization:** Fine-tuned engineering services to meet precise material, durability, and fire safety codes for commercial contracts.</li>
+                        <li>**End-to-End Project Management:** Handling complex delivery schedules, sequencing, and staging for large office fit-out projects.</li>
+                    </ul>
+                    <a href="resources.html" class="btn btn-primary">Download Commercial Project Guide &rarr;</a>
+                </div>
+            </div>
 
-<footer>
-  © 2025 YiShen Global Logistics. All rights reserved.
-</footer>
+        </div>
+    </section>
 
-<script src="script.js"></script>
+    <section class="cta-banner" style="background: var(--accent); color: var(--white); padding: 50px 0; text-align: center;">
+        <div class="container">
+            <h2 style="font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 15px;">Your Industry Demands Specialized Expertise.</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9;">
+                Let us align our supply chain strategy precisely with your market's operational rhythm.
+            </p>
+            <a href="index.html#contact" class="btn btn-primary" style="background: #FFDD00; color: var(--primary); border-color: #FFDD00;">Schedule Your Strategic Consultation</a>
+        </div>
+    </section>
+    
+    <footer class="footer" style="padding: 40px 0 20px; background: #111;">
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2025 YiShen Global. All rights reserved. | <a href="index.html#contact" style="color: var(--accent);">Get in Touch</a></p>
+        </div>
+    </footer>
+
 </body>
 </html>
