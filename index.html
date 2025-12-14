@@ -85,7 +85,7 @@
             font-size: 2.5rem;
             font-weight: 700;
         }
-        /* 移动端强制修复 */
+        /* 移动端修复：防止导航链接和统计数据在小屏幕上挤压 */
         @media (max-width: 768px) {
             .nav-links {
                 display: none !important; /* 移动端默认隐藏，通过 JS 切换 */
@@ -149,7 +149,7 @@
     </header>
 
         <section id="home" class="hero">
-        <div class="hero-bg" style="background-image: url('banner2.jpg');"></div>
+                <div class="hero-bg" style="background-image: url('banner2.jpg');"></div> 
         <div class="container hero-content">
             <div style="text-align: center; margin-bottom: 20px;">
                 <h1>Supply Chain Predictability. Engineered for DTC Growth.</h1>
@@ -193,7 +193,7 @@
             <p style="font-size: 0.9rem; color: var(--secondary); margin-bottom: 20px; font-weight: 600;">
                 Trusted by Global Retailers and DTC Innovators
             </p>
-            <div class="logo-grid">
+                        <div class="logo-grid">
                 <img src="logo-staples.svg" alt="Staples Logo" style="height: 30px;">
                 <img src="logo-office-depot.svg" alt="Office Depot Logo" style="height: 30px;">
                 <img src="logo-autonomous.svg" alt="Autonomous Logo" style="height: 30px;">
@@ -206,8 +206,7 @@
         <section id="cross-sbu-case" class="about-section" style="padding: 80px 0; background: #fff;">
         <div class="container about-wrapper" style="align-items: flex-start;">
             <div class="about-image" style="flex: 1; background-image: url('industrial-furniture-integration.jpg');">
-                
-            </div>
+                            </div>
             
             <div class="about-text" style="flex: 1.5;">
                 <span class="section-tag" style="color: var(--secondary);">CROSS-ECOSYSTEM VALUE</span>
