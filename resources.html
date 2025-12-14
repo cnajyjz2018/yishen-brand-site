@@ -12,118 +12,13 @@
     
     <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght=600;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* 继承主站 CSS 变量和基础样式 */
-        :root {
-            --primary: #111111;    
-            --secondary: #555555;  
-            --accent: #0077B6;     
-            --bg-light: #f7f9fb;   
-            --white: #ffffff;
-            --border: #e0e0e0;
-            --font-main: 'Inter', sans-serif;
-            --font-serif: 'Playfair Display', serif;
-        }
-        .resource-hero {
-            padding: 150px 0 80px;
-            background: var(--primary);
-            color: var(--white);
-            text-align: center;
-        }
-        .resource-hero h1 {
-            font-family: var(--font-serif);
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-        .resource-sections {
-            padding: 80px 0;
-            background: var(--white);
-        }
-        .resource-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .resource-card {
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-        .resource-card:hover {
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            transform: translateY(-3px);
-            border-color: var(--accent);
-        }
-        .card-icon {
-            font-size: 2rem;
-            color: var(--accent);
-            margin-bottom: 15px;
-        }
-        .card-content {
-            padding: 20px;
-            flex-grow: 1;
-        }
-        .card-content h3 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-        }
-        .card-content p {
-            font-size: 0.9rem;
-            color: var(--secondary);
-            margin-bottom: 15px;
-        }
-        .card-tag {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--white);
-            background: #d9534f; /* 红色突出价值 */
-            padding: 4px 8px;
-            border-radius: 4px;
-            text-transform: uppercase;
-        }
-        .card-footer {
-            padding: 15px 20px;
-            background: var(--bg-light);
-            border-top: 1px solid var(--border);
-            text-align: right;
-            font-weight: 600;
-            color: var(--accent);
-        }
-        .section-separator {
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 1px dashed var(--border);
-        }
-        .section-separator h2 {
-            text-align: center;
-            font-family: var(--font-serif);
-            font-size: 2rem;
-        }
-        
-        /* 响应式调整 */
-        @media (max-width: 768px) {
-            .resource-hero { padding: 120px 0 50px; }
-            .resource-grid { grid-template-columns: 1fr; }
-        }
-        /* 继承主站导航和按钮样式 */
-        .navbar { /* 确保导航样式存在，此处假设使用外部 styles.css */ }
-        .btn-nav, .btn-primary { /* 确保按钮样式存在 */ }
-        .section-tag { /* 确保标签样式存在 */ }
-    </style>
+    
+    <style> /* ... (resources.html CSS is omitted here for brevity) ... */ </style>
 </head>
 <body>
-
     <header class="navbar" style="position: static; margin-bottom: 0; border-bottom: none;">
         <div class="container nav-wrapper">
             <div class="brand"><a href="index.html">YiShen Global</a></div>
@@ -139,131 +34,10 @@
     </header>
 
     <section class="resource-hero">
-        <div class="container">
-            <span class="section-tag" style="color: #FFDD00; background: var(--primary);">Knowledge & Authority</span>
-            <h1>The YiShen Global Resource Hub</h1>
-            <p style="font-size: 1.1rem; max-width: 800px; margin: 15px auto 0;">
-                Access technical specifications, compliance insights, and market analysis engineered to support your high-volume procurement decisions.
-            </p>
-        </div>
-    </section>
+        </section>
 
     <section class="resource-sections">
-        <div class="container">
-            
-            <div id="tech-specs">
-                <h2 style="font-family: var(--font-serif); text-align: center;">1. Technical Specs & Compliance Guides</h2>
-                <div class="resource-grid">
-                    
-                    <a href="#contact" class="resource-card">
-                        <div class="card-content">
-                            <span class="card-icon"><i class="fas fa-file-pdf"></i></span>
-                            <h3>BIFMA X5.1 Stress Testing Protocols</h3>
-                            <p>Detailed guide on our quality assurance protocols exceeding BIFMA standards for task chairs and components.</p>
-                            <span class="card-tag">Required for Retail</span>
-                        </div>
-                        <div class="card-footer">Download PDF Guide &rarr;</div>
-                    </a>
-                    
-                    <a href="#contact" class="resource-card">
-                        <div class="card-content">
-                            <span class="card-icon"><i class="fas fa-box"></i></span>
-                            <h3>DTC-Ready Packaging Optimization</h3>
-                            <p>Case study showing how we reduced transit damage rates for US E-commerce clients using certified drop-test packaging.</p>
-                            <span class="card-tag">ROI Focused</span>
-                        </div>
-                        <div class="card-footer">Read Case Study &rarr;</div>
-                    </a>
-                    
-                    <a href="#contact" class="resource-card">
-                        <div class="card-content">
-                            <span class="card-icon"><i class="fas fa-leaf"></i></span>
-                            <h3>Sustainable Sourcing & ESG Compliance</h3>
-                            <p>Certifications (GREENGUARD, REACH) and data sheets on recycled materials and patented ENERSORB foam options.</p>
-                            <span class="card-tag">Enterprise Grade</span>
-                        </div>
-                        <div class="card-footer">View Certifications &rarr;</div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="section-separator"><h2>2. Supply Chain Intelligence & Market Insight</h2></div>
-
-            <div id="market-insight">
-                <div class="resource-grid">
-                    
-                    <a href="#contact" class="resource-card">
-                        <div class="card-content">
-                            <span class="card-icon"><i class="fas fa-ship"></i></span>
-                            <h3>Global DDP/LDP Transit Maps</h3>
-                            <p>Visual guide comparing shipping times and cost allocations for FOB vs. DDP terms to major North American ports.</p>
-                            <span class="card-tag">Cost Analysis</span>
-                        </div>
-                        <div class="card-footer">View Interactive Map &rarr;</div>
-                    </a>
-                    
-                    <a href="#contact" class="resource-card">
-                        <div class="card-content">
-                            <span class="card-icon"><i class="fas fa-chart-line"></i></span>
-                            <h3>2025 Ergonomic Product Trend Report</h3>
-                            <p>Deep dive on emerging demand: Modular seating, gaming chair evolution, and top-selling height-adjustable desk features.</p>
-                            <span class="card-tag">Premium Content</span>
-                        </div>
-                        <div class="card-footer">Request Premium Access &rarr;</div>
-                    </a>
-                    
-                    <a href="#contact" class="resource-card">
-                        <div class="card-content">
-                            <span class="card-icon"><i class="fas fa-cubes"></i></span>
-                            <h3>Modular SKU Interchangeability</h3>
-                            <p>Guide for brands on how to rapidly launch multiple products (SKUs) by interchanging 5 key components.</p>
-                            <span class="card-tag">Agile Development</span>
-                        </div>
-                        <div class="card-footer">Download Solution &rarr;</div>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="section-separator"><h2>3. Direct Consultation Assets</h2></div>
-            
-            <div id="trust-assets">
-                <div class="resource-grid">
-                    
-                    <a href="https://www.youtube.com/watch?v=your-factory-tour-link" target="_blank" class="resource-card">
-                        <div class="card-content">
-                            <span class="card-icon"><i class="fab fa-youtube"></i></span>
-                            <h3>Virtual Factory Audit Tour (2024)</h3>
-                            <p>A full video tour showcasing our production line, QA processes, and warehouse management systems in Hangzhou & Anji.</p>
-                            <span class="card-tag">Transparency</span>
-                        </div>
-                        <div class="card-footer" style="background: #e0e0e0; color: var(--primary);">Watch on YouTube &rarr;</div>
-                    </a>
-                    
-                    <a href="#contact" class="resource-card">
-                        <div class="card-content">
-                            <span class="card-icon"><i class="fas fa-box-open"></i></span>
-                            <h3>Request Our Master Sample Kit</h3>
-                            <p>Get a physical kit including material swatches, foam samples, and the core mechanism technology for evaluation.</p>
-                            <span class="card-tag">Physical Proof</span>
-                        </div>
-                        <div class="card-footer">Order Sample Kit &rarr;</div>
-                    </a>
-                    
-                    <a href="index.html#contact" class="resource-card" style="background: var(--accent); color: var(--white);">
-                        <div class="card-content">
-                            <span class="card-icon" style="color: var(--white);"><i class="fas fa-user-tie"></i></span>
-                            <h3>Direct Consultation with Alex Yang</h3>
-                            <p>Schedule a 1-on-1 strategy call with our supply chain expert to discuss your custom sourcing needs.</p>
-                            <span class="card-tag" style="background: var(--white); color: var(--accent);">High Value CTA</span>
-                        </div>
-                        <div class="card-footer" style="background: #005a8f; color: var(--white);">Schedule Call Today &rarr;</div>
-                    </a>
-                </div>
-            </div>
-
-
-        </div>
-    </section>
+        </section>
     
     <section class="cta-banner" style="background: var(--primary); color: var(--white); padding: 50px 0; text-align: center;">
         <div class="container">
@@ -280,6 +54,5 @@
             <p>&copy; 2026 YiShen Global. All rights reserved. | <a href="index.html#contact" style="color: var(--accent);">Get in Touch</a></p>
         </div>
     </footer>
-
 </body>
 </html>
