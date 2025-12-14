@@ -6,7 +6,7 @@
     --primary: #111111;    /* 主要文本/深色背景 */
     --secondary: #555555;  /* 次要文本 */
     --accent: #0077B6;     /* 强调色 (专业蓝) */
-    --bg-light: #f7f9fb;   /* 浅背景色 (比原先的f4f6f8更柔和) */
+    --bg-light: #f7f9fb;   /* 浅背景色 */
     --white: #ffffff;
     --border: #e0e0e0;
     --font-main: 'Inter', sans-serif;
@@ -36,6 +36,14 @@ img { max-width: 100%; height: auto; }
     text-transform: uppercase; 
     letter-spacing: 1px; 
     margin-bottom: 10px; 
+}
+
+/* 通用标题样式 */
+.hero h1 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    line-height: 1.2;
 }
 
 /* 通用按钮样式 (兼容您的 HTML 类名) */
@@ -114,11 +122,10 @@ img { max-width: 100%; height: auto; }
 
 .hero-bg {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    /* 请在这里或 HTML 中设置正确的图片路径 */
-    background-image: url('banner2.jpg'); 
     background-size: cover; 
     background-position: center;
     opacity: 1; 
+    background-image: url('banner2.jpg'); /* 默认路径 */
 }
 
 .hero-content { 
@@ -137,7 +144,7 @@ img { max-width: 100%; height: auto; }
     display: flex; 
     gap: 15px; 
     padding: 20px;
-    background: rgba(0,0,0,0.2); /* 降低透明度，适应图片 */
+    background: rgba(0,0,0,0.2); 
     border-radius: 50px;
     backdrop-filter: blur(3px);
 }
@@ -218,8 +225,6 @@ img { max-width: 100%; height: auto; }
     background-position: center; 
     border-radius: 12px; 
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    /* 默认背景，请务必在 HTML 中替换为实际图片 */
-    background-image: url('https://images.unsplash.com/photo-1664575602276-acd073f104c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
 }
 
 /* =========================================
@@ -269,11 +274,44 @@ img { max-width: 100%; height: auto; }
     padding: 25px;
 }
 .category-content h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 5px; color: #fff; }
-.category-content p { font-size: 0.9rem; opacity: 0.8; margin-bottom: 15px; color: #ddd; }
+
+/* 价格和描述容器 */
+.product-meta { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 10px; 
+}
+
+.category-content p { 
+    font-size: 0.9rem; 
+    opacity: 0.8; 
+    color: #ddd; 
+    margin: 0;
+}
+
+/* ⭐ CTA/Hook Signal 标签样式 (统一) ⭐ */
+.product-tag { 
+    font-size: 0.8rem; 
+    font-weight: 600; 
+    color: var(--accent); /* 使用强调蓝 */
+    background: var(--white);
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    /* 增加科技感边框 */
+    border: 1px solid var(--accent); 
+    /* 模仿 Autonomous/科技感 */
+    box-shadow: 0 0 5px rgba(0, 119, 182, 0.5); 
+}
+
+/* 统一的 CTA 按钮样式 */
 .view-btn {
     font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
-    color: var(--accent); background: #fff;
-    padding: 6px 14px; border-radius: 20px;
+    color: var(--accent); background: var(--white);
+    padding: 8px 16px; 
+    border-radius: 4px; 
     display: inline-block; width: fit-content;
     opacity: 0; transform: translateY(20px);
     transition: all 0.4s ease;
@@ -289,7 +327,7 @@ img { max-width: 100%; height: auto; }
    ========================================= */
 .services-section { padding: 100px 0; background: var(--white); }
 .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-.service-card { padding: 30px; border: 1px solid var(--border); border-radius: 8px; transition: 0.3s; height: 100%; } /* 确保卡片等高 */
+.service-card { padding: 30px; border: 1px solid var(--border); border-radius: 8px; transition: 0.3s; height: 100%; } 
 .service-card:hover { border-color: var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.05); transform: translateY(-3px); }
 .service-card .icon { font-size: 2.5rem; margin-bottom: 20px; color: var(--accent); }
 .service-card h3 { font-size: 1.2rem; margin-bottom: 10px; color: var(--primary); }
@@ -341,11 +379,9 @@ img { max-width: 100%; height: auto; }
 
 /* 平板设备 (最大 1024px) */
 @media (max-width: 1024px) {
-    /* Products: 3列改为2列 */
     .category-grid { 
         grid-template-columns: repeat(2, 1fr); 
     }
-    /* Footer: 变为单列 */
     .footer-top { grid-template-columns: 1fr; gap: 40px; }
     .footer-brand-col { margin-bottom: 20px; }
 }
@@ -358,11 +394,11 @@ img { max-width: 100%; height: auto; }
     
     /* Hero */
     .hero { margin-top: 60px; height: 60vh; }
+    .hero h1 { font-size: 2.5rem; }
     .hero-btns { flex-direction: column; gap: 10px; padding: 15px; }
     
     /* Navbar */
     .nav-links { 
-        /* 移动端菜单样式（需要 JS 配合切换 display:flex） */
         display: none; 
         position: absolute; 
         top: 80px; 
@@ -376,7 +412,7 @@ img { max-width: 100%; height: auto; }
     .nav-links a { width: 100%; padding: 10px 20px; text-align: center; }
     .nav-links .btn-nav { margin: 10px auto; width: fit-content; }
 
-    .menu-toggle { display: block; } /* 显示菜单按钮 */
+    .menu-toggle { display: block; } 
 
     /* About: 2列改为1列 */
     .about-wrapper { grid-template-columns: 1fr; gap: 30px; }
@@ -395,7 +431,7 @@ img { max-width: 100%; height: auto; }
 
 /* 极小屏幕 (最大 480px) */
 @media (max-width: 480px) {
-    .stats-grid { grid-template-columns: 1fr; } /* Stats 变为单列 */
+    .stats-grid { grid-template-columns: 1fr; } 
     .stat-number { font-size: 2rem; }
     .about-text h2 { font-size: 1.8rem; }
     .contact-row { flex-direction: column; align-items: flex-start; }
