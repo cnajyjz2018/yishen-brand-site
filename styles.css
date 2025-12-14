@@ -13,6 +13,11 @@
     --border: #e0e0e0;
     --font-main: 'Inter', sans-serif;
     --font-serif: 'Playfair Display', serif;
+    
+    /* NEW: 战略部门颜色变量 */
+    --color-lifestyle: #FFC300; 
+    --color-industrial: #333333; 
+    --color-hightech: #007bff; 
 }
 
 * { 
@@ -158,21 +163,21 @@ img { 
     border: 2px solid #00BFFF; 
     border-radius: 50%;
     transform: rotate(30deg);
-    /* NEW: 动画优化 */
-    animation: rotate-logo 5s linear infinite;
+    /* NEW: 动画优化 */
+    animation: rotate-logo 5s linear infinite;
 }
 .logo-icon::after {
     transform: rotate(-30deg);
-    animation: rotate-logo-reverse 7s linear infinite;
+    animation: rotate-logo-reverse 7s linear infinite;
 }
 
 @keyframes rotate-logo {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 @keyframes rotate-logo-reverse {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(-360deg); }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
 }
 
 /* ⭐ LOGO 样式结束 ⭐ */
@@ -261,13 +266,13 @@ img { 
     gap: 20px; 
 }
 .stat-item {
-    /* NEW: 增强交互性 */
-    transition: background 0.3s;
-    padding: 10px 0;
-    border-radius: 4px;
+    /* NEW: 增强交互性 */
+    transition: background 0.3s;
+    padding: 10px 0;
+    border-radius: 4px;
 }
 .stat-item:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
 }
 .stat-number { 
     display: block; 
@@ -284,11 +289,11 @@ img { 
 }
 /* NEW: Stats Link */
 .stat-link {
-    display: block;
-    font-size: 0.8rem;
-    color: #FFC300; /* 金黄色 */
-    margin-top: 5px;
-    font-weight: 500;
+    display: block;
+    font-size: 0.8rem;
+    color: #FFC300; /* 金黄色 */
+    margin-top: 5px;
+    font-weight: 500;
 }
 
 
@@ -386,22 +391,22 @@ img { 
 
 /* NEW: Vertical Control Grid Styles */
 #vertical-control .expertise-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 20px;
 }
 #vertical-control .control-point {
-    background: var(--white);
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    background: var(--white);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 #vertical-control .control-point h4 {
-    font-size: 1rem;
-    margin-bottom: 5px;
+    font-size: 1rem;
+    margin-bottom: 5px;
 }
 #vertical-control .control-point p {
-    font-size: 0.85rem;
-    color: var(--secondary);
+    font-size: 0.85rem;
+    color: var(--secondary);
 }
 /* END NEW: Vertical Control Grid Styles */
 
@@ -434,33 +439,33 @@ img { 
 }
 /* NEW: Catalog card styling for better visibility */
 .mesh-chair-card {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
 }
 .mesh-chair-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
 .mesh-chair-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    background: #e9e9e9;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: #e9e9e9;
 }
 .mesh-chair-content {
-    padding: 15px;
+    padding: 15px;
 }
 .mesh-chair-content h4 {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-    color: var(--primary);
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--primary);
 }
 .mesh-chair-content .sku-meta {
-    font-size: 0.85rem;
-    color: var(--secondary);
+    font-size: 0.85rem;
+    color: var(--secondary);
 }
 
 
@@ -668,10 +673,10 @@ img { 
     margin-bottom: 20px; 
 }
 .footer-contact-col h4 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    font-family: var(--font-serif);
-    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-family: var(--font-serif);
+    color: var(--accent);
 }
 .contact-row { 
     display: flex; 
@@ -730,49 +735,49 @@ img { 
 }
 
 /* =========================================
-   --- NEW EXPANSION STYLES (V11.0) ---
-   ========================================= */
+   --- NEW EXPANSION STYLES (V11.0) ---
+   ========================================= */
 
 /* NEW: Strategic Portfolio Overview (3-Column Grid) */
 #portfolio-overview {
-    padding: 100px 0;
-    background: var(--bg-light);
+    padding: 100px 0;
+    background: var(--bg-light);
 }
 #portfolio-overview .service-card {
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 #portfolio-overview .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 #portfolio-overview .service-card .icon i {
-    font-size: 3rem;
-    margin-bottom: 10px;
+    font-size: 3rem;
+    margin-bottom: 10px;
 }
 #portfolio-overview .service-card h3 {
-    font-size: 1.3rem;
-    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-family: var(--font-serif);
 }
 #portfolio-overview .service-card p {
-    font-size: 0.95rem;
+    font-size: 0.95rem;
 }
 
 
 /* NEW: Cross-SBU Case Study Styles */
 #cross-sbu-case .about-wrapper {
-    grid-template-columns: 1fr 1.5fr; /* Adjust column ratio for case study */
-    gap: 70px;
+    grid-template-columns: 1fr 1.5fr; /* Adjust column ratio for case study */
+    gap: 70px;
 }
 #cross-sbu-case .about-image {
-    height: 450px;
-    background-size: cover;
-    background-position: center;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
 }
 #cross-sbu-case .expertise-list li {
-    color: #333;
+    color: #333;
 }
 #cross-sbu-case .expertise-list strong {
-    color: var(--accent);
+    color: var(--accent);
 }
 
 /* =========================================
@@ -806,13 +811,13 @@ img { 
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    /* NEW: Adjust portfolio overview */
-    #portfolio-overview .service-grid {
-        grid-template-columns: 1fr;
-    }
-    #cross-sbu-case .about-wrapper {
-        grid-template-columns: 1fr;
-    }
+    /* NEW: Adjust portfolio overview */
+    #portfolio-overview .service-grid {
+        grid-template-columns: 1fr;
+    }
+    #cross-sbu-case .about-wrapper {
+        grid-template-columns: 1fr;
+    }
 }
 
 
@@ -855,13 +860,13 @@ img { 
         grid-template-columns: repeat(2, 1fr); 
         gap: 20px; 
     }
-    /* NEW: Mobile specific fixes */
-    #vertical-control .about-wrapper {
-        grid-template-columns: 1fr;
-    }
-    #vertical-control .expertise-grid {
-        grid-template-columns: 1fr;
-    }
+    /* NEW: Mobile specific fixes */
+    #vertical-control .about-wrapper {
+        grid-template-columns: 1fr;
+    }
+    #vertical-control .expertise-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* 极小屏幕 (最大 480px) */
@@ -876,8 +881,19 @@ img { 
 }
 
 /* --- 子页面通用样式 (Solutions, Industries, Why-Us) --- */
+
+/* NEW: Subpage Hero Top Margin Fix */
 .solutions-hero, .why-us-hero, .industries-hero {
-    padding: 150px 0 80px;
+    /* Padding retained from original (150px 0 80px) */
+    padding-top: 150px; 
     color: var(--white);
     text-align: center;
+    /* Ensure there is enough space below the 80px fixed navbar */
+    margin-top: 0; 
+}
+/* This style ensures non-fixed navbar version of these pages aligns correctly when header is 'static' */
+header.navbar[style*="position: static"] + .solutions-hero,
+header.navbar[style*="position: static"] + .why-us-hero,
+header.navbar[style*="position: static"] + .industries-hero {
+    padding-top: 80px; /* Reduces top padding when the navbar is static */
 }
