@@ -1,11 +1,13 @@
 /* =========================================
-   --- 基础设置与通用变量 ---
+   YiShen Global B2B - styles.css
+   最终权威版样式表 (2026 Ready)
    ========================================= */
+
+/* --- 基础设置与通用变量 --- */
 :root {
-    /* 专业和沉稳的配色方案 */
-    --primary: #111111;    /* 主要文本/深色背景 */
-    --secondary: #555555;  /* 次要文本 */
-    --accent: #0077B6;     /* 强调色 (专业蓝) */
+    --primary: #111111;    
+    --secondary: #555555;  
+    --accent: #0077B6;     /* 核心强调色：深蓝色 */
     --bg-light: #f7f9fb;   /* 浅背景色 */
     --white: #ffffff;
     --border: #e0e0e0;
@@ -13,7 +15,11 @@
     --font-serif: 'Playfair Display', serif;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
 body {
     font-family: var(--font-main);
@@ -23,11 +29,25 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-a { text-decoration: none; color: inherit; transition: 0.3s; }
-ul { list-style: none; padding-left: 0; }
-img { max-width: 100%; height: auto; }
+a { 
+    text-decoration: none; 
+    color: inherit; 
+    transition: 0.3s; 
+}
+ul { 
+    list-style: none; 
+    padding-left: 0; 
+}
+img { 
+    max-width: 100%; 
+    height: auto; 
+}
 
-.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+.container { 
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
 .section-tag { 
     display: block; 
     font-size: 0.85rem; 
@@ -46,7 +66,7 @@ img { max-width: 100%; height: auto; }
     line-height: 1.2;
 }
 
-/* 通用按钮样式 (兼容您的 HTML 类名) */
+/* --- 通用按钮样式 --- */
 .btn {
     padding: 12px 25px;
     border-radius: 4px;
@@ -76,6 +96,17 @@ img { max-width: 100%; height: auto; }
     background: rgba(255,255,255,0.1); 
     color: var(--white); 
 }
+.text-link { 
+    display: inline-block;
+    color: var(--accent); 
+    font-weight: 700; 
+    text-decoration: none; 
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+}
+.text-link:hover { 
+    border-bottom-color: var(--accent); 
+}
 
 
 /* =========================================
@@ -88,12 +119,30 @@ img { max-width: 100%; height: auto; }
     z-index: 1000;
     display: flex; align-items: center;
 }
-.nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
-.brand { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 700; color: var(--primary); }
-.nav-links { display: flex; gap: 30px; align-items: center; }
-.nav-links a { font-size: 0.95rem; font-weight: 500; color: var(--primary); }
-.nav-links a:hover { color: var(--accent); }
-/* 导航栏中的 Contact Us 按钮 */
+.nav-wrapper { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+.brand { 
+    font-family: var(--font-serif); 
+    font-size: 1.8rem; 
+    font-weight: 700; 
+    color: var(--primary); 
+}
+.nav-links { 
+    display: flex; 
+    gap: 30px; 
+    align-items: center; 
+}
+.nav-links a { 
+    font-size: 0.95rem; 
+    font-weight: 500; 
+    color: var(--primary); 
+}
+.nav-links a:hover { 
+    color: var(--accent); 
+}
 .nav-links .btn-nav { 
     padding: 8px 18px; 
     background: var(--accent); 
@@ -103,11 +152,19 @@ img { max-width: 100%; height: auto; }
     text-transform: uppercase;
     border: none;
 }
-.nav-links .btn-nav:hover { background: #005a8f; }
-.menu-toggle { display: none; border: none; background: none; font-size: 1.5rem; cursor: pointer; }
+.nav-links .btn-nav:hover { 
+    background: #005a8f; 
+}
+.menu-toggle { 
+    display: none; 
+    border: none; 
+    background: none; 
+    font-size: 1.5rem; 
+    cursor: pointer; 
+}
 
 /* =========================================
-   --- Hero Section & Stats Bar ---
+   --- Hero Section & Trust Elements ---
    ========================================= */
 .hero {
     height: 90vh; 
@@ -124,7 +181,7 @@ img { max-width: 100%; height: auto; }
     background-size: cover; 
     background-position: center;
     opacity: 1; 
-    background-image: url('banner2.jpg'); 
+    background-image: url('banner2.jpg'); /* Assume this is in the root */
 }
 .hero-content { 
     position: relative; 
@@ -145,17 +202,63 @@ img { max-width: 100%; height: auto; }
     border-radius: 50px;
     backdrop-filter: blur(3px);
 }
-.stats-bar { background: var(--primary); padding: 40px 0; color: var(--white); }
-.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; gap: 20px; }
-.stat-number { display: block; font-size: 2.5rem; font-weight: 700; color: var(--accent); font-family: var(--font-serif); }
-.stat-label { font-size: 0.9rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; }
+.stats-bar { 
+    background: var(--primary); 
+    padding: 40px 0; 
+    color: var(--white); 
+}
+.stats-grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    text-align: center; 
+    gap: 20px; 
+}
+.stat-number { 
+    display: block; 
+    font-size: 2.5rem; 
+    font-weight: 700; 
+    color: var(--accent); 
+    font-family: var(--font-serif); 
+}
+.stat-label { 
+    font-size: 0.9rem; 
+    opacity: 0.8; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
+
+/* Logo Bar (信任信号) */
+.logo-bar { 
+    padding: 30px 0; 
+    background: var(--white); 
+    border-bottom: 1px solid var(--border); 
+}
+.logo-grid { 
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+    opacity: 0.7; 
+    max-width: 900px; 
+    margin: 0 auto; 
+}
+.logo-grid img { 
+    height: 30px; /* Logo 尺寸控制 */
+}
+
 
 /* =========================================
    --- 2. 关于我们 (About Section) ---
    ========================================= */
-.about-section { padding: 100px 0; background: var(--white); }
-.about-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
-
+.about-section { 
+    padding: 100px 0; 
+    background: var(--white); 
+}
+.about-wrapper { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 70px; 
+    align-items: center; 
+}
 .about-text h2 { 
     font-family: var(--font-serif); 
     font-size: 2.8rem; 
@@ -169,7 +272,6 @@ img { max-width: 100%; height: auto; }
     margin-bottom: 30px;
     line-height: 1.8;
 }
-/* 核心见解框 */
 .insight-box {
     background: var(--bg-light); 
     border-left: 4px solid var(--accent); 
@@ -177,15 +279,29 @@ img { max-width: 100%; height: auto; }
     margin-bottom: 30px;
     border-radius: 0 8px 8px 0;
 }
-.insight-box strong { display: block; color: var(--accent); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
-.insight-box p { margin: 0; color: var(--primary); font-style: italic; font-weight: 500; font-size: 1.05rem; }
-.insight-box em { color: #000; font-style: normal; font-weight: 700; }
-/* 专业列表样式 */
-.expertise-list { margin-bottom: 35px; padding-left: 0; }
+.insight-box strong { 
+    display: block; 
+    color: var(--accent); 
+    margin-bottom: 8px; 
+    font-size: 0.9rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
+.insight-box p { 
+    margin: 0; 
+    color: var(--primary); 
+    font-style: italic; 
+    font-weight: 500; 
+    font-size: 1.05rem; 
+}
+.expertise-list { 
+    margin-bottom: 35px; 
+    padding-left: 0; 
+}
 .expertise-list li {
-    margin-bottom: 12px;
     padding-left: 25px;
     position: relative;
+    margin-bottom: 12px;
     color: var(--secondary);
     font-size: 0.95rem;
 }
@@ -195,16 +311,6 @@ img { max-width: 100%; height: auto; }
     color: var(--accent);
     font-weight: bold;
 }
-.expertise-list strong { color: var(--primary); font-weight: 600; }
-.text-link { 
-    display: inline-block;
-    color: var(--accent); 
-    font-weight: 700; 
-    text-decoration: none; 
-    border-bottom: 2px solid transparent;
-    transition: 0.3s;
-}
-.text-link:hover { border-bottom-color: var(--accent); }
 .about-image { 
     height: 550px; 
     background-size: cover; 
@@ -216,7 +322,10 @@ img { max-width: 100%; height: auto; }
 /* =========================================
    --- 3. 产品展示 (Products & Catalog) ---
    ========================================= */
-.products { padding: 100px 0; background: var(--bg-light); }
+.products { 
+    padding: 100px 0; 
+    background: var(--bg-light); 
+}
 .section-title { 
     text-align: center; 
     margin-bottom: 80px; 
@@ -224,23 +333,18 @@ img { max-width: 100%; height: auto; }
     margin-left: auto; 
     margin-right: auto; 
 }
-.section-title h2 { font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 15px; }
+.section-title h2 { 
+    font-family: var(--font-serif); 
+    font-size: 2.5rem; 
+    margin-bottom: 15px; 
+}
 
-/* 筛选中心样式 */
+/* SKU 筛选/展示区域 */
 .mesh-chair-results-grid {
-     display: grid; 
-     grid-template-columns: repeat(3, 1fr); 
-     gap: 25px;
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px;
 }
-.sku-card .category-card { 
-    height: 250px !important; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08); 
-}
-.sku-card .category-content { padding: 15px !important; }
-.sku-card .product-tag { font-size: 0.75rem; }
-
-
-/* 3列布局 */
 .category-grid { 
     display: grid; 
     grid-template-columns: repeat(3, 1fr); 
@@ -276,7 +380,12 @@ img { max-width: 100%; height: auto; }
     display: flex; flex-direction: column; justify-content: flex-end;
     padding: 25px;
 }
-.category-content h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 5px; color: #fff; }
+.category-content h3 { 
+    font-size: 1.3rem; 
+    font-weight: 700; 
+    margin-bottom: 5px; 
+    color: #fff; 
+}
 .product-meta { 
     display: flex; 
     justify-content: space-between; 
@@ -289,7 +398,7 @@ img { max-width: 100%; height: auto; }
     color: #ddd; 
     margin: 0;
 }
-/* CTA/Hook Signal 标签样式 (统一) */
+/* 核心营销标签 (Tri-Channel Signal) */
 .product-tag { 
     font-size: 0.8rem; 
     font-weight: 600; 
@@ -302,24 +411,19 @@ img { max-width: 100%; height: auto; }
     border: 1px solid var(--accent); 
     box-shadow: 0 0 5px rgba(0, 119, 182, 0.5); 
 }
-/* 统一的 CTA 按钮样式 */
-.view-btn {
-    font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
-    color: var(--accent); background: var(--white);
-    padding: 8px 16px; 
-    border-radius: 4px; 
-    display: inline-block; width: fit-content;
-    opacity: 0; transform: translateY(20px);
-    transition: all 0.4s ease;
+/* 卡片悬停效果 */
+.category-card:hover .category-bg { 
+    transform: scale(1.1); 
 }
-.category-card:hover .category-bg { transform: scale(1.1); }
-.category-card:hover::after { background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)); }
-.category-card:hover .view-btn { opacity: 1; transform: translateY(0); }
-.view-more-container { text-align: center; margin-top: 50px; }
-    
-/* =========================================
-   --- 沉浸式产品展示 (Showcase) ---
-   ========================================= */
+.category-card:hover::after { 
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)); 
+}
+.view-more-container { 
+    text-align: center; 
+    margin-top: 50px; 
+}
+            
+/* --- 产品 Showcase (热点图) --- */
 .product-showcase-container {
     padding: 80px 0;
     background: var(--white);
@@ -337,7 +441,7 @@ img { max-width: 100%; height: auto; }
     background-repeat: no-repeat;
     background-position: center;
 }
-/* 模仿 X-Chair 的技术热点 (Hotspots) */
+/* Hotspot styles */
 .hotspot {
     position: absolute;
     width: 25px;
@@ -377,12 +481,6 @@ img { max-width: 100%; height: auto; }
     margin-bottom: 8px;
     font-weight: 700;
 }
-.hotspot-info span {
-    display: block;
-    margin-top: 5px;
-    font-weight: 500;
-}
-/* 垂直专家卖点标签 (Loctek/Nightingale 借鉴) */
 .tech-spec {
     display: block; 
     color: var(--primary); 
@@ -399,25 +497,61 @@ img { max-width: 100%; height: auto; }
 /* =========================================
    --- 4. 服务板块 (Services) ---
    ========================================= */
-.services-section { padding: 100px 0; background: var(--white); }
-.service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-.service-card { padding: 30px; border: 1px solid var(--border); border-radius: 8px; transition: 0.3s; height: 100%; } 
-.service-card:hover { border-color: var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.05); transform: translateY(-3px); }
-.service-card .icon { font-size: 2.5rem; margin-bottom: 20px; color: var(--accent); }
-.service-card h3 { font-size: 1.2rem; margin-bottom: 10px; color: var(--primary); }
-.service-card p { color: var(--secondary); font-size: 0.9rem; }
+.services-section { 
+    padding: 100px 0; 
+    background: var(--white); 
+}
+.service-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px; 
+}
+.service-card { 
+    padding: 30px; 
+    border: 1px solid var(--border); 
+    border-radius: 8px; 
+    transition: 0.3s; 
+    height: 100%; 
+} 
+.service-card:hover { 
+    border-color: var(--accent); 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
+    transform: translateY(-3px); 
+}
+.service-card .icon { 
+    font-size: 2.5rem; 
+    margin-bottom: 20px; 
+    color: var(--accent); 
+}
+.service-card h3 { 
+    font-size: 1.2rem; 
+    margin-bottom: 10px; 
+    color: var(--primary); 
+}
+.service-card p { 
+    color: var(--secondary); 
+    font-size: 0.9rem; 
+}
 
 /* =========================================
    --- 5. 页脚 (Footer) ---
    ========================================= */
-.footer { background: #1a1a1a; color: #fff; padding: 80px 0 30px; }
-.footer-top { display: grid; grid-template-columns: 1.5fr 1fr; gap: 80px; margin-bottom: 60px; }
-.footer-brand-col h3 { font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 20px; }
-.footer-brand-col p { opacity: 0.7; max-width: 400px; }
-.footer-contact-col h4 { font-size: 1.2rem; margin-bottom: 15px; color: var(--white); }
-.contact-desc { opacity: 0.6; margin-bottom: 20px; font-size: 0.9rem; }
-
-/* 优化 Contact Row 样式以支持多行邮箱 */
+.footer { 
+    background: #1a1a1a; 
+    color: #fff; 
+    padding: 80px 0 30px; 
+}
+.footer-top { 
+    display: grid; 
+    grid-template-columns: 1.5fr 1fr; 
+    gap: 80px; 
+    margin-bottom: 60px; 
+}
+.footer-brand-col h3 { 
+    font-family: var(--font-serif); 
+    font-size: 1.8rem; 
+    margin-bottom: 20px; 
+}
 .contact-row { 
     display: flex; 
     margin-bottom: 15px; 
@@ -441,22 +575,22 @@ img { max-width: 100%; height: auto; }
     color: var(--accent); 
     border-color: var(--accent); 
 }
-/* 针对邮箱多行显示的容器样式 */
-.contact-rows-group {
-    padding-bottom: 10px;
-}
 .contact-emails {
     display: flex; 
     flex-direction: column; 
     gap: 5px;
 }
-/* 优化 Contact Row 中的图标颜色 */
 .contact-row i {
     color: var(--white); 
 }
-
-.footer-bottom { border-top: 1px solid #333; padding-top: 30px; text-align: center; font-size: 0.8rem; opacity: 0.5; }
-    
+.footer-bottom { 
+    border-top: 1px solid #333; 
+    padding-top: 30px; 
+    text-align: center; 
+    font-size: 0.8rem; 
+    opacity: 0.5; 
+}
+            
 /* 快速询价浮窗样式 */
 .sticky-cta {
     position: fixed;
@@ -474,18 +608,13 @@ img { max-width: 100%; height: auto; }
     text-transform: uppercase;
 }
 
-.sticky-cta:hover {
-    background: var(--accent);
-    box-shadow: 0 8px 25px rgba(0, 119, 182, 0.5);
-}
-
 /* =========================================
    --- 响应式调整 (Responsive Design) ---
    ========================================= */
 
-/* 移动端菜单状态 (关键优化点) */
+/* 移动端菜单状态 */
 .nav-links.is-open {
-    display: flex !important; /* 使用 !important 确保覆盖媒体查询中 display: none */
+    display: flex !important; 
     position: absolute; 
     top: 80px; 
     left: 0; 
@@ -502,63 +631,73 @@ img { max-width: 100%; height: auto; }
     .category-grid, .mesh-chair-results-grid { 
         grid-template-columns: repeat(2, 1fr); 
     }
-    .footer-top { grid-template-columns: 1fr; gap: 40px; }
-    .footer-brand-col { margin-bottom: 20px; }
+    .footer-top { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+    }
     .showcase-wrapper {
         grid-template-columns: 1fr;
         gap: 40px;
-    }
-    .showcase-image {
-        height: 400px;
     }
 }
 
 
 /* 移动设备 (最大 768px) */
 @media (max-width: 768px) {
-    /* 全局内边距调整 */
-    .products, .services-section, .about-section, .stats-bar { padding: 40px 0; }
-    
-    /* Hero */
-    .hero { margin-top: 60px; height: 60vh; }
-    .hero h1 { font-size: 2.5rem; }
-    .hero-btns { flex-direction: column; gap: 10px; padding: 15px; }
-    
-    /* Navbar */
+    .products, .services-section, .about-section, .stats-bar { 
+        padding: 40px 0; 
+    }
+    .hero { 
+        margin-top: 60px; 
+        height: 60vh; 
+    }
+    .hero h1 { 
+        font-size: 2.5rem; 
+    }
+    .hero-btns { 
+        flex-direction: column; 
+        gap: 10px; 
+        padding: 15px; 
+    }
     .nav-links { 
         display: none; 
     }
-    .nav-links a { width: 100%; padding: 10px 20px; text-align: center; }
-    .nav-links .btn-nav { margin: 10px auto; width: fit-content; }
-
-    .menu-toggle { display: block; } 
-
-    /* About: 2列改为1列 */
-    .about-wrapper { grid-template-columns: 1fr; gap: 30px; }
-    .about-text h2 { font-size: 2.2rem; }
-    .about-image { order: -1; height: 250px; margin-bottom: 20px; }
-
-    /* Products: 2列改为1列 */
-    .category-grid, .mesh-chair-results-grid { grid-template-columns: 1fr; }
-
-    /* Stats: 4列改为2列 */
-    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-
-    /* Footer: 联系行样式调整 */
-    .contact-row span:first-child { width: 60px; } 
-    
-    /* Hotspot 浮窗调整 */
-    .hotspot-info {
-        width: 180px;
-        font-size: 0.8rem;
+    .menu-toggle { 
+        display: block; 
+    } 
+    .about-wrapper { 
+        grid-template-columns: 1fr; 
+        gap: 30px; 
+    }
+    .about-image { 
+        order: -1; 
+        height: 250px; 
+        margin-bottom: 20px; 
+    }
+    .category-grid, .mesh-chair-results-grid { 
+        grid-template-columns: 1fr; 
+    }
+    .stats-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px; 
     }
 }
 
 /* 极小屏幕 (最大 480px) */
 @media (max-width: 480px) {
-    .stats-grid { grid-template-columns: 1fr; } 
-    .stat-number { font-size: 2rem; }
-    .about-text h2 { font-size: 1.8rem; }
-    .contact-row { flex-direction: column; align-items: flex-start; }
-    .contact-row span:first-child { margin-right: 0; margin-bottom: 5px; }
+    .stats-grid { 
+        grid-template-columns: 1fr; 
+    } 
+    .contact-row { 
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+}
+
+/* --- 子页面通用样式 (Solutions, Industries, Why-Us) --- */
+/* (这些样式在子页面中通常是内嵌或单独定义的，但此处列出关键项确保一致性) */
+.solutions-hero, .why-us-hero, .industries-hero {
+    padding: 150px 0 80px;
+    color: var(--white);
+    text-align: center;
 }
