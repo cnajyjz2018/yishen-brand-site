@@ -1,6 +1,6 @@
 /* =========================================
    YiShen Global B2B - styles.css
-   最终权威版样式表 (2026 Ready)
+   最终权威版样式表 (已优化 LOGO 和字体)
    ========================================= */
 
 /* --- 基础设置与通用变量 --- */
@@ -124,12 +124,25 @@ img {
     justify-content: space-between; 
     align-items: center; 
 }
+
+/* ⭐ LOGO 样式集成 ⭐ */
 .brand { 
+    display: flex;
+    align-items: center;
     font-family: var(--font-serif); 
-    font-size: 1.8rem; 
+    font-size: 2.2rem; 
     font-weight: 700; 
-    color: var(--primary); 
+    /* 品牌名称颜色改为金黄色 */
+    color: #FFC300; 
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
+
+.logo-icon img {
+    height: 40px; /* 确保高度一致 */
+    margin-right: 10px;
+}
+/* ⭐ LOGO 样式结束 ⭐ */
+
 .nav-links { 
     display: flex; 
     gap: 30px; 
@@ -181,7 +194,7 @@ img {
     background-size: cover; 
     background-position: center;
     opacity: 1; 
-    background-image: url('banner2.jpg'); /* Assume this is in the root */
+    background-image: url('banner2.jpg'); 
 }
 .hero-content { 
     position: relative; 
@@ -242,7 +255,7 @@ img {
     margin: 0 auto; 
 }
 .logo-grid img { 
-    height: 30px; /* Logo 尺寸控制 */
+    height: 30px; 
 }
 
 
@@ -695,7 +708,6 @@ img {
 }
 
 /* --- 子页面通用样式 (Solutions, Industries, Why-Us) --- */
-/* (这些样式在子页面中通常是内嵌或单独定义的，但此处列出关键项确保一致性) */
 .solutions-hero, .why-us-hero, .industries-hero {
     padding: 150px 0 80px;
     color: var(--white);
