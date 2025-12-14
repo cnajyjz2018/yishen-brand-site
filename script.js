@@ -148,17 +148,6 @@ document.addEventListener('DOMContentLoaded', function() {
         { top: '80%', left: '45%', title: "BIFMA X5.1 Base & ANSI Compliant", desc: "Stress-tested aluminum alloy base, ensuring durability and full regulatory compliance." } 
     ];
     
-    // --- DOM Elements ---
-    const meshSkuContainer = document.getElementById('mesh-sku-container');
-    const priceFilter = document.getElementById('filter-price');
-    const lumberFilter = document.getElementById('filter-lumber');
-    const bifmaFilter = document.getElementById('filter-bifma');
-    const resetButton = document.getElementById('reset-filters');
-    const noResultsMessage = document.getElementById('no-results-message');
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-    const stickyCta = document.getElementById('stickyCta');
-    
     // --- SKU Dynamic Rendering Logic ---
     function renderSkuCard(sku) {
         const card = document.createElement('div');
