@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YiShen Global | V8.2 Single-File Ecosystem: Predictable & Vertically Integrated B2B Supply.</title>
+    <title>YiShen Global | V8.3 Git Sync: Predictable & Vertically Integrated B2B Supply.</title>
     
     <meta name="description" content="MISSION: Accelerating the World's Transition to Predictable & Sustainable Supply Chains. The B2B Hub for Energy, BioTech, Future Tech, and Industrial Excellence, backed by proprietary logistics intelligence.">
     
@@ -11,118 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css"> 
 
-    <style>
-        /* =========================================================================
-           YiShen Global B2B - styles.css & V8.2 Overrides
-           Complete CSS consolidation.
-           ========================================================================= */
-        :root {
-            --primary: #FF6600; /* Tesla Orange Accent */
-            --secondary: #007bff;
-            --bg-light: #f4f7f9;
-            --text-dark: #333;
-            --font-sans: 'Inter', sans-serif;
-            --font-serif: 'Playfair Display', serif;
-        }
-
-        /* --- 全局重置与排版 --- */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: var(--font-sans); color: var(--text-dark); line-height: 1.6; background-color: #fff; }
-        .container { max-width: 1300px; margin: 0 auto; padding: 0 20px; }
-        h1, h2, h3 { font-family: var(--font-serif); font-weight: 700; margin-bottom: 1rem; }
-        h2 { font-size: 2.5rem; }
-        p { margin-bottom: 1rem; }
-
-        /* --- 导航栏 --- */
-        .navbar { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
-        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--text-dark); margin-left: 25px; font-weight: 500; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
-        .brand { 
-            display: flex; align-items: center; font-family: var(--font-serif); 
-            font-size: 2.2rem; color: var(--primary); font-weight: 700; 
-            text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-        }
-        .logo-icon {
-            width: 40px; height: 40px; margin-right: 10px; border: 2px solid var(--primary); border-radius: 50%;
-            position: relative; display: flex; align-items: center; justify-content: center;
-            background: radial-gradient(circle at center, rgba(255, 102, 0, 0) 50%, rgba(255, 102, 0, 0.4) 100%);
-            overflow: hidden;
-        }
-        .menu-toggle { display: none; } /* Hide toggle on desktop */
-
-        /* --- 按钮 --- */
-        .btn-primary { 
-            background: var(--primary); color: white; padding: 12px 25px; border-radius: 4px; text-decoration: none; 
-            font-weight: 600; transition: background 0.3s; display: inline-block; border: none; cursor: pointer;
-        }
-        .btn-primary:hover { background: #cc5200; }
-
-        /* --- Hero Section --- */
-        .hero { display: flex; align-items: center; justify-content: center; height: 100vh; text-align: center; color: white; position: relative; }
-        .hero h1 { font-size: 3.5rem; color: white; text-shadow: 2px 2px 5px rgba(0,0,0,0.7); }
-        .hero p { font-size: 1.5rem; font-weight: 500; color: #FFDDAA; }
-
-        /* --- Section Titles --- */
-        .section-title { text-align: center; margin-bottom: 60px; }
-        .section-tag { color: var(--primary); font-weight: 600; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 10px; display: block; }
-        
-        /* --- SBU Gateway Styling --- */
-        .sbu-navbar { padding: 40px 0; background: var(--bg-light); text-align: center; }
-        .sbu-title { font-size: 1.8rem; margin-bottom: 25px; color: var(--text-dark); }
-        .sbu-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
-        .sbu-card { padding: 25px 15px; border-radius: 8px; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: all 0.3s; text-decoration: none; color: #007bff; font-weight: 600; border-bottom: 3px solid transparent; }
-        .sbu-card:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); border-bottom-color: var(--primary); }
-        .sbu-card i { font-size: 2rem; display: block; margin-bottom: 10px; color: var(--primary); }
-
-        /* --- Product Grid Filtering --- */
-        .category-grid-expanded { 
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; margin-top: 40px;
-        }
-        .category-card { 
-            height: 300px; opacity: 1; display: block; transition: all 0.5s ease-in-out; 
-            background: white; border-radius: 12px; overflow: hidden; text-decoration: none; 
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s, opacity 0.5s;
-        } 
-        .category-card.inactive { 
-            opacity: 0; 
-            display: none; /* Hide for true filtering */
-        } 
-        .category-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-        .category-bg { height: 150px; background-size: cover; background-position: center; transition: transform 0.5s; }
-        .category-card:hover .category-bg { transform: scale(1.05); }
-        .category-content { padding: 20px; color: var(--text-dark); }
-        .category-content h3 { font-size: 1.2rem; margin-bottom: 5px; color: var(--primary); font-family: var(--font-sans); }
-        .category-content p { font-size: 0.9rem; margin-bottom: 0; color: #666; }
-
-        /* --- Showcase Container (RESTORED) --- */
-        .product-showcase-container { background: #fff; padding: 100px 0; }
-        .showcase-wrapper { display: flex; gap: 40px; align-items: center; }
-        .showcase-image { flex: 1; height: 400px; background-size: cover; background-position: center; border-radius: 10px; }
-        .showcase-text { flex: 1; }
-        .tech-spec { display: block; color: var(--secondary); margin: 10px 0; font-style: italic; }
-        
-        /* --- RESTORED: Stats Bar --- */
-        .stats-bar { padding: 40px 0; background: #333; color: white; text-align: center; }
-        .stats-bar h3 { font-size: 2rem; color: var(--primary); margin-bottom: 5px; }
-        .stats-bar i { font-size: 1.5rem; margin-right: 10px; }
-        
-        /* --- RESTORED: Responsive Design --- */
-        @media (max-width: 1200px) {
-            .category-grid-expanded, .sbu-grid { grid-template-columns: repeat(3, 1fr); }
-            .service-grid { grid-template-columns: 1fr 1fr; }
-            .showcase-wrapper { flex-direction: column; }
-            .showcase-image { height: 300px; width: 100%; }
-        }
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.2rem; }
-            .category-grid-expanded, .sbu-grid { grid-template-columns: repeat(2, 1fr); }
-            .service-grid { grid-template-columns: 1fr; }
-            .nav-links { display: none; } /* Simplified mobile nav */
-        }
-    </style>
 </head>
 <body>
     <script type="application/ld+json">
@@ -153,7 +44,7 @@
                 <a href="#products">Catalogue</a>
                 <a href="resources.html">Resources Hub</a>
                 <a href="#mesh-chair-catalog">Featured SKUs</a>
-                <a href="#contact" class="btn-primary">Contact Us</a>
+                <a href="contact.html" class="btn-primary">Contact Us</a>
             </nav>
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
         </div>
@@ -214,7 +105,7 @@
                 <span class="section-tag">About YiShen Global</span>
                 <h2>Quantifying Supply Chain Risk Since 2012.</h2>
                 <p>We evolved from a traditional sourcing agent into a vertical integrator, leveraging data science to guarantee product quality and logistics predictability across high-stakes industries. Our model is built on control, not commission.</p>
-                <a href="#contact" class="btn-primary">Schedule Risk Assessment</a>
+                <a href="contact.html" class="btn-primary">Schedule Risk Assessment</a>
             </div>
             <div style="flex: 1;"><img src="about-image-v8.jpg" alt="Supply Chain Integration Diagram" style="width: 100%; border-radius: 10px;"></div>
         </div>
@@ -255,42 +146,42 @@
             </div>
             
             <div class="category-grid-expanded" id="category-grid">
-                <a href="sku-list.html?sbu=furniture" class="category-card" data-sbu="lifestyle" data-cat="furniture">
+                <a href="solutions.html?cat=furniture" class="category-card" data-sbu="lifestyle" data-cat="furniture">
                     <div class="category-bg" style="background-image: url('assets/images/v5/cat-furniture.jpg');"></div>
                     <div class="category-content"><h3>I. Ergonomic Furniture</h3><p>X-Chair Level Seating.</p></div>
                 </a>
-                <a href="sku-list.html?sbu=outdoor" class="category-card" data-sbu="lifestyle" data-cat="outdoor">
+                <a href="solutions.html?cat=outdoor" class="category-card" data-sbu="lifestyle" data-cat="outdoor">
                     <div class="category-bg" style="background-image: url('assets/images/v5/cat-outdoor.jpg');"></div>
                     <div class="category-content"><h3>II. Outdoor Living</h3><p>Marine Grade Composites.</p></div>
                 </a>
-                <a href="sku-list.html?sbu=bamboo" class="category-card" data-sbu="lifestyle" data-cat="bamboo">
+                <a href="solutions.html?cat=bamboo" class="category-card" data-sbu="lifestyle" data-cat="bamboo">
                     <div class="category-bg" style="background-image: url('assets/images/v5/cat-bamboo.jpg');"></div>
                     <div class="category-content"><h3>III. Eco-Bamboo Products</h3><p>Artisan Crafts, Bamboo Flooring.</p></div>
                 </a>
-                <a href="sku-list.html?sbu=flooring" class="category-card" data-sbu="lifestyle" data-cat="flooring">
+                <a href="solutions.html?cat=flooring" class="category-card" data-sbu="lifestyle" data-cat="flooring">
                     <div class="category-bg" style="background-image: url('assets/images/v5/cat-flooring.jpg');"></div>
                     <div class="category-content"><h3>IV. Architectural Flooring</h3><p>WPC/SPC Hybrid Systems.</p></div>
                 </a>
-                <a href="sku-list.html?sbu=rigging" class="category-card" data-sbu="industrial" data-cat="rigging">
+                <a href="solutions.html?cat=rigging" class="category-card" data-sbu="industrial" data-cat="rigging">
                     <div class="category-bg" style="background-image: url('assets/images/v5/cat-rigging.jpg');"></div>
                     <div class="category-content"><h3>V. Industrial Hardware</h3><p>G100 Chains, Marine Shackles.</p></div>
                 </a>
-                <a href="sku-list.html?sbu=biomedical" class="category-card" data-sbu="industrial" data-cat="biomedical">
+                <a href="solutions.html?cat=biomedical" class="category-card" data-sbu="industrial" data-cat="biomedical">
                     <div class="category-bg" style="background-image: url('assets/images/v8/cat-biomedical.jpg');"></div>
                     <div class="category-content"><h3>VI. Precision Health & BioTech</h3><p>Genomics & GMP Biopharma SUS.</p></div>
                 </a>
-                <a href="sku-list.html?sbu=energy" class="category-card" data-sbu="future" data-cat="energy">
+                <a href="solutions.html?cat=energy" class="category-card" data-sbu="future" data-cat="energy">
                     <div class="category-bg" style="background-image: url('assets/images/v7/cat-energy.jpg');"></div>
                     <div class="category-content"><h3>VII. Future Tech & Energy Systems</h3><p>NEV Power Packs, Bifacial Solar.</p></div>
                 </a>
-                <a href="sku-list.html?sbu=logistics" class="category-card" data-sbu="logistics" data-cat="logistics">
+                <a href="solutions.html?cat=logistics" class="category-card" data-sbu="logistics" data-cat="logistics">
                     <div class="category-bg" style="background-image: url('assets/images/v7/cat-logistics.jpg');"></div>
                     <div class="category-content"><h3>VIII. Predictability Services</h3><p>DGR Freight & 4PL Risk Audit.</p></div>
                 </a>
             </div>
             
             <div class="view-more-container" style="text-align: center; margin-top: 50px;">
-                <a href="#contact" class="btn-primary">Request Master Catalog & Technical Whitepaper</a>
+                <a href="contact.html" class="btn-primary">Request Master Catalog & Technical Whitepaper</a>
             </div>
         </div>
     </section>
@@ -308,7 +199,11 @@
         </div>
     </section>
 
-    <footer id="contact" class="footer" style="background: #333; color: white; padding: 40px 0;">...</footer>
+    <footer id="contact" class="footer" style="background: #333; color: white; padding: 40px 0;">
+        <div class="container">
+            <p>&copy; 2025 YiShen Global. All Rights Reserved. Vertically Integrated. Predictability Defined.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
