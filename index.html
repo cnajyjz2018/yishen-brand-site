@@ -3,302 +3,348 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YiShen Global | Strategic Supply Chain & Manufacturing Integration</title>
+    <title>YiShen Global | Supply Chain Predictability</title>
     
-    <meta name="description" content="YiShen Global bridges the gap between Asian manufacturing excellence and US/EU market predictability. Specialized in furniture, industrial rigging, and high-tech materials.">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        .navbar { display: flex !important; }
-        .hero-global { min-height: 85vh; }
-        .logo-flex img { max-width: 120px; }
+        /* =========================================
+           INTERNAL CSS - NO EXTERNAL FILE NEEDED
+           ========================================= */
+        :root {
+            --primary: #0F172A;
+            --secondary: #475569;
+            --accent: #0284C7;
+            --accent-dark: #0369A1;
+            --gold: #F59E0B;
+            --bg-light: #F8FAFC;
+            --white: #ffffff;
+            --border: #E2E8F0;
+            --font-main: 'Inter', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        /* RESET */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-main); color: var(--primary); line-height: 1.6; background-color: var(--white); }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* UTILS */
+        .container { width: 90%; max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+        .text-center { text-align: center; }
+        .section-padding { padding: 100px 0; }
+
+        /* TYPOGRAPHY */
+        h1, h2, h3 { font-family: var(--font-serif); font-weight: 700; line-height: 1.2; }
+        h1 { font-size: 3.5rem; letter-spacing: -1px; margin-bottom: 20px; }
+        h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        p { color: var(--secondary); margin-bottom: 20px; font-size: 1.1rem; }
+        
+        .section-tag {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-primary { background: var(--accent); color: var(--white); border: 2px solid var(--accent); }
+        .btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+        .btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
+        .btn-outline:hover { background: var(--white); color: var(--primary); }
+
+        /* NAVIGATION */
+        .navbar {
+            position: fixed; top: 0; left: 0; width: 100%; height: 85px;
+            background: rgba(255,255,255,0.98);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            z-index: 1000; display: flex; align-items: center;
+        }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        
+        .brand { 
+            font-family: var(--font-serif); font-size: 1.8rem; font-weight: 800; color: var(--primary); 
+            display: flex; align-items: center; gap: 10px;
+        }
+        .logo-icon { 
+            width: 35px; height: 35px; background: var(--gold); border-radius: 50%; display: block; 
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+        }
+        
+        /* FORCE HORIZONTAL LAYOUT */
+        .nav-links { display: flex !important; gap: 30px; align-items: center; }
+        .nav-links a { font-weight: 600; font-size: 0.95rem; color: var(--primary); }
+        .nav-links a:hover { color: var(--accent); }
+        .menu-toggle { display: none; font-size: 1.5rem; background: none; border: none; cursor: pointer; }
+
+        /* HERO */
+        .hero {
+            position: relative; padding-top: 180px; padding-bottom: 120px;
+            background: #0f172a; color: var(--white); text-align: center;
+            /* Placeholder Background Image */
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-position: center;
+        }
+        .hero p { color: #cbd5e1; max-width: 700px; margin: 0 auto 40px; }
+
+        /* STATS */
+        .stats-bar { background: var(--white); padding: 50px 0; border-bottom: 1px solid var(--border); }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
+        .stat-item h3 { color: var(--accent); font-size: 2.5rem; margin-bottom: 5px; }
+        .stat-item p { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--secondary); margin: 0; }
+
+        /* DIVISIONS */
+        .divisions-section { background: var(--bg-light); }
+        .division-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .div-card {
+            background: var(--white); padding: 40px; border-radius: 8px;
+            border-top: 4px solid transparent; transition: transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .div-card:hover { transform: translateY(-10px); }
+        .div-card i { font-size: 2.5rem; margin-bottom: 20px; display: block; }
+        
+        .style-lifestyle { border-color: var(--gold); }
+        .style-lifestyle i { color: var(--gold); }
+        
+        .style-industrial { border-color: #334155; }
+        .style-industrial i { color: #334155; }
+        
+        .style-hightech { border-color: #3B82F6; }
+        .style-hightech i { color: #3B82F6; }
+
+        /* PRODUCTS GRID */
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .product-card {
+            border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+            transition: 0.3s;
+        }
+        .product-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .product-img { height: 220px; background: #eee; background-size: cover; background-position: center; }
+        .product-info { padding: 20px; }
+        .tag { font-size: 0.75rem; font-weight: bold; background: #eef2ff; color: var(--accent); padding: 4px 8px; border-radius: 4px; }
+
+        /* FOOTER */
+        .footer { background: #0F172A; color: #94a3b8; padding: 80px 0 30px; }
+        .footer h4 { color: var(--white); margin-bottom: 20px; font-size: 1.2rem; }
+        .footer ul li { margin-bottom: 12px; }
+        .footer-bottom { border-top: 1px solid #1e293b; margin-top: 60px; padding-top: 30px; text-align: center; font-size: 0.9rem; }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links { display: none !important; } /* Use JS to toggle */
+            .menu-toggle { display: block; }
+            .nav-links.active {
+                display: flex !important; flex-direction: column; position: absolute;
+                top: 85px; left: 0; width: 100%; background: var(--white); padding: 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            .hero h1 { font-size: 2.5rem; }
+            .stats-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+            .division-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
     <header class="navbar">
         <div class="container nav-wrapper">
-            <a href="index.html" class="brand">
+            <a href="#" class="brand">
                 <span class="logo-icon"></span> YiShen Global
             </a>
-            <button class="menu-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav class="nav-links" id="navLinks">
-                <a href="index.html">Home</a>
-                <a href="about.html">Our Philosophy</a>
-                <a href="solutions.html">Strategic Solutions</a>
-                <a href="industries.html">Industries</a>
-                <a href="resources.html">Resources</a>
-                <a href="contact.html" class="btn btn-gold" style="padding: 8px 20px; color: #000;">Contact Us</a>
+            <button class="menu-toggle" id="mobileBtn"><i class="fas fa-bars"></i></button>
+            <nav class="nav-links" id="navMenu">
+                <a href="#">Home</a>
+                <a href="#">Philosophy</a>
+                <a href="#">Divisions</a>
+                <a href="#">Products</a>
+                <a href="#" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem;">Contact Us</a>
             </nav>
         </div>
     </header>
 
-    <section class="hero-global">
-        <div class="hero-bg" style="background-image: url('banner2.jpg'); background-color: #1a1a1a;"></div>
-        
+    <section class="hero">
         <div class="container hero-content">
-            <span style="color: #F59E0B; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; display: block;">B2B Supply Chain Integrator</span>
-            <h1>Supply Chain Predictability.<br>Engineered for Growth.</h1>
-            <p style="font-size: 1.25rem; color: #cbd5e1; margin: 25px 0 40px;">
-                We bridge the gap between Asian Manufacturing Excellence and Global Market Reliability. 
-                Vertical control over 200+ SKUs across Lifestyle, Industrial, and High-Tech sectors.
-            </p>
-            <div class="flex-center" style="gap: 20px; flex-wrap: wrap;">
-                <a href="contact.html" class="btn btn-primary">Schedule Strategy Call</a>
-                <a href="solutions.html" class="btn btn-outline" style="color: white; border-color: white;">Explore Capabilities</a>
+            <span style="color: var(--gold); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Strategic Supply Chain Partner</span>
+            <h1 style="margin-top: 15px;">Supply Chain Predictability.<br>Engineered for Growth.</h1>
+            <p>We bridge the gap between Asian manufacturing excellence and Global market reliability. Vertical control over 200+ SKUs across Lifestyle, Industrial, and High-Tech sectors.</p>
+            <div style="margin-top: 40px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="#" class="btn btn-primary" style="background: var(--gold); border-color: var(--gold); color: #000;">Schedule Strategy Call</a>
+                <a href="#" class="btn btn-outline">Explore Capabilities</a>
             </div>
         </div>
     </section>
 
-    <div class="container">
-        <div class="hero-stats">
-            <div class="stat-box text-center">
+    <div class="stats-bar">
+        <div class="container stats-grid">
+            <div class="stat-item">
                 <h3>10+</h3>
                 <p>Years of Engineering</p>
             </div>
-            <div class="stat-box text-center">
+            <div class="stat-item">
                 <h3>200+</h3>
                 <p>Vertically Controlled SKUs</p>
             </div>
-            <div class="stat-box text-center">
+            <div class="stat-item">
                 <h3>99.8%</h3>
                 <p>Q.C. Pass Rate</p>
             </div>
-            <div class="stat-box text-center">
+            <div class="stat-item">
                 <h3>50+</h3>
                 <p>Global Brand Partners</p>
             </div>
         </div>
     </div>
 
-    <section class="trust-bar">
+    <div style="padding: 40px 0; border-bottom: 1px solid var(--border);">
+        <div class="container text-center">
+            <p style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; margin-bottom: 20px;">Trusted by Global Innovators</p>
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; opacity: 0.5;">
+                <h3 style="color:#333;">STAPLES</h3>
+                <h3 style="color:#333;">Office Depot</h3>
+                <h3 style="color:#333;">AUTONOMOUS</h3>
+                <h3 style="color:#333;">UL Certified</h3>
+            </div>
+        </div>
+    </div>
+
+    <section class="section-padding divisions-section">
         <div class="container">
-            <p class="text-center" style="font-size: 0.9rem; margin-bottom: 30px; font-weight: 600; text-transform: uppercase;">Trusted by Global Retailers & Innovators</p>
-            <div class="logo-flex">
-                <img src="logo-staples.svg" alt="Staples" onerror="this.style.display='none'">
-                <img src="logo-office-depot.svg" alt="Office Depot" onerror="this.style.display='none'">
-                <img src="logo-autonomous.svg" alt="Autonomous" onerror="this.style.display='none'">
-                <h4 style="color:#ccc; margin:0;">BIFMA Member</h4>
-                <h4 style="color:#ccc; margin:0;">UL Certified</h4>
+            <div class="text-center" style="max-width: 800px; margin: 0 auto 60px;">
+                <span class="section-tag">Strategic Portfolio</span>
+                <h2>Three Divisions. One Standard.</h2>
+                <p>We segregate our operations to ensure specialized expertise in every sector.</p>
+            </div>
+
+            <div class="division-grid">
+                <div class="div-card style-lifestyle">
+                    <i class="fas fa-couch"></i>
+                    <h3>Lifestyle & Design</h3>
+                    <p>Ergonomic furniture, bamboo flooring, and outdoor systems. Engineered for aesthetics and DTC shipping durability.</p>
+                    <a href="#" style="color: var(--primary); font-weight: 700; margin-top: 15px; display: block;">View Catalog &rarr;</a>
+                </div>
+                <div class="div-card style-industrial">
+                    <i class="fas fa-tools"></i>
+                    <h3>Engineering & Rigor</h3>
+                    <p>Heavy industrial rigging, G100 slings, and marine cables. Focus on load capacity, safety, and alloy purity.</p>
+                    <a href="#" style="color: var(--primary); font-weight: 700; margin-top: 15px; display: block;">View Catalog &rarr;</a>
+                </div>
+                <div class="div-card style-hightech">
+                    <i class="fas fa-microchip"></i>
+                    <h3>High-Tech & Bio</h3>
+                    <p>New energy ESS systems, wafer chemicals, and medical consumables. Focus on purity and strict compliance.</p>
+                    <a href="#" style="color: var(--primary); font-weight: 700; margin-top: 15px; display: block;">View Catalog &rarr;</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="section-padding">
-        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
-            <div>
-                <span class="section-tag">THE YISHEN DIFFERENCE</span>
-                <h2>We Don't Just Source.<br>We Engineer Certainty.</h2>
-                <p>Most importers struggle with the "Invisible Gap"—the disconnect between a factory's output and a brand's expectation. This leads to hidden costs: rework, delays, and brand damage.</p>
-                <p><strong>YiShen Global is different.</strong> We function as your technical extension on the ground. We audit raw materials (Vertical Control), engineer DTC-ready packaging, and manage complex compliance (UL/BIFMA/G100) before the product ever leaves the port.</p>
+    <section class="section-padding" style="background: var(--white);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                <img src="https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Ergonomic Chair" style="border-radius: 8px;">
                 
-                <ul style="margin-top: 20px; font-weight: 600; color: #334155;">
-                    <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #0284C7; margin-right: 10px;"></i> Raw Material Traceability (Steel/Polymer)</li>
-                    <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #0284C7; margin-right: 10px;"></i> Modular Design for SKU Efficiency</li>
-                    <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #0284C7; margin-right: 10px;"></i> Integrated Global Logistics (DDP/LDP)</li>
-                </ul>
-            </div>
-            <div style="background: #f1f5f9; height: 500px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                <img src="vertical-control-diagram.jpg" alt="Vertical Control Diagram" style="max-height: 80%;" onerror="this.src='https://via.placeholder.com/600x500?text=Vertical+Control+Process'">
+                <div>
+                    <span class="section-tag">Featured Innovation</span>
+                    <h2>The DS-Series Ergonomic Chair</h2>
+                    <p>Designed for the hybrid workforce. The DS-Series combines our proprietary Fluid-Motion Tilt mechanism with high-tensile breathable mesh.</p>
+                    
+                    <ul style="margin-bottom: 30px;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> <strong>BIFMA X5.1 Certified</strong> for 24/7 Commercial Use</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> <strong>DTC Ready Packaging</strong> (ISTA 6-Amazon)</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> <strong>Modular Base</strong> for easy repair</li>
+                    </ul>
+
+                    <a href="#" class="btn btn-primary">Download Specs</a>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="section-padding" style="background: #F8FAFC;">
         <div class="container">
-            <div class="text-center" style="max-width: 800px; margin: 0 auto 60px;">
-                <span class="section-tag">Strategic Portfolio</span>
-                <h2>Three Divisions. One Standard of Excellence.</h2>
-                <p>We segregate our operations to ensure specialized expertise in every sector.</p>
+            <div class="text-center" style="margin-bottom: 60px;">
+                <h2>Explore Vertically Controlled SKUs</h2>
             </div>
-
-            <div class="feature-grid">
-                <div class="division-card">
-                    <div class="div-bg" style="background-image: url('mesh.jpg'); background-color: #333;"></div>
-                    <div class="div-content">
-                        <i class="fas fa-couch" style="font-size: 2.5rem; color: #F59E0B; margin-bottom: 20px;"></i>
-                        <h3 style="color: #F59E0B;">Lifestyle & Design</h3>
-                        <p style="color: #e2e8f0;">Ergonomic furniture, bamboo flooring, and outdoor systems. Engineered for aesthetics and DTC shipping durability.</p>
-                        <a href="solutions.html?division=LIFESTYLE" class="btn btn-outline" style="border-color: #F59E0B; color: #F59E0B; padding: 10px 20px; font-size: 0.8rem; margin-top: 15px;">View Catalog</a>
-                    </div>
+            
+            <div class="product-grid" id="productGrid">
                 </div>
-
-                <div class="division-card">
-                    <div class="div-bg" style="background-image: url('industrial-furniture-integration.jpg'); background-color: #333;"></div>
-                    <div class="div-content">
-                        <i class="fas fa-tools" style="font-size: 2.5rem; color: #fff; margin-bottom: 20px;"></i>
-                        <h3 style="color: #fff;">Engineering & Rigor</h3>
-                        <p style="color: #e2e8f0;">Heavy industrial rigging, G100 slings, and marine cables. Focus on load capacity, safety, and alloy purity.</p>
-                        <a href="solutions.html?division=INDUSTRIAL" class="btn btn-outline" style="border-color: #fff; color: #fff; padding: 10px 20px; font-size: 0.8rem; margin-top: 15px;">View Catalog</a>
-                    </div>
-                </div>
-
-                <div class="division-card">
-                    <div class="div-bg" style="background-image: url('assets/tech/FT-CHIP-WET.jpg'); background-color: #0044cc;"></div>
-                    <div class="div-content">
-                        <i class="fas fa-microchip" style="font-size: 2.5rem; color: #60a5fa; margin-bottom: 20px;"></i>
-                        <h3 style="color: #60a5fa;">High-Tech & Bio</h3>
-                        <p style="color: #e2e8f0;">New energy ESS systems, wafer chemicals, and medical consumables. Focus on purity and strict compliance.</p>
-                        <a href="solutions.html?division=HIGHTECH" class="btn btn-outline" style="border-color: #60a5fa; color: #60a5fa; padding: 10px 20px; font-size: 0.8rem; margin-top: 15px;">View Catalog</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding process-section">
-        <div class="container">
-            <div class="text-center" style="margin-bottom: 80px;">
-                <span class="section-tag" style="color: #F59E0B; border-color: #F59E0B;">The YiShen Protocol</span>
-                <h2>From Concept to Container.<br>Without the Chaos.</h2>
-            </div>
-
-            <div class="process-grid">
-                <div class="process-step">
-                    <div class="process-number">01</div>
-                    <h3 style="margin-top: 20px;">Discovery & Engineering</h3>
-                    <p>We analyze your market needs, define specs, and engineer modular components to reduce SKU complexity.</p>
-                </div>
-                <div class="process-step">
-                    <div class="process-number">02</div>
-                    <h3 style="margin-top: 20px;">Vertical Sourcing</h3>
-                    <p>We don't just buy parts; we audit raw materials (steel, foam, chips) at the source to ensure consistency.</p>
-                </div>
-                <div class="process-step">
-                    <div class="process-number">03</div>
-                    <h3 style="margin-top: 20px;">Rigorous QC</h3>
-                    <p>AQL 2.5 inspections, BIFMA stress tests, and pre-shipment assembly checks. No surprises.</p>
-                </div>
-                <div class="process-step">
-                    <div class="process-number">04</div>
-                    <h3 style="margin-top: 20px;">Global Logistics</h3>
-                    <p>Seamless DDP/LDP delivery to your warehouse. We handle customs, DGR documentation, and tracking.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
-                <div style="background: #f8fafc; padding: 40px; border-radius: 8px;">
-                    <img src="mesh.jpg" alt="Ergonomic Mesh Chair" onerror="this.src='https://via.placeholder.com/500x600?text=Ergonomic+Chair+Image'">
-                </div>
-                <div>
-                    <span class="section-tag">Featured Innovation</span>
-                    <h2>The DS-Series Ergonomic Chair</h2>
-                    <p>Designed for the hybrid workforce. The DS-Series combines our proprietary <strong>Fluid-Motion Tilt</strong> mechanism with high-tensile breathable mesh.</p>
-                    
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
-                        <div>
-                            <h4 style="margin-bottom: 5px; color: var(--accent);">BIFMA X5.1</h4>
-                            <p style="font-size: 0.9rem;">Certified for 24/7 Commercial Use</p>
-                        </div>
-                        <div>
-                            <h4 style="margin-bottom: 5px; color: var(--accent);">DTC Ready</h4>
-                            <p style="font-size: 0.9rem;">Packaging survives ISTA 6-Amazon Drop Test</p>
-                        </div>
-                        <div>
-                            <h4 style="margin-bottom: 5px; color: var(--accent);">Modular</h4>
-                            <p style="font-size: 0.9rem;">Interchangeable Armrests & Base</p>
-                        </div>
-                        <div>
-                            <h4 style="margin-bottom: 5px; color: var(--accent);">Sustainable</h4>
-                            <p style="font-size: 0.9rem;">Available in 100% Recycled Polymer</p>
-                        </div>
-                    </div>
-
-                    <a href="sku-detail.html?model=DS-XC-R8-CF" class="btn btn-primary">View Technical Specs</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding" style="background: #F1F5F9; text-align: center;">
-        <div class="container">
-            <h2 style="font-size: 3rem; margin-bottom: 20px;">Ready to Upgrade Your Supply Chain?</h2>
-            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 40px;">
-                Stop managing defects. Start managing growth. Get a custom quote or a full risk assessment audit today.
-            </p>
-            <div class="flex-center" style="gap: 20px;">
-                <a href="contact.html" class="btn btn-primary">Request a Quote</a>
-                <a href="resources.html" class="btn btn-outline" style="border-color: var(--primary); color: var(--primary);">Download Certifications</a>
-            </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
                 <div>
-                    <a href="#" class="brand" style="color: white; margin-bottom: 20px; display: inline-block;">
-                        <span class="logo-icon"></span> YiShen Global
-                    </a>
-                    <p style="color: #94a3b8;">
-                        Your strategic partner in global supply chain excellence. From Anji/Hangzhou to the world. We deliver predictability, safety, and innovation.
-                    </p>
-                    <div style="display: flex; gap: 15px; margin-top: 20px;">
-                        <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank"><i class="fab fa-linkedin fa-lg" style="color: #0284C7;"></i></a>
-                        <a href="https://x.com/AlexYan03451555" target="_blank"><i class="fab fa-twitter fa-lg" style="color: white;"></i></a>
-                        <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank"><i class="fab fa-youtube fa-lg" style="color: #ef4444;"></i></a>
-                    </div>
+                    <h3 style="color: var(--white); font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 20px;">YiShen Global</h3>
+                    <p>Your strategic partner in global supply chain excellence. From Anji/Hangzhou to the world. We deliver predictability, safety, and innovation.</p>
                 </div>
-
                 <div>
-                    <h4 style="color: white;">Quick Links</h4>
-                    <a href="solutions.html" class="footer-link">Strategic Solutions</a>
-                    <a href="resources.html" class="footer-link">Download Center</a>
-                    <a href="industries.html" class="footer-link">Industry Applications</a>
-                    <a href="about.html" class="footer-link">About Us</a>
-                </div>
-
-                <div>
-                    <h4 style="color: white;">Global HQ</h4>
-                    <ul style="color: #94a3b8;">
-                        <li><i class="fas fa-map-marker-alt" style="width:20px; color: #0284C7;"></i> Anji & Hangzhou, China</li>
-                        <li><i class="fas fa-envelope" style="width:20px; color: #0284C7;"></i> alex.yang@yishenglobal.net</li>
-                        <li><i class="fas fa-phone" style="width:20px; color: #0284C7;"></i> +86 195 3039 4133</li>
-                        <li><i class="fab fa-weixin" style="width:20px; color: #0284C7;"></i> WeChat: 19530394133</li>
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope" style="width: 20px;"></i> alex.yang@yishenglobal.net</li>
+                        <li><i class="fas fa-phone" style="width: 20px;"></i> +86 195 3039 4133</li>
+                        <li><i class="fab fa-weixin" style="width: 20px;"></i> WeChat: 19530394133</li>
                     </ul>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>&copy; 2026 YiShen Global. All Rights Reserved. | <a href="#" style="color: #94a3b8;">Privacy Policy</a></p>
+                &copy; 2026 YiShen Global. All Rights Reserved.
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
     <script>
-        // Toggle Mobile Menu
-        const mobileBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
+        // 1. Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobileBtn');
+        const navMenu = document.getElementById('navMenu');
         
-        if(mobileBtn && navLinks) {
-            mobileBtn.addEventListener('click', () => {
-                const isFlex = navLinks.style.display === 'flex';
-                navLinks.style.display = isFlex ? 'none' : 'flex';
-                if (!isFlex) {
-                    navLinks.style.flexDirection = 'column';
-                    navLinks.style.position = 'absolute';
-                    navLinks.style.top = '90px';
-                    navLinks.style.left = '0';
-                    navLinks.style.width = '100%';
-                    navLinks.style.background = 'white';
-                    navLinks.style.padding = '20px';
-                    navLinks.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
-                }
-            });
-        }
+        mobileBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // 2. Dynamic Product Loading (Simulated Data)
+        const products = [
+            { title: "Ergonomic Mesh Chair", cat: "Lifestyle", img: "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?auto=format&fit=crop&w=400&q=80" },
+            { title: "Dual Motor Standing Desk", cat: "Lifestyle", img: "https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=400&q=80" },
+            { title: "G100 Alloy Chain Sling", cat: "Industrial", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=80" },
+            { title: "Medical Grade PCR Plate", cat: "High-Tech", img: "https://images.unsplash.com/photo-1584036561566-b93a90a6b262?auto=format&fit=crop&w=400&q=80" },
+            { title: "Marine Nylon Rope", cat: "Industrial", img: "https://images.unsplash.com/photo-1562254392-4b2a8d1162bd?auto=format&fit=crop&w=400&q=80" },
+            { title: "EV Battery Module", cat: "High-Tech", img: "https://images.unsplash.com/photo-1620288627223-53302f4e8c74?auto=format&fit=crop&w=400&q=80" }
+        ];
+
+        const grid = document.getElementById('productGrid');
+        products.forEach(p => {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.innerHTML = `
+                <div class="product-img" style="background-image: url('${p.img}');"></div>
+                <div class="product-info">
+                    <span class="tag">${p.cat}</span>
+                    <h4 style="margin: 10px 0;">${p.title}</h4>
+                    <a href="#" style="font-weight: bold; color: var(--primary);">View Specs &rarr;</a>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
     </script>
 </body>
 </html>
