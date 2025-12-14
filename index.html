@@ -11,13 +11,13 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.yishenglobal.net/index.html">
     
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght{600;700}&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css"> 
 
     <style>
         /* --------------------------------------------------------------------- */
@@ -34,7 +34,7 @@
         }
         
         /* 强制 LOGO 样式和颜色 */
-        .brand { 
+        .brand { 
             display: flex;
             align-items: center;
             font-family: var(--font-serif); 
@@ -58,16 +58,17 @@
         }
         .nav-wrapper {
             display: flex; justify-content: space-between; align-items: center; 
+            width: 90%; max-width: 1200px; margin: 0 auto;
         }
 
-        /* 强制导航链接横向排列 (这是最主要的修复点) */
+        /* 强制导航链接横向排列 */
         .nav-links {
             display: flex !important; /* 强制 Flexbox */
             gap: 30px;
             align-items: center;
         }
 
-        /* 强制统计数据网格排列 (修复统计数据堆叠) */
+        /* 强制统计数据网格排列 */
         .stats-grid {
             display: grid; 
             grid-template-columns: repeat(4, 1fr); 
@@ -78,7 +79,13 @@
             display: flex;
             flex-direction: column;
         }
-        /* 移动端修复：防止导航链接和统计数据在小屏幕上挤压 */
+        .stat-number {
+            color: var(--accent);
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        /* 移动端强制修复 */
         @media (max-width: 768px) {
             .nav-links {
                 display: none !important; /* 移动端默认隐藏，通过 JS 切换 */
@@ -93,7 +100,7 @@
         /* 修复页脚图标颜色 */
         .footer .fab { color: #fff !important; }
         .footer .fa-linkedin { color: #0077B6 !important; }
-        .footer .fa-x-twitter { color: #fff !important; } /* X/Twitter 图标修复 */
+        .footer .fa-x-twitter { color: #fff !important; } 
         .footer .fa-youtube { color: #FF0000 !important; }
         /* --------------------------------------------------------------------- */
         /* ⭐ 终极修复代码结束 ⭐ */
@@ -196,6 +203,30 @@
         </div>
     </section>
 
+        <section id="cross-sbu-case" class="about-section" style="padding: 80px 0; background: #fff;">
+        <div class="container about-wrapper" style="align-items: flex-start;">
+            <div class="about-image" style="flex: 1; background-image: url('industrial-furniture-integration.jpg');">
+                
+            </div>
+            
+            <div class="about-text" style="flex: 1.5;">
+                <span class="section-tag" style="color: var(--secondary);">CROSS-ECOSYSTEM VALUE</span>
+                <h2>Case Study: 360° Safety for the Industrial Furniture Customer.</h2>
+                <p class="intro-text">
+                    Our unique structure enables us to serve clients across their operational footprint, not just their showroom floor. This is how we provide value far beyond a single SKU:
+                </p>
+
+                <ul class="expertise-list" style="margin-top: 20px;">
+                    <li><strong>The Challenge:</strong> A furniture manufacturing client needed to move heavy materials (steel tubing, wood panels) efficiently and safely within their factory, while minimizing cost.</li>
+                    <li><strong>Lifestyle Solution (SBU 1):</strong> We supplied custom, high-CBM efficiency **Electric Standing Desk Frames** and **Ergonomic Chairs** for their office staff.</li>
+                    <li><strong>Engineering Solution (SBU 4, 5, 6):</strong> We designed a heavy-duty material handling system using **2-Ton Electric Hoists** (SBU 5), **G100 Lifting Slings** (SBU 5) for safety, and **High-Tensile Steel Wire Ropes** (SBU 7) for their internal crane systems.</li>
+                    <li><strong>Result:</strong> Reduced internal logistics damage by 15% and achieved a single compliance chain across all purchased items—from the CEO's chair to the factory hoist.</li>
+                </ul>
+                <a href="solutions.html?division=INDUSTRIAL" class="btn btn-outline" style="margin-top: 25px; border-color: var(--secondary); color: var(--secondary);">Explore Our Industrial Solutions &rarr;</a>
+            </div>
+        </div>
+    </section>
+
         <section id="vertical-control" class="about-section" style="padding: 60px 0; background: #f9f9f9;">
         <div class="container about-wrapper" style="flex-direction: row-reverse;">
             <div class="about-text" style="flex: 1.5;">
@@ -225,16 +256,17 @@
                         <h4>Medical Grade Purity</h4>
                         <p>Ensuring **high-purity polymers** and **sterile packaging** for our IVD and lab consumables (SBU 7, 9).</p>
                     </div>
-                    </div>
+                </div>
                 <a href="solutions.html?division=INDUSTRIAL" class="text-link" style="font-size: 1.1rem; margin-top: 25px;">See Vertical Control Points in Our Industrial Division &rarr;</a>
             </div>
             
             <div class="about-image" style="flex: 1; background-image: url('vertical-control-diagram.jpg'); border-radius: 8px;">
+                
             </div>
         </div>
     </section>
 
-    <section id="about" class="about-section">
+        <section id="about" class="about-section">
         <div class="container about-wrapper">
             <div class="about-text">
                 <span class="section-tag">Beyond the Product</span>
@@ -246,7 +278,6 @@
 
                 <div class="insight-box">
                     <strong>The Core Insight:</strong>
-    不匹配啊
                     <p>The majority of quality issues in the US market stem from <strong>process failures</strong>, not product defects.</p>
                 </div>
                 
@@ -271,30 +302,7 @@
         </div>
     </section>
 
-    <section id="cross-sbu-case" class="about-section" style="padding: 80px 0; background: #fff;">
-        <div class="container about-wrapper" style="align-items: flex-start;">
-            <div class="about-image" style="flex: 1; background-image: url('industrial-furniture-integration.jpg');">
-                            </div>
-            
-            <div class="about-text" style="flex: 1.5;">
-                <span class="section-tag" style="color: var(--secondary);">CROSS-ECOSYSTEM VALUE</span>
-                <h2>Case Study: 360° Safety for the Industrial Furniture Customer.</h2>
-                <p class="intro-text">
-                    Our unique structure enables us to serve clients across their operational footprint, not just their showroom floor. This is how we provide value far beyond a single SKU:
-                </p>
-
-                <ul class="expertise-list" style="margin-top: 20px;">
-                    <li><strong>The Challenge:</strong> A furniture manufacturing client needed to move heavy materials (steel tubing, wood panels) efficiently and safely within their factory, while minimizing cost.</li>
-                    <li><strong>Lifestyle Solution (SBU 1):</strong> We supplied custom, high-CBM efficiency **Electric Standing Desk Frames** and **Ergonomic Chairs** for their office staff.</li>
-                    <li><strong>Engineering Solution (SBU 4, 5, 6):</strong> We designed a heavy-duty material handling system using **2-Ton Electric Hoists** (SBU 5), **G100 Lifting Slings** (SBU 5) for safety, and **High-Tensile Steel Wire Ropes** (SBU 7) for their internal crane systems.</li>
-                    <li><strong>Result:</strong> Reduced internal logistics damage by 15% and achieved a single compliance chain across all purchased items—from the CEO's chair to the factory hoist.</li>
-                </ul>
-                <a href="solutions.html?division=INDUSTRIAL" class="btn btn-outline" style="margin-top: 25px; border-color: var(--secondary); color: var(--secondary);">Explore Our Industrial Solutions &rarr;</a>
-            </div>
-        </div>
-    </section>
-        
-    <section class="product-showcase-container">
+        <section class="product-showcase-container">
         <div class="container showcase-wrapper">
             
             <div class="showcase-image" style="background-image: url('mesh.jpg');" id="mesh-chair-showcase">
@@ -319,10 +327,55 @@
                 <a href="#contact" class="btn btn-primary">Request Specification Sheet (B2B)</a>
                 <a href="resources.html" class="text-link" style="margin-top: 15px; font-weight: 500;">Download DTC-Ready Packaging Specs &rarr;</a>
             </div>
-            </div>
+        </div>
     </section>
     
-    <section id="mesh-chair-catalog" class="products" style="padding-top: 100px; background: #fff;">
+        <section id="portfolio-overview" class="services-section" style="padding: 80px 0; background: var(--bg-light);">
+        <div class="container section-title">
+            <span class="section-tag">GLOBAL PORTFOLIO STRATEGY</span>
+            <h2>Three Strategic Divisions. One Predictable Source.</h2>
+            <p>Our 200+ SKU portfolio is meticulously segregated to eliminate operational conflict and serve specialist buyers.</p>
+        </div>
+        <div class="container service-grid" style="grid-template-columns: repeat(3, 1fr); gap: 30px;">
+            <div class="service-card" style="border-top: 5px solid var(--color-lifestyle);">
+                <div class="icon"><i class="fas fa-palette" style="color: var(--color-lifestyle);"></i></div>
+                <h3>LIFESTYLE & DESIGN</h3>
+                <p>High-end furniture and materials focused on aesthetics, sustainability, and **DTC packaging efficiency**. Includes Seating, Flooring, and Outdoor Systems.</p>
+                <ul style="text-align: left; list-style-type: none; padding-left: 0; margin-top: 10px;">
+                    <li><i class="fas fa-check-circle" style="color: green; margin-right: 5px;"></i> Zero-G Recliners</li>
+                    <li><i class="fas fa-check-circle" style="color: green; margin-right: 5px;"></i> Nano Banana Design</li>
+                    <li><i class="fas fa-check-circle" style="color: green; margin-right: 5px;"></i> WPC/Bamboo Flooring</li>
+                </ul>
+                <a href="solutions.html?division=LIFESTYLE" class="text-link" style="font-weight: 600;">Browse Lifestyle (60 SKUs) &rarr;</a>
+            </div>
+
+            <div class="service-card" style="border-top: 5px solid var(--color-industrial);">
+                <div class="icon"><i class="fas fa-tools" style="color: var(--color-industrial);"></i></div>
+                <h3>ENGINEERING & RIGOR</h3>
+                <p>Heavy-duty industrial products focused on **safety, load capacity, and material traceability**. Includes Hoists, Slings, and Steel/Nylon Cables.</p>
+                <ul style="text-align: left; list-style-type: none; padding-left: 0; margin-top: 10px;">
+                    <li><i class="fas fa-check-circle" style="color: green; margin-right: 5px;"></i> G100 Forged Slings</li>
+                    <li><i class="fas fa-check-circle" style="color: green; margin-right: 5px;"></i> EN131 Certified Ladders</li>
+                    <li><i class="fas fa-check-circle" style="color: green; margin-right: 5px;"></i> Marine-Grade Ropes</li>
+                </ul>
+                <a href="solutions.html?division=INDUSTRIAL" class="text-link" style="font-weight: 600;">Browse Engineering (60 SKUs) &rarr;</a>
+            </div>
+
+            <div class="service-card" style="border-top: 5px solid var(--color-hightech);">
+                <div class="icon"><i class="fas fa-microscope" style="color: var(--color-hightech);"></i></div>
+                <h3>HIGH-TECH & BIO</h3>
+                <p>Specialized products for high-growth sectors: **Lithium/ESS, Semiconductor, and Medical IVD**. Strict compliance required.</p>
+                <ul style="text-align: left; list-style-type: none; padding-left: 0; margin-top: 10px;">
+                    <li><i class="fas fa-check-circle" style="color: green; margin-right: 5px;"></i> UL9540 ESS Systems</li>
+                    <li><i class="fas fa-check-circle" style="color: green; margin-right: 5px;"></i> High-Purity Wafer Chemicals</li>
+                    <li><i class="fas fa-check-circle" style="color: green; margin-right: 5px;"></i> GMP/FDA Consumables</li>
+                </ul>
+                <a href="solutions.html?division=HIGHTECH" class="text-link" style="font-weight: 600;">Browse High-Tech (80 SKUs) &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+        <section id="mesh-chair-catalog" class="products" style="padding-top: 100px; background: #fff;">
         <div class="container">
             <div class="section-title">
                 <span class="section-tag">Explore 20 Solution Modules</span>
@@ -368,51 +421,7 @@
         </div>
     </section>
 
-    <section id="portfolio-overview" class="services-section" style="padding: 80px 0; background: var(--bg-light);">
-        <div class="container section-title">
-            <span class="section-tag">GLOBAL PORTFOLIO STRATEGY</span>
-            <h2>Three Strategic Divisions. One Predictable Source.</h2>
-            <p>Our 200+ SKU portfolio is meticulously segregated to eliminate operational conflict and serve specialist buyers.</p>
-        </div>
-        <div class="container service-grid" style="grid-template-columns: repeat(3, 1fr); gap: 30px;">
-            <div class="service-card" style="border-top: 5px solid var(--color-lifestyle);">
-                <div class="icon"><i class="fas fa-palette" style="color: var(--color-lifestyle);"></i></div>
-                <h3>LIFESTYLE & DESIGN</h3>
-                <p>High-end furniture and materials focused on aesthetics, sustainability, and **DTC packaging efficiency**. Includes Seating, Flooring, and Outdoor Systems.</p>
-                <ul style="text-align: left; list-style-type: none; padding-left: 0; margin-top: 10px;">
-                    <li><i class="fas fa-check-circle" style="color: green; margin-right: 5px;"></i> Zero-G Recliners</li>
-                    <li><i class="fas fa-check-circle" style="color: green; margin-right: 5px;"></i> Nano Banana Design</li>
-                    <li><i class="fas fa-check-circle" style="color: green; margin-right: 5px;"></i> WPC/Bamboo Flooring</li>
-                </ul>
-                <a href="solutions.html?division=LIFESTYLE" class="text-link" style="font-weight: 600;">Browse Lifestyle (60 SKUs) &rarr;</a>
-            </div>
-
-            <div class="service-card" style="border-top: 5px solid var(--color-industrial);">
-                <div class="icon"><i class="fas fa-tools" style="color: var(--color-industrial);"></i></div>
-                <h3>ENGINEERING & RIGOR</h3>
-                <p>Heavy-duty industrial products focused on **safety, load capacity, and material traceability**. Includes Hoists, Slings, and Steel/Nylon Cables.</p>
-                <ul style="text-align: left; list-style-type: none; padding-left: 0; margin-top: 10px;">
-                    <li><i class="fas fa-check-circle" style="color: green; margin-right: 5px;"></i> G100 Forged Slings</li>
-                    <li><i class="fas fa-check-circle" style="color: green; margin-right: 5px;"></i> EN131 Certified Ladders</li>
-                    <li><i class="fas fa-check-circle" style="color: green; margin-right: 5px;"></i> Marine-Grade Ropes</li>
-                </ul>
-                <a href="solutions.html?division=INDUSTRIAL" class="text-link" style="font-weight: 600;">Browse Engineering (60 SKUs) &rarr;</a>
-            </div>
-
-            <div class="service-card" style="border-top: 5px solid var(--color-hightech);">
-                <div class="icon"><i class="fas fa-microscope" style="color: var(--color-hightech);"></i></div>
-                <h3>HIGH-TECH & BIO</h3>
-                <p>Specialized products for high-growth sectors: **Lithium/ESS, Semiconductor, and Medical IVD**. Strict compliance required.</p>
-                <ul style="text-align: left; list-style-type: none; padding-left: 0; margin-top: 10px;">
-                    <li><i class="fas fa-check-circle" style="color: green; margin-right: 5px;"></i> UL9540 ESS Systems</li>
-                    <li><i class="fas fa-check-circle" style="color: green; margin-right: 5px;"></i> High-Purity Wafer Chemicals</li>
-                    <li><i class="fas fa-check-circle" style="color: green; margin-right: 5px;"></i> GMP/FDA Consumables</li>
-                </ul>
-                <a href="solutions.html?division=HIGHTECH" class="text-link" style="font-weight: 600;">Browse High-Tech (80 SKUs) &rarr;</a>
-            </div>
-        </div>
-    </section>
-    <section id="services" class="services-section">
+        <section id="services" class="services-section">
         <div class="container">
             <div class="section-title">
                 <span class="section-tag">Your End-to-End Partner</span>
@@ -427,7 +436,6 @@
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-box-open"></i></div> 
                     <h3>Precision Quality Assurance</h3>
-    动不了啊
                     <p>Adhering to strict AQL 2.5 standards and BIFMA/ANSI compliance for every unit, including sustainability certifications (ESG).</p>
                 </div>
                 <div class="service-card">
