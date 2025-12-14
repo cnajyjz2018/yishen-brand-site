@@ -1,907 +1,182 @@
-/* =========================================
-   YiShen Global B2B - styles.css
-   V11.0 终极排版修复版 (确保所有 Grid/Flex 布局生效)
-   ========================================= */
+/* =================================================================
+   YiShen Global - Main Stylesheet (V12.0 Flagship Edition)
+   Language: English Only | Encoding: UTF-8
+   ================================================================= */
 
-/* --- 基础设置与通用变量 --- */
 :root {
-    --primary: #111111;    
-    --secondary: #555555;  
-    --accent: #0077B6;     /* 核心强调色：深蓝色 */
-    --bg-light: #f7f9fb;   /* 浅背景色 */
-    --white: #ffffff;
-    --border: #e0e0e0;
-    --font-main: 'Inter', sans-serif;
-    --font-serif: 'Playfair Display', serif;
+    /* Color Palette - Authority & Trust */
+    --primary: #0F172A;       /* Deep Navy/Black for sophistication */
+    --secondary: #475569;     /* Slate Grey for text */
+    --accent: #0284C7;        /* Vibrant Tech Blue */
+    --accent-dark: #0369A1;   /* Hover Blue */
+    --gold: #F59E0B;          /* Strategic Highlight (Certification/Premium) */
+    --bg-light: #F8FAFC;      /* Clean background */
+    --white: #ffffff;
+    --border: #E2E8F0;
     
-    /* NEW: 战略部门颜色变量 */
-    --color-lifestyle: #FFC300; 
-    --color-industrial: #333333; 
-    --color-hightech: #007bff; 
+    /* Division Brand Colors */
+    --div-lifestyle: #F59E0B; /* Warmth/Gold */
+    --div-industrial: #334155; /* Steel/Grey */
+    --div-hightech: #3B82F6; /* Tech Blue */
+
+    /* Typography */
+    --font-main: 'Inter', sans-serif;
+    --font-serif: 'Playfair Display', serif;
 }
 
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
-
+/* Reset & Basics */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-    font-family: var(--font-main);
-    color: var(--primary);
-    line-height: 1.6;
-    background-color: var(--white);
-    -webkit-font-smoothing: antialiased;
+    font-family: var(--font-main);
+    color: var(--primary);
+    line-height: 1.7;
+    background-color: var(--white);
+    -webkit-font-smoothing: antialiased;
 }
 
-a { 
-    text-decoration: none; 
-    color: inherit; 
-    transition: 0.3s; 
-}
-ul { 
-    list-style: none; 
-    padding-left: 0; 
-}
-img { 
-    max-width: 100%; 
-    height: auto; 
+a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+ul { list-style: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* Layout Utilities */
+.container { width: 90%; max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+.section-padding { padding: 100px 0; }
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+
+/* Typography System */
+h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 700; line-height: 1.1; margin-bottom: 1rem; }
+h1 { font-size: 3.5rem; letter-spacing: -1px; }
+h2 { font-size: 2.8rem; color: var(--primary); }
+h3 { font-size: 1.5rem; }
+p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.05rem; }
+
+.section-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 5px;
 }
 
-.container { 
-    width: 90%; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-}
-.section-tag { 
-    display: block; 
-    font-size: 0.85rem; 
-    color: var(--accent); 
-    font-weight: 600; 
-    text-transform: uppercase; 
-    letter-spacing: 1px; 
-    margin-bottom: 10px; 
-}
-
-/* 通用标题样式 */
-.hero h1 {
-    font-family: var(--font-serif);
-    font-size: 3.5rem;
-    margin-bottom: 15px;
-    line-height: 1.2;
-}
-
-/* --- 通用按钮样式 --- */
+/* Buttons */
 .btn {
-    padding: 12px 25px;
-    border-radius: 4px;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    display: inline-block;
-    cursor: pointer;
-    text-align: center;
-    border: 2px solid transparent;
+    display: inline-block;
+    padding: 15px 35px;
+    border-radius: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
-.btn-primary { 
-    background: var(--accent); 
-    color: var(--white); 
-    border-color: var(--accent); 
-}
-.btn-primary:hover { 
-    background: #005a8f; 
-    border-color: #005a8f; 
-}
-.btn-outline { 
-    background: transparent; 
-    color: var(--white); 
-    border-color: var(--white); 
-}
-.btn-outline:hover { 
-    background: rgba(255,255,255,0.1); 
-    color: var(--white); 
-}
-.text-link { 
-    display: inline-block;
-    color: var(--accent); 
-    font-weight: 700; 
-    text-decoration: none; 
-    border-bottom: 2px solid transparent;
-    transition: 0.3s;
-}
-.text-link:hover { 
-    border-bottom-color: var(--accent); 
-}
+.btn-primary { background: var(--accent); color: var(--white); border: 2px solid var(--accent); }
+.btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+.btn-outline:hover { background: var(--primary); color: var(--white); }
+.btn-gold { background: var(--gold); color: #000; border: 2px solid var(--gold); }
+.btn-gold:hover { background: #d97706; border-color: #d97706; color: #fff; }
 
-
-/* =========================================
-   --- 导航栏 (Navbar) ---
-   ========================================= */
+/* Navigation */
 .navbar {
-    position: fixed; top: 0; width: 100%; height: 80px;
-    background: rgba(255,255,255,0.98);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    z-index: 1000;
-    display: flex; align-items: center;
+    position: fixed; top: 0; width: 100%; height: 90px;
+    background: rgba(255,255,255,0.98);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    z-index: 1000; display: flex; align-items: center;
+    backdrop-filter: blur(10px);
 }
-.nav-wrapper { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-}
+.nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+.brand { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+.logo-icon { width: 30px; height: 30px; background: var(--accent); border-radius: 4px; }
+.nav-links { display: flex; gap: 40px; align-items: center; }
+.nav-links a { font-weight: 600; font-size: 0.95rem; color: var(--secondary); }
+.nav-links a:hover { color: var(--accent); }
 
-/* ⭐ LOGO 样式集成 ⭐ */
-.brand { 
-    display: flex;
-    align-items: center;
-    font-family: var(--font-serif); 
-    font-size: 2.2rem; 
-    font-weight: 700; 
-    color: #FFC300; /* 品牌名称颜色改为金黄色 */
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-}
-
-.logo-icon {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-    border: 2px solid #00BFFF; /* 浅蓝色边框 */
-    border-radius: 50%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* 模拟 AI-Driven 环绕线条 */
-    background: radial-gradient(circle at center, rgba(0, 119, 182, 0) 50%, rgba(0, 119, 182, 0.4) 100%);
-    overflow: hidden;
-}
-.logo-icon::before, .logo-icon::after {
-    content: '';
-    position: absolute;
-    width: 80%;
-    height: 80%;
-    border: 2px solid #00BFFF; 
-    border-radius: 50%;
-    transform: rotate(30deg);
-    /* NEW: 动画优化 */
-    animation: rotate-logo 5s linear infinite;
-}
-.logo-icon::after {
-    transform: rotate(-30deg);
-    animation: rotate-logo-reverse 7s linear infinite;
-}
-
-@keyframes rotate-logo {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-@keyframes rotate-logo-reverse {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(-360deg); }
-}
-
-/* ⭐ LOGO 样式结束 ⭐ */
-
-.nav-links { 
-    /* 关键修复 2: 确保导航链接横向排列 */
-    display: flex; 
-    gap: 30px; 
-    align-items: center; 
-}
-.nav-links a { 
-    font-size: 0.95rem; 
-    font-weight: 500; 
-    color: var(--primary); 
-}
-.nav-links a:hover { 
-    color: var(--accent); 
-}
-.nav-links .btn-nav { 
-    padding: 8px 18px; 
-    background: var(--accent); 
-    color: var(--white) !important; 
-    border-radius: 4px; 
-    font-weight: 600;
-    text-transform: uppercase;
-    border: none;
-}
-.nav-links .btn-nav:hover { 
-    background: #005a8f; 
-}
-.menu-toggle { 
-    display: none; 
-    border: none; 
-    background: none; 
-    font-size: 1.5rem; 
-    cursor: pointer; 
-}
-
-/* =========================================
-   --- Hero Section & Trust Elements ---
-   ========================================= */
-.hero {
-    height: 90vh; 
-    display: flex; 
-    align-items: center; 
-    position: relative;
-    background-color: #0f172a; 
-    color: var(--white); 
-    margin-top: 80px;
-    text-align: center;
+/* Hero Section */
+.hero-global {
+    padding-top: 200px; padding-bottom: 150px;
+    background: #0f172a; color: var(--white);
+    text-align: center; position: relative; overflow: hidden;
 }
 .hero-bg {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background-size: cover; 
-    background-position: center;
-    opacity: 1; 
-    background-image: url('banner2.jpg'); 
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover; background-position: center;
+    opacity: 0.3; z-index: 1;
 }
-.hero-content { 
-    position: relative; 
-    z-index: 2; 
-    width: 100%; 
-    height: 100%;
-    display: flex; 
-    flex-direction: column; 
-    justify-content: flex-end; 
-    align-items: center; 
-    padding-bottom: 80px; 
+.hero-content { position: relative; z-index: 10; max-width: 900px; margin: 0 auto; }
+.hero-stats {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    background: var(--white); color: var(--primary);
+    padding: 40px; margin-top: -60px;
+    border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    position: relative; z-index: 20; width: 90%; max-width: 1200px; margin-left: auto; margin-right: auto;
 }
-.hero-btns { 
-    display: flex; 
-    gap: 15px; 
-    padding: 20px;
-    background: rgba(0,0,0,0.2); 
-    border-radius: 50px;
-    backdrop-filter: blur(3px);
+.stat-box h3 { color: var(--accent); font-size: 2.5rem; margin-bottom: 5px; }
+.stat-box p { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--secondary); margin: 0; }
+
+/* Logo Marquee */
+.trust-bar { padding: 60px 0; border-bottom: 1px solid var(--border); }
+.logo-flex { display: flex; justify-content: space-between; opacity: 0.5; filter: grayscale(100%); }
+.logo-flex img { height: 35px; }
+
+/* Services / Features Grid */
+.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.feature-card {
+    padding: 40px; background: var(--white);
+    border: 1px solid var(--border); border-radius: 8px;
+    transition: all 0.4s ease;
 }
-.stats-bar { 
-    background: var(--primary); 
-    padding: 40px 0; 
-    color: var(--white); 
-}
-.stats-grid { 
-    /* 关键修复 3: 确保统计数据横向网格排列 */
-    display: grid; 
-    grid-template-columns: repeat(4, 1fr); 
-    text-align: center; 
-    gap: 20px; 
-}
-.stat-item {
-    display: flex; 
-    flex-direction: column; 
-    transition: background 0.3s;
-    padding: 10px 0;
-    border-radius: 4px;
-}
-.stat-item:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-.stat-number { 
-    display: block; 
-    font-size: 2.5rem; 
-    font-weight: 700; 
-    color: var(--accent); 
-    font-family: var(--font-serif); 
-}
-.stat-label { 
-    font-size: 0.9rem; 
-    opacity: 0.8; 
-    text-transform: uppercase; 
-    letter-spacing: 1px; 
-}
-/* NEW: Stats Link */
-.stat-link {
-    display: block;
-    font-size: 0.8rem;
-    color: #FFC300; /* 金黄色 */
-    margin-top: 5px;
-    font-weight: 500;
+.feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--accent); }
+.feature-icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 25px; }
+
+/* Process Section */
+.process-section { background: var(--primary); color: var(--white); }
+.process-section h2 { color: var(--white); }
+.process-section p { color: #94a3b8; }
+.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; position: relative; }
+.process-step { position: relative; z-index: 2; }
+.process-number {
+    font-size: 4rem; font-weight: 800; color: rgba(255,255,255,0.1);
+    position: absolute; top: -30px; left: 0; z-index: -1;
 }
 
+/* Division Cards */
+.division-card {
+    position: relative; height: 500px; overflow: hidden;
+    color: var(--white); display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 40px; border-radius: 8px;
+}
+.div-bg {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover; background-position: center; transition: transform 0.6s ease;
+    z-index: 1; filter: brightness(0.6);
+}
+.division-card:hover .div-bg { transform: scale(1.1); filter: brightness(0.4); }
+.div-content { position: relative; z-index: 2; }
 
-/* Logo Bar (信任信号) */
-.logo-bar { 
-    padding: 30px 0; 
-    background: var(--white); 
-    border-bottom: 1px solid var(--border); 
-}
-.logo-grid { 
-    display: flex; 
-    justify-content: space-around; 
-    align-items: center; 
-    opacity: 0.7; 
-    max-width: 900px; 
-    margin: 0 auto; 
-}
-.logo-grid img { 
-    height: 30px; 
-}
+/* Footer */
+.footer { background: #0F172A; color: #94a3b8; padding: 100px 0 40px; font-size: 0.95rem; }
+.footer-title { color: var(--white); font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 25px; }
+.footer ul li { margin-bottom: 12px; }
+.footer a:hover { color: var(--gold); }
+.footer-bottom { border-top: 1px solid #1e293b; margin-top: 60px; padding-top: 30px; text-align: center; }
 
-
-/* =========================================
-   --- 2. 关于我们 (About Section) ---
-   ========================================= */
-.about-section { 
-    padding: 100px 0; 
-    background: var(--white); 
-}
-.about-wrapper { 
-    /* 关键修复 4: 确保 about 部分的网格布局生效 */
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: 70px; 
-    align-items: center; 
-}
-.about-text h2 { 
-    font-family: var(--font-serif); 
-    font-size: 2.8rem; 
-    line-height: 1.2;
-    margin-bottom: 25px; 
-    color: var(--primary);
-}
-.intro-text {
-    font-size: 1.1rem;
-    color: var(--secondary);
-    margin-bottom: 30px;
-    line-height: 1.8;
-}
-.insight-box {
-    background: var(--bg-light); 
-    border-left: 4px solid var(--accent); 
-    padding: 20px 25px;
-    margin-bottom: 30px;
-    border-radius: 0 8px 8px 0;
-}
-.insight-box strong { 
-    display: block; 
-    color: var(--accent); 
-    margin-bottom: 8px; 
-    font-size: 0.9rem; 
-    text-transform: uppercase; 
-    letter-spacing: 1px; 
-}
-.insight-box p { 
-    margin: 0; 
-    color: var(--primary); 
-    font-style: italic; 
-    font-weight: 500; 
-    font-size: 1.05rem; 
-}
-.expertise-list { 
-    margin-bottom: 35px; 
-    padding-left: 0; 
-}
-.expertise-list li {
-    padding-left: 25px;
-    position: relative;
-    margin-bottom: 12px;
-    color: var(--secondary);
-    font-size: 0.95rem;
-}
-.expertise-list li::before {
-    content: '✓';
-    position: absolute; left: 0; top: 0;
-    color: var(--accent);
-    font-weight: bold;
-}
-.about-image { 
-    height: 550px; 
-    background-size: cover; 
-    background-position: center; 
-    border-radius: 12px; 
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-
-/* NEW: Vertical Control Grid Styles */
-#vertical-control .expertise-grid {
-    display: grid; /* 关键修复 5: 确保此处 grid 生效 */
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px 20px;
-}
-#vertical-control .control-point {
-    background: var(--white);
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-#vertical-control .control-point h4 {
-    font-size: 1rem;
-    margin-bottom: 5px;
-}
-#vertical-control .control-point p {
-    font-size: 0.85rem;
-    color: var(--secondary);
-}
-/* END NEW: Vertical Control Grid Styles */
-
-
-/* =========================================
-   --- 3. 产品展示 (Products & Catalog) ---
-   ========================================= */
-.products { 
-    padding: 100px 0; 
-    background: var(--bg-light); 
-}
-.section-title { 
-    text-align: center; 
-    margin-bottom: 80px; 
-    max-width: 700px; 
-    margin-left: auto; 
-    margin-right: auto; 
-}
-.section-title h2 { 
-    font-family: var(--font-serif); 
-    font-size: 2.5rem; 
-    margin-bottom: 15px; 
-}
-
-/* SKU 筛选/展示区域 */
-.mesh-chair-results-grid {
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 25px;
-}
-/* NEW: Catalog card styling for better visibility */
-.mesh-chair-card {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-}
-.mesh-chair-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-}
-.mesh-chair-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    background: #e9e9e9;
-}
-.mesh-chair-content {
-    padding: 15px;
-}
-.mesh-chair-content h4 {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-    color: var(--primary);
-}
-.mesh-chair-content .sku-meta {
-    font-size: 0.85rem;
-    color: var(--secondary);
-}
-
-
-.category-grid { 
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 25px; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-}
-.category-card { 
-    position: relative; 
-    height: 320px; 
-    border-radius: 12px; 
-    overflow: hidden; 
-    display: block; 
-    color: var(--white);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-.category-bg {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background-size: cover; 
-    background-position: center center; 
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    z-index: 1;
-}
-.category-card::after {
-    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.1));
-    z-index: 2;
-    transition: background 0.3s;
-}
-.category-content {
-    position: relative; z-index: 3;
-    height: 100%;
-    display: flex; flex-direction: column; justify-content: flex-end;
-    padding: 25px;
-}
-.category-content h3 { 
-    font-size: 1.3rem; 
-    font-weight: 700; 
-    margin-bottom: 5px; 
-    color: #fff; 
-}
-.product-meta { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    margin-bottom: 10px; 
-}
-.category-content p { 
-    font-size: 0.9rem; 
-    opacity: 0.8; 
-    color: #ddd; 
-    margin: 0;
-}
-/* 核心营销标签 (Tri-Channel Signal) */
-.product-tag { 
-    font-size: 0.8rem; 
-    font-weight: 600; 
-    color: var(--accent); 
-    background: var(--white);
-    padding: 3px 8px;
-    border-radius: 4px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    border: 1px solid var(--accent); 
-    box-shadow: 0 0 5px rgba(0, 119, 182, 0.5); 
-}
-/* 卡片悬停效果 */
-.category-card:hover .category-bg { 
-    transform: scale(1.1); 
-}
-.category-card:hover::after { 
-    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)); 
-}
-.view-more-container { 
-    text-align: center; 
-    margin-top: 50px; 
-}
-            
-/* --- 产品 Showcase (热点图) --- */
-.product-showcase-container {
-    padding: 80px 0;
-    background: var(--white);
-}
-.showcase-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-}
-.showcase-image {
-    position: relative;
-    height: 550px;
-    background-size: contain; 
-    background-repeat: no-repeat;
-    background-position: center;
-}
-/* Hotspot styles */
-.hotspot {
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    background: var(--accent); 
-    border-radius: 50%;
-    cursor: pointer;
-    border: 3px solid var(--white);
-    transition: transform 0.3s, box-shadow 0.3s;
-    z-index: 10;
-}
-.hotspot:hover {
-    transform: scale(1.2);
-    box-shadow: 0 0 10px rgba(0, 119, 182, 0.8);
-}
-.hotspot-info {
-    position: absolute;
-    background: rgba(17, 17, 17, 0.95); 
-    color: var(--white);
-    padding: 15px;
-    border-radius: 8px;
-    width: 250px;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    z-index: 20;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-}
-.hotspot-info h5 {
-    font-size: 1.1rem;
-    color: var(--accent);
-    margin-bottom: 8px;
-    font-weight: 700;
-}
-.tech-spec {
-    display: block; 
-    color: var(--primary); 
-    background: #FFDD00; 
-    padding: 3px 8px; 
-    border-radius: 2px; 
-    margin-bottom: 10px; 
-    font-size: 0.85rem; 
-    font-weight: 700; 
-    width: fit-content;
-}
-
-
-/* =========================================
-   --- 4. 服务板块 (Services) ---
-   ========================================= */
-.services-section { 
-    padding: 100px 0; 
-    background: var(--white); 
-}
-.service-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 30px; 
-}
-.service-card { 
-    padding: 30px; 
-    border: 1px solid var(--border); 
-    border-radius: 8px; 
-    transition: 0.3s; 
-    height: 100%; 
-} 
-.service-card:hover { 
-    border-color: var(--accent); 
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
-    transform: translateY(-3px); 
-}
-.service-card .icon { 
-    font-size: 2.5rem; 
-    margin-bottom: 20px; 
-    color: var(--accent); 
-}
-.service-card h3 { 
-    font-size: 1.2rem; 
-    margin-bottom: 10px; 
-    color: var(--primary); 
-}
-.service-card p { 
-    color: var(--secondary); 
-    font-size: 0.9rem; 
-}
-
-/* =========================================
-   --- 5. 页脚 (Footer) ---
-   ========================================= */
-.footer { 
-    background: #1a1a1a; 
-    color: #fff; 
-    padding: 80px 0 30px; 
-}
-.footer-top { 
-    /* 关键修复 6: 确保页脚顶部内容布局生效 */
-    display: grid; 
-    grid-template-columns: 1.5fr 1fr; 
-    gap: 80px; 
-    margin-bottom: 60px; 
-}
-.footer-brand-col h3 { 
-    font-family: var(--font-serif); 
-    font-size: 1.8rem; 
-    margin-bottom: 20px; 
-}
-.footer-contact-col h4 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    font-family: var(--font-serif);
-    color: var(--accent);
-}
-.contact-row { 
-    /* 关键修复 7: 确保联系信息横向排列 */
-    display: flex; 
-    margin-bottom: 15px; 
-    font-size: 0.9rem; 
-}
-.contact-row span:first-child { 
-    color: var(--accent); 
-    font-weight: 600; 
-    margin-right: 15px; 
-    flex-shrink: 0; 
-    width: 100px; 
-    display: flex; 
-    align-items: center;
-    gap: 8px; 
-}
-.contact-row a { 
-    color: #fff; 
-    border-bottom: 1px dotted #666; 
-}
-.contact-row a:hover { 
-    color: var(--accent); 
-    border-color: var(--accent); 
-}
-.contact-emails {
-    display: flex; 
-    flex-direction: column; 
-    gap: 5px;
-}
-.contact-row i {
-    color: var(--white); 
-}
-.footer-bottom { 
-    border-top: 1px solid #333; 
-    padding-top: 30px; 
-    text-align: center; 
-    font-size: 0.8rem; 
-    opacity: 0.5; 
-}
-            
-/* 快速询价浮窗样式 */
-.sticky-cta {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--primary);
-    color: var(--white);
-    padding: 15px 25px;
-    border-radius: 50px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    z-index: 900;
-    display: none; 
-    cursor: pointer;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-/* =========================================
-   --- NEW EXPANSION STYLES (V11.0) ---
-   ========================================= */
-
-/* NEW: Strategic Portfolio Overview (3-Column Grid) */
-#portfolio-overview {
-    padding: 100px 0;
-    background: var(--bg-light);
-}
-#portfolio-overview .service-card {
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-#portfolio-overview .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
-#portfolio-overview .service-card .icon i {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-#portfolio-overview .service-card h3 {
-    font-size: 1.3rem;
-    font-family: var(--font-serif);
-}
-#portfolio-overview .service-card p {
-    font-size: 0.95rem;
-}
-
-
-/* NEW: Cross-SBU Case Study Styles */
-#cross-sbu-case .about-wrapper {
-    display: grid; /* 关键修复 8: 确保 Cross-SBU 网格布局生效 */
-    grid-template-columns: 1fr 1.5fr; /* Adjust column ratio for case study */
-    gap: 70px;
-}
-#cross-sbu-case .about-image {
-    height: 450px;
-    background-size: cover;
-    background-position: center;
-}
-#cross-sbu-case .expertise-list li {
-    color: #333;
-}
-#cross-sbu-case .expertise-list strong {
-    color: var(--accent);
-}
-
-/* =========================================
-   --- 响应式调整 (Responsive Design) ---
-   ========================================= */
-
-/* 移动端菜单状态 */
-.nav-links.is-open {
-    display: flex !important; 
-    position: absolute; 
-    top: 80px; 
-    left: 0; 
-    width: 100%; 
-    background: var(--white); 
-    flex-direction: column; 
-    padding: 20px 0; 
-    border-top: 1px solid var(--border);
-}
-
-
-/* 平板设备 (最大 1024px) */
+/* Mobile */
 @media (max-width: 1024px) {
-    .category-grid, .mesh-chair-results-grid { 
-        grid-template-columns: repeat(2, 1fr); 
-    }
-    .footer-top { 
-        grid-template-columns: 1fr; 
-        gap: 40px; 
-    }
-    .showcase-wrapper {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    /* NEW: Adjust portfolio overview */
-    #portfolio-overview .service-grid {
-        grid-template-columns: 1fr;
-    }
-    #cross-sbu-case .about-wrapper {
-        grid-template-columns: 1fr;
-    }
+    .hero-stats { grid-template-columns: 1fr 1fr; gap: 30px; }
+    .feature-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr; gap: 50px; }
 }
-
-
-/* 移动设备 (最大 768px) */
 @media (max-width: 768px) {
-    .products, .services-section, .about-section, .stats-bar { 
-        padding: 40px 0; 
-    }
-    .hero { 
-        margin-top: 60px; 
-        height: 60vh; 
-    }
-    .hero h1 { 
-        font-size: 2.5rem; 
-    }
-    .hero-btns { 
-        flex-direction: column; 
-        gap: 10px; 
-        padding: 15px; 
-    }
-    .nav-links { 
-        display: none; 
-    }
-    .menu-toggle { 
-        display: block; 
-    } 
-    .about-wrapper { 
-        grid-template-columns: 1fr; 
-        gap: 30px; 
-    }
-    .about-image { 
-        order: -1; 
-        height: 250px; 
-        margin-bottom: 20px; 
-    }
-    .category-grid, .mesh-chair-results-grid { 
-        grid-template-columns: 1fr; 
-    }
-    .stats-grid { 
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 20px; 
-    }
-    /* NEW: Mobile specific fixes */
-    #vertical-control .about-wrapper {
-        grid-template-columns: 1fr;
-    }
-    #vertical-control .expertise-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* 极小屏幕 (最大 480px) */
-@media (max-width: 480px) {
-    .stats-grid { 
-        grid-template-columns: 1fr; 
-    } 
-    .contact-row { 
-        flex-direction: column; 
-        align-items: flex-start; 
-    }
-}
-
-/* --- 子页面通用样式 (Solutions, Industries, Why-Us) --- */
-
-/* NEW: Subpage Hero Top Margin Fix */
-.solutions-hero, .why-us-hero, .industries-hero {
-    /* Padding retained from original (150px 0 80px) */
-    padding-top: 150px; 
-    color: var(--white);
-    text-align: center;
-    /* Ensure there is enough space below the 80px fixed navbar */
-    margin-top: 0; 
-}
-/* This style ensures non-fixed navbar version of these pages aligns correctly when header is 'static' */
-header.navbar[style*="position: static"] + .solutions-hero,
-header.navbar[style*="position: static"] + .why-us-hero,
-header.navbar[style*="position: static"] + .industries-hero {
-    padding-top: 80px; /* Reduces top padding when the navbar is static */
+    .nav-links { display: none; }
+    .menu-toggle { display: block; }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
 }
