@@ -5,95 +5,97 @@
  */
 
 // =========================================================================
-// --- 战略核心：200个 SKU 的数据模型 (V11.0 架构) ---
+// --- Strategic Core: 200 SKU Data Model (V11.0 Architecture) ---
 // =========================================================================
 
 const PRODUCT_DATA_V11 = {
     // --- LIFESTYLE & DESIGN (SBU 1-3) ---
-    // 1. 空间设计模块 (Seating & Desk) - 20 SKUs
+    // 1. Space Design Modules (Seating & Desk) - 20 SKUs
     space_design_modules: [
-        { model: "DS-XC-R8-CF", division: "LIFESTYLE", feature: "Dynamic Lumbar + Carbon Fiber", desc: "X-Hybrid Adaptive Support System, Carbon Fiber finish, 5D Armrests. Vertical Control: Core Polymer Sourcing. Scene: AI Research Office.", hs_code: "9401.31.0000", price_range: "$350-$450", img: "assets/seating/OS-XC-R8.jpg" },
-        { model: "DS-ALU-ZERO", division: "LIFESTYLE", feature: "Full Aluminum Frame + Zero-G Recline", desc: "Polished Aluminum frame, Synchro-Recline (Zero-Gravity). Vertical Control: Precision Aluminum Forging. Scene: Private Executive Study.", hs_code: "9401.71.9000", price_range: "$280-$380", img: "assets/seating/OS-ALU-ZERO.jpg" },
-        { model: "DS-MOD-M9", division: "LIFESTYLE", feature: "Modular Mesh Back", desc: "Modular Design for easy parts swap, BIFMA Certified, High-Tensile Mesh. Vertical Control: Mesh Material QC. Scene: Corporate BPO Center.", hs_code: "9401.31.0000", price_range: "$150-$220", img: "assets/seating/OS-MOD-M9.jpg" },
-        { model: "DS-C20-MOD", division: "LIFESTYLE", feature: "Modular Sofa System", desc: "Custom modular fabric sofa system for commercial lounge areas. High density foam. Vertical Control: Fabric Fire Rating. Scene: Corporate Lounge.", hs_code: "9401.40.0000", price_range: "$200-$400/module", img: "assets/lounge/LS-C20-MOD.jpg" },
-        { model: "DS-D-DUAL", division: "LIFESTYLE", feature: "Dual Motor Standing Desk", desc: "Dual-Motor Standing Desk, Anti-Collision, Integrated Wireless Charging, Bamboo Top. Vertical Control: Core Motor Sourcing. Scene: Digital Creator Studio.", hs_code: "9403.30.0000", price_range: "$350-$480", img: "assets/desks/OD-D-DUAL.jpg" },
-        { model: "DS-B80-WL", division: "LIFESTYLE", feature: "Walnut Executive L-Desk", desc: "Walnut veneer L-shaped executive desk with integrated cable management. Custom hardware. Scene: Executive Office.", hs_code: "9403.30.0000", price_range: "$600-$850", img: "assets/desks/OD-B80-WL.jpg" },
-        { model: "DS-D10-OAK", division: "LIFESTYLE", feature: "Solid Oak Dining Table", desc: "Solid white oak rectangular dining table (180cm), durable oil finish. KD structure. Scene: High-End Residential.", hs_code: "9403.60.0000", price_range: "$600-$800", img: "assets/wooden/WH-D10-OAK.jpg" },
-        { model: "DS-R60-CHEST", division: "LIFESTYLE", feature: "5-Drawer Chest", desc: "Five-drawer chest of drawers (wood veneer), anti-tip safety hardware included. Scene: Residential Bedroom.", hs_code: "9403.50.0000", price_range: "$280-$380", img: "assets/wooden/WH-R60-CHEST.jpg" },
-        { model: "DS-T99-CONF", division: "LIFESTYLE", feature: "Modular Conference Table", desc: "Modular trapezoid conference tables (set of 6) for flexible room setups. Power grommets. Scene: Large Conference Hall.", hs_code: "9403.70.0000", price_range: "$400-$600/unit", img: "assets/desks/OD-T99-CONF.jpg" },
-        { model: "DS-H55-ACOUSTIC", division: "LIFESTYLE", feature: "Acoustic Pod Chair", desc: "High-back private pod chair with acoustic damping walls. Vertical Control: Sound Absorption Material. Scene: Open Plan Office.", hs_code: "9401.40.0000", price_range: "$800-$1200", img: "assets/lounge/LS-H55-ACOUSTIC.jpg" },
-        { model: "DS-M-SINGLE", division: "LIFESTYLE", feature: "Single Motor Standing Desk", desc: "Single-motor electric standing desk, 3 memory presets, powder-coated steel frame. Vertical Control: Control Box. Scene: Small Office.", hs_code: "9403.30.0000", price_range: "$250-$350", img: "assets/desks/OD-M-SINGLE.jpg" },
-        { model: "DS-E50-EXECUTIVE", division: "LIFESTYLE", feature: "Full Leather Executive", desc: "Full grain genuine leather executive chair, wood trim details. Scene: CEO's Office.", hs_code: "9401.40.0000", price_range: "$450-$600", img: "assets/seating/OS-E50-EXECUTIVE.jpg" },
-        { model: "DS-B18-TASK", division: "LIFESTYLE", feature: "High Volume Task", desc: "Basic plastic back task chair, pneumatic lift. Optimized for container filling. Scene: Logistics Warehouse Office.", hs_code: "9401.31.0000", price_range: "$40-$60", img: "assets/seating/OS-B18-TASK.jpg" },
-        { model: "DS-001", division: "LIFESTYLE", feature: "Fixed Lumbar High Volume", desc: "Fixed lumbar, High volume SKU. FCL: 750 units.", hs_code: "9401.31.0000", price_range: "$70-$100", img: "assets/images/economic-simple-black.jpg" },
-        { model: "DS-002", division: "LIFESTYLE", feature: "2D Adjustable Mid-Market", desc: "2D adjustable lumbar/armrests, High mesh content. Mid-market stable.", hs_code: "9401.31.0000", price_range: "$120-$180", img: "assets/images/standard-2d-lumbar-black.jpg" },
-        { model: "DS-007", division: "LIFESTYLE", feature: "Dynamic Aluminum Base", desc: "Dynamic lumbar, Aluminum base, UL Certified. Flagship stability.", hs_code: "9401.31.0000", price_range: "$300-$400", img: "assets/images/premium-aluminum-base-black.jpg" },
-        { model: "DS-012", division: "LIFESTYLE", feature: "Fixed Arms & Headrest", desc: "Fixed arms and headrest. Simplest assembly for DTC.", hs_code: "9401.31.0000", price_range: "$80-$120", img: "assets/images/economic-headrest-black.jpg" },
-        { model: "DS-020", division: "LIFESTYLE", feature: "Synchro Tilt Mechanism", desc: "Synchronous tilt mechanism, nylon base, popular standard model.", hs_code: "9401.31.0000", price_range: "$150-$220", img: "assets/images/standard-synchrotilt-black.jpg" },
-        { model: "DS-050", division: "LIFESTYLE", feature: "4D Armrests Wire Control", desc: "4D armrests, advanced wire control mechanism. Highest durability rating.", hs_code: "9401.31.0000", price_range: "$350-$450", img: "assets/images/premium-wire-control-black.jpg" },
-        { model: "DS-G40-GAMING", division: "LIFESTYLE", feature: "Gaming High Back", desc: "Ergonomic racing style gaming chair with lumbar cushion. PVC Leather. Scene: Esports Training Center.", hs_code: "9401.31.0000", price_range: "$120-$180", img: "assets/seating/OS-G40-GAMING.jpg" },
+        { model: "DS-XC-R8-CF", division: "LIFESTYLE", feature: "Dynamic Lumbar + Carbon Fiber", desc: "X-Hybrid Adaptive Support System, Carbon Fiber finish, 5D Armrests.", Vertical_Control: "Core Polymer Sourcing", Scene: "AI Research Office", hs_code: "9401.31.0000", price_range: "$350-$450", img: "assets/seating/OS-XC-R8.jpg" },
+        { model: "DS-ALU-ZERO", division: "LIFESTYLE", feature: "Full Aluminum Frame + Zero-G Recline", desc: "Polished Aluminum frame, Synchro-Recline (Zero-Gravity).", Vertical_Control: "Precision Aluminum Forging", Scene: "Private Executive Study", hs_code: "9401.71.9000", price_range: "$280-$380", img: "assets/seating/OS-ALU-ZERO.jpg" },
+        { model: "DS-MOD-M9", division: "LIFESTYLE", feature: "Modular Mesh Back", desc: "Modular Design for easy parts swap, BIFMA Certified, High-Tensile Mesh.", Vertical_Control: "Mesh Material QC", Scene: "Corporate BPO Center", hs_code: "9401.31.0000", price_range: "$150-$220", img: "assets/seating/OS-MOD-M9.jpg" },
+        { model: "DS-C20-MOD", division: "LIFESTYLE", feature: "Modular Sofa System", desc: "Custom modular fabric sofa system for commercial lounge areas. High density foam.", Vertical_Control: "Fabric Fire Rating", Scene: "Corporate Lounge", hs_code: "9401.40.0000", price_range: "$200-$400/module", img: "assets/lounge/LS-C20-MOD.jpg" },
+        { model: "DS-D-DUAL", division: "LIFESTYLE", feature: "Dual Motor Standing Desk", desc: "Dual-Motor Standing Desk, Anti-Collision, Integrated Wireless Charging, Bamboo Top.", Vertical_Control: "Core Motor Sourcing", Scene: "Digital Creator Studio", hs_code: "9403.30.0000", price_range: "$350-$480", img: "assets/desks/OD-D-DUAL.jpg" },
+        { model: "DS-B80-WL", division: "LIFESTYLE", feature: "Walnut Executive L-Desk", desc: "Walnut veneer L-shaped executive desk with integrated cable management. Custom hardware.", Vertical_Control: "Veneer Purity/Adhesives", Scene: "Executive Office", hs_code: "9403.30.0000", price_range: "$600-$850", img: "assets/desks/OD-B80-WL.jpg" },
+        { model: "DS-D10-OAK", division: "LIFESTYLE", feature: "Solid Oak Dining Table", desc: "Solid white oak rectangular dining table (180cm), durable oil finish. KD structure.", Vertical_Control: "Wood Moisture Content", Scene: "High-End Residential", hs_code: "9403.60.0000", price_range: "$600-$800", img: "assets/wooden/WH-D10-OAK.jpg" },
+        { model: "DS-R60-CHEST", division: "LIFESTYLE", feature: "5-Drawer Chest", desc: "Five-drawer chest of drawers (wood veneer), anti-tip safety hardware included.", Vertical_Control: "Slide Mechanism QC", Scene: "Residential Bedroom", hs_code: "9403.50.0000", price_range: "$280-$380", img: "assets/wooden/WH-R60-CHEST.jpg" },
+        { model: "DS-T99-CONF", division: "LIFESTYLE", feature: "Modular Conference Table", desc: "Modular trapezoid conference tables (set of 6) for flexible room setups. Power grommets.", Vertical_Control: "Laminate Edge Banding", Scene: "Large Conference Hall", hs_code: "9403.70.0000", price_range: "$400-$600/unit", img: "assets/desks/OD-T99-CONF.jpg" },
+        { model: "DS-H55-ACOUSTIC", division: "LIFESTYLE", feature: "Acoustic Pod Chair", desc: "High-back private pod chair with acoustic damping walls.", Vertical_Control: "Sound Absorption Material", Scene: "Open Plan Office", hs_code: "9401.40.0000", price_range: "$800-$1200", img: "assets/lounge/LS-H55-ACOUSTIC.jpg" },
+        { model: "DS-M-SINGLE", division: "LIFESTYLE", feature: "Single Motor Standing Desk", desc: "Single-motor electric standing desk, 3 memory presets, powder-coated steel frame.", Vertical_Control: "Control Box", Scene: "Small Office", hs_code: "9403.30.0000", price_range: "$250-$350", img: "assets/desks/OD-M-SINGLE.jpg" },
+        { model: "DS-E50-EXECUTIVE", division: "LIFESTYLE", feature: "Full Leather Executive", desc: "Full grain genuine leather executive chair, wood trim details.", Vertical_Control: "Leather Purity/Tanning", Scene: "CEO's Office", hs_code: "9401.40.0000", price_range: "$450-$600", img: "assets/seating/OS-E50-EXECUTIVE.jpg" },
+        { model: "DS-B18-TASK", division: "LIFESTYLE", feature: "High Volume Task", desc: "Basic plastic back task chair, pneumatic lift. Optimized for container filling.", Vertical_Control: "Plastic Injection Quality", Scene: "Logistics Warehouse Office", hs_code: "9401.31.0000", price_range: "$40-$60", img: "assets/seating/OS-B18-TASK.jpg" },
+        { model: "DS-001", division: "LIFESTYLE", feature: "Fixed Lumbar High Volume", desc: "Fixed lumbar, High volume SKU. FCL: 750 units.", Vertical_Control: "Plastic Injection Quality", Scene: "Mass Retail Floor", hs_code: "9401.31.0000", price_range: "$70-$100", img: "assets/images/economic-simple-black.jpg" },
+        { model: "DS-002", division: "LIFESTYLE", feature: "2D Adjustable Mid-Market", desc: "2D adjustable lumbar/armrests, High mesh content. Mid-market stable.", Vertical_Control: "Mechanism Durability", Scene: "Small Business Office", hs_code: "9401.31.0000", price_range: "$120-$180", img: "assets/images/standard-2d-lumbar-black.jpg" },
+        { model: "DS-007", division: "LIFESTYLE", feature: "Dynamic Aluminum Base", desc: "Dynamic lumbar, Aluminum base, UL Certified. Flagship stability.", Vertical_Control: "Aluminum Forging Purity", Scene: "Executive Desk", hs_code: "9401.31.0000", price_range: "$300-$400", img: "assets/images/premium-aluminum-base-black.jpg" },
+        { model: "DS-012", division: "LIFESTYLE", feature: "Fixed Arms & Headrest", desc: "Fixed arms and headrest. Simplest assembly for DTC.", Vertical_Control: "Packaging Drop Test", Scene: "DTC Home Office", hs_code: "9401.31.0000", price_range: "$80-$120", img: "assets/images/economic-headrest-black.jpg" },
+        { model: "DS-020", division: "LIFESTYLE", feature: "Synchro Tilt Mechanism", desc: "Synchronous tilt mechanism, nylon base, popular standard model.", Vertical_Control: "Mechanism Cpk", Scene: "General Office Use", hs_code: "9401.31.0000", price_range: "$150-$220", img: "assets/images/standard-synchrotilt-black.jpg" },
+        { model: "DS-050", division: "LIFESTYLE", feature: "4D Armrests Wire Control", desc: "4D armrests, advanced wire control mechanism. Highest durability rating.", Vertical_Control: "Wire Tension/Routing", Scene: "High-End Corporate", hs_code: "9401.31.0000", price_range: "$350-$450", img: "assets/images/premium-wire-control-black.jpg" },
+        { model: "DS-G40-GAMING", division: "LIFESTYLE", feature: "Gaming High Back", desc: "Ergonomic racing style gaming chair with lumbar cushion. PVC Leather.", Vertical_Control: "PVC Material VOC", Scene: "Esports Training Center", hs_code: "9401.31.0000", price_range: "$120-$180", img: "assets/seating/OS-G40-GAMING.jpg" },
     ],
-    // 2. 表面材料系统 (Cladding & Flooring) - 20 SKUs
+    // 2. Surface Materials (Cladding & Flooring) - 20 SKUs
     surface_materials: [
-        { model: "SM-FL-SPD7M", division: "LIFESTYLE", feature: "7mm SPC-WPC Hybrid (Zero VOC)", desc: "AC6 Commercial Grade Click-Lock, IXPE Underlay, High Density SPC Core. Vertical Control: SPC Core Material. Scene: High-Traffic Shopping Mall.", hs_code: "3918.10.9000", price_range: "$3-$5/sqft", img: "assets/flooring/FL-SPD7M.jpg" },
-        { model: "SM-FL-YONG-B", division: "LIFESTYLE", feature: "15mm Strand Woven Bamboo (安吉君澜对标)", desc: "15mm High-Density Bamboo Floor, Anti-Scratch Finish, Fire Retardant. Vertical Control: Fiber Density. Scene: Museum Gallery.", hs_code: "4409.29.9090", price_range: "$4-$6/sqft", img: "assets/flooring/FL-YONG-B.jpg" },
-        { model: "SM-BM-WALL-PVC", division: "LIFESTYLE", feature: "PVC Wall Panel", desc: "Waterproof PVC interior decorative wall paneling (various textures). Scene: Commercial Bathroom.", hs_code: "3925.90.0000", price_range: "$2-$4/sqft", img: "assets/materials/BM-WALL-PVC.jpg" },
+        { model: "SM-FL-SPD7M", division: "LIFESTYLE", feature: "7mm SPC-WPC Hybrid (Zero VOC)", desc: "AC6 Commercial Grade Click-Lock, IXPE Underlay, High Density SPC Core.", Vertical_Control: "SPC Core Material", Scene: "High-Traffic Shopping Mall", hs_code: "3918.10.9000", price_range: "$3-$5/sqft", img: "assets/flooring/FL-SPD7M.jpg" },
+        { model: "SM-FL-YONG-B", division: "LIFESTYLE", feature: "15mm Strand Woven Bamboo (Anji Standard)", desc: "15mm High-Density Bamboo Floor, Anti-Scratch Finish, Fire Retardant.", Vertical_Control: "Fiber Density", Scene: "Museum Gallery", hs_code: "4409.29.9090", price_range: "$4-$6/sqft", img: "assets/flooring/FL-YONG-B.jpg" },
+        { model: "SM-BM-WALL-PVC", division: "LIFESTYLE", feature: "PVC Wall Panel", desc: "Waterproof PVC interior decorative wall paneling (various textures).", Vertical_Control: "PVC Fire Rating", Scene: "Commercial Bathroom", hs_code: "3925.90.0000", price_range: "$2-$4/sqft", img: "assets/materials/BM-WALL-PVC.jpg" },
         // ... (17 more unique SKUs to reach 20)
     ],
-    // 3. 户外与休闲系统 (Outdoor Systems) - 20 SKUs
+    // 3. Outdoor Systems - 20 SKUs
     outdoor_systems: [
-        { model: "OUT-YACHT-M", division: "LIFESTYLE", feature: "Marine Aluminum Yacht Set", desc: "Modular 9-Piece Yacht Deck Set, TIGER Drylac Powder Coat, Quick-Dry Foam. Vertical Control: Aluminum Extrusion. Scene: Luxury Yacht Deck.", hs_code: "9401.79.0000", price_range: "$1500-$3000/set", img: "assets/outdoor/OL-YACHT-M_Villa_Deck_Scene.jpg" },
-        { model: "OUT-POOL-20", division: "LIFESTYLE", feature: "WPC Composite Deck", desc: "WPC Outdoor Decking System, Hidden Fasteners, Anti-Slip, Deep Wood Grain. Vertical Control: WPC Composite. Scene: Infinity Pool Edge.", hs_code: "4409.29.9090", price_range: "$3.5-$5.5/linft", img: "assets/outdoor/OL-POOL-20.jpg" },
+        { model: "OUT-YACHT-M", division: "LIFESTYLE", feature: "Marine Aluminum Yacht Set", desc: "Modular 9-Piece Yacht Deck Set, TIGER Drylac Powder Coat, Quick-Dry Foam.", Vertical_Control: "Aluminum Extrusion", Scene: "Luxury Yacht Deck", hs_code: "9401.79.0000", price_range: "$1500-$3000/set", img: "assets/outdoor/OL-YACHT-M_Villa_Deck_Scene.jpg" },
+        { model: "OUT-POOL-20", division: "LIFESTYLE", feature: "WPC Composite Deck", desc: "WPC Outdoor Decking System, Hidden Fasteners, Anti-Slip, Deep Wood Grain.", Vertical_Control: "WPC Composite", Scene: "Infinity Pool Edge", hs_code: "4409.29.9090", price_range: "$3.5-$5.5/linft", img: "assets/outdoor/OL-POOL-20.jpg" },
         // ... (18 more unique SKUs to reach 20)
     ],
     
     // --- ENGINEERING & RIGOR (SBU 4-6) ---
-    // 4. 高强度载荷系统 (Load & Lifting) - 20 SKUs
+    // 4. Load & Lifting Systems - 20 SKUs
     high_load_systems: [
-        { model: "HL-G100S", division: "INDUSTRIAL", feature: "Grade 100 Chain Sling (G100)", desc: "Grade 100 Alloy Steel Lifting Chain Sling (Certified 4-Leg). Vertical Control: Alloy Steel Sourcing & Forging Traceability. Scene: Heavy Industrial Construction Site.", hs_code: "7315.82.0000", price_range: "$300-$800", img: "assets/rigging/RG-G100S_Construction_Site.jpg" },
-        { model: "HL-SS-SH-DUPL", division: "INDUSTRIAL", feature: "Duplex SS Shackle (海洋港口高强度)", desc: "Duplex Stainless Steel Anchor Shackle (Marine/Corrosion Resistant). Vertical Control: Duplex Steel Forging. Scene: Deep-Sea Oil Rigging Platform.", hs_code: "7326.90.9000", price_range: "$50-$150", img: "assets/rigging/RG-SS-SH_Ocean_Port.jpg" },
-        { model: "HL-AL-TEL8", division: "INDUSTRIAL", feature: "8M Aluminum Telescopic Ladder", desc: "8-Meter Aluminum Telescopic Ladder (KOBALT对标，EN131认证). 用于车上装卸货物。Scene: Utility Pole Maintenance.", hs_code: "7616.99.9000", price_range: "$150-$250", img: "assets/rigging/HW-AL-TEL8_Utility_Maintenance.jpg" },
+        { model: "HL-G100S", division: "INDUSTRIAL", feature: "Grade 100 Chain Sling (G100)", desc: "Grade 100 Alloy Steel Lifting Chain Sling (Certified 4-Leg).", Vertical_Control: "Alloy Steel Forging Traceability", Scene: "Heavy Industrial Construction Site", hs_code: "7315.82.0000", price_range: "$300-$800", img: "assets/rigging/RG-G100S_Construction_Site.jpg" },
+        { model: "HL-SS-SH-DUPL", division: "INDUSTRIAL", feature: "Duplex SS Shackle (Marine High Strength)", desc: "Duplex Stainless Steel Anchor Shackle (Marine/Corrosion Resistant).", Vertical_Control: "Duplex Steel Forging", Scene: "Deep-Sea Oil Rigging Platform", hs_code: "7326.90.9000", price_range: "$50-$150", img: "assets/rigging/RG-SS-SH_Ocean_Port.jpg" },
+        { model: "HL-AL-TEL8", division: "INDUSTRIAL", feature: "8M Aluminum Telescopic Ladder", desc: "8-Meter Aluminum Telescopic Ladder (EN131 Certified).", Vertical_Control: "Aluminum Extrusion Thickness", Scene: "Utility Pole Maintenance", hs_code: "7616.99.9000", price_range: "$150-$250", img: "assets/rigging/HW-AL-TEL8_Utility_Maintenance.jpg" },
         // ... (17 more unique SKUs to reach 20)
     ],
-    // 5. 缆绳与安全网系统 (Ropes & Cables) - 20 SKUs
+    // 5. Ropes & Safety Nets - 20 SKUs
     cables_safety_nets: [
-        { model: "CS-DB-24MM", division: "INDUSTRIAL", feature: "Double Braided Nylon Anchor (Marine)", desc: "Double Braided Nylon Anchor Line (High Abrasion Resistance, 24mm)，用于高档游艇系泊。Scene: Luxury Private Yacht Docking.", hs_code: "5607.50.0000", price_range: "$3-$6/meter", img: "assets/ropes/NR-DB-24MM.jpg" },
-        { model: "CS-STLW20", division: "INDUSTRIAL", feature: "20mm Galvanized Steel Wire Rope", desc: "20mm Galvanized Steel Wire Rope (6x36 Construction)，用于悬索桥施工。Vertical Control: Wire Tensile Testing. Scene: Suspension Bridge Construction.", hs_code: "7312.10.0000", price_range: "$2-$4/meter", img: "assets/cables/SC-STLW20.jpg" },
-        { model: "CS-HMF-10MM", division: "INDUSTRIAL", feature: "High Modulus Fiber Sling (Dyneema Equivalent)", desc: "HMPE (Dyneema equivalent) synthetic lifting sling，用于风力涡轮机等重载吊装。Vertical Control: Fiber Weaving. Scene: Wind Turbine Maintenance.", hs_code: "5609.00.0000", price_range: "$15-$30/meter", img: "assets/ropes/NR-HMF-10MM.jpg" },
+        { model: "CS-DB-24MM", division: "INDUSTRIAL", feature: "Double Braided Nylon Anchor (Marine)", desc: "Double Braided Nylon Anchor Line (High Abrasion Resistance, 24mm).", Vertical_Control: "Nylon Weave Abrasion Test", Scene: "Luxury Private Yacht Docking", hs_code: "5607.50.0000", price_range: "$3-$6/meter", img: "assets/ropes/NR-DB-24MM.jpg" },
+        { model: "CS-STLW20", division: "INDUSTRIAL", feature: "20mm Galvanized Steel Wire Rope", desc: "20mm Galvanized Steel Wire Rope (6x36 Construction).", Vertical_Control: "Wire Tensile Testing", Scene: "Suspension Bridge Construction", hs_code: "7312.10.0000", price_range: "$2-$4/meter", img: "assets/cables/SC-STLW20.jpg" },
+        { model: "CS-HMF-10MM", division: "INDUSTRIAL", feature: "High Modulus Fiber Sling (Dyneema Equivalent)", desc: "HMPE (Dyneema equivalent) synthetic lifting sling.", Vertical_Control: "Fiber Weaving", Scene: "Wind Turbine Maintenance", hs_code: "5609.00.0000", price_range: "$15-$30/meter", img: "assets/ropes/NR-HMF-10MM.jpg" },
         // ... (17 more unique SKUs to reach 20)
     ],
-    // 6. 供应链增值与配件 (Value-Add & Accessories) - 20 SKUs
+    // 6. Value-Add & Accessories - 20 SKUs
     value_add_accessories: [
-        { model: "VA-SLIDE-BL", division: "ACCESSORY", feature: "Soft-Close Drawer Slide", desc: "3-Section full extension soft-close ball-bearing drawer slides. Vertical Control: Steel Quality. Scene: Custom Kitchen Cabinets.", hs_code: "8302.42.0000", price_range: "$8-$15/pair", img: "assets/accessories/FA-SLIDE-BL.jpg" },
-        { model: "VA-GAS-LIFT", division: "ACCESSORY", feature: "Gas Spring Lift (Class 4 BIFMA)", desc: "Class 4 heavy-duty pneumatic gas spring lift cylinder for office chairs. Vertical Control: Cylinder Pressure. Scene: Office Chair Manufacturing.", hs_code: "9401.99.0000", price_range: "$15-$25", img: "assets/accessories/FA-GAS-LIFT.jpg" },
-        { model: "VA-DUST-CAP", division: "ACCESSORY", feature: "Trailer Axle Dust Cap", desc: "用于防止拖挂车随动车桥积灰、进水的轮毂防尘罩。适用车型: 拖挂车。Vertical Control: Rubber Compound (NBR). Scene: Trailer OEM Assembly Line.", hs_code: "8708.999990999", price_range: "$5-$10", img: "assets/trailer/VA-DUST-CAP.jpg" },
+        { model: "VA-SLIDE-BL", division: "ACCESSORY", feature: "Soft-Close Drawer Slide", desc: "3-Section full extension soft-close ball-bearing drawer slides.", Vertical_Control: "Steel Quality", Scene: "Custom Kitchen Cabinets", hs_code: "8302.42.0000", price_range: "$8-$15/pair", img: "assets/accessories/FA-SLIDE-BL.jpg" },
+        { model: "VA-GAS-LIFT", division: "ACCESSORY", feature: "Gas Spring Lift (Class 4 BIFMA)", desc: "Class 4 heavy-duty pneumatic gas spring lift cylinder for office chairs.", Vertical_Control: "Cylinder Pressure", Scene: "Office Chair Manufacturing", hs_code: "9401.99.0000", price_range: "$15-$25", img: "assets/accessories/FA-GAS-LIFT.jpg" },
+        { model: "VA-DUST-CAP", division: "ACCESSORY", feature: "Trailer Axle Dust Cap", desc: "Dust cap for preventing dust and water entry into trailer axles.", Vertical_Control: "Rubber Compound (NBR)", Scene: "Trailer OEM Assembly Line", hs_code: "8708.999990999", price_range: "$5-$10", img: "assets/trailer/VA-DUST-CAP.jpg" },
         // ... (17 more unique SKUs to reach 20)
     ],
 
     // --- NEW DIVISION: HIGH-TECH & BIO (SBU 7-10) ---
-    // 7. 生物医疗耗材 (Biomedical Supplies) - 20 SKUs
+    // 7. Biomedical Supplies - 20 SKUs
     biomedical_supplies: [
-        { model: "BM-PCR-96", division: "HIGHTECH", feature: "High-Throughput PCR Plate", desc: "自动化兼容 96 孔 PCR 反应板，无菌级，用于高通量测序。Vertical Control: High-Purity Polymer. Scene: Clinical Genomics Lab.", hs_code: "3926.90.9090", price_range: "$0.5-$1.5/plate", img: "assets/bio/BM-PCR-96.jpg" },
+        { model: "BM-PCR-96", division: "HIGHTECH", feature: "High-Throughput PCR Plate", desc: "Automated 96-well PCR reaction plate, sterile grade, for high-throughput sequencing.", Vertical_Control: "High-Purity Polymer", Scene: "Clinical Genomics Lab", hs_code: "3926.90.9090", price_range: "$0.5-$1.5/plate", img: "assets/bio/BM-PCR-96.jpg" },
         // ... (19 more unique SKUs to reach 20)
     ],
-    // 8. 新能源与储能 (New Energy & ESS) - 20 SKUs
+    // 8. New Energy & ESS - 20 SKUs
     new_energy_systems: [
-        { model: "NE-NEV-P5", division: "HIGHTECH", feature: "800V EV Power Pack", desc: "5th Gen 800V Power Pack (Liquid Cooling), High C-rate, UN38.3. Vertical Control: BMS Health Service. Scene: EV OEM Assembly Line.", hs_code: "8507.60.0000", price_range: "$5000-$8000", img: "assets/energy/NE-NEV-P5.jpg" },
+        { model: "NE-NEV-P5", division: "HIGHTECH", feature: "800V EV Power Pack", desc: "5th Gen 800V Power Pack (Liquid Cooling), High C-rate, UN38.3.", Vertical_Control: "BMS Health Service", Scene: "EV OEM Assembly Line", hs_code: "8507.60.0000", price_range: "$5000-$8000", img: "assets/energy/NE-NEV-P5.jpg" },
         // ... (19 more unique SKUs to reach 20)
     ],
-    // 9. 未来科技/芯片 (Future Tech & Chip) - 20 SKUs
+    // 9. Future Tech & Chip - 20 SKUs
     future_tech: [
-        { model: "FT-CHIP-WET", division: "HIGHTECH", feature: "High Purity IPA/NH4OH (Wafer Grade)", desc: "高纯度湿化学品（定制配方），用于晶圆清洗刻蚀工艺。Vertical Control: Raw Chemical Sourcing. Scene: Wafer Fabrication (FAB) Plant.", hs_code: "3824.99.9990", price_range: "$50-$150/L", img: "assets/tech/FT-CHIP-WET.jpg" },
+        { model: "FT-CHIP-WET", division: "HIGHTECH", feature: "High Purity IPA/NH4OH (Wafer Grade)", desc: "High-purity wet chemicals (custom formulations) for wafer cleaning and etching.", Vertical_Control: "Raw Chemical Sourcing", Scene: "Wafer Fabrication (FAB) Plant", hs_code: "3824.99.9990", price_range: "$50-$150/L", img: "assets/tech/FT-CHIP-WET.jpg" },
         // ... (19 more unique SKUs to reach 20)
     ],
-    // 10. 全球供应链服务 (Global Supply Chain Services) - 20 SKUs
+    // 10. Global Supply Chain Services - 20 SKUs
     global_services: [
-        { model: "GS-LOG-BATT", division: "SERVICE", feature: "DGR Class 9 Battery Logistics", desc: "高风险锂电池物流解决方案: 专用危险品通道, UN38.3 文件管理。Vertical Control: Real-time Risk Score Dashboard. Scene: Global Lithium Battery Manufacturer.", hs_code: "9803.00.0000", price_range: "Negotiated", img: "assets/services/GS-LOG-BATT.jpg" },
+        { model: "GS-LOG-BATT", division: "SERVICE", feature: "DGR Class 9 Battery Logistics", desc: "High-risk lithium battery logistics solution: specialized dangerous goods lane, UN38.3 file management.", Vertical_Control: "Real-time Risk Score Dashboard", Scene: "Global Lithium Battery Manufacturer", hs_code: "9803.00.0000", price_range: "Negotiated", img: "assets/services/GS-LOG-BATT.jpg" },
         // ... (19 more unique SKUs to reach 20)
     ]
 };
 
-// --- Helper Functions ---
+// --- Helper Functions for V11.0 ---
+
+// Get the color code for the detail page based on division
 const getDivisionColor = (division) => {
     switch (division) {
         case 'LIFESTYLE': return '#FFC300';
@@ -101,7 +103,7 @@ const getDivisionColor = (division) => {
         case 'HIGHTECH': return '#007bff';
         case 'ACCESSORY': return '#0077B6';
         case 'SERVICE': return '#0077B6';
-        default: return '#0077B6';
+        default: return '#0077B6'; // Default Accent Color
     }
 };
 
@@ -121,26 +123,26 @@ const getBifma = (model) => {
 // Mock the old 20-SKU dataset for index.html filtering compatibility (Crucial for original logic retention)
 const ALL_MESH_CHAIR_SKUS = [
     // Ensure these models exist in space_design_modules
-    { model: "DS-XC-R8-CF", tier: 'premium', lumbar: 'dynamic', bifma: 'ul', feature: "Dynamic Lumbar + Carbon Fiber" },
-    { model: "DS-ALU-ZERO", tier: 'premium', lumbar: 'dynamic', bifma: 'ul', feature: "Full Aluminum Frame + Zero-G Recline" },
-    { model: "DS-MOD-M9", tier: 'standard', lumbar: '2d', bifma: 'bifma', feature: "Modular Mesh Back" },
-    { model: "DS-C20-MOD", tier: 'standard', lumbar: 'fixed', bifma: 'bifma', feature: "Modular Sofa System" },
-    { model: "DS-D-DUAL", tier: 'premium', lumbar: 'fixed', bifma: 'bifma', feature: "Dual Motor Standing Desk" },
-    { model: "DS-B80-WL", tier: 'premium', lumbar: 'fixed', bifma: 'bifma', feature: "Walnut Executive L-Desk" },
-    { model: "DS-D10-OAK", tier: 'premium', lumbar: 'fixed', bifma: 'bifma', feature: "Solid Oak Dining Table" },
-    { model: "DS-R60-CHEST", tier: 'standard', lumbar: 'fixed', bifma: 'bifma', feature: "5-Drawer Chest" },
-    { model: "DS-T99-CONF", tier: 'standard', lumbar: 'fixed', bifma: 'bifma', feature: "Modular Conference Table" },
-    { model: "DS-H55-ACOUSTIC", tier: 'premium', lumbar: 'fixed', bifma: 'ul', feature: "Acoustic Pod Chair" },
-    { model: "DS-M-SINGLE", tier: 'standard', lumbar: 'fixed', bifma: 'bifma', feature: "Single Motor Standing Desk" },
-    { model: "DS-E50-EXECUTIVE", tier: 'premium', lumbar: 'fixed', bifma: 'bifma', feature: "Full Leather Executive" },
-    { model: "DS-B18-TASK", tier: 'economic', lumbar: 'fixed', bifma: 'bifma', feature: "High Volume Task" },
-    { model: "DS-001", tier: 'economic', lumbar: 'fixed', bifma: 'bifma', feature: "Fixed Lumbar High Volume" },
-    { model: "DS-002", tier: 'standard', lumbar: '2d', bifma: 'bifma', feature: "2D Adjustable Mid-Market" },
-    { model: "DS-007", tier: 'premium', lumbar: 'dynamic', bifma: 'ul', feature: "Dynamic Aluminum Base" },
-    { model: "DS-012", tier: 'economic', lumbar: 'fixed', bifma: 'bifma', feature: "Fixed Arms & Headrest" },
-    { model: "DS-020", tier: 'standard', lumbar: '2d', bifma: 'bifma', feature: "Synchro Tilt Mechanism" },
-    { model: "DS-050", tier: 'premium', lumbar: 'dynamic', bifma: 'ul', feature: "4D Armrests Wire Control" },
-    { model: "DS-G40-GAMING", tier: 'standard', lumbar: 'dynamic', bifma: 'bifma', feature: "Gaming High Back" },
+    { model: "DS-XC-R8-CF", tier: 'premium', lumbar: 'dynamic', bifma: 'ul', feature: "Dynamic Lumbar + Carbon Fiber", specs: { arms: '5D Adjustable', tilt: 'Advanced Fluid Motion', base: 'Aluminum', warranty: '5 Year', material: 'Carbon Fiber Mesh' } },
+    { model: "DS-ALU-ZERO", tier: 'premium', lumbar: 'dynamic', bifma: 'ul', feature: "Full Aluminum Frame + Zero-G Recline", specs: { arms: 'Fixed Polished', tilt: 'Zero-G Synchro-Tilt', base: 'Polished Aluminum', warranty: '5 Year', material: 'Premium Mesh' } },
+    { model: "DS-MOD-M9", tier: 'standard', lumbar: '2d', bifma: 'bifma', feature: "Modular Mesh Back", specs: { arms: '2D Adjustable', tilt: 'Basic Synchro', base: 'Nylon Reinforced', warranty: '3 Year', material: 'High-Tensile Mesh' } },
+    { model: "DS-C20-MOD", tier: 'standard', lumbar: 'fixed', bifma: 'bifma', feature: "Modular Sofa System", specs: { arms: 'N/A', tilt: 'N/A', base: 'Wood/Steel', warranty: '2 Year', material: 'Commercial Fabric' } },
+    { model: "DS-D-DUAL", tier: 'premium', lumbar: 'fixed', bifma: 'bifma', feature: "Dual Motor Standing Desk", specs: { arms: 'N/A', tilt: 'Electric', base: 'Steel', warranty: '5 Year', material: 'Bamboo Top' } },
+    { model: "DS-B80-WL", tier: 'premium', lumbar: 'fixed', bifma: 'bifma', feature: "Walnut Executive L-Desk", specs: { arms: 'N/A', tilt: 'N/A', base: 'Wood', warranty: '5 Year', material: 'Walnut Veneer' } },
+    { model: "DS-D10-OAK", tier: 'premium', lumbar: 'fixed', bifma: 'bifma', feature: "Solid Oak Dining Table", specs: { arms: 'N/A', tilt: 'N/A', base: 'Oak', warranty: '5 Year', material: 'Solid Oak' } },
+    { model: "DS-R60-CHEST", tier: 'standard', lumbar: 'fixed', bifma: 'bifma', feature: "5-Drawer Chest", specs: { arms: 'N/A', tilt: 'N/A', base: 'Wood', warranty: '1 Year', material: 'Wood Veneer' } },
+    { model: "DS-T99-CONF", tier: 'standard', lumbar: 'fixed', bifma: 'bifma', feature: "Modular Conference Table", specs: { arms: 'N/A', tilt: 'N/A', base: 'Steel', warranty: '3 Year', material: 'Laminate' } },
+    { model: "DS-H55-ACOUSTIC", tier: 'premium', lumbar: 'fixed', bifma: 'ul', feature: "Acoustic Pod Chair", specs: { arms: 'Fixed', tilt: 'Fixed', base: 'Steel/Wood', warranty: '3 Year', material: 'Acoustic Fabric' } },
+    { model: "DS-M-SINGLE", tier: 'standard', lumbar: 'fixed', bifma: 'bifma', feature: "Single Motor Standing Desk", specs: { arms: 'N/A', tilt: 'Electric', base: 'Steel', warranty: '3 Year', material: 'Laminate Top' } },
+    { model: "DS-E50-EXECUTIVE", tier: 'premium', lumbar: 'fixed', bifma: 'bifma', feature: "Full Leather Executive", specs: { arms: 'Fixed Wood', tilt: 'Synchro', base: 'Polished Aluminum', warranty: '5 Year', material: 'Genuine Leather' } },
+    { model: "DS-B18-TASK", tier: 'economic', lumbar: 'fixed', bifma: 'bifma', feature: "High Volume Task", specs: { arms: 'Fixed T-Arms', tilt: 'Basic Tilt', base: 'Nylon', warranty: '1 Year', material: 'Standard Fabric' } },
+    { model: "DS-001", tier: 'economic', lumbar: 'fixed', bifma: 'bifma', feature: "Fixed Lumbar High Volume", specs: { arms: 'Fixed T-Arms', tilt: 'Basic Tilt Lock', base: 'Nylon 5-Star', warranty: '1 Year', material: 'Standard Mesh' } },
+    { model: "DS-002", tier: 'standard', lumbar: '2d', bifma: 'bifma', feature: "2D Adjustable Mid-Market", specs: { arms: '2D Adjustable', tilt: 'Synchro-Tilt', base: 'Nylon Reinforced', warranty: '3 Year', material: 'High Density Mesh' } },
+    { model: "DS-007", tier: 'premium', lumbar: 'dynamic', bifma: 'ul', feature: "Dynamic Aluminum Base", specs: { arms: '4D Adjustable', tilt: 'Advanced Fluid Motion', base: 'Polished Aluminum', warranty: '5 Year', material: 'Kevlar Reinforced Mesh' } },
+    { model: "DS-012", tier: 'economic', lumbar: 'fixed', bifma: 'bifma', feature: "Fixed Arms & Headrest", specs: { arms: 'Fixed', tilt: 'Basic Tilt Lock', base: 'Nylon 5-Star', warranty: '1 Year', material: 'Standard Mesh' } },
+    { model: "DS-020", tier: 'standard', lumbar: '2d', bifma: 'bifma', feature: "Synchro Tilt Mechanism", specs: { arms: '2D Adjustable', tilt: 'Synchro-Tilt', base: 'Nylon Reinforced', warranty: '3 Year', material: 'High Density Mesh' } },
+    { model: "DS-050", tier: 'premium', lumbar: 'dynamic', bifma: 'ul', feature: "4D Armrests Wire Control", specs: { arms: '4D Adjustable', tilt: 'Advanced Fluid Motion', base: 'Polished Aluminum', warranty: '5 Year', material: 'Kevlar Reinforced Mesh' } },
+    { model: "DS-G40-GAMING", tier: 'standard', lumbar: 'dynamic', bifma: 'bifma', feature: "Gaming High Back", specs: { arms: '4D Adjustable', tilt: 'Advanced Dynamic Motion', base: 'Polished Aluminum', warranty: '5 Year', material: 'Kevlar Reinforced Mesh' } },
 ];
 
 window.ALL_SKUS_CACHE = Object.values(PRODUCT_DATA_V11).flat();
