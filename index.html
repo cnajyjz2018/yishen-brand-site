@@ -9,7 +9,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght=600;700&display=swap" rel="stylesheet">
 
     <style>
         /* =========================================
@@ -27,6 +27,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: var(--font-main);
             color: var(--primary);
@@ -34,9 +35,11 @@
             background-color: var(--white);
             -webkit-font-smoothing: antialiased;
         }
+
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         ul { list-style: none; padding-left: 0; }
         img { max-width: 100%; height: auto; }
+
         .container { width: 90%; max-width: 1200px; margin: 0 auto; }
         .section-tag { 
             display: block; 
@@ -47,6 +50,8 @@
             letter-spacing: 1px; 
             margin-bottom: 10px; 
         }
+
+        /* 通用标题样式 */
         .hero h1 {
             font-family: var(--font-serif);
             font-size: 3.5rem;
@@ -54,7 +59,7 @@
             line-height: 1.2;
         }
 
-        /* 通用按钮样式 */
+        /* 通用按钮样式 (兼容您的 HTML 类名) */
         .btn {
             padding: 12px 25px;
             border-radius: 4px;
@@ -101,6 +106,7 @@
         .nav-links { display: flex; gap: 30px; align-items: center; }
         .nav-links a { font-size: 0.95rem; font-weight: 500; color: var(--primary); }
         .nav-links a:hover { color: var(--accent); }
+        /* 导航栏中的 Contact Us 按钮 */
         .nav-links .btn-nav { 
             padding: 8px 18px; 
             background: var(--accent); 
@@ -190,9 +196,9 @@
         /* 专业列表样式 */
         .expertise-list { margin-bottom: 35px; padding-left: 0; }
         .expertise-list li {
-            margin-bottom: 12px;
             padding-left: 25px;
             position: relative;
+            margin-bottom: 12px;
             color: var(--secondary);
             font-size: 0.95rem;
         }
@@ -596,8 +602,8 @@
             </div>
             <div style="flex-grow: 1;"></div> 
             <div class="hero-btns">
-                <a href="#products" class="btn btn-primary">View Collection</a>
-                <a href="#contact" class="btn btn-outline">Consult an Expert</a>
+                <a href="#contact" class="btn btn-primary">Schedule Strategy Session</a>
+                <a href="mailto:alex.yang@yishenglobal.net?subject=Requesting%20Supply%20Chain%20Risk%20Assessment" class="btn btn-outline">Quantify Your Supply Chain Risk</a>
             </div>
         </div>
     </section>
@@ -652,7 +658,7 @@
                     <li><strong>📊 Data-Driven Sourcing:</strong> Insights derived from customs flows and procurement data.</li>
                 </ul>
 
-                <a href="#contact" class="text-link">Discuss Your Supply Chain Strategy &rarr;</a>
+                <a href="mailto:alex.yang@yishenglobal.net?subject=Requesting%20Supply%20Chain%20Risk%20Assessment" class="text-link" style="font-size: 1.1rem; margin-top: 15px;">Quantify Your Supply Chain Risk &rarr;</a>
             </div>
             
             <div class="about-image" style="background-image: url('https://images.unsplash.com/photo-1664575602276-acd073f104c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
@@ -682,6 +688,7 @@
                 </ul>
                 
                 <a href="#contact" class="btn btn-primary">Request Specification Sheet (B2B)</a>
+                <a href="resources.html" class="text-link" style="margin-top: 15px; font-weight: 500;">Download DTC-Ready Packaging Specs &rarr;</a>
             </div>
         </div>
     </section>
@@ -927,6 +934,7 @@
                     <div class="icon"><i class="fas fa-handshake"></i></div> 
                     <h3>Dedicated Long-Term Support</h3>
                     <p>Strategic spare parts inventory and dedicated technical teams for minimal disruption and retail after-sales continuity.</p>
+                    <a href="mailto:alex.yang@yishenglobal.net?subject=Inquiry%20on%20Spare%20Parts%20Buffer%20Stock" class="text-link" style="font-weight: 500; font-size: 0.9rem;">Inquire About Spare Parts Buffer Stock &rarr;</a>
                 </div>
             </div>
         </div>
@@ -1019,11 +1027,8 @@
 
             // --- 热点数据模型 (Data Model) ---
             const MESH_CHAIR_HOTSPOTS = [
-                // 模块化互换性 (UE/Henglin 借鉴)
                 { top: '25%', left: '30%', title: "Modular Component Interchangeability", desc: "Key parts designed for quick swapping across SKU tiers, maximizing your inventory efficiency." }, 
-                // 高级材料/可持续性 (Nightingale 借鉴)
                 { top: '55%', left: '60%', title: "Eco-Certified ENERSORB Foam", desc: "Available options include high-density, patented memory foam and recycled polymer materials." },
-                // 认证/可信度 (Loctek/BIFMA 借鉴)
                 { top: '80%', left: '45%', title: "BIFMA X5.1 Base & ANSI Compliant", desc: "Stress-tested aluminum alloy base, ensuring durability and full regulatory compliance." } 
             ];
             
@@ -1051,7 +1056,8 @@
 
             // --- 热点动态渲染逻辑 (Data Injection & Interaction) ---
             function renderHotspots() {
-                // Hotspot Info Display is created by JS
+                if (!showcaseImage) return;
+
                 const infoDisplay = document.createElement('div');
                 infoDisplay.id = 'hotspot-display';
                 infoDisplay.className = 'hotspot-info';
@@ -1064,7 +1070,6 @@
                     hotspot.style.top = data.top;
                     hotspot.style.left = data.left;
                     
-                    // Binding events
                     hotspot.addEventListener('mouseenter', (e) => handleHotspotHover(e, data, infoDisplay));
                     hotspot.addEventListener('mouseleave', () => handleHotspotLeave(infoDisplay));
                     showcaseImage.appendChild(hotspot);
@@ -1081,7 +1086,6 @@
                 const rect = e.target.getBoundingClientRect();
                 const containerRect = showcaseImage.getBoundingClientRect();
                 
-                // Adjust floating window position relative to the hotspot
                 infoDisplay.style.top = `${rect.top - containerRect.top - 100}px`; 
                 infoDisplay.style.left = `${rect.left - containerRect.left + 35}px`;
 
@@ -1103,6 +1107,8 @@
             const noResultsMessage = document.getElementById('no-results-message');
 
             function applyFilters() {
+                if (skuCards.length === 0) return;
+
                 const selectedPrice = priceFilter.value;
                 const selectedLumber = lumberFilter.value;
                 const selectedBifma = bifmaFilter.value;
@@ -1125,7 +1131,6 @@
                     }
                 });
 
-                // 显示/隐藏无结果提示
                 if (visibleCount === 0) {
                     noResultsMessage.style.display = 'block';
                 } else {
@@ -1133,26 +1138,27 @@
                 }
             }
 
-            // 绑定事件监听器
+            // 绑定事件监听器 (仅当筛选器存在时绑定)
             if (priceFilter) priceFilter.addEventListener('change', applyFilters);
             if (lumberFilter) lumberFilter.addEventListener('change', applyFilters);
             if (bifmaFilter) bifmaFilter.addEventListener('change', applyFilters);
             
             // 重置按钮逻辑
             if (resetButton) resetButton.addEventListener('click', () => {
-                priceFilter.value = 'all';
-                lumberFilter.value = 'all';
-                bifmaFilter.value = 'all';
+                if (priceFilter) priceFilter.value = 'all';
+                if (lumberFilter) lumberFilter.value = 'all';
+                if (bifmaFilter) bifmaFilter.value = 'all';
                 applyFilters();
             });
 
 
             // --- 统一的脚本初始化 ---
             renderHotspots();
-            applyFilters(); // 初始化显示 SKU
+            if (priceFilter) applyFilters();
             
             // --- Sticky CTA 浮窗逻辑 ---
             window.addEventListener('scroll', function() {
+                if (!stickyCta) return;
                 const heroHeight = document.getElementById('home').offsetHeight;
                 if (window.scrollY > heroHeight / 2) {
                     stickyCta.style.display = 'block';
