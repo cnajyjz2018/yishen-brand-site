@@ -3,493 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YiShen Global | Supply Chain Stability. Engineered.</title>
+    <title>YiShen Global | Supply Chain Predictability. Engineered for DTC Growth.</title>
     
+    <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* =========================================
-           --- 基础设置与通用变量 ---
-           ========================================= */
-        :root {
-            /* 专业和沉稳的配色方案 */
-            --primary: #111111;    /* 主要文本/深色背景 */
-            --secondary: #555555;  /* 次要文本 */
-            --accent: #0077B6;     /* 强调色 (专业蓝) */
-            --bg-light: #f7f9fb;   /* 浅背景色 */
-            --white: #ffffff;
-            --border: #e0e0e0;
-            --font-main: 'Inter', sans-serif;
-            --font-serif: 'Playfair Display', serif;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: var(--font-main);
-            color: var(--primary);
-            line-height: 1.6;
-            background-color: var(--white);
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; padding-left: 0; }
-        img { max-width: 100%; height: auto; }
-
-        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
-        .section-tag { 
-            display: block; 
-            font-size: 0.85rem; 
-            color: var(--accent); 
-            font-weight: 600; 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            margin-bottom: 10px; 
-        }
-
-        /* 通用标题样式 */
-        .hero h1 {
-            font-family: var(--font-serif);
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-            line-height: 1.2;
-        }
-
-        /* 通用按钮样式 (兼容您的 HTML 类名) */
-        .btn {
-            padding: 12px 25px;
-            border-radius: 4px;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            display: inline-block;
-            cursor: pointer;
-            text-align: center;
-            border: 2px solid transparent;
-        }
-        .btn-primary { 
-            background: var(--accent); 
-            color: var(--white); 
-            border-color: var(--accent); 
-        }
-        .btn-primary:hover { 
-            background: #005a8f; 
-            border-color: #005a8f; 
-        }
-        .btn-outline { 
-            background: transparent; 
-            color: var(--white); 
-            border-color: var(--white); 
-        }
-        .btn-outline:hover { 
-            background: rgba(255,255,255,0.1); 
-            color: var(--white); 
-        }
-
-
-        /* =========================================
-           --- 导航栏 (Navbar) ---
-           ========================================= */
-        .navbar {
-            position: fixed; top: 0; width: 100%; height: 80px;
-            background: rgba(255,255,255,0.98);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            z-index: 1000;
-            display: flex; align-items: center;
-        }
-        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
-        .brand { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 700; color: var(--primary); }
-        .nav-links { display: flex; gap: 30px; align-items: center; }
-        .nav-links a { font-size: 0.95rem; font-weight: 500; color: var(--primary); }
-        .nav-links a:hover { color: var(--accent); }
-        /* 导航栏中的 Contact Us 按钮 */
-        .nav-links .btn-nav { 
-            padding: 8px 18px; 
-            background: var(--accent); 
-            color: var(--white) !important; 
-            border-radius: 4px; 
-            font-weight: 600;
-            text-transform: uppercase;
-            border: none;
-        }
-        .nav-links .btn-nav:hover { background: #005a8f; }
-        .menu-toggle { display: none; border: none; background: none; font-size: 1.5rem; cursor: pointer; }
-
-        /* =========================================
-           --- Hero Section (主视觉区域) ---
-           ========================================= */
-        .hero {
-            height: 90vh; 
-            display: flex; 
-            align-items: center; 
-            position: relative;
-            background-color: #0f172a; 
-            color: var(--white); 
-            margin-top: 80px;
-            text-align: center;
-        }
-
-        .hero-bg {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-size: cover; 
-            background-position: center;
-            opacity: 1; 
-            background-image: url('banner2.jpg'); 
-        }
-
-        .hero-content { 
-            position: relative; 
-            z-index: 2; 
-            width: 100%; 
-            height: 100%;
-            display: flex; 
-            flex-direction: column; 
-            justify-content: flex-end; 
-            align-items: center; 
-            padding-bottom: 80px; 
-        }
-
-        .hero-btns { 
-            display: flex; 
-            gap: 15px; 
-            padding: 20px;
-            background: rgba(0,0,0,0.2); 
-            border-radius: 50px;
-            backdrop-filter: blur(3px);
-        }
-
-
-        /* =========================================
-           --- Stats Bar (数据条) ---
-           ========================================= */
-        .stats-bar { background: var(--primary); padding: 40px 0; color: var(--white); }
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; gap: 20px; }
-        .stat-number { display: block; font-size: 2.5rem; font-weight: 700; color: var(--accent); font-family: var(--font-serif); }
-        .stat-label { font-size: 0.9rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* =========================================
-           --- 2. 关于我们 (About Section) ---
-           ========================================= */
-        .about-section { padding: 100px 0; background: var(--white); }
-        .about-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
-
-        .about-text h2 { 
-            font-family: var(--font-serif); 
-            font-size: 2.8rem; 
-            line-height: 1.2;
-            margin-bottom: 25px; 
-            color: var(--primary);
-        }
-
-        .intro-text {
-            font-size: 1.1rem;
-            color: var(--secondary);
-            margin-bottom: 30px;
-            line-height: 1.8;
-        }
-
-        /* 核心见解框 */
-        .insight-box {
-            background: var(--bg-light); 
-            border-left: 4px solid var(--accent); 
-            padding: 20px 25px;
-            margin-bottom: 30px;
-            border-radius: 0 8px 8px 0;
-        }
-        .insight-box strong { display: block; color: var(--accent); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
-        .insight-box p { margin: 0; color: var(--primary); font-style: italic; font-weight: 500; font-size: 1.05rem; }
-        .insight-box em { color: #000; font-style: normal; font-weight: 700; }
-
-        /* 专业列表样式 */
-        .expertise-list { margin-bottom: 35px; padding-left: 0; }
-        .expertise-list li {
-            margin-bottom: 12px;
-            padding-left: 25px;
-            position: relative;
-            color: var(--secondary);
-            font-size: 0.95rem;
-        }
-        /* 列表前面的小勾选 */
-        .expertise-list li::before {
-            content: '✓';
-            position: absolute; left: 0; top: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-        .expertise-list strong { color: var(--primary); font-weight: 600; }
-
-        .text-link { 
-            display: inline-block;
-            color: var(--accent); 
-            font-weight: 700; 
-            text-decoration: none; 
-            border-bottom: 2px solid transparent;
-            transition: 0.3s;
-        }
-        .text-link:hover { border-bottom-color: var(--accent); }
-
-        .about-image { 
-            height: 550px; 
-            background-size: cover; 
-            background-position: center; 
-            border-radius: 12px; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        /* =========================================
-           --- 3. 产品展示 (Products) ---
-           ========================================= */
-        .products { padding: 100px 0; background: var(--bg-light); }
-        .section-title { text-align: center; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto; }
-        .section-title h2 { font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 15px; }
-
-        /* 3列布局 */
-        .category-grid { 
-            display: grid; 
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 25px; 
-            max-width: 1200px; 
-            margin: 0 auto; 
-        }
-
-        .category-card { 
-            position: relative; 
-            height: 320px; 
-            border-radius: 12px; 
-            overflow: hidden; 
-            display: block; 
-            color: var(--white);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .category-bg {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-size: cover; 
-            background-position: center center; 
-            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            z-index: 1;
-        }
-
-        .category-card::after {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.1));
-            z-index: 2;
-            transition: background 0.3s;
-        }
-        .category-content {
-            position: relative; z-index: 3;
-            height: 100%;
-            display: flex; flex-direction: column; justify-content: flex-end;
-            padding: 25px;
-        }
-        .category-content h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 5px; color: #fff; }
-
-        /* 价格和描述容器 */
-        .product-meta { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            margin-bottom: 10px; 
-        }
-
-        .category-content p { 
-            font-size: 0.9rem; 
-            opacity: 0.8; 
-            color: #ddd; 
-            margin: 0;
-        }
-
-        /* ⭐ CTA/Hook Signal 标签样式 (统一) ⭐ */
-        .product-tag { 
-            font-size: 0.8rem; 
-            font-weight: 600; 
-            color: var(--accent); /* 使用强调蓝 */
-            background: var(--white);
-            padding: 3px 8px;
-            border-radius: 4px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            /* 增加科技感边框 */
-            border: 1px solid var(--accent); 
-            /* 模仿 Autonomous/科技感 */
-            box-shadow: 0 0 5px rgba(0, 119, 182, 0.5); 
-        }
-
-        /* 统一的 CTA 按钮样式 */
-        .view-btn {
-            font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
-            color: var(--accent); background: var(--white);
-            padding: 8px 16px; 
-            border-radius: 4px; 
-            display: inline-block; width: fit-content;
-            opacity: 0; transform: translateY(20px);
-            transition: all 0.4s ease;
-        }
-        .category-card:hover .category-bg { transform: scale(1.1); }
-        .category-card:hover::after { background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)); }
-        .category-card:hover .view-btn { opacity: 1; transform: translateY(0); }
-
-        .view-more-container { text-align: center; margin-top: 50px; }
-
-        /* =========================================
-           --- 4. 服务板块 (Services) ---
-           ========================================= */
-        .services-section { padding: 100px 0; background: var(--white); }
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .service-card { padding: 30px; border: 1px solid var(--border); border-radius: 8px; transition: 0.3s; height: 100%; } 
-        .service-card:hover { border-color: var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.05); transform: translateY(-3px); }
-        .service-card .icon { font-size: 2.5rem; margin-bottom: 20px; color: var(--accent); }
-        .service-card h3 { font-size: 1.2rem; margin-bottom: 10px; color: var(--primary); }
-        .service-card p { color: var(--secondary); font-size: 0.9rem; }
-
-        /* =========================================
-           --- 5. 页脚 (Footer) ---
-           ========================================= */
-        .footer { background: #1a1a1a; color: #fff; padding: 80px 0 30px; }
-        .footer-top { display: grid; grid-template-columns: 1.5fr 1fr; gap: 80px; margin-bottom: 60px; }
-        .footer-brand-col h3 { font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 20px; }
-        .footer-brand-col p { opacity: 0.7; max-width: 400px; }
-        .footer-contact-col h4 { font-size: 1.2rem; margin-bottom: 15px; color: var(--white); }
-        .contact-desc { opacity: 0.6; margin-bottom: 20px; font-size: 0.9rem; }
-
-        /* 优化 Contact Row 样式以支持多行邮箱 */
-        .contact-row { 
-            display: flex; 
-            margin-bottom: 15px; 
-            font-size: 0.9rem; 
-        }
-        .contact-row span:first-child { 
-            color: var(--accent); 
-            font-weight: 600; 
-            margin-right: 15px; 
-            flex-shrink: 0; 
-            width: 100px; /* 增加宽度，确保图标和文本对齐 */
-            display: flex; /* 启用 flex 以对齐图标和文本 */
-            align-items: center;
-            gap: 8px; /* 图标与文本的间距 */
-        }
-        .contact-row a { 
-            color: #fff; 
-            border-bottom: 1px dotted #666; 
-        }
-        .contact-row a:hover { 
-            color: var(--accent); 
-            border-color: var(--accent); 
-        }
-        /* 针对邮箱多行显示的容器样式 */
-        .contact-rows-group {
-            padding-bottom: 10px;
-        }
-        .contact-emails {
-            display: flex; 
-            flex-direction: column; 
-            gap: 5px;
-        }
-        /* 优化 Contact Row 中的图标颜色 */
-        .contact-row i {
-            color: var(--white); /* 图标使用白色，更沉稳 */
-        }
-
-        .footer-bottom { border-top: 1px solid #333; padding-top: 30px; text-align: center; font-size: 0.8rem; opacity: 0.5; }
-
-        /* =========================================
-           --- 响应式调整 (Responsive Design) ---
-           ========================================= */
-
-        /* 平板设备 (最大 1024px) */
-        @media (max-width: 1024px) {
-            .category-grid { 
-                grid-template-columns: repeat(2, 1fr); 
-            }
-            .footer-top { grid-template-columns: 1fr; gap: 40px; }
-            .footer-brand-col { margin-bottom: 20px; }
-        }
-
-
-        /* 移动设备 (最大 768px) */
-        @media (max-width: 768px) {
-            /* 全局内边距调整 */
-            .products, .services-section, .about-section, .stats-bar { padding: 40px 0; }
-            
-            /* Hero */
-            .hero { margin-top: 60px; height: 60vh; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero-btns { flex-direction: column; gap: 10px; padding: 15px; }
-            
-            /* Navbar */
-            .nav-links { 
-                display: none; 
-                position: absolute; 
-                top: 80px; 
-                left: 0; 
-                width: 100%; 
-                background: var(--white); 
-                flex-direction: column; 
-                padding: 20px 0; 
-                border-top: 1px solid var(--border);
-            }
-            .nav-links a { width: 100%; padding: 10px 20px; text-align: center; }
-            .nav-links .btn-nav { margin: 10px auto; width: fit-content; }
-
-            .menu-toggle { display: block; } 
-
-            /* About: 2列改为1列 */
-            .about-wrapper { grid-template-columns: 1fr; gap: 30px; }
-            .about-text h2 { font-size: 2.2rem; }
-            .about-image { order: -1; height: 250px; margin-bottom: 20px; }
-
-            /* Products: 2列改为1列 */
-            .category-grid { grid-template-columns: 1fr; }
-
-            /* Stats: 4列改为2列 */
-            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-
-            /* Footer: 联系行样式调整 */
-            .contact-row span:first-child { width: 60px; } 
-        }
-
-        /* 极小屏幕 (最大 480px) */
-        @media (max-width: 480px) {
-            .stats-grid { grid-template-columns: 1fr; } 
-            .stat-number { font-size: 2rem; }
-            .about-text h2 { font-size: 1.8rem; }
-            .contact-row { flex-direction: column; align-items: flex-start; }
-            .contact-row span:first-child { margin-right: 0; margin-bottom: 5px; }
-        }
-    </style>
 </head>
 <body>
 
     <header class="navbar">
         <div class="container nav-wrapper">
             <div class="brand">YiShen Global</div>
-            <nav class="nav-links">
+            <nav class="nav-links" id="navLinks"> 
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#products">Collection</a>
                 <a href="#services">Services</a>
                 <a href="#contact" class="btn-nav">Contact Us</a>
             </nav>
-            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
     <section id="home" class="hero">
         <div class="hero-bg" style="background-image: url('banner2.jpg');"></div>
         <div class="container hero-content">
-            
             <div style="text-align: center; margin-bottom: 20px;">
-                <h1>Supply Chain Stability. Engineered.</h1>
+                <h1>Supply Chain Predictability. Engineered for DTC Growth.</h1>
                 <p>We bridge Manufacturing Excellence with US-Standard Operational Predictability.</p>
             </div>
-
             <div style="flex-grow: 1;"></div> 
-            
             <div class="hero-btns">
                 <a href="#products" class="btn btn-primary">View Collection</a>
                 <a href="#contact" class="btn btn-outline">Consult an Expert</a>
@@ -532,6 +78,11 @@
                     <strong>The Core Insight:</strong>
                     <p>The majority of quality issues in the US market stem from <strong>process failures</strong>, not product defects.</p>
                 </div>
+                
+                <div class="insight-box" style="margin-top: -20px; border-left-color: var(--primary);">
+                    <strong>Integrated Sourcing Solution:</strong>
+                    <p>We eliminate the complexity of multi-vendor sourcing, offering **one streamlined contact** for your entire ergonomic portfolio.</p>
+                </div>
 
                 <p>Our methodology focuses on predictability and operational efficiency:</p>
                 
@@ -548,12 +99,39 @@
             <div class="about-image" style="background-image: url('https://images.unsplash.com/photo-1664575602276-acd073f104c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
         </div>
     </section>
+    
+    <section class="product-showcase-container">
+        <div class="container showcase-wrapper">
+            
+            <div class="showcase-image" style="background-image: url('mesh.jpg');" id="mesh-chair-showcase">
+                </div>
 
+            <div class="showcase-text">
+                <span class="section-tag">Feature Deep Dive | Patented Technologies</span>
+                <h2>The Ergonomic Mesh Chair: <br>Engineered for Global Retail.</h2>
+                
+                <strong class="tech-spec">BIFMA Certified Design | Sustainable Materials Available</strong>
+                
+                <p class="intro-text">
+                    Don't just sell comfort—sell tested reliability. Our flagship mesh chair line integrates cutting-edge material science with a globally compliant, durable core structure. **Click the blue dots on the image** to reveal our key technological advantages.
+                </p>
+
+                <ul class="expertise-list">
+                    <li><strong>Fluid Motion Tilt:</strong> Synchronous mechanism designed for long-term reliability.</li>
+                    <li><strong>Adaptive Lumbar:</strong> Multi-point adjustment to fit 98% of user profiles.</li>
+                    <li><strong>Container Optimization:</strong> Packaging designed for minimal space utilization (LCL/FCL efficiency).</li>
+                </ul>
+                
+                <a href="#contact" class="btn btn-primary">Request Specification Sheet (B2B)</a>
+            </div>
+        </div>
+    </section>
+    
     <section id="products" class="products">
         <div class="container">
             <div class="section-title">
-                <span class="section-tag">Our Collection</span>
-                <h2>Global Supply Chain Catalog</h2>
+                <span class="section-tag">Targeted Solutions</span>
+                <h2>Global Catalog: Engineered by Segment Demand</h2>
                 <p>Comprehensive furniture solutions for office, home, and wellness. Let us streamline your next procurement cycle.</p>
             </div>
             
@@ -567,7 +145,7 @@
                             <p>Premium office seating, full lumbar support.</p>
                             <span class="product-tag">40% Cost Down</span>
                         </div>
-                        <span class="view-btn">Get Supply Chain Quote &rarr;</span>
+                        <span class="view-btn">Request B2B Pricing &rarr;</span>
                     </div>
                 </a>
 
@@ -579,7 +157,7 @@
                             <p>Dual-motor, height adjustable workspace.</p>
                             <span class="product-tag">Fast OEM Cycle</span>
                         </div>
-                        <span class="view-btn">Get Supply Chain Quote &rarr;</span>
+                        <span class="view-btn">Get Sourcing Details &rarr;</span>
                     </div>
                 </a>
 
@@ -589,33 +167,9 @@
                         <h3>Pro Gaming Chair</h3>
                         <div class="product-meta">
                             <p>Racing style S/M/XL sizes with reclining.</p>
-                            <span class="product-tag">DDP Freight Plan</span>
+                            <span class="product-tag">DDP Freight | Gaming</span>
                         </div>
-                        <span class="view-btn">Get Supply Chain Quote &rarr;</span>
-                    </div>
-                </a>
-
-                <a href="#contact" class="category-card">
-                    <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="category-content">
-                        <h3>Smart Power Recliner</h3>
-                        <div class="product-meta">
-                            <p>Zero-gravity electric motion sofa.</p>
-                            <span class="product-tag">UL Certified Parts</span>
-                        </div>
-                        <span class="view-btn">Get Supply Chain Quote &rarr;</span>
-                    </div>
-                </a>
-
-                <a href="#contact" class="category-card">
-                    <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="category-content">
-                        <h3>Luxury Massage Chair</h3>
-                        <div class="product-meta">
-                            <p>4D AI full-body massage system.</p>
-                            <span class="product-tag">Warranty Backed</span>
-                        </div>
-                        <span class="view-btn">Get Supply Chain Quote &rarr;</span>
+                        <span class="view-btn">Explore Global Inventory &rarr;</span>
                     </div>
                 </a>
 
@@ -624,10 +178,34 @@
                     <div class="category-content">
                         <h3>Modern Lounge Chair</h3>
                         <div class="product-meta">
-                            <p>Nordic style accent seating.</p>
-                            <span class="product-tag">2025 Top Seller</span>
+                            <p>Nordic style accent seating (Media & Lounge).</p>
+                            <span class="product-tag">Design Trend 2025</span>
                         </div>
-                        <span class="view-btn">Get Supply Chain Quote &rarr;</span>
+                        <span class="view-btn">Request Design Guide &rarr;</span>
+                    </div>
+                </a>
+
+                <a href="#contact" class="category-card">
+                    <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="category-content">
+                        <h3>Smart Power Recliner</h3>
+                        <div class="product-meta">
+                            <p>Zero-gravity electric motion sofa (UL Certified).</p>
+                            <span class="product-tag">High Reliability | Home</span>
+                        </div>
+                        <span class="view-btn">Get Safety Certification &rarr;</span>
+                    </div>
+                </a>
+
+                <a href="#contact" class="category-card">
+                    <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="category-content">
+                        <h3>Luxury Massage Chair</h3>
+                        <div class="product-meta">
+                            <p>4D AI full-body massage system (Wellness).</p>
+                            <span class="product-tag">Exclusive Supplier Model</span>
+                        </div>
+                        <span class="view-btn">Schedule Demo &rarr;</span>
                     </div>
                 </a>
             </div>
@@ -649,22 +227,22 @@
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-tools"></i></div> 
                     <h3>Custom Engineering & Sourcing</h3>
-                    <p>From custom specifications to private label branding and final packaging design.</p>
+                    <p>From custom specifications to private label branding, and modular component interchangeability for flexible SKU management.</p>
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-box-open"></i></div> 
                     <h3>Precision Quality Assurance</h3>
-                    <p>Adhering to strict AQL 2.5 standards and BIFMA compliance for every unit.</p>
+                    <p>Adhering to strict AQL 2.5 standards and BIFMA/ANSI compliance for every unit, including sustainability certifications (ESG).</p>
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-ship"></i></div> 
                     <h3>Integrated Global Logistics</h3>
-                    <p>Seamless DDP/LDP solutions to US & EU ports, managing all customs and final delivery.</p>
+                    <p>Seamless DDP/LDP solutions to US & EU ports, managing all customs, compliance, and DTC-ready packaging.</p>
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-handshake"></i></div> 
                     <h3>Dedicated Long-Term Support</h3>
-                    <p>Strategic spare parts inventory and dedicated technical teams for minimal disruption.</p>
+                    <p>Strategic spare parts inventory and dedicated technical teams for minimal disruption and retail after-sales continuity.</p>
                 </div>
             </div>
         </div>
@@ -678,6 +256,14 @@
                     <p>Your strategic partner in the global furniture supply chain. Delivering excellence from China to the world.</p>
                     <br>
                     <a href="https://www.yishenglobal.net" style="color: #fff; text-decoration: underline;">www.yishenglobal.net</a>
+                    
+                    <div style="margin-top: 25px;">
+                        <a href="Alex C. Yang | LinkedIn 领英" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin" style="font-size: 1.5rem; margin-right: 15px; color: #0077B6;"></i></a>
+                        <a href="(3) Alex Yang (@AlexYan03451555) / X" target="_blank" aria-label="X (Twitter)"><i class="fab fa-twitter-square" style="font-size: 1.5rem; margin-right: 15px; color: #fff;"></i></a>
+                        <a href="(32) Alex Yang - YouTube" target="_blank" aria-label="YouTube"><i class="fab fa-youtube-square" style="font-size: 1.5rem; margin-right: 15px; color: #FF0000;"></i></a>
+                        <a href="(3) Facebook" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-square" style="font-size: 1.5rem; margin-right: 15px; color: #1877F2;"></i></a>
+                        <a href="[Your Instagram Link Here]" target="_blank" aria-label="Instagram"><i class="fab fa-instagram-square" style="font-size: 1.5rem; color: #E4405F;"></i></a>
+                    </div>
                 </div>
                 
                 <div class="footer-contact-col">
@@ -693,7 +279,7 @@
                     <div class="contact-rows-group">
                         
                         <div class="contact-row">
-                            <span><i class="fas fa-envelope"></i> Email:</span>
+                            <span><i class="fas fa-envelope" aria-hidden="true"></i> Email:</span>
                             <div class="contact-emails">
                                 <a href="mailto:alex.yang@yishenglobal.net">alex.yang@yishenglobal.net</a>
                                 <a href="mailto:champion.yang@yishenglobal.net">champion.yang@yishenglobal.net</a>
@@ -701,23 +287,23 @@
                         </div>
 
                         <div class="contact-row">
-                            <span><i class="fas fa-mobile-alt"></i> Mobile:</span>
+                            <span><i class="fas fa-mobile-alt" aria-hidden="true"></i> Mobile:</span>
                             <a href="tel:+8619530394133">+86 195 3039 4133</a>
                         </div>
 
                         <div class="contact-row">
-                            <span><i class="fab fa-whatsapp"></i> WhatsApp:</span>
+                            <span><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp:</span>
                             <a href="https://wa.me/8618857277313">+86 188 5727 7313</a>
                         </div>
                     </div>
                     
                     <div style="margin-top: 30px; border-top: 1px solid #333; padding-top: 20px;">
                         <div class="contact-row">
-                            <span><i class="fas fa-map-marker-alt"></i> Global HQ:</span>
+                            <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Global HQ:</span>
                             <span>Anji & Hangzhou, Zhejiang, China</span>
                         </div>
                         <div class="contact-row" style="opacity: 0.7;">
-                            <span><i class="fas fa-building"></i> US Office:</span>
+                            <span><i class="fas fa-building" aria-hidden="true"></i> US Office:</span>
                             <span>(Coming Soon)</span>
                         </div>
                     </div>
@@ -726,45 +312,16 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 YiShen Global. All rights reserved.</p>
+                <p>&copy; 2025 YiShen Global. All rights reserved. | <a href="#" style="color: #666;">Privacy Policy</a> | <a href="#" style="color: #666;">Terms</a></p>
             </div>
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
+    <a href="#contact" class="sticky-cta" id="stickyCta">
+        Request Expert Quote <i class="fas fa-arrow-right"></i>
+    </a>
 
-            // 切换菜单显示/隐藏
-            menuToggle.addEventListener('click', function() {
-                if (window.innerWidth <= 768) {
-                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-                }
-            });
-
-            // 点击链接后隐藏菜单
-            const links = navLinks.querySelectorAll('a');
-            links.forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth <= 768) { 
-                        navLinks.style.display = 'none';
-                    }
-                });
-            });
-
-            // 确保在桌面端重新显示导航栏
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768) {
-                    navLinks.style.display = 'flex';
-                } else {
-                    if (navLinks.style.display !== 'none') {
-                        navLinks.style.display = 'none';
-                    }
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
