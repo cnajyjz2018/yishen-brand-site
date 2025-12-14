@@ -19,6 +19,16 @@
 
     <style>
         /* 继承主站 CSS 变量和基础样式 */
+        :root {
+            --primary: #111111;    
+            --secondary: #555555;  
+            --accent: #0077B6;     
+            --bg-light: #f7f9fb;   
+            --white: #ffffff;
+            --border: #e0e0e0;
+            --font-main: 'Inter', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
         .resource-hero {
             padding: 150px 0 80px;
             background: var(--primary);
@@ -106,6 +116,10 @@
             .resource-hero { padding: 120px 0 50px; }
             .resource-grid { grid-template-columns: 1fr; }
         }
+        /* 继承主站导航和按钮样式 */
+        .navbar { /* 确保导航样式存在，此处假设使用外部 styles.css */ }
+        .btn-nav, .btn-primary { /* 确保按钮样式存在 */ }
+        .section-tag { /* 确保标签样式存在 */ }
     </style>
 </head>
 <body>
@@ -263,7 +277,7 @@
     
     <footer class="footer" style="padding: 40px 0 20px;">
         <div class="container" style="text-align: center;">
-            <p>&copy; 2025 YiShen Global. All rights reserved. | <a href="index.html#contact" style="color: var(--accent);">Get in Touch</a></p>
+            <p>&copy; 2026 YiShen Global. All rights reserved. | <a href="index.html#contact" style="color: var(--accent);">Get in Touch</a></p>
         </div>
     </footer>
 
