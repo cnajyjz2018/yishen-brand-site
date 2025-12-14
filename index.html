@@ -10,7 +10,6 @@
     <meta property="og:description" content="We eliminate supply chain risk and engineer efficiency for top B2B furniture buyers and DTC brands worldwide.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.yishenglobal.net/index.html">
-    <meta property="og:image" content="https://www.yishenglobal.net/assets/social-share-preview.jpg">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
@@ -18,135 +17,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght=600;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="styles.css"> 
+
     <style>
-        :root {
-            --primary: #111111;    
-            --secondary: #555555;  
-            --accent: #0077B6;     
-            --bg-light: #f7f9fb;   
-            --white: #ffffff;
-            --border: #e0e0e0;
-            --font-main: 'Inter', sans-serif;
-            --font-serif: 'Playfair Display', serif;
+        .brand { 
+            display: flex;
+            align-items: center;
+            font-family: var(--font-serif); 
+            font-size: 2.2rem; 
+            font-weight: 700; 
+            /* 品牌名称颜色改为金黄色 */
+            color: #FFC300; 
+            /* 移除渐变，采用纯金黄色，保持简洁高贵 */
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-main); color: var(--primary); line-height: 1.6; background-color: var(--white); -webkit-font-smoothing: antialiased; }
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; padding-left: 0; }
-        img { max-width: 100%; height: auto; }
-        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
-        .section-tag { display: block; font-size: 0.85rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-        .hero h1 { font-family: var(--font-serif); font-size: 3.5rem; margin-bottom: 15px; line-height: 1.2; }
-        .btn { padding: 12px 25px; border-radius: 4px; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; display: inline-block; cursor: pointer; text-align: center; border: 2px solid transparent; }
-        .btn-primary { background: var(--accent); color: var(--white); border-color: var(--accent); }
-        .btn-primary:hover { background: #005a8f; border-color: #005a8f; }
-        .btn-outline { background: transparent; color: var(--white); border-color: var(--white); }
-        .btn-outline:hover { background: rgba(255,255,255,0.1); color: var(--white); }
-        .navbar { position: fixed; top: 0; width: 100%; height: 80px; background: rgba(255,255,255,0.98); border-bottom: 1px solid rgba(0,0,0,0.05); z-index: 1000; display: flex; align-items: center; }
-        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
-        .brand { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 700; color: var(--primary); }
-        .nav-links { display: flex; gap: 30px; align-items: center; }
-        .nav-links a { font-size: 0.95rem; font-weight: 500; color: var(--primary); }
-        .nav-links a:hover { color: var(--accent); }
-        .nav-links .btn-nav { padding: 8px 18px; background: var(--accent); color: var(--white) !important; border-radius: 4px; font-weight: 600; text-transform: uppercase; border: none; }
-        .nav-links .btn-nav:hover { background: #005a8f; }
-        .menu-toggle { display: none; border: none; background: none; font-size: 1.5rem; cursor: pointer; }
-        .hero { height: 90vh; display: flex; align-items: center; position: relative; background-color: #0f172a; color: var(--white); margin-top: 80px; text-align: center; }
-        .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 1; background-image: url('banner2.jpg'); }
-        .hero-content { position: relative; z-index: 2; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding-bottom: 80px; }
-        .hero-btns { display: flex; gap: 15px; padding: 20px; background: rgba(0,0,0,0.2); border-radius: 50px; backdrop-filter: blur(3px); }
-        .stats-bar { background: var(--primary); padding: 40px 0; color: var(--white); }
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; gap: 20px; }
-        .stat-number { display: block; font-size: 2.5rem; font-weight: 700; color: var(--accent); font-family: var(--font-serif); }
-        .stat-label { font-size: 0.9rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; }
-        .logo-bar { padding: 30px 0; background: var(--white); border-bottom: 1px solid var(--border); }
-        .logo-grid { display: flex; justify-content: space-around; align-items: center; opacity: 0.7; max-width: 900px; margin: 0 auto; }
-        .logo-grid img { height: 30px; }
-        .about-section { padding: 100px 0; background: var(--white); }
-        .about-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
-        .about-text h2 { font-family: var(--font-serif); font-size: 2.8rem; line-height: 1.2; margin-bottom: 25px; color: var(--primary); }
-        .intro-text { font-size: 1.1rem; color: var(--secondary); margin-bottom: 30px; line-height: 1.8; }
-        .insight-box { background: var(--bg-light); border-left: 4px solid var(--accent); padding: 20px 25px; margin-bottom: 30px; border-radius: 0 8px 8px 0; }
-        .insight-box strong { display: block; color: var(--accent); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
-        .insight-box p { margin: 0; color: var(--primary); font-style: italic; font-weight: 500; font-size: 1.05rem; }
-        .expertise-list { margin-bottom: 35px; padding-left: 0; }
-        .expertise-list li { padding-left: 25px; position: relative; margin-bottom: 12px; color: var(--secondary); font-size: 0.95rem; }
-        .expertise-list li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--accent); font-weight: bold; }
-        .text-link { display: inline-block; color: var(--accent); font-weight: 700; text-decoration: none; border-bottom: 2px solid transparent; transition: 0.3s; }
-        .text-link:hover { border-bottom-color: var(--accent); }
-        .about-image { height: 550px; background-size: cover; background-position: center; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .products { padding: 100px 0; background: var(--bg-light); }
-        .section-title { text-align: center; margin-bottom: 80px; max-width: 700px; margin-left: auto; margin-right: auto; }
-        .section-title h2 { font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 15px; }
-        .mesh-chair-results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
-        .category-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; max-width: 1200px; margin: 0 auto; }
-        .category-card { position: relative; height: 320px; border-radius: 12px; overflow: hidden; display: block; color: var(--white); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .category-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center center; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); z-index: 1; }
-        .category-card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.1)); z-index: 2; transition: background 0.3s; }
-        .category-content { position: relative; z-index: 3; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding: 25px; }
-        .category-content h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 5px; color: #fff; }
-        .product-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-        .category-content p { font-size: 0.9rem; opacity: 0.8; color: #ddd; margin: 0; }
-        .product-tag { font-size: 0.8rem; font-weight: 600; color: var(--accent); background: var(--white); padding: 3px 8px; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; border: 1px solid var(--accent); box-shadow: 0 0 5px rgba(0, 119, 182, 0.5); }
-        .view-btn { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); background: var(--white); padding: 8px 16px; border-radius: 4px; display: inline-block; width: fit-content; opacity: 0; transform: translateY(20px); transition: all 0.4s ease; }
-        .category-card:hover .category-bg { transform: scale(1.1); }
-        .category-card:hover::after { background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)); }
-        .category-card:hover .view-btn { opacity: 1; transform: translateY(0); }
-        .view-more-container { text-align: center; margin-top: 50px; }
-        .product-showcase-container { padding: 80px 0; background: var(--white); }
-        .showcase-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-        .showcase-image { position: relative; height: 550px; background-size: contain; background-repeat: no-repeat; background-position: center; }
-        .hotspot { position: absolute; width: 25px; height: 25px; background: var(--accent); border-radius: 50%; cursor: pointer; border: 3px solid var(--white); transition: transform 0.3s, box-shadow 0.3s; z-index: 10; }
-        .hotspot:hover { transform: scale(1.2); box-shadow: 0 0 10px rgba(0, 119, 182, 0.8); }
-        .hotspot-info { position: absolute; background: rgba(17, 17, 17, 0.95); color: var(--white); padding: 15px; border-radius: 8px; width: 250px; font-size: 0.9rem; line-height: 1.5; z-index: 20; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
-        .hotspot-info.visible { opacity: 1; pointer-events: auto; }
-        .hotspot-info h5 { font-size: 1.1rem; color: var(--accent); margin-bottom: 8px; font-weight: 700; }
-        .hotspot-info span { display: block; margin-top: 5px; font-weight: 500; }
-        .tech-spec { display: block; color: var(--primary); background: #FFDD00; padding: 3px 8px; border-radius: 2px; margin-bottom: 10px; font-size: 0.85rem; font-weight: 700; width: fit-content; }
-        .services-section { padding: 100px 0; background: var(--white); }
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .service-card { padding: 30px; border: 1px solid var(--border); border-radius: 8px; transition: 0.3s; height: 100%; } 
-        .service-card:hover { border-color: var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.05); transform: translateY(-3px); }
-        .service-card .icon { font-size: 2.5rem; margin-bottom: 20px; color: var(--accent); }
-        .service-card h3 { font-size: 1.2rem; margin-bottom: 10px; color: var(--primary); }
-        .service-card p { color: var(--secondary); font-size: 0.9rem; }
-        .footer { background: #1a1a1a; color: #fff; padding: 80px 0 30px; }
-        .footer-top { display: grid; grid-template-columns: 1.5fr 1fr; gap: 80px; margin-bottom: 60px; }
-        .footer-brand-col h3 { font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 20px; }
-        .footer-brand-col p { opacity: 0.7; max-width: 400px; }
-        .footer-contact-col h4 { font-size: 1.2rem; margin-bottom: 15px; color: var(--white); }
-        .contact-desc { opacity: 0.6; margin-bottom: 20px; font-size: 0.9rem; }
-        .contact-row { display: flex; margin-bottom: 15px; font-size: 0.9rem; }
-        .contact-row span:first-child { color: var(--accent); font-weight: 600; margin-right: 15px; flex-shrink: 0; width: 100px; display: flex; align-items: center; gap: 8px; }
-        .contact-row a { color: #fff; border-bottom: 1px dotted #666; }
-        .contact-row a:hover { color: var(--accent); border-color: var(--accent); }
-        .contact-rows-group { padding-bottom: 10px; }
-        .contact-emails { display: flex; flex-direction: column; gap: 5px; }
-        .contact-row i { color: var(--white); }
-        .footer-bottom { border-top: 1px solid #333; padding-top: 30px; text-align: center; font-size: 0.8rem; opacity: 0.5; }
-        .sticky-cta { position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: var(--white); padding: 15px 25px; border-radius: 50px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); z-index: 900; display: none; cursor: pointer; font-weight: 600; text-transform: uppercase; }
-        .sticky-cta:hover { background: var(--accent); box-shadow: 0 8px 25px rgba(0, 119, 182, 0.5); }
-        @media (max-width: 1024px) { 
-            .category-grid, .mesh-chair-results-grid { grid-template-columns: repeat(2, 1fr); }
-            .footer-top { grid-template-columns: 1fr; gap: 40px; }
-            .showcase-wrapper { grid-template-columns: 1fr; gap: 40px; }
-            .showcase-image { height: 400px; }
-        }
-        @media (max-width: 768px) { 
-            .products, .services-section, .about-section, .stats-bar { padding: 40px 0; }
-            .hero { margin-top: 60px; height: 60vh; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero-btns { flex-direction: column; gap: 10px; padding: 15px; }
-            .nav-links { display: none; }
-            .menu-toggle { display: block; } 
-            .about-wrapper { grid-template-columns: 1fr; gap: 30px; }
-            .about-image { order: -1; height: 250px; margin-bottom: 20px; }
-            .category-grid, .mesh-chair-results-grid { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        }
-        @media (max-width: 480px) {
-            .stats-grid { grid-template-columns: 1fr; } 
-            .contact-row { flex-direction: column; align-items: flex-start; }
+        
+        /* LOGO 图片容器 */
+        .logo-icon img {
+            height: 40px; /* 确保高度一致 */
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -175,7 +64,12 @@
     
     <header class="navbar">
         <div class="container nav-wrapper">
-            <div class="brand">YiShen Global</div>
+            <div class="brand">
+                <div class="logo-icon">
+                    <img src="yishen_logo_gold.png" alt="YiShen Global Logo">
+                </div>
+                YiShen Global
+            </div>
             <nav class="nav-links" id="navLinks"> 
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
@@ -500,7 +394,6 @@
                     </div>
                     
                     <div class="contact-rows-group">
-                        
                         <div class="contact-row">
                             <span><i class="fas fa-envelope" aria-hidden="true"></i> Email:</span>
                             <div class="contact-emails">
@@ -555,284 +448,7 @@
         Request Expert Quote <i class="fas fa-arrow-right"></i>
     </a>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.getElementById('menuToggle');
-            const navLinks = document.getElementById('navLinks');
-            const stickyCta = document.getElementById('stickyCta');
-            const showcaseImage = document.getElementById('mesh-chair-showcase');
-
-            // --- 战略核心：20个 SKU 的数据模型 (已集成 Tri-Channel 营销信号) ---
-            const ALL_MESH_CHAIR_SKUS = [
-                // YS-001: 经济型 - 高批量
-                { 
-                    model: 'YS-001', tier: 'economic', lumbar: 'fixed', bifma: 'bifma', 
-                    desc: 'Fixed lumbar, High volume SKU. FCL: 750 units.', img: 'mesh-ys001-sku1.jpg',
-                    signals: { retail: 'BIFMA-PASS', dtc: '72H-Ship', enterprise: 'High-Vol-Cap' }
-                }, 
-                // YS-003: 经济型 - 预算优化
-                { 
-                    model: 'YS-003', tier: 'economic', lumbar: 'fixed', bifma: 'bifma', 
-                    desc: '1-Year warranty, Cost-optimized design.', img: 'mesh-sku4.jpg',
-                    signals: { retail: 'Cost-Down', dtc: 'Fast-Assemble', enterprise: 'Basic-Project' }
-                }, 
-                // YS-010: 经济型 - 快速周转
-                { 
-                    model: 'YS-010', tier: 'economic', lumbar: 'fixed', bifma: 'bifma', 
-                    desc: 'Entry-level mesh, basic tilt mechanism. Quick inventory turnover.', img: 'mesh-sku7.jpg',
-                    signals: { retail: 'Quick-Turnover', dtc: 'Simple-SKU', enterprise: 'Bulk-Discount' }
-                }, 
-                // YS-012: 经济型 - 简易DTC
-                { 
-                    model: 'YS-012', tier: 'economic', lumbar: 'fixed', bifma: 'bifma', 
-                    desc: 'Fixed arms and headrest. Simplest assembly for DTC.', img: 'mesh-sku8.jpg',
-                    signals: { retail: 'Fixed-Price', dtc: 'Ease-of-Use', enterprise: 'Low-Spec' }
-                }, 
-                // YS-015: 经济型 - 2D价值
-                { 
-                    model: 'YS-015', tier: 'economic', lumbar: '2d', bifma: 'bifma', 
-                    desc: 'Economic with essential 2D adjustable armrests. Value leader.', img: 'mesh-sku9.jpg',
-                    signals: { retail: '2D-Value', dtc: 'Adjustable-Arms', enterprise: 'Cost-Upgrade' }
-                }, 
-                // YS-002: 标准型 - 中端稳定
-                { 
-                    model: 'YS-002', tier: 'standard', lumbar: '2d', bifma: 'bifma', 
-                    desc: '2D adjustable lumbar/armrests, High mesh content. Mid-market stable.', img: 'mesh-ys002-sku2.jpg',
-                    signals: { retail: 'Spare-Stock-Ready', dtc: 'Low-Damage-Pack', enterprise: 'BIFMA-PLUS' }
-                }, 
-                // YS-005: 标准型 - 动态舒适
-                { 
-                    model: 'YS-005', tier: 'standard', lumbar: 'dynamic', bifma: 'bifma', 
-                    desc: 'Dynamic lumbar support, Standard tier mesh. High user comfort rating.', img: 'mesh-sku5.jpg',
-                    signals: { retail: 'Factory-Audited', dtc: 'Quick-Iteration', enterprise: 'ESG-Ready' }
-                }, 
-                // YS-020: 标准型 - 同步倾仰
-                { 
-                    model: 'YS-020', tier: 'standard', lumbar: '2d', bifma: 'bifma', 
-                    desc: 'Synchronous tilt mechanism, nylon base, popular standard model.', img: 'mesh-sku10.jpg',
-                    signals: { retail: 'Synchro-Tilt', dtc: 'Easy-Custom', enterprise: 'Standard-Reliable' }
-                }, 
-                // YS-025: 标准型 - 尺寸优化
-                { 
-                    model: 'YS-025', tier: 'standard', lumbar: 'dynamic', bifma: 'bifma', 
-                    desc: 'Dynamic lumbar, medium back height. Optimized for small/medium users.', img: 'mesh-sku11.jpg',
-                    signals: { retail: 'Size-Optimization', dtc: 'Mid-Tier-Perf', enterprise: 'Dynamic-Proj' }
-                }, 
-                // YS-030: 标准型 - 固定腰部
-                { 
-                    model: 'YS-030', tier: 'standard', lumbar: 'fixed', bifma: 'bifma', 
-                    desc: 'Standard mesh, fixed lumbar, with adjustable headrest. Cost-effective ergonomics.', img: 'mesh-sku12.jpg',
-                    signals: { retail: 'Adj-Headrest', dtc: 'Aesthetic-Clean', enterprise: 'Standard-Ergo' }
-                }, 
-                // YS-035: 标准型 - UL安全
-                { 
-                    model: 'YS-035', tier: 'standard', lumbar: '2d', bifma: 'ul', 
-                    desc: 'Standard tier, but with UL certified components for enhanced safety compliance.', img: 'mesh-sku13.jpg',
-                    signals: { retail: 'UL-Certified', dtc: 'Safety-First', enterprise: 'Proj-Compliance' }
-                }, 
-                // YS-040: 标准型 - 商业认证
-                { 
-                    model: 'YS-040', tier: 'standard', lumbar: 'fixed', bifma: 'ul', 
-                    desc: 'High-back mesh, fixed lumbar, certified for commercial projects.', img: 'mesh-sku14.jpg',
-                    signals: { retail: 'Commercial-Grade', dtc: 'High-Back', enterprise: 'Contract-Ready' }
-                }, 
-                // YS-007: 旗舰型 - 旗舰稳定
-                { 
-                    model: 'YS-007', tier: 'premium', lumbar: 'dynamic', bifma: 'ul', 
-                    desc: 'Dynamic lumbar, Aluminum base, UL Certified. Flagship stability.', img: 'mesh-ys007-sku3.jpg',
-                    signals: { retail: 'UL-Comp', dtc: 'Modular-Design', enterprise: 'Digital-Twin' }
-                }, 
-                // YS-009: 旗舰型 - 5年质保
-                { 
-                    model: 'YS-009', tier: 'premium', lumbar: 'dynamic', bifma: 'ul', 
-                    desc: 'Full adjustable headrest, 5-Year warranty. Executive comfort.', img: 'mesh-sku6.jpg',
-                    signals: { retail: '5-Year-Warranty', dtc: 'Aesthetic-Premium', enterprise: 'Project-Tier-A' }
-                }, 
-                // YS-050: 旗舰型 - 4D控制
-                { 
-                    model: 'YS-050', tier: 'premium', lumbar: 'dynamic', bifma: 'ul', 
-                    desc: '4D armrests, advanced wire control mechanism. Highest durability rating.', img: 'mesh-sku15.jpg',
-                    signals: { retail: '4D-Armrests', dtc: 'Wire-Control', enterprise: 'Highest-Durability' }
-                }, 
-                // YS-055: 旗舰型 - 透气寿命
-                { 
-                    model: 'YS-055', tier: 'premium', lumbar: '2d', bifma: 'ul', 
-                    desc: 'Premium mesh, 2D lumbar. Focus on material breathability and lifespan.', img: 'mesh-sku16.jpg',
-                    signals: { retail: 'Breathable-Mesh', dtc: 'Long-Lifespan', enterprise: 'Material-Cert' }
-                }, 
-                // YS-060: 旗舰型 - 设计优先
-                { 
-                    model: 'YS-060', tier: 'premium', lumbar: 'dynamic', bifma: 'bifma', 
-                    desc: 'Dynamic lumbar, polished aluminum base. Design-first premium model.', img: 'mesh-sku17.jpg',
-                    signals: { retail: 'Design-First', dtc: 'Aesthetic-Focus', enterprise: 'Premium-Finish' }
-                }, 
-                // YS-065: 旗舰型 - 水瀑布边
-                { 
-                    model: 'YS-065', tier: 'premium', lumbar: '2d', bifma: 'bifma', 
-                    desc: 'Adjustable headrest, waterfall seat edge. High-spec comfort.', img: 'mesh-sku18.jpg',
-                    signals: { retail: 'Waterfall-Edge', dtc: 'High-Spec', enterprise: 'Ergo-Max' }
-                },
-                // YS-070: 旗舰型 - 简洁行政
-                { 
-                    model: 'YS-070', tier: 'premium', lumbar: 'fixed', bifma: 'ul', 
-                    desc: 'Executive style, simplified fixed lumbar for clean aesthetic. UL Certified.', img: 'mesh-sku19.jpg',
-                    signals: { retail: 'Executive-Style', dtc: 'Clean-Aesthetic', enterprise: 'Fixed-Luxury' }
-                },
-                // YS-075: 旗舰型 - 动态运动
-                { 
-                    model: 'YS-075', tier: 'premium', lumbar: 'dynamic', bifma: 'bifma', 
-                    desc: 'Newest dynamic mechanism. Best-in-class motion range.', img: 'mesh-sku20.jpg',
-                    signals: { retail: 'Best-Motion', dtc: 'High-Tech', enterprise: 'Motion-Range' }
-                }
-            ];
-
-            const MESH_CHAIR_HOTSPOTS = [
-                { top: '25%', left: '30%', title: "Modular Component Interchangeability", desc: "Key parts designed for quick swapping across SKU tiers, maximizing your inventory efficiency." }, 
-                { top: '55%', left: '60%', title: "Eco-Certified ENERSORB Foam", desc: "Available options include high-density, patented memory foam and recycled polymer materials." },
-                { top: '80%', left: '45%', title: "BIFMA X5.1 Base & ANSI Compliant", desc: "Stress-tested aluminum alloy base, ensuring durability and full regulatory compliance." } 
-            ];
-            
-            // --- SKU Dynamic Rendering Logic ---
-            const meshSkuContainer = document.getElementById('mesh-sku-container');
-            const priceFilter = document.getElementById('filter-price');
-            const lumberFilter = document.getElementById('filter-lumber');
-            const bifmaFilter = document.getElementById('filter-bifma');
-            const resetButton = document.getElementById('reset-filters');
-            const noResultsMessage = document.getElementById('no-results-message');
-
-            function renderSkuCard(sku) {
-                const card = document.createElement('div');
-                card.className = 'sku-card';
-                card.setAttribute('data-price', sku.tier);
-                card.setAttribute('data-lumber', sku.lumbar);
-                card.setAttribute('data-bifma', sku.bifma);
-
-                // ⭐ 核心渲染：展示 Tri-Channel 信号的优先级 (DTC > Retail > Enterprise)
-                const primarySignal = sku.signals.dtc;
-                const secondarySignal = sku.signals.retail;
-                // 您可以在这里添加逻辑来决定显示哪两个信号，目前显示 DTC 和 Retail 信号
-                
-                card.innerHTML = `
-                    <a href="#contact" class="category-card" style="height: 250px;">
-                        <div class="category-bg" style="background-image: url('${sku.img}');"></div>
-                        <div class="category-content" style="padding: 15px;">
-                            <h3 style="font-size: 1.1rem;">Model ${sku.model}</h3>
-                            <div class="product-meta">
-                                <p style="font-size: 0.8rem;">${sku.desc}</p>
-                                <span class="product-tag">${primarySignal} | ${secondarySignal}</span>
-                            </div>
-                        </div>
-                    </a>
-                `;
-                return card;
-            }
-
-            function applyFilters() {
-                if (!meshSkuContainer || !priceFilter) return;
-
-                const selectedPrice = priceFilter.value;
-                const selectedLumber = lumberFilter.value;
-                const selectedBifma = bifmaFilter.value;
-                let visibleCount = 0;
-
-                meshSkuContainer.querySelectorAll('.sku-card').forEach(card => card.remove());
-                
-                ALL_MESH_CHAIR_SKUS.forEach(sku => {
-                    const priceMatch = (selectedPrice === 'all' || selectedPrice === sku.tier);
-                    const lumberMatch = (selectedLumber === 'all' || selectedLumber === sku.lumbar);
-                    const bifmaMatch = (selectedBifma === 'all' || selectedBifma === sku.bifma);
-
-                    if (priceMatch && lumberMatch && bifmaMatch) {
-                        meshSkuContainer.insertBefore(renderSkuCard(sku), noResultsMessage);
-                        visibleCount++;
-                    }
-                });
-
-                if (visibleCount === 0) {
-                    if (noResultsMessage) noResultsMessage.style.display = 'block';
-                } else {
-                    if (noResultsMessage) noResultsMessage.style.display = 'none';
-                }
-            }
-            
-            // --- Hotspot Rendering Logic (Omitted for brevity, but included in final HTML) ---
-            const stickyCta = document.getElementById('stickyCta');
-
-            function renderHotspots() {
-                if (!showcaseImage) return;
-                const infoDisplay = document.createElement('div');
-                infoDisplay.id = 'hotspot-display';
-                infoDisplay.className = 'hotspot-info';
-                infoDisplay.innerHTML = `<h5></h5><p></p><span>Learn more →</span>`;
-                showcaseImage.appendChild(infoDisplay);
-
-                MESH_CHAIR_HOTSPOTS.forEach(data => {
-                    const hotspot = document.createElement('div');
-                    hotspot.className = 'hotspot';
-                    hotspot.style.top = data.top;
-                    hotspot.style.left = data.left;
-                    
-                    hotspot.addEventListener('mouseenter', (e) => handleHotspotHover(e, data, infoDisplay));
-                    hotspot.addEventListener('mouseleave', () => handleHotspotLeave(infoDisplay));
-                    showcaseImage.appendChild(hotspot);
-                });
-            }
-
-            let hoverTimeout;
-            function handleHotspotHover(e, data, infoDisplay) {
-                clearTimeout(hoverTimeout);
-                infoDisplay.querySelector('h5').textContent = data.title;
-                infoDisplay.querySelector('p').textContent = data.desc;
-                const rect = e.target.getBoundingClientRect();
-                const containerRect = showcaseImage.getBoundingClientRect();
-                infoDisplay.style.top = `${rect.top - containerRect.top - 100}px`; 
-                infoDisplay.style.left = `${rect.left - containerRect.left + 35}px`;
-                infoDisplay.classList.add('visible');
-            }
-
-            function handleHotspotLeave(infoDisplay) {
-                hoverTimeout = setTimeout(() => {
-                    infoDisplay.classList.remove('visible');
-                }, 200);
-            }
-            
-            // --- Navigation & Event Bindings (Omitted for brevity, but included in final HTML) ---
-            if (menuToggle) {
-                menuToggle.addEventListener('click', function() { navLinks.classList.toggle('is-open'); });
-                navLinks.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', function() { if (window.innerWidth <= 768) { navLinks.classList.remove('is-open'); } });
-                });
-                window.addEventListener('resize', function() { if (window.innerWidth > 768) { navLinks.classList.remove('is-open'); } });
-            }
-
-            if (priceFilter) priceFilter.addEventListener('change', applyFilters);
-            if (lumberFilter) lumberFilter.addEventListener('change', applyFilters);
-            if (bifmaFilter) bifmaFilter.addEventListener('change', applyFilters);
-            
-            if (resetButton) resetButton.addEventListener('click', () => {
-                if (priceFilter) priceFilter.value = 'all';
-                if (lumberFilter) lumberFilter.value = 'all';
-                if (bifmaFilter) bifmaFilter.value = 'all';
-                applyFilters();
-            });
-
-
-            // --- Initialization ---
-            renderHotspots();
-            if (priceFilter) applyFilters();
-            
-            if (stickyCta) {
-                window.addEventListener('scroll', function() {
-                    const heroHeight = document.getElementById('home').offsetHeight;
-                    if (window.scrollY > heroHeight / 2) {
-                        stickyCta.style.display = 'block';
-                    } else {
-                        stickyCta.style.display = 'none';
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
