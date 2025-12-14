@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="detailTitle">Loading SKU Details...</title>
+    <title id="pageTitle">Loading SKU Details...</title>
     
     <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -55,9 +55,31 @@
             font-weight: 600;
             text-align: center;
         }
+        .sku-detail-content {
+            padding-top: 50px;
+        }
+        .detail-info-section {
+            border-left: 5px solid #FFC300;
+            padding-left: 30px;
+        }
+        .sku-features li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            list-style: none;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        .sku-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
     </style>
 </head>
-<body>
+<body class="sku-detail">
     <header class="navbar" style="position: static; margin-bottom: 0; border-bottom: none;">
         <div class="container nav-wrapper">
             <a href="index.html" class="brand">
@@ -75,4 +97,66 @@
         </div>
     </header>
 
-    <div class="container detail-container">
+    <main class="container sku-detail-content">
+        <div class="detail-container">
+            
+            <div class="product-gallery">
+                <img id="skuImage" src="assets/images/default.jpg" alt="Product Image" class="product-gallery-main">
+                <p style="text-align: center; margin-top: 15px; color: var(--secondary); font-style: italic;">Image provided for model illustration purposes.</p>
+            </div>
+
+            <div class="detail-info-section">
+                <p class="section-tag">ERGONOMIC MESH CHAIR</p>
+                <h2 id="skuName" style="font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 10px;">Model Loading...</h2>
+                <p id="skuTagline" style="font-size: 1.1rem; color: var(--secondary); margin-bottom: 30px;">Loading product description...</p>
+                
+                <h3 style="font-size: 1.5rem; color: var(--primary); border-bottom: 2px solid var(--border); padding-bottom: 5px; margin-bottom: 20px;">Key Specifications</h3>
+                
+                <table class="spec-table">
+                    <tbody id="specsTableBody">
+                        <tr><th>Model/SKU</th><td id="skuCode">Loading...</td></tr>
+                        <tr><th>Product Tier</th><td id="skuTier">Loading...</td></tr>
+                    </tbody>
+                </table>
+                
+                <h3 style="font-size: 1.5rem; color: var(--primary); border-bottom: 2px solid var(--border); padding-bottom: 5px; margin-top: 30px; margin-bottom: 20px;">Differentiators & Market Readiness</h3>
+                <ul class="sku-features" id="skuFeatures">
+                    </ul>
+                
+                <div style="margin-top: 40px;">
+                    <a href="index.html#contact" class="btn btn-primary" style="display: block; background: #FFC300; color: var(--primary); border-color: #FFC300; font-size: 1rem;">
+                        Request B2B Quote for this Model <i class="fas fa-paper-plane"></i>
+                    </a>
+                    <a href="mailto:alex.yang@yishenglobal.net?subject=Technical%20Data%20Request%20for%20SKU%20[model]" class="btn btn-outline" style="display: block; margin-top: 10px; background: none; color: var(--accent); border-color: var(--accent); font-size: 0.9rem;">
+                        Download Detailed CAD/Data Sheet
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="cta-banner" style="background: var(--primary); color: var(--white); padding: 50px 0; text-align: center;">
+        <div class="container">
+            <h2 style="font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 15px;">Looking for Different Specs?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.8;">
+                Explore all 20 modular solutions to find your perfect fit.
+            </p>
+            <a href="index.html#mesh-chair-catalog" class="btn btn-primary" style="background: #FFDD00; color: var(--primary); border-color: #FFDD00;">Return to Catalog & Filter</a>
+        </div>
+    </section>
+    
+    <footer class="footer" style="padding: 40px 0 20px; background: #111;">
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2026 YiShen Global. All rights reserved. | <a href="index.html#contact" style="color: var(--accent);">Get in Touch</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Manually trigger detail rendering since we are on the detail page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderSkuDetail();
+        });
+    </script>
+</body>
+</html>
