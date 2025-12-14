@@ -15,140 +15,221 @@ document.addEventListener('DOMContentLoaded', function() {
     const bifmaFilter = document.getElementById('filter-bifma');
     const resetButton = document.getElementById('reset-filters');
     const noResultsMessage = document.getElementById('no-results-message');
+    const detailContent = document.getElementById('detail-content');
 
     // --- 战略核心：20个 SKU 的数据模型 (已集成 Tri-Channel 营销信号) ---
     // signals: { retail, dtc, enterprise } 用于决定 SKU 卡片上的营销标签
+    // Img paths use placeholders/stock photo names, assuming these are provided in assets/images/
     const ALL_MESH_CHAIR_SKUS = [
-        // YS-001: 经济型 - 高批量
+        // 经济型 (Economic)
         { 
             model: 'YS-001', tier: 'economic', lumbar: 'fixed', bifma: 'bifma', 
-            desc: 'Fixed lumbar, High volume SKU. FCL: 750 units.', img: 'mesh-ys001-sku1.jpg',
-            signals: { retail: 'BIFMA-PASS', dtc: '72H-Ship', enterprise: 'High-Vol-Cap' }
+            desc: 'Fixed lumbar, High volume SKU. FCL: 750 units.', img: 'assets/images/economic-simple-black.jpg',
+            signals: { retail: 'BIFMA-PASS', dtc: '72H-Ship', enterprise: 'High-Vol-Cap' },
+            specs: { arms: 'Fixed T-Arms', tilt: 'Basic Tilt Lock', base: 'Nylon 5-Star', warranty: '1 Year', material: 'Standard Mesh' }
         }, 
-        // YS-003: 经济型 - 预算优化
         { 
             model: 'YS-003', tier: 'economic', lumbar: 'fixed', bifma: 'bifma', 
-            desc: '1-Year warranty, Cost-optimized design.', img: 'mesh-sku4.jpg',
-            signals: { retail: 'Cost-Down', dtc: 'Fast-Assemble', enterprise: 'Basic-Project' }
+            desc: '1-Year warranty, Cost-optimized design.', img: 'assets/images/economic-midback-grey.jpg',
+            signals: { retail: 'Cost-Down', dtc: 'Fast-Assemble', enterprise: 'Basic-Project' },
+            specs: { arms: 'Fixed Loop Arms', tilt: 'Basic Tilt Lock', base: 'Nylon 5-Star', warranty: '1 Year', material: 'Standard Mesh' }
         }, 
-        // YS-010: 经济型 - 快速周转
         { 
             model: 'YS-010', tier: 'economic', lumbar: 'fixed', bifma: 'bifma', 
-            desc: 'Entry-level mesh, basic tilt mechanism. Quick inventory turnover.', img: 'mesh-sku7.jpg',
-            signals: { retail: 'Quick-Turnover', dtc: 'Simple-SKU', enterprise: 'Bulk-Discount' }
+            desc: 'Entry-level mesh, basic tilt mechanism. Quick inventory turnover.', img: 'assets/images/economic-lowback-white.jpg',
+            signals: { retail: 'Quick-Turnover', dtc: 'Simple-SKU', enterprise: 'Bulk-Discount' },
+            specs: { arms: 'Fixed', tilt: 'Basic Tilt Lock', base: 'Nylon 5-Star', warranty: '1 Year', material: 'Standard Mesh' }
         }, 
-        // YS-012: 经济型 - 简易DTC
         { 
             model: 'YS-012', tier: 'economic', lumbar: 'fixed', bifma: 'bifma', 
-            desc: 'Fixed arms and headrest. Simplest assembly for DTC.', img: 'mesh-sku8.jpg',
-            signals: { retail: 'Fixed-Price', dtc: 'Ease-of-Use', enterprise: 'Low-Spec' }
+            desc: 'Fixed arms and headrest. Simplest assembly for DTC.', img: 'assets/images/economic-headrest-black.jpg',
+            signals: { retail: 'Fixed-Price', dtc: 'Ease-of-Use', enterprise: 'Low-Spec' },
+            specs: { arms: 'Fixed', tilt: 'Basic Tilt Lock', base: 'Nylon 5-Star', warranty: '1 Year', material: 'Standard Mesh' }
         }, 
-        // YS-015: 经济型 - 2D价值
         { 
             model: 'YS-015', tier: 'economic', lumbar: '2d', bifma: 'bifma', 
-            desc: 'Economic with essential 2D adjustable armrests. Value leader.', img: 'mesh-sku9.jpg',
-            signals: { retail: '2D-Value', dtc: 'Adjustable-Arms', enterprise: 'Cost-Upgrade' }
+            desc: 'Economic with essential 2D adjustable armrests. Value leader.', img: 'assets/images/economic-2d-arms-blue.jpg',
+            signals: { retail: '2D-Value', dtc: 'Adjustable-Arms', enterprise: 'Cost-Upgrade' },
+            specs: { arms: '2D Adjustable', tilt: 'Basic Tilt Lock', base: 'Nylon 5-Star', warranty: '2 Year', material: 'Standard Mesh' }
         }, 
-        // YS-002: 标准型 - 中端稳定
+        // 标准型 (Standard)
         { 
             model: 'YS-002', tier: 'standard', lumbar: '2d', bifma: 'bifma', 
-            desc: '2D adjustable lumbar/armrests, High mesh content. Mid-market stable.', img: 'mesh-ys002-sku2.jpg',
-            signals: { retail: 'Spare-Stock-Ready', dtc: 'Low-Damage-Pack', enterprise: 'BIFMA-PLUS' }
+            desc: '2D adjustable lumbar/armrests, High mesh content. Mid-market stable.', img: 'assets/images/standard-2d-lumbar-black.jpg',
+            signals: { retail: 'Spare-Stock-Ready', dtc: 'Low-Damage-Pack', enterprise: 'BIFMA-PLUS' },
+            specs: { arms: '2D Adjustable', tilt: 'Synchro-Tilt', base: 'Nylon Reinforced', warranty: '3 Year', material: 'High Density Mesh' }
         }, 
-        // YS-005: 标准型 - 动态舒适
         { 
             model: 'YS-005', tier: 'standard', lumbar: 'dynamic', bifma: 'bifma', 
-            desc: 'Dynamic lumbar support, Standard tier mesh. High user comfort rating.', img: 'mesh-sku5.jpg',
-            signals: { retail: 'Factory-Audited', dtc: 'Quick-Iteration', enterprise: 'ESG-Ready' }
+            desc: 'Dynamic lumbar support, Standard tier mesh. High user comfort rating.', img: 'assets/images/standard-dynamic-lumbar-grey.jpg',
+            signals: { retail: 'Factory-Audited', dtc: 'Quick-Iteration', enterprise: 'ESG-Ready' },
+            specs: { arms: '3D Adjustable', tilt: 'Synchro-Tilt', base: 'Nylon Reinforced', warranty: '3 Year', material: 'High Density Mesh' }
         }, 
-        // YS-020: 标准型 - 同步倾仰
         { 
             model: 'YS-020', tier: 'standard', lumbar: '2d', bifma: 'bifma', 
-            desc: 'Synchronous tilt mechanism, nylon base, popular standard model.', img: 'mesh-sku10.jpg',
-            signals: { retail: 'Synchro-Tilt', dtc: 'Easy-Custom', enterprise: 'Standard-Reliable' }
+            desc: 'Synchronous tilt mechanism, nylon base, popular standard model.', img: 'assets/images/standard-synchrotilt-black.jpg',
+            signals: { retail: 'Synchro-Tilt', dtc: 'Easy-Custom', enterprise: 'Standard-Reliable' },
+            specs: { arms: '2D Adjustable', tilt: 'Synchro-Tilt', base: 'Nylon Reinforced', warranty: '3 Year', material: 'High Density Mesh' }
         }, 
-        // YS-025: 标准型 - 尺寸优化
         { 
             model: 'YS-025', tier: 'standard', lumbar: 'dynamic', bifma: 'bifma', 
-            desc: 'Dynamic lumbar, medium back height. Optimized for small/medium users.', img: 'mesh-sku11.jpg',
-            signals: { retail: 'Size-Optimization', dtc: 'Mid-Tier-Perf', enterprise: 'Dynamic-Proj' }
+            desc: 'Dynamic lumbar, medium back height. Optimized for small/medium users.', img: 'assets/images/standard-midback-dynamic-blue.jpg',
+            signals: { retail: 'Size-Optimization', dtc: 'Mid-Tier-Perf', enterprise: 'Dynamic-Proj' },
+            specs: { arms: '2D Adjustable', tilt: 'Synchro-Tilt', base: 'Nylon Reinforced', warranty: '3 Year', material: 'High Density Mesh' }
         }, 
-        // YS-030: 标准型 - 固定腰部
         { 
             model: 'YS-030', tier: 'standard', lumbar: 'fixed', bifma: 'bifma', 
-            desc: 'Standard mesh, fixed lumbar, with adjustable headrest. Cost-effective ergonomics.', img: 'mesh-sku12.jpg',
-            signals: { retail: 'Adj-Headrest', dtc: 'Aesthetic-Clean', enterprise: 'Standard-Ergo' }
+            desc: 'Standard mesh, fixed lumbar, with adjustable headrest. Cost-effective ergonomics.', img: 'assets/images/standard-fixed-headrest-black.jpg',
+            signals: { retail: 'Adj-Headrest', dtc: 'Aesthetic-Clean', enterprise: 'Standard-Ergo' },
+            specs: { arms: 'Fixed T-Arms', tilt: 'Synchro-Tilt', base: 'Nylon Reinforced', warranty: '3 Year', material: 'High Density Mesh' }
         }, 
-        // YS-035: 标准型 - UL安全
         { 
             model: 'YS-035', tier: 'standard', lumbar: '2d', bifma: 'ul', 
-            desc: 'Standard tier, but with UL certified components for enhanced safety compliance.', img: 'mesh-sku13.jpg',
-            signals: { retail: 'UL-Certified', dtc: 'Safety-First', enterprise: 'Proj-Compliance' }
+            desc: 'Standard tier, but with UL certified components for enhanced safety compliance.', img: 'assets/images/standard-ul-certified-white.jpg',
+            signals: { retail: 'UL-Certified', dtc: 'Safety-First', enterprise: 'Proj-Compliance' },
+            specs: { arms: '2D Adjustable', tilt: 'Synchro-Tilt', base: 'Nylon Reinforced', warranty: '3 Year', material: 'High Density Mesh' }
         }, 
-        // YS-040: 标准型 - 商业认证
         { 
             model: 'YS-040', tier: 'standard', lumbar: 'fixed', bifma: 'ul', 
-            desc: 'High-back mesh, fixed lumbar, certified for commercial projects.', img: 'mesh-sku14.jpg',
-            signals: { retail: 'Commercial-Grade', dtc: 'High-Back', enterprise: 'Contract-Ready' }
+            desc: 'High-back mesh, fixed lumbar, certified for commercial projects.', img: 'assets/images/standard-commercial-fixed-grey.jpg',
+            signals: { retail: 'Commercial-Grade', dtc: 'High-Back', enterprise: 'Contract-Ready' },
+            specs: { arms: 'Fixed Loop Arms', tilt: 'Synchro-Tilt', base: 'Nylon Reinforced', warranty: '3 Year', material: 'High Density Mesh' }
         }, 
-        // YS-007: 旗舰型 - 旗舰稳定
+        // 旗舰型 (Premium)
         { 
             model: 'YS-007', tier: 'premium', lumbar: 'dynamic', bifma: 'ul', 
-            desc: 'Dynamic lumbar, Aluminum base, UL Certified. Flagship stability.', img: 'mesh-ys007-sku3.jpg',
-            signals: { retail: 'UL-Comp', dtc: 'Modular-Design', enterprise: 'Digital-Twin' }
+            desc: 'Dynamic lumbar, Aluminum base, UL Certified. Flagship stability.', img: 'assets/images/premium-aluminum-base-black.jpg',
+            signals: { retail: 'UL-Comp', dtc: 'Modular-Design', enterprise: 'Digital-Twin' },
+            specs: { arms: '4D Adjustable', tilt: 'Advanced Fluid Motion', base: 'Polished Aluminum', warranty: '5 Year', material: 'Kevlar Reinforced Mesh' }
         }, 
-        // YS-009: 旗舰型 - 5年质保
         { 
             model: 'YS-009', tier: 'premium', lumbar: 'dynamic', bifma: 'ul', 
-            desc: 'Full adjustable headrest, 5-Year warranty. Executive comfort.', img: 'mesh-sku6.jpg',
-            signals: { retail: '5-Year-Warranty', dtc: 'Aesthetic-Premium', enterprise: 'Project-Tier-A' }
+            desc: 'Full adjustable headrest, 5-Year warranty. Executive comfort.', img: 'assets/images/premium-executive-headrest-brown.jpg',
+            signals: { retail: '5-Year-Warranty', dtc: 'Aesthetic-Premium', enterprise: 'Project-Tier-A' },
+            specs: { arms: '4D Adjustable', tilt: 'Advanced Fluid Motion', base: 'Polished Aluminum', warranty: '5 Year', material: 'Kevlar Reinforced Mesh' }
         }, 
-        // YS-050: 旗舰型 - 4D控制
         { 
             model: 'YS-050', tier: 'premium', lumbar: 'dynamic', bifma: 'ul', 
-            desc: '4D armrests, advanced wire control mechanism. Highest durability rating.', img: 'mesh-sku15.jpg',
-            signals: { retail: '4D-Armrests', dtc: 'Wire-Control', enterprise: 'Highest-Durability' }
+            desc: '4D armrests, advanced wire control mechanism. Highest durability rating.', img: 'assets/images/premium-wire-control-black.jpg',
+            signals: { retail: '4D-Armrests', dtc: 'Wire-Control', enterprise: 'Highest-Durability' },
+            specs: { arms: '4D Adjustable', tilt: 'Advanced Fluid Motion', base: 'Polished Aluminum', warranty: '5 Year', material: 'Kevlar Reinforced Mesh' }
         }, 
-        // YS-055: 旗舰型 - 透气寿命
         { 
             model: 'YS-055', tier: 'premium', lumbar: '2d', bifma: 'ul', 
-            desc: 'Premium mesh, 2D lumbar. Focus on material breathability and lifespan.', img: 'mesh-sku16.jpg',
-            signals: { retail: 'Breathable-Mesh', dtc: 'Long-Lifespan', enterprise: 'Material-Cert' }
+            desc: 'Premium mesh, 2D lumbar. Focus on material breathability and lifespan.', img: 'assets/images/premium-breathable-white.jpg',
+            signals: { retail: 'Breathable-Mesh', dtc: 'Long-Lifespan', enterprise: 'Material-Cert' },
+            specs: { arms: '3D Adjustable', tilt: 'Advanced Fluid Motion', base: 'Aluminum Alloy', warranty: '5 Year', material: 'Kevlar Reinforced Mesh' }
         }, 
-        // YS-060: 旗舰型 - 设计优先
         { 
             model: 'YS-060', tier: 'premium', lumbar: 'dynamic', bifma: 'bifma', 
-            desc: 'Dynamic lumbar, polished aluminum base. Design-first premium model.', img: 'mesh-sku17.jpg',
-            signals: { retail: 'Design-First', dtc: 'Aesthetic-Focus', enterprise: 'Premium-Finish' }
+            desc: 'Dynamic lumbar, polished aluminum base. Design-first premium model.', img: 'assets/images/premium-design-first-grey.jpg',
+            signals: { retail: 'Design-First', dtc: 'Aesthetic-Focus', enterprise: 'Premium-Finish' },
+            specs: { arms: '4D Adjustable', tilt: 'Advanced Fluid Motion', base: 'Polished Aluminum', warranty: '5 Year', material: 'Kevlar Reinforced Mesh' }
         }, 
-        // YS-065: 旗舰型 - 水瀑布边
         { 
             model: 'YS-065', tier: 'premium', lumbar: '2d', bifma: 'bifma', 
-            desc: 'Adjustable headrest, waterfall seat edge. High-spec comfort.', img: 'mesh-sku18.jpg',
-            signals: { retail: 'Waterfall-Edge', dtc: 'High-Spec', enterprise: 'Ergo-Max' }
+            desc: 'Adjustable headrest, waterfall seat edge. High-spec comfort.', img: 'assets/images/premium-waterfall-edge-black.jpg',
+            signals: { retail: 'Waterfall-Edge', dtc: 'High-Spec', enterprise: 'Ergo-Max' },
+            specs: { arms: '4D Adjustable', tilt: 'Advanced Fluid Motion', base: 'Polished Aluminum', warranty: '5 Year', material: 'Kevlar Reinforced Mesh' }
         },
-        // YS-070: 旗舰型 - 简洁行政
         { 
             model: 'YS-070', tier: 'premium', lumbar: 'fixed', bifma: 'ul', 
-            desc: 'Executive style, simplified fixed lumbar for clean aesthetic. UL Certified.', img: 'mesh-sku19.jpg',
-            signals: { retail: 'Executive-Style', dtc: 'Clean-Aesthetic', enterprise: 'Fixed-Luxury' }
+            desc: 'Executive style, simplified fixed lumbar for clean aesthetic. UL Certified.', img: 'assets/images/premium-executive-clean-black.jpg',
+            signals: { retail: 'Executive-Style', dtc: 'Clean-Aesthetic', enterprise: 'Fixed-Luxury' },
+            specs: { arms: 'Fixed Aluminum', tilt: 'Advanced Fluid Motion', base: 'Polished Aluminum', warranty: '5 Year', material: 'Kevlar Reinforced Mesh' }
         },
-        // YS-075: 旗舰型 - 动态运动
         { 
             model: 'YS-075', tier: 'premium', lumbar: 'dynamic', bifma: 'bifma', 
-            desc: 'Newest dynamic mechanism. Best-in-class motion range.', img: 'mesh-sku20.jpg',
-            signals: { retail: 'Best-Motion', dtc: 'High-Tech', enterprise: 'Motion-Range' }
+            desc: 'Newest dynamic mechanism. Best-in-class motion range.', img: 'assets/images/premium-motion-range-red.jpg',
+            signals: { retail: 'Best-Motion', dtc: 'High-Tech', enterprise: 'Motion-Range' },
+            specs: { arms: '4D Adjustable', tilt: 'Advanced Dynamic Motion', base: 'Polished Aluminum', warranty: '5 Year', material: 'Kevlar Reinforced Mesh' }
+        },
+        { 
+            model: 'YS-076', tier: 'standard', lumbar: 'dynamic', bifma: 'bifma', 
+            desc: 'High-back mesh, fixed lumbar, certified for commercial projects.', img: 'assets/images/standard-commercial-fixed-grey.jpg',
+            signals: { retail: 'Commercial-Grade', dtc: 'High-Back', enterprise: 'Contract-Ready' },
+            specs: { arms: 'Fixed Loop Arms', tilt: 'Synchro-Tilt', base: 'Nylon Reinforced', warranty: '3 Year', material: 'High Density Mesh' }
+        }, 
+        { 
+            model: 'YS-077', tier: 'standard', lumbar: 'fixed', bifma: 'ul', 
+            desc: 'Standard tier, but with UL certified components for enhanced safety compliance.', img: 'assets/images/standard-ul-certified-white.jpg',
+            signals: { retail: 'UL-Certified', dtc: 'Safety-First', enterprise: 'Proj-Compliance' },
+            specs: { arms: '2D Adjustable', tilt: 'Synchro-Tilt', base: 'Nylon Reinforced', warranty: '3 Year', material: 'High Density Mesh' }
+        },
+        { 
+            model: 'YS-078', tier: 'economic', lumbar: 'fixed', bifma: 'bifma', 
+            desc: 'Fixed arms and headrest. Simplest assembly for DTC.', img: 'assets/images/economic-headrest-black.jpg',
+            signals: { retail: 'Fixed-Price', dtc: 'Ease-of-Use', enterprise: 'Low-Spec' },
+            specs: { arms: 'Fixed', tilt: 'Basic Tilt Lock', base: 'Nylon 5-Star', warranty: '1 Year', material: 'Standard Mesh' }
+        }, 
+        { 
+            model: 'YS-079', tier: 'economic', lumbar: 'fixed', bifma: 'bifma', 
+            desc: 'Entry-level mesh, basic tilt mechanism. Quick inventory turnover.', img: 'assets/images/economic-lowback-white.jpg',
+            signals: { retail: 'Quick-Turnover', dtc: 'Simple-SKU', enterprise: 'Bulk-Discount' },
+            specs: { arms: 'Fixed', tilt: 'Basic Tilt Lock', base: 'Nylon 5-Star', warranty: '1 Year', material: 'Standard Mesh' }
+        }, 
+        { 
+            model: 'YS-080', tier: 'premium', lumbar: 'dynamic', bifma: 'ul', 
+            desc: 'Dynamic lumbar, Aluminum base, UL Certified. Flagship stability.', img: 'assets/images/premium-aluminum-base-black.jpg',
+            signals: { retail: 'UL-Comp', dtc: 'Modular-Design', enterprise: 'Digital-Twin' },
+            specs: { arms: '4D Adjustable', tilt: 'Advanced Fluid Motion', base: 'Polished Aluminum', warranty: '5 Year', material: 'Kevlar Reinforced Mesh' }
+        }, 
+        { 
+            model: 'YS-081', tier: 'premium', lumbar: 'dynamic', bifma: 'ul', 
+            desc: 'Full adjustable headrest, 5-Year warranty. Executive comfort.', img: 'assets/images/premium-executive-headrest-brown.jpg',
+            signals: { retail: '5-Year-Warranty', dtc: 'Aesthetic-Premium', enterprise: 'Project-Tier-A' },
+            specs: { arms: '4D Adjustable', tilt: 'Advanced Fluid Motion', base: 'Polished Aluminum', warranty: '5 Year', material: 'Kevlar Reinforced Mesh' }
+        },
+        { 
+            model: 'YS-082', tier: 'economic', lumbar: '2d', bifma: 'bifma', 
+            desc: 'Economic with essential 2D adjustable armrests. Value leader.', img: 'assets/images/economic-2d-arms-blue.jpg',
+            signals: { retail: '2D-Value', dtc: 'Adjustable-Arms', enterprise: 'Cost-Upgrade' },
+            specs: { arms: '2D Adjustable', tilt: 'Basic Tilt Lock', base: 'Nylon 5-Star', warranty: '2 Year', material: 'Standard Mesh' }
+        }, 
+        { 
+            model: 'YS-083', tier: 'standard', lumbar: '2d', bifma: 'bifma', 
+            desc: 'Synchronous tilt mechanism, nylon base, popular standard model.', img: 'assets/images/standard-synchrotilt-black.jpg',
+            signals: { retail: 'Synchro-Tilt', dtc: 'Easy-Custom', enterprise: 'Standard-Reliable' },
+            specs: { arms: '2D Adjustable', tilt: 'Synchro-Tilt', base: 'Nylon Reinforced', warranty: '3 Year', material: 'High Density Mesh' }
+        }, 
+        { 
+            model: 'YS-084', tier: 'premium', lumbar: 'fixed', bifma: 'ul', 
+            desc: 'Executive style, simplified fixed lumbar for clean aesthetic. UL Certified.', img: 'assets/images/premium-executive-clean-black.jpg',
+            signals: { retail: 'Executive-Style', dtc: 'Clean-Aesthetic', enterprise: 'Fixed-Luxury' },
+            specs: { arms: 'Fixed Aluminum', tilt: 'Advanced Fluid Motion', base: 'Polished Aluminum', warranty: '5 Year', material: 'Kevlar Reinforced Mesh' }
+        },
+        { 
+            model: 'YS-085', tier: 'standard', lumbar: 'dynamic', bifma: 'bifma', 
+            desc: 'Dynamic lumbar, medium back height. Optimized for small/medium users.', img: 'assets/images/standard-midback-dynamic-blue.jpg',
+            signals: { retail: 'Size-Optimization', dtc: 'Mid-Tier-Perf', enterprise: 'Dynamic-Proj' },
+            specs: { arms: '2D Adjustable', tilt: 'Synchro-Tilt', base: 'Nylon Reinforced', warranty: '3 Year', material: 'High Density Mesh' }
+        },
+        { 
+            model: 'YS-086', tier: 'economic', lumbar: 'fixed', bifma: 'bifma', 
+            desc: 'Fixed lumbar, High volume SKU. FCL: 750 units.', img: 'assets/images/economic-simple-black.jpg',
+            signals: { retail: 'BIFMA-PASS', dtc: '72H-Ship', enterprise: 'High-Vol-Cap' },
+            specs: { arms: 'Fixed T-Arms', tilt: 'Basic Tilt Lock', base: 'Nylon 5-Star', warranty: '1 Year', material: 'Standard Mesh' }
+        },
+        { 
+            model: 'YS-087', tier: 'premium', lumbar: 'dynamic', bifma: 'bifma', 
+            desc: 'Newest dynamic mechanism. Best-in-class motion range.', img: 'assets/images/premium-motion-range-red.jpg',
+            signals: { retail: 'Best-Motion', dtc: 'High-Tech', enterprise: 'Motion-Range' },
+            specs: { arms: '4D Adjustable', tilt: 'Advanced Dynamic Motion', base: 'Polished Aluminum', warranty: '5 Year', material: 'Kevlar Reinforced Mesh' }
         }
     ];
+    
+    // Function to find SKU data
+    const findSku = (model) => ALL_MESH_CHAIR_SKUS.find(sku => sku.model === model);
 
-    // --- Hotspot Data Model ---
+
+    // --- Hotspot Data Model (No change) ---
     const MESH_CHAIR_HOTSPOTS = [
         { top: '25%', left: '30%', title: "Modular Component Interchangeability", desc: "Key parts designed for quick swapping across SKU tiers, maximizing your inventory efficiency." }, 
         { top: '55%', left: '60%', title: "Eco-Certified ENERSORB Foam", desc: "Available options include high-density, patented memory foam and recycled polymer materials." },
         { top: '80%', left: '45%', title: "BIFMA X5.1 Base & ANSI Compliant", desc: "Stress-tested aluminum alloy base, ensuring durability and full regulatory compliance." } 
     ];
     
-    // --- SKU Dynamic Rendering Logic ---
+    // --- SKU Dynamic Rendering Logic (Index.html) ---
     function renderSkuCard(sku) {
         const card = document.createElement('div');
         card.className = 'sku-card';
@@ -206,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // --- Hotspot Rendering Logic ---
+    // --- Hotspot Rendering Logic (Index.html) ---
     function renderHotspots() {
         if (!showcaseImage) return;
         const infoDisplay = document.createElement('div');
@@ -245,6 +326,67 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 200);
     }
     
+    // --- SKU Detail Page Rendering (sku-detail.html logic) ---
+    function renderSkuDetail() {
+        if (!detailContent) return; // Only run on sku-detail.html
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const model = urlParams.get('model');
+        const skuData = findSku(model);
+
+        const pageTitle = document.getElementById('pageTitle');
+        const skuName = document.getElementById('skuName');
+        const skuTagline = document.getElementById('skuTagline');
+        const skuImage = document.getElementById('skuImage');
+        const skuCode = document.getElementById('skuCode');
+        const skuTier = document.getElementById('skuTier');
+        const specsTableBody = document.getElementById('specsTableBody');
+        const skuFeatures = document.getElementById('skuFeatures');
+        
+        if (!skuData) {
+            pageTitle.textContent = "Error - SKU Not Found";
+            if (skuName) skuName.textContent = "Error: Product Model Not Found";
+            return;
+        }
+
+        // Set Metadata and Header
+        pageTitle.textContent = `Specs: Model ${skuData.model} - YiShen Global`;
+        skuName.textContent = `Model: ${skuData.model} (${skuData.tier.toUpperCase()})`;
+        skuTagline.textContent = skuData.desc;
+        skuImage.src = skuData.img;
+        skuCode.textContent = skuData.model;
+        skuTier.textContent = skuData.tier.toUpperCase();
+        
+        // Populate Specifications Table
+        specsTableBody.innerHTML = `
+            <tr><th>Armrest Adjustment</th><td>${skuData.specs.arms}</td></tr>
+            <tr><th>Tilt Mechanism</th><td>${skuData.specs.tilt}</td></tr>
+            <tr><th>Base Material</th><td>${skuData.specs.base}</td></tr>
+            <tr><th>Warranty Period</th><td>${skuData.specs.warranty}</td></tr>
+            <tr><th>Mesh Material</th><td>${skuData.specs.material}</td></tr>
+        `;
+
+        // Populate Key Features (Using Signals for demonstration)
+        skuFeatures.innerHTML = '';
+        Object.entries(skuData.signals).forEach(([channel, signal]) => {
+            const li = document.createElement('li');
+            li.textContent = `${channel.toUpperCase()} Channel Focus: ${signal}`;
+            skuFeatures.appendChild(li);
+        });
+
+        // Add a final CTA for technical data
+        skuFeatures.innerHTML += `<li><strong style="color: ${document.documentElement.style.getPropertyValue('--accent')};">Download Technical Data Sheet (PDF) &rarr;</strong></li>`;
+    }
+
+
+    // --- Initialization ---
+    if (document.body.classList.contains('sku-detail')) {
+        renderSkuDetail();
+    } else {
+        renderHotspots();
+        if (priceFilter) applyFilters();
+    }
+    
     // --- Navigation & Event Bindings ---
     if (menuToggle) {
         menuToggle.addEventListener('click', function() { navLinks.classList.toggle('is-open'); });
@@ -267,10 +409,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-    // --- Initialization ---
-    renderHotspots();
-    if (priceFilter) applyFilters();
-    
     // Sticky CTA logic
     if (stickyCta) {
         window.addEventListener('scroll', function() {
