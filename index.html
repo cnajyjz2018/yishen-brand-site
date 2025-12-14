@@ -3,205 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YiShen Global | V8.3 Git Sync: Predictable & Vertically Integrated B2B Supply.</title>
-    
-    <meta name="description" content="MISSION: Accelerating the World's Transition to Predictable & Sustainable Supply Chains. The B2B Hub for Energy, BioTech, Future Tech, and Industrial Excellence, backed by proprietary logistics intelligence.">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>YiShen Global | Premier Ergonomic Furniture Supply Chain</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="styles.css"> 
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "YiShen Global",
-      "url": "https://www.yishenglobal.net",
-      "logo": "https://www.yishenglobal.net/assets/yishen-logo-gold.png",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+86-195-3039-4133",
-        "contactType": "Sales and Strategy"
-      },
-      "slogan": "Accelerating the World's Transition to Predictable & Sustainable Supply Chains."
-    }
-    </script>
-    
-    <header class="navbar" id="home">
+
+    <!-- 导航栏 -->
+    <header class="navbar">
         <div class="container nav-wrapper">
-            <a href="#home" class="brand">
-                <div class="logo-icon"></div>
-                YiShen Global
-            </a>
-            <nav class="nav-links" id="navLinks"> 
+            <div class="brand">YiShen Global</div>
+            <nav class="nav-links">
                 <a href="#home">Home</a>
-                <a href="#sbu-gateway">SBU Select</a>
-                <a href="#products">Catalogue</a>
-                <a href="resources.html">Resources Hub</a>
-                <a href="#mesh-chair-catalog">Featured SKUs</a>
-                <a href="contact.html" class="btn-primary">Contact Us</a>
+                <a href="#about">About</a>
+                <a href="#products">Collection</a>
+                <a href="#services">Services</a>
+                <a href="#contact" class="btn-nav">Contact Us</a>
             </nav>
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+            <button class="menu-toggle">☰</button>
         </div>
     </header>
 
-    <section class="hero" style="background-color: #333; height: 100vh; display: flex; align-items: center;">
-        <div class="hero-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('banner-v8-integrated.jpg'); background-size: cover; background-position: center; opacity: 0.8;"></div>
-        <div class="container hero-content" style="position: relative; z-index: 1; text-align: center;">
-            <h1 style="color: white; font-family: var(--font-serif);">Vertical Integration. Predictability Defined.</h1>
-            <p>YiShen Global: Accelerating the World's Transition to Predictable & Sustainable Supply Chains.</p>
-            <div class="hero-btns" style="margin-top: 40px;">
-                <a href="#sbu-gateway" class="btn btn-primary" style="font-size: 1.1rem;">Select Your Strategic Sourcing SBU &rarr;</a>
+    <!-- 首屏 Hero (背景使用 banner2.jpg) -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <!-- 这里的文字删除了，因为您的图片里已经有漂亮的文字了 -->
+            <div style="flex-grow: 1;"></div> <!-- 占位，把按钮推到底部 -->
+            
+            <div class="hero-btns">
+                <a href="#products" class="btn btn-primary">View Collection</a>
+                <a href="#contact" class="btn btn-outline">Contact Us</a>
             </div>
         </div>
     </section>
 
-    <section id="sbu-gateway" class="sbu-navbar">
-        <div class="container sbu-wrapper">
-            <h2 class="sbu-title">Step 1: Select Your Strategic Sourcing Focus</h2>
-            
-            <div class="sbu-grid">
-                <a href="#products" class="sbu-card" data-sbu="lifestyle">
-                    <i class="fas fa-couch"></i> Home & Lifestyle Solutions (I-IV)
-                </a>
-                <a href="#products" class="sbu-card" data-sbu="industrial">
-                    <i class="fas fa-tools"></i> Industrial & Safety Engineering (V-VI)
-                </a>
-                <a href="#products" class="sbu-card" data-sbu="future">
-                    <i class="fas fa-bolt"></i> Future Tech & Energy Systems (VII)
-                </a>
-                <a href="#products" class="sbu-card" data-sbu="logistics">
-                    <i class="fas fa-globe-americas"></i> Predictability Services (VIII)
-                </a>
-            </div>
-        </div>
-    </section>
-    
+    <!-- 数据信任条 -->
     <section class="stats-bar">
-        <div class="container" style="display: flex; justify-content: space-around;">
-            <div><i class="fas fa-chart-line"></i> <h3>$1.2B+</h3><p>Supply Volume Managed</p></div>
-            <div><i class="fas fa-certificate"></i> <h3>99.7%</h3><p>Container Compliance Rate</p></div>
-            <div><i class="fas fa-shield-alt"></i> <h3>8</h3><p>Strategic Ecosystems Controlled</p></div>
-        </div>
-    </section>
-
-    <section class="logo-bar" style="padding: 30px 0; text-align: center; border-bottom: 1px solid #eee;">
-        <p style="color: #666; margin-bottom: 10px;">Trusted by Global Leaders in Retail, Energy, and BioTech:</p>
-        <div style="display: flex; justify-content: center; gap: 40px; opacity: 0.6;">
-            <img src="logo-placeholder-1.png" alt="Client Logo" style="height: 30px;">
-            <img src="logo-placeholder-2.png" alt="Client Logo" style="height: 30px;">
-            <img src="logo-placeholder-3.png" alt="Client Logo" style="height: 30px;">
-        </div>
-    </section>
-
-    <section id="about" class="about-section" style="padding: 80px 0; background: #fff;">
-        <div class="container" style="display: flex; gap: 40px; align-items: center;">
-            <div style="flex: 1;">
-                <span class="section-tag">About YiShen Global</span>
-                <h2>Quantifying Supply Chain Risk Since 2012.</h2>
-                <p>We evolved from a traditional sourcing agent into a vertical integrator, leveraging data science to guarantee product quality and logistics predictability across high-stakes industries. Our model is built on control, not commission.</p>
-                <a href="contact.html" class="btn-primary">Schedule Risk Assessment</a>
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Years Experience</span>
             </div>
-            <div style="flex: 1;"><img src="about-image-v8.jpg" alt="Supply Chain Integration Diagram" style="width: 100%; border-radius: 10px;"></div>
-        </div>
-    </section>
-    
-    <section class="product-showcase-container">
-        <div class="container showcase-wrapper">
-            <div class="showcase-image" style="background-image: url('mesh-chair-deep-dive.jpg');" id="mesh-chair-showcase"></div>
-            <div class="showcase-text">
-                <span class="section-tag">Feature Deep Dive | Vertical Integration in Furniture</span>
-                <h2>The Ergonomic Mesh Chair: Controlled from Polymer to Pallet.</h2>
-                <strong class="tech-spec">BIFMA Certified | Vertical Polymer Sourcing | DTC-Optimized Design</strong>
-                <p class="intro-text">
-                    We control the entire supply chain, from the raw polymer granules for the mesh back, to the final palletization for predictable global shipping. We sell reliability, not just comfort.
-                </p>
-                <a href="#mesh-chair-catalog" class="btn-primary">View All 20 Mesh SKUs &rarr;</a>
+            <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Countries Served</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">500k+</span>
+                <span class="stat-label">Units Shipped</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">BIFMA</span>
+                <span class="stat-label">Certified Quality</span>
             </div>
         </div>
     </section>
 
-    <section id="services" class="services-section" style="padding: 80px 0; background: #fff; border-top: 1px solid #eee;">
-        <div class="container section-title">
-            <span class="section-tag">Vertical Integration & Technology Driven</span>
-            <h2>Our Core Tesla Pillars: Control, Data, Predictability</h2>
-        </div>
-        <div class="container service-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center;">
-            <div class="service-card"><h3>1. End-to-End Control</h3><p>Supply Chain Disintermediation from Raw Material to Final Delivery. Eliminating Unnecessary Middlemen.</p></div>
-            <div class="service-card"><h3>2. Software-Defined Products</h3><p>Integrating Data Packages (BMS Algorithms, QC Flow) with Hardware for Continuous Improvement.</p></div>
-            <div class="service-card"><h3>3. Risk Quantification</h3><p>Proprietary Predictive Algorithms (SC-LOG-BATT) to Manage High-Risk Logistics (DGR, BioTech).</p></div>
+    <!-- 关于我们 -->
+    <section id="about" class="about-section">
+        <div class="container about-wrapper">
+            <div class="about-text">
+                <span class="section-tag">Who We Are</span>
+                <h2>More Than Just a Manufacturer.</h2>
+                <p>YiShen Global is a premier supply chain integrator based in Hangzhou, China. We bridge the gap between high-quality manufacturing and global retail needs.</p>
+                <p>From component sourcing to final assembly and DDP logistics, we ensure predictable delivery for furniture brands worldwide.</p>
+                <a href="#contact" class="text-link">Learn about our factory &rarr;</a>
+            </div>
+            <div class="about-image" style="background-image: url('https://images.unsplash.com/photo-1565514020176-dbf2277026d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
         </div>
     </section>
 
-    <section id="products" class="products" style="padding-top: 50px; background: var(--bg-light);">
+    <!-- 6大核心品类展示区 -->
+    <section id="products" class="products">
         <div class="container">
             <div class="section-title">
-                <span class="section-tag" id="category-title-tag">Step 2: Exploring All 8 Strategic Ecosystems</span>
-                <h2>Strategic Product Catalogue (160+ Vertically Controlled SKUs)</h2>
+                <span class="section-tag">Our Collection</span>
+                <h2>Global Supply Chain Catalog</h2>
+                <p>Comprehensive furniture solutions for office, home, and wellness.</p>
             </div>
             
-            <div class="category-grid-expanded" id="category-grid">
-                <a href="solutions.html?cat=furniture" class="category-card" data-sbu="lifestyle" data-cat="furniture">
-                    <div class="category-bg" style="background-image: url('assets/images/v5/cat-furniture.jpg');"></div>
-                    <div class="category-content"><h3>I. Ergonomic Furniture</h3><p>X-Chair Level Seating.</p></div>
+            <div class="category-grid">
+                <!-- 1. Mesh Chair (专业网椅) -->
+                <a href="#contact" class="category-card">
+                    <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="category-content">
+                        <h3>Ergonomic Mesh Chair</h3>
+                        <p>High-end office seating with lumbar support.</p>
+                        <span class="view-btn">View Series &rarr;</span>
+                    </div>
                 </a>
-                <a href="solutions.html?cat=outdoor" class="category-card" data-sbu="lifestyle" data-cat="outdoor">
-                    <div class="category-bg" style="background-image: url('assets/images/v5/cat-outdoor.jpg');"></div>
-                    <div class="category-content"><h3>II. Outdoor Living</h3><p>Marine Grade Composites.</p></div>
+
+                <!-- 2. Standing Desk (电动升降桌) -->
+                <a href="#contact" class="category-card">
+                    <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="category-content">
+                        <h3>Electric Standing Desk</h3>
+                        <p>Dual-motor height adjustable workspace.</p>
+                        <span class="view-btn">View Series &rarr;</span>
+                    </div>
                 </a>
-                <a href="solutions.html?cat=bamboo" class="category-card" data-sbu="lifestyle" data-cat="bamboo">
-                    <div class="category-bg" style="background-image: url('assets/images/v5/cat-bamboo.jpg');"></div>
-                    <div class="category-content"><h3>III. Eco-Bamboo Products</h3><p>Artisan Crafts, Bamboo Flooring.</p></div>
+
+                <!-- 3. Gaming Chair (高端电竞椅) -->
+                <a href="#contact" class="category-card">
+                    <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1598550476439-c9212f5f454c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="category-content">
+                        <h3>Pro Gaming Chair</h3>
+                        <p>Racing style S/M/XL sizes with reclining.</p>
+                        <span class="view-btn">View Series &rarr;</span>
+                    </div>
                 </a>
-                <a href="solutions.html?cat=flooring" class="category-card" data-sbu="lifestyle" data-cat="flooring">
-                    <div class="category-bg" style="background-image: url('assets/images/v5/cat-flooring.jpg');"></div>
-                    <div class="category-content"><h3>IV. Architectural Flooring</h3><p>WPC/SPC Hybrid Systems.</p></div>
+
+                <!-- 4. Power Recliner (电动功能椅) -->
+                <a href="#contact" class="category-card">
+                    <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="category-content">
+                        <h3>Smart Power Recliner</h3>
+                        <p>Zero-gravity electric motion sofa.</p>
+                        <span class="view-btn">View Series &rarr;</span>
+                    </div>
                 </a>
-                <a href="solutions.html?cat=rigging" class="category-card" data-sbu="industrial" data-cat="rigging">
-                    <div class="category-bg" style="background-image: url('assets/images/v5/cat-rigging.jpg');"></div>
-                    <div class="category-content"><h3>V. Industrial Hardware</h3><p>G100 Chains, Marine Shackles.</p></div>
+
+                <!-- 5. Massage Chair (豪华按摩椅) -->
+                <a href="#contact" class="category-card">
+                    <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="category-content">
+                        <h3>Luxury Massage Chair</h3>
+                        <p>4D AI full-body massage system.</p>
+                        <span class="view-btn">View Series &rarr;</span>
+                    </div>
                 </a>
-                <a href="solutions.html?cat=biomedical" class="category-card" data-sbu="industrial" data-cat="biomedical">
-                    <div class="category-bg" style="background-image: url('assets/images/v8/cat-biomedical.jpg');"></div>
-                    <div class="category-content"><h3>VI. Precision Health & BioTech</h3><p>Genomics & GMP Biopharma SUS.</p></div>
-                </a>
-                <a href="solutions.html?cat=energy" class="category-card" data-sbu="future" data-cat="energy">
-                    <div class="category-bg" style="background-image: url('assets/images/v7/cat-energy.jpg');"></div>
-                    <div class="category-content"><h3>VII. Future Tech & Energy Systems</h3><p>NEV Power Packs, Bifacial Solar.</p></div>
-                </a>
-                <a href="solutions.html?cat=logistics" class="category-card" data-sbu="logistics" data-cat="logistics">
-                    <div class="category-bg" style="background-image: url('assets/images/v7/cat-logistics.jpg');"></div>
-                    <div class="category-content"><h3>VIII. Predictability Services</h3><p>DGR Freight & 4PL Risk Audit.</p></div>
+
+                <!-- 6. Lounge Chair (现代休闲椅) -->
+                <a href="#contact" class="category-card">
+                    <div class="category-bg" style="background-image: url('https://images.unsplash.com/photo-1592078615290-033ee584e267?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="category-content">
+                        <h3>Modern Lounge Chair</h3>
+                        <p>Nordic style accent seating.</p>
+                        <span class="view-btn">View Series &rarr;</span>
+                    </div>
                 </a>
             </div>
-            
-            <div class="view-more-container" style="text-align: center; margin-top: 50px;">
-                <a href="contact.html" class="btn-primary">Request Master Catalog & Technical Whitepaper</a>
-            </div>
-        </div>
-    </section>
-    
-    <section id="mesh-chair-catalog" class="products" style="padding-top: 100px; background: #fff;">
-        <div class="container">
-            <div class="section-title">
-                <span class="section-tag">Featured Deep Dive | I. Ergonomic Furniture</span>
-                <h2>View All 20 Vertically Controlled Furniture SKUs</h2>
-                <p>This section is the dedicated anchor for our high-volume furniture line, serving as the main filtering demo.</p>
-            </div>
-            <div id="mesh-sku-container" style="min-height: 400px; text-align: center; padding: 50px;">
-                <p style="color: #666;">Loading featured SKUs...</p>
+
+            <div class="view-more-container">
+                <a href="#contact" class="btn btn-primary">Request Full Catalog (PDF)</a>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="footer" style="background: #333; color: white; padding: 40px 0;">
+    <!-- 核心服务 -->
+    <section id="services" class="services-section">
         <div class="container">
-            <p>&copy; 2025 YiShen Global. All Rights Reserved. Vertically Integrated. Predictability Defined.</p>
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We handle the hard work, so you can focus on sales.</p>
+            </div>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="icon">🛠️</div>
+                    <h3>OEM & ODM</h3>
+                    <p>Custom branding, packaging, and design modifications.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">📦</div>
+                    <h3>Quality Control</h3>
+                    <p>Strict inspection standards (AQL 2.5) ensuring BIFMA compliance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🚢</div>
+                    <h3>Global Logistics</h3>
+                    <p>DDP/LDP solutions to US & EU. We handle customs & delivery.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🤝</div>
+                    <h3>After-sales Support</h3>
+                    <p>Spare parts guarantee and dedicated support team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部联系区 -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand-col">
+                    <h3>YiShen Global</h3>
+                    <p>Your strategic partner in the global furniture supply chain.</p>
+                </div>
+                <div class="footer-contact-col">
+                    <h4>Contact Us</h4>
+                    <p class="contact-desc">Ready to upgrade your supply chain?</p>
+                    
+                    <div class="contact-row">
+                        <span>📧 Email:</span>
+                        <a href="mailto:alex.yang@yishenglobal.net">alex.yang@yishenglobal.net</a>
+                    </div>
+                    <div class="contact-row">
+                        <span>📱 WhatsApp:</span>
+                        <a href="https://wa.me/8618857277313">+86 188 5727 7313</a>
+                    </div>
+                    <div class="contact-row">
+                        <span>📍 HQ:</span>
+                        <span>Hangzhou, Zhejiang, China</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 YiShen Global. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
