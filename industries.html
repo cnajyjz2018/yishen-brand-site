@@ -4,17 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Industries Served | Specialized Supply Chain Solutions - YiShen Global</title>
-    <meta name="description" content="Specialized B2B furniture solutions for DTC E-commerce, Large Retail, and Commercial Enterprise channels. We adapt our supply chain to your market's operational rhythm.">
+    
+    <meta name="description" content="Specialized B2B furniture solutions for DTC E-commerce, Large Retail, and Commercial Enterprise channels. We adapt our supply chain to your market's operational rhythm and compliance needs.">
 
     <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght=600;700&display=swap" rel="stylesheet">
 
-    <style> /* ... (industries.html CSS is omitted here for brevity) ... */ </style>
+    <style>
+        /* 确保关键 CSS 变量的继承和核心布局的独立性 */
+        :root {
+            --primary: #111111;    
+            --secondary: #555555;  
+            --accent: #0077B6;     
+            --bg-light: #f7f9fb;   
+            --white: #ffffff;
+            --border: #e0e0e0;
+            --font-main: 'Inter', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+        .industries-hero {
+            padding: 150px 0 80px;
+            background: #2a3d4f; /* 沉稳的深色调 */
+            color: var(--white);
+            text-align: center;
+        }
+        .industries-hero h1 {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        .industry-sections {
+            padding: 80px 0;
+            background: var(--bg-light); 
+        }
+        .industry-block {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 60px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .industry-block:nth-child(even) {
+            flex-direction: row-reverse; 
+        }
+        .block-content {
+            flex: 2;
+        }
+        .block-content h2 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        .block-content .key-challenge {
+            display: block;
+            color: #f0ad4e; /* 警告色突出挑战 */
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .block-content ul {
+            margin-top: 15px;
+            padding-left: 0;
+        }
+        .block-content ul li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 8px;
+            color: var(--secondary);
+            font-size: 0.95rem;
+        }
+        .block-content ul li::before {
+            content: '★';
+            position: absolute; left: 0; top: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        .industry-image {
+            flex: 1;
+            min-width: 280px;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 900px) {
+            .industry-block, .industry-block:nth-child(even) {
+                flex-direction: column;
+                gap: 20px;
+                padding: 30px;
+            }
+            .industry-image {
+                width: 100%;
+                min-width: unset;
+                order: -1;
+            }
+            .industries-hero h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 <body>
+
     <header class="navbar" style="position: static; margin-bottom: 0; border-bottom: none;">
         <div class="container nav-wrapper">
             <div class="brand"><a href="index.html">YiShen Global</a></div>
@@ -30,10 +131,86 @@
     </header>
 
     <section class="industries-hero">
-        </section>
+        <div class="container">
+            <span class="section-tag" style="color: #FFDD00; background: #2a3d4f;">Strategic Market Alignment (Tri-Channel Focus)</span>
+            <h1>Engineered Solutions for Your Business Model.</h1>
+            <p style="font-size: 1.2rem; max-width: 1000px; margin: 20px auto 0;">
+                We specialize in adapting our global supply chain to meet the unique operational demands of E-commerce, Large-Scale Retail, and Enterprise channels.
+            </p>
+        </div>
+    </section>
 
     <section class="industry-sections">
-        </section>
+        <div class="container">
+
+            <div class="industry-block">
+                <div class="industry-image" style="background-image: url('industry_dtc.jpg');">
+                    [Image: Stylized product photo showing DTC focus]
+                </div>
+                <div class="block-content">
+                    <strong class="key-challenge"><i class="fas fa-rocket"></i> Challenge: High Return Rates & Rapid Iteration Cycles (Speed & Customer Trust)</strong>
+                    <h2>DTC E-Commerce: Agility, Low Risk & Consumer Trust.</h2>
+                    <p>
+                        DTC 品牌需要极致的速度和对消费者售后的控制。我们的解决方案侧重于**物流风险消除**和**模块化快速部署**。
+                    </p>
+                    <p style="font-weight: 600; color: var(--accent);">
+                        YiShen Value Proposition (Quantified Results):
+                    </p>
+                    <ul>
+                        <li>**DTC-Ready Packaging:** 跌落测试认证的包装，目标将平均物流损坏退货率**降低至 1% 以下**。</li>
+                        <li>**Modular Development:** 利用标准化组件，支持 SKU 快速变体，将新产品上市周期**缩短 40%**。</li>
+                        <li>**US/EU Spare Parts:** 战略性备件库存缓冲，保障售后，维护您的**品牌消费者评分**。</li>
+                    </ul>
+                    <a href="solutions.html" class="btn btn-primary">See DTC-Specific Solutions &rarr;</a>
+                </div>
+            </div>
+
+            <div class="industry-block">
+                <div class="industry-image" style="background-image: url('industry_retail.jpg');">
+                    [Image: Large retail store aisle or warehouse]
+                </div>
+                <div class="block-content">
+                    <strong class="key-challenge"><i class="fas fa-boxes"></i> Challenge: Compliance Audit, Stock Depth, and ETA Predictability (Volume & Safety)</strong>
+                    <h2>Retail & Distribution: Volume, Compliance, and Depth.</h2>
+                    <p>
+                        大型零售商和分销渠道对库存深度和合规性有着严苛要求，无法承受供应链的不可预测性。
+                    </p>
+                    <p style="font-weight: 600; color: var(--accent);">
+                        YiShen Value Proposition (Quantified Results):
+                    </p>
+                    <ul>
+                        <li>**Iron-Clad Compliance:** 保证所有批量 SKU 获得 **BIFMA X5.1** 和目标市场所需的所有 **UL/TUV 认证**。</li>
+                        <li>**Predictive DDP:** 端到端管理海运、清关和关税，提供锁定的 DDP 成本，将 ETA 预测**精确度提高 40%**。</li>
+                        <li>**Scalable Production:** 验证的工厂产能和多供应商整合，确保能够满足峰值需求和大规模 SKU 铺货。</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-primary">Request Ready-to-Ship Catalog &rarr;</a>
+                </div>
+            </div>
+
+            <div class="industry-block">
+                <div class="industry-image" style="background-image: url('industry_enterprise.jpg');">
+                    [Image: High-tech corporate office interior]
+                </div>
+                <div class="block-content">
+                    <strong class="key-challenge"><i class="fas fa-building"></i> Challenge: Sustainability Demands, High-Spec & Project Logistics (Quality & ESG)</strong>
+                    <h2>Commercial & Enterprise: Specification and ESG.</h2>
+                    <p>
+                        企业大宗采购和合同家具经销商关注产品的规格、耐用性以及对环境和社会影响（ESG）的报告。
+                    </p>
+                    <p style="font-weight: 600; color: var(--accent);">
+                        YiShen Value Proposition (Quantified Results):
+                    </p>
+                    <ul>
+                        <li>**ESG Data & LEED Standards:** 提供全面的 ESG 报告和材料可追溯性，满足 LEED 和 WELL Building 等**高级项目要求**。</li>
+                        <li>**Digital Twin Verification:** 提供关键组件的数字孪生数据，允许客户工程师远程验证产品寿命和材料合规性。</li>
+                        <li>**Complex Logistics:** 针对大型办公室装修项目，提供精确的交付排序和现场分段物流管理。</li>
+                    </ul>
+                    <a href="resources.html" class="btn btn-primary">Download Commercial Project Guide &rarr;</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <section class="cta-banner" style="background: var(--accent); color: var(--white); padding: 50px 0; text-align: center;">
         <div class="container">
@@ -50,5 +227,6 @@
             <p>&copy; 2026 YiShen Global. All rights reserved. | <a href="index.html#contact" style="color: var(--accent);">Get in Touch</a></p>
         </div>
     </footer>
+
 </body>
 </html>
