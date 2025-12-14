@@ -1,135 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resources | YiShen Global Logistics</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources Hub | Supply Chain Insight & B2B Guides - YiShen Global</title>
+    
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .resource-hero {
+            padding: 150px 0 80px;
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
+        .resource-hero h1 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .resource-sections {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .resource-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .resource-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+            border-color: var(--accent);
+        }
+        .card-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .card-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+        .card-content p {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        .card-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--white);
+            background: var(--accent);
+            padding: 4px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        .card-footer {
+            padding: 15px 20px;
+            background: var(--bg-light);
+            border-top: 1px solid var(--border);
+            text-align: right;
+            font-weight: 600;
+            color: var(--accent);
+        }
+        .section-separator {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px dashed var(--border);
+        }
+        .section-separator h2 {
+            text-align: center;
+            font-family: var(--font-serif);
+            font-size: 2rem;
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .resource-hero { padding: 120px 0 50px; }
+            .resource-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
-<body class="page-resources">
+<body>
 
-<header class="navbar">
-  <div class="logo">YiShen Global</div>
-  <div class="nav-toggle">
-    <span></span><span></span><span></span>
-  </div>
-  <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="solutions.html">Solutions</a>
-    <a href="industries.html">Industries</a>
-    <a href="why-us.html">Why Us</a>
-    <a href="resources.html" class="active">Resources</a>
-    <a href="contact.html" class="btn-primary btn-small">Get a Quote</a>
-  </nav>
-</header>
-
-<main>
-  <section class="hero-inner">
-    <div class="container">
-      <h1 class="hero-title">Resources & Playbooks</h1>
-      <p class="hero-subtitle">
-        Guides, checklists and frameworks to help furniture and office chair brands ship smarter.
-      </p>
-    </div>
-  </section>
-
-  <section class="section" id="playbook">
-    <div class="container">
-      <h2 class="section-title">Downloadable Guides</h2>
-      <p class="section-subtitle">Ask us to convert these into PDFs with your logo and branding.</p>
-
-      <div class="resource-grid">
-        <div class="resource-card">
-          <h3>Global Office Chair Shipping Playbook</h3>
-          <p>Step-by-step overview of HS codes, route choices, packaging tests and documentation for office & mesh chairs.</p>
-          <span class="tag">Office Chairs</span>
+    <header class="navbar" style="position: static; margin-bottom: 0; border-bottom: none;">
+        <div class="container nav-wrapper">
+            <div class="brand"><a href="index.html">YiShen Global</a></div>
+            <nav class="nav-links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#products">Collection</a>
+                <a href="index.html#services">Services</a>
+                <a href="#contact" class="btn-nav">Contact Us</a>
+            </nav>
         </div>
-        <div class="resource-card">
-          <h3>Sofa & Recliner Compression Checklist</h3>
-          <p>A practical checklist for factories to design safe compression packaging and container loading patterns.</p>
-          <span class="tag">Recliners & Sofas</span>
-        </div>
-        <div class="resource-card">
-          <h3>Amazon FBA Logistics Starter Guide</h3>
-          <p>Carton rules, labels, appointments and typical mistakes when shipping chairs and furniture into FBA.</p>
-          <span class="tag">E-Commerce</span>
-        </div>
-        <div class="resource-card">
-          <h3>Route Comparison Sheet (DDP Air vs Sea)</h3>
-          <p>An Excel-friendly framework to compare cost, speed and risk for different markets and product types.</p>
-          <span class="tag">Planning</span>
-        </div>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <section class="section section-alt">
-    <div class="container">
-      <h2 class="section-title">Typical Data We Ask For</h2>
-      <p class="section-subtitle">So we can give you accurate and realistic proposals.</p>
-
-      <div class="table-wrapper">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Category</th>
-              <th>Data Needed</th>
-              <th>Example</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Products</td>
-              <td>SKU list, dimensions, weights, packing style</td>
-              <td>Office chair / mesh chair, 1 pc/carton, 0.18 CBM</td>
-            </tr>
-            <tr>
-              <td>Volume</td>
-              <td>Monthly or per-shipment volume</td>
-              <td>1–2 x 40HQ per month; 5 pallets per shipment</td>
-            </tr>
-            <tr>
-              <td>Destinations</td>
-              <td>Country, port or city, delivery type</td>
-              <td>USA West Coast FBA, EU DE warehouse, GCC Riyadh DC</td>
-            </tr>
-            <tr>
-              <td>Incoterms</td>
-              <td>Preferred structure</td>
-              <td>DDP, DAP, CIF, FOB, etc.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <section class="faq">
-    <div class="container">
-      <h2 class="section-title">FAQ – Working With YiShen</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3>What information do you need to prepare a quote?</h3>
-          <p>We typically start with product list, volume, destination markets and your preferred Incoterms.</p>
+    <section class="resource-hero">
+        <div class="container">
+            <span class="section-tag" style="color: #FFDD00; background: var(--primary);">Knowledge & Authority</span>
+            <h1>The YiShen Global Resource Hub</h1>
+            <p style="font-size: 1.1rem; max-width: 800px; margin: 15px auto 0;">
+                Access technical specifications, compliance insights, and market analysis engineered to support your high-volume procurement decisions.
+            </p>
         </div>
-        <div class="faq-item">
-          <h3>Can you co-brand documents or playbooks for our team?</h3>
-          <p>Yes. We can help adapt checklists and guides with your logo and internal naming.</p>
+    </section>
+
+    <section class="resource-sections">
+        <div class="container">
+            
+            <div id="tech-specs">
+                <h2 style="font-family: var(--font-serif); text-align: center;">1. Technical Specs & Compliance Guides</h2>
+                <div class="resource-grid">
+                    
+                    <a href="#contact" class="resource-card">
+                        <div class="card-content">
+                            <span class="card-icon"><i class="fas fa-file-pdf"></i></span>
+                            <h3>BIFMA X5.1 Stress Testing Protocols</h3>
+                            <p>Detailed guide on our quality assurance protocols exceeding BIFMA standards for task chairs and components.</p>
+                        </div>
+                        <div class="card-footer">Download PDF Guide &rarr;</div>
+                    </a>
+                    
+                    <a href="#contact" class="resource-card">
+                        <div class="card-content">
+                            <span class="card-icon"><i class="fas fa-box"></i></span>
+                            <h3>DTC-Ready Packaging Optimization</h3>
+                            <p>Case study showing how we reduced transit damage rates for US E-commerce clients by 45% using layered foam designs.</p>
+                        </div>
+                        <div class="card-footer">Read Case Study &rarr;</div>
+                    </a>
+                    
+                    <a href="#contact" class="resource-card">
+                        <div class="card-content">
+                            <span class="card-icon"><i class="fas fa-leaf"></i></span>
+                            <h3>Sustainable Sourcing & ESG Compliance</h3>
+                            <p>Certifications (GREENGUARD, REACH) and data sheets on recycled materials and patented ENERSORB foam options.</p>
+                        </div>
+                        <div class="card-footer">View Certifications &rarr;</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="section-separator"><h2>2. Supply Chain Intelligence & Risk Management</h2></div>
+
+            <div id="market-insight">
+                <div class="resource-grid">
+                    
+                    <a href="#contact" class="resource-card">
+                        <div class="card-content">
+                            <span class="card-icon"><i class="fas fa-ship"></i></span>
+                            <h3>Global DDP/LDP Transit Maps</h3>
+                            <p>Visual guide comparing shipping times and cost allocations for FOB vs. DDP terms to major North American ports.</p>
+                        </div>
+                        <div class="card-footer">View Interactive Map &rarr;</div>
+                    </a>
+                    
+                    <a href="#contact" class="resource-card">
+                        <div class="card-content">
+                            <span class="card-icon"><i class="fas fa-chart-line"></i></span>
+                            <h3>2025 Ergonomic Product Trend Report</h3>
+                            <p>Deep dive on emerging demand: Modular seating, gaming chair evolution, and top-selling height-adjustable desk features.</p>
+                            <span class="card-tag">Premium Content</span>
+                        </div>
+                        <div class="card-footer">Request Premium Access &rarr;</div>
+                    </a>
+                    
+                    <a href="#contact" class="resource-card">
+                        <div class="card-content">
+                            <span class="card-icon"><i class="fas fa-cubes"></i></span>
+                            <h3>Modular SKU Interchangeability</h3>
+                            <p>Guide for brands on how to rapidly launch multiple products (SKUs) by interchanging 5 key components (e.g., base, armrests).</p>
+                        </div>
+                        <div class="card-footer">Download Solution &rarr;</div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="section-separator"><h2>3. Partnership & Trust Assets</h2></div>
+            
+            <div id="trust-assets">
+                <div class="resource-grid">
+                    
+                    <a href="https://www.youtube.com/watch?v=your-factory-tour-link" target="_blank" class="resource-card">
+                        <div class="card-content">
+                            <span class="card-icon"><i class="fab fa-youtube"></i></span>
+                            <h3>Virtual Factory Audit Tour (2024)</h3>
+                            <p>A full video tour showcasing our production line, QA processes, and warehouse management systems in Hangzhou & Anji.</p>
+                        </div>
+                        <div class="card-footer" style="background: #e0e0e0; color: var(--primary);">Watch on YouTube &rarr;</div>
+                    </a>
+                    
+                    <a href="#contact" class="resource-card">
+                        <div class="card-content">
+                            <span class="card-icon"><i class="fas fa-box-open"></i></span>
+                            <h3>Request Our Master Sample Kit</h3>
+                            <p>Get a physical kit including material swatches, foam samples, and the core mechanism technology for evaluation.</p>
+                        </div>
+                        <div class="card-footer">Order Sample Kit &rarr;</div>
+                    </a>
+                    
+                    <a href="index.html#contact" class="resource-card" style="background: var(--accent); color: var(--white);">
+                        <div class="card-content">
+                            <span class="card-icon" style="color: var(--white);"><i class="fas fa-user-tie"></i></span>
+                            <h3>Direct Consultation with Alex Yang</h3>
+                            <p>Schedule a 1-on-1 strategy call with our supply chain expert to discuss your custom sourcing needs.</p>
+                        </div>
+                        <div class="card-footer" style="background: #005a8f; color: var(--white);">Schedule Call Today &rarr;</div>
+                    </a>
+                </div>
+            </div>
+
+
         </div>
-        <div class="faq-item">
-          <h3>Do you work with both factories and brands?</h3>
-          <p>Yes. We support factories, trading companies, brands, importers and e-commerce sellers.</p>
+    </section>
+    
+    <footer class="footer" style="padding: 40px 0 20px;">
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2025 YiShen Global. All rights reserved. | <a href="index.html#contact" style="color: var(--accent);">Get in Touch</a></p>
         </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-</main>
-
-<footer>
-  © 2025 YiShen Global Logistics. All rights reserved.
-</footer>
-
-<script src="script.js"></script>
 </body>
 </html>
