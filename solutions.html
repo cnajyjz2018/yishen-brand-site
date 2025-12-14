@@ -3,86 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B2B Solutions | Risk Mitigation & Operational Efficiency - YiShen Global</title>
-    <meta name="description" content="We transform common import risks—from unpredictable quality to customs delays—into controlled, predictable advantages using end-to-end DDP and modular SKU strategies.">
+    <title id="pageTitle">Solutions Catalogue | YiShen Global</title>
+    
+    <meta name="description" content="View the full 20 SKU product list for the selected strategic business unit, detailing features, vertical control points, and HS codes.">
     
     <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght{600;700}&display=swap" rel="stylesheet">
-
     <style>
-        .solutions-hero {
-            padding: 150px 0 80px;
-            background: var(--accent); 
-            color: var(--white);
-            text-align: center;
+        /* Specific styles for the solutions page, extending styles.css */
+        .sku-grid-full {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            padding: 40px 0;
         }
-        /* (Assuming block CSS is managed by styles.css) */
+        .sku-card-detail {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            text-decoration: none;
+            color: var(--text-dark);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s;
+        }
+        .sku-card-detail h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin: 10px 0 5px;
+        }
+        .sku-card-detail p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .sku-card-detail .sku-tag {
+             font-weight: 600;
+             display: block;
+             margin-top: 8px;
+        }
+        .sku-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        /* Responsive overrides for this page */
+        @media (max-width: 1200px) {
+            .sku-grid-full { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .sku-grid-full { grid-template-columns: repeat(2, 1fr); }
+        }
     </style>
 </head>
 <body>
-    <header class="navbar" style="position: static; margin-bottom: 0; border-bottom: none;">
+
+    <header class="navbar">
         <div class="container nav-wrapper">
             <a href="index.html" class="brand">
                 <div class="logo-icon"></div>
                 YiShen Global
             </a>
-            <nav class="nav-links">
-                <a href="index.html#home">Home</a>
-                <a href="index.html#about">About</a>
-                <a href="index.html#products">Collection</a>
-                <a href="solutions.html">Solutions</a>
-                <a href="resources.html">Resources</a>
-                <a href="index.html#contact" class="btn-nav">Contact Us</a>
+            <nav class="nav-links"> 
+                <a href="index.html">Home</a>
+                <a href="index.html#sbu-gateway">SBU Select</a>
+                <a href="solutions.html">Catalogue</a>
+                <a href="resources.html">Resources Hub</a>
+                <a href="contact.html" class="btn-primary">Contact Us</a>
             </nav>
         </div>
     </header>
 
-    <section class="solutions-hero">
+    <section class="solution-hero">
         <div class="container">
-            <span class="section-tag" style="color: #FFDD00; background: var(--accent);">B2B Operational Strategy</span>
-            <h1>Quantifiable Solutions for Your Supply Chain Challenges</h1>
-            <p style="font-size: 1.15rem; max-width: 900px; margin: 20px auto 0;">
-                We transform common import risks—from unpredictable quality to customs delays—into controlled, predictable advantages.
-            </p>
+            <h1 id="solutionTitle">Loading Solution Category...</h1>
+            <p id="solutionSubtitle">Displaying all 20 Vertically Controlled SKUs.</p>
         </div>
     </section>
 
-    <section class="solution-sections">
+    <section class="sku-list-section">
         <div class="container">
-            <div class="solution-block">
-                </div>
-
-            <div class="solution-block">
-                </div>
-
-            <div class="solution-block">
-                </div>
-            
-            <div class="solution-block">
-                </div>
+            <div id="skuListContainer" class="sku-grid-full">
+                <p>Loading data...</p>
+            </div>
         </div>
     </section>
-    
-    <section class="cta-banner" style="background: var(--primary); color: var(--white); padding: 50px 0; text-align: center;">
+
+    <footer class="footer">
         <div class="container">
-            <h2 style="font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 15px;">Ready to Engineer Your Predictable Supply Chain?</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.8;">
-                Stop reacting to supply chain surprises. Start building a resilient, profitable partnership.
-            </p>
-            <a href="index.html#contact" class="btn btn-primary" style="background: #FFDD00; color: var(--primary); border-color: #FFDD00;">Schedule Your Strategy Session Now</a>
-        </div>
-    </section>
-    
-    <footer class="footer" style="padding: 40px 0 20px;">
-        <div class="container" style="text-align: center;">
-            <p>&copy; 2026 YiShen Global. All rights reserved. | <a href="index.html#contact" style="color: var(--accent);">Get in Touch</a></p>
+            <p>&copy; 2025 YiShen Global. All Rights Reserved. Vertically Integrated. Predictability Defined.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // This script runs AFTER the main script.js (which defines ALL_SKUS_CACHE)
+            
+            // Get URL parameter (e.g., ?cat=furniture)
+            const urlParams = new URLSearchParams(window.location.search);
+            const categoryKey = urlParams.get('cat');
+            const skuListContainer = document.getElementById('skuListContainer');
+
+            // Map keys to readable titles
+            const titleMap = {
+                'furniture': 'I. Ergonomic Furniture',
+                'outdoor': 'II. Outdoor Living',
+                'bamboo': 'III. Eco-Bamboo Products',
+                'flooring': 'IV. Architectural Flooring',
+                'rigging': 'V. Industrial Hardware',
+                'biomedical': 'VI. Precision Health & BioTech',
+                'energy': 'VII. Future Tech & Energy Systems',
+                'logistics': 'VIII. Predictability Services'
+            };
+
+            const subtitleMap = {
+                'furniture': 'Solutions for Health, Efficiency, and DTC Logistics.',
+                'outdoor': 'Marine Grade Composites, Durability, and Style.',
+                'biomedical': 'Molecular Diagnostics, GMP Consumables, and Advanced Safety.',
+                'energy': 'NEV Power, Solar, and Semiconductor High-Purity Materials.',
+                'logistics': 'DGR Compliance, 4PL Management, and Risk Quantification Services.'
+            };
+            
+            // Wait for ALL_SKUS_CACHE to be defined by the main script.js
+            // In a simple setup, we assume script.js runs first.
+            if (typeof ALL_SKUS_CACHE === 'undefined') {
+                skuListContainer.innerHTML = '<p style="color: red;">Error: Data cache not found. Ensure script.js loaded correctly.</p>';
+                return;
+            }
+
+            if (categoryKey && titleMap[categoryKey]) {
+                const filteredSkus = ALL_SKUS_CACHE.filter(sku => sku.category === categoryKey);
+
+                document.getElementById('solutionTitle').textContent = titleMap[categoryKey];
+                document.getElementById('solutionSubtitle').textContent = subtitleMap[categoryKey] || 'Displaying all 20 Vertically Controlled SKUs.';
+                document.getElementById('pageTitle').textContent = titleMap[categoryKey] + ' Catalogue | YiShen Global';
+
+                if (filteredSkus.length > 0) {
+                    let html = '';
+                    filteredSkus.forEach(sku => {
+                        const tierColor = sku.tier === 'premium' ? 'var(--primary)' : 'var(--secondary)';
+                        html += `
+                            <a href="sku-detail.html?model=${sku.model}" class="sku-card-detail">
+                                <img src="${sku.img}" alt="${sku.model}" class="sku-img">
+                                <h4>${sku.model} (${sku.hs_code})</h4>
+                                <p><strong>Feature:</strong> ${sku.feature}</p>
+                                <p style="font-size: 0.8rem; line-height: 1.2;">${sku.desc.split('.').slice(0, 1).join('.')}.</p>
+                                <span class="sku-tag" style="color: ${tierColor}; border: 1px solid ${tierColor};">${sku.tier.toUpperCase()}</span>
+                                <span class="sku-tag" style="background: var(--primary); color: white;">PaaS Ready</span>
+                            </a>
+                        `;
+                    });
+                    skuListContainer.innerHTML = html;
+                } else {
+                    skuListContainer.innerHTML = `<p>No SKUs found for the category: ${categoryKey}.</p>`;
+                }
+
+            } else {
+                skuListContainer.innerHTML = '<p>Invalid category selection. Please return to the <a href="index.html">Homepage</a>.</p>';
+            }
+        });
+    </script>
 </body>
 </html>
