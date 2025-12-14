@@ -7,7 +7,7 @@
     
     <meta name="description" content="Premier B2B supply chain integrator specializing in ergonomic furniture. Quantify risk, reduce defects, and accelerate new SKU launch cycles for global retail and DTC brands.">
     <meta property="og:title" content="YiShen Global: Supply Chain Predictability Partner">
-    <meta property="og:og:description" content="We eliminate supply chain risk and engineer efficiency for top B2B furniture buyers and DTC brands worldwide.">
+    <meta property="og:description" content="We eliminate supply chain risk and engineer efficiency for top B2B furniture buyers and DTC brands worldwide.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.yishenglobal.net/index.html">
     
@@ -18,6 +18,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght{600;700}&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css"> 
+
+    <style>
+        /* 这里使用内联 CSS 覆盖样式表，确保 LOGO 渲染的优先级和准确性 */
+        .brand { 
+            display: flex;
+            align-items: center;
+            font-family: var(--font-serif); 
+            font-size: 2.2rem; 
+            font-weight: 700; 
+            color: #FFC300; /* 金黄色 */
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+        }
+        
+        /* CSS 模拟 LOGO ICON (AI-Driven 环绕效果) */
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border: 2px solid #00BFFF; /* 浅蓝色边框 */
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* 模拟内部环绕线条 */
+            background: radial-gradient(circle at center, rgba(0, 119, 182, 0) 50%, rgba(0, 119, 182, 0.4) 100%);
+            overflow: hidden;
+        }
+        .logo-icon::before, .logo-icon::after {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            border: 2px solid #00BFFF; /* 浅蓝色线条 */
+            border-radius: 50%;
+            transform: rotate(30deg);
+        }
+        .logo-icon::after {
+            transform: rotate(-30deg);
+        }
+    </style>
 </head>
 <body>
     <script type="application/ld+json">
@@ -45,7 +86,7 @@
     <header class="navbar">
         <div class="container nav-wrapper">
             <a href="#home" class="brand">
-                <div class="logo-icon"></div> 
+                <div class="logo-icon"></div>
                 YiShen Global
             </a>
             <nav class="nav-links" id="navLinks"> 
