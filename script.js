@@ -1,226 +1,282 @@
 /* =========================================================================
    YiShen Global B2B - script.js
-   V8.2 FINAL VERSION (Single-File Data Integration)
-   
-   -- CONTAINS ALL 160 SKU DATA POINTS (with placeholders filled) --
-   -- Tested and verified for single-file deployment --
+   最终权威版脚本 (Tri-Channel Fusion 20 SKU 架构)
    ========================================================================= */
 
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // --- 1. SKU DATA INTEGRATION (All 8 categories, 160 SKUs total) ---
-    
-    // --- Helper function to generate placeholder SKUs for completeness ---
-    const generatePlaceholders = (category, modelPrefix, count, hs_code, feature, desc_base) => {
-        const placeholders = [];
-        for (let i = 1; i <= count; i++) {
-            placeholders.push({
-                "model": `${modelPrefix}-PH-${i.toString().padStart(2, '0')}`,
-                "tier": "standard",
-                "feature": feature,
-                "desc": `${desc_base} Placeholder SKU ${i}. Scene: General Use.`,
-                "img": "assets/placeholder.jpg",
-                "hs_code": hs_code,
-                "category": category
-            });
+    // --- DOM Elements ---
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const stickyCta = document.getElementById('stickyCta');
+    const showcaseImage = document.getElementById('mesh-chair-showcase');
+    const meshSkuContainer = document.getElementById('mesh-sku-container');
+    const priceFilter = document.getElementById('filter-price');
+    const lumberFilter = document.getElementById('filter-lumber');
+    const bifmaFilter = document.getElementById('filter-bifma');
+    const resetButton = document.getElementById('reset-filters');
+    const noResultsMessage = document.getElementById('no-results-message');
+
+    // --- 战略核心：20个 SKU 的数据模型 (已集成 Tri-Channel 营销信号) ---
+    // signals: { retail, dtc, enterprise } 用于决定 SKU 卡片上的营销标签
+    const ALL_MESH_CHAIR_SKUS = [
+        // YS-001: 经济型 - 高批量
+        { 
+            model: 'YS-001', tier: 'economic', lumbar: 'fixed', bifma: 'bifma', 
+            desc: 'Fixed lumbar, High volume SKU. FCL: 750 units.', img: 'mesh-ys001-sku1.jpg',
+            signals: { retail: 'BIFMA-PASS', dtc: '72H-Ship', enterprise: 'High-Vol-Cap' }
+        }, 
+        // YS-003: 经济型 - 预算优化
+        { 
+            model: 'YS-003', tier: 'economic', lumbar: 'fixed', bifma: 'bifma', 
+            desc: '1-Year warranty, Cost-optimized design.', img: 'mesh-sku4.jpg',
+            signals: { retail: 'Cost-Down', dtc: 'Fast-Assemble', enterprise: 'Basic-Project' }
+        }, 
+        // YS-010: 经济型 - 快速周转
+        { 
+            model: 'YS-010', tier: 'economic', lumbar: 'fixed', bifma: 'bifma', 
+            desc: 'Entry-level mesh, basic tilt mechanism. Quick inventory turnover.', img: 'mesh-sku7.jpg',
+            signals: { retail: 'Quick-Turnover', dtc: 'Simple-SKU', enterprise: 'Bulk-Discount' }
+        }, 
+        // YS-012: 经济型 - 简易DTC
+        { 
+            model: 'YS-012', tier: 'economic', lumbar: 'fixed', bifma: 'bifma', 
+            desc: 'Fixed arms and headrest. Simplest assembly for DTC.', img: 'mesh-sku8.jpg',
+            signals: { retail: 'Fixed-Price', dtc: 'Ease-of-Use', enterprise: 'Low-Spec' }
+        }, 
+        // YS-015: 经济型 - 2D价值
+        { 
+            model: 'YS-015', tier: 'economic', lumbar: '2d', bifma: 'bifma', 
+            desc: 'Economic with essential 2D adjustable armrests. Value leader.', img: 'mesh-sku9.jpg',
+            signals: { retail: '2D-Value', dtc: 'Adjustable-Arms', enterprise: 'Cost-Upgrade' }
+        }, 
+        // YS-002: 标准型 - 中端稳定
+        { 
+            model: 'YS-002', tier: 'standard', lumbar: '2d', bifma: 'bifma', 
+            desc: '2D adjustable lumbar/armrests, High mesh content. Mid-market stable.', img: 'mesh-ys002-sku2.jpg',
+            signals: { retail: 'Spare-Stock-Ready', dtc: 'Low-Damage-Pack', enterprise: 'BIFMA-PLUS' }
+        }, 
+        // YS-005: 标准型 - 动态舒适
+        { 
+            model: 'YS-005', tier: 'standard', lumbar: 'dynamic', bifma: 'bifma', 
+            desc: 'Dynamic lumbar support, Standard tier mesh. High user comfort rating.', img: 'mesh-sku5.jpg',
+            signals: { retail: 'Factory-Audited', dtc: 'Quick-Iteration', enterprise: 'ESG-Ready' }
+        }, 
+        // YS-020: 标准型 - 同步倾仰
+        { 
+            model: 'YS-020', tier: 'standard', lumbar: '2d', bifma: 'bifma', 
+            desc: 'Synchronous tilt mechanism, nylon base, popular standard model.', img: 'mesh-sku10.jpg',
+            signals: { retail: 'Synchro-Tilt', dtc: 'Easy-Custom', enterprise: 'Standard-Reliable' }
+        }, 
+        // YS-025: 标准型 - 尺寸优化
+        { 
+            model: 'YS-025', tier: 'standard', lumbar: 'dynamic', bifma: 'bifma', 
+            desc: 'Dynamic lumbar, medium back height. Optimized for small/medium users.', img: 'mesh-sku11.jpg',
+            signals: { retail: 'Size-Optimization', dtc: 'Mid-Tier-Perf', enterprise: 'Dynamic-Proj' }
+        }, 
+        // YS-030: 标准型 - 固定腰部
+        { 
+            model: 'YS-030', tier: 'standard', lumbar: 'fixed', bifma: 'bifma', 
+            desc: 'Standard mesh, fixed lumbar, with adjustable headrest. Cost-effective ergonomics.', img: 'mesh-sku12.jpg',
+            signals: { retail: 'Adj-Headrest', dtc: 'Aesthetic-Clean', enterprise: 'Standard-Ergo' }
+        }, 
+        // YS-035: 标准型 - UL安全
+        { 
+            model: 'YS-035', tier: 'standard', lumbar: '2d', bifma: 'ul', 
+            desc: 'Standard tier, but with UL certified components for enhanced safety compliance.', img: 'mesh-sku13.jpg',
+            signals: { retail: 'UL-Certified', dtc: 'Safety-First', enterprise: 'Proj-Compliance' }
+        }, 
+        // YS-040: 标准型 - 商业认证
+        { 
+            model: 'YS-040', tier: 'standard', lumbar: 'fixed', bifma: 'ul', 
+            desc: 'High-back mesh, fixed lumbar, certified for commercial projects.', img: 'mesh-sku14.jpg',
+            signals: { retail: 'Commercial-Grade', dtc: 'High-Back', enterprise: 'Contract-Ready' }
+        }, 
+        // YS-007: 旗舰型 - 旗舰稳定
+        { 
+            model: 'YS-007', tier: 'premium', lumbar: 'dynamic', bifma: 'ul', 
+            desc: 'Dynamic lumbar, Aluminum base, UL Certified. Flagship stability.', img: 'mesh-ys007-sku3.jpg',
+            signals: { retail: 'UL-Comp', dtc: 'Modular-Design', enterprise: 'Digital-Twin' }
+        }, 
+        // YS-009: 旗舰型 - 5年质保
+        { 
+            model: 'YS-009', tier: 'premium', lumbar: 'dynamic', bifma: 'ul', 
+            desc: 'Full adjustable headrest, 5-Year warranty. Executive comfort.', img: 'mesh-sku6.jpg',
+            signals: { retail: '5-Year-Warranty', dtc: 'Aesthetic-Premium', enterprise: 'Project-Tier-A' }
+        }, 
+        // YS-050: 旗舰型 - 4D控制
+        { 
+            model: 'YS-050', tier: 'premium', lumbar: 'dynamic', bifma: 'ul', 
+            desc: '4D armrests, advanced wire control mechanism. Highest durability rating.', img: 'mesh-sku15.jpg',
+            signals: { retail: '4D-Armrests', dtc: 'Wire-Control', enterprise: 'Highest-Durability' }
+        }, 
+        // YS-055: 旗舰型 - 透气寿命
+        { 
+            model: 'YS-055', tier: 'premium', lumbar: '2d', bifma: 'ul', 
+            desc: 'Premium mesh, 2D lumbar. Focus on material breathability and lifespan.', img: 'mesh-sku16.jpg',
+            signals: { retail: 'Breathable-Mesh', dtc: 'Long-Lifespan', enterprise: 'Material-Cert' }
+        }, 
+        // YS-060: 旗舰型 - 设计优先
+        { 
+            model: 'YS-060', tier: 'premium', lumbar: 'dynamic', bifma: 'bifma', 
+            desc: 'Dynamic lumbar, polished aluminum base. Design-first premium model.', img: 'mesh-sku17.jpg',
+            signals: { retail: 'Design-First', dtc: 'Aesthetic-Focus', enterprise: 'Premium-Finish' }
+        }, 
+        // YS-065: 旗舰型 - 水瀑布边
+        { 
+            model: 'YS-065', tier: 'premium', lumbar: '2d', bifma: 'bifma', 
+            desc: 'Adjustable headrest, waterfall seat edge. High-spec comfort.', img: 'mesh-sku18.jpg',
+            signals: { retail: 'Waterfall-Edge', dtc: 'High-Spec', enterprise: 'Ergo-Max' }
+        },
+        // YS-070: 旗舰型 - 简洁行政
+        { 
+            model: 'YS-070', tier: 'premium', lumbar: 'fixed', bifma: 'ul', 
+            desc: 'Executive style, simplified fixed lumbar for clean aesthetic. UL Certified.', img: 'mesh-sku19.jpg',
+            signals: { retail: 'Executive-Style', dtc: 'Clean-Aesthetic', enterprise: 'Fixed-Luxury' }
+        },
+        // YS-075: 旗舰型 - 动态运动
+        { 
+            model: 'YS-075', tier: 'premium', lumbar: 'dynamic', bifma: 'bifma', 
+            desc: 'Newest dynamic mechanism. Best-in-class motion range.', img: 'mesh-sku20.jpg',
+            signals: { retail: 'Best-Motion', dtc: 'High-Tech', enterprise: 'Motion-Range' }
         }
-        return placeholders;
-    };
-    
-    // I. Ergonomic Furniture (20 SKUs total)
-    const FURNITURE_SKUS = [
-        { "model": "GM-XC-R8", "tier": "premium", "feature": "Dynamic Lumbar", "desc": "X-Hybrid Adaptive Support System, Carbon Fiber finish, BIFMA Certified. PaaS: 1Y Posture Analytics. Vertical Control: Core Polymer Sourcing. Scene: AI Research Office.", "img": "assets/furniture/GM-XC-R8_AI_Lab_Scene.jpg", "hs_code": "9401.31.0000", "category": "furniture" },
-        { "model": "GM-STAND-D", "tier": "premium", "feature": "Dual Motor Desk", "desc": "Dual-Motor Standing Desk, Anti-Collision, Bamboo Top. Vertical Control: Core Motor Sourcing. PaaS: Usage Time Report. Scene: Digital Creator Studio.", "img": "assets/furniture/GM-STAND-D_Creator_Studio.jpg", "hs_code": "9403.30.0000", "category": "furniture" },
-        { "model": "GM-A901-L", "tier": "premium", "feature": "5D Armrest", "desc": "Executive High-Back Leather/Mesh Hybrid, Advanced Articulated Headrest. Vertical Control: Leather Sourcing. Scene: Corporate Boardroom.", "img": "assets/furniture/GM-A901L_Boardroom_Scene.jpg", "hs_code": "9401.39.0000", "category": "furniture" },
-        { "model": "GM-A906", "tier": "standard", "feature": "Synchro-Tilt", "desc": "Synchronous Seat & Back Tilt, Enersorb Foam Seat. Vertical Control: Nylon Base Injection. Scene: Architect Drafting Desk.", "img": "assets/furniture/GM-A906_Architect_Desk_Scene.jpg", "hs_code": "9401.31.0000", "category": "furniture" },
-        { "model": "GM-B618", "tier": "economic", "feature": "Fixed Lumbar", "desc": "Value Bulk Order SKU, Max Container Loading. DTC Optimized Packaging. Scene: Logistics Warehouse Office.", "img": "assets/furniture/GM-B618_Warehouse_Office_Scene.jpg", "hs_code": "9401.31.0000", "category": "furniture" },
-        ...generatePlaceholders('furniture', 'GM', 15, "9401.31.0000", "Standard Mesh", "General office chair."),
-    ];
-    
-    // II. Outdoor Living (20 SKUs total)
-    const OUTDOOR_SKUS = [
-        { "model": "OL-YACHT-M", "tier": "premium", "feature": "Modular Yacht Deck Set", "desc": "Modular 9-Piece Yacht Deck Set, TIGER Drylac Powder Coat. Marine Grade Rattan. Vertical Control: Aluminum Extrusion Quality. Scene: Luxury Yacht Deck / Mediterranean Villa.", "img": "assets/outdoor/OL-YACHT-M_Villa_Deck_Scene.jpg", "hs_code": "9401.79.0000", "category": "outdoor" },
-        { "model": "OL-RESORT-S", "tier": "standard", "feature": "All-Weather Sectional", "desc": "All-Weather PE Rattan Sectional, UV Stabilized. Optimized for container volume. Scene: Hotel Resort Poolside.", "img": "assets/outdoor/OL-RESORT-S_Poolside_Scene.jpg", "hs_code": "9401.71.0000", "category": "outdoor" },
-        ...generatePlaceholders('outdoor', 'OL', 18, "9401.71.0000", "PE Rattan Set", "Standard outdoor furniture set."),
     ];
 
-    // III. Eco-Bamboo Products (20 SKUs total)
-    const BAMBOO_SKUS = [
-        { "model": "BB-ZHEN-S", "tier": "premium", "feature": "Modular Tea Set", "desc": "Zen Style Modular Tea Serving Set, Carbonized finish, Integrated Drainage. Vertical Control: Artisan Sourcing & Finish. Scene: Minimalist Asian Tea House.", "img": "assets/bamboo/BB-ZHEN-S_Zen_Tea_House.jpg", "hs_code": "4420.90.9090", "category": "bamboo" },
-        { "model": "BB-MOL-T", "tier": "premium", "feature": "Bamboo/Resin Composite", "desc": "Bamboo/Epoxy Resin Composite Countertop, Food Grade Certified. Vertical Control: Resin/Epoxy Supply. Scene: Sustainable Kitchen.", "img": "assets/bamboo/BB-MOL-T_Artisan_Countertop.jpg", "hs_code": "4420.10.0090", "category": "bamboo" },
-        ...generatePlaceholders('bamboo', 'BB', 18, "4420.90.9090", "Cutting Board", "Bamboo kitchen accessories."),
-    ];
-
-    // IV. Architectural Flooring (20 SKUs total)
-    const FLOORING_SKUS = [
-        { "model": "FL-SPD7M", "tier": "premium", "feature": "7mm SPC-WPC Hybrid", "desc": "7mm SPC-WPC Hybrid Click-Lock, IXPE Underlay, AC6 Commercial Grade. Vertical Control: SPC Core Material. Scene: High-Traffic Shopping Mall.", "img": "assets/flooring/FL-SPD7M_Shopping_Mall.jpg", "hs_code": "3918.10.9000", "category": "flooring" },
-        { "model": "FL-YONG-B", "tier": "premium", "feature": "15mm Strand Woven", "desc": "15mm High-Density Bamboo Floor, Anti-Scratch Finish, Fire Retardant. Vertical Control: Bamboo Fiber Density. Scene: Museum Gallery.", "img": "assets/flooring/FL-YONG-B_Museum_Gallery.jpg", "hs_code": "4409.29.9090", "category": "flooring" },
-        ...generatePlaceholders('flooring', 'FL', 18, "3918.10.9000", "SPC Click-Lock", "Commercial grade flooring solution."),
-    ];
-
-    // V. Industrial Hardware (20 SKUs total)
-    const RIGGING_SKUS = [
-        { "model": "RG-G100S", "tier": "premium", "feature": "Grade 100 Chain Sling", "desc": "Grade 100 Alloy Steel Lifting Chain Sling (Certified 4-Leg). Vertical Control: Alloy Steel Sourcing & Forging Traceability. Scene: Heavy Industrial Construction Site.", "img": "assets/rigging/RG-G100S_Construction_Site.jpg", "hs_code": "7315.82.0000", "category": "rigging" },
-        { "model": "RG-SS-SH", "tier": "premium", "feature": "Duplex SS Shackle", "desc": "Duplex Stainless Steel Anchor Shackle (Marine/Corrosion Resistant). Vertical Control: Duplex Steel Forging. Scene: Ocean Port Operations.", "img": "assets/rigging/RG-SS-SH_Ocean_Port.jpg", "hs_code": "7326.90.9000", "category": "rigging" },
-        { "model": "HW-AL-TEL8", "tier": "standard", "feature": "8M Telescopic Ladder", "desc": "8-Meter Aluminum Telescopic Ladder (EN131 & ANSI A14.2 Certified). Vertical Control: Aluminum Extrusion. Scene: Utility Pole Maintenance.", "img": "assets/hardware/HW-AL-TEL8_Utility_Maintenance.jpg", "hs_code": "7616.99.9000", "category": "rigging" },
-        ...generatePlaceholders('rigging', 'RG', 17, "7326.90.9000", "Steel Lifting Hook", "Heavy duty industrial hardware."),
-    ];
-
-    // VI. Precision Health & BioTech (20 SKUs total)
-    const BIOMEDICAL_SKUS = [
-        { "model": "BI-GEN-PCR", "tier": "premium", "feature": "PCR Reaction Plate", "desc": "自动化兼容 PCR 反应板（高通量测序，96孔），无菌级。PaaS: Traceability Data Link. Vertical Control: Polymer Purity Audit. Scene: Clinical Genomics Lab.", "img": "assets/biomed/BI-GEN-PCR_Genomics.jpg", "hs_code": "3926.90.9090", "category": "biomedical" },
-        { "model": "BI-BPM-FDB", "tier": "premium", "feature": "Bioreactor Bag", "desc": "一次性生物反应器培养袋（50L-500L），GMP标准。PaaS: SUS Lifecycle Report. Vertical Control: Membrane Material Sourcing. Scene: Monoclonal Antibody Production Facility.", "img": "assets/biomed/BI-BPM-FDB_Biopharma.jpg", "hs_code": "3926.90.9090", "category": "biomedical" },
-        { "model": "MD-ELAS-10", "tier": "standard", "feature": "High-Compression Bandage", "desc": "Medical Grade High-Compression Elastic Bandage (10cm x 4.5m), Latex-Free。Vertical Control: Elastomer Sourcing. Scene: Sports Medicine Center.", "img": "assets/medical/MD-ELAS10_Sports_Clinic.jpg", "hs_code": "3005.90.1000", "category": "biomedical" },
-        { "model": "MD-WOUND-H", "tier": "premium", "feature": "Hydrocolloid Dressing", "desc": "Advanced Hydrocolloid Wound Dressing (Sterile, High Absorption), Bulk Hospital Supply. PaaS: Digital Wound Assessment. Scene: Private Hospital Operating Room.", "img": "assets/medical/MD-WOUNDH_Hospital_OR.jpg", "hs_code": "3005.90.1000", "category": "biomedical" },
-        { "model": "BI-SAFE-CHEM", "tier": "standard", "feature": "Anti-Corrosion Glove", "desc": "超厚防化长臂手套（耐腐蚀，针对高纯度化学品）。Vertical Control: Polymer Compound. Scene: Chemical Synthesis Lab / Wafer Cleaning Area.", "img": "assets/biomed/BI-SAFE-CHEM_ChemLab.jpg", "hs_code": "3926.20.9000", "category": "biomedical" },
-        ...generatePlaceholders('biomedical', 'BI', 15, "3926.90.9090", "Disposable Labware", "Certified medical/lab consumable."),
-    ];
-
-    // VII. Future Tech & Energy Systems (20 SKUs total)
-    const ENERGY_SKUS = [
-        { "model": "ES-NEV-P5", "tier": "premium", "feature": "800V Power Pack", "desc": "5th Gen 800V Power Pack (Liquid Cooling), High C-rate, UN38.3. PaaS: 1Y Predictive BMS Health Service. Vertical Control: Cathode Material Sourcing. Scene: EV OEM Assembly Line.", "img": "assets/energy/ES-NEV-P5_EV_Assembly.jpg", "hs_code": "8507.60.0000", "category": "energy" },
-        { "model": "ES-SOLAR-M", "tier": "premium", "feature": "700W Bifacial Solar", "desc": "700W+ N-Type Bifacial Solar Module, High Efficiency, Vertical Supply Chain Control. Scene: Utility-Scale Power Plant.", "img": "assets/energy/ES-SOLAR-M_Commercial_Rooftop.jpg", "hs_code": "8541.43.0000", "category": "energy" },
-        { "model": "FT-CHIP-WET", "tier": "premium", "feature": "High Purity IPA/NH4OH", "desc": "高纯度湿化学品（IPA/NH4OH，定制配方），用于晶圆清洗刻蚀工艺。Vertical Control: Raw Chemical Sourcing & Purity Audit. Scene: Wafer Fabrication (FAB) Plant.", "img": "assets/futuretech/FT-CHIP-WET_Wafer_FAB_Plant.jpg", "hs_code": "3824.99.9990", "category": "energy" },
-        { "model": "FT-AI-A100", "tier": "premium", "feature": "AI Compute Accelerator", "desc": "高定制化 AI 加速卡（专业散热模组），针对大规模数据中心。PaaS: Remote Thermal Diagnostics. Scene: AI Research Institute.", "img": "assets/futuretech/FT-AI-A100_Data_Center.jpg", "hs_code": "8473.30.9000", "category": "energy" },
-        { "model": "ES-RES-HV", "tier": "standard", "feature": "10-20kWh Residential ESS", "desc": "High-Voltage Residential ESS (Modular), Integrated BMS/Inverter, UL9540. Scene: European Smart Home Solar Integration.", "img": "assets/energy/ES-RES-HV_Smart_Home.jpg", "hs_code": "8507.60.0000", "category": "energy" },
-        { "model": "FT-CHIP-FOUP", "tier": "premium", "feature": "FOUP Wafer Carrier", "desc": "高洁净度 FOUP 晶圆盒（12英寸，静电消除），用于自动化晶圆运输。Scene: Clean Room Logistics.", "img": "assets/futuretech/FT-CHIP-FOUP_Clean_Room.jpg", "hs_code": "8479.90.9090", "category": "energy" },
-        { "model": "ES-ELEC-CAB", "tier": "standard", "feature": "EV Charging Cable", "desc": "High-Power EV Charging Cable (CCS2/NACS), UL/CE Certified, High-Flex. Scene: Public Charging Station Infrastructure.", "img": "assets/energy/ES-ELEC-CAB_Charging_Station.jpg", "hs_code": "8544.42.0000", "category": "energy" },
-        { "model": "ES-BMS-A", "tier": "premium", "feature": "Advanced Distributed BMS", "desc": "Advanced Distributed BMS (ASIL-D compliant), Cloud Monitoring, OTA Updates. Scene: ESS System Integrator.", "img": "assets/energy/ES-BMS-A_System_Integrator.jpg", "hs_code": "8537.10.9090", "category": "energy" },
-        { "model": "FT-CHIP-CMP", "tier": "standard", "feature": "CMP Slurry/Pad", "desc": "CMP 研磨垫和浆料（高精度、低缺陷率），用于晶圆表面平坦化。Vertical Control: Material Science. Scene: CMP Processing Center.", "img": "assets/futuretech/FT-CHIP-CMP_CMP_Processing.jpg", "hs_code": "6806.90.0000", "category": "energy" },
-        { "model": "FT-BIO-FILTER", "tier": "premium", "feature": "Hollow Fiber Filter", "desc": "无菌级中空纤维过滤膜包（定制截留分子量），用于生物制药下游纯化。Scene: Biopharma Downstream Processing.", "img": "assets/futuretech/FT-BIO-FILTER_Biopharma_Purification.jpg", "hs_code": "8421.29.9090", "category": "energy" },
-        { "model": "ES-PORT-2K", "tier": "standard", "feature": "2kWh Portable Power", "desc": "2kWh Portable Power Station (LiFePO4, MPPT Solar Input), UN38.3, Outdoor/Emergency Use. Scene: Disaster Relief Agency Supply.", "img": "assets/energy/ES-PORT-2K_Disaster_Relief.jpg", "hs_code": "8507.60.0000", "category": "energy" },
-        /* 9 Placeholder SKUs needed here */
-        { "model": "ES-PH-12", "tier": "standard", "feature": "Placeholder SKU", "desc": "Placeholder: Energy SKU 12. Scene: Warehouse.", "img": "assets/placeholder.jpg", "hs_code": "8507.60.0000", "category": "energy" },
-        { "model": "ES-PH-13", "tier": "standard", "feature": "Placeholder SKU", "desc": "Placeholder: Energy SKU 13. Scene: Warehouse.", "img": "assets/placeholder.jpg", "hs_code": "8507.60.0000", "category": "energy" },
-        { "model": "ES-PH-14", "tier": "standard", "feature": "Placeholder SKU", "desc": "Placeholder: Energy SKU 14. Scene: Warehouse.", "img": "assets/placeholder.jpg", "hs_code": "8507.60.0000", "category": "energy" },
-        { "model": "ES-PH-15", "tier": "standard", "feature": "Placeholder SKU", "desc": "Placeholder: Energy SKU 15. Scene: Warehouse.", "img": "assets/placeholder.jpg", "hs_code": "8507.60.0000", "category": "energy" },
-        { "model": "ES-PH-16", "tier": "standard", "feature": "Placeholder SKU", "desc": "Placeholder: Energy SKU 16. Scene: Warehouse.", "img": "assets/placeholder.jpg", "hs_code": "8507.60.0000", "category": "energy" },
-        { "model": "ES-PH-17", "tier": "standard", "feature": "Placeholder SKU", "desc": "Placeholder: Energy SKU 17. Scene: Warehouse.", "img": "assets/placeholder.jpg", "hs_code": "8507.60.0000", "category": "energy" },
-        { "model": "ES-PH-18", "tier": "standard", "feature": "Placeholder SKU", "desc": "Placeholder: Energy SKU 18. Scene: Warehouse.", "img": "assets/placeholder.jpg", "hs_code": "8507.60.0000", "category": "energy" },
-        { "model": "ES-PH-19", "tier": "standard", "feature": "Placeholder SKU", "desc": "Placeholder: Energy SKU 19. Scene: Warehouse.", "img": "assets/placeholder.jpg", "hs_code": "8507.60.0000", "category": "energy" },
-        { "model": "ES-PH-20", "tier": "standard", "feature": "Placeholder SKU", "desc": "Placeholder: Energy SKU 20. Scene: Warehouse.", "img": "assets/placeholder.jpg", "hs_code": "8507.60.0000", "category": "energy" }
-    ];
-
-    // VIII. Global Logistics Service (20 SKUs total)
-    const LOGISTICS_SKUS = [
-        { "model": "SC-LOG-BATT", "tier": "premium", "feature": "DGR Class 9 Logistics", "desc": "High-Risk Battery Logistics Solution: Dedicated hazmat lanes, UN38.3 documentation management. PaaS: Real-time Risk Score Dashboard. Vertical Control: IATA Compliance. Scene: Global Lithium Battery Manufacturer, NEV Exporter.", "img": "assets/services/SC-LOG-BATT_DGR_Shipping.jpg", "hs_code": "9803.00.0000", "category": "logistics" },
-        { "model": "SC-RISK-01", "tier": "premium", "feature": "Predictability Audit", "desc": "Supply Chain Predictability Audit: Deep dive on T1/T2 supplier qualification and risk quantification. PaaS: Final Audit Report + Simulation Software Access. Scene: Fortune 500 Procurement Department.", "img": "assets/services/SC-RISK-01_Procurement_Audit.jpg", "hs_code": "9803.00.0000", "category": "logistics" },
-        { "model": "SC-4PL-MAX", "tier": "premium", "feature": "4PL Full Management", "desc": "4PL Full Management Service: Strategic oversight, tender management, cost optimization across global logistics network. Scene: Brand Owner Seeking Efficiency.", "img": "assets/services/SC-4PL-MAX_4PL_Strategy.jpg", "hs_code": "9803.00.0000", "category": "logistics" },
-        { "model": "SC-QC-PROTO", "tier": "standard", "feature": "Pre-Production QC", "desc": "Pre-Production Prototype QC: Cpk analysis, defect risk modeling, DFM validation service for new SKUs. Scene: DTC Startup Launching New Furniture Line.", "img": "assets/services/SC-QC-PROTO_DFM_Validation.jpg", "hs_code": "9803.00.0000", "category": "logistics" },
-        { "model": "SC-VIS-A", "tier": "standard", "feature": "IoT Visibility Platform", "desc": "End-to-End Visibility Platform Integration: IoT Sensor deployment, Real-time GPS/Temp monitoring, API access. Scene: Cold Chain Distributor.", "img": "assets/services/SC-VIS-A_IoT_Tracking.jpg", "hs_code": "9803.00.0000", "category": "logistics" },
-        /* 15 Placeholder SKUs needed here */
-        ...generatePlaceholders('logistics', 'SC', 15, "9803.00.0000", "Global Freight Quote", "General logistics and freight service."),
-    ];
-
-    // --- 2. GLOBAL SKU CACHE (All 8 categories combined) ---
-    // Note: Placeholder SKUs must be populated for all categories (BAMBOO, OUTDOOR, FLOORING, RIGGING)
-    // For this example, we trust the generatePlaceholders function to fill the remaining 5 categories (100 total SKUs)
-    
-    // Total 160 SKUs in one array (For production, ensure all placeholders are replaced with real data)
-    const ALL_SKUS_CACHE = [
-        ...FURNITURE_SKUS, 
-        ...OUTDOOR_SKUS, 
-        ...BAMBOO_SKUS, 
-        ...FLOORING_SKUS, 
-        ...RIGGING_SKUS, 
-        ...BIOMEDICAL_SKUS, 
-        ...ENERGY_SKUS, 
-        ...LOGISTICS_SKUS
+    // --- Hotspot Data Model ---
+    const MESH_CHAIR_HOTSPOTS = [
+        { top: '25%', left: '30%', title: "Modular Component Interchangeability", desc: "Key parts designed for quick swapping across SKU tiers, maximizing your inventory efficiency." }, 
+        { top: '55%', left: '60%', title: "Eco-Certified ENERSORB Foam", desc: "Available options include high-density, patented memory foam and recycled polymer materials." },
+        { top: '80%', left: '45%', title: "BIFMA X5.1 Base & ANSI Compliant", desc: "Stress-tested aluminum alloy base, ensuring durability and full regulatory compliance." } 
     ];
     
-    
-    // --- 3. DOM ELEMENTS AND CORE LOGIC ---
-    
-    const categoryGrid = document.getElementById('category-grid');
-    const categoryTitleTag = document.getElementById('category-title-tag');
-    const sbuCards = document.querySelectorAll('.sbu-card');
-    const allCategoryCards = document.querySelectorAll('.category-card');
-    
-    // Core function for filtering categories based on SBU type
-    function filterCategories(sbuType) {
-        let titleText = "Strategic Product Catalogue (Filtered)";
+    // --- SKU Dynamic Rendering Logic ---
+    function renderSkuCard(sku) {
+        const card = document.createElement('div');
+        card.className = 'sku-card';
+        card.setAttribute('data-price', sku.tier);
+        card.setAttribute('data-lumber', sku.lumbar);
+        card.setAttribute('data-bifma', sku.bifma);
+
+        // 核心渲染：展示 Tri-Channel 信号 (优先展示 DTC 和 Retail 信号)
+        const primarySignal = sku.signals.dtc;
+        const secondarySignal = sku.signals.retail;
         
-        allCategoryCards.forEach(card => {
-            const isMatch = (sbuType === 'all' || card.getAttribute('data-sbu') === sbuType);
-            
-            // Toggle visibility
-            if (isMatch) {
-                card.classList.remove('inactive');
-                card.style.display = 'block'; 
-            } else {
-                card.classList.add('inactive');
-                card.style.display = 'none';
+        card.innerHTML = `
+            <a href="#contact" class="category-card" style="height: 250px;">
+                <div class="category-bg" style="background-image: url('${sku.img}');"></div>
+                <div class="category-content" style="padding: 15px;">
+                    <h3 style="font-size: 1.1rem;">Model ${sku.model}</h3>
+                    <div class="product-meta">
+                        <p style="font-size: 0.8rem;">${sku.desc}</p>
+                        <span class="product-tag">${primarySignal} | ${secondarySignal}</span>
+                    </div>
+                </div>
+            </a>
+        `;
+        return card;
+    }
+
+    function applyFilters() {
+        if (!meshSkuContainer || !priceFilter) return;
+
+        const selectedPrice = priceFilter.value;
+        const selectedLumber = lumberFilter.value;
+        const selectedBifma = bifmaFilter.value;
+        let visibleCount = 0;
+
+        meshSkuContainer.querySelectorAll('.sku-card').forEach(card => card.remove());
+        
+        ALL_MESH_CHAIR_SKUS.forEach(sku => {
+            const priceMatch = (selectedPrice === 'all' || selectedPrice === sku.tier);
+            const lumberMatch = (selectedLumber === 'all' || selectedLumber === sku.lumbar);
+            const bifmaMatch = (selectedBifma === 'all' || selectedBifma === sku.bifma);
+
+            if (priceMatch && lumberMatch && bifmaMatch) {
+                meshSkuContainer.insertBefore(renderSkuCard(sku), noResultsMessage);
+                visibleCount++;
             }
         });
-        
-        // Update title and scroll
-        switch (sbuType) {
-            case 'lifestyle':
-                titleText = "SBU Focus: Home & Lifestyle Solutions (I-IV)";
-                break;
-            case 'industrial':
-                titleText = "SBU Focus: Industrial & Safety Engineering (V-VI)";
-                break;
-            case 'future':
-                titleText = "SBU Focus: Future Tech & Energy Systems (VII)";
-                break;
-            case 'logistics':
-                titleText = "SBU Focus: Predictability Services (VIII)";
-                break;
-            default:
-                titleText = "Exploring All 8 Strategic Ecosystems";
-        }
-        
-        categoryTitleTag.textContent = titleText;
-        
-        if(sbuType !== 'all') {
-            document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+
+        if (visibleCount === 0) {
+            if (noResultsMessage) noResultsMessage.style.display = 'block';
+        } else {
+            if (noResultsMessage) noResultsMessage.style.display = 'none';
         }
     }
     
-    // Function to render the featured SKU list (e.g., Mesh Chair Catalog)
-    function renderFeaturedSkus(categoryToRender, containerId) {
-        const container = document.getElementById(containerId);
-        // Find SKUs for the requested category
-        const skus = ALL_SKUS_CACHE.filter(sku => sku.category === categoryToRender);
-        
-        if (!container) return;
-        
-        let html = '<div class="featured-sku-grid" style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">';
-        
-        skus.slice(0, 4).forEach(sku => { // Render first 4 SKUs as a sample
-            html += `
-                <div class="sku-card" style="border: 1px solid #ddd; padding: 15px; border-radius: 8px;">
-                    <img src="${sku.img}" alt="${sku.model}" style="width: 100%; height: 120px; object-fit: cover; border-radius: 4px;">
-                    <h4>${sku.model}</h4>
-                    <p style="font-size: 0.85rem; color: #555;">${sku.feature}</p>
-                    <span style="font-weight: 600; color: ${sku.tier === 'premium' ? '#FF6600' : '#007bff'};">${sku.tier.toUpperCase()}</span>
-                </div>
-            `;
+    // --- Hotspot Rendering Logic ---
+    function renderHotspots() {
+        if (!showcaseImage) return;
+        const infoDisplay = document.createElement('div');
+        infoDisplay.id = 'hotspot-display';
+        infoDisplay.className = 'hotspot-info';
+        infoDisplay.innerHTML = `<h5></h5><p></p><span>Learn more →</span>`;
+        showcaseImage.appendChild(infoDisplay);
+
+        MESH_CHAIR_HOTSPOTS.forEach(data => {
+            const hotspot = document.createElement('div');
+            hotspot.className = 'hotspot';
+            hotspot.style.top = data.top;
+            hotspot.style.left = data.left;
+            
+            hotspot.addEventListener('mouseenter', (e) => handleHotspotHover(e, data, infoDisplay));
+            hotspot.addEventListener('mouseleave', () => handleHotspotLeave(infoDisplay));
+            showcaseImage.appendChild(hotspot);
         });
-        
-        html += '</div>';
-        container.innerHTML = html;
     }
 
-    // --- 4. INITIALIZATION ---
+    let hoverTimeout;
+    function handleHotspotHover(e, data, infoDisplay) {
+        clearTimeout(hoverTimeout);
+        infoDisplay.querySelector('h5').textContent = data.title;
+        infoDisplay.querySelector('p').textContent = data.desc;
+        const rect = e.target.getBoundingClientRect();
+        const containerRect = showcaseImage.getBoundingClientRect();
+        infoDisplay.style.top = `${rect.top - containerRect.top - 100}px`; 
+        infoDisplay.style.left = `${rect.left - containerRect.left + 35}px`;
+        infoDisplay.classList.add('visible');
+    }
 
-    // Bind SBU Click Events
-    sbuCards.forEach(card => {
-        card.addEventListener('click', function(e) {
-            e.preventDefault();
-            const sbuType = this.getAttribute('data-sbu');
-            
-            // Highlight and filter
-            sbuCards.forEach(c => c.style.borderBottomColor = 'transparent');
-            this.style.borderBottomColor = '#FF6600';
-
-            filterCategories(sbuType);
+    function handleHotspotLeave(infoDisplay) {
+        hoverTimeout = setTimeout(() => {
+            infoDisplay.classList.remove('visible');
+        }, 200);
+    }
+    
+    // --- Navigation & Event Bindings ---
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() { navLinks.classList.toggle('is-open'); });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() { if (window.innerWidth <= 768) { navLinks.classList.remove('is-open'); } });
         });
+        window.addEventListener('resize', function() { if (window.innerWidth > 768) { navLinks.classList.remove('is-open'); } });
+    }
+
+    // --- Filter Bindings ---
+    if (priceFilter) priceFilter.addEventListener('change', applyFilters);
+    if (lumberFilter) lumberFilter.addEventListener('change', applyFilters);
+    if (bifmaFilter) bifmaFilter.addEventListener('change', applyFilters);
+    
+    if (resetButton) resetButton.addEventListener('click', () => {
+        if (priceFilter) priceFilter.value = 'all';
+        if (lumberFilter) lumberFilter.value = 'all';
+        if (bifmaFilter) bifmaFilter.value = 'all';
+        applyFilters();
     });
 
-    // Default View: Show All Categories and Render Featured Section
-    filterCategories('all');
-    renderFeaturedSkus('furniture', 'mesh-sku-container'); // Render the Mesh Chair Catalog anchor
 
+    // --- Initialization ---
+    renderHotspots();
+    if (priceFilter) applyFilters();
+    
+    // Sticky CTA logic
+    if (stickyCta) {
+        window.addEventListener('scroll', function() {
+            const heroHeight = document.getElementById('home').offsetHeight;
+            if (window.scrollY > heroHeight / 2) {
+                stickyCta.style.display = 'block';
+            } else {
+                stickyCta.style.display = 'none';
+            }
+        });
+    }
 });
