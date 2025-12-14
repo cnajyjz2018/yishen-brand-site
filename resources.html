@@ -9,69 +9,25 @@
     
     <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <style>
-        /* Base styles from index.html are assumed (e.g., var(--primary), .container) */
-        :root { --primary: #FF6600; --bg-light: #f4f7f9; }
-        
-        .resources-hero { 
-            background: #1e3a5f; /* Deep Blue, suggesting intelligence/seriousness */
-            color: white; 
-            padding: 100px 0; 
-            text-align: center;
-        }
-        .resources-hero h1 { 
-            font-size: 3rem; 
-            margin-bottom: 10px; 
-            color: #FFDDAA;
-        }
-        .resources-hero p { 
-            font-size: 1.2rem; 
-            opacity: 0.9; 
-            max-width: 800px; 
-            margin: 0 auto;
-        }
-        .resource-section { 
-            padding: 80px 0; 
-        }
-        .resource-grid { 
-            display: grid; 
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 30px; 
-            margin-top: 40px;
-        }
-        .resource-card {
-            border: 1px solid #eee;
-            border-radius: 8px;
-            padding: 25px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-        .resource-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-        }
-        .resource-card i {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        .resource-tag {
-            background: #e9ecef;
-            color: #555;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        .section-title { text-align: center; margin-bottom: 60px; }
-        .section-tag { color: var(--primary); font-weight: 600; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 10px; display: block; }
-    </style>
 </head>
 <body>
 
-    <header class="navbar">...</header>
+    <header class="navbar">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="brand">
+                <div class="logo-icon"></div>
+                YiShen Global
+            </a>
+            <nav class="nav-links"> 
+                <a href="index.html">Home</a>
+                <a href="index.html#sbu-gateway">SBU Select</a>
+                <a href="solutions.html">Catalogue</a>
+                <a href="resources.html">Resources Hub</a>
+                <a href="index.html#mesh-chair-catalog">Featured SKUs</a>
+                <a href="contact.html" class="btn-primary">Contact Us</a>
+            </nav>
+        </div>
+    </header>
 
     <section class="resources-hero">
         <div class="container">
@@ -208,7 +164,11 @@
         </div>
     </section>
 
-    <footer>...</footer>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 YiShen Global. All Rights Reserved. Vertically Integrated. Predictability Defined.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
