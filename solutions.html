@@ -1,142 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solutions | YiShen Global Logistics</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2B Solutions | Risk Mitigation & Operational Efficiency - YiShen Global</title>
+    
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .solutions-hero {
+            padding: 150px 0 80px;
+            background: var(--accent); /* 使用强调色作为解决方案页面的背景，突出专业性 */
+            color: var(--white);
+            text-align: center;
+        }
+        .solutions-hero h1 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .solution-sections {
+            padding: 80px 0;
+            background: var(--bg-light); /* 浅色背景，突出内容可读性 */
+        }
+        .solution-block {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 60px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            transition: 0.3s;
+        }
+        /* 突出区块悬停效果 */
+        .solution-block:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        .solution-block:nth-child(even) {
+            flex-direction: row-reverse; /* 交替布局，增加视觉动态性 */
+        }
+        .block-content {
+            flex: 2;
+        }
+        .block-image {
+            flex: 1;
+            min-width: 300px;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            opacity: 0.9;
+        }
+        .block-content h2 {
+            font-family: var(--font-main);
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .block-content strong.pain-point {
+            display: block;
+            color: #d9534f; /* 红色警告色 */
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .block-content ul {
+            margin-top: 15px;
+            padding-left: 0;
+        }
+        .block-content ul li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 8px;
+            color: var(--secondary);
+        }
+        .block-content ul li::before {
+            content: '✓';
+            position: absolute; left: 0; top: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        .block-cta {
+            margin-top: 25px;
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 900px) {
+            .solution-block, .solution-block:nth-child(even) {
+                flex-direction: column;
+                gap: 20px;
+                padding: 30px;
+            }
+            .block-image {
+                width: 100%;
+                min-width: unset;
+                order: -1;
+            }
+        }
+    </style>
 </head>
-<body class="page-solutions">
+<body>
 
-<header class="navbar">
-  <div class="logo">YiShen Global</div>
-  <div class="nav-toggle">
-    <span></span><span></span><span></span>
-  </div>
-  <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="solutions.html" class="active">Solutions</a>
-    <a href="industries.html">Industries</a>
-    <a href="why-us.html">Why Us</a>
-    <a href="resources.html">Resources</a>
-    <a href="contact.html" class="btn-primary btn-small">Get a Quote</a>
-  </nav>
-</header>
+    <header class="navbar" style="position: static; margin-bottom: 0; border-bottom: none;">
+        <div class="container nav-wrapper">
+            <div class="brand"><a href="index.html">YiShen Global</a></div>
+            <nav class="nav-links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#products">Collection</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#contact" class="btn-nav">Contact Us</a>
+            </nav>
+        </div>
+    </header>
 
-<main>
-  <section class="hero-inner">
-    <div class="container">
-      <h1 class="hero-title">Furniture Shipping Solutions</h1>
-      <p class="hero-subtitle">
-        Specialised routes and packaging strategies for office chairs, gaming chairs, recliners,
-        sofas and home furniture — from sample parcels to full containers.
-      </p>
-    </div>
-  </section>
+    <section class="solutions-hero">
+        <div class="container">
+            <span class="section-tag" style="color: #FFDD00; background: var(--accent);">B2B Operational Strategy</span>
+            <h1>Quantifiable Solutions for Your Supply Chain Challenges</h1>
+            <p style="font-size: 1.15rem; max-width: 900px; margin: 20px auto 0;">
+                We transform common import risks—from unpredictable quality to customs delays—into controlled, predictable advantages.
+            </p>
+        </div>
+    </section>
 
-  <section class="section section-alt">
-    <div class="container">
-      <h2 class="section-title">Core Solutions</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>DDP Air for Office & Gaming Chairs</h3>
-          <p>
-            Ideal for high-value, mid-volume chair SKUs. We combine DDP air and express routes for USA, EU and GCC with
-            carton optimization and compliance support.
-          </p>
-          <p><strong>Best for:</strong> New chair launches, urgent replenishment, high-margin SKUs.</p>
-        </div>
-        <div class="card">
-          <h3>DDP Sea for Bulk Furniture</h3>
-          <p>
-            Cost-optimized DDP sea freight for office chairs, sofas and home furniture, with full container
-            loading plans and pallet strategies.
-          </p>
-          <p><strong>Best for:</strong> Mature products, stable replenishment cycles, container-scale orders.</p>
-        </div>
-        <div class="card">
-          <h3>Hybrid Sea + Air Programs</h3>
-          <p>
-            We design hybrid models: base volume by sea, “top-up” and urgent SKUs by air or express to avoid stock-outs.
-          </p>
-          <p><strong>Best for:</strong> Brands and importers balancing cost and speed.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section class="solution-sections">
+        <div class="container">
 
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Packaging & Damage Control</h2>
-      <p class="section-subtitle">
-        Inspired by top furniture brands: lab-level tests, engineered cartons and pre-shipment control.
-      </p>
-      <div class="usp-grid">
-        <div class="usp-item">
-          <h3>Compression Packaging for Sofas & Recliners</h3>
-          <p>Define target compression ratio, test prototypes and document safe loading SOP for your factory.</p>
-        </div>
-        <div class="usp-item">
-          <h3>Drop-Test & Edge-Crush Validation</h3>
-          <p>We help simulate real transport stress and update carton specs to pass key drop and stacking tests.</p>
-        </div>
-        <div class="usp-item">
-          <h3>Chair-Specific Protections</h3>
-          <p>Reinforcement for castors, base, armrests and headrests — the most frequently damaged components.</p>
-        </div>
-        <div class="usp-item">
-          <h3>Photo & Video Loading SOPs</h3>
-          <p>Visual loading guides for factory teams to ensure every container follows the same best-practice pattern.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+            <div class="solution-block">
+                <div class="block-content">
+                    <strong class="pain-point"><i class="fas fa-exclamation-triangle"></i> Pain Point 1: Unpredictable Quality and Compliance Failure</strong>
+                    <h2>Precision Quality Assurance & Certification Shield</h2>
+                    <p>
+                        The core risk in overseas procurement is the hidden process failure that leads to product defects and expensive regulatory issues in the destination market. Our solution shifts QA from simple inspection to proactive risk mitigation.
+                    </p>
+                    <p style="font-weight: 600; color: var(--accent);">
+                        Our Solution: Integrated AQL & BIFMA Protocol Management
+                    </p>
+                    <ul>
+                        <li>**Certified Factory Audit:** Continuous monitoring to **exceed** BIFMA, UL, and ANSI standards, reducing liability.</li>
+                        <li>**Process Control:** Implementation of Statistical Process Control (SPC) tools, ensuring consistent quality from the component level up.</li>
+                        <li>**E-A-T Backing:** Providing full certification documentation for your brand's regulatory compliance and marketing claims.</li>
+                    </ul>
+                    <div class="block-cta">
+                        <a href="index.html#services" class="btn btn-primary">Explore QA Protocols &rarr;</a>
+                    </div>
+                </div>
+                <div class="block-image" style="background-image: url('quality_control.jpg');">
+                    
+                </div>
+            </div>
 
-  <section class="section section-alt">
-    <div class="container">
-      <h2 class="section-title">Documentation & Compliance</h2>
-      <div class="usp-grid">
-        <div class="usp-item">
-          <h3>HS-Code Mapping</h3>
-          <p>We map your office chairs, gaming chairs and furniture SKUs to correct HS codes for each market.</p>
-        </div>
-        <div class="usp-item">
-          <h3>Customs-Ready Paperwork</h3>
-          <p>Commercial invoice, packing list, certificates and declarations tuned for local customs expectations.</p>
-        </div>
-        <div class="usp-item">
-          <h3>Labeling & Regulatory Notes</h3>
-          <p>Support for product labeling, country-of-origin, and market-specific warnings or markings.</p>
-        </div>
-        <div class="usp-item">
-          <h3>Tax & DDP Structure</h3>
-          <p>Work with your team on DDP structuring, landed-cost breakdown and documentation workflow.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+            <div class="solution-block">
+                <div class="block-content">
+                    <strong class="pain-point"><i class="fas fa-shipping-fast"></i> Pain Point 2: Costly Transit Damage & Unstable ETAs</strong>
+                    <h2>Global Logistics Resilience and DDP/LDP Mastery</h2>
+                    <p>
+                        International shipping uncertainty leads to inventory gaps, angry retailers, and high chargebacks due to damage. We manage the entire value stream from factory floor to your warehouse shelf.
+                    </p>
+                    <p style="font-weight: 600; color: var(--accent);">
+                        Our Solution: End-to-End DDP/LDP Management
+                    </p>
+                    <ul>
+                        <li>**Transit Damage Mitigation:** Utilization of **DTC-Ready Packaging** certified by drop tests, specifically designed to survive last-mile delivery. </li>
+                        <li>**Predictive ETA:** Advanced freight booking and customs clearance management to provide more reliable delivery windows.</li>
+                        <li>**Cost Simplification:** Comprehensive DDP (Delivered Duty Paid) service, bundling freight, duties, and customs fees into one predictable price. </li>
+                    </ul>
+                    <div class="block-cta">
+                        <a href="index.html#contact" class="btn btn-primary">Get a DDP Quote &rarr;</a>
+                    </div>
+                </div>
+                <div class="block-image" style="background-image: url('logistics_drayage.jpg');">
+                    
+                </div>
+            </div>
 
-  <section class="contact">
-    <div class="container contact-layout">
-      <div>
-        <h2>Discuss Your Furniture Shipping Scenario</h2>
-        <p>Describe your SKUs, destinations and volume. We’ll suggest the most suitable solution mix.</p>
-      </div>
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name">
-        <input type="text" placeholder="Company Name">
-        <input type="email" placeholder="Email or WhatsApp">
-        <textarea placeholder="Tell us about your products & target countries"></textarea>
-        <button type="submit" class="btn-primary">Request a Call / Plan</button>
-      </form>
-    </div>
-  </section>
-</main>
+            <div class="solution-block">
+                <div class="block-content">
+                    <strong class="pain-point"><i class="fas fa-lightbulb"></i> Pain Point 3: Slow Product Iteration and High MOQ for Customization</strong>
+                    <h2>Agile Custom Engineering & Modular Design</h2>
+                    <p>
+                        DTC brands must launch new products quickly based on market feedback. Traditional manufacturing often imposes rigid MOQs (Minimum Order Quantities) and slow prototype cycles.
+                    </p>
+                    <p style="font-weight: 600; color: var(--accent);">
+                        Our Solution: Modular Product Development (B2B Agility)
+                    </p>
+                    <ul>
+                        <li>**Modular Component System:** Utilizing a standardized core mechanism and base, allowing rapid SKU customization (e.g., swapping armrests, changing mesh materials) without retooling. </li>
+                        <li>**Low MOQ Trials:** Supporting small-batch production runs for market testing and product validation before committing to large volumes.</li>
+                        <li>**Dedicated R&D Liaison:** Assigning a local engineer to expedite prototype feedback and design revisions.</li>
+                    </ul>
+                    <div class="block-cta">
+                        <a href="index.html#services" class="btn btn-primary">Start Custom Project &rarr;</a>
+                    </div>
+                </div>
+                <div class="block-image" style="background-image: url('modular_design.jpg');">
+                    
+                </div>
+            </div>
+            
+            <div class="solution-block">
+                <div class="block-content">
+                    <strong class="pain-point"><i class="fas fa-wrench"></i> Pain Point 4: Retailer Chargebacks and End-User Dissatisfaction</strong>
+                    <h2>Strategic Spare Parts Inventory & Warranty Support</h2>
+                    <p>
+                        Failed warranties and the lack of readily available spare parts directly impact retailer relationships and your brand's reputation with end-users.
+                    </p>
+                    <p style="font-weight: 600; color: var(--accent);">
+                        Our Solution: Long-Term Inventory Stability
+                    </p>
+                    <ul>
+                        <li>**US/EU Spare Parts Buffer:** Maintaining a pre-agreed inventory of high-failure-rate components (gas lifts, wheel sets) in key US or EU warehouses for rapid deployment. </li>
+                        <li>**Warranty Claim Streamlining:** Providing a clear, documented process for component replacement, reducing customer service time and cost.</li>
+                        <li>**Training & Documentation:** Supplying professional, brandable user manuals and assembly guides to minimize customer misuse and assembly errors.</li>
+                    </ul>
+                    <div class="block-cta">
+                        <a href="index.html#contact" class="btn btn-primary">Inquire About Support &rarr;</a>
+                    </div>
+                </div>
+                <div class="block-image" style="background-image: url('spare_parts_warehouse.jpg');">
+                    
+                </div>
+            </div>
 
-<footer>
-  © 2025 YiShen Global Logistics. All rights reserved.
-</footer>
 
-<script src="script.js"></script>
+        </div>
+    </section>
+    
+    <section class="cta-banner" style="background: var(--primary); color: var(--white); padding: 50px 0; text-align: center;">
+        <div class="container">
+            <h2 style="font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 15px;">Ready to Engineer Your Predictable Supply Chain?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.8;">
+                Stop reacting to supply chain surprises. Start building a resilient, profitable partnership.
+            </p>
+            <a href="index.html#contact" class="btn btn-primary" style="background: #FFDD00; color: var(--primary); border-color: #FFDD00;">Schedule Your Strategy Session Now</a>
+        </div>
+    </section>
+    
+    <footer class="footer" style="padding: 40px 0 20px;">
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2025 YiShen Global. All rights reserved. | <a href="index.html#contact" style="color: var(--accent);">Get in Touch</a></p>
+        </div>
+    </footer>
+
 </body>
 </html>
