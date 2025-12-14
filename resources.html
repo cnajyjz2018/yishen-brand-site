@@ -1,113 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources Hub | Supply Chain Insight & B2B Guides - YiShen Global</title>
-    <meta name="description" content="Access technical guides, BIFMA compliance documentation, DTC packaging specs, and 2026 ergonomic market trend reports from YiShen Global's authority hub.">
-    
-    <link rel="stylesheet" href="styles.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght{600;700}&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>战略资源中心 | 跨行业权威洞察与技术指南 - YiShen Global</title>
+    <meta name="description" content="YiShen Global 战略资源中心：提供 BIFMA、UL9540、G100 钢材溯源报告、DGR 物流指南、以及半导体级高纯度材料规格书，专为全球专业采购方打造。">
+    
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght{600;700}&display=swap" rel="stylesheet">
 
-    <style>
-        .resources-hero {
-            padding: 150px 0 80px;
-            background: var(--primary); 
-            color: var(--white);
-            text-align: center;
+    <style>
+        /* 原有基础样式保留 */
+        .resources-hero {
+            padding: 150px 0 80px;
+            background: var(--primary); 
+            color: var(--white);
+            text-align: center;
+        }
+        .resources-grid {
+            padding: 80px 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .resource-card {
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
         }
-        .resources-grid {
-            padding: 80px 0;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        .resource-card {
-            border: 1px solid var(--border);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .resource-card h3 {
-            color: var(--primary);
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-        .resource-card .tag {
-            display: inline-block;
-            background: #FFDD00;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-        /* 新增 CTA 样式 */
-        .urgent-cta {
-            background: var(--accent);
-            padding: 60px 0;
-            text-align: center;
-            border-radius: 12px;
-            margin-bottom: 50px;
-            color: var(--white);
-        }
-        .urgent-cta h2 {
+        .resource-card h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        .resource-card .tag {
+            display: inline-block;
+            background: #FFDD00;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        /* 新增 CTA 样式 */
+        .urgent-cta {
+            background: var(--accent);
+            padding: 60px 0;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 50px;
+            color: var(--white);
+        }
+        .urgent-cta h2 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #FFDD00;
+        }
+        .urgent-cta p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        /* NEW: 部门划分样式 */
+        .resource-division-header {
+            text-align: left;
+            padding: 20px 0 10px;
+            font-size: 1.8rem;
             font-family: var(--font-serif);
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #FFDD00;
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
-        .urgent-cta p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 30px;
+
+        .resource-division-header i {
+            color: var(--accent);
         }
-    </style>
+
+        /* Responsive Fix for Resource Grid */
+        @media (max-width: 768px) {
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+            .resource-division-header {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="navbar" style="position: static; margin-bottom: 0; border-bottom: none;">
-        <div class="container nav-wrapper">
-            <a href="index.html" class="brand">
-                <div class="logo-icon"></div>
-                YiShen Global
-            </a>
-            <nav class="nav-links">
-                <a href="index.html#home">Home</a>
-                <a href="index.html#about">About</a>
-                <a href="index.html#products">Collection</a>
-                <a href="solutions.html">Solutions</a>
-                <a href="resources.html">Resources</a>
-                <a href="index.html#contact" class="btn-nav">Contact Us</a>
-            </nav>
-        </div>
-    </header>
+    <header class="navbar" style="position: static; margin-bottom: 0; border-bottom: none;">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="brand">
+                <div class="logo-icon"></div>
+                YiShen Global
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#products">Collection</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="resources.html">Resources</a>
+                <a href="index.html#contact" class="btn-nav">Contact Us</a>
+            </nav>
+        </div>
+    </header>
 
-    <section class="resources-hero">
-        <div class="container">
-            <span class="section-tag" style="color: #FFDD00; background: var(--primary);">Authority Hub</span>
-            <h1>Data-Driven Insights for Global B2B Buyers</h1>
-            <p style="font-size: 1.15rem; max-width: 900px; margin: 20px auto 0;">
-                Download technical specs, compliance documents, and strategic market analyses to accelerate your procurement.
-            </p>
-        </div>
-    </section>
+    <section class="resources-hero">
+        <div class="container">
+            <span class="section-tag" style="color: #FFDD00; background: var(--primary);">Authority Hub</span>
+            <h1>Data-Driven Insights for Global B2B Buyers</h1>
+            <p style="font-size: 1.15rem; max-width: 900px; margin: 20px auto 0;">
+                Download technical specs, compliance documents, and strategic market analyses to accelerate your procurement.
+            </p>
+        </div>
+    </section>
+
+    <section class="container" style="padding-top: 50px;">
+        <div class="urgent-cta">
+            <h2>Immediate Need? Get Compliance Docs Now.</h2>
+            <p>Don't wait weeks for paperwork. Access BIFMA & UL certifications directly.</p>
+            <a href="index.html#contact" class="btn btn-primary" style="background: #FFDD00; color: var(--primary); border-color: #FFDD00;">
+                Download Certification Portfolio <i class="fas fa-download"></i>
+            </a>
+        </div>
+    </section>
 
     <section class="container" style="padding-top: 50px;">
-        <div class="urgent-cta">
-            <h2>Immediate Need? Get Compliance Docs Now.</h2>
-            <p>Don't wait weeks for paperwork. Access BIFMA & UL certifications directly.</p>
-            <a href="index.html#contact" class="btn btn-primary" style="background: #FFDD00; color: var(--primary); border-color: #FFDD00;">
-                Download Certification Portfolio <i class="fas fa-download"></i>
-            </a>
+        
+        <div class="resource-division-header">
+            <i class="fas fa-palette"></i> LIFESTYLE & DESIGN DIVISION (60 SKUs)
         </div>
-    </section>
-
-    <section class="resource-sections">
-        <div class="container resources-grid">
+        <div class="resources-grid">
             <div class="resource-card">
                 <span class="tag">BIFMA | TECHNICAL</span>
                 <h3>BIFMA X5.1 Stress Test Protocols</h3>
@@ -126,25 +164,102 @@
                 <p>Insights into material shifts, price forecasting, and regional demand dynamics for office furniture.</p>
                 <a href="#contact" class="text-link">Request File &rarr;</a>
             </div>
+            <div class="resource-card">
+                <span class="tag">ECO | SUSTAINABILITY</span>
+                <h3>Zero-VOC & Bamboo Fiber Certification (安吉君澜对标)</h3>
+                <p>详细的零 VOC 胶水使用报告和高密度竹纤维复合材料的耐久性与甲醛释放测试。</p>
+                <a href="#contact" class="text-link">Request File &rarr;</a>
+            </div>
+            <div class="resource-card">
+                <span class="tag">OUTDOOR | COMPLIANCE</span>
+                <h3>Marine Grade Aluminum & TIGER Drylac Powder Coat Specs</h3>
+                <p>户外家具使用的 Marine Grade 铝合金材料报告，包括抗盐雾、抗 UV 树脂藤编的寿命测试数据。</p>
+                <a href="#contact" class="text-link">Request File &rarr;</a>
+            </div>
+            <div class="resource-card">
+                <span class="tag">FLOORING | ENGINEERING</span>
+                <h3>SPC/WPC Quick-Lock Installation and Subfloor Preparation Guide</h3>
+                <p>针对商业项目快速铺装的 SPC/WPC 地板安装指南，包括 Subfloor 平整度和湿度要求。</p>
+                <a href="#contact" class="text-link">Request File &rarr;</a>
+            </div>
         </div>
-    </section>
-    
-    <section class="cta-banner" style="background: var(--primary); color: var(--white); padding: 50px 0; text-align: center;">
-        <div class="container">
-            <h2 style="font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 15px;">Need Specific Data? Request a Custom Guide.</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.8;">
-                Our team can generate customized logistics and compliance reports for your target region.
-            </p>
-            <a href="index.html#contact" class="btn btn-primary" style="background: #FFDD00; color: var(--primary); border-color: #FFDD00;">Request Customized Report</a>
-        </div>
-    </section>
-    
-    <footer class="footer" style="padding: 40px 0 20px;">
-        <div class="container" style="text-align: center;">
-            <p>&copy; 2026 YiShen Global. All rights reserved. | <a href="index.html#contact" style="color: var(--accent);">Get in Touch</a></p>
-        </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <div class="resource-division-header" style="border-bottom-color: var(--color-industrial);">
+            <i class="fas fa-tools" style="color: var(--color-industrial);"></i> ENGINEERING & RIGOR DIVISION (60 SKUs)
+        </div>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <span class="tag" style="background: var(--color-industrial); color: white;">RIGGING | SOURCING</span>
+                <h3>G100 Alloy Steel Forging Traceability Report</h3>
+                <p>高强度 G100 吊装链条和索具的批次溯源文件，包括无损探伤和极限拉伸测试数据。</p>
+                <a href="#contact" class="text-link">Request File &rarr;</a>
+            </div>
+            <div class="resource-card">
+                <span class="tag" style="background: var(--color-industrial); color: white;">SAFETY | EQUIPMENT</span>
+                <h3>EN131 & ANSI A14.2 Aluminum Ladder Safety and Load Specs</h3>
+                <p>铝合金和钢制梯具的 EN131 认证报告、安全载荷测试和电动/手动葫芦（Hoists）的操作手册。</p>
+                <a href="#contact" class="text-link">Request File &rarr;</a>
+            </div>
+            <div class="resource-card">
+                <span class="tag" style="background: var(--color-industrial); color: white;">CABLES | MARINE</span>
+                <h3>Synthetic (HMPE) vs. Steel Wire Rope Anti-Corrosion Analysis</h3>
+                <p>高模量纤维吊索 (Dyneema Equivalent) 与 316 不锈钢缆绳的耐盐雾和疲劳寿命对比分析。</p>
+                <a href="#contact" class="text-link">Request File &rarr;</a>
+            </div>
+        </div>
+
+        <div class="resource-division-header" style="border-bottom-color: var(--color-hightech);">
+            <i class="fas fa-microscope" style="color: var(--color-hightech);"></i> HIGH-TECH & BIO DIVISION (80 SKUs)
+        </div>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <span class="tag" style="background: var(--color-hightech); color: white;">ENERGY | LOGISTICS</span>
+                <h3>UL9540 ESS Certification & DGR Class 9 Lithium Battery Logistics Guide</h3>
+                <p>家用储能系统的 UL9540 认证文件和全球锂电池空运/海运的 DGR Class 9 危险品物流操作指南。</p>
+                <a href="#contact" class="text-link">Request File &rarr;</a>
+            </div>
+            <div class="resource-card">
+                <span class="tag" style="background: var(--color-hightech); color: white;">SEMICONDUCTOR | MATERIALS</span>
+                <h3>Wafer Grade High-Purity IPA/SiC Specifications Sheet</h3>
+                <p>半导体晶圆清洗用高纯度湿化学品（IPA）和 SiC 碳化硅材料的技术规格和杂质控制报告。</p>
+                <a href="#contact" class="text-link">Request File &rarr;</a>
+            </div>
+            <div class="resource-card">
+                <span class="tag" style="background: var(--color-hightech); color: white;">MEDICAL | PURITY</span>
+                <h3>GMP/FDA Polymer Purity and Sterile Consumables Quality Protocol</h3>
+                <p>GMP 标准下 PCR 板、一次性生物反应器和 IVD 耗材的聚合物纯度控制和无菌检测报告。</p>
+                <a href="#contact" class="text-link">Request File &rarr;</a>
+            </div>
+        </div>
+
+        <div class="resource-division-header" style="border-bottom: none; margin-top: 60px; margin-bottom: 20px;">
+            <i class="fas fa-user-tie"></i> STRATEGIC CONSULTATION
+        </div>
+        <div class="urgent-cta" style="background: #111; color: #fff;">
+            <h2>Unlock Your Custom Supply Chain Blueprint.</h2>
+            <p>Our expertise extends beyond public documentation. Request a custom **4PL Management or T1/T2 Supplier Risk Audit** tailored specifically to your operational demands.</p>
+            <a href="index.html#contact" class="btn btn-primary" style="background: var(--accent); color: var(--white); border-color: var(--accent);">
+                Schedule Custom Strategic Audit <i class="fas fa-rocket"></i>
+            </a>
+        </div>
+    </section>
+    
+    <section class="cta-banner" style="background: var(--accent); color: var(--white); padding: 50px 0; text-align: center;">
+        <div class="container">
+            <h2 style="font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 15px;">Need Specific Data? Request a Custom Guide.</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.8;">
+                Our team can generate customized logistics and compliance reports for your target region.
+            </p>
+            <a href="index.html#contact" class="btn btn-primary" style="background: #FFDD00; color: var(--primary); border-color: #FFDD00;">Request Customized Report</a>
+        </div>
+    </section>
+    
+    <footer class="footer" style="padding: 40px 0 20px;">
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2026 YiShen Global. All rights reserved. | <a href="index.html#contact" style="color: var(--accent);">Get in Touch</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
