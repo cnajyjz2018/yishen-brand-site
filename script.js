@@ -1,6 +1,7 @@
 /**
  * YiShen Global - script.js (V11.0 Final - 200 SKU, Cross-Industry Expansion)
- * Purpose: Integrates 10 strategic SBU groups (200 SKUs) and maintains all original filtering/UI logic.
+ * Purpose: Integrates 10 strategic SBU groups (200 SKUs), maintains all original filtering/UI logic, 
+ * and enhances renderSkuDetail for multi-division data visualization.
  */
 
 // =========================================================================
@@ -14,14 +15,23 @@ const PRODUCT_DATA_V11 = {
         { model: "DS-XC-R8-CF", division: "LIFESTYLE", feature: "Dynamic Lumbar + Carbon Fiber", desc: "X-Hybrid Adaptive Support System, Carbon Fiber finish, 5D Armrests. Vertical Control: Core Polymer Sourcing. Scene: AI Research Office.", hs_code: "9401.31.0000", price_range: "$350-$450", img: "assets/seating/OS-XC-R8.jpg" },
         { model: "DS-ALU-ZERO", division: "LIFESTYLE", feature: "Full Aluminum Frame + Zero-G Recline", desc: "Polished Aluminum frame, Synchro-Recline (Zero-Gravity). Vertical Control: Precision Aluminum Forging. Scene: Private Executive Study.", hs_code: "9401.71.9000", price_range: "$280-$380", img: "assets/seating/OS-ALU-ZERO.jpg" },
         { model: "DS-MOD-M9", division: "LIFESTYLE", feature: "Modular Mesh Back", desc: "Modular Design for easy parts swap, BIFMA Certified, High-Tensile Mesh. Vertical Control: Mesh Material QC. Scene: Corporate BPO Center.", hs_code: "9401.31.0000", price_range: "$150-$220", img: "assets/seating/OS-MOD-M9.jpg" },
-        { model: "DS-C20-MOD", division: "LIFESTYLE", feature: "Modular Sofa System", desc: "Custom modular fabric sofa system for commercial lounge areas. High density foam. Vertical Control: Fabric Fire Rating. Scene: Corporate Lounge.", hs_code: "9401.40.0000", price_range: "$200-$400/module", img: "assets/lounge/LS-C20-MOD.jpg" },
-        { model: "DS-D-DUAL", division: "LIFESTYLE", feature: "Dual Motor Standing Desk", desc: "Dual-Motor Standing Desk, Anti-Collision, Integrated Wireless Charging, Bamboo Top. Vertical Control: Core Motor Sourcing. Scene: Digital Creator Studio.", hs_code: "9403.30.0000", price_range: "$350-$480", img: "assets/desks/OD-D-DUAL.jpg" },
-        { model: "DS-B80-WL", division: "LIFESTYLE", feature: "Walnut Executive L-Desk", desc: "Walnut veneer L-shaped executive desk with integrated cable management. Custom hardware. Scene: Executive Office.", hs_code: "9403.30.0000", price_range: "$600-$850", img: "assets/desks/OD-B80-WL.jpg" },
-        { model: "DS-D10-OAK", division: "LIFESTYLE", feature: "Solid Oak Dining Table", desc: "Solid white oak rectangular dining table (180cm), durable oil finish. KD structure. Scene: High-End Residential.", hs_code: "9403.60.0000", price_range: "$600-$800", img: "assets/wooden/WH-D10-OAK.jpg" },
-        { model: "DS-R60-CHEST", division: "LIFESTYLE", feature: "5-Drawer Chest", desc: "Five-drawer chest of drawers (wood veneer), anti-tip safety hardware included. Scene: Residential Bedroom.", hs_code: "9403.50.0000", price_range: "$280-$380", img: "assets/wooden/WH-R60-CHEST.jpg" },
-        { model: "DS-T99-CONF", division: "LIFESTYLE", feature: "Modular Conference Table", desc: "Modular trapezoid conference tables (set of 6) for flexible room setups. Power grommets. Scene: Large Conference Hall.", hs_code: "9403.70.0000", price_range: "$400-$600/unit", img: "assets/desks/OD-T99-CONF.jpg" },
-        { model: "DS-H55-ACOUSTIC", division: "LIFESTYLE", feature: "Acoustic Pod Chair", desc: "High-back private pod chair with acoustic damping walls. Vertical Control: Sound Absorption Material. Scene: Open Plan Office.", hs_code: "9401.40.0000", price_range: "$800-$1200", img: "assets/lounge/LS-H55-ACOUSTIC.jpg" },
-        // ... (10 more unique SKUs to reach 20)
+        { model: "DS-C20-MOD", division: "LIFESTYLE", feature: "Modular Sofa System", desc: "Custom modular fabric sofa system for commercial lounge areas. High density foam. Vertical Control: Fabric Fire Rating. Scene: Corporate Lounge.", hs_code: "9401.40.0000", price_code: "standard", price_range: "$200-$400/module", img: "assets/lounge/LS-C20-MOD.jpg" },
+        { model: "DS-D-DUAL", division: "LIFESTYLE", feature: "Dual Motor Standing Desk", desc: "Dual-Motor Standing Desk, Anti-Collision, Integrated Wireless Charging, Bamboo Top. Vertical Control: Core Motor Sourcing. Scene: Digital Creator Studio.", hs_code: "9403.30.0000", price_code: "premium", price_range: "$350-$480", img: "assets/desks/OD-D-DUAL.jpg" },
+        { model: "DS-B80-WL", division: "LIFESTYLE", feature: "Walnut Executive L-Desk", desc: "Walnut veneer L-shaped executive desk with integrated cable management. Custom hardware. Scene: Executive Office.", hs_code: "9403.30.0000", price_code: "premium", price_range: "$600-$850", img: "assets/desks/OD-B80-WL.jpg" },
+        { model: "DS-D10-OAK", division: "LIFESTYLE", feature: "Solid Oak Dining Table", desc: "Solid white oak rectangular dining table (180cm), durable oil finish. KD structure. Scene: High-End Residential.", hs_code: "9403.60.0000", price_code: "premium", price_range: "$600-$800", img: "assets/wooden/WH-D10-OAK.jpg" },
+        { model: "DS-R60-CHEST", division: "LIFESTYLE", feature: "5-Drawer Chest", desc: "Five-drawer chest of drawers (wood veneer), anti-tip safety hardware included. Scene: Residential Bedroom.", hs_code: "9403.50.0000", price_code: "standard", price_range: "$280-$380", img: "assets/wooden/WH-R60-CHEST.jpg" },
+        { model: "DS-T99-CONF", division: "LIFESTYLE", feature: "Modular Conference Table", desc: "Modular trapezoid conference tables (set of 6) for flexible room setups. Power grommets. Scene: Large Conference Hall.", hs_code: "9403.70.0000", price_code: "standard", price_range: "$400-$600/unit", img: "assets/desks/OD-T99-CONF.jpg" },
+        { model: "DS-H55-ACOUSTIC", division: "LIFESTYLE", feature: "Acoustic Pod Chair", desc: "High-back private pod chair with acoustic damping walls. Vertical Control: Sound Absorption Material. Scene: Open Plan Office.", hs_code: "9401.40.0000", price_code: "premium", price_range: "$800-$1200", img: "assets/lounge/LS-H55-ACOUSTIC.jpg" },
+        { model: "DS-M-SINGLE", division: "LIFESTYLE", feature: "Single Motor Standing Desk", desc: "Single-motor electric standing desk, 3 memory presets, powder-coated steel frame. Vertical Control: Control Box. Scene: Small Office.", hs_code: "9403.30.0000", price_code: "standard", price_range: "$250-$350", img: "assets/desks/OD-M-SINGLE.jpg" },
+        { model: "DS-E50-EXECUTIVE", division: "LIFESTYLE", feature: "Full Leather Executive", desc: "Full grain genuine leather executive chair, wood trim details. Scene: CEO's Office.", hs_code: "9401.40.0000", price_code: "premium", price_range: "$450-$600", img: "assets/seating/OS-E50-EXECUTIVE.jpg" },
+        { model: "DS-B18-TASK", division: "LIFESTYLE", feature: "High Volume Task", desc: "Basic plastic back task chair, pneumatic lift. Optimized for container filling. Scene: Logistics Warehouse Office.", hs_code: "9401.31.0000", price_code: "economic", price_range: "$40-$60", img: "assets/seating/OS-B18-TASK.jpg" },
+        { model: "DS-001", division: "LIFESTYLE", feature: "Fixed Lumbar High Volume", desc: "Fixed lumbar, High volume SKU. FCL: 750 units.", hs_code: "9401.31.0000", price_code: "economic", price_range: "$70-$100", img: "assets/images/economic-simple-black.jpg" },
+        { model: "DS-002", division: "LIFESTYLE", feature: "2D Adjustable Mid-Market", desc: "2D adjustable lumbar/armrests, High mesh content. Mid-market stable.", hs_code: "9401.31.0000", price_code: "standard", price_range: "$120-$180", img: "assets/images/standard-2d-lumbar-black.jpg" },
+        { model: "DS-007", division: "LIFESTYLE", feature: "Dynamic Aluminum Base", desc: "Dynamic lumbar, Aluminum base, UL Certified. Flagship stability.", hs_code: "9401.31.0000", price_code: "premium", price_range: "$300-$400", img: "assets/images/premium-aluminum-base-black.jpg" },
+        { model: "DS-012", division: "LIFESTYLE", feature: "Fixed Arms & Headrest", desc: "Fixed arms and headrest. Simplest assembly for DTC.", hs_code: "9401.31.0000", price_code: "economic", price_range: "$80-$120", img: "assets/images/economic-headrest-black.jpg" },
+        { model: "DS-020", division: "LIFESTYLE", feature: "Synchro Tilt Mechanism", desc: "Synchronous tilt mechanism, nylon base, popular standard model.", hs_code: "9401.31.0000", price_code: "standard", price_range: "$150-$220", img: "assets/images/standard-synchrotilt-black.jpg" },
+        { model: "DS-050", division: "LIFESTYLE", feature: "4D Armrests Wire Control", desc: "4D armrests, advanced wire control mechanism. Highest durability rating.", hs_code: "9401.31.0000", price_code: "premium", price_range: "$350-$450", img: "assets/images/premium-wire-control-black.jpg" },
+        { model: "DS-G40-GAMING", division: "LIFESTYLE", feature: "Gaming High Back", desc: "Ergonomic racing style gaming chair with lumbar cushion. PVC Leather. Scene: Esports Training Center.", hs_code: "9401.31.0000", price_code: "standard", price_range: "$120-$180", img: "assets/seating/OS-G40-GAMING.jpg" },
     ],
     // 2. 表面材料系统 (Cladding & Flooring) - 20 SKUs
     surface_materials: [
@@ -83,11 +93,22 @@ const PRODUCT_DATA_V11 = {
     ]
 };
 
-// --- Helper Functions ---
+// --- Helper Functions for V11.0 ---
+
+// Get the color code for the detail page based on division
+const getDivisionColor = (division) => {
+    switch (division) {
+        case 'LIFESTYLE': return '#FFC300';
+        case 'INDUSTRIAL': return '#333333';
+        case 'HIGHTECH': return '#007bff';
+        case 'ACCESSORY': return '#0077B6';
+        case 'SERVICE': return '#0077B6';
+        default: return '#0077B6'; // Default Accent Color
+    }
+};
 
 // Map Tier (used in filtering) to the first 20 SKUs (Furniture)
 const getTier = (model) => {
-    // Only map the first 20 SKUs (original mesh chairs) to the old tier system for index page demo compatibility
     const meshSku = ALL_MESH_CHAIR_SKUS.find(sku => sku.model === model);
     return meshSku ? meshSku.tier : 'standard'; 
 };
@@ -99,19 +120,20 @@ const getBifma = (model) => {
     const meshSku = ALL_MESH_CHAIR_SKUS.find(sku => sku.model === model);
     return meshSku ? meshSku.bifma : 'bifma';
 };
-// Use the old 20-SKU dataset for filtering compatibility only
+
+// Use the mock 20-SKU dataset for filtering compatibility on index.html
 const ALL_MESH_CHAIR_SKUS = [
-    // This array needs to be retained here for the old filtering logic to function without breaking.
-    // Since the actual data is now in PRODUCT_DATA_V11, this is an array of IDs used for lookup.
-    // For simplicity and compatibility, we'll extract the first 20 SKUs (seating) from the new map.
+    // This array is reconstructed using models from the new space_design_modules for compatibility
     ...PRODUCT_DATA_V11.space_design_modules.slice(0, 20).map((sku, index) => ({
         model: sku.model,
-        tier: index < 5 ? 'economic' : (index < 12 ? 'standard' : 'premium'), // Simulating old tier based on index
-        lumbar: index % 3 === 0 ? 'dynamic' : (index % 3 === 1 ? '2d' : 'fixed'), // Simulating old lumbar based on index
-        bifma: index % 2 === 0 ? 'bifma' : 'ul', // Simulating old bifma based on index
-        desc: sku.feature,
+        // Mocked tier, lumbar, and bifma values to match the filter inputs on index.html
+        tier: index < 5 ? 'economic' : (index < 12 ? 'standard' : 'premium'), 
+        lumbar: index % 3 === 0 ? 'dynamic' : (index % 3 === 1 ? '2d' : 'fixed'),
+        bifma: index % 2 === 0 ? 'bifma' : 'ul', 
+        feature: sku.feature,
         img: sku.img,
-        signals: { retail: 'Comp', dtc: 'Fast', enterprise: 'Cert' },
+        desc: sku.desc,
+        // Adding specs required for the detail page rendering (simplified for mock data)
         specs: { arms: '4D', tilt: 'Fluid', base: 'Alu', warranty: '5 Year', material: 'Mesh' }
     }))
 ];
@@ -135,7 +157,7 @@ function renderSkuCard(sku) {
     const card = document.createElement('div');
     card.className = 'sku-card mesh-chair-card';
     // Use helper functions to maintain compatibility with old filters:
-    card.setAttribute('data-price', getTier(sku.model)); 
+    card.setAttribute('data-price', getTier(sku.model)); 
     card.setAttribute('data-lumber', getLumbar(sku.model));
     card.setAttribute('data-bifma', getBifma(sku.model));
 
@@ -204,7 +226,7 @@ function applyFilters() {
    
 // --- Hotspot Rendering Logic (Index.html) ---
 function renderHotspots() {
-    const showcaseImage = document.getElementById('mesh-chair-showcase');
+    const showcaseImage = document.getElementById('mesh-chair-showcase');
     if (!showcaseImage) return;
 
     const infoDisplay = document.createElement('div');
@@ -246,46 +268,85 @@ function handleHotspotLeave(infoDisplay) {
    
 // --- SKU Detail Page Rendering (sku-detail.html logic) ---
 function renderSkuDetail() {
-    const detailContent = document.getElementById('detail-content');
-    const urlParams = new URLSearchParams(window.location.search);
-    const model = urlParams.get('model');
-    const skuData = findSku(model);
+    // --- 1. Get SKU Data and Division Color ---
+    const urlParams = new URLSearchParams(window.location.search);
+    const model = urlParams.get('model');
+    const skuData = findSku(model);
 
-    // Placeholder DOM elements (assuming they exist on sku-detail.html)
-    const pageTitle = document.title; 
-    const skuName = document.getElementById('skuName');
-    const skuTagline = document.getElementById('skuTagline');
-    const skuImage = document.getElementById('skuImage');
-    const specsTableBody = document.getElementById('specsTableBody');
-    const skuFeatures = document.getElementById('skuFeatures');
-    
     if (!skuData) {
-        if (skuName) skuName.textContent = "Error: Product Model Not Found";
+        document.getElementById('skuName').textContent = "Error: Product Model Not Found";
         return;
     }
-
-    // Set Metadata and Header
-    document.title = `Specs: Model ${skuData.model} - YiShen Global`;
-    if (skuName) skuName.textContent = `Model: ${skuData.model} (${skuData.division.toUpperCase()} Division)`;
-    if (skuTagline) skuTagline.textContent = skuData.feature;
-    if (skuImage) skuImage.src = skuData.img;
     
-    // Populate Specifications Table (Simplified for all 200 SKUs)
-    if (specsTableBody) {
-        specsTableBody.innerHTML = `
-            <tr><th>HS Code</th><td>${skuData.hs_code || 'N/A'}</td></tr>
-            <tr><th>Vertical Control Point</th><td>${skuData.Vertical_Control || 'Standard QC'}</td></tr>
-            <tr><th>Scene Ecology</th><td>${skuData.Scene || 'General Application'}</td></tr>
-            <tr><th>Price Range</th><td>${skuData.price_range}</td></tr>
-            <tr><th>Division</th><td>${skuData.division.toUpperCase()}</td></tr>
-        `;
+    // Determine division color
+    const divisionColor = getDivisionColor(skuData.division);
+    const accentColor = 'var(--accent)'; // Default global accent
+
+    // --- 2. Dynamic Styling (Border/Buttons) ---
+    const detailSection = document.getElementById('detailSection');
+    const divisionTag = document.getElementById('divisionTag');
+    const quoteButton = document.getElementById('quoteButton');
+    const dataSheetLink = document.getElementById('dataSheetLink');
+    const skuFeaturesList = document.getElementById('skuFeatures');
+
+    if (detailSection) detailSection.style.borderLeftColor = divisionColor;
+    if (divisionTag) divisionTag.textContent = skuData.division.toUpperCase();
+    if (quoteButton) {
+        quoteButton.style.backgroundColor = divisionColor;
+        quoteButton.style.borderColor = divisionColor;
+        quoteButton.style.color = skuData.division === 'LIFESTYLE' ? 'var(--primary)' : 'var(--white)'; // LIFESTYLE uses bright yellow, needs dark text
+        quoteButton.href = `mailto:sales@yishenglobal.net?subject=Quote Request for SKU ${skuData.model}`;
+    }
+    if (dataSheetLink) {
+        dataSheetLink.style.borderColor = divisionColor;
+        dataSheetLink.style.color = divisionColor;
+        dataSheetLink.href = `mailto:alex.yang@yishenglobal.net?subject=Technical%20Data%20Request%20for%20SKU%20${skuData.model}`;
     }
 
-    // Populate Key Features
-    if (skuFeatures) {
-        skuFeatures.innerHTML = `<li>${skuData.desc}</li>`;
-        skuFeatures.innerHTML += `<li><strong style="color: #0077B6;">${skuData.feature}</strong></li>`;
-        skuFeatures.innerHTML += `<li style="margin-top: 10px;"><strong style="color: #FFC300;">Download Technical Data Sheet (PDF) →</strong></li>`;
+    // --- 3. Populate Info Section ---
+    document.title = `Specs: Model ${skuData.model} (${skuData.division}) - YiShen Global`;
+    document.getElementById('skuName').textContent = `${skuData.model} - ${skuData.feature}`;
+    document.getElementById('skuTagline').textContent = skuData.desc;
+    document.getElementById('skuImage').src = skuData.img;
+    
+    // Populate Data Cards (NEW)
+    document.getElementById('verticalControl').textContent = skuData.Vertical_Control || skuData.Vertical_Control_Point || 'N/A';
+    document.getElementById('sceneEcology').textContent = skuData.Scene || skuData.Scene_Ecology || 'General Application';
+    document.getElementById('hsCode').textContent = skuData.hs_code || 'Awaiting Classification';
+    document.getElementById('priceRange').textContent = skuData.price_range || 'Inquire for Price';
+
+
+    // --- 4. Populate Specifications Table ---
+    const specsTableBody = document.getElementById('specsTableBody');
+    if (specsTableBody) {
+        // Clear placeholder rows
+        specsTableBody.innerHTML = ''; 
+        
+        // Add dynamic data rows (can be extended based on SKU type in a production environment)
+        specsTableBody.innerHTML += `
+            <tr><th>Division / Tier</th><td>${skuData.division.toUpperCase()} / ${getTier(skuData.model).toUpperCase()}</td></tr>
+            <tr><th>Feature Tag</th><td>${skuData.feature}</td></tr>
+            <tr><th>Compliance (Mock)</th><td>${getBifma(skuData.model).toUpperCase()}</td></tr>
+        `;
+        
+        // Add SKU-specific specs if available (e.g., from old mesh chairs mock)
+        const oldMockSku = ALL_MESH_CHAIR_SKUS.find(s => s.model === skuData.model);
+        if (oldMockSku && oldMockSku.specs) {
+             specsTableBody.innerHTML += `
+                <tr><th>Arm Adjustment</th><td>${oldMockSku.specs.arms}</td></tr>
+                <tr><th>Tilt Mechanism</th><td>${oldMockSku.specs.tilt}</td></tr>
+                <tr><th>Warranty</th><td>${oldMockSku.specs.warranty}</td></tr>
+             `;
+        }
+    }
+
+    // --- 5. Populate Differentiators (Features List) ---
+    if (skuFeaturesList) {
+        skuFeaturesList.innerHTML = '';
+        skuFeaturesList.innerHTML += `<li>${skuData.desc}</li>`;
+        skuFeaturesList.innerHTML += `<li style="font-weight: 700; color: ${divisionColor};">Vertical Control Focus: ${skuData.Vertical_Control || skuData.Vertical_Control_Point}</li>`;
+        skuFeaturesList.innerHTML += `<li>Primary Application Scene: ${skuData.Scene || skuData.Scene_Ecology}</li>`;
+        skuFeaturesList.innerHTML += `<li style="margin-top: 10px;"><strong style="color: ${divisionColor};">Download Technical Data Sheet (PDF) →</strong></li>`;
     }
 }
 
@@ -299,7 +360,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
     const stickyCta = document.getElementById('stickyCta');
-    const showcaseImage = document.getElementById('mesh-chair-showcase');
     const priceFilter = document.getElementById('filter-price');
     const lumberFilter = document.getElementById('filter-lumber');
     const bifmaFilter = document.getElementById('filter-bifma');
@@ -309,11 +369,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const isDetailPage = document.body.classList.contains('sku-detail');
     const isIndexPage = document.getElementById('home') !== null;
 
-    // --- Initialization ---
+    // --- Initialization ---
+    // Note: Hotspot rendering relies on showcaseImage, which is null on detail page
     if (isDetailPage) {
         renderSkuDetail();
     } else if (isIndexPage) {
-        renderHotspots();
+        // Only run renderHotspots and applyFilters if the elements exist (i.e., not a solution/detail page)
+        const showcaseImage = document.getElementById('mesh-chair-showcase');
+        if (showcaseImage) renderHotspots();
         if (priceFilter) applyFilters();
     }
     
