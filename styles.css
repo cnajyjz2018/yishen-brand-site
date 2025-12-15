@@ -1,4 +1,4 @@
-/* styles.css - V27.0 Ultimate Visual Depth Edition */
+/* styles.css - V28.0 Complete Unified Edition */
 
 /* --- ROOT VARIABLES & RESET --- */
 :root {
@@ -62,18 +62,19 @@ p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; max-width
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
 
-/* Standard Feature Card */
-.feature-card { background: white; padding: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+/* Standard Feature Card (Base Style) */
+.feature-card { background: white; padding: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); transition: all 0.4s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; }
 .feature-card:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.1); }
 .card-img { height: 260px; width: 100%; object-fit: cover; transition: 0.4s; }
 .feature-card:hover .card-img { transform: scale(1.05); }
-.card-body { padding: 40px; }
+.card-body { padding: 40px; flex-grow: 1; display: flex; flex-direction: column; }
 .card-body li { margin-bottom: 12px; display: flex; align-items: center; font-weight: 500; }
 .card-body i { color: var(--accent); margin-right: 12px; }
 
-/* --- V27.0 NEW: B2B VISUAL CATALOG ITEMS --- */
-.catalog-item { text-align: left; padding: 25px; cursor: pointer; border: 1px solid var(--border); background: white; transition: all 0.3s ease; display: flex; flex-direction: column; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-.catalog-item:hover { border-color: var(--gold); box-shadow: 0 15px 40px rgba(217, 119, 6, 0.15); transform: translateY(-5px); }
+/* --- V27.0 NEW: B2B VISUAL CATALOG ITEMS (Homepage) --- */
+/* Note: .catalog-item is used combined with .feature-card */
+.catalog-item { text-align: left; padding: 25px; cursor: pointer; }
+.catalog-item:hover { border-color: var(--gold); box-shadow: 0 15px 40px rgba(217, 119, 6, 0.15); }
 .catalog-item h5 { font-size: 1.1rem; margin-bottom: 15px; color: var(--primary); display: flex; align-items: center; justify-content: space-between; }
 .catalog-item h5 i { color: var(--accent); opacity: 0.7; font-size: 1rem; transition: 0.3s; }
 .catalog-item:hover h5 i { color: var(--gold); opacity: 1; }
@@ -86,6 +87,13 @@ p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; max-width
 .sku-count { font-weight: 700; color: var(--primary); }
 .view-link { color: var(--accent); font-weight: 600; font-size: 0.8rem; transition: 0.3s;}
 .catalog-item:hover .view-link { color: var(--gold); }
+
+/* --- V28.0 NEW: PROJECT CARD STYLES (Solutions Page) --- */
+/* Note: .project-card is used combined with .feature-card */
+.project-card h4 { font-size: 1.4rem; margin-bottom: 15px; color: var(--primary); }
+.project-metrics { display: flex; gap: 30px; margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--border); }
+.project-metrics div { font-size: 0.85rem; color: var(--secondary); line-height: 1.3; font-weight: 500; }
+.project-metrics span { display: block; font-size: 1.6rem; font-weight: 700; color: var(--accent); margin-bottom: 5px; font-family: var(--font-serif); }
 
 /* --- TESTIMONIALS --- */
 .testimonial-card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); position: relative; border: 1px solid var(--border); }
@@ -126,7 +134,7 @@ p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; max-width
     h1 { font-size: 3rem; } h2 { font-size: 2.2rem; }
     .section-padding { padding: 80px 0; }
     .grid-2, .grid-3, .grid-4, .footer-grid { grid-template-columns: 1fr; gap: 50px; }
-    .mini-prod-grid { grid-template-columns: repeat(4, 1fr); } /* Keep 4 on mobile for dense look */
+    .mini-prod-grid { grid-template-columns: repeat(4, 1fr); }
     .footer-grid, .footer-cta-box, .social-links { text-align: center; justify-content: center; }
     .nav-links { display: none; position: absolute; top: 90px; left: 0; width: 100%; background: white; flex-direction: column; padding: 30px 0; border-bottom: 1px solid #eee; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
     .nav-links.active { display: flex; } .mobile-menu-btn { display: block; }
