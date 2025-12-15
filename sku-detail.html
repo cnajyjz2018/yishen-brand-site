@@ -11,30 +11,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
 <style>
-    /* 针对详细数据页的表格进行微调，使其容纳更多数据 */
-    .detail-table-container {
-        overflow-x: auto;
-        margin-top: 30px;
-    }
-    .detail-table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 0.85rem; /* 稍微缩小字体以适应更多列 */
-    }
-    .detail-table th {
-        background-color: var(--primary);
-        color: white;
-        padding: 15px;
-        text-align: left;
-        font-weight: 600;
-        white-space: nowrap;
-        border-bottom: 3px solid var(--accent);
-    }
-    .detail-table td {
-        padding: 12px 15px;
-        border-bottom: 1px solid var(--border);
-        vertical-align: middle;
-    }
+    .detail-table-container { overflow-x: auto; margin-top: 30px; }
+    .detail-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    .detail-table th { background-color: var(--primary); color: white; padding: 15px; text-align: left; font-weight: 600; white-space: nowrap; border-bottom: 3px solid var(--accent); }
+    .detail-table td { padding: 12px 15px; border-bottom: 1px solid var(--border); vertical-align: middle; }
     .detail-table tr:nth-child(even) { background-color: #f8fafc; }
     .detail-table tr:hover { background-color: rgba(0, 122, 255, 0.05); }
     .sku-model { font-weight: 700; color: var(--primary); }
@@ -55,15 +35,15 @@
                 <a href="resources.html" class="active">Resources</a>
                 <a href="contact.html" class="nav-cta">Contact Us</a>
             </div>
-        </nav>
+        </div>
     </nav>
 
     <header class="page-header bg-dark" style="padding-top: 180px; padding-bottom: 100px; background-image: linear-gradient(rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.9)), url('hero-bg.jpg'); background-position: center;">
         <div class="container">
             <div style="margin-bottom: 20px; font-size: 0.9rem; color: var(--silver);">
-                <a href="resources.html" style="color: var(--accent);">Resources</a> <i class="fas fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> Category Details
+                <a href="resources.html" style="color: var(--accent);">Technical Data Hub</a> <i class="fas fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> Ergonomic Seating
             </div>
-            <h1 style="font-size: 2.5rem; margin-bottom: 15px;">SKU Detail: Ergonomic Seating</h1>
+            <h1 style="font-size: 2.5rem; margin-bottom: 15px;">SKU Detail: Ergonomic Seating Series</h1>
             <p style="margin-bottom: 0;">Engineering specifications and logistical data for the S-Series and Pro-Line seating platforms.</p>
         </div>
     </header>
@@ -72,9 +52,9 @@
         <div class="container">
             
             <div class="resource-category-header">
-                <h3><i class="fas fa-database tech-accent"></i> Master Engineering Data Table</h3>
+                <h3><i class="fas fa-database tech-accent"></i> Master Engineering Data Table (30 Active SKUs)</h3>
                 <div class="engineering-note">
-                    <strong>Technical Note:</strong> The data below represents active SKUs available for B2B procurement. Loading quantities are based on optimized KD (Knock-Down) packaging in a 40'HQ container. All materials meet BIFMA X5.1 standards unless noted.
+                    <strong>Technical Note:</strong> The data below represents active SKUs available for B2B procurement. Loading quantities are based on optimized KD (Knock-Down) packaging in a 40'HQ container. All materials meet BIFMA X5.1 standards unless noted. **[重要：请在此处填充您的真实数据]**
                 </div>
             </div>
 
@@ -82,11 +62,11 @@
                 <table class="detail-table data-matrix-table">
                     <thead>
                         <tr>
-                            <th>Model SKU</th>
+                            <th>Model SKU ID</th>
                             <th>Status</th>
                             <th>Mechanism Type</th>
-                            <th>Base & Casters</th>
-                            <th>Main Material (Back/Seat)</th>
+                            <th>Key Component Brand</th>
+                            <th>Material (Mesh/Foam)</th>
                             <th>Dimensions (W*D*H cm)</th>
                             <th>MOQ</th>
                             <th>40'HQ Load (pcs)</th>
@@ -95,12 +75,12 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="sku-model">S-Pro-9001 (Flagship)</td>
+                            <td class="sku-model">S-Pro-9001</td>
                             <td><span class="sku-status active"><i class="fas fa-check-circle"></i> Active</span></td>
                             <td>Donati Synchro (4:1)</td>
-                            <td>700mm Alu / 65mm PU</td>
+                            <td>Donati / Samhongsa</td>
                             <td>KR Wintex Mesh / Molded Foam</td>
-                            <td>68 * 65 * 115-125</td>
+                            <td>68 x 65 x 115-125</td>
                             <td>50</td>
                             <td class="spec-highlight">650</td>
                             <td><a href="#" class="tech-accent"><i class="far fa-file-pdf"></i> PDF</a></td>
@@ -109,9 +89,9 @@
                             <td class="sku-model">S-Mid-8050</td>
                             <td><span class="sku-status active"><i class="fas fa-check-circle"></i> Active</span></td>
                             <td>Weight-Sensitive Auto</td>
-                            <td>680mm Nylon / 60mm PU</td>
-                            <td>CN High-Elast Mesh / Molded Foam</td>
-                            <td>66 * 62 * 110-118</td>
+                            <td>Bock / Korea Gas Lift</td>
+                            <td>Premium CN Mesh / Molded Foam</td>
+                            <td>66 x 62 x 110-118</td>
                             <td>100</td>
                             <td class="spec-highlight">720</td>
                             <td><a href="#" class="tech-accent"><i class="far fa-file-pdf"></i> PDF</a></td>
@@ -120,36 +100,26 @@
                             <td class="sku-model">S-Task-7020</td>
                             <td><span class="sku-status active"><i class="fas fa-check-circle"></i> Active</span></td>
                             <td>Simple Tilt (2-lock)</td>
-                            <td>640mm Nylon / 50mm Nylon</td>
+                            <td>Local Class 3 Lift</td>
                             <td>Standard Mesh / Cut Foam</td>
-                            <td>62 * 58 * 105-113</td>
+                            <td>62 x 58 x 105-113</td>
                             <td>200</td>
                             <td class="spec-highlight">850</td>
                             <td><a href="#" class="tech-accent"><i class="far fa-file-pdf"></i> PDF</a></td>
                         </tr>
-                        <tr style="opacity: 0.6; background-color: #eee;">
-                            <td class="sku-model" style="color: #666;">L-Legacy-500 (Disc.)</td>
-                            <td><span style="color: #999;"><i class="fas fa-times-circle"></i> Discontinued</span></td>
-                            <td>Basic Swivel</td>
-                            <td>600mm PP / 50mm PP</td>
-                            <td>Basic Fabric / Recycled Foam</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                        </tr>
-                    </tbody>
+                        </tbody>
                 </table>
             </div>
 
             <div style="margin-top: 60px;">
-                 <h4 style="margin-bottom: 25px;">Series Visual Reference</h4>
+                 <h4 style="margin-bottom: 25px;">Series Visual Reference (V31.0 Engineering Lens)</h4>
                  <div class="grid-4">
-                     <img src="product-chair.jpg" style="border-radius: 4px; border: 1px solid var(--border);">
-                     <img src="product-chair.jpg" style="border-radius: 4px; border: 1px solid var(--border);">
-                     <img src="product-chair.jpg" style="border-radius: 4px; border: 1px solid var(--border);">
-                     <div style="background: #f8fafc; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--silver); font-weight: 600; height: 200px;">
-                         <i class="fas fa-drafting-compass" style="margin-right: 10px;"></i> CAD Drawing
+                     <img src="ergo-SPro9001-context-office.jpg" alt="Context Scene" style="border-radius: 4px; border: 1px solid var(--border);">
+                     <img src="ergo-SPro9001-detail-mesh.jpg" alt="Nano Detail Mesh" style="border-radius: 4px; border: 1px solid var(--border);">
+                     <img src="ergo-SPro9001-detail-mech.jpg" alt="Nano Detail Mechanism" style="border-radius: 4px; border: 1px solid var(--border);">
+                     <div style="background: #f8fafc; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--secondary); font-weight: 600; height: 200px; flex-direction: column;">
+                         <i class="fas fa-drafting-compass" style="margin-right: 10px; font-size: 1.5rem;"></i> Full CAD Package
+                         <span style="font-size: 0.9rem; margin-top: 5px;">(Available upon request)</span>
                      </div>
                  </div>
             </div>
@@ -167,30 +137,44 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h3 style="margin-bottom: 25px;">YiShen Global</h3>
-                    <p style="opacity: 0.8; max-width: 300px;">Engineered supply chain solutions. Bridging manufacturing excellence with global market predictability.</p>
+            <div class="footer-grid grid-4" style="gap: 40px; align-items: start;">
+                <div style="text-align: left;">
+                    <h3 style="margin-bottom: 20px; font-size: 1.4rem;">YiShen Global</h3>
+                    <p style="opacity: 0.8; font-size: 0.9rem; max-width: 250px; margin-bottom: 0;">
+                        Engineered supply chain solutions. Bridging Asian manufacturing excellence with global market predictability.
+                    </p>
                 </div>
-                <div>
-                    <h4>Quick Links</h4>
-                    <ul class="contact-list" style="display: block;">
-                        <li><a href="solutions.html">Solutions</a></li>
-                        <li><a href="industries.html">Industries</a></li>
-                        <li><a href="resources.html">Resources</a></li>
+                <div style="text-align: left;">
+                    <h4 style="font-size: 1rem; margin-bottom: 20px;">Core Solutions</h4>
+                    <ul class="contact-list" style="display: block; font-size: 0.9rem;">
+                        <li style="margin-bottom: 12px;"><a href="solutions.html">DTC E-commerce Fulfillment</a></li>
+                        <li style="margin-bottom: 12px;"><a href="solutions.html">B2B Bulk Procurement</a></li>
+                        <li><a href="solutions.html">Project Cargo & OOG</a></li>
                     </ul>
                 </div>
-                <div class="footer-cta-box">
-                    <h4>Connect</h4>
-                    <div class="social-links">
+                <div style="text-align: left;">
+                    <h4 style="font-size: 1rem; margin-bottom: 20px;">Company & Resources</h4>
+                    <ul class="contact-list" style="display: block; font-size: 0.9rem;">
+                        <li style="margin-bottom: 12px;"><a href="why-us.html">Why Us (The Lab)</a></li>
+                        <li style="margin-bottom: 12px;"><a href="industries.html">Industry Sectors</a></li>
+                        <li style="margin-bottom: 12px;"><a href="resources.html">Technical Specs Data</a></li>
+                        <li><a href="site-architecture.html" class="tech-accent" style="font-weight: 600;"><i class="fas fa-sitemap" style="margin-right: 6px;"></i> Site Blueprint</a></li>
+                    </ul>
+                </div>
+                <div class="footer-cta-box" style="text-align: left; padding: 0; background: none; border: none; box-shadow: none;">
+                    <h4 style="font-size: 1rem; margin-bottom: 20px;">Connect</h4>
+                    <div class="social-links" style="justify-content: flex-start; flex-wrap: wrap; gap: 8px;">
                         <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://x.com/AlexYan03451555" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
                         <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/alex.yang.427745" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/alexyang591/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
+                    <p style="margin-top: 20px; font-size: 0.85rem; opacity: 0.6;">Based in Anji & Hangzhou, China.</p>
                 </div>
             </div>
-            <div class="copyright">
-                &copy; 2026 YiShen Global. All Rights Reserved. | engineered in China.
+            <div class="copyright" style="text-align: left; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; margin-top: 40px;">
+                &copy; 2026 YiShen Global. All Rights Reserved. | Engineered in China.
             </div>
         </div>
     </footer>
