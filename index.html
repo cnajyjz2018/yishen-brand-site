@@ -21,9 +21,7 @@
                 <a href="index.html" class="active">Home</a>
                 <a href="why-us.html">Why Us</a>
                 <a href="solutions.html">Solutions</a>
-                <a href="industries.html">Industries</a>
-                <a href="resources.html">Resources</a>
-                <a href="contact.html" class="nav-cta">Contact Us</a>
+                <a href="industries.html">Industries</a> <a href="resources.html">Resources</a>   <a href="contact.html" class="nav-cta">Contact Us</a>
             </div>
         </div>
     </nav>
@@ -53,10 +51,10 @@
         <div class="container text-center">
             <p style="font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 40px; font-size: 0.85rem;">Trusted by Global Innovators & Retailers</p>
             <div class="logo-grid" style="display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; align-items: center;">
-                <span class="trust-item">STAPLES</span>
-                <span class="trust-item">Office Depot</span>
-                <span class="trust-item">AUTONOMOUS</span>
-                <span class="trust-item">UL Certified</span>
+                <a href="#" class="trust-item" style="opacity: 0.5; transition: all 0.3s ease; font-weight: 800; font-size: 1.5rem; color: #64748b;">STAPLES</a>
+                <a href="#" class="trust-item" style="opacity: 0.5; transition: all 0.3s ease; font-weight: 800; font-size: 1.5rem; color: #64748b;">Office Depot</a>
+                <a href="#" class="trust-item" style="opacity: 0.5; transition: all 0.3s ease; font-weight: 800; font-size: 1.5rem; color: #64748b;">AUTONOMOUS</a>
+                <a href="#" class="trust-item" style="opacity: 0.5; transition: all 0.3s ease; font-weight: 800; font-size: 1.5rem; color: #64748b;">UL Certified</a>
             </div>
         </div>
     </section>
@@ -112,7 +110,34 @@
                 <p>Explore our vertically integrated product portfolio. Engineered for global procurement standards.</p>
             </div>
 
-            <div class="catalog-list grid-3">
+            <div class="specs-container">
+                <table class="specs-table">
+                    <thead>
+                        <tr>
+                            <th>Category & Standard</th>
+                            <th>Key Material / Component</th>
+                            <th>Certifications (Available)</th>
+                            <th>Logistics Info (40'HQ)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="specs-highlight">Ergonomic Seating (ANSI/BIFMA)</td>
+                            <td>High-Tensile Mesh, PA66+GF Frame, Class 4 Gas Lift</td>
+                            <td>BIFMA X5.1, GreenGuard Gold</td>
+                            <td>~650-750 Units (KD)</td>
+                        </tr>
+                        <tr>
+                            <td class="specs-highlight">Height Adjustable Desks (UL)</td>
+                            <td>Industrial Steel Frame, Dual/Single Motor</td>
+                            <td>UL 962, CE, FCC, RoHS</td>
+                            <td>~400-500 Sets</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="catalog-list grid-3" style="margin-top: 40px;">
                 <div class="catalog-item">
                     <h5>Ergonomic Seating <i class="fas fa-chair"></i></h5>
                     <div class="mini-prod-grid">
@@ -131,7 +156,7 @@
                     <div class="mini-prod-grid">
                         <img src="div-lifestyle.jpg" class="mini-thumb" style="object-position: bottom;" loading="lazy">
                         <img src="div-lifestyle.jpg" class="mini-thumb" style="object-position: bottom;" loading="lazy">
-                        <img src="div-lifestyle.jpg" class="mini-thumb" style="object-position: bottom;" loading="lazy">
+                        <div class="mini-thumb"></div>
                         <div class="mini-more">+18</div>
                     </div>
                     <div class="catalog-meta">
@@ -202,7 +227,7 @@
                 <div class="testimonial-card">
                     <p class="testimonial-quote">"YiShen's engineering approach to packaging saved us. Their ISTA 6A solution reduced our e-commerce damage rates by over 40% immediately."</p>
                     <div class="testimonial-author">
-                        <img src="avatar-1.jpg" alt="Client Avatar" class="author-avatar" loading="lazy" onerror="this.style.backgroundColor='#ccc'">
+                        <img src="avatar-1.jpg" alt="Client Avatar" class="author-avatar" loading="lazy" onerror="this.style.backgroundColor='#ccc';this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'60\' height=\'60\' viewBox=\'0 0 60 60\'%3E%3Crect width=\'60\' height=\'60\' fill=\'%23cccccc\'/%3E%3C/svg%3E'">
                         <div class="author-info">
                             <h5>Sarah J.</h5>
                             <span>Ops Director, US E-commerce Brand</span>
@@ -212,7 +237,7 @@
                 <div class="testimonial-card">
                     <p class="testimonial-quote">"The consistency is remarkable. From the Korean mesh quality to the final DDP delivery, YiShen provides the predictability big-box retail demands."</p>
                     <div class="testimonial-author">
-                        <img src="avatar-2.jpg" alt="Client Avatar" class="author-avatar" loading="lazy" onerror="this.style.backgroundColor='#ccc'">
+                        <img src="avatar-2.jpg" alt="Client Avatar" class="author-avatar" loading="lazy" onerror="this.style.backgroundColor='#ccc';this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'60\' height=\'60\' viewBox=\'0 0 60 60\'%3E%3Crect width=\'60\' height=\'60\' fill=\'%23cccccc\'/%3E%3C/svg%3E'">
                         <div class="author-info">
                             <h5>Michael T.</h5>
                             <span>Procurement Lead, European Retail Chain</span>
@@ -248,9 +273,11 @@
                 <div class="footer-cta-box">
                     <h4>Connect</h4>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://x.com/AlexYan03451555" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-                        <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/AlexYan03451555" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/alex.yang.427745" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/alexyang591/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
