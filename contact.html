@@ -11,20 +11,20 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
 <style>
-    /* Contact Page Specific Styles */
-    .contact-form-container { background: white; padding: 50px; border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 1px solid var(--border); }
+    /* Contact Page Specific Styles (Inline for simplicity here, or move to styles.css) */
+    .contact-form-container { background: white; padding: 50px; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 1px solid var(--border); }
     .form-group { margin-bottom: 25px; }
     .form-label { display: block; margin-bottom: 10px; font-weight: 600; color: var(--primary); }
     .form-input { width: 100%; padding: 15px; border: 1px solid var(--border); border-radius: 4px; font-family: inherit; transition: 0.3s; }
     .form-input:focus { outline: none; border-color: var(--accent); }
-    .contact-info-box { padding: 30px; background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border); height: 100%; }
+    .contact-info-box { padding: 40px; background: var(--bg-light); border-radius: 12px; border: 1px solid var(--border); height: 100%; }
 </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container nav-wrapper">
-            <a href="index.html" class="brand"><img src="logo.png" alt="YiShen Global Logo"></a>
+            <a href="index.html" class="brand"><img src="logo.png" alt="YiShen Global Logo" width="180" height="70"></a>
             <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
             <div class="nav-links">
                 <a href="index.html">Home</a>
@@ -45,12 +45,13 @@
 
     <section class="section-padding">
         <div class="container">
-            <div class="grid-2" style="align-items: start; gap: 80px;">
+            <div class="grid-2" style="align-items: start; gap: 60px;">
                 
                 <div class="contact-form-container">
                     <h2 style="font-size: 2.2rem;">Send us a message</h2>
                     <p>We typically reply within 24 hours.</p>
-                    <form action="#" method="post"> <div class="form-group">
+                    <form action="#" method="post">
+                        <div class="form-group">
                             <label class="form-label">Full Name</label>
                             <input type="text" class="form-input" placeholder="John Doe" required>
                         </div>
@@ -62,7 +63,7 @@
                             <label class="form-label">How can we help?</label>
                             <textarea class="form-input" rows="5" placeholder="Tell us about your project needs..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-gold" style="width: 100%;">Send Inquiry</button>
+                        <button type="submit" class="btn btn-gold" style="width: 100%; justify-content: center;">Send Inquiry</button>
                     </form>
                 </div>
 
@@ -82,11 +83,11 @@
                     <h3>Global HQ</h3>
                     <div style="display: flex; gap: 15px; margin-top: 20px;">
                         <i class="fas fa-map-marker-alt" style="color: var(--gold); font-size: 1.2rem; margin-top: 5px;"></i>
-                        <p style="margin-bottom: 0;">Anji & Hangzhou,<br>Zhejiang Province, China</p>
+                        <p style="margin-bottom: 0; color: var(--primary);">Anji & Hangzhou,<br>Zhejiang Province, China</p>
                     </div>
 
                     <div class="social-links" style="justify-content: flex-start; margin-top: 40px;">
-                         <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" aria-label="LinkedIn" style="background: var(--primary);"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" aria-label="LinkedIn" style="background: var(--primary);"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://x.com/AlexYan03451555" target="_blank" aria-label="X (Twitter)" style="background: var(--primary);"><i class="fab fa-x-twitter"></i></a>
                         <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank" aria-label="YouTube" style="background: var(--primary);"><i class="fab fa-youtube"></i></a>
                         <a href="https://www.facebook.com/alex.yang.427745" target="_blank" aria-label="Facebook" style="background: var(--primary);"><i class="fab fa-facebook-f"></i></a>
@@ -101,10 +102,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <h3 style="color: white; font-size: 1.8rem; margin-bottom: 15px; font-family: var(--font-serif);">YiShen Global</h3>
+                    <h3 style="color: white; font-size: 1.8rem; margin-bottom: 25px; font-family: var(--font-serif); letter-spacing: 1px;">YiShen Global</h3>
                     <p style="opacity: 0.8; max-width: 300px;">Your strategic partner in global supply chain excellence.</p>
                 </div>
-
                 <div>
                     <h4>Contact Us</h4>
                     <ul class="contact-list">
@@ -114,7 +114,6 @@
                         <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/8615968277867" target="_blank">+86 159 6827 7867</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-cta-box">
                     <h4>Follow Us</h4>
                     <div class="social-links">
@@ -126,7 +125,6 @@
                     </div>
                 </div>
             </div>
-            
             <div class="copyright">
                 &copy; 2026 YiShen Global. All Rights Reserved.
             </div>
@@ -138,6 +136,5 @@
         const navLinks = document.querySelector('.nav-links');
         menuBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); });
     </script>
-
 </body>
 </html>
