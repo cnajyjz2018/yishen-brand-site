@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="The strategic blueprint of the YiShen Global website architecture. A hierarchical map demonstrating the logic and data flow of our platform.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Blueprint (Architecture) | YiShen Global</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="brand"><img src="logo.png" alt="YiShen Global Logo" width="180" height="70"></a>
+            <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="why-us.html">Why Us</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="industries.html">Industries</a>
+                <a href="resources.html">Resources</a>
+                <a href="contact.html" class="nav-cta">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="blueprint-section">
+        <div class="container text-center">
+            <span class="section-tag" style="justify-content: center;">Technical Map</span>
+            <h1 style="font-size: 3rem; margin-bottom: 20px;">The Digital Architecture Blueprint</h1>
+            <p style="max-width: 800px; margin: 0 auto; color: var(--silver);">This visual guide outlines the hierarchical structure of the YiShen Global platform, prioritizing user navigation efficiency and technical data access.</p>
+            
+            <div class="architecture-tree">
+                
+                <div class="root-node">
+                    <div class="node-card"><i class="fas fa-home"></i> HOME (INDEX)</div>
+                </div>
+                
+                <div class="branch-level-1">
+                    
+                    <div class="node-wrapper">
+                        <a href="why-us.html" class="node-card"><i class="fas fa-flask"></i> WHY US (THE LAB)</a>
+                        <div class="branch-level-2">
+                            <div class="node-card">QC & Testing</div>
+                            <div class="node-card">Vertical Integration</div>
+                            <div class="node-card">Sustainability</div>
+                        </div>
+                    </div>
+                    
+                    <div class="node-wrapper">
+                        <a href="solutions.html" class="node-card"><i class="fas fa-truck-fast"></i> SOLUTIONS</a>
+                        <div class="branch-level-2">
+                            <a href="solutions.html#dtc" class="node-card">DTC Fulfillment</a>
+                            <a href="solutions.html#b2b" class="node-card">B2B Procurement</a>
+                            <a href="solutions.html#projects" class="node-card">Project Cargo (OOG)</a>
+                        </div>
+                    </div>
+                    
+                    <div class="node-wrapper">
+                        <a href="resources.html" class="node-card"><i class="fas fa-database"></i> PRODUCTS & DATA HUB</a>
+                        <div class="branch-level-2">
+                            <div class="node-card">Category Index</div>
+                            <a href="sku-detail.html" class="node-card">SKU DETAIL TEMPLATE</a>
+                            <div class="node-card">Downloads / Certs</div>
+                        </div>
+                    </div>
+                    
+                    <div class="node-wrapper">
+                        <a href="contact.html" class="node-card"><i class="fas fa-handshake"></i> CONTACT (CONVERSION)</a>
+                        <div class="branch-level-2">
+                            <div class="node-card">Quote Request</div>
+                            <div class="node-card">Direct Channels</div>
+                            <div class="node-card">Strategic Audit</div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div style="margin-top: 80px; font-size: 0.9rem; color: var(--silver); opacity: 0.7;">
+                    <i class="fas fa-map-marker-alt" style="color: var(--accent); margin-right: 8px;"></i>
+                    Technical Architecture Mapped to User Journey Flow.
+                </div>
+                
+            </div>
+            </div>
+    </section>
+
+    <a href="https://wa.me/8615968277867" target="_blank" class="floating-cta" aria-label="Contact via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer class="footer" style="padding-top: 60px; border-top: none;">
+        <div class="container text-center">
+            <div class="copyright" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; margin-top: 0;">
+                &copy; 2026 YiShen Global. All Rights Reserved. | Engineered Digital Infrastructure.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        menuBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+    </script>
+</body>
+</html>
