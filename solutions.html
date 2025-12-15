@@ -1,266 +1,167 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="description" content="YiShen Global Solutions: End-to-end B2B supply chain services including AI-driven logistics, DDP shipping, OEM/ODM product development, and proven project success stories.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SBU 战略解决方案 | 风险缓解与运营效率 - YiShen Global</title>
-<meta name="description" content="我们提供跨越 Lifestyle, Engineering, High-Tech 三大部门的垂直解决方案。从预测质量缺陷到管理 DGR 危险品物流，将风险转化为可控优势。">
-
-<link rel="stylesheet" href="styles.css"> 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+<title>Solutions & Projects | YiShen Global Supply Chain</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght{600;700}&display=swap" rel="stylesheet">
-
-<style>
-    /* 原有基础样式保留 */
-    :root {
-        --primary: #111111;
-        --secondary: #555555;
-        --accent: #0077B6;
-        --bg-light: #f7f9fb;
-        --white: #ffffff;
-        --border: #e0e0e0;
-        --color-lifestyle: #FFC300; /* 家具/零售强调色 */
-        --color-industrial: #333333; /* 工业/工程强调色 */
-        --color-hightech: #007bff; /* 高科技/医疗强调色 */
-    }
-    
-    .solutions-hero {
-        padding: 150px 0 80px;
-        background: var(--accent); 
-        color: var(--white);
-        text-align: center;
-        margin-top: 0; 
-    }
-    .solutions-hero h1 {
-        font-size: 3rem;
-        font-family: var(--font-serif);
-        margin-top: 10px;
-    }
-    .solutions-grid {
-        padding: 80px 0;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        gap: 40px;
-    }
-    .solution-card {
-        border: 1px solid var(--border);
-        padding: 30px;
-        border-radius: 8px;
-        transition: 0.3s;
-    }
-    .solution-card h3 {
-        color: var(--accent);
-        font-family: var(--font-serif);
-        margin-bottom: 15px;
-        font-size: 1.5rem;
-    }
-    /* 新增 CTA 样式 */
-    .aggressive-cta {
-        background: #FFDD00;
-        padding: 50px 0;
-        text-align: center;
-        margin-bottom: 50px;
-        border-radius: 8px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-    .aggressive-cta h2 {
-        font-family: var(--font-serif);
-        font-size: 2.5rem;
-        color: var(--primary);
-        margin-bottom: 10px;
-    }
-    .aggressive-cta p {
-        font-size: 1.1rem;
-        color: var(--secondary);
-        margin-bottom: 30px;
-    }
-    
-    /* NEW: 战略风险模块样式 */
-    .risk-module {
-        border-left: 5px solid;
-        padding: 25px;
-        margin-bottom: 30px;
-        background: var(--bg-light);
-        border-radius: 0 8px 8px 0;
-    }
-    .risk-module h4 {
-        font-size: 1.3rem;
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-    .risk-module .risk-tags {
-        margin-top: 10px;
-    }
-    .risk-module .risk-tags span {
-        display: inline-block;
-        background: #eee;
-        padding: 3px 8px;
-        border-radius: 4px;
-        font-size: 0.8rem;
-        margin-right: 5px;
-        color: #333;
-    }
-    .risk-module .solution-points li {
-        font-size: 0.95rem;
-        color: var(--primary);
-        margin-bottom: 5px;
-    }
-
-    /* 风险模块颜色定制 */
-    .risk-lifestyle { border-left-color: var(--color-lifestyle); }
-    .risk-industrial { border-left-color: var(--color-industrial); }
-    .risk-hightech { border-left-color: var(--color-hightech); }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        .solutions-grid { grid-template-columns: 1fr; }
-        .aggressive-cta h2 { font-size: 1.8rem; }
-    }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="navbar" style="position: static; margin-bottom: 0; border-bottom: none;">
+
+    <nav class="navbar">
         <div class="container nav-wrapper">
-            <a href="index.html" class="brand">
-                <div class="logo-icon"></div>
-                YiShen Global
-            </a>
-            <nav class="nav-links">
-                <a href="index.html#home">Home</a>
-                <a href="index.html#about">About</a>
-                <a href="index.html#products">Collection</a>
-                <a href="solutions.html">Solutions</a>
-                <a href="resources.html">Resources</a>
-                <a href="index.html#contact" class="btn-nav">Contact Us</a>
-            </nav>
+            <a href="index.html" class="brand"><img src="logo.png" alt="YiShen Global Logo" width="180" height="70"></a>
+            <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="why-us.html">Why Us</a>
+                <a href="solutions.html" class="active">Solutions</a>
+                <a href="contact.html" class="nav-cta">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header" style="background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.8)), url('header-solutions.jpg'); background-position: center; background-size: cover;">
+        <div class="container">
+            <span class="section-tag">End-to-End Value Creation</span>
+            <h1>Solving Complex Global<br>Supply Challenges.</h1>
+            <p>From rapid prototyping and OEM engineering to optimized global DDP logistics. We provide the infrastructure for your market expansion.</p>
         </div>
     </header>
 
-    <section class="solutions-hero">
+    <section class="section-padding">
         <div class="container">
-            <span class="section-tag" style="color: #FFDD00; background: var(--accent);">B2B Operational Strategy</span>
-            <h1>Quantifiable Solutions for Your Supply Chain Challenges</h1>
-            <p style="font-size: 1.15rem; max-width: 900px; margin: 20px auto 0;">
-                We transform common import risks—from unpredictable quality to customs delays—into controlled, predictable advantages.
-            </p>
-        </div>
-    </section>
-
-    <section class="container" style="padding-top: 50px;">
-        <div class="aggressive-cta">
-            <h2>Stop Importing Surprises. Start Importing Predictability.</h2>
-            <p>90% of quality issues are process-driven. Let us fix the root cause.</p>
-            <a href="index.html#contact" class="btn btn-primary" style="background: var(--primary); color: #FFDD00; border-color: var(--primary);">
-                Request A Free Risk Audit <i class="fas fa-arrow-right"></i>
-            </a>
-        </div>
-    </section>
-
-    <section class="container" style="padding-bottom: 80px;">
-        <div class="section-title" style="margin-bottom: 40px;">
-            <span class="section-tag">RISK MANAGEMENT MATRIX</span>
-            <h2>Tailored Solutions for Your Specific SBU Risk Profile (200 SKU Coverage)</h2>
-        </div>
-
-        <div class="risk-module risk-lifestyle">
-            <h4><i class="fas fa-palette" style="color: var(--color-lifestyle);"></i> LIFESTYLE & DESIGN Risk Profile</h4>
-            <div class="risk-tags">
-                <span>DTC DAMAGE</span>
-                <span>DESIGN DILUTION</span>
-                <span>FURNITURE COMPLIANCE</span>
-                <span>SUSTAINABILITY CLAIMS</span>
-            </div>
-            <p style="margin-top: 15px;">**挑战：** 零售商面临的挑战在于包装损坏（高体积重）和设计趋势快速变化导致库存过时。</p>
-            <ul class="solution-points">
-                <li><i class="fas fa-check-circle" style="color: var(--color-lifestyle);"></i> **Solution 1:** 实施 **SKU 模块化工程**，确保核心部件通用，减少库存风险（SBU 1-3）。</li>
-                <li><i class="fas fa-check-circle" style="color: var(--color-lifestyle);"></i> **Solution 2:** 提供**零 VOC/竹纤维**认证和数据，支持客户的 ESG 目标。</li>
-                <li><i class="fas fa-check-circle" style="color: var(--color-lifestyle);"></i> **Solution 3:** 采用**专有跌落测试协议**，保证 DTC 包装抗击长距离物流冲击。</li>
-            </ul>
-        </div>
-
-        <div class="risk-module risk-industrial">
-            <h4><i class="fas fa-tools" style="color: var(--color-industrial);"></i> ENGINEERING & RIGOR Risk Profile</h4>
-            <div class="risk-tags">
-                <span>MATERIAL FAILURE (G100)</span>
-                <span>LOAD MISCALCULATION</span>
-                <span>MARINE CORROSION</span>
-                <span>ANSI/EN SAFETY GAPS</span>
-            </div>
-            <p style="margin-top: 15px;">**挑战：** 工业采购方最关心的是**极限环境下的安全性和材料可溯源性**，一旦失效后果严重。</p>
-            <ul class="solution-points">
-                <li><i class="fas fa-check-circle" style="color: var(--color-industrial);"></i> **Solution 1:** 提供 **G100 合金钢溯源报告**和**无损探伤**文件，验证安全承重能力（SBU 4）。</li>
-                <li><i class="fas fa-check-circle" style="color: var(--color-industrial);"></i> **Solution 2:** 供应 **Duplex SS 索具**和**HMPE 海洋缆绳**，解决盐雾和 UV 腐蚀问题（SBU 5, 6）。</li>
-                <li><i class="fas fa-check-circle" style="color: var(--color-industrial);"></i> **Solution 3:** 认证的**安全梯具和葫芦**，附带详细的 EN/ANSI 认证证书（SBU 4）。</li>
-            </ul>
-        </div>
-
-        <div class="risk-module risk-hightech">
-            <h4><i class="fas fa-microscope" style="color: var(--color-hightech);"></i> HIGH-TECH & BIO Risk Profile</h4>
-            <div class="risk-tags">
-                <span>DGR COMPLIANCE</span>
-                <span>CONTAMINATION</span>
-                <span>BMS FAILURE</span>
-                <span>CUSTOMS COMPLEXITY</span>
-            </div>
-            <p style="margin-top: 15px;">**挑战：** 高科技和医疗品类的风险集中在**合规性（如 DGR, FDA）**、**高纯度维持**和**供应链时效性**。</p>
-            <ul class="solution-points">
-                <li><i class="fas fa-check-circle" style="color: var(--color-hightech);"></i> **Solution 1:** 提供 **DGR Class 9 危险品物流**的**专线服务**，确保锂电池 ESS 运输安全（SBU 8, 10）。</li>
-                <li><i class="fas fa-check-circle" style="color: var(--color-hightech);"></i> **Solution 2:** 保证 **Wafer Grade 湿化学品**和**生物耗材**的**高纯度无菌**交付（SBU 7, 9）。</li>
-                <li><i class="fas fa-check-circle" style="color: var(--color-hightech);"></i> **Solution 3:** 利用 **4PL 管理和风险审计**服务，处理复杂的高科技供应链整合（SBU 10）。</li>
-            </ul>
-        </div>
-
-    </section>
-    <section class="solution-sections">
-        <div class="container solutions-grid">
-
-            <div class="solution-card">
-                <h3><i class="fas fa-shield-alt" style="color: var(--accent);"></i> Quality & Compliance Assurance</h3>
-                <p>Implement strict AQL 2.5 protocols and BIFMA/ANSI adherence from material sourcing to final packaging. Reduce defect rates by up to 40%.</p>
-                <a href="index.html#contact" class="text-link">Calculate Your Defect Savings &rarr;</a>
+            <div class="grid-2" style="margin-bottom: 120px;">
+                <div>
+                    <span class="section-tag">Logistics & Fulfillment</span>
+                    <h2>AI-Driven Global Logistics</h2>
+                    <p>We eliminate unpredictability. Leveraging data to optimize shipping routes, consolidate container loads (LCL/FCL), and handle complex customs for a seamless door-to-door experience.</p>
+                    <ul style="margin-top: 30px;">
+                        <li style="margin-bottom: 15px; display: flex; align-items: center; font-weight: 500;"><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 15px; font-size: 1.1rem;"></i> <strong>DDP Services:</strong> Delivered Duty Paid for frictionless import.</li>
+                        <li style="margin-bottom: 15px; display: flex; align-items: center; font-weight: 500;"><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 15px; font-size: 1.1rem;"></i> <strong>Smart Consolidation:</strong> Optimized mixing for furniture & heavy cargo.</li>
+                    </ul>
+                </div>
+                <img src="div-industrial.jpg" alt="Global Logistics Solutions" style="border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); object-fit: cover; height: 400px;" loading="lazy">
             </div>
 
-            <div class="solution-card">
-                <h3><i class="fas fa-route" style="color: var(--accent);"></i> Integrated Global Logistics (DDP)</h3>
-                <p>Manage door-to-door freight, customs, and last-mile logistics. Predictable ETA and cost control through comprehensive DDP/LDP solutions.</p>
-                <a href="index.html#contact" class="text-link">Get DDP Quote Now &rarr;</a>
-            </div>
-
-            <div class="solution-card">
-                <h3><i class="fas fa-cogs" style="color: var(--accent);"></i> Modular SKU Engineering</h3>
-                <p>Design products with interchangeable components to manage inventory risk, facilitate faster product iteration, and support global B2B and DTC channels simultaneously.</p>
-                <a href="index.html#contact" class="text-link">Explore Modular Design &rarr;</a>
-            </div>
-
-            <div class="solution-card">
-                <h3><i class="fas fa-headset" style="color: var(--accent);"></i> Long-Term After-Sales Support</h3>
-                <p>Dedicated spare parts buffer stock and technical support team for warranty claims and retail continuity, ensuring zero revenue loss due to minor issues.</p>
-                <a href="index.html#contact" class="text-link">Inquire About Buffer Stock &rarr;</a>
+            <div class="grid-2">
+                <img src="div-tech.jpg" alt="Product Development & Engineering" style="border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); object-fit: cover; height: 400px;" loading="lazy">
+                <div>
+                    <span class="section-tag">Engineering & ODM</span>
+                    <h2>Rapid Prototyping & DFM</h2>
+                    <p>Turn concepts into market-ready products faster. Our specialized engineering teams ensure your designs are optimized for manufacturing (DFM) and global shipping standards.</p>
+                     <ul style="margin-top: 30px;">
+                        <li style="margin-bottom: 15px; display: flex; align-items: center; font-weight: 500;"><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 15px; font-size: 1.1rem;"></i> <strong>3D Modeling & Testing:</strong> FEA stress analysis before tooling.</li>
+                        <li style="margin-bottom: 15px; display: flex; align-items: center; font-weight: 500;"><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 15px; font-size: 1.1rem;"></i> <strong>Quick-Turn Samples:</strong> Accelerated iteration cycles.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
-    
-    <section class="cta-banner" style="background: var(--primary); color: var(--white); padding: 50px 0; text-align: center;">
+
+    <section class="section-padding bg-light">
         <div class="container">
-            <h2 style="font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 15px;">Ready to Engineer Your Predictable Supply Chain?</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.8;">
-                Stop reacting to supply chain surprises. Start building a resilient, profitable partnership.
-            </p>
-            <a href="index.html#contact" class="btn btn-primary" style="background: #FFDD00; color: var(--primary); border-color: #FFDD00;">Schedule Your Strategy Session Now</a>
+            <div class="text-center" style="margin-bottom: 60px;">
+                <span class="section-tag">Proven Track Record</span>
+                <h2>Featured Global Success Stories</h2>
+                <p>Real-world examples of how our integrated solutions deliver measurable results for B2B enterprises.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="feature-card project-card">
+                    <img src="project-office.jpg" alt="Tech HQ Furniture Fit-out" class="card-img" style="height: 220px;" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\' viewBox=\'0 0 600 400\'%3E%3Crect width=\'600\' height=\'400\' fill=\'%23e2e8f0\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'sans-serif\' font-size=\'24\' fill=\'%2394a3b8\'%3EProject Image Placeholder%3C/text%3E%3C/svg%3E'">
+                    <div class="card-body">
+                        <h4>Silicon Valley Tech HQ Fit-out</h4>
+                        <p style="font-size: 0.95rem;">End-to-end DDP logistics for a 50,000 sq ft campus. Delivered and installed 800+ ergonomic workstations on a tight deadline.</p>
+                        <div class="project-metrics">
+                            <div><span>30%</span>Landed Cost Reduction</div>
+                            <div><span>100%</span>On-Time Phase Delivery</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card project-card">
+                    <img src="project-industrial.jpg" alt="Offshore Rigging Supply" class="card-img" style="height: 220px;" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\' viewBox=\'0 0 600 400\'%3E%3Crect width=\'600\' height=\'400\' fill=\'%23e2e8f0\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'sans-serif\' font-size=\'24\' fill=\'%2394a3b8\'%3EProject Image Placeholder%3C/text%3E%3C/svg%3E'">
+                    <div class="card-body">
+                        <h4>North Sea Offshore Rigging Project</h4>
+                        <p style="font-size: 0.95rem;">Supply of customized G100 chain slings and heavy-duty marine ropes. Requires strict DNV GL certification compliance and specialized crating.</p>
+                        <div class="project-metrics">
+                            <div><span>Zero</span>Compliance Issues</div>
+                            <div><span>6 Weeks</span>Lead Time Improved</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card project-card">
+                    <img src="project-tech.jpg" alt="Medical Consumables Cold Chain" class="card-img" style="height: 220px;" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\' viewBox=\'0 0 600 400\'%3E%3Crect width=\'600\' height=\'400\' fill=\'%23e2e8f0\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'sans-serif\' font-size=\'24\' fill=\'%2394a3b8\'%3EProject Image Placeholder%3C/text%3E%3C/svg%3E'">
+                    <div class="card-body">
+                        <h4>EU Medical Lab Supply Chain</h4>
+                        <p style="font-size: 0.95rem;">Establishing a reliable supply route for high-purity PCR plates and medical consumables. Focus on temperature stability and rapid air freight.</p>
+                        <div class="project-metrics">
+                            <div><span>99.9%</span>Purity Maintained</div>
+                            <div><span>48 Hr</span>Air Freight Transit</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    
-    <footer class="footer" style="padding: 40px 0 20px;">
-        <div class="container" style="text-align: center;">
-            <p>&copy; 2026 YiShen Global. All rights reserved. | <a href="index.html#contact" style="color: var(--accent);">Get in Touch</a></p>
+
+     <section class="cta-banner">
+        <div class="container" style="position: relative; z-index: 10;">
+            <h2>Have a similar project in mind?</h2>
+            <p>Our solution architects are ready to analyze your needs and propose a tailored strategy.</p>
+            <a href="contact.html" class="btn btn-gold" style="padding: 18px 45px; font-size: 1rem;">Request Project Consultation</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 style="color: white; font-size: 1.8rem; margin-bottom: 25px; font-family: var(--font-serif); letter-spacing: 1px;">YiShen Global</h3>
+                    <p style="opacity: 0.8; max-width: 300px;">Your strategic partner in global supply chain excellence.</p>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:alex.yang@yishenglobal.net">alex.yang@yishenglobal.net</a></li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+8619530394133">+86 195 3039 4133</a></li>
+                        <li><i class="fab fa-weixin"></i> WeChat: 19530394133</li>
+                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/8615968277867" target="_blank">+86 159 6827 7867</a></li>
+                    </ul>
+                </div>
+                <div class="footer-cta-box">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/AlexYan03451555" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/alex.yang.427745" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/alexyang591/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 YiShen Global. All Rights Reserved.
+            </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <a href="https://wa.me/8615968277867" target="_blank" class="floating-cta" aria-label="Contact via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        menuBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+    </script>
+
 </body>
 </html>
