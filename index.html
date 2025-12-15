@@ -2,107 +2,44 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="description" content="Premier B2B supply chain integrator. We bridge Asian manufacturing excellence with Global market reliability. Vertical control over furniture, industrial rigging, and high-tech sectors.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YiShen Global | Strategic Supply Chain Partner</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-    /* V16.0 LOCAL ASSETS EDITION CSS */
-    :root { --primary: #0F172A; --secondary: #475569; --accent: #0284C7; --gold: #D97706; --bg-light: #F8FAFC; --white: #ffffff; --border: #E2E8F0; --font-main: 'Inter', sans-serif; --font-serif: 'Playfair Display', serif; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: var(--font-main); color: var(--primary); line-height: 1.7; background-color: var(--white); }
-    a { text-decoration: none; color: inherit; transition: 0.3s; } ul { list-style: none; } img { max-width: 100%; height: auto; display: block; }
-    
-    .container { width: 90%; max-width: 1280px; margin: 0 auto; padding: 0 20px; }
-    .section-padding { padding: 100px 0; } .bg-light { background-color: var(--bg-light); } .text-center { text-align: center; }
-    
-    h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 700; line-height: 1.1; }
-    h1 { font-size: 3.8rem; letter-spacing: -1px; color: white; } h2 { font-size: 2.8rem; color: var(--primary); margin-bottom: 1.5rem; }
-    p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; }
-    .section-tag { display: inline-block; font-size: 0.85rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; border-bottom: 2px solid var(--accent); }
-
-    .btn { display: inline-block; padding: 15px 35px; border-radius: 4px; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; cursor: pointer; transition: 0.3s; }
-    .btn-gold { background: var(--gold); color: white; border: 2px solid var(--gold); } .btn-gold:hover { background: #b45309; }
-    .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); } .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
-
-    /* NAVIGATION */
-    .navbar { position: fixed; top: 0; left: 0; width: 100%; height: 90px; background: rgba(255,255,255,0.98); border-bottom: 1px solid #eee; z-index: 1000; display: flex; align-items: center; }
-    .nav-wrapper { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-    .brand { display: flex; align-items: center; gap: 12px; }
-    .brand img { height: 40px; width: auto; /* Logo size control */ }
-    .nav-links { display: flex; gap: 40px; align-items: center; }
-    .nav-links a { font-weight: 600; font-size: 0.95rem; } .nav-cta { background: var(--primary); color: white !important; padding: 10px 25px; border-radius: 4px; }
-
-    /* HERO WITH LOCAL IMAGE */
-    .hero {
-        position: relative; padding-top: 220px; padding-bottom: 180px; text-align: center; color: white;
-        /* LINKING TO LOCAL IMAGE HERE */
-        background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.8)), url('hero-bg.jpg');
-        background-size: cover; background-position: center;
-        background-color: #0F172A; /* Fallback color if image missing */
-    }
-    .hero p { color: #cbd5e1; font-size: 1.3rem; max-width: 760px; margin: 20px auto 40px; }
-    
-    /* STATS */
-    .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); background: white; padding: 50px; margin-top: -80px; border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); position: relative; z-index: 20; width: 90%; max-width: 1200px; margin-left: auto; margin-right: auto; border-bottom: 4px solid var(--gold); }
-    .stat-box h3 { color: var(--accent); font-size: 3rem; margin-bottom: 5px; line-height: 1; } .stat-box p { font-weight: 700; text-transform: uppercase; }
-
-    /* LOGO GRID (Using icons for now as you don't have local partner logos yet) */
-    .trust-bar { padding: 80px 0 60px; border-bottom: 1px solid var(--border); text-align: center; }
-    .logo-grid { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; opacity: 0.5; margin-top: 30px; font-size: 1.5rem; font-weight: 800; color: #64748b; }
-    .trust-item { display: flex; align-items: center; gap: 10px; }
-
-    /* SECTIONS */
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px; }
-    .card { background: white; border-radius: 8px; overflow: hidden; transition: 0.4s; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); display: flex; flex-direction: column; }
-    .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: var(--accent); }
-    /* LOCAL IMAGES FOR CARDS */
-    .card-img { height: 240px; width: 100%; object-fit: cover; background: #ddd; }
-    .card-body { padding: 35px; flex-grow: 1; display: flex; flex-direction: column; }
-    .card-body h3 { margin-bottom: 15px; } .card-body ul { margin-top: auto; margin-bottom: 20px; }
-    .card-body li { margin-bottom: 8px; display: flex; align-items: center; } .card-body i { color: var(--accent); margin-right: 10px; }
-
-    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    /* LOCAL IMAGE FOR FEATURE */
-    .split-img { height: 500px; width: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); background: #ddd; }
-
-    /* FOOTER */
-    .footer { background: var(--primary); color: #94a3b8; padding: 80px 0 40px; margin-top: 100px; }
-    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 50px; margin-bottom: 60px; }
-    .footer h4 { color: white; margin-bottom: 25px; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
-    
-    @media (max-width: 1024px) { .hero-stats, .grid-3, .split, .footer-grid { grid-template-columns: 1fr; gap: 40px; } .hero h1 { font-size: 3rem; } .navbar .nav-links { display: none; } }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container nav-wrapper">
-            <a href="#" class="brand">
-                <img src="logo.png" alt="YiShen Global Logo">
-            </a>
+            <a href="index.html" class="brand"><img src="logo.png" alt="YiShen Global Logo"></a>
+            <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
             <div class="nav-links">
-                <a href="#">Home</a><a href="#divisions">Divisions</a><a href="#features">Features</a><a href="#contact" class="nav-cta">Contact Us</a>
+                <a href="index.html" class="active">Home</a>
+                <a href="why-us.html">Why Us</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="contact.html" class="nav-cta">Contact Us</a>
             </div>
         </div>
     </nav>
 
-    <section class="hero">
+    <section class="hero page-header" style="background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.8)), url('hero-bg.jpg');">
         <div class="container">
             <span style="color: var(--gold); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; display: inline-block;">Strategic Supply Chain Partner</span>
             <h1>Supply Chain Predictability.<br>Engineered for Growth.</h1>
             <p>We bridge the gap between Asian Manufacturing Excellence and Global Market Reliability. Vertical control over 200+ SKUs.</p>
             <div style="margin-top: 40px;">
-                <a href="#contact" class="btn btn-gold">Schedule Strategy Call</a>
-                <a href="#divisions" class="btn btn-outline" style="margin-left: 20px;">Explore Capabilities</a>
+                <a href="contact.html" class="btn btn-gold">Schedule Strategy Call</a>
+                <a href="solutions.html" class="btn btn-outline-white" style="margin-left: 20px;">View B2B Catalog</a>
             </div>
         </div>
     </section>
 
     <div class="container">
-        <div class="hero-stats">
+        <div class="hero-stats grid-3" style="grid-template-columns: repeat(4, 1fr); background: white; padding: 50px; margin-top: -80px; border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); position: relative; z-index: 20; border-bottom: 4px solid var(--gold);">
             <div class="stat-box text-center"><h3>10+</h3><p>Years Experience</p></div>
             <div class="stat-box text-center"><h3>200+</h3><p>Controlled SKUs</p></div>
             <div class="stat-box text-center"><h3>99.8%</h3><p>Q.C. Pass Rate</p></div>
@@ -110,15 +47,23 @@
         </div>
     </div>
 
-    <section class="trust-bar">
-        <div class="container">
+    <section class="trust-bar section-padding" style="padding-bottom: 60px; border-bottom: 1px solid var(--border);">
+        <div class="container text-center">
             <p style="font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px;">Trusted by Global Innovators & Retailers</p>
-            <div class="logo-grid">
-                <div class="trust-item"><i class="fas fa-building"></i> STAPLES</div>
-                <div class="trust-item"><i class="fas fa-layer-group"></i> Office Depot</div>
-                <div class="trust-item"><i class="fas fa-robot"></i> AUTONOMOUS</div>
-                <div class="trust-item"><i class="fas fa-shield-alt"></i> UL Certified</div>
+            <div class="logo-grid" style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-top: 30px; font-size: 1.5rem; font-weight: 800; color: #64748b;">
+                <a href="https://www.staples.com/" target="_blank" rel="noopener noreferrer" class="trust-item" style="opacity: 0.5; transition: all 0.3s ease;">STAPLES</a>
+                <a href="https://www.officedepot.com/" target="_blank" rel="noopener noreferrer" class="trust-item" style="opacity: 0.5; transition: all 0.3s ease;">Office Depot</a>
+                <a href="https://www.autonomous.ai/" target="_blank" rel="noopener noreferrer" class="trust-item" style="opacity: 0.5; transition: all 0.3s ease;">AUTONOMOUS</a>
+                <a href="https://www.ul.com/" target="_blank" rel="noopener noreferrer" class="trust-item" style="opacity: 0.5; transition: all 0.3s ease;">UL Certified</a>
             </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="padding-bottom: 40px;">
+        <div class="container text-center">
+             <span class="section-tag">Our Approach</span>
+            <h2 style="max-width: 800px; margin: 0 auto 30px;">Moving Beyond Transactional Sourcing.</h2>
+            <p style="max-width: 900px; margin: 0 auto;">We don't just export products; we integrate into your supply chain as a strategic partner. By controlling manufacturing vertically—from raw material to final QC—we eliminate the unpredictability inherent in traditional B2B sourcing.</p>
         </div>
     </section>
 
@@ -129,70 +74,178 @@
                 <h2>Three Divisions. One Standard.</h2>
             </div>
             <div class="grid-3">
-                <div class="card">
-                    <img src="div-lifestyle.jpg" alt="Lifestyle Division" class="card-img">
-                    <div class="card-body">
+                <div class="card feature-card" style="padding: 0; border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid var(--border);">
+                    <img src="div-lifestyle.jpg" alt="Lifestyle Division" class="card-img" style="height: 240px; width: 100%; object-fit: cover;">
+                    <div class="card-body" style="padding: 35px;">
                         <h3>Lifestyle & Design</h3>
                         <p>High-end furniture and bamboo flooring. Engineered for aesthetics and DTC shipping durability.</p>
-                        <ul><li><i class="fas fa-check"></i> Ergonomic Chairs</li><li><i class="fas fa-check"></i> Standing Desks</li></ul>
+                        <ul><li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Ergonomic Chairs</li><li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Standing Desks</li></ul>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="div-industrial.jpg" alt="Industrial Division" class="card-img">
-                    <div class="card-body">
+                <div class="card feature-card" style="padding: 0; border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid var(--border);">
+                    <img src="div-industrial.jpg" alt="Industrial Division" class="card-img" style="height: 240px; width: 100%; object-fit: cover;">
+                    <div class="card-body" style="padding: 35px;">
                         <h3>Engineering & Rigor</h3>
                         <p>Heavy industrial rigging and marine cables. Focus on load capacity and safety.</p>
-                        <ul><li><i class="fas fa-check"></i> G100 Chain Slings</li><li><i class="fas fa-check"></i> Marine Ropes</li></ul>
+                        <ul><li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> G100 Chain Slings</li><li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Marine Ropes</li></ul>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="div-tech.jpg" alt="High-Tech Division" class="card-img">
-                    <div class="card-body">
+                <div class="card feature-card" style="padding: 0; border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid var(--border);">
+                    <img src="div-tech.jpg" alt="High-Tech Division" class="card-img" style="height: 240px; width: 100%; object-fit: cover;">
+                    <div class="card-body" style="padding: 35px;">
                         <h3>High-Tech & Bio</h3>
                         <p>New energy ESS systems and medical consumables. Focus on purity and compliance.</p>
-                        <ul><li><i class="fas fa-check"></i> ESS Systems</li><li><i class="fas fa-check"></i> PCR Plates</li></ul>
+                        <ul><li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> ESS Systems</li><li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> PCR Plates</li></ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="features" class="section-padding">
-        <div class="container split">
+    <section class="section-padding">
+        <div class="container grid-2" style="gap: 80px;">
             <div>
                 <span class="section-tag">FEATURED INNOVATION</span>
                 <h2>The DS-Series Ergonomic Chair</h2>
-                <p>Designed for the hybrid workforce. Combining our proprietary Fluid-Motion Tilt mechanism with high-tensile mesh.</p>
+                <p>Designed for the hybrid workforce. Combining our proprietary Fluid-Motion Tilt mechanism with high-tensile mesh. Engineered for DTC shipping capability.</p>
                 <ul style="margin-top: 30px;">
-                    <li style="margin-bottom: 15px; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 15px; font-size: 1.2rem;"></i> <strong>BIFMA X5.1 Certified</strong> for 24/7 use.</li>
-                    <li style="margin-bottom: 15px; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 15px; font-size: 1.2rem;"></i> <strong>DTC Ready Packaging</strong> (ISTA 6-Amazon).</li>
+                    <li style="margin-bottom: 15px; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 15px; font-size: 1.2rem;"></i> <strong>BIFMA X5.1 Certified</strong> for 24/7 commercial use.</li>
+                    <li style="margin-bottom: 15px; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 15px; font-size: 1.2rem;"></i> <strong>ISTA 6-Amazon Ready</strong> packaging for safe drop-shipping.</li>
                 </ul>
             </div>
-            <img src="product-chair.jpg" alt="Ergonomic Chair" class="split-img">
+            <img src="product-chair.jpg" alt="Ergonomic Chair" style="height: 500px; width: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
         </div>
     </section>
 
-    <footer id="contact" class="footer">
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Technical Specifications</span>
+                <h2>Furniture Division: Key B2B Data</h2>
+                <p style="max-width: 800px; margin: 0 auto;">We provide full transparency on materials, certifications, and logistics data for global buyers. Below are specifications for our core furniture categories.</p>
+            </div>
+
+            <div class="specs-container" style="overflow-x: auto; margin-top: 40px; background: white; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <table class="specs-table" style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th style="padding: 15px 20px; border-bottom: 1px solid var(--border); text-align: left; background: var(--bg-light); font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">Category Category</th>
+                            <th style="padding: 15px 20px; border-bottom: 1px solid var(--border); text-align: left; background: var(--bg-light); font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">Key Material / Component</th>
+                            <th style="padding: 15px 20px; border-bottom: 1px solid var(--border); text-align: left; background: var(--bg-light); font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">Certifications Standard</th>
+                            <th style="padding: 15px 20px; border-bottom: 1px solid var(--border); text-align: left; background: var(--bg-light); font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">Weight Capacity (Tested)</th>
+                            <th style="padding: 15px 20px; border-bottom: 1px solid var(--border); text-align: left; background: var(--bg-light); font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">Logistics Efficiency (40'HQ)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="specs-highlight" style="padding: 15px 20px; border-bottom: 1px solid var(--border); color: var(--accent); font-weight: 600;">Ergonomic Mesh Chairs (DS-Series)</td>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid var(--border);">High-Tensile Korean Mesh, PA66+GF Frame, Class 4 Gas Lift</td>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid var(--border);">BIFMA X5.1, EN 1335, GreenGuard Gold</td>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid var(--border);">300 lbs (136 kg)</td>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid var(--border);">Approx. 650-750 Units (KD)</td>
+                        </tr>
+                        <tr>
+                            <td class="specs-highlight" style="padding: 15px 20px; border-bottom: 1px solid var(--border); color: var(--accent); font-weight: 600;">Electric Standing Desks (Dual Motor)</td>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid var(--border);">Industrial-grade Steel Frame, Solid Bamboo/MDF Top</td>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid var(--border);">UL 962, CE, FCC, RoHS</td>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid var(--border);">265 lbs (120 kg) Dynamic</td>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid var(--border);">Approx. 400-500 Sets</td>
+                        </tr>
+                        <tr>
+                            <td class="specs-highlight" style="padding: 15px 20px; border-bottom: 1px solid var(--border); color: var(--accent); font-weight: 600;">Bamboo Flooring & Panels</td>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid var(--border);">100% Solid Moso Bamboo (Strand Woven)</td>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid var(--border);">FloorScore, Carb P2, FSC Available</td>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid var(--border);">N/A (High Janka Hardness)</td>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid var(--border);">Palletized (Varies by thickness)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="text-center" style="margin-top: 60px;">
+                 <h4>Explore Our Core Furniture Categories</h4>
+             </div>
+            <div class="catalog-list grid-3" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px;">
+                <div class="catalog-item" style="background: var(--bg-light); padding: 20px; border-radius: 6px; text-align: center; border: 1px solid var(--border); transition: 0.3s; cursor: pointer;">
+                    <i class="fas fa-chair" style="color: var(--accent); font-size: 2rem; margin-bottom: 15px;"></i>
+                    <h5>Task & Executive Chairs</h5>
+                    <p style="font-size: 0.9rem; margin-bottom: 0;">20+ active SKUs</p>
+                </div>
+                <div class="catalog-item" style="background: var(--bg-light); padding: 20px; border-radius: 6px; text-align: center; border: 1px solid var(--border); transition: 0.3s; cursor: pointer;">
+                    <i class="fas fa-desktop" style="color: var(--accent); font-size: 2rem; margin-bottom: 15px;"></i>
+                    <h5>Height Adjustable Desks</h5>
+                    <p style="font-size: 0.9rem; margin-bottom: 0;">Single & Dual Motor</p>
+                </div>
+                 <div class="catalog-item" style="background: var(--bg-light); padding: 20px; border-radius: 6px; text-align: center; border: 1px solid var(--border); transition: 0.3s; cursor: pointer;">
+                    <i class="fas fa-layer-group" style="color: var(--accent); font-size: 2rem; margin-bottom: 15px;"></i>
+                    <h5>Sustainable Flooring</h5>
+                    <p style="font-size: 0.9rem; margin-bottom: 0;">Bamboo & SPC Options</p>
+                </div>
+                 <div class="catalog-item" style="background: var(--bg-light); padding: 20px; border-radius: 6px; text-align: center; border: 1px solid var(--border); transition: 0.3s; cursor: pointer;">
+                    <i class="fas fa-couch" style="color: var(--accent); font-size: 2rem; margin-bottom: 15px;"></i>
+                    <h5>Soft Seating & Lounge</h5>
+                    <p style="font-size: 0.9rem; margin-bottom: 0;">For commercial spaces</p>
+                </div>
+            </div>
+
+             <div class="text-center" style="margin-top: 40px;">
+                <a href="contact.html" class="btn btn-outline">Request Full Catalog PDF</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <h4 style="font-size: 1.5rem;">YiShen Global</h4>
-                    <p style="opacity: 0.8;">Your strategic partner in global supply chain excellence.</p>
+                    <h3 style="color: white; font-size: 1.8rem; margin-bottom: 15px; font-family: var(--font-serif);">YiShen Global</h3>
+                    <p style="opacity: 0.8; max-width: 300px;">Your strategic partner in global supply chain excellence. Delivering predictability from China to the world.</p>
                 </div>
+
                 <div>
-                    <h4>Global HQ</h4>
-                    <ul style="opacity: 0.8;"><li>Anji & Hangzhou, China</li><li>alex.yang@yishenglobal.net</li></ul>
+                    <h4>Contact Us</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:alex.yang@yishenglobal.net">alex.yang@yishenglobal.net</a></li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+8619530394133">+86 195 3039 4133</a></li>
+                        <li><i class="fab fa-weixin"></i> WeChat: 19530394133</li>
+                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/8615968277867" target="_blank">+86 159 6827 7867</a></li>
+                        <li style="margin-top: 20px; align-items: flex-start;"><i class="fas fa-map-marker-alt" style="margin-top: 5px;"></i> <span>Global HQ: Anji & Hangzhou, Zhejiang, China</span></li>
+                    </ul>
                 </div>
-                <div>
-                    <h4>Contact</h4>
-                    <ul style="opacity: 0.8;"><li>+86 195 3039 4133</li><li>WeChat: 19530394133</li></ul>
+
+                <div class="footer-cta-box">
+                    <h4>Ready to upgrade?</h4>
+                    <p style="opacity: 0.8; margin-bottom: 20px;">Discuss your next project with our team.</p>
+                    <a href="contact.html" class="btn btn-gold" style="padding: 12px 30px;">Request Free Consultation</a>
+                    
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/AlexYan03451555" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/alex.yang.427745" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/alexyang591/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
-            <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 50px; padding-top: 30px; text-align: center; font-size: 0.9rem;">
+            
+            <div class="copyright">
                 &copy; 2026 YiShen Global. All Rights Reserved.
             </div>
         </div>
     </footer>
+
+    <script>
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        menuBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+        document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('active'); }); });
+        // Trust bar hover effect
+        document.querySelectorAll('.trust-item').forEach(item => {
+            item.addEventListener('mouseenter', () => { item.style.opacity = '1'; item.style.color = 'var(--accent)'; item.style.transform = 'translateY(-3px)'; });
+            item.addEventListener('mouseleave', () => { item.style.opacity = '0.5'; item.style.color = '#64748b'; item.style.transform = 'translateY(0)'; });
+        });
+    </script>
 
 </body>
 </html>
