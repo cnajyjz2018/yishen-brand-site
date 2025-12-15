@@ -1,269 +1,208 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">Loading SKU Details...</title>
-    
-    <link rel="stylesheet" href="styles.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght{600;700}&display=swap" rel="stylesheet">
-
-    <style>
-        /* NEW: 动态部门颜色变量 */
-        :root {
-            --color-lifestyle: #FFC300;
-            --color-industrial: #333333;
-            --color-hightech: #007bff;
-        }
-        .detail-container {
-            padding: 150px 0 80px;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 60px;
-        }
-        .product-gallery img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        /* NEW: 多图库预览 */
-        .gallery-thumbnails {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-bottom: 30px;
-        }
-        .gallery-thumbnails img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: border-color 0.3s;
-        }
-        .gallery-thumbnails img:hover {
-            border-color: var(--accent);
-        }
-        .spec-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 30px;
-        }
-        .spec-table th, .spec-table td {
-            border: 1px solid var(--border);
-            padding: 12px;
-            text-align: left;
-            font-size: 0.95rem;
-        }
-        .spec-table th {
-            background-color: var(--bg-light);
-            color: var(--primary);
-            font-weight: 600;
-        }
-        .spec-table td {
-            color: var(--secondary);
-        }
-        .data-links a {
-            display: block;
-            margin-bottom: 15px;
-            padding: 10px;
-            background: var(--accent);
-            color: var(--white);
-            border-radius: 4px;
-            font-weight: 600;
-            text-align: center;
-        }
-        .sku-detail-content {
-            padding-top: 50px;
-        }
-        .detail-info-section {
-            border-left: 5px solid #FFC300; /* Will be updated by JS */
-            padding-left: 30px;
-        }
-        .sku-features li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 10px;
-            list-style: none;
-            color: var(--primary);
-            font-weight: 500;
-        }
-        .sku-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-        
-        /* NEW: 数据卡片样式 */
-        .data-cards-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 20px;
-            margin-bottom: 30px;
-        }
-        .data-card {
-            padding: 15px;
-            border-radius: 8px;
-            background: #f0f0f0;
-        }
-        .data-card h4 {
-            font-size: 1rem;
-            margin-bottom: 5px;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .data-card p {
-            font-size: 0.9rem;
-            color: var(--secondary);
-            margin: 0;
-        }
-        
-        @media (max-width: 768px) {
-            .detail-container {
-                grid-template-columns: 1fr;
-            }
-            .data-cards-grid {
-                grid-template-columns: 1fr;
-            }
-            .sku-detail-content {
-                padding-top: 100px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="description" content="Detailed engineering specifications, material data, and container loading metrics for YiShen Global's Ergonomic Seating Series (S-Series & Pro-Line).">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKU Details: Ergonomic Seating Series | YiShen Global</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+    /* 针对详细数据页的表格进行微调，使其容纳更多数据 */
+    .detail-table-container {
+        overflow-x: auto;
+        margin-top: 30px;
+    }
+    .detail-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem; /* 稍微缩小字体以适应更多列 */
+    }
+    .detail-table th {
+        background-color: var(--primary);
+        color: white;
+        padding: 15px;
+        text-align: left;
+        font-weight: 600;
+        white-space: nowrap;
+        border-bottom: 3px solid var(--accent);
+    }
+    .detail-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: middle;
+    }
+    .detail-table tr:nth-child(even) { background-color: #f8fafc; }
+    .detail-table tr:hover { background-color: rgba(0, 122, 255, 0.05); }
+    .sku-model { font-weight: 700; color: var(--primary); }
+    .sku-status.active { color: #07c160; font-weight: 600; }
+</style>
 </head>
-<body class="sku-detail">
-    <header class="navbar" style="position: static; margin-bottom: 0; border-bottom: none;">
-        <div class="container nav-wrapper">
-            <a href="index.html" class="brand">
-                <div class="logo-icon"></div>
-                YiShen Global
-            </a>
-            <nav class="nav-links">
-                <a href="index.html#home">Home</a>
-                <a href="index.html#about">About</a>
-                <a href="index.html#products">Collection</a>
-                <a href="solutions.html">Solutions</a>
-                <a href="resources.html">Resources</a>
-                <a href="index.html#contact" class="btn-nav">Contact Us</a>
-            </nav>
-        </div>
-    </header>
+<body>
 
-    <main class="container sku-detail-content">
-        <div class="detail-container">
-            
-            <div class="product-gallery">
-                <img id="skuImage" src="assets/images/default.jpg" alt="Product Image" class="product-gallery-main">
-                <div class="gallery-thumbnails">
-                    <img src="assets/images/thumbnail-1.jpg" alt="View 1" data-full-src="assets/images/default.jpg">
-                    <img src="assets/images/thumbnail-2.jpg" alt="View 2" data-full-src="assets/images/view2.jpg">
-                    <img src="assets/images/thumbnail-3.jpg" alt="View 3" data-full-src="assets/images/view3.jpg">
-                    <img src="assets/images/thumbnail-4.jpg" alt="View 4" data-full-src="assets/images/view4.jpg">
+    <nav class="navbar">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="brand"><img src="logo.png" alt="YiShen Global Logo" width="180" height="70"></a>
+            <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="why-us.html">Why Us</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="industries.html">Industries</a>
+                <a href="resources.html" class="active">Resources</a>
+                <a href="contact.html" class="nav-cta">Contact Us</a>
+            </div>
+        </nav>
+    </nav>
+
+    <header class="page-header bg-dark" style="padding-top: 180px; padding-bottom: 100px; background-image: linear-gradient(rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.9)), url('hero-bg.jpg'); background-position: center;">
+        <div class="container">
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: var(--silver);">
+                <a href="resources.html" style="color: var(--accent);">Resources</a> <i class="fas fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> Category Details
+            </div>
+            <h1 style="font-size: 2.5rem; margin-bottom: 15px;">SKU Detail: Ergonomic Seating</h1>
+            <p style="margin-bottom: 0;">Engineering specifications and logistical data for the S-Series and Pro-Line seating platforms.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            
+            <div class="resource-category-header">
+                <h3><i class="fas fa-database tech-accent"></i> Master Engineering Data Table</h3>
+                <div class="engineering-note">
+                    <strong>Technical Note:</strong> The data below represents active SKUs available for B2B procurement. Loading quantities are based on optimized KD (Knock-Down) packaging in a 40'HQ container. All materials meet BIFMA X5.1 standards unless noted.
                 </div>
-                <p style="text-align: center; margin-top: 15px; color: var(--secondary); font-style: italic;">Image provided for model illustration purposes. Color/material subject to change.</p>
-            </div>
+            </div>
 
-            <div class="detail-info-section" id="detailSection">
-                <p class="section-tag" id="divisionTag">Loading Division...</p>
-                <h2 id="skuName" style="font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 10px;">Model Loading...</h2>
-                <p id="skuTagline" style="font-size: 1.1rem; color: var(--secondary); margin-bottom: 30px;">Loading product description...</p>
-                
-                <div class="data-cards-grid">
-                    <div class="data-card">
-                        <h4><i class="fas fa-handshake"></i> Vertical Control Point</h4>
-                        <p id="verticalControl">Loading...</p>
-                    </div>
-                    <div class="data-card">
-                        <h4><i class="fas fa-map-marker-alt"></i> Scene Ecology</h4>
-                        <p id="sceneEcology">Loading...</p>
-                    </div>
-                    <div class="data-card">
-                        <h4><i class="fas fa-barcode"></i> HS Code (Customs)</h4>
-                        <p id="hsCode">Loading...</p>
-                    </div>
-                    <div class="data-card">
-                        <h4><i class="fas fa-dollar-sign"></i> Price Range (B2B)</h4>
-                        <p id="priceRange">Loading...</p>
+            <div class="detail-table-container data-matrix-container">
+                <table class="detail-table data-matrix-table">
+                    <thead>
+                        <tr>
+                            <th>Model SKU</th>
+                            <th>Status</th>
+                            <th>Mechanism Type</th>
+                            <th>Base & Casters</th>
+                            <th>Main Material (Back/Seat)</th>
+                            <th>Dimensions (W*D*H cm)</th>
+                            <th>MOQ</th>
+                            <th>40'HQ Load (pcs)</th>
+                            <th>Spec Sheet</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="sku-model">S-Pro-9001 (Flagship)</td>
+                            <td><span class="sku-status active"><i class="fas fa-check-circle"></i> Active</span></td>
+                            <td>Donati Synchro (4:1)</td>
+                            <td>700mm Alu / 65mm PU</td>
+                            <td>KR Wintex Mesh / Molded Foam</td>
+                            <td>68 * 65 * 115-125</td>
+                            <td>50</td>
+                            <td class="spec-highlight">650</td>
+                            <td><a href="#" class="tech-accent"><i class="far fa-file-pdf"></i> PDF</a></td>
+                        </tr>
+                        <tr>
+                            <td class="sku-model">S-Mid-8050</td>
+                            <td><span class="sku-status active"><i class="fas fa-check-circle"></i> Active</span></td>
+                            <td>Weight-Sensitive Auto</td>
+                            <td>680mm Nylon / 60mm PU</td>
+                            <td>CN High-Elast Mesh / Molded Foam</td>
+                            <td>66 * 62 * 110-118</td>
+                            <td>100</td>
+                            <td class="spec-highlight">720</td>
+                            <td><a href="#" class="tech-accent"><i class="far fa-file-pdf"></i> PDF</a></td>
+                        </tr>
+                         <tr>
+                            <td class="sku-model">S-Task-7020</td>
+                            <td><span class="sku-status active"><i class="fas fa-check-circle"></i> Active</span></td>
+                            <td>Simple Tilt (2-lock)</td>
+                            <td>640mm Nylon / 50mm Nylon</td>
+                            <td>Standard Mesh / Cut Foam</td>
+                            <td>62 * 58 * 105-113</td>
+                            <td>200</td>
+                            <td class="spec-highlight">850</td>
+                            <td><a href="#" class="tech-accent"><i class="far fa-file-pdf"></i> PDF</a></td>
+                        </tr>
+                        <tr style="opacity: 0.6; background-color: #eee;">
+                            <td class="sku-model" style="color: #666;">L-Legacy-500 (Disc.)</td>
+                            <td><span style="color: #999;"><i class="fas fa-times-circle"></i> Discontinued</span></td>
+                            <td>Basic Swivel</td>
+                            <td>600mm PP / 50mm PP</td>
+                            <td>Basic Fabric / Recycled Foam</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 60px;">
+                 <h4 style="margin-bottom: 25px;">Series Visual Reference</h4>
+                 <div class="grid-4">
+                     <img src="product-chair.jpg" style="border-radius: 4px; border: 1px solid var(--border);">
+                     <img src="product-chair.jpg" style="border-radius: 4px; border: 1px solid var(--border);">
+                     <img src="product-chair.jpg" style="border-radius: 4px; border: 1px solid var(--border);">
+                     <div style="background: #f8fafc; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--silver); font-weight: 600; height: 200px;">
+                         <i class="fas fa-drafting-compass" style="margin-right: 10px;"></i> CAD Drawing
+                     </div>
+                 </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="container" style="position: relative; z-index: 10;">
+            <h2>Need Full Technical Dossiers?</h2>
+            <p>Request the complete engineering data package, including 2D/3D CAD files and test reports for this series.</p>
+            <a href="contact.html" class="btn btn-tech" style="padding: 18px 45px; font-size: 1rem;">Request Engineering Package</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 style="margin-bottom: 25px;">YiShen Global</h3>
+                    <p style="opacity: 0.8; max-width: 300px;">Engineered supply chain solutions. Bridging manufacturing excellence with global market predictability.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="contact-list" style="display: block;">
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-cta-box">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/AlexYan03451555" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 YiShen Global. All Rights Reserved. | engineered in China.
+            </div>
+        </div>
+    </footer>
 
-                <h3 style="font-size: 1.5rem; color: var(--primary); border-bottom: 2px solid var(--border); padding-bottom: 5px; margin-top: 30px; margin-bottom: 20px;">Detailed Specifications</h3>
-                
-                <table class="spec-table">
-                    <tbody id="specsTableBody">
-                        <tr><th>Model/SKU</th><td id="skuCode">Loading...</td></tr>
-                        <tr><th>Product Tier</th><td id="skuTier">Loading...</td></tr>
-                    </tbody>
-                </table>
-                
-                <h3 style="font-size: 1.5rem; color: var(--primary); border-bottom: 2px solid var(--border); padding-bottom: 5px; margin-top: 30px; margin-bottom: 20px;">Differentiators & Market Readiness</h3>
-                <ul class="sku-features" id="skuFeatures">
-                    </ul>
-                
-                <div style="margin-top: 40px;">
-                    <a href="index.html#contact" class="btn btn-primary" id="quoteButton" style="display: block; background: #FFC300; color: var(--primary); border-color: #FFC300; font-size: 1rem;">
-                        Request B2B Quote for this Model <i class="fas fa-paper-plane"></i>
-                    </a>
-                    <a href="mailto:alex.yang@yishenglobal.net?subject=Technical%20Data%20Request%20for%20SKU%20[model]" class="btn btn-outline" id="dataSheetLink" style="display: block; margin-top: 10px; background: none; color: var(--accent); border-color: var(--accent); font-size: 0.9rem;">
-                        Download Detailed CAD/Data Sheet
-                    </a>
-                </div>
-            </div>
-        </div>
-    </main>
+    <a href="https://wa.me/8615968277867" target="_blank" class="floating-cta" aria-label="Contact via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-    <section class="cta-banner" style="background: var(--primary); color: var(--white); padding: 50px 0; text-align: center;">
-        <div class="container">
-            <h2 style="font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 15px;">Looking for Different Specs?</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.8;">
-                Explore all 200 vertically controlled solutions to find your perfect fit.
-            </p>
-            <a href="solutions.html" class="btn btn-primary" style="background: #FFC300; color: var(--primary); border-color: #FFC300;">Return to Catalog & Filter</a>
-        </div>
-    </section>
-    
-    <footer class="footer" style="padding: 40px 0 20px; background: #111;">
-        <div class="container" style="text-align: center;">
-            <p>&copy; 2026 YiShen Global. All rights reserved. | <a href="index.html#contact" style="color: var(--accent);">Get in Touch</a></p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-    <script>
-        // Manually trigger detail rendering since we are on the detail page
-        document.addEventListener('DOMContentLoaded', function() {
-            // Check if renderSkuDetail exists before calling (it's in script.js)
-            if (typeof renderSkuDetail !== 'undefined') {
-                renderSkuDetail();
-            }
-        });
-        
-        // NEW: Thumbnail interaction logic (Placeholder functionality)
-        const mainImage = document.getElementById('skuImage');
-        const thumbnails = document.querySelectorAll('.gallery-thumbnails img');
-        
-        thumbnails.forEach(thumb => {
-            thumb.addEventListener('click', () => {
-                const newSrc = thumb.getAttribute('data-full-src');
-                if (newSrc) {
-                    mainImage.src = newSrc;
-                    // Optional: highlight active thumbnail
-                    thumbnails.forEach(t => t.style.borderColor = 'transparent');
-                    thumb.style.borderColor = 'var(--accent)';
-                }
-            });
-        });
-    </script>
+    <script>
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        menuBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+    </script>
 </body>
 </html>
