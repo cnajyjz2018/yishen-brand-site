@@ -1,282 +1,108 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>战略价值量化 | 跨部门 B2B 合作价值 - YiShen Global</title>
-    <meta name="description" content="发现 YiShen Global 的量化价值：我们消除运营风险，保证 BIFMA/UL9540/G100 合规性，并加速三大战略部门（家具、工业、高科技）的新品开发周期。">
-    
-    <link rel="stylesheet" href="styles.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght{600;700}&display=swap" rel="stylesheet">
-
-    <style>
-        /* 原有基础样式保留 */
-        :root {
-            --primary: #111111;
-            --secondary: #555555;
-            --accent: #0077B6;
-            --bg-light: #f7f9fb;
-            --white: #ffffff;
-            --border: #e0e0e0;
-            --color-lifestyle: #FFC300; /* 家具/零售强调色 */
-            --color-industrial: #333333; /* 工业/工程强调色 */
-            --color-hightech: #007bff; /* 高科技/医疗强调色 */
-        }
-        .why-us-hero {
-            padding: 150px 0 80px;
-            background: var(--primary); 
-            color: var(--white);
-            text-align: center;
-            margin-top: 80px; /* NEW: Added margin for fixed navbar alignment */
-        }
-        .value-sections {
-            padding: 80px 0;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-        }
-        .value-prop {
-            /* NEW: 增强卡片视觉 */
-            padding: 30px;
-            border-left: 4px solid var(--accent);
-            background: var(--white);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-        .value-prop:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-        .value-prop h3 {
-            font-family: var(--font-serif);
-            font-size: 1.8rem; /* Adjusted slightly */
-            color: var(--primary); /* Adjusted to primary, with accent icon */
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .value-prop h3 i {
-            color: var(--accent);
-            font-size: 1.5rem;
-        }
-        .authority-block {
-            background: var(--bg-light);
-            padding: 80px 0;
-            text-align: center;
-        }
-        .authority-block img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 5px solid var(--accent);
-        }
-        /* 新增 CTA 样式 */
-        .risk-cta {
-            background: #1a1a1a;
-            color: var(--white);
-            padding: 60px 0;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .risk-cta h2 {
-            font-family: var(--font-serif);
-            font-size: 2.5rem;
-            color: #FFDD00;
-            margin-bottom: 15px;
-        }
-        .risk-cta p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 30px;
-        }
-
-        /* NEW: 量化价值区块 */
-        .quantifiable-value {
-            padding: 80px 0;
-            background: var(--white);
-        }
-        .quantifiable-value h2 {
-            font-family: var(--font-serif);
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5rem;
-        }
-        .value-matrix {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            text-align: center;
-        }
-        .matrix-card {
-            padding: 30px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: var(--bg-light);
-            border-top: 5px solid;
-        }
-        .matrix-card h4 {
-            font-size: 1.2rem;
-            margin-top: 15px;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        .matrix-card .metric {
-            font-size: 2rem;
-            font-family: var(--font-serif);
-            font-weight: 700;
-        }
-        
-        /* 颜色定制 */
-        .matrix-lifestyle { border-top-color: var(--color-lifestyle); }
-        .matrix-industrial { border-top-color: var(--color-industrial); }
-        .matrix-hightech { border-top-color: var(--color-hightech); }
-
-        /* Responsive adjustments */
-        @media (max-width: 1024px) {
-            .value-sections { grid-template-columns: 1fr; }
-            .value-matrix { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 768px) {
-            .value-sections { padding: 40px 0; }
-            .value-matrix { padding: 0 10px; }
-            .why-us-hero h1 { font-size: 2.5rem; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="description" content="Why choose YiShen Global? We ensure supply chain predictability through vertical integration, rigorous QC, and risk management strategies.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Us | YiShen Global Strategic Advantage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="navbar">
-        <div class="container nav-wrapper">
-            <a href="index.html" class="brand">
-                <div class="logo-icon"></div>
-                YiShen Global
-            </a>
-            <nav class="nav-links">
-                <a href="index.html#home">Home</a>
-                <a href="index.html#about">About</a>
-                <a href="index.html#products">Collection</a>
-                <a href="solutions.html">Solutions</a>
-                <a href="resources.html">Resources</a>
-                <a href="index.html#contact" class="btn-nav">Contact Us</a>
-            </nav>
-        </div>
-    </header>
 
-    <section class="why-us-hero">
-        <div class="container">
-            <span class="section-tag" style="color: #FFDD00; background: var(--primary);">Quantified Trust</span>
-            <h1>We Measure Our Value in Your Reduced Risk.</h1>
-            <p style="font-size: 1.15rem; max-width: 900px; margin: 20px auto 0;">
-                A B2B partnership is about risk transfer. We quantify your savings in time, defects, and logistics variance.
-            </p>
-        </div>
-    </section>
+    <nav class="navbar">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="brand"><img src="logo.png" alt="YiShen Global Logo"></a>
+            <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="why-us.html" class="active">Why Us</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="contact.html" class="nav-cta">Contact Us</a>
+            </div>
+        </div>
+    </nav>
 
-    <section class="quantifiable-value">
+    <header class="page-header" style="background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.8)), url('header-why-us.jpg');">
         <div class="container">
-            <h2>Quantifiable Metrics Across Our Three Divisions (200 SKU Portfolio)</h2>
-            <div class="value-matrix">
-                
-                <div class="matrix-card matrix-lifestyle">
-                    <i class="fas fa-percent" style="font-size: 2rem; color: var(--color-lifestyle);"></i>
-                    <h4>Lifestyle & Design Predictability</h4>
-                    <span class="metric" style="color: var(--color-lifestyle);">40%</span>
-                    <p style="font-size: 0.9rem; color: var(--secondary);">Reduction in Transit Damage (due to DTC packaging engineering)</p>
-                </div>
+            <span class="section-tag">The YiShen Difference</span>
+            <h1>Predictability Engineered<br>From the Source.</h1>
+            <p>We are not brokers. We are vertical supply chain integrators dedicated to eliminating risk for global buyers.</p>
+        </div>
+    </header>
 
-                <div class="matrix-card matrix-industrial">
-                    <i class="fas fa-bolt" style="font-size: 2rem; color: var(--color-industrial);"></i>
-                    <h4>Engineering & Rigor Safety</h4>
-                    <span class="metric" style="color: var(--color-industrial);">G100</span>
-                    <p style="font-size: 0.9rem; color: var(--secondary);">Minimum Alloy Grade Certification for Lifting & Safety Slings</p>
+    <section class="section-padding">
+        <div class="container text-center">
+            <h2>Beyond Sourcing: Strategic Partnership</h2>
+            <p style="max-width: 800px; margin: 0 auto 60px;">Traditional sourcing is reactive. Our approach is preventative. By controlling key manufacturing nodes, we ensure consistency across 200+ SKUs.</p>
+            
+            <div class="grid-3">
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Vertical Quality Control</h3>
+                    <p>We don't just inspect final products. We manage raw material procurement and component forging to ensure molecule-level compliance.</p>
                 </div>
-
-                <div class="matrix-card matrix-hightech">
-                    <i class="fas fa-shipping-fast" style="font-size: 2rem; color: var(--color-hightech);"></i>
-                    <h4>High-Tech & Bio Compliance</h4>
-                    <span class="metric" style="color: var(--color-hightech);">99.9%</span>
-                    <p style="font-size: 0.9rem; color: var(--secondary);">Purity Guarantee for Wafer-Grade Chemical and Sterile Consumables</p>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>DTC-Ready Engineering</h3>
+                    <p>Products and packaging designed specifically for the rigors of e-commerce shipping (ISTA 6 standards), reducing damage rates.</p>
                 </div>
-
+                <div class="feature-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Compliance & Ethics</h3>
+                    <p>Full transparency on certifications (BIFMA, UL, CE) and adherence to global labor and environmental standards.</p>
+                </div>
             </div>
         </div>
     </section>
-    <section class="container value-sections">
-                <div class="value-prop">
-            <h3><i class="fas fa-chart-line"></i> Predictable Profit Margin</h3>
-            <p>Our operational standards are built to reduce the hidden costs (rework, warranty, transit damage) that erode your final profit margin. We target a 99.8% on-time, zero-defect standard.</p>
-        </div>
-        
-        <div class="value-prop" style="border-left-color: var(--color-hightech);">
-            <h3><i class="fas fa-certificate"></i> Specialized Compliance Guarantee</h3>
-            <p>We guarantee compliance not just with BIFMA, but with stringent industry standards like **UL9540 (ESS)**, **GMP (Biomedical)**, and provide **DGR Class 9** documentation for complex logistics.</p>
+
+    <section class="section-padding bg-light text-center">
+        <div class="container">
+            <h2>Ready for a predictable supply chain?</h2>
+            <p>Let's discuss how we can mitigate risk for your next procurement cycle.</p>
+            <a href="contact.html" class="btn btn-gold">Schedule a Strategy Call</a>
         </div>
-
-        <div class="value-prop">
-            <h3><i class="fas fa-hands-helping"></i> True Partnership, Not Transaction</h3>
-            <p>We see ourselves as an extension of your procurement and QA department in Asia. Dedicated account teams ensure seamless communication across time zones and cultural barriers.</p>
-        </div>
-
-        <div class="value-prop" style="border-left-color: var(--color-industrial);">
-            <h3><i class="fas fa-ship"></i> Engineering Rigor & Vertical Control</h3>
-            <p>For industrial clients, we manage the **Vertical Control Points**—from G100 alloy forging to high-modulus fiber weaving—ensuring total safety traceability for every hoist and cable in your infrastructure.</p>
-        </div>
-
-        <div class="value-prop">
-            <h3><i class="fas fa-certificate"></i> Certifications Are Guaranteed</h3>
-            <p>We don't just supply BIFMA compliant goods; we guarantee the documentation and testing required for commercial tender processes in the US and EU markets.</p>
-        </div>
-        
-        <div class="value-prop">
-            <h3><i class="fas fa-wrench"></i> Iteration Speed Advantage</h3>
-            <p>Leverage our modular design approach to accelerate new SKU launches from 12 weeks to 6 weeks, giving you a competitive edge in fast-moving DTC sectors.</p>
-        </div>
     </section>
-    
-    <section class="risk-cta">
-        <div class="container">
-            <h2>What is Your Hidden Supply Chain Risk Worth?</h2>
-            <p>Use our proprietary risk assessment matrix to calculate the cost of inconsistency in your current supplier network.</p>
-            <a href="index.html#contact" class="btn btn-primary" style="background: #FFDD00; color: var(--primary); border-color: #FFDD00;">
-                Quantify Your Risk, Calculate ROI <i class="fas fa-calculator"></i>
-            </a>
-        </div>
-    </section>
 
-    <section class="authority-block">
-        <div class="container">
-            <img src="alex_yang_profile.jpg" alt="Alex Yang, Head of Supply Chain Strategy">
-            <h3>Our Commitment is Personified.</h3>
-            <p>
-                "In global supply chain, stability is the currency. Our team doesn't just manage production; we actively manage the operational risks that impact your brand's profitability and reputation. We are here to partner with you for the long term."
-            </p>
-            <p style="font-weight: 700; color: var(--primary);">Alex C. Yang, Head of Supply Chain Strategy</p>
-            <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" class="text-link">View Alex's LinkedIn Profile &rarr;</a>
-        </div>
-    </section>
-    
-    <section class="cta-banner" style="background: var(--accent); color: var(--white); padding: 50px 0; text-align: center;">
-        <div class="container">
-            <h2 style="font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 15px;">Ready to Engineer Your Predictable Supply Chain?</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9;">
-                Take the first step toward a higher-certainty B2B partnership.
-            </p>
-            <a href="index.html#contact" class="btn btn-primary" style="background: #FFDD00; color: var(--primary); border-color: #FFDD00;">Schedule Your Strategy Session Now</a>
-        </div>
-    </section>
-    
-    <footer class="footer" style="padding: 40px 0 20px; background: #111;">
-        <div class="container" style="text-align: center;">
-            <p>&copy; 2026 YiShen Global. All rights reserved. | <a href="index.html#contact" style="color: var(--accent);">Get in Touch</a></p>
-        </div>
-    </footer>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 style="color: white; font-size: 1.8rem; margin-bottom: 15px; font-family: var(--font-serif);">YiShen Global</h3>
+                    <p style="opacity: 0.8; max-width: 300px;">Your strategic partner in global supply chain excellence.</p>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:alex.yang@yishenglobal.net">alex.yang@yishenglobal.net</a></li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+8619530394133">+86 195 3039 4133</a></li>
+                        <li><i class="fab fa-weixin"></i> WeChat: 19530394133</li>
+                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/8615968277867" target="_blank">+86 159 6827 7867</a></li>
+                    </ul>
+                </div>
+                <div class="footer-cta-box">
+                    <h4>Get Started</h4>
+                    <a href="contact.html" class="btn btn-gold" style="margin-top: 10px;">Request Consultation</a>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/AlexYan03451555" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/alex.yang.427745" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/alexyang591/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">&copy; 2026 YiShen Global. All Rights Reserved.</div>
+        </div>
+    </footer>
 
-    <script src="script.js"></script>
+    <script>
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        menuBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+    </script>
 </body>
 </html>
