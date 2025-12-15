@@ -1,6 +1,6 @@
 /* ==========================================================================
    YiShen Global - V31.0 Master Unified Stylesheet
-   Integrated Engineering Aesthetics, Mobile Fixes, and 4-Column Footer
+   Integrated Engineering Aesthetics, Mobile Fixes, and 4-Column Footer with Full Socials
    ========================================================================== */
 
 /* --- ROOT VARIABLES & RESET --- */
@@ -150,7 +150,7 @@ p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; max-width
 .cta-banner h2 { color: white; font-size: 3.5rem; margin-bottom: 30px; text-transform: uppercase; letter-spacing: -1px; }
 .cta-banner p { color: var(--silver); max-width: 700px; margin: 0 auto 50px; font-size: 1.2rem; }
 
-/* --- FOOTER (V31.0 New 4-Column Structure) --- */
+/* --- FOOTER (V31.0 New 4-Column Structure with Full Socials) --- */
 .footer { background: var(--dark-bg); color: var(--silver); padding: 80px 0 30px; border-top: 1px solid rgba(255,255,255,0.05); }
 .footer h3 { color: white; font-family: var(--font-main); }
 .footer h4 { color: white; font-size: 1rem; font-weight: 700; }
@@ -159,8 +159,12 @@ p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; max-width
 .contact-list a { color: var(--silver); transition: 0.3s; font-size: 0.9rem; }
 .contact-list a:hover { color: var(--accent); }
 .social-links { display: flex; gap: 10px; }
+/* Updated Social Link Styles for Full Icons */
 .social-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; font-size: 1rem; }
 .social-links a:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-3px); color: white; }
+/* Brand Specific Hovers */
+.social-links a:hover i.fa-facebook-f { color: #1877F2; }
+.social-links a:hover i.fa-instagram { background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .copyright { color: rgba(255,255,255,0.4); font-size: 0.85rem; }
 
 /* --- FLOATING BTN --- */
