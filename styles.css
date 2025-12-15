@@ -245,6 +245,7 @@ p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; max-width
     /* Contact Section Responsive */
     .contact-container { flex-direction: column; gap: 40px; }
     .contact-details-wrapper, .social-connect-wrapper { padding: 30px 20px; width: 100%; } 
+   
    /* =========================================
    V30.1 Resources Page - Technical Data Styles
    ========================================= */
@@ -611,5 +612,47 @@ p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; max-width
     }
     .root-node::after, .branch-level-1 .node-wrapper:not(:last-child)::after {
         content: '↓'; display: block; position: absolute; bottom: -30px; color: var(--accent); font-size: 1.2rem;
+    }
+}
+
+/* =========================================
+   EMERGENCY FIX: Mobile Catalog Interaction
+   ========================================= */
+/* 针对不支持 hover 的设备（触屏设备） */
+@media (hover: none) {
+    /* 1. 强制显示卡片标题，不依赖悬停 */
+    .catalog-item h5 {
+        color: var(--primary) !important; /* 确保标题始终是深色 */
+    }
+    .catalog-item h5 i {
+        color: var(--accent) !important; /* 图标始终是蓝色 */
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    /* 2. 缩略图保持默认状态，不需变色 */
+    .mini-thumb {
+        border-color: #eee !important;
+    }
+
+    /* 3. 关键：强制显示底部的 View Category 链接和 SKU 计数 */
+    /* 我们需要覆盖原有的悬停显示逻辑 */
+    .catalog-item .catalog-meta {
+        /* 确保元数据区域始终可见且颜色正确 */
+        color: var(--secondary) !important;
+    }
+    
+    /* 让 "View Category" 按钮始终显现为蓝色可点击状态 */
+    .catalog-item .view-link {
+        color: var(--accent) !important;
+        opacity: 1 !important;
+        font-weight: 700 !important;
+    }
+    
+    /* 4. 移除卡片的整体上浮和阴影效果，避免手机上滑动时误触闪烁 */
+    .catalog-item:hover {
+        transform: none !important;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05) !important;
+        border-color: var(--border) !important;
     }
 }
