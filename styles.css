@@ -1,66 +1,11 @@
-/* styles.css - YiShen Global V25.0 Optimized Edition */
-
-/* --- ROOT VARIABLES & RESET --- */
-:root {
-    --primary: #0F172A; /* 深蓝专业感 */
-    --secondary: #334155; /* 次级文本颜色加深，提升阅读清晰度 */
-    --accent: #0284C7; /* 科技蓝 */
-    --gold: #D97706; /* 强调色 */
-    --bg-light: #F8FAFC;
-    --white: #ffffff;
-    --border: #E2E8F0;
-    --font-main: 'Inter', sans-serif;
-    --font-serif: 'Playfair Display', serif;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: var(--font-main); color: var(--primary); line-height: 1.7; background-color: var(--white); }
-a { text-decoration: none; color: inherit; transition: 0.3s; cursor: pointer; }
-ul { list-style: none; } img { max-width: 100%; height: auto; display: block; }
-
-/* --- TYPOGRAPHY & UTILITIES --- */
-.container { width: 90%; max-width: 1280px; margin: 0 auto; padding: 0 20px; }
-/* 增加版块间距，提升呼吸感，符合国际大牌设计 */
-.section-padding { padding: 120px 0; }
-/* 细微纹理背景，提升质感 */
-.bg-light { background-color: var(--bg-light); background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230F172A' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
-.text-center { text-align: center; }
-
-h1, h2, h3, h4, h5 { font-family: var(--font-serif); font-weight: 700; line-height: 1.1; }
-h1 { font-size: 4rem; letter-spacing: -1px; color: white; line-height: 1.2; }
-h2 { font-size: 2.8rem; color: var(--primary); margin-bottom: 1.5rem; }
-h3 { font-size: 1.6rem; margin-bottom: 15px; }
-p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; max-width: 800px; }
-/* 优化 section-tag 设计 */
-.section-tag { display: inline-block; font-size: 0.9rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 25px; position: relative; padding-left: 40px; }
-.section-tag::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 30px; height: 2px; background: var(--accent); }
-
-/* --- BUTTONS (优化CTA对比度) --- */
-.btn { display: inline-flex; align-items: center; justify-content: center; padding: 16px 38px; border-radius: 4px; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent; letter-spacing: 0.5px; }
-.btn-gold { background: var(--gold); color: white; border-color: var(--gold); box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3); } .btn-gold:hover { background: #b45309; border-color: #b45309; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(217, 119, 6, 0.4); }
-.btn-outline { background: transparent; color: var(--primary); border-color: var(--primary); } .btn-outline:hover { background: var(--primary); color: white; }
-.btn-outline-white { background: transparent; color: white; border-color: rgba(255,255,255,0.4); } .btn-outline-white:hover { border-color: white; background: rgba(255,255,255,0.1); }
-
-/* --- NAVIGATION --- */
-.navbar { position: fixed; top: 0; left: 0; width: 100%; height: 90px; background: rgba(255,255,255,0.98); border-bottom: 1px solid #eee; z-index: 1000; display: flex; align-items: center; backdrop-filter: blur(10px); }
-.nav-wrapper { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-.brand { display: flex; align-items: center; }
-.brand img { height: auto; width: 180px; max-height: 70px; object-fit: contain; }
-.nav-links { display: flex; gap: 40px; align-items: center; }
-.nav-links a { font-weight: 600; font-size: 0.95rem; position: relative; }
-.nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: var(--accent); transition: width 0.3s; }
-.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-.nav-cta { background: var(--primary); color: white !important; padding: 10px 25px; border-radius: 4px; } .nav-cta::after { display: none; }
-.mobile-menu-btn { display: none; font-size: 1.5rem; cursor: pointer; }
-
-/* --- HERO SECTION (Visual Update) --- */
-.hero { position: relative; padding-top: 240px; padding-bottom: 200px; text-align: center; color: white; background-color: var(--primary); background-size: cover; background-position: center; background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.7)), url('hero-bg.jpg'); }
-.hero p { color: #e2e8f0; font-size: 1.25rem; max-width: 760px; margin: 25px auto 45px; font-weight: 400; }
+/* styles.css - 更新 CARDS & GRIDS 区域 */
 
 /* --- CARDS & GRIDS --- */
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; } /* 调整了间距 */
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+
+/* 通用卡片样式 */
 .feature-card { background: white; padding: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
 .feature-card:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.1); }
 .card-img { height: 260px; width: 100%; object-fit: cover; transition: 0.4s; }
@@ -70,44 +15,76 @@ p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; max-width
 .card-body li { margin-bottom: 12px; display: flex; align-items: center; font-weight: 500; }
 .card-body i { color: var(--accent); margin-right: 12px; }
 
-/* --- NEW: TESTIMONIALS SECTION (竞争对手对比优化) --- */
-.testimonial-card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); position: relative; border: 1px solid var(--border); }
-.testimonial-quote { font-size: 1.1rem; font-style: italic; color: var(--secondary); margin-bottom: 30px; line-height: 1.8; }
-.testimonial-author { display: flex; align-items: center; }
-.author-avatar { width: 60px; height: 60px; border-radius: 50%; background-color: #ddd; margin-right: 20px; object-fit: cover; } /* 占位符背景 */
-.author-info h5 { margin-bottom: 5px; color: var(--primary); }
-.author-info span { font-size: 0.9rem; color: var(--accent); font-weight: 600; }
-
-/* --- NEW: FULL WIDTH CTA BANNER (转化优化) --- */
-.cta-banner { background: var(--primary); color: white; text-align: center; padding: 100px 0; position: relative; overflow: hidden; }
-.cta-banner::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('hero-bg.jpg') no-repeat center center; background-size: cover; opacity: 0.1; mix-blend-mode: overlay; } /* 使用现有背景图增加层次 */
-.cta-banner h2 { color: white; font-size: 3rem; margin-bottom: 30px; }
-.cta-banner p { color: #cbd5e1; max-width: 700px; margin: 0 auto 40px; font-size: 1.2rem; }
-
-/* --- NEW: FLOATING WHATSAPP BUTTON (移动端优化) --- */
-.floating-cta { position: fixed; bottom: 30px; right: 30px; z-index: 999; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4); transition: 0.3s; }
-.floating-cta:hover { transform: scale(1.1); }
-
-/* --- FOOTER --- */
-.footer { background: var(--primary); color: #94a3b8; padding: 100px 0 40px; }
-.footer-grid { display: grid; grid-template-columns: 1.2fr 1.5fr 1fr; gap: 80px; margin-bottom: 60px; align-items: start; }
-.footer h4 { color: white; margin-bottom: 30px; text-transform: uppercase; font-size: 1.1rem; letter-spacing: 1px; font-family: var(--font-serif); }
-.contact-list li { display: flex; align-items: flex-start; margin-bottom: 20px; color: #cbd5e1; }
-.contact-list i { color: var(--gold); margin-right: 15px; font-size: 1.2rem; margin-top: 5px; }
-.footer-cta-box { text-align: right; }
-.social-links { display: flex; gap: 15px; margin-top: 30px; justify-content: flex-end; }
-.social-links a { display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: rgba(255,255,255,0.08); color: white; border-radius: 50%; transition: all 0.3s ease; font-size: 1.2rem; border: 1px solid rgba(255,255,255,0.1); }
-.social-links a:hover { background: var(--gold); border-color: var(--gold); transform: translateY(-4px); color: white; }
-.copyright { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 60px; padding-top: 30px; text-align: center; font-size: 0.9rem; color: #64748b; }
-
-/* --- RESPONSIVE --- */
-@media (max-width: 1024px) {
-    h1 { font-size: 3rem; } h2 { font-size: 2.2rem; }
-    .section-padding { padding: 80px 0; }
-    .grid-2, .grid-3, .grid-4, .footer-grid { grid-template-columns: 1fr; gap: 50px; }
-    .footer-grid, .footer-cta-box, .social-links { text-align: center; justify-content: center; }
-    .nav-links { display: none; position: absolute; top: 90px; left: 0; width: 100%; background: white; flex-direction: column; padding: 30px 0; border-bottom: 1px solid #eee; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-    .nav-links.active { display: flex; } .mobile-menu-btn { display: block; }
-    .cta-banner h2 { font-size: 2.5rem; }
-    .hero-stats { margin-top: 40px; border-bottom: none; padding: 40px 20px; } /* 移动端 Stat 样式调整 */
+/* --- V27.0 NEW: B2B VISUAL CATALOG ITEMS --- */
+.catalog-item {
+    text-align: left; /* 改为左对齐，更像目录 */
+    padding: 25px;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: white;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
+.catalog-item:hover {
+    border-color: var(--gold);
+    box-shadow: 0 15px 40px rgba(217, 119, 6, 0.15);
+    transform: translateY(-5px);
+}
+/* 分类标题 */
+.catalog-item h5 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* 标题旁的小图标 */
+.catalog-item h5 i {
+    color: var(--accent);
+    opacity: 0.7;
+    font-size: 1rem;
+}
+/* 迷你产品缩略图矩阵 */
+.mini-prod-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4列缩略图 */
+    gap: 8px;
+    margin-bottom: 20px;
+}
+/* 缩略图样式 */
+.mini-thumb {
+    width: 100%;
+    height: 50px; /* 固定高度 */
+    object-fit: cover;
+    border-radius: 4px;
+    background-color: #f1f5f9; /* 占位背景色 */
+    border: 1px solid #eee;
+}
+/* "+17" 这种更多提示块的样式 */
+.mini-more {
+    height: 50px;
+    background-color: #f8fafc;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--secondary);
+}
+/* 底部信息栏 */
+.catalog-meta {
+    margin-top: auto; /*推到底部*/
+    font-size: 0.85rem;
+    color: var(--secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #f1f5f9;
+}
+.sku-count { font-weight: 700; color: var(--primary); }
+.view-link { color: var(--accent); font-weight: 600; font-size: 0.8rem; }
