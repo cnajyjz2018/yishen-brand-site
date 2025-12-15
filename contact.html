@@ -35,10 +35,11 @@
         </div>
     </nav>
 
-    <header class="page-header" style="background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.8)), url('header-contact.jpg');">
+    <header class="page-header" style="background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.8)), url('header-contact.jpg'); background-position: center; background-size: cover;">
         <div class="container">
-            <h1>Start Your Strategic Partnership.</h1>
-            <p>Reach out to our global team to discuss your supply chain needs.</p>
+            <span class="section-tag">Get in Touch</span>
+            <h1>Start Your Strategic<br>Partnership.</h1>
+            <p>Reach out to our global team to discuss your supply chain needs and how we can deliver predictability.</p>
         </div>
     </header>
 
@@ -85,11 +86,11 @@
                     </div>
 
                     <div class="social-links" style="justify-content: flex-start; margin-top: 40px;">
-                         <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" style="background: var(--primary);"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://x.com/AlexYan03451555" target="_blank" style="background: var(--primary);"><i class="fab fa-x-twitter"></i></a>
-                        <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank" style="background: var(--primary);"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.facebook.com/alex.yang.427745" target="_blank" style="background: var(--primary);"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/alexyang591/" target="_blank" style="background: var(--primary);"><i class="fab fa-instagram"></i></a>
+                         <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" aria-label="LinkedIn" style="background: var(--primary);"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/AlexYan03451555" target="_blank" aria-label="X (Twitter)" style="background: var(--primary);"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank" aria-label="YouTube" style="background: var(--primary);"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/alex.yang.427745" target="_blank" aria-label="Facebook" style="background: var(--primary);"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/alexyang591/" target="_blank" aria-label="Instagram" style="background: var(--primary);"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -97,10 +98,41 @@
     </section>
 
     <footer class="footer">
-        <div class="container text-center">
-            <div class="copyright" style="border-top: none; margin-top: 0;">&copy; 2026 YiShen Global. All Rights Reserved.</div>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 style="color: white; font-size: 1.8rem; margin-bottom: 15px; font-family: var(--font-serif);">YiShen Global</h3>
+                    <p style="opacity: 0.8; max-width: 300px;">Your strategic partner in global supply chain excellence.</p>
+                </div>
+
+                <div>
+                    <h4>Contact Us</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:alex.yang@yishenglobal.net">alex.yang@yishenglobal.net</a></li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+8619530394133">+86 195 3039 4133</a></li>
+                        <li><i class="fab fa-weixin"></i> WeChat: 19530394133</li>
+                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/8615968277867" target="_blank">+86 159 6827 7867</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-cta-box">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/AlexYan03451555" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/alex.yang.427745" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/alexyang591/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2026 YiShen Global. All Rights Reserved.
+            </div>
         </div>
     </footer>
+
     <script>
         const menuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
