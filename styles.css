@@ -244,6 +244,101 @@ p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; max-width
     .hero { text-align: center; } .hero h1 { margin-left: auto; margin-right: auto; } .hero p { margin-left: auto; margin-right: auto; }
     /* Contact Section Responsive */
     .contact-container { flex-direction: column; gap: 40px; }
-    .contact-details-wrapper, .social-connect-wrapper { padding: 30px 20px; width: 100%; }
+    .contact-details-wrapper, .social-connect-wrapper { padding: 30px 20px; width: 100%; } 
+   /* =========================================
+   V30.1 Resources Page - Technical Data Styles
+   ========================================= */
+
+/* 技术资源板块标题组 */
+.resource-category-header {
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+}
+.resource-category-header h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.resource-category-header h3 i {
+    color: var(--accent);
+    margin-right: 15px;
+    opacity: 0.8;
+}
+.engineering-note {
+    font-size: 0.95rem;
+    color: var(--secondary);
+    background: #f8fafc;
+    padding: 15px 20px;
+    border-left: 4px solid var(--accent);
+    border-radius: 4px;
+}
+.engineering-note strong { color: var(--primary); }
+
+/* 专业规格矩阵表 (Data Matrix Table) */
+.data-matrix-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid var(--border);
+    margin-top: 25px;
+}
+.data-matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
+.data-matrix-table thead th {
+    background-color: var(--primary); /* 使用深色表头增加专业感 */
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 18px 25px;
+    text-align: left;
+    font-size: 0.8rem;
+    border-bottom: 3px solid var(--accent);
+}
+.data-matrix-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+.data-matrix-table tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+.data-matrix-table tbody tr:hover {
+    background-color: rgba(0, 122, 255, 0.05);
+}
+.data-matrix-table td {
+    padding: 15px 25px;
+    border-bottom: 1px solid var(--border);
+    color: var(--secondary);
+    vertical-align: middle;
+}
+/* 第一列强调型号 */
+.data-matrix-table td:first-child {
+    font-weight: 700;
+    color: var(--primary);
+}
+/* 强调关键数据 */
+.spec-highlight {
+    font-weight: 600;
+    color: var(--accent);
+}
+/* 表格内的小图标 */
+.data-icon {
+    margin-right: 8px;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* 下载区域优化 */
+.download-section {
+    background-color: var(--bg-light);
+    padding: 80px 0;
+    border-top: 1px solid var(--border);
+}
     .social-links-fancy { justify-content: center; }
 }
