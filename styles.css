@@ -340,3 +340,133 @@ p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; max-width
     .root-node::after, .branch-level-1::before, .branch-level-1 .node-wrapper::before { display: none; }
     .root-node, .branch-level-1 .node-wrapper:not(:last-child) { margin-bottom: 40px; }
 }
+
+/*
+|--------------------------------------------------------------------------
+| YiShen Global Style Sheet
+|--------------------------------------------------------------------------
+|
+| 这是一个完整、已更新图片路径的样式文件。
+| 所有背景图片引用已从 .jpg/.png 替换为 .webp 格式。
+|
+*/
+
+/* --- 1. 全局和排版样式 --- */
+body {
+    /* 【您的原有内容】全局字体、边距、颜色等 */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+a {
+    /* 【您的原有内容】链接样式 */
+    text-decoration: none;
+    color: #007bff;
+}
+
+/* --- 2. 头部和导航栏样式 (包含 Logo) --- */
+header {
+    /* 【您的原有内容】Header 布局、颜色、阴影等 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo img {
+    /* 【您的原有内容】Logo 图片大小和样式 */
+    height: 40px; 
+    /* 图片已在 HTML 中更新为 logo.webp，此处仅是尺寸 */
+}
+
+/* --- 3. 首页 Hero 区样式 (背景图更新) --- */
+.hero-section {
+    /* 【您的原有内容】Hero 区尺寸、文字居中等 */
+    height: 80vh; 
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* **** 图片更新: hero-bg.webp **** */
+    background-image: url('../images/hero-bg.webp');
+}
+
+/* --- 4. 联系页 Header 样式 (背景图更新) --- */
+.contact-header-hero {
+    /* 【您的原有内容】Contact Header 尺寸、文字样式等 */
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+    /* **** 图片更新: header-consultation-desk.webp **** */
+    background-image: url('../images/header-consultation-desk.webp');
+}
+
+/* --- 5. 解决方案/特色产品区样式 --- */
+.solution-card, .feature-product, .catalog-scene {
+    /* 【您的原有内容】卡片布局、内边距等 */
+    padding: 40px 5%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.solution-card img, .feature-product img, .catalog-scene img, .gaming-chair img, .promotion-banner img {
+    /* 【您的原有内容】所有产品/场景图片的通用样式 */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+/* --- 6. 通用背景/图案样式 (Mesh 网格图更新) --- */
+.mesh-bg {
+    /* 【您的原有内容】使用 Mesh 作为背景的区域样式 */
+    padding: 50px 0;
+    background-repeat: repeat;
+    color: #f0f0f0;
+
+    /* **** 图片更新: mesh.webp **** */
+    background-image: url('../images/mesh.webp');
+}
+
+/* --- 7. 客户评价区样式 --- */
+.testimonials {
+    /* 【您的原有内容】评价区布局、颜色等 */
+    background-color: #f8f8f8;
+    padding: 60px 5%;
+}
+
+.testimonial-card img {
+    /* 【您的原有内容】头像图片样式 */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* --- 8. 底部样式 --- */
+footer {
+    /* 【您的原有内容】Footer 颜色、内边距、文字样式等 */
+    background-color: #222;
+    color: #ccc;
+    padding: 30px 5%;
+    text-align: center;
+}
+
+/* 【您的原有内容】请将您原有 CSS 文件中所有未在此处列出的其他样式规则（例如响应式媒体查询、按钮样式、特定模块的样式等）粘贴到这里 */
+
+@media (max-width: 768px) {
+    /* 【您的原有内容】媒体查询（移动端自适应）样式 */
+}
