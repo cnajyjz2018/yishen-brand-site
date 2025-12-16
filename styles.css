@@ -1,647 +1,378 @@
 /* ==========================================================================
-   YiShen Global - V31.0 Master Unified Stylesheet
-   Integrated Engineering Aesthetics, Mobile Fixes, and 4-Column Footer with Full Socials
-   ========================================================================== */
+   YiShen Global — OFFICIAL MASTER STYLESHEET (2026 FINAL)
+   Positioning: Furniture First · Engineering Support
+   ========================================================================== */
 
-/* --- ROOT VARIABLES & RESET --- */
+/* ===================== ROOT & RESET ===================== */
 :root {
-    /* 核心色彩体系升级 */
-    --primary: #0F172A; /* 深蓝专业感，用于正文和明亮背景文字 */
-    --dark-bg: #121212; /* 深空灰，用于沉浸式科技板块背景 */
-    --secondary: #334155; /* 次级文本颜色 */
-    --silver: #94a3b8; /* 质感银，用于深色背景下的辅助文字 */
-    
-    --accent: #007AFF; /* 科技蓝，核心强调色 */
-    --gold: #D97706; /* 品牌金色，用于特定强调和辅助CTA */
-    
-    --bg-light: #F8FAFC; /* 明亮背景 */
-    --white: #ffffff;
-    --border: #E2E8F0; /* 边框颜色 */
-    
-    --font-main: 'Inter', sans-serif; /* 主要无衬线字体，现代工整 */
-    --font-serif: 'Playfair Display', serif; /* 衬线字体，用于特定数字强调 */
+  --primary: #0F172A;
+  --secondary: #334155;
+  --silver: #94A3B8;
+
+  --accent: #007AFF;
+  --gold: #D97706;
+
+  --dark-bg: #0B1220;
+  --bg-light: #F8FAFC;
+  --white: #FFFFFF;
+  --border: #E2E8F0;
+
+  --font-main: 'Inter', sans-serif;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html { scroll-behavior: smooth; }
-body { font-family: var(--font-main); color: var(--primary); line-height: 1.7; background-color: var(--white); }
-a { text-decoration: none; color: inherit; transition: 0.3s; cursor: pointer; }
-ul { list-style: none; } img { max-width: 100%; height: auto; display: block; }
 
-/* --- TYPOGRAPHY & UTILITIES --- */
-.container { width: 90%; max-width: 1280px; margin: 0 auto; padding: 0 20px; }
-.section-padding { padding: 120px 0; }
-.section-padding-small { padding: 60px 0; } /* 新增：用于新增的 gaming/banner 区 */
+body {
+  font-family: var(--font-main);
+  color: var(--primary);
+  background: var(--white);
+  line-height: 1.7;
+}
 
-/* 深色沉浸式背景实用类 */
-.bg-dark { background-color: var(--dark-bg); color: var(--silver); }
-.bg-dark h2, .bg-dark h3, .bg-dark h4, .bg-dark h5 { color: white; }
-.bg-dark p { color: var(--silver); }
+img {
+  max-width: 100%;
+  display: block;
+}
 
-.bg-light { background-color: var(--bg-light); }
-.bg-light-alt { background-color: #F0F4F8; } /* 新增辅助亮色背景 */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: .3s;
+}
+
+/* ===================== LAYOUT ===================== */
+.container {
+  width: 90%;
+  max-width: 1280px;
+  margin: auto;
+}
+
+.section-padding {
+  padding: 120px 0;
+}
+
 .text-center { text-align: center; }
 
-h1, h2, h3, h4, h5 { font-family: var(--font-main); font-weight: 800; line-height: 1.1; letter-spacing: -0.5px; }
-h1 { font-size: 4.5rem; letter-spacing: -2px; color: white; line-height: 1.1; text-transform: uppercase; }
-h2 { font-size: 3rem; color: var(--primary); margin-bottom: 1.5rem; }
-h3 { font-size: 1.8rem; margin-bottom: 15px; }
-p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; max-width: 800px; }
+/* ===================== TYPOGRAPHY ===================== */
+h1, h2, h3, h4, h5 {
+  font-weight: 800;
+  line-height: 1.1;
+}
 
-/* Section Tag - 科技感标签 */
-.section-tag { display: inline-flex; align-items: center; font-size: 0.85rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
-.section-tag::before { content: ''; width: 20px; height: 2px; background: var(--accent); margin-right: 10px; }
-.bg-dark .section-tag { color: var(--accent); }
+h1 {
+  font-size: 4rem;
+  color: #fff;
+}
 
-/* 科技蓝文字强调 */
+h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  color: var(--secondary);
+  font-size: 1.1rem;
+  max-width: 780px;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.section-tag::before {
+  content: '';
+  width: 18px;
+  height: 2px;
+  background: var(--accent);
+  margin-right: 10px;
+}
+
 .tech-accent { color: var(--accent); }
 
-/* --- BUTTONS --- */
-.btn { display: inline-flex; align-items: center; justify-content: center; padding: 18px 40px; border-radius: 4px; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent; letter-spacing: 1px; }
-.btn-gold { background: var(--gold); color: white; border-color: var(--gold); box-shadow: 0 4px 20px rgba(217, 119, 6, 0.4); } .btn-gold:hover { background: #b45309; border-color: #b45309; transform: translateY(-2px); }
-/* 科技蓝按钮 */
-.btn-tech { background: var(--accent); color: white; border-color: var(--accent); box-shadow: 0 4px 20px rgba(0, 122, 255, 0.4); } .btn-tech:hover { background: #0062cc; border-color: #0062cc; transform: translateY(-2px); }
-.btn-outline { background: transparent; color: var(--primary); border-color: var(--primary); } .btn-outline:hover { background: var(--primary); color: white; }
-.btn-outline-white { background: transparent; color: white; border-color: rgba(255,255,255,0.4); } .btn-outline-white:hover { border-color: white; background: rgba(255,255,255,0.1); }
-
-/* --- NAVIGATION --- */
-.navbar { position: fixed; top: 0; left: 0; width: 100%; height: 90px; background: rgba(255,255,255,0.98); border-bottom: 1px solid #eee; z-index: 1000; display: flex; align-items: center; backdrop-filter: blur(10px); }
-.nav-wrapper { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-.brand { display: flex; align-items: center; }
-.brand img { height: auto; width: 180px; max-height: 70px; object-fit: contain; }
-.nav-links { display: flex; gap: 30px; align-items: center; }
-.nav-links a { font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; position: relative; }
-.nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: var(--accent); transition: width 0.3s; }
-.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-.nav-cta { background: var(--primary); color: white !important; padding: 12px 28px; border-radius: 4px; } .nav-cta::after { display: none; }
-.mobile-menu-btn { display: none; font-size: 1.5rem; cursor: pointer; }
-
-/* --- HERO SECTION (工程美学) --- */
-.hero { position: relative; padding-top: 260px; padding-bottom: 220px; text-align: left; color: white; background-color: var(--dark-bg); overflow: hidden; }
-/* 背景暗纹和科技蓝渐变叠加 - **图片路径已修正为 hero-bg.webp (根目录)** */
-.hero::before { 
-    content: ''; 
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
-    background-image: url('hero-bg.webp'); /* <--- 路径更新 */
-    background-size: cover; 
-    background-position: center; 
-    opacity: 0.4; 
-    mix-blend-mode: luminosity; 
-    z-index: 1; 
-}
-.hero::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, rgba(15, 23, 42, 0.9), rgba(0, 122, 255, 0.2)); z-index: 2; }
-.hero .container { position: relative; z-index: 3; }
-.hero h1 { max-width: 900px; margin-bottom: 20px; }
-.hero p { color: var(--silver); font-size: 1.3rem; max-width: 700px; margin-bottom: 40px; font-weight: 400; }
-
-/* --- STATS BOXES --- */
-.hero-stats { background: white; padding: 50px; margin-top: -80px; border-radius: 4px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); border-bottom: 4px solid var(--accent); position: relative; z-index: 20; }
-.stat-box h3 { font-size: 2.5rem; color: var(--primary); font-weight: 800; }
-.stat-box p { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; color: var(--accent); }
-
-/* --- TRUST BAR --- */
-.trust-bar { padding: 60px 0; border-bottom: 1px solid var(--border); }
-.trust-item { font-weight: 800; font-size: 1.5rem; color: #94a3b8; opacity: 0.6; transition: all 0.3s ease; text-transform: uppercase; }
-.trust-item:hover { opacity: 1; color: var(--primary); }
-
-/* --- PAGE HEADER (通用内页头部) --- */
-.page-header { padding-top: 180px; padding-bottom: 100px; position: relative; overflow: hidden; }
-.page-header h1 { font-size: 3.5rem; margin-bottom: 20px; }
-.page-header p { font-size: 1.2rem; max-width: 800px; opacity: 0.9; }
-
-/* --- CARDS & GRIDS --- */
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
-
-/* Standard Feature Card / Resource Card */
-.feature-card { background: white; padding: 0; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); transition: all 0.4s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; }
-.feature-card:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.1); }
-.card-img { height: 260px; width: 100%; object-fit: cover; transition: 0.4s; }
-.feature-card:hover .card-img { transform: scale(1.05); }
-.card-body { padding: 40px; flex-grow: 1; display: flex; flex-direction: column; }
-.card-body li { margin-bottom: 12px; display: flex; align-items: center; font-weight: 500; }
-.card-body i { color: var(--accent); margin-right: 12px; }
-
-/* --- B2B VISUAL CATALOG ITEMS (首页/资源页目录卡片) --- */
-.catalog-item { text-align: left; padding: 30px; cursor: pointer; border-radius: 8px; border: 1px solid var(--border); background: white; transition: all 0.3s ease; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-.catalog-item:hover { border-color: var(--accent); box-shadow: 0 15px 40px rgba(0, 122, 255, 0.15); transform: translateY(-5px); }
-.catalog-item h5 { font-size: 1.1rem; margin-bottom: 20px; color: var(--primary); display: flex; align-items: center; justify-content: space-between; font-weight: 700; transition: 0.3s; }
-.catalog-item h5 i { color: var(--accent); opacity: 0.8; font-size: 1.2rem; transition: 0.3s; }
-.catalog-item:hover h5 i { color: var(--accent); opacity: 1; transform: scale(1.1); }
-
-/* --- V31.0 目录图片视觉修复 --- */
-.mini-prod-grid { 
-    display: grid; 
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 10px; 
-    margin-bottom: 25px; 
-}
-.mini-thumb { 
-    width: 100%; 
-    height: 60px; 
-    /* 核心修复：确保图片裁剪并覆盖整个区域，避免失调 */
-    object-fit: cover; 
-    /* 确保占位图居中，但不会拉伸变形 */
-    object-position: center; 
-    
-    border-radius: 4px; 
-    background-color: #f1f5f9; 
-    border: 1px solid #eee; 
-    transition: 0.3s; 
-}
-/* 针对当前占位图的临时优化：如果是长方形 LOGO，让它占据多列并居中 */
-.catalog-item .logo-placeholder {
-    grid-column: span 4; /* 强制占据整行 */
-    height: 70px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--dark-bg); /* 提供一个暗色背景来衬托LOGO/横幅 */
-}
-.catalog-item .logo-placeholder img {
-    height: 40px; /* 调整LOGO尺寸 */
-    object-fit: contain;
-}
-/* --- END V31.0 目录图片视觉修复 --- */
-
-
-.mini-more { height: 60px; background-color: #f8fafc; border-radius: 4px; border: 1px solid #eee; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 700; color: var(--secondary); transition: 0.3s; }
-.catalog-item:hover .mini-more { background-color: var(--accent); color: white; border-color: var(--accent); }
-.catalog-meta { margin-top: auto; font-size: 0.85rem; color: var(--secondary); display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid #f1f5f9; font-weight: 600; transition: 0.3s; }
-.sku-count { color: var(--primary); }
-.view-link { color: var(--accent); transition: 0.3s; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; font-weight: 600; opacity: 0.8; }
-.catalog-item:hover .view-link { color: var(--accent); opacity: 1; }
-
-/* --- RESOURCE CARD STYLES (下载卡片) --- */
-.resource-meta { font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
-.resource-card h4 { font-size: 1.4rem; margin-bottom: 15px; color: var(--primary); }
-.resource-card p { font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1; }
-.resource-link { font-weight: 700; color: var(--primary); display: flex; align-items: center; transition: 0.3s; }
-.resource-link i { margin-left: 10px; color: var(--accent); transition: 0.3s; }
-.resource-card:hover .resource-link i { transform: translateX(5px); }
-
-/* --- CONTACT SECTION ENHANCEMENTS (V31.0) --- */
-.contact-item-block { display: flex; align-items: flex-start; margin-bottom: 25px; }
-.contact-details-wrapper { padding: 40px; border: 1px solid var(--border); border-radius: 8px; }
-.contact-sub-heading { color: var(--primary); font-size: 1.2rem; font-weight: 700; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
-.contact-item-block .icon-box { background: var(--bg-light); color: var(--accent); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; margin-right: 20px; }
-.contact-item-block .text-box { display: flex; flex-direction: column; }
-.contact-item-block .label { font-size: 0.8rem; color: var(--secondary); text-transform: uppercase; font-weight: 600; margin-bottom: 5px; }
-.contact-item-block .contact-link { color: var(--primary); font-weight: 600; font-size: 1rem; transition: color 0.3s ease; }
-.contact-item-block .contact-link:hover { color: var(--accent); }
-.contact-item-block .contact-plain-text { color: var(--primary); font-weight: 600; font-size: 1rem; }
-.whatsapp-link { color: #25D366 !important; }
-.whatsapp-link:hover { text-decoration: underline; }
-.location-link:hover { text-decoration: underline; }
-.social-connect-wrapper { padding: 40px; border: 1px solid var(--border); border-radius: 8px; }
-.social-links-fancy { display: flex; gap: 15px; flex-wrap: wrap; }
-.social-btn { display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; border: 1px solid var(--border); font-size: 1.2rem; transition: all 0.3s ease; color: var(--primary); }
-
-/* --- TESTIMONIALS --- */
-.testimonial-card { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); position: relative; border: 1px solid var(--border); }
-.testimonial-quote { font-size: 1.1rem; font-style: italic; color: var(--secondary); margin-bottom: 30px; line-height: 1.8; font-family: var(--font-serif); }
-.testimonial-author { display: flex; align-items: center; }
-.author-avatar { width: 60px; height: 60px; border-radius: 50%; background-color: #ddd; margin-right: 20px; object-fit: cover; }
-.author-info h5 { margin-bottom: 5px; color: var(--primary); }
-.author-info span { font-size: 0.9rem; color: var(--accent); font-weight: 600; }
-
-/* --- CTA BANNER --- */
-.cta-banner { background: var(--dark-bg); color: white; text-align: center; padding: 120px 0; position: relative; overflow: hidden; }
-/* CTA Banner 背景图 - **图片路径已修正为 hero-bg.webp (根目录)** */
-.cta-banner::before { 
-    content: ''; 
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
-    background: url('hero-bg.webp') no-repeat center center; /* <--- 路径更新 */
-    background-size: cover; 
-    opacity: 0.1; 
-    mix-blend-mode: overlay; 
-}
-.cta-banner h2 { color: white; font-size: 3.5rem; margin-bottom: 30px; text-transform: uppercase; letter-spacing: -1px; }
-.cta-banner p { color: var(--silver); max-width: 700px; margin: 0 auto 50px; font-size: 1.2rem; }
-
-/* --- FOOTER (V31.0 New 4-Column Structure with Full Socials) --- */
-.footer { background: var(--dark-bg); color: var(--silver); padding: 80px 0 30px; border-top: 1px solid rgba(255,255,255,0.05); }
-.footer h3 { color: white; font-family: var(--font-main); }
-.footer h4 { color: white; font-size: 1rem; font-weight: 700; }
-.footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); } 
-.contact-list li { margin-bottom: 12px; }
-.contact-list a { color: var(--silver); transition: 0.3s; font-size: 0.9rem; }
-.contact-list a:hover { color: var(--accent); }
-.social-links { display: flex; gap: 10px; }
-
-/* V31.0 SOCIAL ICON ENHANCEMENT (Dynamic Hover & True Brand Color) */
-.social-links a { 
-    display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; 
-    background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.1); 
-    transition: all 0.3s ease; font-size: 1rem; 
-}
-.social-links a:hover { 
-    transform: translateY(-3px); 
+/* ===================== NAV ===================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 90px;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
 }
 
-/* Base Icon Colors (Ensuring correct brand colors are visible before hover) */
-.social-links .fab { color: var(--silver); transition: color 0.3s ease; }
-.social-links a:hover .fab { color: white !important; }
-
-/* True Brand Color Hover Overrides */
-.social-links a[aria-label*="LinkedIn"]:hover { background-color: #0A66C2; border-color: #0A66C2; }
-.social-links a[aria-label*="X (Twitter)"]:hover { background-color: #1A1A1A; border-color: #1A1A1A; }
-.social-links a[aria-label*="YouTube"]:hover { background-color: #FF0000; border-color: #FF0000; }
-.social-links a[aria-label*="Facebook"]:hover { background-color: #1877F2; border-color: #1877F2; }
-.social-links a[aria-label*="Instagram"]:hover { background-color: #C13584; border-color: #C13584; } 
-
-/* V31.0 Social Fancy Hover (for Contact Section) */
-.social-btn.linkedin:hover { background-color: #0A66C2 !important; color: white !important; border-color: #0A66C2; }
-.social-btn.x-twitter:hover { background-color: #1A1A1A !important; color: white !important; border-color: #1A1A1A; }
-.social-btn.youtube:hover { background-color: #FF0000 !important; color: white !important; border-color: #FF0000; }
-.social-btn.facebook:hover { background-color: #1877F2 !important; color: white !important; border-color: #1877F2; }
-.social-btn.instagram:hover { background-color: #C13584 !important; color: white !important; border-color: #C13584; }
-
-
-.copyright { color: rgba(255,255,255,0.4); font-size: 0.85rem; }
-
-/* --- FLOATING BTN --- */
-.floating-cta { position: fixed; bottom: 30px; right: 30px; z-index: 999; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4); transition: 0.3s; }
-.floating-cta:hover { transform: scale(1.1); }
-
-/* --- V30.1 RESOURCES PAGE STYLES (Data Tables) --- */
-.resource-category-header { margin-bottom: 40px; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
-.resource-category-header h3 { font-size: 1.8rem; margin-bottom: 10px; display: flex; align-items: center; }
-.resource-category-header h3 i { color: var(--accent); margin-right: 15px; opacity: 0.8; }
-.engineering-note { font-size: 0.95rem; color: var(--secondary); background: #f8fafc; padding: 15px 20px; border-left: 4px solid var(--accent); border-radius: 4px; }
-.engineering-note strong { color: var(--primary); }
-.data-matrix-container { overflow-x: auto; background: white; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border: 1px solid var(--border); margin-top: 25px; }
-.data-matrix-table { width: 100%; border-collapse: collapse; white-space: nowrap; font-size: 0.9rem; }
-.data-matrix-table thead th { background-color: var(--primary); color: white; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; padding: 18px 25px; text-align: left; font-size: 0.8rem; border-bottom: 3px solid var(--accent); }
-.data-matrix-table tbody tr { transition: background-color 0.3s ease; }
-.data-matrix-table tbody tr:nth-child(even) { background-color: #f8fafc; }
-.data-matrix-table tbody tr:hover { background-color: rgba(0, 122, 255, 0.05); }
-.data-matrix-table td { padding: 15px 25px; border-bottom: 1px solid var(--border); color: var(--secondary); vertical-align: middle; }
-.data-matrix-table td:first-child { font-weight: 700; color: var(--primary); }
-.spec-highlight { font-weight: 600; color: var(--accent); }
-.data-icon { margin-right: 8px; color: #94a3b8; font-size: 0.9rem; }
-.download-section { background-color: var(--bg-light); padding: 80px 0; border-top: 1px solid var(--border); }
-
-/* --- V30.2 AVANT-GARDE CTA SECTION --- */
-.avant-garde-cta-section { background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%); color: white; padding: 100px 0; position: relative; overflow: hidden; border-top: 1px solid rgba(255, 255, 255, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-.avant-garde-cta-section::before { content: ''; position: absolute; top: -50%; right: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(0, 122, 255, 0.05) 0%, transparent 60%); z-index: 1; pointer-events: none; }
-.avant-garde-box { position: relative; z-index: 2; border: 1px solid rgba(0, 122, 255, 0.3); padding: 60px; background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border-radius: 4px; display: flex; flex-direction: column; align-items: center; text-align: center; }
-.avant-garde-title { font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 25px; background: linear-gradient(90deg, #ffffff, var(--silver)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -0.5px; }
-.avant-garde-text { color: var(--silver); font-size: 1.15rem; max-width: 700px; margin-bottom: 40px; line-height: 1.8; }
-.btn-avant-garde { background: transparent; color: var(--accent); border: 2px solid var(--accent); padding: 18px 50px; letter-spacing: 2px; position: relative; overflow: hidden; transition: all 0.4s ease; z-index: 1; }
-.btn-avant-garde::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: var(--accent); transition: all 0.4s ease; z-index: -1; }
-.btn-avant-garde:hover { color: white; box-shadow: 0 10px 30px rgba(0, 122, 255, 0.3); }
-.btn-avant-garde:hover::before { left: 0; }
-
-/* --- V30.3 BLUEPRINT ARCHITECTURE STYLES --- */
-.blueprint-section { 
-    background-color: var(--dark-bg); 
-    /* 假设 mesh.webp 用于此处的背景图案 */
-    background-image: linear-gradient(rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.95)), url('mesh.webp'); /* <--- 路径更新 */
-    background-repeat: repeat;
-    color: white; 
-    padding: 100px 0; 
-    min-height: 100vh; 
-    position: relative; 
-    overflow: hidden; 
-}
-.blueprint-section::before { content: ''; position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(0, 122, 255, 0.15) 0%, transparent 70%); pointer-events: none; }
-.architecture-tree { display: flex; flex-direction: column; align-items: center; position: relative; margin-top: 60px; }
-.node-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(0, 122, 255, 0.2); backdrop-filter: blur(10px); padding: 20px 35px; border-radius: 4px; text-align: center; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; font-size: 0.9rem; position: relative; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: flex; align-items: center; justify-content: center; color: var(--silver); box-shadow: 0 0 15px rgba(0, 122, 255, 0.05); }
-.node-card i { margin-right: 10px; color: var(--accent); font-size: 1.1rem; }
-.node-card:hover { background: rgba(0, 122, 255, 0.1); border-color: var(--accent); color: white; box-shadow: 0 0 30px rgba(0, 122, 255, 0.3); transform: translateY(-3px); z-index: 10; }
-.root-node { margin-bottom: 80px; }
-.root-node .node-card { padding: 25px 50px; font-size: 1.1rem; border-color: var(--accent); background: rgba(0, 122, 255, 0.08); color: white; }
-.branch-level-1 { display: flex; gap: 40px; justify-content: center; position: relative; flex-wrap: wrap; }
-.node-wrapper { position: relative; display: flex; flex-direction: column; align-items: center; }
-.root-node::after { content: ''; position: absolute; bottom: -80px; left: 50%; width: 2px; height: 80px; background: linear-gradient(to bottom, var(--accent), rgba(0,122,255,0.2)); }
-.branch-level-1::before { content: ''; position: absolute; top: -40px; left: 10%; width: 80%; height: 2px; background: rgba(0, 122, 255, 0.3); }
-.branch-level-1 .node-wrapper::before { content: ''; position: absolute; top: -40px; left: 50%; width: 2px; height: 40px; background: rgba(0, 122, 255, 0.3); }
-.branch-level-2 { margin-top: 40px; display: flex; flex-direction: column; gap: 15px; position: relative; opacity: 0.7; transition: 0.3s; }
-.node-wrapper:hover .branch-level-2 { opacity: 1; }
-.branch-level-2 .node-card { padding: 12px 20px; font-size: 0.8rem; border-color: rgba(255, 255, 255, 0.1); }
-.branch-level-2::before { content: ''; position: absolute; top: -40px; left: 50%; width: 2px; height: 40px; background: rgba(0, 122, 255, 0.2); }
-
-/* --- V31.0 TEXT OPTIMIZATION TOOLKIT (文本优化工具箱) --- */
-.text-highlight { font-weight: 700; color: var(--primary); background: linear-gradient(120deg, rgba(0, 122, 255, 0.1) 0%, rgba(0, 122, 255, 0) 100%); padding: 2px 5px; border-radius: 2px; }
-.eng-list { margin: 25px 0; padding-left: 10px; }
-.eng-list li { position: relative; padding-left: 25px; margin-bottom: 15px; font-weight: 500; color: var(--secondary); line-height: 1.5; }
-.eng-list li::before { content: '\f058'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; top: 2px; color: var(--accent); font-size: 1rem; }
-.lead-in { font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; font-size: 0.9rem; margin-right: 8px; }
-
-/* =========================================
-   V31.0 EMERGENCY FIX: Mobile Interaction
-   ========================================= */
-/* 针对不支持 hover 的设备（触屏设备） */
-@media (hover: none) {
-    /* Catalog Grid Fix */
-    .catalog-item h5 { color: var(--primary) !important; }
-    .catalog-item h5 i { color: var(--accent) !important; opacity: 1 !important; transform: none !important; }
-    .mini-thumb { border-color: #eee !important; }
-    .catalog-item .catalog-meta { color: var(--secondary) !important; }
-    .catalog-item .view-link { color: var(--accent) !important; opacity: 1 !important; font-weight: 700 !important; }
-    .catalog-item:hover { transform: none !important; box-shadow: 0 5px 15px rgba(0,0,0,0.05) !important; border-color: var(--border) !important; }
-    
-    /* Blueprint Mobile Fix: Always show Level 2 */
-    .branch-level-2 { opacity: 1 !important; margin-top: 20px; }
-    .branch-level-2::before { height: 20px; top: -20px; }
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* --- RESPONSIVE BREAKPOINTS --- */
-@media (max-width: 1024px) {
-    h1 { font-size: 3rem; } h2 { font-size: 2.2rem; }
-    .section-padding { padding: 80px 0; }
-    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; gap: 50px; }
-    .footer-grid { grid-template-columns: 1fr; gap: 40px !important; } /* 手机端页脚强制单列 */
-    .mini-prod-grid { grid-template-columns: repeat(4, 1fr); }
-    .nav-links { display: none; position: absolute; top: 90px; left: 0; width: 100%; background: rgba(255,255,255,0.98); flex-direction: column; padding: 30px 0; border-bottom: 1px solid #eee; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-    .nav-links.active { display: flex; } .mobile-menu-btn { display: block; }
-    .cta-banner h2 { font-size: 2.5rem; }
-    .hero-stats { margin-top: 40px; border-bottom: none; padding: 40px 20px; }
-    .hero { text-align: center; } .hero h1 { margin-left: auto; margin-right: auto; } .hero p { margin-left: auto; margin-right: auto; }
-    .contact-container { flex-direction: column; gap: 40px; }
-    .contact-details-wrapper, .social-connect-wrapper { padding: 30px 20px; width: 100%; }
-    .social-links-fancy { justify-content: center; }
-    .avant-garde-box { padding: 30px; } .avant-garde-title { font-size: 2rem; }
-    /* Blueprint Responsive */
-    .branch-level-1 { flex-direction: column; align-items: center; gap: 40px; }
-    .root-node::after, .branch-level-1::before, .branch-level-1 .node-wrapper::before { display: none; }
-    .root-node, .branch-level-1 .node-wrapper:not(:last-child) { margin-bottom: 40px; }
-}
-/* ==========================================================
-   YiShen Global — V31.1 ELITE OVERRIDES (Drop-in)
-   Goal: Tech Blue Energy Core + Digital Grid + Premium Contrast
-   Paste this at the END of styles.css
-   ========================================================== */
-
-/* 1) 统一为“能量蓝”体系（不是系统蓝） */
-:root{
-  --dark-bg: #050b17;        /* 深海底色（更高级，不发灰） */
-  --primary: #0B1220;
-  --secondary: rgba(11,18,32,.72);
-  --silver: rgba(234,240,247,.75);
-
-  --accent: #1E90FF;         /* 能量蓝主色 */
-  --accent-2: #3FA9F5;       /* 光晕蓝 */
-  --border: rgba(234,240,247,.12);
-
-  --bg-light: #F6F8FB;
+.brand img {
+  width: 180px;
+  max-height: 65px;
+  object-fit: contain;
 }
 
-/* 2) Navbar 变成“玻璃态科技” */
-.navbar-elite{
-  background: rgba(255,255,255,.90);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(11,18,32,.08);
+.nav-links {
+  display: flex;
+  gap: 30px;
 }
 
-/* 3) HERO：能量核 + 数字网格 + 扫描光幕（独一无二的关键） */
-.hero-elite{
-  background: radial-gradient(circle at 50% 42%, #0b2a52 0%, #071b34 35%, #050b17 70%, #02060f 100%);
-  padding-top: 270px;
-  padding-bottom: 230px;
-}
-
-.hero-elite::before,
-.hero-elite::after{
-  content:none; /* 禁用你旧 hero 的图片叠层逻辑，避免“发灰” */
-}
-
-.hero-elite .hero-content{
-  position: relative;
-  z-index: 6;
-}
-
-.hero-layer{
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-}
-
-/* 数字网格 */
-.hero-grid{
-  opacity: .55;
-  background-image:
-    radial-gradient(rgba(120,200,255,.16) 1px, transparent 1px),
-    linear-gradient(120deg, rgba(30,144,255,.20), transparent 60%);
-  background-size: 86px 86px, cover;
-  mix-blend-mode: screen;
-}
-
-/* 能量光核（核心） */
-.hero-glow{
-  inset:-25%;
-  background:
-    radial-gradient(circle at 50% 45%,
-      rgba(63,169,245,.55) 0%,
-      rgba(30,144,255,.22) 28%,
-      rgba(30,144,255,.08) 45%,
-      transparent 62%);
-  filter: blur(90px);
-  animation: yishenPulse 8s ease-in-out infinite;
-}
-
-@keyframes yishenPulse{
-  0%,100%{ transform: scale(1); opacity:.78; }
-  50%{ transform: scale(1.12); opacity:1; }
-}
-
-/* 扫描光幕（更“科技”但克制） */
-.hero-scan{
-  opacity: .45;
-  background:
-    linear-gradient(180deg,
-      transparent 0%,
-      rgba(63,169,245,.07) 35%,
-      rgba(30,144,255,.12) 55%,
-      transparent 100%);
-  animation: yishenScan 10s linear infinite;
-}
-
-@keyframes yishenScan{
-  0%{ transform: translateY(-18%); }
-  100%{ transform: translateY(18%); }
-}
-
-/* Hero 文案层级 */
-.hero-title{
-  text-transform: none; /* 更高级（不强行全大写） */
-  letter-spacing: -1.6px;
-  max-width: 980px;
-}
-
-.hero-subtitle{
-  color: rgba(234,240,247,.82) !important;
-  font-size: 1.22rem !important;
-  max-width: 760px !important;
-}
-
-/* Hero 微型信任点 */
-.hero-microproof{
-  margin-top: 28px;
-  display:flex;
-  gap: 18px;
-  flex-wrap: wrap;
-  color: rgba(234,240,247,.70);
-  font-size: .9rem;
-}
-.hero-microproof span{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding: 10px 14px;
-  border: 1px solid rgba(234,240,247,.12);
-  background: rgba(255,255,255,.03);
-  border-radius: 999px;
-}
-.hero-microproof i{
-  color: rgba(63,169,245,.95);
-}
-
-/* 4) 高端按钮：玻璃态 + 能量蓝（不是扁平块） */
-.btn-tech-elite{
-  background: linear-gradient(135deg, rgba(30,144,255,.95), rgba(63,169,245,.75));
-  border-color: rgba(63,169,245,.85);
-  box-shadow:
-    0 14px 44px rgba(30,144,255,.28),
-    0 0 0 1px rgba(234,240,247,.08) inset;
-  border-radius: 999px;
-}
-.btn-tech-elite:hover{
-  background: linear-gradient(135deg, rgba(30,144,255,1), rgba(63,169,245,.9));
-  transform: translateY(-2px);
-}
-
-.btn-ghost-elite{
-  border-radius: 999px;
-  border-color: rgba(234,240,247,.22);
-  background: rgba(255,255,255,.02);
-}
-.btn-ghost-elite:hover{
-  background: rgba(255,255,255,.06);
-  border-color: rgba(234,240,247,.38);
-}
-
-/* 5) Stats 白卡：更“奢侈”的对比与边缘质感 */
-.hero-stats-wrap{ position: relative; z-index: 20; }
-.hero-stats-elite{
-  border-radius: 14px;
-  border-bottom: 0;
-  border: 1px solid rgba(11,18,32,.08);
-  box-shadow: 0 24px 70px rgba(2,6,15,.14);
-}
-.hero-stats-elite{
-  position: relative;
-}
-.hero-stats-elite:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius: 14px;
-  pointer-events:none;
-  background: linear-gradient(90deg, rgba(30,144,255,.18), transparent 35%, rgba(63,169,245,.12));
-  opacity:.55;
-  mask: linear-gradient(#000, transparent 70%);
-}
-
-/* 6) Trust 栏：更克制更高级 */
-.trust-elite{
-  padding-top: 100px;
-  padding-bottom: 60px;
-  border-bottom: 1px solid rgba(11,18,32,.06);
-}
-.trust-title{
-  font-weight: 700;
-  color: rgba(148,163,184,.95);
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  margin-bottom: 40px;
-  font-size: 0.85rem;
-}
-.trust-grid{
-  display:flex;
-  justify-content:center;
-  gap: 60px;
-  flex-wrap:wrap;
-  align-items:center;
-}
-
-/* 7) 图片统一“高端卡边 + 阴影控制” */
-.img-elite{
-  border-radius: 14px;
-  box-shadow: 0 18px 54px rgba(2,6,15,.12);
-}
-.img-elite-dark{
-  box-shadow: 0 20px 60px rgba(30,144,255,.10);
-}
-
-/* 8) Dark Lab 文案更“权威克制” */
-.h2-on-dark{
-  color: rgba(255,255,255,.98) !important;
-}
-.lab-lead{
-  font-size: 1.1rem;
+.nav-links a {
   font-weight: 600;
-  margin-bottom: 18px;
-  opacity: .95;
+  font-size: .9rem;
+  text-transform: uppercase;
+  position: relative;
 }
-.lab-points{
-  display:flex;
-  gap: 34px;
-  margin-top: 32px;
-  flex-wrap: wrap;
-}
-.lab-point h4{ color:#fff; margin-bottom: 10px; }
-.lab-point p{ margin-bottom: 0; font-size: .95rem; }
 
-/* 9) Feature bullets 更像“工程规格卡” */
-.feature-bullets{
-  margin-top: 26px;
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: .3s;
+}
+
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  background: var(--primary);
+  color: white;
+  padding: 12px 26px;
+  border-radius: 4px;
+}
+
+.mobile-menu-btn {
+  display: none;
+}
+
+/* ===================== HERO ===================== */
+.hero {
+  position: relative;
+  padding: 240px 0 200px;
+  background: var(--dark-bg);
+  color: white;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("hero-bg.webp") center/cover no-repeat;
+  opacity: .35;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, rgba(15,23,42,.95), rgba(0,122,255,.2));
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero p {
+  color: var(--silver);
+  font-size: 1.25rem;
+  margin: 30px 0 40px;
+}
+
+/* ===================== STATS ===================== */
+.hero-stats {
+  background: white;
+  margin-top: -80px;
+  padding: 50px;
+  border-radius: 6px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.08);
+}
+
+.grid-4 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px 18px;
-}
-.feature-bullets li{
-  margin-bottom:0;
-  display:flex;
-  align-items:center;
-  font-weight: 650;
-  color: rgba(11,18,32,.86);
-}
-.feature-bullets i{
-  margin-right: 12px;
+  grid-template-columns: repeat(4,1fr);
+  gap: 40px;
 }
 
-/* 10) CTA Banner 变成“暗能量 + 高端边缘” */
-.cta-elite{
-  background: radial-gradient(circle at 50% 40%, rgba(30,144,255,.18) 0%, rgba(5,11,23,1) 56%);
-}
-.cta-elite::before{
-  opacity: .18;
-  mix-blend-mode: screen;
+.stat-box h3 {
+  font-size: 2.5rem;
+  color: var(--primary);
 }
 
-/* 11) Contact lead 更干净 */
-.social-lead{
-  margin-bottom: 25px;
-  font-size: 0.95rem;
-  color: rgba(11,18,32,.68);
+.stat-box p {
+  text-transform: uppercase;
+  font-size: .85rem;
+  color: var(--accent);
+  font-weight: 700;
 }
 
-/* 12) Mobile：Hero 不塌陷 */
-@media (max-width: 1024px){
-  .hero-elite{ padding-top: 220px; padding-bottom: 170px; text-align:center; }
-  .hero-actions{ justify-content:center; flex-wrap:wrap; }
-  .feature-bullets{ grid-template-columns: 1fr; }
-  .hero-microproof{ justify-content:center; }
+/* ===================== CATALOG ===================== */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 30px;
 }
 
+.catalog-item {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 28px;
+  transition: .35s;
+}
+
+.catalog-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0,122,255,.15);
+}
+
+.mini-prod-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.mini-thumb {
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  background: #f1f5f9;
+}
+
+.mini-more {
+  grid-column: span 1;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: .85rem;
+  color: var(--secondary);
+}
+
+.catalog-item h5 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+}
+
+.catalog-meta {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 15px;
+  font-size: .8rem;
+}
+
+.view-link {
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* ===================== ENGINEERING SUPPORT ===================== */
+.bg-dark {
+  background: var(--dark-bg);
+  color: var(--silver);
+}
+
+.bg-dark h2 { color: white; }
+
+.eng-list li {
+  list-style: none;
+  margin-bottom: 15px;
+  padding-left: 26px;
+  position: relative;
+}
+
+.eng-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* ===================== CTA ===================== */
+.cta-banner {
+  background: var(--dark-bg);
+  color: white;
+  padding: 120px 0;
+  text-align: center;
+}
+
+.cta-banner p {
+  color: var(--silver);
+  margin: 20px auto 40px;
+}
+
+/* ===================== FOOTER ===================== */
+.footer {
+  background: var(--dark-bg);
+  color: var(--silver);
+  padding: 80px 0 30px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 40px;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.social-links a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===================== FLOATING CTA ===================== */
+.floating-cta {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: white;
+  border-radius: 50%;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width:1024px) {
+  .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .mobile-menu-btn { display: block; }
+}
