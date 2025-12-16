@@ -1,50 +1,44 @@
-/* =========================================================
-   YiShen Global – Home & Office Furniture System
-   Core Style Sheet (Ultimate Edition)
-   Furniture First · Supply Chain Powered · Tech Energy UI
-========================================================= */
+/* =====================================================
+   YiShen Global – ENERGY SYSTEM STYLESHEET
+   Version: 2026.FINAL
+   Theme: Furniture First · Engineering Backbone
+===================================================== */
 
-/* =========================
-   CSS VARIABLES
-========================= */
+/* ---------- ROOT TOKENS ---------- */
 :root {
   --bg-dark: #050b17;
-  --bg-panel: #0b1220;
-  --bg-soft: #0f172a;
-  --bg-light: #f8fafc;
+  --bg-panel: #0b1324;
+  --bg-light: #f5f7fb;
 
-  --primary: #0ea5e9;
-  --accent: #22d3ee;
-  --energy: #38bdf8;
+  --tech-blue: #2ecbff;
+  --tech-blue-soft: rgba(46,203,255,.35);
+  --tech-blue-glow: rgba(46,203,255,.55);
 
-  --text-main: #e5e7eb;
-  --text-sub: #94a3b8;
-  --text-dark: #0f172a;
+  --text-main: #0f172a;
+  --text-light: #ffffff;
+  --text-muted: rgba(255,255,255,.68);
 
-  --border: rgba(148,163,184,.18);
-  --radius: 14px;
   --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
 
-  --transition: .35s cubic-bezier(.4,0,.2,1);
+  --transition-fast: .25s ease;
+  --transition-smooth: .45s cubic-bezier(.2,.8,.2,1);
 }
 
-/* =========================
-   RESET
-========================= */
-*,
-*::before,
-*::after {
+/* ---------- RESET ---------- */
+* {
   box-sizing: border-box;
-}
-
-html, body {
   margin: 0;
   padding: 0;
-  background: var(--bg-dark);
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #ffffff;
   color: var(--text-main);
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.65;
-  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
 }
 
 img {
@@ -52,376 +46,406 @@ img {
   display: block;
 }
 
-/* =========================
-   CONTAINER & GRID
-========================= */
+/* ---------- LAYOUT ---------- */
 .container {
-  max-width: 1320px;
+  width: 100%;
+  max-width: 1220px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
 }
 
+.section-padding {
+  padding: 90px 0;
+}
+
+.bg-dark {
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.bg-light {
+  background: var(--bg-light);
+}
+
+/* ---------- GRID ---------- */
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 60px;
+  gap: 48px;
 }
 
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 32px;
 }
 
 .grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  gap: 28px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 900px) {
   .grid-2, .grid-3, .grid-4 {
     grid-template-columns: 1fr;
   }
 }
 
-/* =========================
+/* =====================================================
    NAVBAR
-========================= */
+===================================================== */
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
-  width: 100%;
-  background: rgba(5,11,23,.85);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
-  z-index: 1000;
+  z-index: 999;
+  background: rgba(5,11,23,.82);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
 }
 
 .nav-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 86px;
+  height: 76px;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
+.brand img.logo-energy {
+  filter: drop-shadow(0 0 12px var(--tech-blue-glow));
+  animation: logoPulse 3.2s ease-in-out infinite;
 }
 
-/* === ENERGY LOGO === */
-.logo-energy {
-  height: 48px;
-  filter: drop-shadow(0 0 18px rgba(56,189,248,.6));
-  animation: energyPulse 4s ease-in-out infinite;
-  transition: transform .4s ease, filter .4s ease;
-}
-
-@keyframes energyPulse {
-  0%,100% {
-    filter: drop-shadow(0 0 12px rgba(56,189,248,.4));
-  }
-  50% {
-    filter: drop-shadow(0 0 30px rgba(56,189,248,.95));
-  }
-}
-
-.brand:hover .logo-energy {
-  transform: scale(1.06);
-  filter: drop-shadow(0 0 44px rgba(34,211,238,1));
+@keyframes logoPulse {
+  0%,100% { filter: drop-shadow(0 0 10px rgba(46,203,255,.35)); }
+  50% { filter: drop-shadow(0 0 18px rgba(46,203,255,.75)); }
 }
 
 .nav-links {
   display: flex;
-  gap: 28px;
+  align-items: center;
+  gap: 26px;
 }
 
 .nav-links a {
-  color: var(--text-sub);
+  color: rgba(255,255,255,.78);
   text-decoration: none;
   font-weight: 500;
   position: relative;
-  transition: var(--transition);
+  transition: var(--transition-fast);
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--accent);
+  color: var(--tech-blue);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--tech-blue);
+  transition: width .3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
 }
 
 .nav-cta {
-  padding: 10px 22px;
+  padding: 10px 18px;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  color: #fff !important;
-  font-weight: 600;
-  box-shadow: 0 0 24px rgba(34,211,238,.45);
+  background: linear-gradient(135deg, var(--tech-blue), #6ee7ff);
+  color: #00121f !important;
+  font-weight: 700;
+  box-shadow: 0 0 22px rgba(46,203,255,.35);
 }
 
-/* =========================
-   PAGE HEADER (HERO)
-========================= */
+.mobile-menu-btn {
+  display: none;
+  color: white;
+  font-size: 22px;
+}
+
+@media (max-width: 860px) {
+  .nav-links {
+    position: absolute;
+    top: 76px;
+    left: 0;
+    width: 100%;
+    background: #050b17;
+    flex-direction: column;
+    display: none;
+    padding: 24px;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+}
+
+/* =====================================================
+   HERO
+===================================================== */
 .page-header {
-  padding: 200px 0 120px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
+  padding: 140px 0 120px;
 }
 
-.page-header::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 70% 30%, rgba(56,189,248,.18), transparent 55%);
+.page-header h1 {
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-weight: 800;
+  margin: 16px 0 18px;
 }
 
-.page-header .container {
-  position: relative;
-  z-index: 2;
+.page-header p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
 }
 
 .section-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 16px;
-  border-radius: 999px;
-  background: rgba(56,189,248,.12);
-  color: var(--accent);
-  font-size: .75rem;
-  font-weight: 600;
-  margin-bottom: 22px;
+  font-size: .78rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--tech-blue);
 }
 
-.page-header h1 {
-  font-size: clamp(2.4rem, 4vw, 3.4rem);
-  margin-bottom: 18px;
+/* HERO IMAGE STRIP */
+.hero-visual-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
 }
 
-.page-header p {
-  max-width: 720px;
-  color: var(--text-sub);
+.hero-visual-strip img {
+  border-radius: var(--radius-md);
+  transition: var(--transition-smooth);
+  cursor: pointer;
 }
 
-/* =========================
-   SECTION
-========================= */
-.section-padding {
-  padding: 110px 0;
+.hero-visual-strip img:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 0 28px rgba(46,203,255,.45);
 }
 
-.bg-light {
-  background: var(--bg-soft);
-}
-
-/* =========================
+/* =====================================================
    BUTTONS
-========================= */
+===================================================== */
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 16px 34px;
+  justify-content: center;
+  padding: 13px 22px;
   border-radius: 999px;
   font-weight: 600;
   text-decoration: none;
-  transition: var(--transition);
+  transition: var(--transition-smooth);
 }
 
 .btn-tech {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  color: #fff;
-  box-shadow: 0 0 26px rgba(34,211,238,.55);
+  background: linear-gradient(135deg, var(--tech-blue), #6ee7ff);
+  color: #00121f;
+  box-shadow: 0 0 26px rgba(46,203,255,.4);
 }
 
 .btn-tech:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 46px rgba(34,211,238,.85);
+  box-shadow: 0 0 38px rgba(46,203,255,.75);
 }
 
-/* =========================
-   SKU / PRODUCT CARD (ANIME STYLE)
-========================= */
-.catalog-item,
-.solution-card,
-.feature-card {
-  background: linear-gradient(180deg, rgba(15,23,42,.85), rgba(5,11,23,.9));
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  padding: 28px;
-  position: relative;
+.btn-outline {
+  border: 1px solid rgba(255,255,255,.35);
+  color: #fff;
+}
+
+.btn-outline:hover {
+  border-color: var(--tech-blue);
+  color: var(--tech-blue);
+}
+
+/* =====================================================
+   STATS
+===================================================== */
+.hero-stats {
+  margin-top: -60px;
+  background: var(--bg-panel);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: 0 0 40px rgba(0,0,0,.35);
+}
+
+.stat-box h3 {
+  color: var(--tech-blue);
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+
+.stat-box p {
+  color: rgba(255,255,255,.65);
+  font-size: .9rem;
+}
+
+/* =====================================================
+   CATALOG CARDS
+===================================================== */
+.catalog-rich-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  transition: var(--transition);
+  transition: var(--transition-smooth);
+  box-shadow: 0 12px 32px rgba(0,0,0,.08);
 }
 
-.catalog-item::before,
-.solution-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, transparent 30%, rgba(56,189,248,.18), transparent 70%);
-  opacity: 0;
-  transition: var(--transition);
+.catalog-rich-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 48px rgba(46,203,255,.25);
 }
 
-.catalog-item:hover::before,
-.solution-card:hover::before {
-  opacity: 1;
+.catalog-cover img {
+  height: 220px;
+  object-fit: cover;
 }
 
-.catalog-item:hover,
-.solution-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 40px 80px rgba(0,0,0,.55);
+.catalog-body {
+  padding: 22px;
 }
 
-/* =========================
-   SKU IMAGE HOVER (SCAN EFFECT)
-========================= */
-.catalog-item img {
+.catalog-body h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.catalog-body p {
+  font-size: .9rem;
+  color: #555;
+  margin-bottom: 14px;
+}
+
+.mini-gallery {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.mini-gallery img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
   border-radius: var(--radius-sm);
-  transition: var(--transition);
+  transition: var(--transition-fast);
 }
 
-.catalog-item:hover img {
-  transform: scale(1.06);
-  filter: drop-shadow(0 0 24px rgba(56,189,248,.55));
+.mini-gallery img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 16px var(--tech-blue-soft);
 }
 
-/* =========================
-   TABLES (ENGINEERING DATA)
-========================= */
-.data-matrix-table {
-  width: 100%;
-  border-collapse: collapse;
+/* =====================================================
+   ENGINEERING LIST
+===================================================== */
+.eng-list {
+  list-style: none;
+}
+
+.eng-list li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 14px;
+}
+
+.eng-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--tech-blue);
+}
+
+/* =====================================================
+   ENERGY SOCIAL MATRIX
+===================================================== */
+.energy-social-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  margin-top: 38px;
+}
+
+.energy-node {
+  background: radial-gradient(circle at top, rgba(46,203,255,.15), rgba(5,11,23,.9));
+  border: 1px solid rgba(46,203,255,.25);
+  border-radius: var(--radius-lg);
+  padding: 26px 18px;
+  color: #fff;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.energy-node i {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: var(--tech-blue);
+}
+
+.energy-node:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 0 40px rgba(46,203,255,.6);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+.footer {
+  background: #020611;
+  padding: 80px 0 40px;
+}
+
+.footer-grid a {
+  display: block;
+  color: rgba(255,255,255,.65);
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.footer-grid a:hover {
+  color: var(--tech-blue);
+}
+
+.footer-desc {
+  color: rgba(255,255,255,.6);
+  font-size: .9rem;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 40px;
+  color: rgba(255,255,255,.45);
   font-size: .85rem;
 }
 
-.data-matrix-table th {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  color: #fff;
-  padding: 14px;
-}
-
-.data-matrix-table td {
-  padding: 12px 14px;
-  border-bottom: 1px solid var(--border);
-  color: var(--text-sub);
-}
-
-/* =========================
-   CTA BANNER
-========================= */
-.cta-banner {
-  padding: 120px 0;
-  background:
-    radial-gradient(circle at 50% 0%, rgba(56,189,248,.25), transparent 60%),
-    linear-gradient(180deg, #020617, #050b17);
-  text-align: center;
-}
-
-.cta-banner h2 {
-  font-size: 2.2rem;
-  margin-bottom: 18px;
-}
-
-.cta-banner p {
-  color: var(--text-sub);
-  margin-bottom: 36px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-.footer {
-  background: #020617;
-  padding: 90px 0 40px;
-  border-top: 1px solid var(--border);
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-}
-
-.footer h4 {
-  margin-bottom: 18px;
-}
-
-.footer a {
-  color: var(--text-sub);
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-.footer a:hover {
-  color: var(--accent);
-}
-
-/* =========================
-   SOCIAL ICONS (ENERGY STYLE)
-========================= */
-.social-links a {
-  width: 38px;
-  height: 38px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(56,189,248,.12);
-  color: var(--accent);
-  margin-right: 10px;
-  transition: var(--transition);
-}
-
-.social-links a:hover {
-  background: var(--accent);
-  color: #fff;
-  box-shadow: 0 0 22px rgba(34,211,238,.9);
-}
-
-/* =========================
-   FLOATING WHATSAPP
-========================= */
+/* =====================================================
+   FLOATING CTA
+===================================================== */
 .floating-cta {
   position: fixed;
   bottom: 26px;
   right: 26px;
-  width: 56px;
-  height: 56px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
-  background: #25d366;
+  background: linear-gradient(135deg, #25d366, #2ecc71);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 1.6rem;
-  box-shadow: 0 0 26px rgba(37,211,102,.7);
+  font-size: 26px;
+  box-shadow: 0 0 28px rgba(37,211,102,.6);
   z-index: 999;
-  transition: var(--transition);
-}
-
-.floating-cta:hover {
-  transform: scale(1.12);
-}
-
-/* =========================
-   MOBILE
-========================= */
-.mobile-menu-btn {
-  display: none;
-}
-
-@media (max-width: 900px) {
-  .nav-links {
-    display: none;
-  }
-  .mobile-menu-btn {
-    display: block;
-    color: var(--accent);
-    font-size: 1.6rem;
-  }
 }
