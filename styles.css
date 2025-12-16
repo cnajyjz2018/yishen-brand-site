@@ -1,25 +1,25 @@
 /* ==========================================================================
-   YiShen Global - V31.0 Master Unified Stylesheet
-   Integrated Engineering Aesthetics, Mobile Fixes, and 4-Column Footer with Full Socials
-   ========================================================================== */
+   YiShen Global - V31.0 Master Unified Stylesheet
+   Integrated Engineering Aesthetics, Mobile Fixes, and 4-Column Footer with Full Socials
+   ========================================================================== */
 
 /* --- ROOT VARIABLES & RESET --- */
 :root {
-    /* 核心色彩体系升级 */
-    --primary: #0F172A; /* 深蓝专业感，用于正文和明亮背景文字 */
-    --dark-bg: #121212; /* 深空灰，用于沉浸式科技板块背景 */
-    --secondary: #334155; /* 次级文本颜色 */
-    --silver: #94a3b8; /* 质感银，用于深色背景下的辅助文字 */
-    
-    --accent: #007AFF; /* 科技蓝，核心强调色 */
-    --gold: #D97706; /* 品牌金色，用于特定强调和辅助CTA */
-    
-    --bg-light: #F8FAFC; /* 明亮背景 */
-    --white: #ffffff;
-    --border: #E2E8F0; /* 边框颜色 */
-    
-    --font-main: 'Inter', sans-serif; /* 主要无衬线字体，现代工整 */
-    --font-serif: 'Playfair Display', serif; /* 衬线字体，用于特定数字强调 */
+    /* 核心色彩体系升级 */
+    --primary: #0F172A; /* 深蓝专业感，用于正文和明亮背景文字 */
+    --dark-bg: #121212; /* 深空灰，用于沉浸式科技板块背景 */
+    --secondary: #334155; /* 次级文本颜色 */
+    --silver: #94a3b8; /* 质感银，用于深色背景下的辅助文字 */
+    
+    --accent: #007AFF; /* 科技蓝，核心强调色 */
+    --gold: #D97706; /* 品牌金色，用于特定强调和辅助CTA */
+    
+    --bg-light: #F8FAFC; /* 明亮背景 */
+    --white: #ffffff;
+    --border: #E2E8F0; /* 边框颜色 */
+    
+    --font-main: 'Inter', sans-serif; /* 主要无衬线字体，现代工整 */
+    --font-serif: 'Playfair Display', serif; /* 衬线字体，用于特定数字强调 */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -31,6 +31,7 @@ ul { list-style: none; } img { max-width: 100%; height: auto; display: block; }
 /* --- TYPOGRAPHY & UTILITIES --- */
 .container { width: 90%; max-width: 1280px; margin: 0 auto; padding: 0 20px; }
 .section-padding { padding: 120px 0; }
+.section-padding-small { padding: 60px 0; } /* 新增：用于新增的 gaming/banner 区 */
 
 /* 深色沉浸式背景实用类 */
 .bg-dark { background-color: var(--dark-bg); color: var(--silver); }
@@ -38,6 +39,7 @@ ul { list-style: none; } img { max-width: 100%; height: auto; display: block; }
 .bg-dark p { color: var(--silver); }
 
 .bg-light { background-color: var(--bg-light); }
+.bg-light-alt { background-color: #F0F4F8; } /* 新增辅助亮色背景 */
 .text-center { text-align: center; }
 
 h1, h2, h3, h4, h5 { font-family: var(--font-main); font-weight: 800; line-height: 1.1; letter-spacing: -0.5px; }
@@ -76,8 +78,21 @@ p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; max-width
 
 /* --- HERO SECTION (工程美学) --- */
 .hero { position: relative; padding-top: 260px; padding-bottom: 220px; text-align: left; color: white; background-color: var(--dark-bg); overflow: hidden; }
-/* 背景暗纹和科技蓝渐变叠加 - 请确保 hero-bg.jpg 存在 */
-.hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('hero-bg.jpg'); background-size: cover; background-position: center; opacity: 0.4; mix-blend-mode: luminosity; z-index: 1; }
+/* 背景暗纹和科技蓝渐变叠加 - **图片路径已修正为 hero-bg.webp (根目录)** */
+.hero::before { 
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-image: url('hero-bg.webp'); /* <--- 路径更新 */
+    background-size: cover; 
+    background-position: center; 
+    opacity: 0.4; 
+    mix-blend-mode: luminosity; 
+    z-index: 1; 
+}
 .hero::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, rgba(15, 23, 42, 0.9), rgba(0, 122, 255, 0.2)); z-index: 2; }
 .hero .container { position: relative; z-index: 3; }
 .hero h1 { max-width: 900px; margin-bottom: 20px; }
@@ -120,37 +135,37 @@ p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; max-width
 .catalog-item:hover h5 i { color: var(--accent); opacity: 1; transform: scale(1.1); }
 
 /* --- V31.0 目录图片视觉修复 --- */
-.mini-prod-grid { 
-    display: grid; 
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 10px; 
-    margin-bottom: 25px; 
+.mini-prod-grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px; 
+    margin-bottom: 25px; 
 }
-.mini-thumb { 
-    width: 100%; 
-    height: 60px; 
-    /* 核心修复：确保图片裁剪并覆盖整个区域，避免失调 */
-    object-fit: cover; 
-    /* 确保占位图居中，但不会拉伸变形 */
-    object-position: center; 
-    
-    border-radius: 4px; 
-    background-color: #f1f5f9; 
-    border: 1px solid #eee; 
-    transition: 0.3s; 
+.mini-thumb { 
+    width: 100%; 
+    height: 60px; 
+    /* 核心修复：确保图片裁剪并覆盖整个区域，避免失调 */
+    object-fit: cover; 
+    /* 确保占位图居中，但不会拉伸变形 */
+    object-position: center; 
+    
+    border-radius: 4px; 
+    background-color: #f1f5f9; 
+    border: 1px solid #eee; 
+    transition: 0.3s; 
 }
 /* 针对当前占位图的临时优化：如果是长方形 LOGO，让它占据多列并居中 */
 .catalog-item .logo-placeholder {
-    grid-column: span 4; /* 强制占据整行 */
-    height: 70px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--dark-bg); /* 提供一个暗色背景来衬托LOGO/横幅 */
+    grid-column: span 4; /* 强制占据整行 */
+    height: 70px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark-bg); /* 提供一个暗色背景来衬托LOGO/横幅 */
 }
 .catalog-item .logo-placeholder img {
-    height: 40px; /* 调整LOGO尺寸 */
-    object-fit: contain;
+    height: 40px; /* 调整LOGO尺寸 */
+    object-fit: contain;
 }
 /* --- END V31.0 目录图片视觉修复 --- */
 
@@ -197,7 +212,19 @@ p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; max-width
 
 /* --- CTA BANNER --- */
 .cta-banner { background: var(--dark-bg); color: white; text-align: center; padding: 120px 0; position: relative; overflow: hidden; }
-.cta-banner::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('hero-bg.jpg') no-repeat center center; background-size: cover; opacity: 0.1; mix-blend-mode: overlay; }
+/* CTA Banner 背景图 - **图片路径已修正为 hero-bg.webp (根目录)** */
+.cta-banner::before { 
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: url('hero-bg.webp') no-repeat center center; /* <--- 路径更新 */
+    background-size: cover; 
+    opacity: 0.1; 
+    mix-blend-mode: overlay; 
+}
 .cta-banner h2 { color: white; font-size: 3.5rem; margin-bottom: 30px; text-transform: uppercase; letter-spacing: -1px; }
 .cta-banner p { color: var(--silver); max-width: 700px; margin: 0 auto 50px; font-size: 1.2rem; }
 
@@ -205,20 +232,20 @@ p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; max-width
 .footer { background: var(--dark-bg); color: var(--silver); padding: 80px 0 30px; border-top: 1px solid rgba(255,255,255,0.05); }
 .footer h3 { color: white; font-family: var(--font-main); }
 .footer h4 { color: white; font-size: 1rem; font-weight: 700; }
-.footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); } 
+.footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); } 
 .contact-list li { margin-bottom: 12px; }
 .contact-list a { color: var(--silver); transition: 0.3s; font-size: 0.9rem; }
 .contact-list a:hover { color: var(--accent); }
 .social-links { display: flex; gap: 10px; }
 
 /* V31.0 SOCIAL ICON ENHANCEMENT (Dynamic Hover & True Brand Color) */
-.social-links a { 
-    display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; 
-    background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.1); 
-    transition: all 0.3s ease; font-size: 1rem; 
+.social-links a { 
+    display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; 
+    background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.1); 
+    transition: all 0.3s ease; font-size: 1rem; 
 }
-.social-links a:hover { 
-    transform: translateY(-3px); 
+.social-links a:hover { 
+    transform: translateY(-3px); 
 }
 
 /* Base Icon Colors (Ensuring correct brand colors are visible before hover) */
@@ -230,7 +257,7 @@ p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; max-width
 .social-links a[aria-label*="X (Twitter)"]:hover { background-color: #1A1A1A; border-color: #1A1A1A; }
 .social-links a[aria-label*="YouTube"]:hover { background-color: #FF0000; border-color: #FF0000; }
 .social-links a[aria-label*="Facebook"]:hover { background-color: #1877F2; border-color: #1877F2; }
-.social-links a[aria-label*="Instagram"]:hover { background-color: #C13584; border-color: #C13584; } 
+.social-links a[aria-label*="Instagram"]:hover { background-color: #C13584; border-color: #C13584; } 
 
 /* V31.0 Social Fancy Hover (for Contact Section) */
 .social-btn.linkedin:hover { background-color: #0A66C2 !important; color: white !important; border-color: #0A66C2; }
@@ -276,7 +303,17 @@ p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; max-width
 .btn-avant-garde:hover::before { left: 0; }
 
 /* --- V30.3 BLUEPRINT ARCHITECTURE STYLES --- */
-.blueprint-section { background-color: var(--dark-bg); background-image: linear-gradient(rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.95)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9IiMzMzQxNTUiIGZpbGwtb3BhY2l0eT0iMC40Ii8+PC9nPjwvc3ZnPg=='); color: white; padding: 100px 0; min-height: 100vh; position: relative; overflow: hidden; }
+.blueprint-section { 
+    background-color: var(--dark-bg); 
+    /* 假设 mesh.webp 用于此处的背景图案 */
+    background-image: linear-gradient(rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.95)), url('mesh.webp'); /* <--- 路径更新 */
+    background-repeat: repeat;
+    color: white; 
+    padding: 100px 0; 
+    min-height: 100vh; 
+    position: relative; 
+    overflow: hidden; 
+}
 .blueprint-section::before { content: ''; position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(0, 122, 255, 0.15) 0%, transparent 70%); pointer-events: none; }
 .architecture-tree { display: flex; flex-direction: column; align-items: center; position: relative; margin-top: 60px; }
 .node-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(0, 122, 255, 0.2); backdrop-filter: blur(10px); padding: 20px 35px; border-radius: 4px; text-align: center; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; font-size: 0.9rem; position: relative; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: flex; align-items: center; justify-content: center; color: var(--silver); box-shadow: 0 0 15px rgba(0, 122, 255, 0.05); }
@@ -302,171 +339,41 @@ p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; max-width
 .lead-in { font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; font-size: 0.9rem; margin-right: 8px; }
 
 /* =========================================
-   V31.0 EMERGENCY FIX: Mobile Interaction
-   ========================================= */
+   V31.0 EMERGENCY FIX: Mobile Interaction
+   ========================================= */
 /* 针对不支持 hover 的设备（触屏设备） */
 @media (hover: none) {
-    /* Catalog Grid Fix */
-    .catalog-item h5 { color: var(--primary) !important; }
-    .catalog-item h5 i { color: var(--accent) !important; opacity: 1 !important; transform: none !important; }
-    .mini-thumb { border-color: #eee !important; }
-    .catalog-item .catalog-meta { color: var(--secondary) !important; }
-    .catalog-item .view-link { color: var(--accent) !important; opacity: 1 !important; font-weight: 700 !important; }
-    .catalog-item:hover { transform: none !important; box-shadow: 0 5px 15px rgba(0,0,0,0.05) !important; border-color: var(--border) !important; }
-    
-    /* Blueprint Mobile Fix: Always show Level 2 */
-    .branch-level-2 { opacity: 1 !important; margin-top: 20px; }
-    .branch-level-2::before { height: 20px; top: -20px; }
+    /* Catalog Grid Fix */
+    .catalog-item h5 { color: var(--primary) !important; }
+    .catalog-item h5 i { color: var(--accent) !important; opacity: 1 !important; transform: none !important; }
+    .mini-thumb { border-color: #eee !important; }
+    .catalog-item .catalog-meta { color: var(--secondary) !important; }
+    .catalog-item .view-link { color: var(--accent) !important; opacity: 1 !important; font-weight: 700 !important; }
+    .catalog-item:hover { transform: none !important; box-shadow: 0 5px 15px rgba(0,0,0,0.05) !important; border-color: var(--border) !important; }
+    
+    /* Blueprint Mobile Fix: Always show Level 2 */
+    .branch-level-2 { opacity: 1 !important; margin-top: 20px; }
+    .branch-level-2::before { height: 20px; top: -20px; }
 }
 
 /* --- RESPONSIVE BREAKPOINTS --- */
 @media (max-width: 1024px) {
-    h1 { font-size: 3rem; } h2 { font-size: 2.2rem; }
-    .section-padding { padding: 80px 0; }
-    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; gap: 50px; }
-    .footer-grid { grid-template-columns: 1fr; gap: 40px !important; } /* 手机端页脚强制单列 */
-    .mini-prod-grid { grid-template-columns: repeat(4, 1fr); }
-    .nav-links { display: none; position: absolute; top: 90px; left: 0; width: 100%; background: rgba(255,255,255,0.98); flex-direction: column; padding: 30px 0; border-bottom: 1px solid #eee; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-    .nav-links.active { display: flex; } .mobile-menu-btn { display: block; }
-    .cta-banner h2 { font-size: 2.5rem; }
-    .hero-stats { margin-top: 40px; border-bottom: none; padding: 40px 20px; }
-    .hero { text-align: center; } .hero h1 { margin-left: auto; margin-right: auto; } .hero p { margin-left: auto; margin-right: auto; }
-    .contact-container { flex-direction: column; gap: 40px; }
-    .contact-details-wrapper, .social-connect-wrapper { padding: 30px 20px; width: 100%; }
-    .social-links-fancy { justify-content: center; }
-    .avant-garde-box { padding: 30px; } .avant-garde-title { font-size: 2rem; }
-    /* Blueprint Responsive */
-    .branch-level-1 { flex-direction: column; align-items: center; gap: 40px; }
-    .root-node::after, .branch-level-1::before, .branch-level-1 .node-wrapper::before { display: none; }
-    .root-node, .branch-level-1 .node-wrapper:not(:last-child) { margin-bottom: 40px; }
-}
-
-/*
-|--------------------------------------------------------------------------
-| YiShen Global Style Sheet
-|--------------------------------------------------------------------------
-|
-| 这是一个完整、已更新图片路径的样式文件。
-| 所有背景图片引用已从 .jpg/.png 替换为 .webp 格式。
-|
-*/
-
-/* --- 1. 全局和排版样式 --- */
-body {
-    /* 【您的原有内容】全局字体、边距、颜色等 */
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-}
-
-a {
-    /* 【您的原有内容】链接样式 */
-    text-decoration: none;
-    color: #007bff;
-}
-
-/* --- 2. 头部和导航栏样式 (包含 Logo) --- */
-header {
-    /* 【您的原有内容】Header 布局、颜色、阴影等 */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.logo img {
-    /* 【您的原有内容】Logo 图片大小和样式 */
-    height: 40px; 
-    /* 图片已在 HTML 中更新为 logo.webp，此处仅是尺寸 */
-}
-
-/* --- 3. 首页 Hero 区样式 (背景图更新) --- */
-.hero-section {
-    /* 【您的原有内容】Hero 区尺寸、文字居中等 */
-    height: 80vh; 
-    background-size: cover;
-    background-position: center;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    /* **** 图片更新: hero-bg.webp **** */
-    background-image: url('../images/hero-bg.webp');
-}
-
-/* --- 4. 联系页 Header 样式 (背景图更新) --- */
-.contact-header-hero {
-    /* 【您的原有内容】Contact Header 尺寸、文字样式等 */
-    height: 50vh;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-
-    /* **** 图片更新: header-consultation-desk.webp **** */
-    background-image: url('../images/header-consultation-desk.webp');
-}
-
-/* --- 5. 解决方案/特色产品区样式 --- */
-.solution-card, .feature-product, .catalog-scene {
-    /* 【您的原有内容】卡片布局、内边距等 */
-    padding: 40px 5%;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.solution-card img, .feature-product img, .catalog-scene img, .gaming-chair img, .promotion-banner img {
-    /* 【您的原有内容】所有产品/场景图片的通用样式 */
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-
-/* --- 6. 通用背景/图案样式 (Mesh 网格图更新) --- */
-.mesh-bg {
-    /* 【您的原有内容】使用 Mesh 作为背景的区域样式 */
-    padding: 50px 0;
-    background-repeat: repeat;
-    color: #f0f0f0;
-
-    /* **** 图片更新: mesh.webp **** */
-    background-image: url('../images/mesh.webp');
-}
-
-/* --- 7. 客户评价区样式 --- */
-.testimonials {
-    /* 【您的原有内容】评价区布局、颜色等 */
-    background-color: #f8f8f8;
-    padding: 60px 5%;
-}
-
-.testimonial-card img {
-    /* 【您的原有内容】头像图片样式 */
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-}
-
-/* --- 8. 底部样式 --- */
-footer {
-    /* 【您的原有内容】Footer 颜色、内边距、文字样式等 */
-    background-color: #222;
-    color: #ccc;
-    padding: 30px 5%;
-    text-align: center;
-}
-
-/* 【您的原有内容】请将您原有 CSS 文件中所有未在此处列出的其他样式规则（例如响应式媒体查询、按钮样式、特定模块的样式等）粘贴到这里 */
-
-@media (max-width: 768px) {
-    /* 【您的原有内容】媒体查询（移动端自适应）样式 */
+    h1 { font-size: 3rem; } h2 { font-size: 2.2rem; }
+    .section-padding { padding: 80px 0; }
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; gap: 50px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 40px !important; } /* 手机端页脚强制单列 */
+    .mini-prod-grid { grid-template-columns: repeat(4, 1fr); }
+    .nav-links { display: none; position: absolute; top: 90px; left: 0; width: 100%; background: rgba(255,255,255,0.98); flex-direction: column; padding: 30px 0; border-bottom: 1px solid #eee; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+    .nav-links.active { display: flex; } .mobile-menu-btn { display: block; }
+    .cta-banner h2 { font-size: 2.5rem; }
+    .hero-stats { margin-top: 40px; border-bottom: none; padding: 40px 20px; }
+    .hero { text-align: center; } .hero h1 { margin-left: auto; margin-right: auto; } .hero p { margin-left: auto; margin-right: auto; }
+    .contact-container { flex-direction: column; gap: 40px; }
+    .contact-details-wrapper, .social-connect-wrapper { padding: 30px 20px; width: 100%; }
+    .social-links-fancy { justify-content: center; }
+    .avant-garde-box { padding: 30px; } .avant-garde-title { font-size: 2rem; }
+    /* Blueprint Responsive */
+    .branch-level-1 { flex-direction: column; align-items: center; gap: 40px; }
+    .root-node::after, .branch-level-1::before, .branch-level-1 .node-wrapper::before { display: none; }
+    .root-node, .branch-level-1 .node-wrapper:not(:last-child) { margin-bottom: 40px; }
 }
