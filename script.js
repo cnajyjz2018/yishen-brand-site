@@ -1,41 +1,69 @@
 /**
  * ====================================================================================================
- * YiShen Global Website - V31.0 Core JavaScript
- * Purpose: Handles essential user interface interactions (Mobile Navigation).
- * Author: AI Assistant for YiShen Global
- * Date: December 2025 (Ready for 2026 Deployment)
+ * YiShen Global Website - V31.1 Core JavaScript
+ * Purpose: Handles essential UI interactions (Mobile Navigation & UX Safeguards)
+ * Scope: Minimal, stable, production-safe
+ * Author: YiShen Global Engineering System
+ * Date: Dec 2025 → 2026 Ready
  * ====================================================================================================
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- 1. Mobile Navigation Toggle Logic (Handles Menu Open/Close) ---
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
+(function () {
+    'use strict';
 
-    if (menuBtn && navLinks) {
-        
-        // A. Primary Listener: Toggles the 'active' class when the hamburger icon is clicked.
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // === Mobile Navigation Toggle ===
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (!menuBtn || !navLinks) return;
+
+        const openMenu = () => navLinks.classList.add('active');
+        const closeMenu = () => navLinks.classList.remove('active');
+        const toggleMenu = () => navLinks.classList.toggle('active');
+
+        // A. Toggle via hamburger icon
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
         });
 
-        // B. Secondary Listener: Improves mobile UX by closing the menu when a navigation link is clicked.
-        const allLinks = navLinks.querySelectorAll('a');
-        allLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                // Ensure the menu closes after the user selects a destination
-                navLinks.classList.remove('active');
-            });
+        // B. Close menu when clicking any nav link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
         });
-    }
 
-    // --- 2. Future Client-Side Hooks (Currently Frozen) ---
-    // If we later implement:
-    // - Complex form validation (e.g., custom error handling)
-    // - Advanced scroll parallax or view-in-port animations
-    // - Client-side SKU data filtering (outside of simple links)
-    // These functions would be added here, after core content is verified.
-    
-    // Reminder: CSS handles mobile viewports, catalog grid interactions, and responsive design entirely.
-});
+        // C. Close menu when clicking outside navigation (mobile UX polish)
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        // D. Close menu with ESC key (desktop / tablet UX)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeMenu();
+            }
+        });
+
+        /**
+         * ============================================================================================
+         * Reserved Extension Area (Frozen by Design)
+         * --------------------------------------------------------------------------------------------
+         * Future features (ONLY if required):
+         * - Form validation logic
+         * - SKU table filtering / sorting
+         * - Scroll-triggered analytics hooks
+         *
+         * Rule:
+         * ❌ Do NOT add marketing logic here
+         * ❌ Do NOT add tracking scripts here
+         * ✔ Keep this file clean & deterministic
+         * ============================================================================================
+         */
+
+    });
+
+})();
