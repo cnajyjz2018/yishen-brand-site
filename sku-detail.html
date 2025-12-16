@@ -2,24 +2,55 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="Engineering-level SKU specifications, materials, and container loading data for YiShen Global product platforms.">
+<meta name="description" content="Engineering-grade SKU detail data for YiShen Global ergonomic seating. Includes mechanism specs, material data, MOQ, and 40HQ container loading metrics for B2B procurement.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SKU Engineering Detail | YiShen Global</title>
+<title>SKU Detail – Ergonomic Seating Engineering Data | YiShen Global</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<link rel="stylesheet" href="styles.css?v=314">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+.detail-table-container{overflow-x:auto;margin-top:30px}
+.detail-table{width:100%;border-collapse:collapse;font-size:.85rem}
+.detail-table th{
+  background:var(--primary);
+  color:#fff;
+  padding:15px;
+  text-align:left;
+  white-space:nowrap;
+  border-bottom:3px solid var(--accent)
+}
+.detail-table td{
+  padding:12px 15px;
+  border-bottom:1px solid var(--border);
+  vertical-align:middle
+}
+.detail-table tr:nth-child(even){background:#f8fafc}
+.detail-table tr:hover{background:rgba(0,122,255,.05)}
+.sku-model{font-weight:700;color:var(--primary)}
+.sku-status.active{color:#07c160;font-weight:600}
+.sku-tag{
+  display:inline-block;
+  font-size:.7rem;
+  padding:4px 8px;
+  border-radius:20px;
+  background:rgba(0,122,255,.1);
+  color:var(--accent);
+  margin-left:6px
+}
+</style>
 </head>
 
 <body>
 
-<!-- ================= NAV ================= -->
-<nav class="navbar">
+<!-- ===== NAV ===== -->
+<nav class="navbar navbar-elite">
   <div class="container nav-wrapper">
     <a href="index.html" class="brand">
-      <img src="logo.webp" alt="YiShen Global" width="180">
+      <img src="logo.webp" alt="YiShen Global" width="180" height="70">
     </a>
     <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
     <div class="nav-links">
@@ -33,102 +64,164 @@
   </div>
 </nav>
 
-<!-- ================= HEADER ================= -->
+<!-- ===== HEADER ===== -->
 <header class="page-header bg-dark"
- style="background-image:linear-gradient(rgba(10,18,30,.95),rgba(10,18,30,.9));">
+style="background-image:linear-gradient(rgba(15,23,42,.95),rgba(15,23,42,.9)),url('hero-bg.webp');background-position:center;background-size:cover;">
   <div class="container">
-    <span class="section-tag">Engineering SKU View</span>
-    <h1>Ergonomic Seating Platform</h1>
-    <p>Engineering specifications, material data, and logistics planning metrics.</p>
+    <div style="font-size:.85rem;color:var(--silver);margin-bottom:15px">
+      <a href="resources.html" class="tech-accent">Technical Resources</a>
+      <i class="fas fa-chevron-right" style="margin:0 8px;font-size:.7rem"></i>
+      Ergonomic Seating
+    </div>
+    <h1>SKU Engineering Detail<br>Ergonomic Seating Series</h1>
+    <p>
+      Component-level specifications, material data, MOQ logic and container optimization
+      for professional B2B procurement.
+    </p>
   </div>
 </header>
 
-<!-- ================= TABLE ================= -->
+<!-- ===== TABLE ===== -->
 <section class="section-padding">
   <div class="container">
 
     <div class="resource-category-header">
-      <h3><i class="fas fa-database tech-accent"></i> Active SKU Engineering Matrix</h3>
+      <h3>
+        <i class="fas fa-database tech-accent"></i>
+        Master SKU Engineering Table
+      </h3>
       <div class="engineering-note">
-        <strong>Note:</strong> All data below reflects active production SKUs using KD packaging and BIFMA-compliant structures.
-        Values may vary depending on customization scope.
+        <strong>Scope:</strong> Active SKUs for export programs.
+        All loading quantities based on <strong>KD packaging</strong> in 40’HQ.
+        Compliance defaults to <strong>BIFMA X5.1</strong> unless noted.
       </div>
     </div>
 
-    <div class="detail-table-container">
+    <div class="detail-table-container data-matrix-container">
       <table class="detail-table data-matrix-table">
         <thead>
           <tr>
-            <th>SKU ID</th>
+            <th>SKU Model</th>
             <th>Status</th>
             <th>Mechanism</th>
-            <th>Core Components</th>
+            <th>Key Components</th>
             <th>Material</th>
+            <th>Dimensions (cm)</th>
             <th>MOQ</th>
-            <th>40'HQ Load</th>
-            <th>Docs</th>
+            <th>40’HQ</th>
+            <th>Files</th>
           </tr>
         </thead>
         <tbody>
+
           <tr>
-            <td class="sku-model">S-PRO-9001</td>
-            <td><span class="sku-status active">Active</span></td>
+            <td class="sku-model">
+              S-Pro-9001
+              <span class="sku-tag">Flagship</span>
+            </td>
+            <td><span class="sku-status active"><i class="fas fa-check-circle"></i> Active</span></td>
             <td>Donati Synchro (4:1)</td>
             <td>Donati / Samhongsa</td>
-            <td>KR Mesh / Molded Foam</td>
+            <td>KR Wintex Mesh / Molded Foam</td>
+            <td>68 × 65 × 115–125</td>
             <td>50</td>
-            <td class="spec-highlight">650 pcs</td>
-            <td><a href="#">PDF</a></td>
+            <td class="spec-highlight">650</td>
+            <td>
+              <a href="#" class="tech-accent"><i class="far fa-file-pdf"></i></a>
+              <a href="#" class="tech-accent"><i class="fas fa-cube"></i></a>
+            </td>
           </tr>
+
+          <tr>
+            <td class="sku-model">
+              S-Mid-8050
+              <span class="sku-tag">Performance</span>
+            </td>
+            <td><span class="sku-status active"><i class="fas fa-check-circle"></i> Active</span></td>
+            <td>Weight-Sensitive Auto</td>
+            <td>Bock / Korea Lift</td>
+            <td>Premium CN Mesh</td>
+            <td>66 × 62 × 110–118</td>
+            <td>100</td>
+            <td class="spec-highlight">720</td>
+            <td>
+              <a href="#" class="tech-accent"><i class="far fa-file-pdf"></i></a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="sku-model">
+              S-Task-7020
+              <span class="sku-tag">Volume</span>
+            </td>
+            <td><span class="sku-status active"><i class="fas fa-check-circle"></i> Active</span></td>
+            <td>Simple Tilt (2-lock)</td>
+            <td>Local Class 3 Lift</td>
+            <td>Standard Mesh</td>
+            <td>62 × 58 × 105–113</td>
+            <td>200</td>
+            <td class="spec-highlight">850</td>
+            <td>
+              <a href="#" class="tech-accent"><i class="far fa-file-pdf"></i></a>
+            </td>
+          </tr>
+
         </tbody>
       </table>
     </div>
 
-    <!-- ================= ENGINEERING BOUNDARY ================= -->
-    <div class="engineering-boundary-box" style="margin-top:60px;">
-      <h4><i class="fas fa-shield-alt tech-accent"></i> Engineering Boundaries</h4>
-      <ul>
-        <li><strong>Locked:</strong> Structural frame, load rating, safety compliance</li>
-        <li><strong>Configurable:</strong> Armrests (1D–4D), headrest, mesh color</li>
-        <li><strong>Lead Time Impact:</strong> New mesh / mechanism tooling (+10–20 days)</li>
-        <li><strong>Cost Drivers:</strong> Mechanism brand, gas lift class, aluminum content</li>
-      </ul>
-    </div>
+  </div>
+</section>
 
-    <!-- ================= VISUAL ================= -->
-    <div style="margin-top:70px;">
-      <h4>Engineering Visual Reference</h4>
-      <div class="grid-4">
-        <img src="ergo-SPro9001-context-office.webp">
-        <img src="ergo-SPro9001-detail-mesh.webp">
-        <img src="ergo-SPro9001-detail-mech.webp">
-        <div class="cad-placeholder">
-          <i class="fas fa-cube"></i>
-          CAD / STEP Files<br>
-          <small>Available on request</small>
-        </div>
+<!-- ===== VISUAL ===== -->
+<section class="section-padding bg-light">
+  <div class="container">
+    <h4 style="margin-bottom:25px;">Engineering Visual Reference</h4>
+    <div class="grid-4">
+      <img src="ergo-SPro9001-context-office.webp">
+      <img src="ergo-SPro9001-detail-mesh.webp">
+      <img src="ergo-SPro9001-detail-mech.webp">
+      <div class="placeholder-box">
+        <i class="fas fa-drafting-compass"></i>
+        <span>CAD / 3D Files<br>(On Request)</span>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- ================= CTA ================= -->
-<section class="cta-banner">
+<!-- ===== CTA ===== -->
+<section class="cta-banner cta-elite">
   <div class="container">
     <h2>Request Full Engineering Package</h2>
-    <p>
-      Includes: CAD files · BIFMA reports · Packaging drawings · Container plan
-    </p>
-    <a href="contact.html" class="btn btn-tech">Request Engineering Access</a>
+    <p>Including CAD, test reports, packaging SOP and landed cost modeling.</p>
+    <a href="contact.html" class="btn btn-tech btn-tech-elite">Contact Engineering Team</a>
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <div class="container text-center">
-    <img src="logo-white.svg" style="height:38px;margin-bottom:15px;">
-    <p style="opacity:.6;">YiShen Global · Engineering-Driven Supply Chain</p>
+<!-- ===== FOOTER ===== -->
+<footer class="footer footer-elite">
+  <div class="container footer-grid grid-4">
+    <div>
+      <img src="logo.webp" height="48">
+      <p>Engineered furniture supply for global procurement.</p>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <a href="resources.html">Technical Data</a>
+      <a href="sku-detail.html">SKU Details</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="why-us.html">Why Us</a>
+      <a href="industries.html">Industries</a>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2026 YiShen Global · Engineered in China
   </div>
 </footer>
 
