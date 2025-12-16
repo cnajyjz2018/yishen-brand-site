@@ -2,109 +2,216 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="The strategic blueprint of the YiShen Global website architecture. A hierarchical map demonstrating the logic and data flow of our platform.">
+<meta name="description" content="YiShen Global System Blueprint. A decision-level architecture map showing business logic, data flow, and conversion structure of our platform.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Site Blueprint (Architecture) | YiShen Global</title>
+<meta name="theme-color" content="#050b17">
+
+<title>System Blueprint & Decision Map | YiShen Global</title>
+
+<!-- Fonts & Icons -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<link rel="stylesheet" href="styles.css">
+
+<!-- Core CSS -->
+<link rel="stylesheet" href="styles.css?v=314">
 </head>
+
 <body>
 
-    <nav class="navbar">
-        <div class="container nav-wrapper">
-            <a href="index.html" class="brand"><img src="logo.png" alt="YiShen Global Logo" width="180" height="70"></a>
-            <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="why-us.html">Why Us</a>
-                <a href="solutions.html">Solutions</a>
-                <a href="industries.html">Industries</a>
-                <a href="resources.html">Resources</a>
-                <a href="contact.html" class="nav-cta">Contact Us</a>
-            </div>
-        </div>
-    </nav>
-
-    <section class="blueprint-section">
-        <div class="container text-center">
-            <span class="section-tag" style="justify-content: center;">Technical Map</span>
-            <h1 style="font-size: 3rem; margin-bottom: 20px;">The Digital Architecture Blueprint</h1>
-            <p style="max-width: 800px; margin: 0 auto; color: var(--silver);">This visual guide outlines the hierarchical structure of the YiShen Global platform, prioritizing user navigation efficiency and technical data access.</p>
-            
-            <div class="architecture-tree">
-                
-                <div class="root-node">
-                    <div class="node-card"><i class="fas fa-home"></i> HOME (INDEX)</div>
-                </div>
-                
-                <div class="branch-level-1">
-                    
-                    <div class="node-wrapper">
-                        <a href="why-us.html" class="node-card"><i class="fas fa-flask"></i> WHY US (THE LAB)</a>
-                        <div class="branch-level-2">
-                            <div class="node-card">QC & Testing</div>
-                            <div class="node-card">Vertical Integration</div>
-                            <div class="node-card">Sustainability</div>
-                        </div>
-                    </div>
-                    
-                    <div class="node-wrapper">
-                        <a href="solutions.html" class="node-card"><i class="fas fa-truck-fast"></i> SOLUTIONS</a>
-                        <div class="branch-level-2">
-                            <a href="solutions.html#dtc" class="node-card">DTC Fulfillment</a>
-                            <a href="solutions.html#b2b" class="node-card">B2B Procurement</a>
-                            <a href="solutions.html#projects" class="node-card">Project Cargo (OOG)</a>
-                        </div>
-                    </div>
-                    
-                    <div class="node-wrapper">
-                        <a href="resources.html" class="node-card"><i class="fas fa-database"></i> PRODUCTS & DATA HUB</a>
-                        <div class="branch-level-2">
-                            <div class="node-card">Category Index</div>
-                            <a href="sku-detail.html" class="node-card">SKU DETAIL TEMPLATE</a>
-                            <div class="node-card">Downloads / Certs</div>
-                        </div>
-                    </div>
-                    
-                    <div class="node-wrapper">
-                        <a href="contact.html" class="node-card"><i class="fas fa-handshake"></i> CONTACT (CONVERSION)</a>
-                        <div class="branch-level-2">
-                            <div class="node-card">Quote Request</div>
-                            <div class="node-card">Direct Channels</div>
-                            <div class="node-card">Strategic Audit</div>
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <div style="margin-top: 80px; font-size: 0.9rem; color: var(--silver); opacity: 0.7;">
-                    <i class="fas fa-map-marker-alt" style="color: var(--accent); margin-right: 8px;"></i>
-                    Technical Architecture Mapped to User Journey Flow.
-                </div>
-                
-            </div>
-            </div>
-    </section>
-
-    <a href="https://wa.me/8615968277867" target="_blank" class="floating-cta" aria-label="Contact via WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-elite">
+  <div class="container nav-wrapper">
+    <a href="index.html" class="brand">
+      <img src="logo-navbar.svg" alt="YiShen Global" width="180" height="48">
     </a>
 
-    <footer class="footer" style="padding-top: 60px; border-top: none;">
-        <div class="container text-center">
-            <div class="copyright" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; margin-top: 0;">
-                &copy; 2026 YiShen Global. All Rights Reserved. | Engineered Digital Infrastructure.
-            </div>
-        </div>
-    </footer>
+    <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
 
-    <script>
-        const menuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        menuBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); });
-    </script>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="why-us.html">Why Us</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="industries.html">Industries</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HEADER ================= -->
+<header class="page-header bg-dark"
+  style="background-image:
+  linear-gradient(rgba(10,18,30,0.95), rgba(10,18,30,0.9));
+  ">
+  <div class="container text-center">
+    <span class="section-tag">System View</span>
+    <h1>The YiShen Global<br>Decision Architecture</h1>
+    <p style="max-width:900px;margin:0 auto;">
+      This page reveals how our platform is engineered — not as a website,
+      but as a <strong>decision system</strong> guiding buyers from
+      problem recognition to long-term cooperation.
+    </p>
+  </div>
+</header>
+
+<!-- ================= LEGEND ================= -->
+<section class="section-padding bg-light">
+  <div class="container text-center">
+    <h2>How to Read This Blueprint</h2>
+    <p style="max-width:820px;margin:0 auto;">
+      Each layer represents a <strong>decision stage</strong>.
+      Each module answers one buyer question.
+      Each flow reduces uncertainty and increases commitment.
+    </p>
+  </div>
+</section>
+
+<!-- ================= BLUEPRINT MAP ================= -->
+<section class="section-padding blueprint-section">
+  <div class="container">
+
+    <!-- ROOT -->
+    <div class="architecture-root">
+      <div class="node-card root">
+        <i class="fas fa-globe"></i>
+        <strong>ENTRY POINT</strong><br>
+        index.html<br>
+        <span class="node-note">Market positioning & credibility</span>
+      </div>
+    </div>
+
+    <!-- LEVEL 1 -->
+    <div class="architecture-level">
+
+      <!-- WHY US -->
+      <div class="node-group">
+        <a href="why-us.html" class="node-card primary">
+          <i class="fas fa-flask"></i>
+          WHY US – THE LAB
+          <span class="node-note">
+            Trust engineering<br>
+            Risk removal
+          </span>
+        </a>
+        <div class="node-children">
+          <div class="node-card small">QC & Testing Logic</div>
+          <div class="node-card small">Vertical Integration</div>
+          <div class="node-card small">Compliance & Sustainability</div>
+        </div>
+      </div>
+
+      <!-- SOLUTIONS -->
+      <div class="node-group">
+        <a href="solutions.html" class="node-card primary">
+          <i class="fas fa-diagram-project"></i>
+          SOLUTIONS
+          <span class="node-note">
+            Execution models<br>
+            Cost & delivery logic
+          </span>
+        </a>
+        <div class="node-children">
+          <a href="solutions.html#dtc" class="node-card small">DTC Fulfillment</a>
+          <a href="solutions.html#b2b" class="node-card small">B2B Procurement</a>
+          <a href="solutions.html#projects" class="node-card small">Project Cargo (OOG)</a>
+        </div>
+      </div>
+
+      <!-- INDUSTRIES -->
+      <div class="node-group">
+        <a href="industries.html" class="node-card primary">
+          <i class="fas fa-industry"></i>
+          INDUSTRIES
+          <span class="node-note">
+            Context mapping<br>
+            Scenario validation
+          </span>
+        </a>
+        <div class="node-children">
+          <div class="node-card small">Furniture & Lifestyle</div>
+          <div class="node-card small">Industrial & Marine</div>
+          <div class="node-card small">Tech / Energy / Medical</div>
+        </div>
+      </div>
+
+      <!-- RESOURCES -->
+      <div class="node-group">
+        <a href="resources.html" class="node-card primary">
+          <i class="fas fa-database"></i>
+          RESOURCES
+          <span class="node-note">
+            Data transparency<br>
+            Planning confidence
+          </span>
+        </a>
+        <div class="node-children">
+          <div class="node-card small">200+ SKU Matrix</div>
+          <div class="node-card small">Specs & Certifications</div>
+          <div class="node-card small">Download Center</div>
+        </div>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="node-group">
+        <a href="contact.html" class="node-card primary conversion">
+          <i class="fas fa-handshake"></i>
+          CONTACT
+          <span class="node-note">
+            Decision confirmation<br>
+            Strategic entry
+          </span>
+        </a>
+        <div class="node-children">
+          <div class="node-card small">Direct Channels</div>
+          <div class="node-card small">Strategic Audit</div>
+          <div class="node-card small">Long-term Cooperation</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= SUMMARY ================= -->
+<section class="section-padding bg-light">
+  <div class="container text-center">
+    <h2>What This Architecture Achieves</h2>
+    <ul class="architecture-benefits">
+      <li>✔ Filters low-quality inquiries automatically</li>
+      <li>✔ Builds trust before price discussion</li>
+      <li>✔ Aligns procurement, logistics & engineering logic</li>
+      <li>✔ Guides buyers toward long-term cooperation</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer footer-elite">
+  <div class="container text-center">
+    <img src="logo-white.svg" style="height:42px;margin-bottom:15px;">
+    <p style="opacity:.7;">
+      YiShen Global · Engineered Supply Chain Infrastructure
+    </p>
+    <div class="copyright">
+      © 2026 YiShen Global. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/8615968277867" class="floating-cta">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+  menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
 </body>
 </html>
