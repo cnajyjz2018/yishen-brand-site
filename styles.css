@@ -449,3 +449,46 @@ img {
   box-shadow: 0 0 28px rgba(37,211,102,.6);
   z-index: 999;
 }
+/* ===============================
+   Language Switcher (Elite)
+================================ */
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 20px;
+}
+
+.lang-switch button {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 7px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all .25s ease;
+}
+
+.lang-switch button:hover {
+  background: #4da3ff;
+  border-color: #4da3ff;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* RTL fix */
+html[dir="rtl"] .lang-switch {
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+/* Mobile hide optional */
+@media (max-width: 1024px) {
+  .lang-switch {
+    display: none;
+  }
+}
+
+
