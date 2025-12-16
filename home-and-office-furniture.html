@@ -2,15 +2,27 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="Home & Office Furniture Catalog by YiShen Global. 120+ procurement-ready SKUs across ergonomic chairs, mesh chairs, standing desks, conference systems, storage, and lounge furniture.">
+<meta name="description" content="Home & Office Furniture by YiShen Global. 120+ procurement-ready SKUs with expandable technical details and RFQ system.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home & Office Furniture (120+ SKUs) | YiShen Global</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
+
+<style>
+/* ===== SKU TABLE ENHANCE ===== */
+.sku-row { cursor:pointer; }
+.sku-expand { display:none; background:#f8fafc; }
+.sku-expand td { padding:25px; }
+.sku-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; font-size:.85rem; }
+.rfq-btn { margin-top:15px; }
+.rfq-panel { position:fixed; right:0; top:0; width:380px; height:100%; background:#0f172a; color:#fff; padding:30px; transform:translateX(100%); transition:.3s; z-index:9999;}
+.rfq-panel.active{ transform:translateX(0); }
+.rfq-panel h3{margin-bottom:20px;}
+.rfq-item{font-size:.85rem;margin-bottom:10px;}
+.rfq-panel a{display:block;margin-top:20px;}
+</style>
 </head>
 
 <body>
@@ -33,221 +45,113 @@
   </div>
 </nav>
 
-<!-- ================= HERO ================= -->
 <header class="page-header bg-dark"
-style="background-image:linear-gradient(rgba(15,23,42,.92),rgba(15,23,42,.85)),url('hero-bg.webp');background-size:cover;">
+style="background-image:linear-gradient(rgba(15,23,42,.92),rgba(15,23,42,.85)),url('hero-bg.webp');">
   <div class="container">
-    <span class="section-tag">Product Platforms</span>
+    <span class="section-tag">Furniture Platforms</span>
     <h1>Home & Office Furniture</h1>
-    <p>
-      120+ procurement-ready SKUs across 6 furniture categories.  
-      Engineered platforms · Global compliance · Scalable manufacturing.
-    </p>
+    <p>120+ SKUs · Expandable Details · RFQ Ready</p>
   </div>
 </header>
 
-<!-- ================= INTRO ================= -->
-<section class="section-padding">
-  <div class="container text-center">
-    <h2>Furniture Platforms Overview</h2>
-    <p style="max-width:900px;margin:0 auto;">
-      This catalog consolidates YiShen Global’s home & office furniture systems —
-      from ergonomic seating to lounge and storage — structured for
-      OEM/ODM buyers, distributors, and project procurement teams.
-    </p>
-  </div>
-</section>
-
-<!-- ================= CATEGORY FILTER ================= -->
 <section class="section-padding bg-light">
-  <div class="container">
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All (120)</button>
-      <button class="filter-btn" data-filter="ergonomic">Ergonomic Chairs</button>
-      <button class="filter-btn" data-filter="mesh">Task & Mesh Chairs</button>
-      <button class="filter-btn" data-filter="desks">Standing Desks</button>
-      <button class="filter-btn" data-filter="conference">Conference Systems</button>
-      <button class="filter-btn" data-filter="storage">Storage & Filing</button>
-      <button class="filter-btn" data-filter="lounge">Soft Seating & Lounge</button>
-    </div>
+<div class="container">
 
-    <div class="data-matrix-container">
-      <table class="data-matrix-table" id="skuTable">
-        <thead>
-          <tr>
-            <th>SKU</th>
-            <th>Category</th>
-            <th>Platform</th>
-            <th>Key Structure / Mechanism</th>
-            <th>Material</th>
-            <th>Compliance</th>
-            <th>MOQ</th>
-            <th>40’HQ Load</th>
-          </tr>
-        </thead>
-        <tbody id="skuBody"></tbody>
-      </table>
-    </div>
-  </div>
+<table class="data-matrix-table" id="skuTable">
+<thead>
+<tr>
+<th>SKU</th>
+<th>Category</th>
+<th>Platform</th>
+<th>Key Structure</th>
+<th>MOQ</th>
+<th>40’HQ</th>
+</tr>
+</thead>
+<tbody id="skuBody"></tbody>
+</table>
+
+</div>
 </section>
 
-<!-- ================= CTA ================= -->
-<section class="cta-banner">
-  <div class="container">
-    <h2>Need Full SKU Technical Files?</h2>
-    <p>
-      CAD drawings · Test reports · Packaging & container optimization available.
-    </p>
-    <a href="contact.html" class="btn btn-tech">Request Engineering Package</a>
-  </div>
-</section>
+<!-- ================= RFQ PANEL ================= -->
+<div class="rfq-panel" id="rfqPanel">
+<h3>RFQ Selection</h3>
+<div id="rfqList"></div>
+<a id="rfqLink" class="btn btn-tech" target="_blank">Send RFQ via WhatsApp</a>
+</div>
 
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <div class="container footer-grid grid-4">
-    <div>
-      <h3>YiShen Global</h3>
-      <p>Home & Office Furniture Manufacturing · Engineered in China</p>
-    </div>
-    <div>
-      <h4>Furniture</h4>
-      <a href="#">Ergonomic Chairs</a>
-      <a href="#">Standing Desks</a>
-      <a href="#">Lounge Furniture</a>
-    </div>
-    <div>
-      <h4>Resources</h4>
-      <a href="resources.html">Technical Data</a>
-      <a href="site-architecture.html">Site Blueprint</a>
-    </div>
-    <div>
-      <h4>Connect</h4>
-      <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank">LinkedIn</a>
-    </div>
-  </div>
-  <div class="copyright">
-    © 2026 YiShen Global · All Rights Reserved
-  </div>
-</footer>
-
-<a href="https://wa.me/8615968277867" target="_blank" class="floating-cta">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- ================= SKU DATABASE (120) ================= -->
 <script>
-const SKU_DB = [
-/* ========= Ergonomic Office Chairs (20) ========= */
-...Array.from({length:20},(_,i)=>({
-  sku:`ERG-${9001+i}`,
-  category:"ergonomic",
-  categoryName:"Ergonomic Office Chair",
-  platform:"Advanced Ergonomic Platform",
-  mechanism:"Synchro Tilt / Auto Balance",
-  material:"Mesh + Molded Foam",
-  compliance:"BIFMA X5.1",
-  moq:50,
-  hq:"620–720 pcs"
-})),
+const SKU_DB = [];
+let rfq = [];
 
-/* ========= Task & Mesh Chairs (20) ========= */
-...Array.from({length:20},(_,i)=>({
-  sku:`TASK-${7001+i}`,
-  category:"mesh",
-  categoryName:"Task / Mesh Chair",
-  platform:"High Volume Task Platform",
-  mechanism:"Simple / Synchro Tilt",
-  material:"Mesh + Foam",
-  compliance:"Internal QC",
-  moq:200,
-  hq:"800–950 pcs"
-})),
-
-/* ========= Smart Standing Desks (20) ========= */
-...Array.from({length:20},(_,i)=>({
-  sku:`DESK-${4001+i}`,
-  category:"desks",
-  categoryName:"Smart Standing Desk",
-  platform:"Electric Desk System",
-  mechanism:"Single / Dual Motor",
-  material:"Steel Frame + MDF",
-  compliance:"UL / CE / RoHS",
-  moq:50,
-  hq:"40–50 sets"
-})),
-
-/* ========= Conference Furniture (20) ========= */
-...Array.from({length:20},(_,i)=>({
-  sku:`CONF-${3001+i}`,
-  category:"conference",
-  categoryName:"Conference Furniture",
-  platform:"Modular Meeting System",
-  mechanism:"Steel Beam Structure",
-  material:"Steel + MFC",
-  compliance:"E1 / Project QC",
-  moq:10,
-  hq:"Project Based"
-})),
-
-/* ========= Storage & Filing (20) ========= */
-...Array.from({length:20},(_,i)=>({
-  sku:`STOR-${2001+i}`,
-  category:"storage",
-  categoryName:"Storage & Filing",
-  platform:"Steel / Wood Storage",
-  mechanism:"Drawer Slide System",
-  material:"Cold Rolled Steel / MDF",
-  compliance:"ISO / Internal QC",
-  moq:50,
-  hq:"Palletized"
-})),
-
-/* ========= Soft Seating & Lounge (20) ========= */
-...Array.from({length:20},(_,i)=>({
-  sku:`LOUN-${1001+i}`,
-  category:"lounge",
-  categoryName:"Soft Seating & Lounge",
-  platform:"Commercial Lounge System",
-  mechanism:"Fixed Upholstery",
-  material:"High Density Foam + Fabric",
-  compliance:"CAL117 / Project QC",
-  moq:20,
-  hq:"120–180 pcs"
-}))
-];
-
-const tbody = document.getElementById("skuBody");
-
-function render(filter="all"){
-  tbody.innerHTML="";
-  SKU_DB.filter(i=>filter==="all"||i.category===filter)
-  .forEach(i=>{
-    tbody.innerHTML+=`
-      <tr>
-        <td><strong>${i.sku}</strong></td>
-        <td>${i.categoryName}</td>
-        <td>${i.platform}</td>
-        <td>${i.mechanism}</td>
-        <td>${i.material}</td>
-        <td>${i.compliance}</td>
-        <td>${i.moq}</td>
-        <td>${i.hq}</td>
-      </tr>`;
-  });
+function addSKUs(prefix,cat,catName,platform,structure,moq,hq){
+  for(let i=1;i<=20;i++){
+    SKU_DB.push({
+      sku:`${prefix}-${1000+i}`,
+      category:cat,
+      categoryName:catName,
+      platform,
+      structure,
+      moq,
+      hq,
+      materials:"Steel / Mesh / Foam",
+      compliance:"BIFMA / ISO",
+      leadtime:"30–45 Days"
+    });
+  }
 }
-render();
 
-document.querySelectorAll(".filter-btn").forEach(btn=>{
-  btn.onclick=()=>{
-    document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
-    btn.classList.add("active");
-    render(btn.dataset.filter);
-  };
+/* === 6 Categories × 20 === */
+addSKUs("ERG","ergonomic","Ergonomic Office Chair","Advanced Ergonomic Platform","Synchro / Auto Tilt",50,"620–720");
+addSKUs("TASK","mesh","Task & Mesh Chair","High Volume Task Platform","Simple / Synchro Tilt",200,"800–950");
+addSKUs("DESK","desk","Smart Standing Desk","Electric Desk System","Single / Dual Motor",50,"40–50 sets");
+addSKUs("CONF","conference","Conference Furniture","Modular Meeting System","Steel Beam Frame",10,"Project");
+addSKUs("STOR","storage","Storage & Filing","Steel / Wood Storage","Drawer Slide System",50,"Pallet");
+addSKUs("LOUN","lounge","Soft Seating & Lounge","Commercial Lounge System","Fixed Upholstery",20,"120–180");
+
+const body=document.getElementById("skuBody");
+
+SKU_DB.forEach((i,idx)=>{
+body.innerHTML+=`
+<tr class="sku-row" onclick="toggle(${idx})">
+<td><strong>${i.sku}</strong></td>
+<td>${i.categoryName}</td>
+<td>${i.platform}</td>
+<td>${i.structure}</td>
+<td>${i.moq}</td>
+<td>${i.hq}</td>
+</tr>
+<tr class="sku-expand" id="exp${idx}">
+<td colspan="6">
+<div class="sku-meta">
+<div><strong>Materials:</strong><br>${i.materials}</div>
+<div><strong>Compliance:</strong><br>${i.compliance}</div>
+<div><strong>Lead Time:</strong><br>${i.leadtime}</div>
+</div>
+<button class="btn btn-tech rfq-btn" onclick="addRFQ('${i.sku}')">Add to RFQ</button>
+</td>
+</tr>`;
 });
 
-document.querySelector(".mobile-menu-btn").onclick=()=>{
-  document.querySelector(".nav-links").classList.toggle("active");
-};
+function toggle(i){
+const e=document.getElementById("exp"+i);
+e.style.display=e.style.display==="table-row"?"none":"table-row";
+}
+
+function addRFQ(sku){
+if(!rfq.includes(sku)) rfq.push(sku);
+document.getElementById("rfqPanel").classList.add("active");
+renderRFQ();
+}
+
+function renderRFQ(){
+const box=document.getElementById("rfqList");
+box.innerHTML="";
+rfq.forEach(s=>box.innerHTML+=`<div class="rfq-item">• ${s}</div>`);
+document.getElementById("rfqLink").href=
+`https://wa.me/8615968277867?text=RFQ%20Request:%0A${rfq.join("%0A")}`;
+}
 </script>
 
 </body>
