@@ -1,151 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="description" content="Discover the YiShen Engineering Lab. Where data-driven quality control meets supply chain resilience.">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Why Us: The Engineering Difference | YiShen Global</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="description" content="Discover the YiShen Engineering Lab. Where data-driven quality control meets engineered supply chain predictability.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050b17">
+  <title>Why YiShen | The Engineering Lab Advantage</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="favicon.ico">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- Core Styles -->
+  <link rel="stylesheet" href="styles.css?v=314">
 </head>
+
 <body>
 
-    <nav class="navbar">
-        <div class="container nav-wrapper">
-            <a href="index.html" class="brand"><img src="logo.webp" alt="YiShen Global Logo" width="180" height="70"></a>
-            <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="why-us.html" class="active">Why Us</a>
-                <a href="solutions.html">Solutions</a>
-                <a href="industries.html">Industries</a>
-                <a href="resources.html">Resources</a>
-                <a href="contact.html" class="nav-cta">Contact Us</a>
-            </div>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-elite">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand">
+        <img
+          src="logo-navbar.svg"
+          alt="YiShen Global"
+          width="180"
+          height="48"
+          loading="eager"
+          decoding="async">
+      </a>
+
+      <div class="mobile-menu-btn" aria-label="Open menu" role="button" tabindex="0">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="why-us.html" class="active">Why Us</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="industries.html">Industries</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html" class="nav-cta">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HEADER ===== -->
+  <header class="page-header bg-dark"
+    style="background-image:
+      linear-gradient(rgba(15,23,42,0.92), rgba(15,23,42,0.85)),
+      url('header-whyus.webp');
+      background-size: cover;
+      background-position: center;">
+    <div class="container">
+      <span class="section-tag">The Engineering Difference</span>
+      <h1>Predictability Is Engineered.</h1>
+      <p>
+        Quality is not a promise. It is a system.
+        YiShen Global applies engineering discipline to every stage of the supply chain —
+        from raw material validation to final-mile DDP delivery.
+      </p>
+    </div>
+  </header>
+
+  <!-- ===== LAB CORE ===== -->
+  <section class="section-padding">
+    <div class="container grid-2" style="align-items:center; gap:70px;">
+      <div>
+        <span class="section-tag">Inside the Lab</span>
+        <h2>The YiShen Engineering Lab</h2>
+        <p class="lab-lead">
+          Most logistics providers react to problems.
+          We eliminate them upstream.
+        </p>
+        <p>
+          YiShen Global operates a vertically integrated engineering system that treats
+          manufacturing, packaging, and logistics as a single controllable equation.
+          Each SKU is validated for structural integrity, packaging resilience,
+          and logistics survivability before it ever enters global circulation.
+        </p>
+
+        <ul class="eng-list">
+          <li><strong>Structural Integrity Validation:</strong> BIFMA / ANSI fatigue and load testing at component level.</li>
+          <li><strong>ISTA 6A Packaging Engineering:</strong> Drop, vibration, and compression testing for DTC survivability.</li>
+          <li><strong>Material Traceability:</strong> Controlled sourcing of mesh, steel, plastics, and gas lifts.</li>
+          <li><strong>Claim Prevention Focus:</strong> Data-driven reduction of post-sale failures and returns.</li>
+        </ul>
+
+        <a href="contact.html" class="btn btn-tech btn-tech-elite" style="margin-top:20px;">
+          Request Lab Capability Overview
+        </a>
+      </div>
+
+      <img
+        src="div-lab-equipment.webp"
+        alt="Engineering Lab Testing Equipment"
+        class="img-elite"
+        loading="lazy">
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ARCHITECTURE ===== -->
+  <section class="section-padding bg-light">
+    <div class="container text-center">
+      <span class="section-tag" style="justify-content:center;">Process Architecture</span>
+      <h2>The Closed-Loop Engineering System</h2>
+      <p style="max-width:800px; margin:0 auto 55px;">
+        Our process architecture eliminates guesswork.
+        Every handoff is controlled, verified, and documented —
+        ensuring consistent output across global markets.
+      </p>
+
+      <div class="grid-3">
+        <div class="process-card">
+          <i class="fas fa-industry tech-accent"></i>
+          <h4>Step 01 · Material & Source Control</h4>
+          <p>
+            Supplier audits, batch verification, and material specification control.
+            Quality is locked in before production begins.
+          </p>
         </div>
-    </nav>
 
-    <header class="page-header bg-dark" style="background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), url('header-whyus.webp'); background-position: center; background-size: cover;">
-        <div class="container">
-            <span class="section-tag">The Engineering Difference</span>
-            <h1>Data-Driven Predictability.</h1>
-            <p>We don't just promise quality; we engineer it into every step of the supply chain, from raw material testing to final mile delivery.</p>
+        <div class="process-card">
+          <i class="fas fa-drafting-compass tech-accent"></i>
+          <h4>Step 02 · Production & Packaging Engineering</h4>
+          <p>
+            In-line QC, structural testing, and ISTA 6A-certified packaging
+            engineered for parcel and container stress.
+          </p>
         </div>
-    </header>
 
-    <section class="section-padding">
-        <div class="container">
-            <div class="grid-2" style="align-items: center; gap: 60px;">
-                <div>
-                    <h2>The Lab: Where Science Meets Supply Chain</h2>
-                    <p>
-                        Our commitment begins far upstream. We operate a vertically integrated quality control system that treats the entire supply chain—from raw aluminum ingot to final DDP parcel—as a single, measurable engineering project. 
-                        We don't rely on spot checks; we build **predictability** into every SKU by validating component integrity and packaging resilience before your product ever leaves the factory floor.
-                    </p>
-
-                    <h4 style="margin-top: 30px;">Core Pillars of Predictability:</h4>
-                    <ul class="eng-list">
-                        <li>**Structural Integrity Testing:** Rigorous in-house fatigue testing and BIFMA/ANSI verification for every structural component.</li>
-                        <li>**ISTA 6A Resilience:** Packaging is engineered and drop-tested to survive the punishing demands of DTC (Direct-to-Consumer) e-commerce shipping.</li>
-                        <li>**Source Traceability:** Full audit trails and supplier management protocols ensure the consistent quality of key materials, from Korean mesh to Class 4 gas lifts.</li>
-                        <li>**Zero-Defect Goal:** Our data-driven approach aims to minimize post-sale claims and protect your brand's integrity.</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-tech" style="margin-top: 20px;">Request Lab Data Overview</a>
-                </div>
-                <img src="div-lab-equipment.webp" alt="Testing Equipment Placeholder" style="border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);" loading="lazy">
-            </div>
+        <div class="process-card">
+          <i class="fas fa-shipping-fast tech-accent"></i>
+          <h4>Step 03 · Logistics & DDP Execution</h4>
+          <p>
+            Container density modeling, customs compliance,
+            and controlled DDP final-mile delivery networks.
+          </p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section class="section-padding bg-light">
-        <div class="container text-center">
-            <span class="section-tag" style="justify-content: center;">Our Process Architecture</span>
-            <h2>The Six Steps to Engineered Quality</h2>
-            <p style="margin: 0 auto 50px; max-width: 800px;">Our process is a closed-loop system designed to control variability and guarantee output. This three-step summary highlights the critical handoffs, ensuring quality is managed by YiShen engineers, not left to chance.</p>
-            
-            <div class="grid-3">
-                <div style="background: white; padding: 30px; border-radius: 6px; border-bottom: 3px solid var(--accent);">
-                    <i class="fas fa-search-dollar tech-accent" style="font-size: 2rem; margin-bottom: 15px;"></i>
-                    <h4>Step 1: Raw Material Audit & Sourcing</h4>
-                    <p style="font-size: 0.9rem;">Verification of steel, plastic, and mesh batches against specification. **Quality is locked in at the source.**</p>
-                </div>
-                <div style="background: white; padding: 30px; border-radius: 6px; border-bottom: 3px solid var(--accent);">
-                    <i class="fas fa-drafting-compass tech-accent" style="font-size: 2rem; margin-bottom: 15px;"></i>
-                    <h4>Step 2: Production QC & Packaging Engineering</h4>
-                    <p style="font-size: 0.9rem;">In-line quality control during assembly, pre-packaging BIFMA checks, and ISTA 6A drop-test certification.</p>
-                </div>
-                <div style="background: white; padding: 30px; border-radius: 6px; border-bottom: 3px solid var(--accent);">
-                    <i class="fas fa-shipping-fast tech-accent" style="font-size: 2rem; margin-bottom: 15px;"></i>
-                    <h4>Step 3: Logistics & DDP Final Mile</h4>
-                    <p style="font-size: 0.9rem;">Container optimization calculation, efficient customs filing, and guaranteed final-mile DDP delivery networks.</p>
-                </div>
-            </div>
-            </div>
-    </section>
+  <!-- ===== VALUE PROOF ===== -->
+  <section class="section-padding">
+    <div class="container text-center">
+      <span class="section-tag" style="justify-content:center;">Why It Matters</span>
+      <h2>Engineered Reliability, Measurable Results</h2>
 
-    <section class="cta-banner">
-        <div class="container" style="position: relative; z-index: 10;">
-            <h2>Experience Engineered Reliability.</h2>
-            <p>Schedule a consultation to see how our data-driven approach can secure your supply chain.</p>
-            <a href="contact.html" class="btn btn-tech">Talk to an Engineer</a>
+      <div class="grid-4 hero-stats hero-stats-elite" style="margin-top:50px;">
+        <div class="stat-box">
+          <h3>40%+</h3>
+          <p>Damage Rate Reduction</p>
         </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid grid-4" style="gap: 40px; align-items: start;">
-                <div style="text-align: left;">
-                    <h3 style="margin-bottom: 20px; font-size: 1.4rem;">YiShen Global</h3>
-                    <p style="opacity: 0.8; font-size: 0.9rem; max-width: 250px; margin-bottom: 0;">
-                        Engineered supply chain solutions. Bridging Asian manufacturing excellence with global market predictability.
-                    </p>
-                </div>
-                <div style="text-align: left;">
-                    <h4 style="font-size: 1rem; margin-bottom: 20px;">Core Solutions</h4>
-                    <ul class="contact-list" style="display: block; font-size: 0.9rem;">
-                        <li style="margin-bottom: 12px;"><a href="solutions.html">DTC E-commerce Fulfillment</a></li>
-                        <li style="margin-bottom: 12px;"><a href="solutions.html">B2B Bulk Procurement</a></li>
-                        <li><a href="solutions.html">Project Cargo & OOG</a></li>
-                    </ul>
-                </div>
-                <div style="text-align: left;">
-                    <h4 style="font-size: 1rem; margin-bottom: 20px;">Company & Resources</h4>
-                    <ul class="contact-list" style="display: block; font-size: 0.9rem;">
-                        <li style="margin-bottom: 12px;"><a href="why-us.html">Why Us (The Lab)</a></li>
-                        <li style="margin-bottom: 12px;"><a href="industries.html">Industries</a></li>
-                        <li style="margin-bottom: 12px;"><a href="resources.html">Resources</a></li>
-                        <li><a href="site-architecture.html" class="tech-accent" style="font-weight: 600;"><i class="fas fa-sitemap" style="margin-right: 6px;"></i> Site Blueprint</a></li>
-                    </ul>
-                </div>
-                <div class="footer-cta-box" style="text-align: left; padding: 0; background: none; border: none; box-shadow: none;">
-                    <h4 style="font-size: 1rem; margin-bottom: 20px;">Connect</h4>
-                    <div class="social-links" style="justify-content: flex-start; flex-wrap: wrap; gap: 8px;">
-                        <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://x.com/AlexYan03451555" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-                        <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.facebook.com/alex.yang.427745" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/alexyang591/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
-                    <p style="margin-top: 20px; font-size: 0.85rem; opacity: 0.6;">Based in Anji & Hangzhou, China.</p>
-                </div>
-            </div>
-            <div class="copyright" style="text-align: left; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; margin-top: 40px;">
-                &copy; 2026 YiShen Global. All Rights Reserved. | Engineered in China.
-            </div>
+        <div class="stat-box">
+          <h3>99.8%</h3>
+          <p>QC Pass Rate</p>
         </div>
-    </footer>
+        <div class="stat-box">
+          <h3>200+</h3>
+          <p>SKUs Under Control</p>
+        </div>
+        <div class="stat-box">
+          <h3>50+</h3>
+          <p>Global Enterprise Clients</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <a href="https://wa.me/8615968277867" target="_blank" class="floating-cta" aria-label="Contact via WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+  <!-- ===== CTA ===== -->
+  <section class="cta-banner cta-elite">
+    <div class="container">
+      <h2>Build Predictability Into Your Supply Chain</h2>
+      <p>Speak directly with YiShen engineers — not sales intermediaries.</p>
+      <a href="contact.html" class="btn btn-tech btn-tech-elite">
+        Talk to an Engineer
+      </a>
+    </div>
+  </section>
 
-    <script>
-        const menuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        menuBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); });
-    </script>
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer footer-elite">
+    <div class="container footer-grid grid-4">
+      <div>
+        <img src="logo-white.svg" alt="YiShen Global" style="height:48px;">
+        <p class="footer-desc">
+          Engineered supply chain systems.<br>
+          Predictability designed, not promised.
+        </p>
+      </div>
+
+      <div>
+        <h4>Solutions</h4>
+        <a href="solutions.html#dtc">DTC Fulfillment</a>
+        <a href="solutions.html#b2b">B2B Procurement</a>
+        <a href="solutions.html#projects">Project Cargo</a>
+      </div>
+
+      <div>
+        <h4>Company</h4>
+        <a href="why-us.html">Why YiShen</a>
+        <a href="industries.html">Industries</a>
+        <a href="resources.html">Resources</a>
+      </div>
+
+      <div>
+        <h4>Connect</h4>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://x.com/AlexYan03451555" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © 2026 YiShen Global · Engineered in China
+    </div>
+  </footer>
+
+  <a href="https://wa.me/8615968277867" target="_blank" class="floating-cta">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    const toggleMenu = () => navLinks.classList.toggle('active');
+    menuBtn.addEventListener('click', toggleMenu);
+    menuBtn.addEventListener('keydown', e => { if (e.key === 'Enter') toggleMenu(); });
+  </script>
+
 </body>
 </html>
