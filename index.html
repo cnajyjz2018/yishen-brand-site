@@ -1,198 +1,307 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="description" content="YiShen Global is a furniture manufacturer and brand partner specializing in ergonomic seating, standing desks, and commercial furniture systems, engineered for global markets.">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YiShen Global | Furniture Manufacturing Engineered for Global Scale</title>
+/* ==========================================================================
+   YiShen Global – V31.1 Furniture-First Master Stylesheet
+   Furniture Brand First · Engineering Capability Second
+   ========================================================================== */
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<link rel="stylesheet" href="styles.css">
-</head>
+/* --- ROOT VARIABLES & RESET --- */
+:root {
+    /* ===== FURNITURE-FIRST COLOR SYSTEM ===== */
+    --primary: #0B1220;          /* 家具品牌深蓝黑 */
+    --dark-bg: #0F172A;          /* 高端家具深色背景 */
+    --secondary: #334155;
+    --silver: #9CA3AF;
 
-<body>
+    --accent: #005FCC;           /* 家具科技蓝（降饱和） */
+    --gold: #C88A2E;             /* 家具品牌金 */
 
-<!-- ================= NAVBAR ================= -->
-<nav class="navbar">
-  <div class="container nav-wrapper">
-    <a href="index.html" class="brand">
-      <img src="logo.webp" alt="YiShen Global Furniture" width="180" height="70">
-    </a>
-    <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
-    <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="why-us.html">Why Us</a>
-      <a href="solutions.html">Solutions</a>
-      <a href="industries.html">Industries</a>
-      <a href="resources.html">Resources</a>
-      <a href="contact.html" class="nav-cta">Contact Us</a>
-    </div>
-  </div>
-</nav>
+    --bg-light: #F8FAFC;
+    --white: #ffffff;
+    --border: #E2E8F0;
 
-<!-- ================= HERO ================= -->
-<section class="hero">
-  <div class="container">
-    <span class="section-tag">
-      <i class="fas fa-chair"></i> Furniture Manufacturing & Brand Partner
-    </span>
+    --font-main: 'Inter', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+}
 
-    <h1>
-      Commercial Furniture.<br>
-      Engineered for Global Scale.
-    </h1>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font-main);
+    color: var(--primary);
+    line-height: 1.7;
+    background-color: var(--white);
+}
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
 
-    <p>
-      YiShen Global designs and manufactures ergonomic seating, standing desks, and commercial furniture systems.
-      Our engineering, compliance, and DDP capabilities ensure predictable quality and global delivery.
-    </p>
+/* --- LAYOUT --- */
+.container { width: 90%; max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+.section-padding { padding: 120px 0; }
+.section-padding-small { padding: 60px 0; }
 
-    <div class="hero-actions">
-      <a href="#furniture-catalog" class="btn btn-tech">
-        Explore Furniture Collections
-      </a>
-      <a href="contact.html" class="btn btn-outline-white">
-        Request Quotation
-      </a>
-    </div>
-  </div>
-</section>
+.bg-dark { background-color: var(--dark-bg); color: var(--silver); }
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark h4 { color: white; }
 
-<!-- ================= STATS ================= -->
-<div class="container hero-stats-wrapper">
-  <div class="hero-stats grid-4">
-    <div class="stat-box">
-      <i class="fas fa-industry"></i>
-      <h3>10+ Years</h3>
-      <p>Furniture Manufacturing</p>
-    </div>
-    <div class="stat-box">
-      <i class="fas fa-layer-group"></i>
-      <h3>200+ SKUs</h3>
-      <p>Across 6 Furniture Categories</p>
-    </div>
-    <div class="stat-box">
-      <i class="fas fa-certificate"></i>
-      <h3>99.8%</h3>
-      <p>Quality Pass Rate</p>
-    </div>
-    <div class="stat-box">
-      <i class="fas fa-globe"></i>
-      <h3>50+ Markets</h3>
-      <p>Global B2B & Retail</p>
-    </div>
-  </div>
-</div>
+.bg-light { background-color: var(--bg-light); }
+.bg-light-alt { background-color: #EEF2F7; }
+.text-center { text-align: center; }
 
-<!-- ================= FURNITURE CATEGORIES ================= -->
-<section class="section-padding bg-light" id="furniture-catalog">
-  <div class="container">
+/* --- TYPOGRAPHY --- */
+h1, h2, h3, h4, h5 {
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+}
 
-    <div class="text-center section-header">
-      <span class="section-tag">
-        <i class="fas fa-th-large"></i> Furniture Portfolio
-      </span>
-      <h2>Six Core Furniture Categories</h2>
-      <p>Each category is engineered for durability, certification, and scalable production.</p>
-    </div>
+h1 {
+    font-size: 4.2rem;
+    color: white;
+    text-transform: uppercase;
+}
 
-    <div class="catalog-list grid-3">
+h2 { font-size: 3rem; margin-bottom: 1.5rem; }
+h3 { font-size: 1.8rem; }
+p {
+    font-size: 1.1rem;
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+}
 
-      <div class="catalog-item">
-        <h5><i class="fas fa-chair"></i> Ergonomic Seating</h5>
-        <p>Mesh & upholstered chairs for office and e-commerce.</p>
-        <span class="sku-count">30+ SKUs</span>
-        <a href="sku-detail.html" class="view-link">View Category</a>
-      </div>
+/* --- SECTION TAG (FURNITURE-FIRST) --- */
+.section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+.section-tag i { font-size: 0.9rem; }
 
-      <div class="catalog-item">
-        <h5><i class="fas fa-desktop"></i> Standing Desks</h5>
-        <p>Single & dual-motor adjustable desk systems.</p>
-        <span class="sku-count">20+ SKUs</span>
-        <a href="sku-detail.html" class="view-link">View Category</a>
-      </div>
+/* --- BUTTONS --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 40px;
+    border-radius: 4px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
 
-      <div class="catalog-item">
-        <h5><i class="fas fa-people-group"></i> Conference Furniture</h5>
-        <p>Meeting tables, chairs, and modular systems.</p>
-        <span class="sku-count">Modular</span>
-        <a href="sku-detail.html" class="view-link">View Category</a>
-      </div>
+.btn-tech {
+    background: var(--accent);
+    color: white;
+}
+.btn-tech:hover { background: #004BA0; }
 
-      <div class="catalog-item">
-        <h5><i class="fas fa-box-archive"></i> Storage & Filing</h5>
-        <p>Steel and wood-based storage solutions.</p>
-        <span class="sku-count">20+ SKUs</span>
-        <a href="sku-detail.html" class="view-link">View Category</a>
-      </div>
+.btn-outline-white {
+    border: 2px solid rgba(255,255,255,0.4);
+    color: white;
+}
+.btn-outline-white:hover {
+    background: rgba(255,255,255,0.1);
+}
 
-      <div class="catalog-item">
-        <h5><i class="fas fa-couch"></i> Lounge & Soft Seating</h5>
-        <p>Commercial-grade sofas and leisure seating.</p>
-        <span class="sku-count">35+ SKUs</span>
-        <a href="sku-detail.html" class="view-link">View Category</a>
-      </div>
+/* --- NAVIGATION --- */
+.navbar {
+    position: fixed;
+    top: 0; width: 100%;
+    height: 90px;
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid #eee;
+    z-index: 1000;
+}
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+.nav-links a {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: 0.3s;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
 
-      <div class="catalog-item">
-        <h5><i class="fas fa-layer-group"></i> Sustainable Flooring</h5>
-        <p>Bamboo & SPC flooring systems.</p>
-        <span class="sku-count">15+ SKUs</span>
-        <a href="sku-detail.html" class="view-link">View Category</a>
-      </div>
+.nav-cta {
+    background: var(--primary);
+    color: white !important;
+    padding: 12px 28px;
+    border-radius: 4px;
+}
 
-    </div>
-  </div>
-</section>
+.mobile-menu-btn { display: none; }
 
-<!-- ================= ENGINEERING (SUPPORTING) ================= -->
-<section class="section-padding bg-dark">
-  <div class="container grid-2">
-    <div>
-      <span class="section-tag">
-        <i class="fas fa-flask"></i> Furniture Engineering Lab
-      </span>
-      <h2>Engineering That Supports Furniture Sales</h2>
-      <p>
-        Our in-house engineering ensures that every furniture product is optimized for
-        structure, packaging, certification, and cross-border delivery.
-      </p>
+/* --- HERO (FURNITURE FIRST, ENGINEERING BACKGROUND) --- */
+.hero {
+    padding-top: 260px;
+    padding-bottom: 220px;
+    background: var(--dark-bg);
+    color: white;
+    position: relative;
+}
+.hero::after {
+    content:'';
+    position:absolute;
+    inset:0;
+    background: linear-gradient(
+        45deg,
+        rgba(11,18,32,0.95),
+        rgba(0,95,204,0.25)
+    );
+}
+.hero .container { position: relative; z-index: 2; }
+.hero p {
+    color: var(--silver);
+    font-size: 1.25rem;
+    max-width: 720px;
+}
 
-      <ul class="icon-list">
-        <li><i class="fas fa-check-circle"></i> BIFMA / ANSI Testing</li>
-        <li><i class="fas fa-box"></i> ISTA 6A Packaging</li>
-        <li><i class="fas fa-shield-halved"></i> Compliance & Certifications</li>
-        <li><i class="fas fa-route"></i> DDP & Global Fulfillment</li>
-      </ul>
-    </div>
+/* --- STATS --- */
+.hero-stats {
+    background: white;
+    padding: 50px;
+    margin-top: -80px;
+    border-radius: 6px;
+    border-bottom: 4px solid var(--accent);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+.stat-box h3 { font-size: 2.4rem; }
+.stat-box p {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--accent);
+    letter-spacing: 1px;
+}
 
-    <img src="div-tech.webp" alt="Furniture Engineering Lab" loading="lazy">
-  </div>
-</section>
+/* --- GRIDS --- */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 30px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 30px; }
 
-<!-- ================= CTA ================= -->
-<section class="cta-banner">
-  <div class="container">
-    <h2>Looking for a Reliable Furniture Partner?</h2>
-    <p>Discuss products, pricing, and market requirements directly with our team.</p>
-    <a href="contact.html" class="btn btn-tech">Start Conversation</a>
-  </div>
-</section>
+/* --- CATALOG (FURNITURE CORE) --- */
+.catalog-item {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 30px;
+    transition: 0.3s;
+}
+.catalog-item:hover {
+    border-color: var(--accent);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,95,204,0.15);
+}
+.catalog-item h5 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+.catalog-item h5 i {
+    color: var(--accent); /* FURNITURE ICON DEFAULT */
+}
 
-<footer class="footer">
-  <div class="container">
-    <div class="copyright">
-      &copy; 2026 YiShen Global. Furniture Manufacturing & Global Supply Integration.
-    </div>
-  </div>
-</footer>
+/* --- MINI GRID --- */
+.mini-prod-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.mini-thumb {
+    height: 60px;
+    background: #f1f5f9;
+    border-radius: 4px;
+    object-fit: cover;
+}
 
-<a href="https://wa.me/8615968277867" class="floating-cta" aria-label="WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
+/* --- CTA BANNER --- */
+.cta-banner {
+    background: var(--dark-bg);
+    text-align: center;
+    padding: 120px 0;
+}
+.cta-banner h2 {
+    color: white;
+    font-size: 3.2rem;
+}
+.cta-banner p { color: var(--silver); }
 
-<script src="script.js"></script>
-</body>
-</html>
+/* --- FOOTER --- */
+.footer {
+    background: var(--dark-bg);
+    color: var(--silver);
+    padding: 80px 0 30px;
+}
+.footer h3,
+.footer h4 { color: white; }
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 40px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- FLOATING CTA --- */
+.floating-cta {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.2rem; }
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .mobile-menu-btn { display: block; }
+}
