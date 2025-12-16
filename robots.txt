@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+# Sitemap declaration (2026 official)
 Sitemap: https://yishenglobal.net/sitemap.xml
