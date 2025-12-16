@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="YiShen Global (white)">
+  <defs>
+    <linearGradient id="softGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.92"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <!-- Mark -->
+  <g transform="translate(120,150)" filter="url(#shadow)">
+    <!-- outer orbit -->
+    <ellipse cx="0" cy="0" rx="92" ry="58" fill="none" stroke="url(#softGlow)" stroke-width="10" opacity="0.95"/>
+    <!-- inner orbit (tilted) -->
+    <ellipse cx="0" cy="0" rx="76" ry="44" fill="none" stroke="#ffffff" stroke-width="8" opacity="0.55"
+             transform="rotate(-28)"/>
+    <!-- cross orbit (tilted other direction) -->
+    <ellipse cx="0" cy="0" rx="76" ry="44" fill="none" stroke="#ffffff" stroke-width="8" opacity="0.35"
+             transform="rotate(34)"/>
+    <!-- nucleus -->
+    <circle cx="0" cy="0" r="10" fill="#ffffff" opacity="0.95"/>
+    <circle cx="0" cy="0" r="22" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.22"/>
+    <!-- highlight arc -->
+    <path d="M-78,-12 A86,56 0 0 1 -10,-60" fill="none" stroke="#ffffff" stroke-width="6" opacity="0.35" stroke-linecap="round"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(250,110)">
+    <text x="0" y="0"
+          font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"
+          font-size="86"
+          font-weight="700"
+          letter-spacing="0.5"
+          fill="#ffffff"
+          text-rendering="geometricPrecision">
+      YiShen Global
+    </text>
+
+    <!-- Tagline -->
+    <text x="2" y="70"
+          font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"
+          font-size="24"
+          font-weight="500"
+          letter-spacing="0.6"
+          fill="#ffffff"
+          opacity="0.82">
+      AI-Driven Logistics. Faster. Smarter. Predictable.
+    </text>
+
+    <!-- Divider line -->
+    <rect x="2" y="90" width="560" height="2" fill="#ffffff" opacity="0.18" rx="1"/>
+  </g>
+</svg>
