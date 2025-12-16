@@ -1,38 +1,50 @@
-/* ==========================================================================
-   YiShen Global — OFFICIAL MASTER STYLESHEET (2026 FINAL)
-   Positioning: Furniture First · Engineering Support
-   ========================================================================== */
+/* =========================================================
+   YiShen Global – Home & Office Furniture System
+   Core Style Sheet (Ultimate Edition)
+   Furniture First · Supply Chain Powered · Tech Energy UI
+========================================================= */
 
-/* ===================== ROOT & RESET ===================== */
+/* =========================
+   CSS VARIABLES
+========================= */
 :root {
-  --primary: #0F172A;
-  --secondary: #334155;
-  --silver: #94A3B8;
+  --bg-dark: #050b17;
+  --bg-panel: #0b1220;
+  --bg-soft: #0f172a;
+  --bg-light: #f8fafc;
 
-  --accent: #007AFF;
-  --gold: #D97706;
+  --primary: #0ea5e9;
+  --accent: #22d3ee;
+  --energy: #38bdf8;
 
-  --dark-bg: #0B1220;
-  --bg-light: #F8FAFC;
-  --white: #FFFFFF;
-  --border: #E2E8F0;
+  --text-main: #e5e7eb;
+  --text-sub: #94a3b8;
+  --text-dark: #0f172a;
 
-  --font-main: 'Inter', sans-serif;
+  --border: rgba(148,163,184,.18);
+  --radius: 14px;
+  --radius-sm: 8px;
+
+  --transition: .35s cubic-bezier(.4,0,.2,1);
 }
 
-* {
-  margin: 0;
-  padding: 0;
+/* =========================
+   RESET
+========================= */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: var(--font-main);
-  color: var(--primary);
-  background: var(--white);
-  line-height: 1.7;
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.65;
+  scroll-behavior: smooth;
 }
 
 img {
@@ -40,339 +52,376 @@ img {
   display: block;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: .3s;
-}
-
-/* ===================== LAYOUT ===================== */
+/* =========================
+   CONTAINER & GRID
+========================= */
 .container {
-  width: 90%;
-  max-width: 1280px;
-  margin: auto;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-.section-padding {
-  padding: 120px 0;
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
 }
 
-.text-center { text-align: center; }
-
-/* ===================== TYPOGRAPHY ===================== */
-h1, h2, h3, h4, h5 {
-  font-weight: 800;
-  line-height: 1.1;
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
 }
 
-h1 {
-  font-size: 4rem;
-  color: #fff;
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
 }
 
-h2 {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
+@media (max-width: 992px) {
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
 }
 
-p {
-  color: var(--secondary);
-  font-size: 1.1rem;
-  max-width: 780px;
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(5,11,23,.85);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 86px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+/* === ENERGY LOGO === */
+.logo-energy {
+  height: 48px;
+  filter: drop-shadow(0 0 18px rgba(56,189,248,.6));
+  animation: energyPulse 4s ease-in-out infinite;
+  transition: transform .4s ease, filter .4s ease;
+}
+
+@keyframes energyPulse {
+  0%,100% {
+    filter: drop-shadow(0 0 12px rgba(56,189,248,.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(56,189,248,.95));
+  }
+}
+
+.brand:hover .logo-energy {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 44px rgba(34,211,238,1));
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent);
+}
+
+.nav-cta {
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff !important;
+  font-weight: 600;
+  box-shadow: 0 0 24px rgba(34,211,238,.45);
+}
+
+/* =========================
+   PAGE HEADER (HERO)
+========================= */
+.page-header {
+  padding: 200px 0 120px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.page-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 70% 30%, rgba(56,189,248,.18), transparent 55%);
+}
+
+.page-header .container {
+  position: relative;
+  z-index: 2;
 }
 
 .section-tag {
   display: inline-flex;
   align-items: center;
-  font-size: .8rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 20px;
-}
-
-.section-tag::before {
-  content: '';
-  width: 18px;
-  height: 2px;
-  background: var(--accent);
-  margin-right: 10px;
-}
-
-.tech-accent { color: var(--accent); }
-
-/* ===================== NAV ===================== */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 90px;
-  background: rgba(255,255,255,.96);
-  border-bottom: 1px solid var(--border);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-}
-
-.nav-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.brand img {
-  width: 180px;
-  max-height: 65px;
-  object-fit: contain;
-}
-
-.nav-links {
-  display: flex;
-  gap: 30px;
-}
-
-.nav-links a {
-  font-weight: 600;
-  font-size: .9rem;
-  text-transform: uppercase;
-  position: relative;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--accent);
-  transition: .3s;
-}
-
-.nav-links a:hover::after { width: 100%; }
-
-.nav-cta {
-  background: var(--primary);
-  color: white;
-  padding: 12px 26px;
-  border-radius: 4px;
-}
-
-.mobile-menu-btn {
-  display: none;
-}
-
-/* ===================== HERO ===================== */
-.hero {
-  position: relative;
-  padding: 240px 0 200px;
-  background: var(--dark-bg);
-  color: white;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url("hero-bg.webp") center/cover no-repeat;
-  opacity: .35;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(45deg, rgba(15,23,42,.95), rgba(0,122,255,.2));
-}
-
-.hero .container {
-  position: relative;
-  z-index: 2;
-}
-
-.hero p {
-  color: var(--silver);
-  font-size: 1.25rem;
-  margin: 30px 0 40px;
-}
-
-/* ===================== STATS ===================== */
-.hero-stats {
-  background: white;
-  margin-top: -80px;
-  padding: 50px;
-  border-radius: 6px;
-  box-shadow: 0 20px 50px rgba(0,0,0,.08);
-}
-
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 40px;
-}
-
-.stat-box h3 {
-  font-size: 2.5rem;
-  color: var(--primary);
-}
-
-.stat-box p {
-  text-transform: uppercase;
-  font-size: .85rem;
-  color: var(--accent);
-  font-weight: 700;
-}
-
-/* ===================== CATALOG ===================== */
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 30px;
-}
-
-.catalog-item {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 28px;
-  transition: .35s;
-}
-
-.catalog-item:hover {
-  border-color: var(--accent);
-  transform: translateY(-6px);
-  box-shadow: 0 15px 40px rgba(0,122,255,.15);
-}
-
-.mini-prod-grid {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
   gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(56,189,248,.12);
+  color: var(--accent);
+  font-size: .75rem;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+
+.page-header h1 {
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
   margin-bottom: 18px;
 }
 
-.mini-thumb {
-  height: 60px;
-  object-fit: cover;
-  border-radius: 4px;
-  background: #f1f5f9;
+.page-header p {
+  max-width: 720px;
+  color: var(--text-sub);
 }
 
-.mini-more {
-  grid-column: span 1;
-  background: #f8fafc;
-  display: flex;
+/* =========================
+   SECTION
+========================= */
+.section-padding {
+  padding: 110px 0;
+}
+
+.bg-light {
+  background: var(--bg-soft);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: .85rem;
-  color: var(--secondary);
+  gap: 10px;
+  padding: 16px 34px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
 }
 
-.catalog-item h5 {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.1rem;
+.btn-tech {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  box-shadow: 0 0 26px rgba(34,211,238,.55);
 }
 
-.catalog-meta {
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid #f1f5f9;
-  padding-top: 15px;
-  font-size: .8rem;
+.btn-tech:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 46px rgba(34,211,238,.85);
 }
 
-.view-link {
-  color: var(--accent);
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-/* ===================== ENGINEERING SUPPORT ===================== */
-.bg-dark {
-  background: var(--dark-bg);
-  color: var(--silver);
-}
-
-.bg-dark h2 { color: white; }
-
-.eng-list li {
-  list-style: none;
-  margin-bottom: 15px;
-  padding-left: 26px;
+/* =========================
+   SKU / PRODUCT CARD (ANIME STYLE)
+========================= */
+.catalog-item,
+.solution-card,
+.feature-card {
+  background: linear-gradient(180deg, rgba(15,23,42,.85), rgba(5,11,23,.9));
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 28px;
   position: relative;
+  overflow: hidden;
+  transition: var(--transition);
 }
 
-.eng-list li::before {
-  content: "✔";
+.catalog-item::before,
+.solution-card::before {
+  content: '';
   position: absolute;
-  left: 0;
-  color: var(--accent);
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(56,189,248,.18), transparent 70%);
+  opacity: 0;
+  transition: var(--transition);
 }
 
-/* ===================== CTA ===================== */
+.catalog-item:hover::before,
+.solution-card:hover::before {
+  opacity: 1;
+}
+
+.catalog-item:hover,
+.solution-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 40px 80px rgba(0,0,0,.55);
+}
+
+/* =========================
+   SKU IMAGE HOVER (SCAN EFFECT)
+========================= */
+.catalog-item img {
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.catalog-item:hover img {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 24px rgba(56,189,248,.55));
+}
+
+/* =========================
+   TABLES (ENGINEERING DATA)
+========================= */
+.data-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .85rem;
+}
+
+.data-matrix-table th {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  padding: 14px;
+}
+
+.data-matrix-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-sub);
+}
+
+/* =========================
+   CTA BANNER
+========================= */
 .cta-banner {
-  background: var(--dark-bg);
-  color: white;
   padding: 120px 0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(56,189,248,.25), transparent 60%),
+    linear-gradient(180deg, #020617, #050b17);
   text-align: center;
 }
 
-.cta-banner p {
-  color: var(--silver);
-  margin: 20px auto 40px;
+.cta-banner h2 {
+  font-size: 2.2rem;
+  margin-bottom: 18px;
 }
 
-/* ===================== FOOTER ===================== */
+.cta-banner p {
+  color: var(--text-sub);
+  margin-bottom: 36px;
+}
+
+/* =========================
+   FOOTER
+========================= */
 .footer {
-  background: var(--dark-bg);
-  color: var(--silver);
-  padding: 80px 0 30px;
+  background: #020617;
+  padding: 90px 0 40px;
+  border-top: 1px solid var(--border);
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 40px;
 }
 
-.social-links {
-  display: flex;
-  gap: 10px;
+.footer h4 {
+  margin-bottom: 18px;
 }
 
+.footer a {
+  color: var(--text-sub);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer a:hover {
+  color: var(--accent);
+}
+
+/* =========================
+   SOCIAL ICONS (ENERGY STYLE)
+========================= */
 .social-links a {
   width: 38px;
   height: 38px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.05);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
+  background: rgba(56,189,248,.12);
+  color: var(--accent);
+  margin-right: 10px;
+  transition: var(--transition);
 }
 
-/* ===================== FLOATING CTA ===================== */
+.social-links a:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 22px rgba(34,211,238,.9);
+}
+
+/* =========================
+   FLOATING WHATSAPP
+========================= */
 .floating-cta {
   position: fixed;
-  right: 28px;
-  bottom: 28px;
-  width: 60px;
-  height: 60px;
-  background: #25D366;
-  color: white;
+  bottom: 26px;
+  right: 26px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  font-size: 28px;
+  background: #25d366;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #fff;
+  font-size: 1.6rem;
+  box-shadow: 0 0 26px rgba(37,211,102,.7);
+  z-index: 999;
+  transition: var(--transition);
 }
 
-/* ===================== RESPONSIVE ===================== */
-@media (max-width:1024px) {
-  .grid-3, .grid-4 { grid-template-columns: 1fr; }
-  .nav-links { display: none; }
-  .mobile-menu-btn { display: block; }
+.floating-cta:hover {
+  transform: scale(1.12);
+}
+
+/* =========================
+   MOBILE
+========================= */
+.mobile-menu-btn {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: block;
+    color: var(--accent);
+    font-size: 1.6rem;
+  }
 }
