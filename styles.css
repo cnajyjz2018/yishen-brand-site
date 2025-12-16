@@ -377,3 +377,271 @@ p { margin-bottom: 1.5rem; color: var(--secondary); font-size: 1.1rem; max-width
     .root-node::after, .branch-level-1::before, .branch-level-1 .node-wrapper::before { display: none; }
     .root-node, .branch-level-1 .node-wrapper:not(:last-child) { margin-bottom: 40px; }
 }
+/* ==========================================================
+   YiShen Global — V31.1 ELITE OVERRIDES (Drop-in)
+   Goal: Tech Blue Energy Core + Digital Grid + Premium Contrast
+   Paste this at the END of styles.css
+   ========================================================== */
+
+/* 1) 统一为“能量蓝”体系（不是系统蓝） */
+:root{
+  --dark-bg: #050b17;        /* 深海底色（更高级，不发灰） */
+  --primary: #0B1220;
+  --secondary: rgba(11,18,32,.72);
+  --silver: rgba(234,240,247,.75);
+
+  --accent: #1E90FF;         /* 能量蓝主色 */
+  --accent-2: #3FA9F5;       /* 光晕蓝 */
+  --border: rgba(234,240,247,.12);
+
+  --bg-light: #F6F8FB;
+}
+
+/* 2) Navbar 变成“玻璃态科技” */
+.navbar-elite{
+  background: rgba(255,255,255,.90);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(11,18,32,.08);
+}
+
+/* 3) HERO：能量核 + 数字网格 + 扫描光幕（独一无二的关键） */
+.hero-elite{
+  background: radial-gradient(circle at 50% 42%, #0b2a52 0%, #071b34 35%, #050b17 70%, #02060f 100%);
+  padding-top: 270px;
+  padding-bottom: 230px;
+}
+
+.hero-elite::before,
+.hero-elite::after{
+  content:none; /* 禁用你旧 hero 的图片叠层逻辑，避免“发灰” */
+}
+
+.hero-elite .hero-content{
+  position: relative;
+  z-index: 6;
+}
+
+.hero-layer{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+
+/* 数字网格 */
+.hero-grid{
+  opacity: .55;
+  background-image:
+    radial-gradient(rgba(120,200,255,.16) 1px, transparent 1px),
+    linear-gradient(120deg, rgba(30,144,255,.20), transparent 60%);
+  background-size: 86px 86px, cover;
+  mix-blend-mode: screen;
+}
+
+/* 能量光核（核心） */
+.hero-glow{
+  inset:-25%;
+  background:
+    radial-gradient(circle at 50% 45%,
+      rgba(63,169,245,.55) 0%,
+      rgba(30,144,255,.22) 28%,
+      rgba(30,144,255,.08) 45%,
+      transparent 62%);
+  filter: blur(90px);
+  animation: yishenPulse 8s ease-in-out infinite;
+}
+
+@keyframes yishenPulse{
+  0%,100%{ transform: scale(1); opacity:.78; }
+  50%{ transform: scale(1.12); opacity:1; }
+}
+
+/* 扫描光幕（更“科技”但克制） */
+.hero-scan{
+  opacity: .45;
+  background:
+    linear-gradient(180deg,
+      transparent 0%,
+      rgba(63,169,245,.07) 35%,
+      rgba(30,144,255,.12) 55%,
+      transparent 100%);
+  animation: yishenScan 10s linear infinite;
+}
+
+@keyframes yishenScan{
+  0%{ transform: translateY(-18%); }
+  100%{ transform: translateY(18%); }
+}
+
+/* Hero 文案层级 */
+.hero-title{
+  text-transform: none; /* 更高级（不强行全大写） */
+  letter-spacing: -1.6px;
+  max-width: 980px;
+}
+
+.hero-subtitle{
+  color: rgba(234,240,247,.82) !important;
+  font-size: 1.22rem !important;
+  max-width: 760px !important;
+}
+
+/* Hero 微型信任点 */
+.hero-microproof{
+  margin-top: 28px;
+  display:flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  color: rgba(234,240,247,.70);
+  font-size: .9rem;
+}
+.hero-microproof span{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding: 10px 14px;
+  border: 1px solid rgba(234,240,247,.12);
+  background: rgba(255,255,255,.03);
+  border-radius: 999px;
+}
+.hero-microproof i{
+  color: rgba(63,169,245,.95);
+}
+
+/* 4) 高端按钮：玻璃态 + 能量蓝（不是扁平块） */
+.btn-tech-elite{
+  background: linear-gradient(135deg, rgba(30,144,255,.95), rgba(63,169,245,.75));
+  border-color: rgba(63,169,245,.85);
+  box-shadow:
+    0 14px 44px rgba(30,144,255,.28),
+    0 0 0 1px rgba(234,240,247,.08) inset;
+  border-radius: 999px;
+}
+.btn-tech-elite:hover{
+  background: linear-gradient(135deg, rgba(30,144,255,1), rgba(63,169,245,.9));
+  transform: translateY(-2px);
+}
+
+.btn-ghost-elite{
+  border-radius: 999px;
+  border-color: rgba(234,240,247,.22);
+  background: rgba(255,255,255,.02);
+}
+.btn-ghost-elite:hover{
+  background: rgba(255,255,255,.06);
+  border-color: rgba(234,240,247,.38);
+}
+
+/* 5) Stats 白卡：更“奢侈”的对比与边缘质感 */
+.hero-stats-wrap{ position: relative; z-index: 20; }
+.hero-stats-elite{
+  border-radius: 14px;
+  border-bottom: 0;
+  border: 1px solid rgba(11,18,32,.08);
+  box-shadow: 0 24px 70px rgba(2,6,15,.14);
+}
+.hero-stats-elite{
+  position: relative;
+}
+.hero-stats-elite:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius: 14px;
+  pointer-events:none;
+  background: linear-gradient(90deg, rgba(30,144,255,.18), transparent 35%, rgba(63,169,245,.12));
+  opacity:.55;
+  mask: linear-gradient(#000, transparent 70%);
+}
+
+/* 6) Trust 栏：更克制更高级 */
+.trust-elite{
+  padding-top: 100px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(11,18,32,.06);
+}
+.trust-title{
+  font-weight: 700;
+  color: rgba(148,163,184,.95);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 40px;
+  font-size: 0.85rem;
+}
+.trust-grid{
+  display:flex;
+  justify-content:center;
+  gap: 60px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+/* 7) 图片统一“高端卡边 + 阴影控制” */
+.img-elite{
+  border-radius: 14px;
+  box-shadow: 0 18px 54px rgba(2,6,15,.12);
+}
+.img-elite-dark{
+  box-shadow: 0 20px 60px rgba(30,144,255,.10);
+}
+
+/* 8) Dark Lab 文案更“权威克制” */
+.h2-on-dark{
+  color: rgba(255,255,255,.98) !important;
+}
+.lab-lead{
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  opacity: .95;
+}
+.lab-points{
+  display:flex;
+  gap: 34px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.lab-point h4{ color:#fff; margin-bottom: 10px; }
+.lab-point p{ margin-bottom: 0; font-size: .95rem; }
+
+/* 9) Feature bullets 更像“工程规格卡” */
+.feature-bullets{
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 18px;
+}
+.feature-bullets li{
+  margin-bottom:0;
+  display:flex;
+  align-items:center;
+  font-weight: 650;
+  color: rgba(11,18,32,.86);
+}
+.feature-bullets i{
+  margin-right: 12px;
+}
+
+/* 10) CTA Banner 变成“暗能量 + 高端边缘” */
+.cta-elite{
+  background: radial-gradient(circle at 50% 40%, rgba(30,144,255,.18) 0%, rgba(5,11,23,1) 56%);
+}
+.cta-elite::before{
+  opacity: .18;
+  mix-blend-mode: screen;
+}
+
+/* 11) Contact lead 更干净 */
+.social-lead{
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+  color: rgba(11,18,32,.68);
+}
+
+/* 12) Mobile：Hero 不塌陷 */
+@media (max-width: 1024px){
+  .hero-elite{ padding-top: 220px; padding-bottom: 170px; text-align:center; }
+  .hero-actions{ justify-content:center; flex-wrap:wrap; }
+  .feature-bullets{ grid-template-columns: 1fr; }
+  .hero-microproof{ justify-content:center; }
+}
+
