@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Home & Office Furniture Catalog by YiShen Global. 120+ procurement-ready SKUs across ergonomic chairs, mesh chairs, standing desks, conference systems, storage, and lounge furniture.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home & Office Furniture (120+ SKUs) | YiShen Global</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="navbar">
+  <div class="container nav-wrapper">
+    <a href="index.html" class="brand">
+      <img src="logo.webp" alt="YiShen Global" width="180" height="70">
+    </a>
+    <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="why-us.html">Why Us</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="industries.html">Industries</a>
+      <a href="home-and-office-furniture.html" class="active">Furniture</a>
+      <a href="contact.html" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="page-header bg-dark"
+style="background-image:linear-gradient(rgba(15,23,42,.92),rgba(15,23,42,.85)),url('hero-bg.webp');background-size:cover;">
+  <div class="container">
+    <span class="section-tag">Product Platforms</span>
+    <h1>Home & Office Furniture</h1>
+    <p>
+      120+ procurement-ready SKUs across 6 furniture categories.  
+      Engineered platforms · Global compliance · Scalable manufacturing.
+    </p>
+  </div>
+</header>
+
+<!-- ================= INTRO ================= -->
+<section class="section-padding">
+  <div class="container text-center">
+    <h2>Furniture Platforms Overview</h2>
+    <p style="max-width:900px;margin:0 auto;">
+      This catalog consolidates YiShen Global’s home & office furniture systems —
+      from ergonomic seating to lounge and storage — structured for
+      OEM/ODM buyers, distributors, and project procurement teams.
+    </p>
+  </div>
+</section>
+
+<!-- ================= CATEGORY FILTER ================= -->
+<section class="section-padding bg-light">
+  <div class="container">
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All (120)</button>
+      <button class="filter-btn" data-filter="ergonomic">Ergonomic Chairs</button>
+      <button class="filter-btn" data-filter="mesh">Task & Mesh Chairs</button>
+      <button class="filter-btn" data-filter="desks">Standing Desks</button>
+      <button class="filter-btn" data-filter="conference">Conference Systems</button>
+      <button class="filter-btn" data-filter="storage">Storage & Filing</button>
+      <button class="filter-btn" data-filter="lounge">Soft Seating & Lounge</button>
+    </div>
+
+    <div class="data-matrix-container">
+      <table class="data-matrix-table" id="skuTable">
+        <thead>
+          <tr>
+            <th>SKU</th>
+            <th>Category</th>
+            <th>Platform</th>
+            <th>Key Structure / Mechanism</th>
+            <th>Material</th>
+            <th>Compliance</th>
+            <th>MOQ</th>
+            <th>40’HQ Load</th>
+          </tr>
+        </thead>
+        <tbody id="skuBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Need Full SKU Technical Files?</h2>
+    <p>
+      CAD drawings · Test reports · Packaging & container optimization available.
+    </p>
+    <a href="contact.html" class="btn btn-tech">Request Engineering Package</a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer-grid grid-4">
+    <div>
+      <h3>YiShen Global</h3>
+      <p>Home & Office Furniture Manufacturing · Engineered in China</p>
+    </div>
+    <div>
+      <h4>Furniture</h4>
+      <a href="#">Ergonomic Chairs</a>
+      <a href="#">Standing Desks</a>
+      <a href="#">Lounge Furniture</a>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <a href="resources.html">Technical Data</a>
+      <a href="site-architecture.html">Site Blueprint</a>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2026 YiShen Global · All Rights Reserved
+  </div>
+</footer>
+
+<a href="https://wa.me/8615968277867" target="_blank" class="floating-cta">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ================= SKU DATABASE (120) ================= -->
+<script>
+const SKU_DB = [
+/* ========= Ergonomic Office Chairs (20) ========= */
+...Array.from({length:20},(_,i)=>({
+  sku:`ERG-${9001+i}`,
+  category:"ergonomic",
+  categoryName:"Ergonomic Office Chair",
+  platform:"Advanced Ergonomic Platform",
+  mechanism:"Synchro Tilt / Auto Balance",
+  material:"Mesh + Molded Foam",
+  compliance:"BIFMA X5.1",
+  moq:50,
+  hq:"620–720 pcs"
+})),
+
+/* ========= Task & Mesh Chairs (20) ========= */
+...Array.from({length:20},(_,i)=>({
+  sku:`TASK-${7001+i}`,
+  category:"mesh",
+  categoryName:"Task / Mesh Chair",
+  platform:"High Volume Task Platform",
+  mechanism:"Simple / Synchro Tilt",
+  material:"Mesh + Foam",
+  compliance:"Internal QC",
+  moq:200,
+  hq:"800–950 pcs"
+})),
+
+/* ========= Smart Standing Desks (20) ========= */
+...Array.from({length:20},(_,i)=>({
+  sku:`DESK-${4001+i}`,
+  category:"desks",
+  categoryName:"Smart Standing Desk",
+  platform:"Electric Desk System",
+  mechanism:"Single / Dual Motor",
+  material:"Steel Frame + MDF",
+  compliance:"UL / CE / RoHS",
+  moq:50,
+  hq:"40–50 sets"
+})),
+
+/* ========= Conference Furniture (20) ========= */
+...Array.from({length:20},(_,i)=>({
+  sku:`CONF-${3001+i}`,
+  category:"conference",
+  categoryName:"Conference Furniture",
+  platform:"Modular Meeting System",
+  mechanism:"Steel Beam Structure",
+  material:"Steel + MFC",
+  compliance:"E1 / Project QC",
+  moq:10,
+  hq:"Project Based"
+})),
+
+/* ========= Storage & Filing (20) ========= */
+...Array.from({length:20},(_,i)=>({
+  sku:`STOR-${2001+i}`,
+  category:"storage",
+  categoryName:"Storage & Filing",
+  platform:"Steel / Wood Storage",
+  mechanism:"Drawer Slide System",
+  material:"Cold Rolled Steel / MDF",
+  compliance:"ISO / Internal QC",
+  moq:50,
+  hq:"Palletized"
+})),
+
+/* ========= Soft Seating & Lounge (20) ========= */
+...Array.from({length:20},(_,i)=>({
+  sku:`LOUN-${1001+i}`,
+  category:"lounge",
+  categoryName:"Soft Seating & Lounge",
+  platform:"Commercial Lounge System",
+  mechanism:"Fixed Upholstery",
+  material:"High Density Foam + Fabric",
+  compliance:"CAL117 / Project QC",
+  moq:20,
+  hq:"120–180 pcs"
+}))
+];
+
+const tbody = document.getElementById("skuBody");
+
+function render(filter="all"){
+  tbody.innerHTML="";
+  SKU_DB.filter(i=>filter==="all"||i.category===filter)
+  .forEach(i=>{
+    tbody.innerHTML+=`
+      <tr>
+        <td><strong>${i.sku}</strong></td>
+        <td>${i.categoryName}</td>
+        <td>${i.platform}</td>
+        <td>${i.mechanism}</td>
+        <td>${i.material}</td>
+        <td>${i.compliance}</td>
+        <td>${i.moq}</td>
+        <td>${i.hq}</td>
+      </tr>`;
+  });
+}
+render();
+
+document.querySelectorAll(".filter-btn").forEach(btn=>{
+  btn.onclick=()=>{
+    document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    render(btn.dataset.filter);
+  };
+});
+
+document.querySelector(".mobile-menu-btn").onclick=()=>{
+  document.querySelector(".nav-links").classList.toggle("active");
+};
+</script>
+
+</body>
+</html>
