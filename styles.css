@@ -1,138 +1,265 @@
-/* ================================
-   YiShen Global – MASTER LOCK CSS
-   Furniture-first · Supply Chain
-   DO NOT MODIFY LOGO SIZE
-================================ */
+/* =====================================================
+   YiShen Global · MASTER STYLESHEET (LOCKED)
+   Furniture-first · Global Supply Chain
+   Version: FINAL / LOGO SAFE / 2026
+===================================================== */
 
-/* ===== ROOT ===== */
+/* ========== ROOT VARIABLES ========== */
 :root{
-  --bg:#050b17;
-  --panel:#0b1220;
-  --line:#132036;
-  --accent:#00e5ff;
-  --accent-soft:rgba(0,229,255,.25);
-  --text:#eaf1ff;
-  --muted:#9fb0c8;
+  --bg-dark:#050b17;
+  --bg-light:#f5f7fb;
+  --primary:#0a7cff;
+  --accent:#38bdf8;
+  --text:#0f172a;
+  --muted:#64748b;
+  --white:#ffffff;
+  --border:rgba(255,255,255,.12);
+  --glow:0 0 18px rgba(56,189,248,.55);
 }
 
-/* ===== RESET ===== */
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-  font-family:'Inter',system-ui;
-  background:var(--bg);
+/* ========== RESET ========== */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{
+  font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont;
+  background:var(--bg-light);
   color:var(--text);
+  scroll-behavior:smooth;
 }
+img{max-width:100%;display:block}
 
-/* ===== LOGO LOCK (核心) ===== */
+/* ========== GLOBAL CONTAINERS ========== */
+.container{
+  max-width:1280px;
+  margin:0 auto;
+  padding:0 24px;
+}
+.section-padding{padding:110px 0}
+.bg-dark{background:var(--bg-dark);color:var(--white)}
+.bg-light{background:var(--bg-light)}
+.text-center{text-align:center}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+
+/* =====================================================
+   🔒 LOGO CONTROL SYSTEM (ABSOLUTE LOCK)
+===================================================== */
+
+/* ALL LOGO IMAGES — NO EXCEPTIONS */
 .brand img,
-.hero-brand img,
-footer img{
-  height:48px !important;
-  width:auto !important;
-  max-height:48px !important;
+.navbar img,
+.footer img,
+.hero-brand img{
+  width:42px !important;
+  height:42px !important;
+  max-width:42px !important;
+  max-height:42px !important;
   object-fit:contain;
-  filter:drop-shadow(0 0 12px var(--accent-soft));
+  filter:drop-shadow(0 0 10px rgba(56,189,248,.65));
 }
 
-/* ===== NAV ===== */
+/* HERO BRAND ANCHOR */
+.hero-brand{
+  position:absolute;
+  top:32px;
+  left:32px;
+  z-index:50;
+  animation:logoPulse 4s infinite ease-in-out;
+}
+@keyframes logoPulse{
+  0%,100%{filter:drop-shadow(0 0 8px rgba(56,189,248,.4))}
+  50%{filter:drop-shadow(0 0 22px rgba(56,189,248,.9))}
+}
+
+/* =====================================================
+   NAVBAR
+===================================================== */
 .navbar{
   position:fixed;
   top:0;left:0;width:100%;
-  background:rgba(5,11,23,.85);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
-  z-index:999;
+  background:rgba(5,11,23,.88);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  z-index:1000;
 }
 .nav-wrapper{
-  max-width:1280px;
-  margin:auto;
-  padding:14px 24px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
+  height:74px;
 }
 .nav-links a{
-  color:var(--muted);
-  margin-left:22px;
-  text-decoration:none;
+  color:#cbd5f5;
+  margin-left:28px;
   font-weight:500;
+  text-decoration:none;
   position:relative;
 }
-.nav-links a:hover{
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{
+  padding:10px 18px;
+  border:1px solid var(--accent);
+  border-radius:30px;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+.hero{
+  min-height:92vh;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(56,189,248,.18),transparent 40%),
+    linear-gradient(180deg,#050b17,#020617);
+  display:flex;
+  align-items:center;
+  position:relative;
+}
+.hero h1{
+  font-size:clamp(2.6rem,5vw,4rem);
+  line-height:1.1;
+}
+.hero p{margin-top:22px;color:#cbd5f5}
+.hero-actions{margin-top:42px;display:flex;gap:20px}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 32px;
+  border-radius:40px;
+  font-weight:600;
+  text-decoration:none;
+  transition:.35s;
+}
+.btn-tech{
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  color:#fff;
+  box-shadow:var(--glow);
+}
+.btn-tech:hover{transform:translateY(-2px)}
+.btn-outline-white{
+  border:1px solid #fff;
+  color:#fff;
+}
+
+/* =====================================================
+   STATS
+===================================================== */
+.hero-stats-wrap{margin-top:-70px;position:relative;z-index:20}
+.hero-stats-elite .stat-box{
+  background:#fff;
+  border-radius:16px;
+  padding:28px;
+  text-align:center;
+  box-shadow:0 18px 40px rgba(15,23,42,.08);
+}
+
+/* =====================================================
+   PRODUCT WALL (FURNITURE FIRST)
+===================================================== */
+.product-wall{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:28px;
+  margin-top:60px;
+}
+.product-card{
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  min-height:320px;
+  box-shadow:0 20px 40px rgba(15,23,42,.08);
+  transition:.4s;
+}
+.product-card img{
+  height:200px;
+  width:100%;
+  object-fit:cover;
+}
+.product-card h5{
+  padding:14px 16px 4px;
+  font-size:1rem;
+}
+.product-card span{
+  padding:0 16px 16px;
+  display:block;
+  font-size:.85rem;
+  color:var(--muted);
+}
+.product-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 0 1px var(--accent),var(--glow);
+}
+
+/* =====================================================
+   ENGINEERING
+===================================================== */
+.eng-list{margin-top:26px}
+.eng-list li{
+  margin-bottom:14px;
+  list-style:none;
+  padding-left:24px;
+  position:relative;
+}
+.eng-list li:before{
+  content:"✦";
+  position:absolute;
+  left:0;
   color:var(--accent);
 }
 
-/* ===== HERO ===== */
-.hero{
-  padding:140px 0 120px;
+/* =====================================================
+   CTA
+===================================================== */
+.cta-banner{
+  padding:120px 0;
   background:
-    radial-gradient(circle at 20% 30%,rgba(0,229,255,.12),transparent 40%),
-    radial-gradient(circle at 80% 40%,rgba(0,120,255,.15),transparent 45%),
-    linear-gradient(180deg,#050b17,#02050c);
-}
-.hero-brand{
+    linear-gradient(135deg,#020617,#050b17);
   text-align:center;
-  margin-bottom:28px;
-}
-.hero h1{
-  font-size:3.2rem;
-  line-height:1.15;
-  text-shadow:0 0 18px rgba(0,229,255,.35);
-}
-.hero p{
-  max-width:760px;
-  margin:26px auto 0;
-  color:var(--muted);
+  color:#fff;
 }
 
-/* ===== PRODUCT WALL ===== */
-.product-wall{
+/* =====================================================
+   FOOTER
+===================================================== */
+.footer{
+  background:#020617;
+  color:#cbd5f5;
+  padding:80px 0 40px;
+}
+.footer-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:18px;
-  margin-top:80px;
+  grid-template-columns:repeat(4,1fr);
+  gap:40px;
 }
-.product-wall img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  border-radius:10px;
-  border:1px solid var(--line);
-  transition:.4s;
-}
-.product-wall img:hover{
-  transform:translateY(-6px) scale(1.03);
-  box-shadow:0 0 25px rgba(0,229,255,.35);
-}
+.footer a{color:#cbd5f5;text-decoration:none}
+.footer a:hover{color:var(--accent)}
 
-/* ===== SOCIAL MATRIX ===== */
-.social-matrix{
-  display:flex;
-  gap:16px;
-  margin-top:28px;
-  flex-wrap:wrap;
-}
-.social-matrix a{
-  width:48px;height:48px;
-  display:flex;
+/* =====================================================
+   SOCIAL ICONS
+===================================================== */
+.social-links a{
+  display:inline-flex;
+  width:42px;height:42px;
   align-items:center;
   justify-content:center;
   border-radius:50%;
-  border:1px solid var(--line);
-  color:var(--accent);
-  font-size:1.2rem;
-  transition:.35s;
+  border:1px solid var(--border);
+  margin-right:10px;
+  transition:.3s;
 }
-.social-matrix a:hover{
+.social-links a:hover{
   background:var(--accent);
   color:#000;
-  box-shadow:0 0 20px var(--accent);
+  box-shadow:var(--glow);
 }
 
-/* ===== FOOTER ===== */
-footer{
-  margin-top:120px;
-  padding:70px 24px 40px;
-  background:#02050c;
-  border-top:1px solid var(--line);
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media(max-width:900px){
+  .grid-2,.grid-4,.footer-grid{grid-template-columns:1fr}
+  .hero-brand{top:18px;left:18px}
 }
