@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- ======================
-       Brand / Entry Point
-  ====================== -->
+  <!-- =================================================
+       BRAND / SYSTEM ENTRY
+  ================================================= -->
   <url>
     <loc>https://yishenglobal.net/index.html</loc>
     <lastmod>2026-01-01</lastmod>
@@ -11,9 +11,19 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- ======================
-       Core Decision Pages
-  ====================== -->
+  <!-- =================================================
+       DECISION ARCHITECTURE (SYSTEM CORE)
+  ================================================= -->
+  <url>
+    <loc>https://yishenglobal.net/site-architecture.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- =================================================
+       CORE DECISION PAGES
+  ================================================= -->
   <url>
     <loc>https://yishenglobal.net/solutions.html</loc>
     <lastmod>2026-01-01</lastmod>
@@ -35,6 +45,9 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- =================================================
+       DATA & TRANSPARENCY LAYER
+  ================================================= -->
   <url>
     <loc>https://yishenglobal.net/resources.html</loc>
     <lastmod>2026-01-01</lastmod>
@@ -42,24 +55,14 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- ======================
-       Conversion / Action
-  ====================== -->
-  <url>
-    <loc>https://yishenglobal.net/contact.html</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- ======================
-       SKU / Engineering Data
-  ====================== -->
+  <!-- =================================================
+       SKU / ENGINEERING EXECUTION
+  ================================================= -->
   <url>
     <loc>https://yishenglobal.net/sku-detail.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.8</priority>
   </url>
 
   <url>
@@ -67,6 +70,16 @@
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- =================================================
+       CONVERSION / STRATEGIC ENTRY
+  ================================================= -->
+  <url>
+    <loc>https://yishenglobal.net/contact.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
 </urlset>
