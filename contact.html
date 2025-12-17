@@ -2,65 +2,93 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="Contact YiShen Global — Commercial furniture manufacturing partner for global retailers, brands, and project buyers.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050b17">
-<title>Contact | YiShen Global</title>
+<meta name="description" content="Contact YiShen Global – Commercial furniture manufacturer with global supply chain support.">
+<title>Contact YiShen Global</title>
 
+<link rel="stylesheet" href="styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<link rel="stylesheet" href="styles.css?v=999">
 </head>
 
 <body>
 
-<!-- ✅ 统一 Navbar（小 LOGO 图标） -->
-<div id="site-navbar"></div>
-
-<header class="page-header bg-dark">
-  <div class="container">
-    <span class="section-tag">Contact</span>
-    <h1>Let’s Build a Furniture System That Scales</h1>
-    <p>
-      Talk directly with our manufacturing & engineering team.
-      Retail · Brand · Project · OEM / ODM.
-    </p>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container nav-wrapper">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo-icon.webp" alt="YiShen Global">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="why-us.html">Why Us</a>
+      <a href="industries.html">Industries</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html" class="active nav-cta">Contact</a>
+    </div>
   </div>
-</header>
+</nav>
 
+<!-- HERO -->
+<section class="hero hero-inner">
+  <div class="hero-brand">
+    <img src="assets/img/logo-icon.webp" alt="YiShen Global">
+  </div>
+
+  <div class="container">
+    <h1>Contact YiShen Global</h1>
+    <p>Furniture-first manufacturing · Global supply chain support</p>
+  </div>
+</section>
+
+<!-- CONTACT CONTENT -->
 <section class="section-padding">
   <div class="container grid-2">
 
+    <!-- LEFT: INFO -->
     <div>
-      <h2>Direct Channels</h2>
+      <h2>Get in Touch</h2>
+      <p>
+        YiShen Global is a commercial furniture manufacturer specializing in
+        ergonomic chairs, standing desks, gaming chairs, lounge seating and
+        project furniture.
+      </p>
+
       <ul class="contact-list">
-        <li><i class="fa-solid fa-envelope"></i> sales@yishenglobal.net</li>
+        <li><i class="fas fa-envelope"></i> sales@yishenglobal.net</li>
         <li><i class="fab fa-whatsapp"></i> +86 159 6827 7867</li>
-        <li><i class="fab fa-weixin"></i> WeChat: YiShenGlobal</li>
+        <li><i class="fab fa-weixin"></i> WeChat ID: yishen-global</li>
+        <li><i class="fas fa-map-marker-alt"></i> Anji · Zhejiang · China</li>
       </ul>
 
-      <h3 style="margin-top:30px;">Head Office</h3>
-      <p>Anji / Hangzhou · China</p>
+      <!-- SOCIAL MATRIX -->
+      <div class="social-links energy-matrix">
+        <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/8615968277867" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/alexyang591/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="WeChat"><i class="fab fa-weixin"></i></a>
+      </div>
     </div>
 
-    <div class="contact-card">
-      <h3>Request Catalog / Quotation</h3>
-      <form>
-        <input type="text" placeholder="Company Name">
-        <input type="email" placeholder="Business Email">
-        <textarea rows="4" placeholder="Tell us your furniture requirement"></textarea>
-        <button class="btn btn-tech" type="submit">Submit</button>
-      </form>
+    <!-- RIGHT: FURNITURE VISUAL -->
+    <div class="contact-visual-grid">
+      <img src="assets/img/p/chair-1.webp">
+      <img src="assets/img/p/desk-1.webp">
+      <img src="assets/img/p/gaming-1.webp">
+      <img src="assets/img/p/lounge-1.webp">
     </div>
 
   </div>
 </section>
 
-<!-- ✅ 统一 Footer（小 LOGO 图标） -->
-<div id="site-footer"></div>
+<footer class="footer">
+  <div class="container">
+    <img src="assets/img/logo-icon.webp" alt="YiShen Global">
+    <p>© 2026 YiShen Global · Furniture-first global systems</p>
+  </div>
+</footer>
 
-<script src="assets/js/components.js"></script>
 </body>
 </html>
