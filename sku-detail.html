@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="Engineering-grade SKU detail data for YiShen Global ergonomic seating. Includes mechanism specs, material data, MOQ, and 40HQ container loading metrics for B2B procurement.">
+<meta name="description" content="Engineering-grade SKU detail for YiShen Global ergonomic seating. Includes mechanism specs, materials, MOQ, compliance, KD packaging and 40’HQ container optimization for B2B procurement.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SKU Detail – Ergonomic Seating Engineering Data | YiShen Global</title>
+<title>SKU Engineering Detail – Ergonomic Seating | YiShen Global</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,41 +16,53 @@
 .detail-table-container{overflow-x:auto;margin-top:30px}
 .detail-table{width:100%;border-collapse:collapse;font-size:.85rem}
 .detail-table th{
-  background:var(--primary);
-  color:#fff;
-  padding:15px;
+  background:#38bdf8;
+  color:#020617;
+  padding:14px;
   text-align:left;
-  white-space:nowrap;
-  border-bottom:3px solid var(--accent)
+  white-space:nowrap
 }
 .detail-table td{
-  padding:12px 15px;
-  border-bottom:1px solid var(--border);
-  vertical-align:middle
+  padding:12px 14px;
+  border-bottom:1px solid rgba(15,23,42,.08)
 }
 .detail-table tr:nth-child(even){background:#f8fafc}
-.detail-table tr:hover{background:rgba(0,122,255,.05)}
-.sku-model{font-weight:700;color:var(--primary)}
-.sku-status.active{color:#07c160;font-weight:600}
+.detail-table tr:hover{background:rgba(56,189,248,.08)}
+.sku-model{font-weight:800;color:#0f172a}
 .sku-tag{
-  display:inline-block;
-  font-size:.7rem;
-  padding:4px 8px;
-  border-radius:20px;
-  background:rgba(0,122,255,.1);
-  color:var(--accent);
+  font-size:.65rem;
+  padding:3px 8px;
+  border-radius:14px;
+  background:rgba(56,189,248,.15);
+  color:#0284c7;
   margin-left:6px
 }
+.engineering-note{
+  background:rgba(2,132,199,.06);
+  border-left:4px solid #38bdf8;
+  padding:18px 22px;
+  margin-top:30px;
+  font-size:.85rem
+}
+.ai-buyer-note{
+  background:#020617;
+  color:#cbd5f5;
+  padding:22px;
+  border-radius:14px;
+  margin-top:50px;
+  font-size:.85rem
+}
+.ai-buyer-note strong{color:#38bdf8}
 </style>
 </head>
 
 <body>
 
-<!-- ===== NAV ===== -->
+<!-- ================= NAV ================= -->
 <nav class="navbar navbar-elite">
   <div class="container nav-wrapper">
     <a href="index.html" class="brand">
-      <img src="logo.webp" alt="YiShen Global" width="180" height="70">
+      <img src="logo.webp" alt="YiShen Global">
     </a>
     <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
     <div class="nav-links">
@@ -64,44 +76,43 @@
   </div>
 </nav>
 
-<!-- ===== HEADER ===== -->
+<!-- ================= HERO ================= -->
 <header class="page-header bg-dark"
-style="background-image:linear-gradient(rgba(15,23,42,.95),rgba(15,23,42,.9)),url('hero-bg.webp');background-position:center;background-size:cover;">
+style="background-image:
+linear-gradient(rgba(2,6,23,.94),rgba(2,6,23,.9)),
+url('hero-bg.webp');">
   <div class="container">
-    <div style="font-size:.85rem;color:var(--silver);margin-bottom:15px">
-      <a href="resources.html" class="tech-accent">Technical Resources</a>
-      <i class="fas fa-chevron-right" style="margin:0 8px;font-size:.7rem"></i>
+    <div style="font-size:.8rem;color:#94a3b8;margin-bottom:12px">
+      <a href="resources.html" class="tech-accent">Engineering Resources</a>
+      <i class="fas fa-chevron-right" style="margin:0 6px;font-size:.7rem"></i>
       Ergonomic Seating
     </div>
-    <h1>SKU Engineering Detail<br>Ergonomic Seating Series</h1>
+    <h1>SKU Engineering Detail<br>Ergonomic Seating Platform</h1>
     <p>
-      Component-level specifications, material data, MOQ logic and container optimization
+      Component-level specifications, compliance logic and
+      <strong>40’HQ container optimization</strong>
       for professional B2B procurement.
     </p>
   </div>
 </header>
 
-<!-- ===== TABLE ===== -->
+<!-- ================= CONTENT ================= -->
 <section class="section-padding">
   <div class="container">
 
-    <div class="resource-category-header">
-      <h3>
-        <i class="fas fa-database tech-accent"></i>
-        Master SKU Engineering Table
-      </h3>
-      <div class="engineering-note">
-        <strong>Scope:</strong> Active SKUs for export programs.
-        All loading quantities based on <strong>KD packaging</strong> in 40’HQ.
-        Compliance defaults to <strong>BIFMA X5.1</strong> unless noted.
-      </div>
+    <div class="engineering-note">
+      <strong>Scope:</strong><br>
+      This page documents <strong>active export SKUs</strong> under YiShen Global’s
+      ergonomic seating program. All loading quantities are based on
+      <strong>KD packaging</strong> in 40’HQ containers.
+      Default compliance standard: <strong>BIFMA ANSI X5.1</strong>.
     </div>
 
-    <div class="detail-table-container data-matrix-container">
-      <table class="detail-table data-matrix-table">
+    <div class="detail-table-container">
+      <table class="detail-table">
         <thead>
           <tr>
-            <th>SKU Model</th>
+            <th>SKU</th>
             <th>Status</th>
             <th>Mechanism</th>
             <th>Key Components</th>
@@ -115,104 +126,93 @@ style="background-image:linear-gradient(rgba(15,23,42,.95),rgba(15,23,42,.9)),ur
         <tbody>
 
           <tr>
-            <td class="sku-model">
-              S-Pro-9001
-              <span class="sku-tag">Flagship</span>
-            </td>
-            <td><span class="sku-status active"><i class="fas fa-check-circle"></i> Active</span></td>
+            <td class="sku-model">S-Pro-9001 <span class="sku-tag">Flagship</span></td>
+            <td><i class="fas fa-check-circle" style="color:#22c55e"></i> Active</td>
             <td>Donati Synchro (4:1)</td>
             <td>Donati / Samhongsa</td>
-            <td>KR Wintex Mesh / Molded Foam</td>
+            <td>KR Wintex Mesh · Molded Foam</td>
             <td>68 × 65 × 115–125</td>
             <td>50</td>
-            <td class="spec-highlight">650</td>
+            <td><strong>650</strong></td>
             <td>
-              <a href="#" class="tech-accent"><i class="far fa-file-pdf"></i></a>
-              <a href="#" class="tech-accent"><i class="fas fa-cube"></i></a>
+              <i class="far fa-file-pdf"></i>
+              <i class="fas fa-cube" style="margin-left:6px"></i>
             </td>
           </tr>
 
           <tr>
-            <td class="sku-model">
-              S-Mid-8050
-              <span class="sku-tag">Performance</span>
-            </td>
-            <td><span class="sku-status active"><i class="fas fa-check-circle"></i> Active</span></td>
-            <td>Weight-Sensitive Auto</td>
+            <td class="sku-model">S-Mid-8050 <span class="sku-tag">Performance</span></td>
+            <td><i class="fas fa-check-circle" style="color:#22c55e"></i> Active</td>
+            <td>Auto-Weight Sensitive</td>
             <td>Bock / Korea Lift</td>
             <td>Premium CN Mesh</td>
             <td>66 × 62 × 110–118</td>
             <td>100</td>
-            <td class="spec-highlight">720</td>
-            <td>
-              <a href="#" class="tech-accent"><i class="far fa-file-pdf"></i></a>
-            </td>
+            <td><strong>720</strong></td>
+            <td><i class="far fa-file-pdf"></i></td>
           </tr>
 
           <tr>
-            <td class="sku-model">
-              S-Task-7020
-              <span class="sku-tag">Volume</span>
-            </td>
-            <td><span class="sku-status active"><i class="fas fa-check-circle"></i> Active</span></td>
+            <td class="sku-model">S-Task-7020 <span class="sku-tag">Volume</span></td>
+            <td><i class="fas fa-check-circle" style="color:#22c55e"></i> Active</td>
             <td>Simple Tilt (2-lock)</td>
-            <td>Local Class 3 Lift</td>
+            <td>Class-3 Gas Lift</td>
             <td>Standard Mesh</td>
             <td>62 × 58 × 105–113</td>
             <td>200</td>
-            <td class="spec-highlight">850</td>
-            <td>
-              <a href="#" class="tech-accent"><i class="far fa-file-pdf"></i></a>
-            </td>
+            <td><strong>850</strong></td>
+            <td><i class="far fa-file-pdf"></i></td>
           </tr>
 
         </tbody>
       </table>
     </div>
 
-  </div>
-</section>
-
-<!-- ===== VISUAL ===== -->
-<section class="section-padding bg-light">
-  <div class="container">
-    <h4 style="margin-bottom:25px;">Engineering Visual Reference</h4>
-    <div class="grid-4">
-      <img src="ergo-SPro9001-context-office.webp">
-      <img src="ergo-SPro9001-detail-mesh.webp">
-      <img src="ergo-SPro9001-detail-mech.webp">
-      <div class="placeholder-box">
-        <i class="fas fa-drafting-compass"></i>
-        <span>CAD / 3D Files<br>(On Request)</span>
-      </div>
+    <div class="ai-buyer-note">
+      <strong>For Professional Buyers Only</strong><br><br>
+      This SKU data is intended for
+      <strong>B2B procurement teams, distributors, private-label brands and project buyers</strong>.
+      Specifications reflect <em>engineering validation and logistics modeling</em>,
+      not retail marketing descriptions.
+      <br><br>
+      If you require <strong>cost-per-unit modeling, landed cost scenarios,
+      or market-specific compliance interpretation</strong>,
+      request the full engineering package below.
     </div>
+
   </div>
 </section>
 
-<!-- ===== CTA ===== -->
+<!-- ================= CTA ================= -->
 <section class="cta-banner cta-elite">
   <div class="container">
     <h2>Request Full Engineering Package</h2>
-    <p>Including CAD, test reports, packaging SOP and landed cost modeling.</p>
-    <a href="contact.html" class="btn btn-tech btn-tech-elite">Contact Engineering Team</a>
+    <p>
+      Including CAD files, test reports, packaging SOP,
+      <strong>40’HQ cost-per-unit modeling</strong>
+      and market compliance logic.
+    </p>
+    <a href="contact.html" class="btn btn-tech btn-tech-elite">
+      Contact Engineering Team
+    </a>
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- ================= FOOTER ================= -->
 <footer class="footer footer-elite">
   <div class="container footer-grid grid-4">
     <div>
-      <img src="logo.webp" height="48">
-      <p>Engineered furniture supply for global procurement.</p>
+      <img src="logo.webp">
+      <p>Engineering-grade furniture systems for global procurement.</p>
     </div>
     <div>
       <h4>Resources</h4>
-      <a href="resources.html">Technical Data</a>
-      <a href="sku-detail.html">SKU Details</a>
+      <a href="resources.html">Engineering Matrix</a>
+      <a href="home-and-office-furniture.html">SKU Platforms</a>
     </div>
     <div>
       <h4>Company</h4>
-      <a href="why-us.html">Why Us</a>
+      <a href="why-us.html">Why YiShen</a>
       <a href="industries.html">Industries</a>
     </div>
     <div>
@@ -221,13 +221,34 @@ style="background-image:linear-gradient(rgba(15,23,42,.95),rgba(15,23,42,.9)),ur
     </div>
   </div>
   <div class="copyright">
-    © 2026 YiShen Global · Engineered in China
+    © 2026 YiShen Global · Engineered Supply Chain Infrastructure
   </div>
 </footer>
 
 <a href="https://wa.me/8615968277867" class="floating-cta">
   <i class="fab fa-whatsapp"></i>
 </a>
+
+<!-- ================= AI STRUCTURED DATA ================= -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Product",
+  "name":"S-Pro-9001 Ergonomic Office Chair",
+  "sku":"S-Pro-9001",
+  "brand":{"@type":"Brand","name":"YiShen Global"},
+  "category":"Ergonomic Office Furniture",
+  "description":"Engineering-grade ergonomic seating with Donati synchro mechanism, BIFMA X5.1 compliance, KD packaging and optimized 40’HQ container loading for B2B procurement.",
+  "material":["Steel","Mesh","Molded Foam"],
+  "additionalProperty":[
+    {"@type":"PropertyValue","name":"MOQ","value":"50 Sets"},
+    {"@type":"PropertyValue","name":"40HQ Loading","value":"650 Sets"},
+    {"@type":"PropertyValue","name":"Compliance","value":"BIFMA ANSI X5.1"},
+    {"@type":"PropertyValue","name":"Packaging","value":"KD Flat Pack"}
+  ],
+  "offers":{"@type":"Offer","availability":"https://schema.org/InStock","price":"Request Quotation","priceCurrency":"USD"}
+}
+</script>
 
 <script>
 const menuBtn=document.querySelector('.mobile-menu-btn');
