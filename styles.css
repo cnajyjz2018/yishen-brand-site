@@ -1,329 +1,427 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="YiShen Global Technical Resources: Furniture engineering specs, compliance matrices, ISTA 6A packaging logic, and global DDP supply chain execution data.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#050b17">
-    <title>Resources | YiShen Global</title>
+/* =========================================================
+   YiShen Global – Home & Office Furniture System
+   Core Style Sheet (Ultimate Edition)
+   Furniture First · Supply Chain Powered · Tech Energy UI
+========================================================= */
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+/* =========================
+   CSS VARIABLES
+========================= */
+:root {
+  --bg-dark: #050b17;
+  --bg-panel: #0b1220;
+  --bg-soft: #0f172a;
+  --bg-light: #f8fafc;
 
-    <link rel="stylesheet" href="styles.css?v=318">
+  --primary: #0ea5e9;
+  --accent: #22d3ee;
+  --energy: #38bdf8;
 
-    <style>
-        /* This style block is for specific enhancements for the Resources page */
-        .page-header{
-            padding-top:140px;
-            padding-bottom:90px;
-            background:
-                radial-gradient(circle at 20% 25%, rgba(56,189,248,.18), transparent 40%),
-                linear-gradient(rgba(15,23,42,0.94), rgba(15,23,42,0.88)),
-                url('header-resources.webp');
-            background-size:cover;
-            background-position:center;
-        }
-        .resource-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-            gap:32px;
-            margin-top:40px;
-        }
-        .res-card{
-            background:#fff;
-            border-radius:20px;
-            overflow:hidden;
-            box-shadow:0 24px 50px rgba(15,23,42,.10);
-            border:1px solid rgba(15,23,42,.06);
-            transition:.35s;
-        }
-        .res-card:hover{
-            transform:translateY(-6px);
-            box-shadow:0 0 0 1px rgba(56,189,248,.45), 0 0 26px rgba(56,189,248,.25);
-        }
-        .res-top{
-            padding:26px 24px;
-            background:
-                linear-gradient(135deg,#020617,#050b17);
-            color:#fff;
-        }
-        .res-top i{
-            font-size:1.8rem;
-            color:#38bdf8;
-        }
-        .res-top h3{
-            margin:14px 0 8px;
-            font-size:1.25rem;
-        }
-        .res-top p{
-            margin:0;
-            opacity:.85;
-            line-height:1.65;
-        }
-        .res-body{
-            padding:22px 24px 26px;
-        }
-        .res-body ul{
-            padding-left:18px;
-            margin:0;
-            line-height:1.7;
-            font-weight:600;
-            color:#334155;
-        }
-        .res-body li{
-            margin-bottom:10px;
-        }
+  --text-main: #e5e7eb;
+  --text-sub: #94a3b8;
+  --text-dark: #0f172a;
 
-        .furniture-wall{
-            display:grid;
-            grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-            gap:22px;
-            margin-top:32px;
-        }
-        .furn-item{
-            border-radius:16px;
-            overflow:hidden;
-            background:#fff;
-            box-shadow:0 18px 36px rgba(15,23,42,.08);
-            transition:.35s;
-        }
-        .furn-item img{
-            width:100%;
-            height:180px;
-            object-fit:cover;
-        }
-        .furn-item .cap{
-            padding:12px 14px;
-        }
-        .furn-item .cap b{
-            display:block;
-            font-size:.95rem;
-        }
-        .furn-item .cap span{
-            display:block;
-            margin-top:4px;
-            font-size:.85rem;
-            color:#64748b;
-            font-weight:600;
-        }
-        .furn-item:hover{
-            transform:translateY(-5px);
-            box-shadow:0 0 0 1px rgba(56,189,248,.45), 0 0 18px rgba(56,189,248,.25);
-        }
-        /* --- Ensures logo in navbar works with updated path --- */
-        .navbar .brand img {
-            content: url('assets/img/logo-icon.webp');
-        }
-    </style>
-</head>
+  --border: rgba(148,163,184,.18);
+  --radius: 14px;
+  --radius-sm: 8px;
 
-<body>
+  --transition: .35s cubic-bezier(.4,0,.2,1);
+}
 
-<nav class="navbar navbar-elite">
-    <div class="container nav-wrapper">
-        <a href="index.html" class="brand">
-            <img src="assets/img/logo-icon.webp" alt="YiShen Global" width="42" height="42">
-        </a>
+/* =========================
+   RESET
+========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-        <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.65;
+  scroll-behavior: smooth;
+}
 
-        <div class="nav-links">
-            <a href="index.html" data-i18n="nav_home">Home</a>
-            <a href="why-us.html" data-i18n="nav_why">Why Us</a>
-            <a href="solutions.html" data-i18n="nav_solutions">Solutions</a>
-            <a href="industries.html" data-i18n="nav_industries">Industries</a>
-            <a href="resources.html" class="active" data-i18n="nav_resources">Resources</a>
-            <a href="contact.html" class="nav-cta" data-i18n="nav_contact">Contact</a>
+img {
+  max-width: 100%;
+  display: block;
+}
 
-            <div class="lang-switch">
-                <button onclick="setLang('en')">EN</button>
-                <button onclick="setLang('zh')">中文</button>
-                <button onclick="setLang('ja')">JP</button>
-                <button onclick="setLang('de')">DE</button>
-                <button onclick="setLang('ar')">AR</button>
-            </div>
-        </div>
-    </div>
-</nav>
+/* =========================
+   CONTAINER & GRID
+========================= */
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
 
-<header class="page-header bg-dark">
-    <div class="container">
-        <span class="section-tag"><i class="fa-solid fa-database"></i> <span data-i18n="res_tag">Resource Center</span></span>
-        <h1 data-i18n="res_title" style="margin-top:18px">
-            Furniture Engineering.<br>Supply Chain Intelligence.
-        </h1>
-        <p data-i18n="res_sub" style="max-width:860px;margin-top:14px;opacity:.9;line-height:1.7">
-            Everything behind predictable furniture delivery — from structure testing and packaging logic to compliance and DDP execution.
-        </p>
-    </div>
-</header>
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+}
 
-<section class="section-padding">
-    <div class="container">
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
 
-        <div class="resource-grid">
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
 
-            <div class="res-card">
-                <div class="res-top">
-                    <i class="fa-solid fa-chair"></i>
-                    <h3>Furniture Engineering</h3>
-                    <p>Structural integrity built for long-term commercial and enterprise use.</p>
-                </div>
-                <div class="res-body">
-                    <ul>
-                        <li>BIFMA / ANSI structural validation logic</li>
-                        <li>Load, fatigue & durability modeling</li>
-                        <li>Mesh / foam / frame optimization data</li>
-                    </ul>
-                </div>
-            </div>
+@media (max-width: 992px) {
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
 
-            <div class="res-card">
-                <div class="res-top">
-                    <i class="fa-solid fa-box"></i>
-                    <h3>Packaging Systems</h3>
-                    <p>Designed to survive the reality of high-volume e-commerce shipping.</p>
-                </div>
-                <div class="res-body">
-                    <ul>
-                        <li>ISTA 6A drop-test logic & protocols</li>
-                        <li>KD density & carton optimization metrics</li>
-                        <li>Oversize damage risk control documentation</li>
-                    </ul>
-                </div>
-            </div>
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(5,11,23,.85);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+}
 
-            <div class="res-card">
-                <div class="res-top">
-                    <i class="fa-solid fa-scale-balanced"></i>
-                    <h3>Compliance & Certification</h3>
-                    <p>Ensuring your product is market-ready and audit-safe across target regions.</p>
-                </div>
-                <div class="res-body">
-                    <ul>
-                        <li>BIFMA / EN1335 / CE / UL Certifications</li>
-                        <li>Labeling & mandatory document systems</li>
-                        <li>Retail & government procurement readiness</li>
-                    </ul>
-                </div>
-            </div>
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 86px;
+}
 
-            <div class="res-card">
-                <div class="res-top">
-                    <i class="fa-solid fa-globe"></i>
-                    <h3>Global Delivery</h3>
-                    <p>Logistical intelligence for DDP, project, and high-volume retail execution.</p>
-                </div>
-                <div class="res-body">
-                    <ul>
-                        <li>DDP end-to-end service to US / EU / GCC</li>
-                        <li>Retail DC and project site delivery protocols</li>
-                        <li>Lead-time risk control & traceability reports</li>
-                    </ul>
-                </div>
-            </div>
+.brand {
+  display: flex;
+  align-items: center;
+}
 
-        </div>
+/* === ENERGY LOGO === */
+.logo-energy {
+  height: 48px;
+  filter: drop-shadow(0 0 18px rgba(56,189,248,.6));
+  animation: energyPulse 4s ease-in-out infinite;
+  transition: transform .4s ease, filter .4s ease;
+}
 
-        <div style="margin-top:80px">
-            <h2 data-i18n="wall_title">Furniture Categories Supported by Our Systems</h2>
-            <p data-i18n="wall_sub" style="max-width:760px;margin-top:10px;color:#64748b">
-                Core furniture platforms backed by our manufacturing, engineering, and global supply chain systems.
-            </p>
+@keyframes energyPulse {
+  0%,100% {
+    filter: drop-shadow(0 0 12px rgba(56,189,248,.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(56,189,248,.95));
+  }
+}
 
-            <div class="furniture-wall">
-                <div class="furn-item">
-                    <img src="assets/img/products/product-chair.webp" alt="Mesh Chair">
-                    <div class="cap"><b>Ergonomic / Mesh Chair</b><span>Office · Corporate · Project</span></div>
-                </div>
-                <div class="furn-item">
-                    <img src="assets/img/products/gaming.webp" alt="Gaming Chair">
-                    <div class="cap"><b>Gaming Chair</b><span>E-commerce Bestseller</span></div>
-                </div>
-                <div class="furn-item">
-                    <img src="assets/img/products/standing-desk-01.webp" alt="Standing Desk">
-                    <div class="cap"><b>Standing Desk</b><span>Single / Dual Motor</span></div>
-                </div>
-                <div class="furn-item">
-                    <img src="assets/img/products/ergo-SPro9001-context-office.webp" alt="Executive Chair">
-                    <div class="cap"><b>Executive Seating</b><span>Leather / Premium</span></div>
-                </div>
-                <div class="furn-item">
-                    <img src="assets/img/div-tech.webp" alt="Engineering">
-                    <div class="cap"><b>Engineering Lab</b><span>Testing & Validation</span></div>
-                </div>
-                <div class="furn-item">
-                    <img src="assets/img/div-industrial.webp" alt="Supply Chain">
-                    <div class="cap"><b>Supply Chain</b><span>Global Execution</span></div>
-                </div>
-            </div>
-        </div>
+.brand:hover .logo-energy {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 44px rgba(34,211,238,1));
+}
 
-    </div>
-</section>
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
 
-<section class="cta-banner cta-elite">
-    <div class="container">
-        <span class="section-tag"><i class="fa-solid fa-bolt"></i> Fast Track</span>
-        <h2 data-i18n="cta_title">Need Specs or Engineering Packs?</h2>
-        <p data-i18n="cta_sub" style="max-width:820px;margin:12px auto 26px;opacity:.9">
-            Request detailed furniture specifications, packaging logic, or compliance matrices for your target market.
-        </p>
-        <a href="contact.html" class="btn btn-tech btn-tech-elite">
-            Contact Engineering Team
-        </a>
-    </div>
-</section>
+.nav-links a {
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: var(--transition);
+}
 
-<footer class="footer footer-elite">
-    <div class="container footer-grid grid-4">
-        <div>
-            <img src="assets/img/logo-icon.webp" alt="YiShen Global" style="width:42px;height:42px">
-            <p class="footer-desc" style="margin-top:14px">
-                Furniture-first global supply chain systems.<br>
-                Predictability engineered.
-            </p>
-        </div>
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent);
+}
 
-        <div>
-            <h4>Company</h4>
-            <a href="why-us.html">Why Us</a>
-            <a href="industries.html">Industries</a>
-            <a href="contact.html">Contact</a>
-        </div>
+.nav-cta {
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff !important;
+  font-weight: 600;
+  box-shadow: 0 0 24px rgba(34,211,238,.45);
+}
 
-        <div>
-            <h4>Resources</h4>
-            <a href="resources.html">Engineering</a>
-            <a href="resources.html">Packaging</a>
-            <a href="resources.html">Compliance</a>
-        </div>
+/* =========================
+   PAGE HEADER (HERO)
+========================= */
+.page-header {
+  padding: 200px 0 120px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
 
-        <div>
-            <h4>Connect</h4>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://x.com/AlexYan03451555" target="_blank"><i class="fab fa-x-twitter"></i></a>
-                <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.facebook.com/alex.yang.427745" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/alexyang591/" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </div>
+.page-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 70% 30%, rgba(56,189,248,.18), transparent 55%);
+}
 
-    <div class="copyright">
-        © 2026 YiShen Global · Engineered in China
-    </div>
-</footer>
+.page-header .container {
+  position: relative;
+  z-index: 2;
+}
 
-<script>
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    menuBtn.addEventListener('click',()=>navLinks.classList.toggle('active'));
-</script>
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(56,189,248,.12);
+  color: var(--accent);
+  font-size: .75rem;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
 
-</body>
-</html>
+.page-header h1 {
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  margin-bottom: 18px;
+}
+
+.page-header p {
+  max-width: 720px;
+  color: var(--text-sub);
+}
+
+/* =========================
+   SECTION
+========================= */
+.section-padding {
+  padding: 110px 0;
+}
+
+.bg-light {
+  background: var(--bg-soft);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 34px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btn-tech {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  box-shadow: 0 0 26px rgba(34,211,238,.55);
+}
+
+.btn-tech:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 46px rgba(34,211,238,.85);
+}
+
+/* =========================
+   SKU / PRODUCT CARD (ANIME STYLE)
+========================= */
+.catalog-item,
+.solution-card,
+.feature-card {
+  background: linear-gradient(180deg, rgba(15,23,42,.85), rgba(5,11,23,.9));
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.catalog-item::before,
+.solution-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(56,189,248,.18), transparent 70%);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.catalog-item:hover::before,
+.solution-card:hover::before {
+  opacity: 1;
+}
+
+.catalog-item:hover,
+.solution-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 40px 80px rgba(0,0,0,.55);
+}
+
+/* =========================
+   SKU IMAGE HOVER (SCAN EFFECT)
+========================= */
+.catalog-item img {
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.catalog-item:hover img {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 24px rgba(56,189,248,.55));
+}
+
+/* =========================
+   TABLES (ENGINEERING DATA)
+========================= */
+.data-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .85rem;
+}
+
+.data-matrix-table th {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  padding: 14px;
+}
+
+.data-matrix-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-sub);
+}
+
+/* =========================
+   CTA BANNER
+========================= */
+.cta-banner {
+  padding: 120px 0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(56,189,248,.25), transparent 60%),
+    linear-gradient(180deg, #020617, #050b17);
+  text-align: center;
+}
+
+.cta-banner h2 {
+  font-size: 2.2rem;
+  margin-bottom: 18px;
+}
+
+.cta-banner p {
+  color: var(--text-sub);
+  margin-bottom: 36px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  background: #020617;
+  padding: 90px 0 40px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.footer h4 {
+  margin-bottom: 18px;
+}
+
+.footer a {
+  color: var(--text-sub);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer a:hover {
+  color: var(--accent);
+}
+
+/* =========================
+   SOCIAL ICONS (ENERGY STYLE)
+========================= */
+.social-links a {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(56,189,248,.12);
+  color: var(--accent);
+  margin-right: 10px;
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 22px rgba(34,211,238,.9);
+}
+
+/* =========================
+   FLOATING WHATSAPP
+========================= */
+.floating-cta {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.6rem;
+  box-shadow: 0 0 26px rgba(37,211,102,.7);
+  z-index: 999;
+  transition: var(--transition);
+}
+
+.floating-cta:hover {
+  transform: scale(1.12);
+}
+
+/* =========================
+   MOBILE
+========================= */
+.mobile-menu-btn {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: block;
+    color: var(--accent);
+    font-size: 1.6rem;
+  }
+}
