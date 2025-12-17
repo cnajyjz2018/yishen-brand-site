@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="YiShen Global is a commercial furniture manufacturer specializing in ergonomic chairs, mesh seating, standing desks and scalable furniture systems for global markets.">
+<meta name="description" content="YiShen Global is a commercial furniture manufacturer specializing in ergonomic seating, standing desks, and scalable furniture solutions for global retailers and brands.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#050b17">
-
 <title>YiShen Global | Commercial Furniture Manufacturer</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,39 +12,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <link rel="stylesheet" href="styles.css?v=2026.3">
-
-<style>
-/* === HARD LOCK LOGO SIZE (INDEX ONLY, FINAL GUARANTEE) === */
-.brand-icon img{
-  width:40px !important;
-  height:40px !important;
-  max-width:40px !important;
-  max-height:40px !important;
-}
-.hero-brand img{
-  width:56px !important;
-  height:56px !important;
-  opacity:.9;
-}
-.footer img{
-  width:38px !important;
-  height:38px !important;
-}
-</style>
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR (统一版本 · 与 why-us.html 完全一致) ================= -->
 <nav class="navbar navbar-elite">
   <div class="container nav-wrapper">
-
-    <!-- ICON LOGO (SMALL & FIXED) -->
-    <a href="index.html" class="brand brand-icon">
-      <img src="assets/img/logo-icon.webp" alt="YiShen Global">
+    <a href="index.html" class="brand">
+      <img
+        src="assets/img/logo-icon.webp"
+        alt="YiShen Global"
+        width="180"
+        height="48"
+        loading="eager"
+        decoding="async">
     </a>
 
-    <div class="mobile-menu-btn" aria-label="Menu">
+    <div class="mobile-menu-btn" aria-label="Open menu" role="button" tabindex="0">
       <i class="fas fa-bars"></i>
     </div>
 
@@ -55,27 +39,22 @@
       <a href="solutions.html">Solutions</a>
       <a href="industries.html">Industries</a>
       <a href="resources.html">Resources</a>
-      <a href="contact.html" class="nav-cta">Contact</a>
+      <a href="contact.html" class="nav-cta">Contact Us</a>
     </div>
-
-    <!-- LANGUAGE SWITCH -->
-    <div class="lang-switch">
-      <button onclick="setLang('en')">EN</button>
-      <button onclick="setLang('zh')">中文</button>
-      <button onclick="setLang('ja')">JP</button>
-      <button onclick="setLang('de')">DE</button>
-      <button onclick="setLang('ar')">AR</button>
-    </div>
-
   </div>
 </nav>
 
 <!-- ================= HERO ================= -->
-<section class="hero">
+<section class="hero hero-elite">
 
-  <!-- BRAND ANCHOR · ICON MODE -->
+  <!-- 品牌能量锚点（已强制缩小，不影响主 LOGO） -->
   <div class="hero-brand">
-    <img src="assets/img/logo-icon.webp" alt="YiShen Global">
+    <img
+      src="assets/img/logo-icon.webp"
+      alt="YiShen Brand Anchor"
+      width="64"
+      height="64"
+      loading="lazy">
   </div>
 
   <div class="container">
@@ -90,107 +69,152 @@
       Commercial furniture manufacturing with global supply chain control.
     </p>
 
-    <div style="margin-top:42px;display:flex;gap:18px;flex-wrap:wrap;">
-      <a href="#catalog" class="btn btn-tech">Explore Furniture</a>
-      <a href="contact.html" class="btn btn-outline-white">Request Catalog</a>
+    <div class="hero-cta-row">
+      <a href="#furniture-catalog" class="btn btn-tech btn-tech-elite">
+        Explore Furniture Categories
+      </a>
+      <a href="contact.html" class="btn btn-outline-white">
+        Request Catalog
+      </a>
     </div>
   </div>
 </section>
 
 <!-- ================= STATS ================= -->
-<div class="container" style="position:relative;z-index:10;">
-  <div class="hero-stats grid-4">
-    <div class="stat-box"><h3>6</h3><p>Core Categories</p></div>
-    <div class="stat-box"><h3>200+</h3><p>Active SKUs</p></div>
-    <div class="stat-box"><h3>10+</h3><p>Manufacturing Years</p></div>
-    <div class="stat-box"><h3>50+</h3><p>Export Markets</p></div>
+<div class="container" style="position:relative; z-index:20;">
+  <div class="hero-stats grid-4 hero-stats-elite">
+    <div class="stat-box">
+      <h3>6</h3>
+      <p>Core Furniture Categories</p>
+    </div>
+    <div class="stat-box">
+      <h3>200+</h3>
+      <p>Active SKUs</p>
+    </div>
+    <div class="stat-box">
+      <h3>10+</h3>
+      <p>Manufacturing Years</p>
+    </div>
+    <div class="stat-box">
+      <h3>50+</h3>
+      <p>Global Markets</p>
+    </div>
   </div>
 </div>
 
-<!-- ================= CATALOG ================= -->
-<section class="section-padding bg-light" id="catalog">
-  <div class="container text-center">
-    <span class="section-tag">Furniture Portfolio</span>
-    <h2>Furniture-First Manufacturing System</h2>
-    <p style="max-width:760px;margin:0 auto;">
-      Ergonomic chairs, mesh seating, standing desks, conference systems,
-      storage solutions and lounge furniture — engineered for global delivery.
-    </p>
+<!-- ================= FURNITURE CATALOG ================= -->
+<section class="section-padding bg-light" id="furniture-catalog">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:60px;">
+      <span class="section-tag">Furniture Portfolio</span>
+      <h2>Six Furniture Categories. Built for Global Scale.</h2>
+      <p style="max-width:720px;margin:0 auto;">
+        Each category is engineered for durability, compliance, and efficient global delivery.
+      </p>
+    </div>
+
+    <div class="catalog-list grid-3">
+
+      <div class="catalog-item">
+        <h5>Ergonomic Office Chairs <i class="fas fa-chair"></i></h5>
+        <div class="mini-prod-grid">
+          <img src="product-chair.webp" class="mini-thumb">
+          <img src="product-chair.webp" class="mini-thumb">
+          <img src="product-chair.webp" class="mini-thumb">
+          <div class="mini-more">+30</div>
+        </div>
+        <div class="catalog-meta">
+          <span>Mesh · Task · Executive</span>
+          <a href="sku-detail.html?cat=seating">View Category</a>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <h5>Smart Standing Desks <i class="fas fa-desktop"></i></h5>
+        <div class="mini-prod-grid">
+          <img src="desk-DDUALX1-scene-office.webp" class="mini-thumb">
+          <img src="desk-DDUALX1-scene-office.webp" class="mini-thumb">
+          <div class="mini-more">+20</div>
+        </div>
+        <div class="catalog-meta">
+          <span>Single · Dual Motor</span>
+          <a href="sku-detail.html?cat=desks">View Category</a>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <h5>Soft Seating & Lounge <i class="fas fa-couch"></i></h5>
+        <div class="mini-prod-grid">
+          <img src="sofa.webp" class="mini-thumb">
+          <img src="sofa.webp" class="mini-thumb">
+          <div class="mini-more">+35</div>
+        </div>
+        <div class="catalog-meta">
+          <span>Commercial Grade</span>
+          <a href="sku-detail.html?cat=lounge">View Category</a>
+        </div>
+      </div>
+
+    </div>
   </div>
+</section>
 
-  <div class="container catalog-list grid-3" style="margin-top:60px;">
-
-    <!-- 15+ IMAGES PLACEHOLDER (AS REQUESTED) -->
-    <div class="catalog-item"><img src="assets/img/furniture/chair-01.webp"><h5>Ergonomic Chair</h5></div>
-    <div class="catalog-item"><img src="assets/img/furniture/chair-02.webp"><h5>Mesh Chair</h5></div>
-    <div class="catalog-item"><img src="assets/img/furniture/chair-03.webp"><h5>Executive Chair</h5></div>
-
-    <div class="catalog-item"><img src="assets/img/furniture/desk-01.webp"><h5>Standing Desk</h5></div>
-    <div class="catalog-item"><img src="assets/img/furniture/desk-02.webp"><h5>Dual Motor Desk</h5></div>
-    <div class="catalog-item"><img src="assets/img/furniture/desk-03.webp"><h5>Workstation</h5></div>
-
-    <div class="catalog-item"><img src="assets/img/furniture/lounge-01.webp"><h5>Lounge Chair</h5></div>
-    <div class="catalog-item"><img src="assets/img/furniture/lounge-02.webp"><h5>Soft Seating</h5></div>
-    <div class="catalog-item"><img src="assets/img/furniture/lounge-03.webp"><h5>Commercial Sofa</h5></div>
-
-    <div class="catalog-item"><img src="assets/img/furniture/conference-01.webp"><h5>Conference Table</h5></div>
-    <div class="catalog-item"><img src="assets/img/furniture/storage-01.webp"><h5>Filing Cabinet</h5></div>
-    <div class="catalog-item"><img src="assets/img/furniture/storage-02.webp"><h5>Storage System</h5></div>
-
-    <div class="catalog-item"><img src="assets/img/furniture/gaming-01.webp"><h5>Gaming Chair</h5></div>
-    <div class="catalog-item"><img src="assets/img/furniture/gaming-02.webp"><h5>Pro Gaming Chair</h5></div>
-    <div class="catalog-item"><img src="assets/img/furniture/bar-01.webp"><h5>Bar Chair</h5></div>
-
+<!-- ================= CTA ================= -->
+<section class="cta-banner cta-elite">
+  <div class="container">
+    <h2>Looking for a Reliable Furniture Manufacturing Partner?</h2>
+    <p>Request catalogs, specifications, or a customized quotation.</p>
+    <a href="contact.html" class="btn btn-tech btn-tech-elite">
+      Contact YiShen Global
+    </a>
   </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer footer-elite">
   <div class="container footer-grid grid-4">
-
     <div>
-      <img src="assets/img/logo-icon.webp" alt="YiShen Global">
+      <img src="assets/img/logo-icon.webp" alt="YiShen Global" style="height:40px;">
       <p class="footer-desc">
-        Furniture-first · Engineering-driven · Global supply chain.
+        Furniture-first manufacturing systems.<br>
+        Global supply chain engineered.
       </p>
     </div>
 
     <div>
       <h4>Products</h4>
       <a href="industries.html">Furniture Categories</a>
-      <a href="resources.html">Technical Resources</a>
+      <a href="resources.html">Specifications</a>
     </div>
 
     <div>
       <h4>Company</h4>
       <a href="why-us.html">Why Us</a>
-      <a href="solutions.html">Solutions</a>
       <a href="contact.html">Contact</a>
     </div>
 
     <div>
       <h4>Connect</h4>
       <div class="social-links">
-        <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://wa.me/8615968277867" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
         <a href="mailto:sales@yishenglobal.net"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
-
   </div>
 
   <div class="copyright">
-    © 2026 YiShen Global · Commercial Furniture Manufacturer
+    © 2026 YiShen Global · Engineered in China
   </div>
 </footer>
 
 <script>
-const menuBtn=document.querySelector('.mobile-menu-btn');
-const navLinks=document.querySelector('.nav-links');
-menuBtn.addEventListener('click',()=>navLinks.classList.toggle('active'));
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+  const toggleMenu = () => navLinks.classList.toggle('active');
+  menuBtn.addEventListener('click', toggleMenu);
+  menuBtn.addEventListener('keydown', e => { if (e.key === 'Enter') toggleMenu(); });
 </script>
-
-<script src="i18n.js"></script>
 
 </body>
 </html>
