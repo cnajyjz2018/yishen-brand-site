@@ -188,36 +188,25 @@
 <body>
 
   <!-- ===== NAVBAR (Unified) ===== -->
-  <nav class="navbar navbar-elite">
-    <div class="container nav-wrapper">
-      <a href="index.html" class="brand" aria-label="YiShen Global Home">
-        <!-- ✅ Locked logo icon -->
-        <img src="assets/img/logo-icon.webp" alt="YiShen Global" width="42" height="42" loading="eager" decoding="async">
-      </a>
+  <nav class="navbar">
+  <div class="container nav-wrapper">
+    <a href="index.html" class="brand">
+      <img src="logo.webp" class="site-logo" alt="YiShen Global">
+    </a>
 
-      <div class="mobile-menu-btn" aria-label="Open menu" role="button" tabindex="0">
-        <i class="fas fa-bars"></i>
-      </div>
+    <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
 
-      <div class="nav-links">
-        <a href="index.html" data-i18n="nav_home">Home</a>
-        <a href="why-us.html" data-i18n="nav_why">Why Us</a>
-        <a href="solutions.html" data-i18n="nav_solutions">Solutions</a>
-        <a href="industries.html" data-i18n="nav_industries">Industries</a>
-        <a href="resources.html" data-i18n="nav_resources">Resources</a>
-        <a href="contact.html" class="nav-cta active" data-i18n="nav_contact">Contact</a>
-
-        <!-- ✅ Your required language switch markup -->
-        <div class="lang-switch">
-          <button onclick="setLang('en')">EN</button>
-          <button onclick="setLang('zh')">中文</button>
-          <button onclick="setLang('ja')">JP</button>
-          <button onclick="setLang('de')">DE</button>
-          <button onclick="setLang('ar')">AR</button>
-        </div>
-      </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="why-us.html">Why Us</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="industries.html">Industries</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html" class="active nav-cta">Contact</a>
     </div>
-  </nav>
+  </div>
+</nav>
+
 
   <!-- ===== HEADER ===== -->
   <header class="page-header bg-dark">
@@ -418,57 +407,42 @@
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer footer-elite">
-    <div class="container footer-grid grid-4">
-      <div>
-        <!-- ✅ Locked icon -->
-        <img src="assets/img/logo-icon.webp" alt="YiShen Global" style="height:42px;width:42px">
-        <p class="footer-desc" style="margin-top:14px;opacity:.85;line-height:1.7" data-i18n="footer_desc">
-          Furniture-first global supply chain systems.<br>
-          Predictability engineered — not promised.
-        </p>
-      </div>
+ <footer class="footer">
+  <div class="container footer-grid grid-4">
 
-      <div>
-        <h4 data-i18n="footer_company">Company</h4>
-        <a href="why-us.html" data-i18n="nav_why">Why Us</a>
-        <a href="industries.html" data-i18n="nav_industries">Industries</a>
-        <a href="resources.html" data-i18n="nav_resources">Resources</a>
-      </div>
+    <div>
+      <img src="logo.webp" class="site-logo" alt="YiShen Global">
+      <p style="margin-top:14px">
+        Furniture-first global supply chain systems.<br>
+        Engineered in China · Delivered Worldwide
+      </p>
+    </div>
 
-      <div>
-        <h4 data-i18n="footer_contact">Contact</h4>
-        <a href="mailto:alex.yang@yishenglobal.net">alex.yang@yishenglobal.net</a>
-        <a href="mailto:champion.yang@yishenglobal.net">champion.yang@yishenglobal.net</a>
-        <a href="https://wa.me/8615968277867" target="_blank" rel="noopener noreferrer">WhatsApp 1</a>
-        <a href="https://wa.me/8618857277313" target="_blank" rel="noopener noreferrer">WhatsApp 2</a>
-      </div>
+    <div>
+      <h4>Contact</h4>
+      <p>Email: alex.yang@yishenglobal.net</p>
+      <p>Email: champion.yang@yishenglobal.net</p>
+      <p>WhatsApp: +86 159 6827 7867</p>
+      <p>WhatsApp: +86 188 5727 7313</p>
+      <p>WeChat: 19530394133</p>
+      <p>Hotline: +86 195 3039 4133</p>
+      <p>Base: Anji · Hangzhou · China</p>
+    </div>
 
-      <div>
-        <h4 data-i18n="footer_connect">Connect</h4>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://x.com/AlexYan03451555" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="https://www.facebook.com/alex.yang.427745" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/alexyang591/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-
-        <!-- ✅ Your required language switch markup (footer too) -->
-        <div class="lang-switch" style="margin-top:14px">
-          <button onclick="setLang('en')">EN</button>
-          <button onclick="setLang('zh')">中文</button>
-          <button onclick="setLang('ja')">JP</button>
-          <button onclick="setLang('de')">DE</button>
-          <button onclick="setLang('ar')">AR</button>
-        </div>
+    <div>
+      <h4>Social</h4>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://x.com/AlexYan03451555" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.facebook.com/alex.yang.427745" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/alexyang591/" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
 
-    <div class="copyright" style="margin-top:40px;border-top:1px solid rgba(255,255,255,.10);padding-top:22px;opacity:.85">
-      © 2026 YiShen Global · Engineered in China
-    </div>
-  </footer>
+  </div>
+</footer>
+
 
   <!-- Floating WhatsApp -->
   <a href="https://wa.me/8615968277867" target="_blank" class="floating-cta" aria-label="Contact via WhatsApp" rel="noopener noreferrer">
