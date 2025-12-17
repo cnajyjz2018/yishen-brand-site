@@ -1,530 +1,260 @@
 /* =====================================================
-   YiShen Global – ENERGY SYSTEM STYLESHEET
-   Version: 2026.FINAL
-   Theme: Furniture First · Engineering Backbone
+   YiShen Global — FINAL LOCKED STYLES
+   Furniture-first · High-end · Immutable Logo Control
 ===================================================== */
 
-/* ---------- ROOT TOKENS ---------- */
-:root {
-  --bg-dark: #050b17;
-  --bg-panel: #0b1324;
-  --bg-light: #f5f7fb;
-
-  --tech-blue: #2ecbff;
-  --tech-blue-soft: rgba(46,203,255,.35);
-  --tech-blue-glow: rgba(46,203,255,.55);
-
-  --text-main: #0f172a;
-  --text-light: #ffffff;
-  --text-muted: rgba(255,255,255,.68);
-
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-
-  --transition-fast: .25s ease;
-  --transition-smooth: .45s cubic-bezier(.2,.8,.2,1);
+/* ========== ROOT ========== */
+:root{
+  --bg-dark:#050b17;
+  --bg-light:#f6f8fb;
+  --text-main:#0f172a;
+  --text-sub:#475569;
+  --accent:#2563eb;
+  --border-soft:rgba(255,255,255,.08);
 }
 
-/* ---------- RESET ---------- */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* ========== RESET ========== */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont;
+  background:#fff;
+  color:var(--text-main);
+  line-height:1.6;
+}
+img{max-width:100%;display:block}
+
+/* ========== CONTAINER / GRID ========== */
+.container{width:92%;max-width:1240px;margin:0 auto}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:60px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+
+@media(max-width:1024px){
+  .grid-5{grid-template-columns:repeat(3,1fr)}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .grid-2{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .grid-5{grid-template-columns:repeat(2,1fr)}
 }
 
-body {
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #ffffff;
-  color: var(--text-main);
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
+/* =====================================================
+   LOGO SYSTEM — 🔒 IMMUTABLE
+===================================================== */
+
+/* --- 全站基础 LOGO 规则（任何地方都不能突破） --- */
+img[src*="logo"]{
+  width:auto !important;
+  height:auto !important;
+  max-width:100% !important;
 }
 
-img {
-  max-width: 100%;
-  display: block;
+/* --- Navbar / Footer 小 LOGO（icon 级）--- */
+.navbar img,
+.footer img{
+  height:36px !important;
+  max-height:36px !important;
+  width:auto !important;
+  object-fit:contain;
 }
 
-/* ---------- LAYOUT ---------- */
-.container {
-  width: 100%;
-  max-width: 1220px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* --- Hero 顶部 LOGO（仅首页）--- */
+.hero-brand{
+  position:absolute;
+  top:28px;
+  left:50%;
+  transform:translateX(-50%);
+  opacity:.9;
+}
+.hero-brand img{
+  height:72px !important;
+  max-height:72px !important;
+  width:auto !important;
 }
 
-.section-padding {
-  padding: 90px 0;
-}
-
-.bg-dark {
-  background: var(--bg-dark);
-  color: var(--text-light);
-}
-
-.bg-light {
-  background: var(--bg-light);
-}
-
-/* ---------- GRID ---------- */
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 48px;
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
-}
-
-@media (max-width: 900px) {
-  .grid-2, .grid-3, .grid-4 {
-    grid-template-columns: 1fr;
-  }
+/* ❌ 禁止任何人再用 inline / JS 放大 */
+.hero-brand img,
+.navbar img,
+.footer img{
+  transform:none !important;
 }
 
 /* =====================================================
    NAVBAR
 ===================================================== */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background: rgba(5,11,23,.82);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,.06);
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(5,11,23,.88);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border-soft);
 }
-
-.nav-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 76px;
+.nav-wrapper{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  height:72px;
 }
-
-.brand img.logo-energy {
-  filter: drop-shadow(0 0 12px var(--tech-blue-glow));
-  animation: logoPulse 3.2s ease-in-out infinite;
+.nav-links a{
+  color:#cbd5e1;
+  margin-left:26px;
+  text-decoration:none;
+  font-weight:500;
 }
-
-@keyframes logoPulse {
-  0%,100% { filter: drop-shadow(0 0 10px rgba(46,203,255,.35)); }
-  50% { filter: drop-shadow(0 0 18px rgba(46,203,255,.75)); }
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 26px;
-}
-
-.nav-links a {
-  color: rgba(255,255,255,.78);
-  text-decoration: none;
-  font-weight: 500;
-  position: relative;
-  transition: var(--transition-fast);
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--tech-blue);
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--tech-blue);
-  transition: width .3s ease;
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-  width: 100%;
-}
-
-.nav-cta {
-  padding: 10px 18px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--tech-blue), #6ee7ff);
-  color: #00121f !important;
-  font-weight: 700;
-  box-shadow: 0 0 22px rgba(46,203,255,.35);
-}
-
-.mobile-menu-btn {
-  display: none;
-  color: white;
-  font-size: 22px;
-}
-
-@media (max-width: 860px) {
-  .nav-links {
-    position: absolute;
-    top: 76px;
-    left: 0;
-    width: 100%;
-    background: #050b17;
-    flex-direction: column;
-    display: none;
-    padding: 24px;
-  }
-  .nav-links.active {
-    display: flex;
-  }
-  .mobile-menu-btn {
-    display: block;
-  }
+.nav-links a.active,
+.nav-links a:hover{color:#fff}
+.nav-cta{
+  padding:8px 16px;
+  border:1px solid var(--accent);
+  border-radius:6px;
+  color:#fff;
 }
 
 /* =====================================================
    HERO
 ===================================================== */
-.page-header {
-  padding: 140px 0 120px;
+.hero{
+  position:relative;
+  padding:140px 0 120px;
+  background:
+    linear-gradient(rgba(5,11,23,.85),rgba(5,11,23,.9)),
+    url("assets/img/hero-furniture.webp") center/cover no-repeat;
+  color:#fff;
+  text-align:center;
 }
-
-.page-header h1 {
-  font-size: clamp(2.4rem, 4vw, 3.4rem);
-  font-weight: 800;
-  margin: 16px 0 18px;
+.hero h1{
+  font-size:clamp(2.4rem,5vw,3.6rem);
+  font-weight:800;
+  margin:26px 0 18px;
 }
-
-.page-header p {
-  font-size: 1.05rem;
-  color: var(--text-muted);
-}
-
-.section-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: .78rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--tech-blue);
-}
-
-/* HERO IMAGE STRIP */
-.hero-visual-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-}
-
-.hero-visual-strip img {
-  border-radius: var(--radius-md);
-  transition: var(--transition-smooth);
-  cursor: pointer;
-}
-
-.hero-visual-strip img:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 0 28px rgba(46,203,255,.45);
-}
-
-/* =========================
-   HERO BRAND ANCHOR SYSTEM
-========================= */
-
-.hero {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-brand {
-  position: absolute;
-  top: 120px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-  opacity: 0.07;
-  pointer-events: none;
-}
-
-.hero-brand img {
-  height: 140px;
-  filter: blur(0.3px);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 5;
-}
-
-.hero-actions {
-  margin-top: 48px;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+.hero p{max-width:760px;margin:0 auto;color:#cbd5e1}
+.hero-cta{
+  margin-top:42px;
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
 }
 
 /* =====================================================
    BUTTONS
 ===================================================== */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 22px;
-  border-radius: 999px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: var(--transition-smooth);
+.btn{
+  padding:14px 26px;
+  font-weight:600;
+  border-radius:6px;
+  text-decoration:none;
+  display:inline-block;
 }
-
-.btn-tech {
-  background: linear-gradient(135deg, var(--tech-blue), #6ee7ff);
-  color: #00121f;
-  box-shadow: 0 0 26px rgba(46,203,255,.4);
+.btn-tech{
+  background:var(--accent);
+  color:#fff;
 }
-
-.btn-tech:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 38px rgba(46,203,255,.75);
-}
-
-.btn-outline {
-  border: 1px solid rgba(255,255,255,.35);
-  color: #fff;
-}
-
-.btn-outline:hover {
-  border-color: var(--tech-blue);
-  color: var(--tech-blue);
+.btn-outline-white{
+  border:1px solid #fff;
+  color:#fff;
 }
 
 /* =====================================================
    STATS
 ===================================================== */
-.hero-stats {
-  margin-top: -60px;
-  background: var(--bg-panel);
-  border-radius: var(--radius-lg);
-  padding: 32px;
-  box-shadow: 0 0 40px rgba(0,0,0,.35);
+.hero-stats-wrapper{margin-top:-60px;position:relative;z-index:10}
+.stat-box{
+  background:#fff;
+  padding:28px;
+  text-align:center;
+  border-radius:10px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
+.stat-box h3{font-size:2rem;color:var(--accent)}
 
-.stat-box h3 {
-  color: var(--tech-blue);
-  font-size: 1.6rem;
-  margin-bottom: 6px;
+/* =====================================================
+   TRUST
+===================================================== */
+.trust-bar{
+  padding:60px 0;
+  text-align:center;
 }
-
-.stat-box p {
-  color: rgba(255,255,255,.65);
-  font-size: .9rem;
+.trust-title{font-weight:600;color:var(--text-sub)}
+.trust-logos{
+  display:flex;
+  gap:30px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:22px;
+  opacity:.7;
 }
 
 /* =====================================================
-   CATALOG CARDS
+   PRODUCT WALL
 ===================================================== */
-.catalog-rich-card {
-  background: #fff;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  transition: var(--transition-smooth);
-  box-shadow: 0 12px 32px rgba(0,0,0,.08);
+.category-title{
+  margin:60px 0 18px;
+  font-size:1.4rem;
+}
+.product-grid img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:8px;
+  transition:.35s ease;
+}
+.product-grid img:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,.18);
 }
 
-.catalog-rich-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 22px 48px rgba(46,203,255,.25);
-}
-
-.catalog-cover img {
-  height: 220px;
-  object-fit: cover;
-}
-
-.catalog-body {
-  padding: 22px;
-}
-
-.catalog-body h3 {
-  font-size: 1.1rem;
-  margin-bottom: 6px;
-}
-
-.catalog-body p {
-  font-size: .9rem;
-  color: #555;
-  margin-bottom: 14px;
-}
-
-.mini-gallery {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 14px;
-}
-
-.mini-gallery img {
-  width: 64px;
-  height: 64px;
-  object-fit: cover;
-  border-radius: var(--radius-sm);
-  transition: var(--transition-fast);
-}
-
-.mini-gallery img:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 16px var(--tech-blue-soft);
+/* =====================================================
+   SECTIONS
+===================================================== */
+.section-padding{padding:100px 0}
+.bg-light{background:var(--bg-light)}
+.bg-dark{background:var(--bg-dark);color:#cbd5e1}
+.section-tag{
+  display:inline-block;
+  padding:6px 14px;
+  border:1px solid var(--border-soft);
+  border-radius:20px;
+  font-size:.75rem;
+  letter-spacing:.04em;
 }
 
 /* =====================================================
    ENGINEERING LIST
 ===================================================== */
-.eng-list {
-  list-style: none;
-}
-
-.eng-list li {
-  position: relative;
-  padding-left: 22px;
-  margin-bottom: 14px;
-}
-
-.eng-list li::before {
-  content: "▸";
-  position: absolute;
-  left: 0;
-  color: var(--tech-blue);
-}
+.eng-list{margin-top:24px}
+.eng-list li{margin-bottom:10px}
 
 /* =====================================================
-   ENERGY SOCIAL MATRIX
+   CTA
 ===================================================== */
-.energy-social-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 24px;
-  margin-top: 38px;
-}
-
-.energy-node {
-  background: radial-gradient(circle at top, rgba(46,203,255,.15), rgba(5,11,23,.9));
-  border: 1px solid rgba(46,203,255,.25);
-  border-radius: var(--radius-lg);
-  padding: 26px 18px;
-  color: #fff;
-  text-decoration: none;
-  transition: var(--transition-smooth);
-}
-
-.energy-node i {
-  font-size: 28px;
-  margin-bottom: 10px;
-  color: var(--tech-blue);
-}
-
-.energy-node:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 0 40px rgba(46,203,255,.6);
+.cta-banner{
+  padding:100px 0;
+  text-align:center;
+  background:linear-gradient(135deg,#0f172a,#020617);
+  color:#fff;
 }
 
 /* =====================================================
    FOOTER
 ===================================================== */
-.footer {
-  background: #020611;
-  padding: 80px 0 40px;
+.footer{
+  padding:80px 0 40px;
+  background:#020617;
+  color:#94a3b8;
 }
-
-.footer-grid a {
-  display: block;
-  color: rgba(255,255,255,.65);
-  text-decoration: none;
-  margin-bottom: 8px;
-}
-
-.footer-grid a:hover {
-  color: var(--tech-blue);
-}
-
-.footer-desc {
-  color: rgba(255,255,255,.6);
-  font-size: .9rem;
-}
-
-.copyright {
-  text-align: center;
-  margin-top: 40px;
-  color: rgba(255,255,255,.45);
-  font-size: .85rem;
-}
+.footer a{color:#cbd5e1;text-decoration:none}
+.footer-grid{margin-bottom:40px}
 
 /* =====================================================
-   FLOATING CTA
+   MICRO ANIMATION（高级克制）
 ===================================================== */
-.floating-cta {
-  position: fixed;
-  bottom: 26px;
-  right: 26px;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #25d366, #2ecc71);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 26px;
-  box-shadow: 0 0 28px rgba(37,211,102,.6);
-  z-index: 999;
+.hero h1,
+.section-padding h2{
+  animation:fadeUp .8s ease both;
 }
-/* ===============================
-   Language Switcher (Elite)
-================================ */
-
-.lang-switch {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-left: 20px;
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:none}
 }
-
-.lang-switch button {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.25);
-  color: #fff;
-  font-size: 12px;
-  padding: 4px 7px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all .25s ease;
-}
-
-.lang-switch button:hover {
-  background: #4da3ff;
-  border-color: #4da3ff;
-  color: #fff;
-  transform: translateY(-1px);
-}
-
-/* RTL fix */
-html[dir="rtl"] .lang-switch {
-  margin-left: 0;
-  margin-right: 20px;
-}
-
-/* Mobile hide optional */
-@media (max-width: 1024px) {
-  .lang-switch {
-    display: none;
-  }
-}
-
-
