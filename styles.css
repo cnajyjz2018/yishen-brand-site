@@ -236,6 +236,42 @@ img {
   box-shadow: 0 0 28px rgba(46,203,255,.45);
 }
 
+/* =========================
+   HERO BRAND ANCHOR SYSTEM
+========================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-brand {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+.hero-brand img {
+  height: 140px;
+  filter: blur(0.3px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+}
+
+.hero-actions {
+  margin-top: 48px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
 /* =====================================================
    BUTTONS
 ===================================================== */
