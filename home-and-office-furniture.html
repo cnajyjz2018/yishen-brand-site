@@ -2,157 +2,317 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="Home & Office Furniture by YiShen Global. 120+ procurement-ready SKUs with expandable technical details and RFQ system.">
+<meta name="description" content="Home & Office Furniture engineered by YiShen Global. 120+ procurement-ready SKUs with SKU-level engineering data, 40’HQ optimization, OEM/ODM support and global delivery logic.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home & Office Furniture (120+ SKUs) | YiShen Global</title>
+<meta name="theme-color" content="#050b17">
 
+<title>Home & Office Furniture Systems | YiShen Global</title>
+
+<!-- Fonts & Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- Core CSS -->
 <link rel="stylesheet" href="styles.css">
 
-<style>
-/* ===== SKU TABLE ENHANCE ===== */
-.sku-row { cursor:pointer; }
-.sku-expand { display:none; background:#f8fafc; }
-.sku-expand td { padding:25px; }
-.sku-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; font-size:.85rem; }
-.rfq-btn { margin-top:15px; }
-.rfq-panel { position:fixed; right:0; top:0; width:380px; height:100%; background:#0f172a; color:#fff; padding:30px; transform:translateX(100%); transition:.3s; z-index:9999;}
-.rfq-panel.active{ transform:translateX(0); }
-.rfq-panel h3{margin-bottom:20px;}
-.rfq-item{font-size:.85rem;margin-bottom:10px;}
-.rfq-panel a{display:block;margin-top:20px;}
-</style>
 </head>
 
 <body>
 
 <!-- ================= NAV ================= -->
-<nav class="navbar">
+<nav class="navbar navbar-elite">
   <div class="container nav-wrapper">
     <a href="index.html" class="brand">
-      <img src="logo.webp" alt="YiShen Global" width="180" height="70">
+      <img src="logo.webp" alt="YiShen Global" width="180">
     </a>
+
     <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="why-us.html">Why Us</a>
       <a href="solutions.html">Solutions</a>
       <a href="industries.html">Industries</a>
       <a href="home-and-office-furniture.html" class="active">Furniture</a>
+      <a href="resources.html">Resources</a>
       <a href="contact.html" class="nav-cta">Contact</a>
     </div>
   </div>
 </nav>
 
-<header class="page-header bg-dark"
-style="background-image:linear-gradient(rgba(15,23,42,.92),rgba(15,23,42,.85)),url('hero-bg.webp');">
+<!-- ================= HERO ================= -->
+<header class="page-header bg-dark energy-hero"
+style="background-image:
+linear-gradient(rgba(5,11,23,.96),rgba(5,11,23,.9)),
+url('hero-furniture-system.webp');
+background-size:cover;background-position:center;">
+
   <div class="container">
-    <span class="section-tag">Furniture Platforms</span>
-    <h1>Home & Office Furniture</h1>
-    <p>120+ SKUs · Expandable Details · RFQ Ready</p>
+
+    <span class="section-tag">Furniture Engineering Platforms</span>
+
+    <h1>
+      Home & Office Furniture<br>
+      <span class="tech-accent">Engineered as Systems</span>
+    </h1>
+
+    <p style="max-width:980px;">
+      This is not a catalog.
+      <br><br>
+      YiShen Global presents <strong>furniture platforms engineered for global scale</strong> —
+      where every SKU is validated for structure, packaging survivability,
+      logistics density and procurement predictability.
+    </p>
+
+    <div class="hero-cta-row">
+      <a href="#platforms" class="btn btn-outline-white">View Platforms</a>
+      <a href="contact.html#rfq" class="btn btn-tech btn-tech-elite">
+        Request RFQ / Engineering Data
+      </a>
+    </div>
+
+    <div class="trust-micro">
+      <span class="micro-pill"><i class="fa-solid fa-database"></i> 120+ SKUs</span>
+      <span class="micro-pill"><i class="fa-solid fa-box"></i> KD Optimized</span>
+      <span class="micro-pill"><i class="fa-solid fa-certificate"></i> BIFMA / EN</span>
+      <span class="micro-pill"><i class="fa-solid fa-globe"></i> Global Delivery</span>
+    </div>
+
   </div>
 </header>
 
+<!-- ================= POSITIONING ================= -->
 <section class="section-padding bg-light">
-<div class="container">
+  <div class="container grid-3">
 
-<table class="data-matrix-table" id="skuTable">
-<thead>
-<tr>
-<th>SKU</th>
-<th>Category</th>
-<th>Platform</th>
-<th>Key Structure</th>
-<th>MOQ</th>
-<th>40’HQ</th>
-</tr>
-</thead>
-<tbody id="skuBody"></tbody>
-</table>
+    <div class="process-card">
+      <h3>What Makes This Different</h3>
+      <p>
+        Each furniture SKU exists inside a
+        <strong>controlled engineering framework</strong> —
+        not as an isolated product.
+      </p>
+    </div>
 
-</div>
+    <div class="process-card">
+      <h3>Why Buyers Use This Page</h3>
+      <p>
+        To validate feasibility, cost structure,
+        and logistics reality <strong>before quotation</strong>.
+      </p>
+    </div>
+
+    <div class="process-card">
+      <h3>Who This Is For</h3>
+      <p>
+        Distributors, retailers, private-label brands
+        and project buyers managing risk at scale.
+      </p>
+    </div>
+
+  </div>
 </section>
 
-<!-- ================= RFQ PANEL ================= -->
-<div class="rfq-panel" id="rfqPanel">
-<h3>RFQ Selection</h3>
-<div id="rfqList"></div>
-<a id="rfqLink" class="btn btn-tech" target="_blank">Send RFQ via WhatsApp</a>
-</div>
+<!-- ================= PLATFORMS ================= -->
+<section class="section-padding" id="platforms">
+  <div class="container">
 
-<script>
-const SKU_DB = [];
-let rfq = [];
+    <span class="section-tag">Core Platforms</span>
+    <h2>Furniture Categories Under Engineering Control</h2>
 
-function addSKUs(prefix,cat,catName,platform,structure,moq,hq){
-  for(let i=1;i<=20;i++){
-    SKU_DB.push({
-      sku:`${prefix}-${1000+i}`,
-      category:cat,
-      categoryName:catName,
-      platform,
-      structure,
-      moq,
-      hq,
-      materials:"Steel / Mesh / Foam",
-      compliance:"BIFMA / ISO",
-      leadtime:"30–45 Days"
-    });
-  }
-}
+    <div class="grid-3" style="margin-top:30px;">
 
-/* === 6 Categories × 20 === */
-addSKUs("ERG","ergonomic","Ergonomic Office Chair","Advanced Ergonomic Platform","Synchro / Auto Tilt",50,"620–720");
-addSKUs("TASK","mesh","Task & Mesh Chair","High Volume Task Platform","Simple / Synchro Tilt",200,"800–950");
-addSKUs("DESK","desk","Smart Standing Desk","Electric Desk System","Single / Dual Motor",50,"40–50 sets");
-addSKUs("CONF","conference","Conference Furniture","Modular Meeting System","Steel Beam Frame",10,"Project");
-addSKUs("STOR","storage","Storage & Filing","Steel / Wood Storage","Drawer Slide System",50,"Pallet");
-addSKUs("LOUN","lounge","Soft Seating & Lounge","Commercial Lounge System","Fixed Upholstery",20,"120–180");
+      <div class="process-card">
+        <h3>Ergonomic Office Seating</h3>
+        <p>
+          Task chairs, executive chairs and mesh systems
+          engineered under BIFMA X5.1 logic.
+        </p>
+        <ul class="eng-list">
+          <li>Synchro / Auto / Simple tilt platforms</li>
+          <li>KD packaging, parcel & container safe</li>
+          <li>40’HQ: 600–850 units</li>
+        </ul>
+        <a href="sku-detail.html" class="tech-accent">View SKU Data →</a>
+      </div>
 
-const body=document.getElementById("skuBody");
+      <div class="process-card">
+        <h3>Smart Standing Desks</h3>
+        <p>
+          Height-adjustable desk systems
+          validated for stability and motor compliance.
+        </p>
+        <ul class="eng-list">
+          <li>Single / dual motor options</li>
+          <li>UL / CE compliant control systems</li>
+          <li>Project & retail ready</li>
+        </ul>
+      </div>
 
-SKU_DB.forEach((i,idx)=>{
-body.innerHTML+=`
-<tr class="sku-row" onclick="toggle(${idx})">
-<td><strong>${i.sku}</strong></td>
-<td>${i.categoryName}</td>
-<td>${i.platform}</td>
-<td>${i.structure}</td>
-<td>${i.moq}</td>
-<td>${i.hq}</td>
-</tr>
-<tr class="sku-expand" id="exp${idx}">
-<td colspan="6">
-<div class="sku-meta">
-<div><strong>Materials:</strong><br>${i.materials}</div>
-<div><strong>Compliance:</strong><br>${i.compliance}</div>
-<div><strong>Lead Time:</strong><br>${i.leadtime}</div>
-</div>
-<button class="btn btn-tech rfq-btn" onclick="addRFQ('${i.sku}')">Add to RFQ</button>
-</td>
-</tr>`;
-});
+      <div class="process-card">
+        <h3>Home & Lounge Furniture</h3>
+        <p>
+          Soft seating, accent chairs and lifestyle furniture
+          engineered for commercial durability.
+        </p>
+        <ul class="eng-list">
+          <li>Frame & foam density control</li>
+          <li>Modular KD packing logic</li>
+          <li>DTC & project compatible</li>
+        </ul>
+      </div>
 
-function toggle(i){
-const e=document.getElementById("exp"+i);
-e.style.display=e.style.display==="table-row"?"none":"table-row";
-}
+    </div>
 
-function addRFQ(sku){
-if(!rfq.includes(sku)) rfq.push(sku);
-document.getElementById("rfqPanel").classList.add("active");
-renderRFQ();
-}
+  </div>
+</section>
 
-function renderRFQ(){
-const box=document.getElementById("rfqList");
-box.innerHTML="";
-rfq.forEach(s=>box.innerHTML+=`<div class="rfq-item">• ${s}</div>`);
-document.getElementById("rfqLink").href=
-`https://wa.me/8615968277867?text=RFQ%20Request:%0A${rfq.join("%0A")}`;
-}
-</script>
+<!-- ================= SKU MATRIX ================= -->
+<section class="section-padding bg-light">
+  <div class="container">
+
+    <span class="section-tag">SKU Matrix</span>
+    <h2>Procurement-Ready SKU Overview</h2>
+
+    <p style="max-width:900px;">
+      Below is a simplified view of our active furniture platforms.
+      Full engineering tables (dimensions, materials, MOQs, 40’HQ load)
+      are available in the <strong>Resources</strong> section or on request.
+    </p>
+
+    <table class="data-matrix-table" style="margin-top:25px;">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Platform Type</th>
+          <th>MOQ</th>
+          <th>40’HQ</th>
+          <th>Compliance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ergonomic Chairs</td>
+          <td>Task / Executive / Mesh</td>
+          <td>50–200</td>
+          <td>600–850</td>
+          <td>BIFMA X5.1</td>
+        </tr>
+        <tr>
+          <td>Standing Desks</td>
+          <td>Single / Dual Motor</td>
+          <td>50</td>
+          <td>40–60 sets</td>
+          <td>UL / CE</td>
+        </tr>
+        <tr>
+          <td>Lounge Furniture</td>
+          <td>Accent / Soft Seating</td>
+          <td>20–50</td>
+          <td>120–200</td>
+          <td>Commercial Grade</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</section>
+
+<!-- ================= WHY ENGINEERING ================= -->
+<section class="section-padding">
+  <div class="container grid-2">
+
+    <div>
+      <h2>Why Furniture Is Engineered, Not Selected</h2>
+      <p>
+        In global trade, furniture fails not because of design,
+        but because of packaging collapse, density miscalculation,
+        compliance gaps and delivery volatility.
+      </p>
+      <p>
+        YiShen Global removes these variables
+        by treating furniture as an <strong>engineering system</strong>,
+        not a sourcing exercise.
+      </p>
+    </div>
+
+    <div>
+      <ul class="eng-list">
+        <li>Structural & fatigue validation</li>
+        <li>ISTA-aligned packaging logic</li>
+        <li>Container & landed cost modeling</li>
+        <li>DTC / B2B / Project compatibility</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta-banner cta-elite">
+  <div class="container">
+    <span class="section-tag" style="justify-content:center;">Next Step</span>
+    <h2>Request Furniture Engineering Data</h2>
+    <p style="max-width:900px;margin:0 auto 22px;">
+      CAD drawings, test reports, packaging SOPs,
+      SKU-level cost and logistics modeling
+      are provided to qualified buyers.
+    </p>
+
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="resources.html" class="btn btn-outline-white">
+        View Technical Resources
+      </a>
+      <a href="contact.html#rfq" class="btn btn-tech btn-tech-elite">
+        Start RFQ / Project Discussion
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer footer-elite">
+  <div class="container footer-grid grid-4">
+
+    <div>
+      <img src="logo.webp" height="48">
+      <p class="footer-desc">
+        Furniture-led engineering systems.<br>
+        Predictability designed.
+      </p>
+    </div>
+
+    <div>
+      <h4>Furniture</h4>
+      <a href="home-and-office-furniture.html">Platforms</a>
+      <a href="sku-detail.html">SKU Details</a>
+    </div>
+
+    <div>
+      <h4>System</h4>
+      <a href="solutions.html">Solutions</a>
+      <a href="site-architecture.html">Architecture</a>
+    </div>
+
+    <div>
+      <h4>Connect</h4>
+      <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank">LinkedIn</a>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © 2026 YiShen Global · Furniture Engineering Systems
+  </div>
+</footer>
+
+<a href="https://wa.me/8615968277867" class="floating-cta">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="script.js"></script>
 
 </body>
 </html>
