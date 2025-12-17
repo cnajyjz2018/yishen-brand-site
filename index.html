@@ -2,91 +2,188 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>YiShen Global | Furniture × Supply Chain</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
+<meta name="description" content="YiShen Global is a furniture-first manufacturer specializing in ergonomic chairs, mesh seating, standing desks and scalable furniture systems for global brands.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050b17">
+<title>YiShen Global | Furniture Engineered for Scale</title>
 
+<!-- Fonts & Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- Core Style -->
+<link rel="stylesheet" href="/styles.css">
+
+</head>
 <body>
 
-<!-- NAV -->
-<nav class="navbar">
-  <div class="nav-wrapper">
-    <a class="brand" href="index.html">
-      <img src="assets/img/logo-icon.webp" alt="YiShen Global">
-    </a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="why-us.html">Why Us</a>
-      <a href="industries.html">Industries</a>
-      <a href="resources.html">Resources</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </div>
-</nav>
+<!-- ===== NAVBAR (Injected) ===== -->
+<div id="navbar"></div>
 
-<!-- HERO -->
-<section class="hero">
+<!-- ================= HERO ================= -->
+<section class="hero hero-elite">
+
+  <!-- HERO BRAND ANCHOR -->
   <div class="hero-brand">
-    <img src="assets/img/logo-icon.webp" alt="YiShen Global">
+    <img src="assets/img/logo-icon.webp" alt="YiShen Global Logo">
   </div>
 
-  <div class="container" style="text-align:center">
-    <h1>Furniture Built for Scale.<br>Engineered to Deliver.</h1>
-    <p>
-      Furniture-first manufacturing system with global supply chain control.
+  <div class="container">
+    <span class="section-tag">Furniture Manufacturer · Global Supply Chain</span>
+
+    <h1 data-i18n="hero_title">
+      Furniture Built for Scale.<br>
+      Engineered to Deliver.
+    </h1>
+
+    <p data-i18n="hero_sub" style="max-width:780px;">
+      Furniture-first manufacturing system combining product engineering,
+      compliance control and global supply chain execution.
     </p>
 
-    <!-- SOCIAL MATRIX -->
-    <div class="social-matrix" style="justify-content:center">
-      <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://x.com/AlexYan03451555" target="_blank"><i class="fab fa-x-twitter"></i></a>
-      <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://www.facebook.com/alex.yang.427745" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/alexyang591/" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
-  </div>
-
-  <!-- PRODUCT WALL (20+) -->
-  <div class="container">
-    <div class="product-wall">
-      <!-- Ergonomic / Mesh / Gaming / Desk / Lounge / Recliner -->
-      <img src="assets/img/p1.webp">
-      <img src="assets/img/p2.webp">
-      <img src="assets/img/p3.webp">
-      <img src="assets/img/p4.webp">
-      <img src="assets/img/p5.webp">
-      <img src="assets/img/p6.webp">
-      <img src="assets/img/p7.webp">
-      <img src="assets/img/p8.webp">
-      <img src="assets/img/p9.webp">
-      <img src="assets/img/p10.webp">
-      <img src="assets/img/p11.webp">
-      <img src="assets/img/p12.webp">
-      <img src="assets/img/p13.webp">
-      <img src="assets/img/p14.webp">
-      <img src="assets/img/p15.webp">
-      <img src="assets/img/p16.webp">
-      <img src="assets/img/p17.webp">
-      <img src="assets/img/p18.webp">
-      <img src="assets/img/p19.webp">
-      <img src="assets/img/p20.webp">
+    <div class="hero-actions">
+      <a href="#catalog" class="btn btn-tech">Explore Furniture</a>
+      <a href="/contact.html" class="btn btn-outline-white">Request Catalog</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <p><strong>Email</strong>: alex.yang@yishenglobal.net · champion.yang@yishenglobal.net</p>
-    <p><strong>WhatsApp</strong>: +86 159 6827 7867 · +86 188 5727 7313</p>
-    <p><strong>WeChat</strong>: 19530394133</p>
-    <p><strong>Hotline</strong>: +86 195 3039 4133</p>
-    <p><strong>Base</strong>: Anji · Hangzhou · China</p>
+<!-- ================= STATS ================= -->
+<section class="hero-stats-wrap">
+  <div class="container grid-4 hero-stats-elite">
+    <div class="stat-box"><h3>6</h3><p>Core Furniture Categories</p></div>
+    <div class="stat-box"><h3>200+</h3><p>Active Furniture SKUs</p></div>
+    <div class="stat-box"><h3>10+</h3><p>Years Manufacturing</p></div>
+    <div class="stat-box"><h3>50+</h3><p>Global Markets</p></div>
   </div>
-</footer>
+</section>
+
+<!-- ================= FURNITURE CATALOG ================= -->
+<section class="section-padding bg-light" id="catalog">
+  <div class="container">
+
+    <div class="text-center section-head">
+      <span class="section-tag">Furniture Portfolio</span>
+      <h2>Six Furniture Categories · Engineered for Global Scale</h2>
+      <p>Each category is built for durability, compliance and international logistics efficiency.</p>
+    </div>
+
+    <!-- ===== PRODUCT WALL (20+) ===== -->
+    <div class="product-wall">
+
+      <!-- Ergonomic Chairs -->
+      <div class="product-card">
+        <img src="assets/img/products/mesh-chair-01.webp">
+        <h5>Ergonomic Mesh Chair</h5>
+        <span>BIFMA · Office</span>
+      </div>
+
+      <div class="product-card">
+        <img src="assets/img/products/mesh-chair-02.webp">
+        <h5>Task Chair</h5>
+        <span>Mesh / Fabric</span>
+      </div>
+
+      <div class="product-card">
+        <img src="assets/img/products/ergonomic-chair-01.webp">
+        <h5>Executive Chair</h5>
+        <span>High Back</span>
+      </div>
+
+      <!-- Standing Desk -->
+      <div class="product-card">
+        <img src="assets/img/products/standing-desk-01.webp">
+        <h5>Smart Standing Desk</h5>
+        <span>Dual Motor</span>
+      </div>
+
+      <div class="product-card">
+        <img src="assets/img/products/standing-desk-02.webp">
+        <h5>Electric Desk</h5>
+        <span>UL / CE</span>
+      </div>
+
+      <!-- Gaming / Lounge -->
+      <div class="product-card">
+        <img src="assets/img/products/gaming-chair-01.webp">
+        <h5>Gaming Chair</h5>
+        <span>E-commerce Bestseller</span>
+      </div>
+
+      <div class="product-card">
+        <img src="assets/img/products/lounge-chair-01.webp">
+        <h5>Accent Chair</h5>
+        <span>Commercial Grade</span>
+      </div>
+
+      <div class="product-card">
+        <img src="assets/img/products/lounge-chair-02.webp">
+        <h5>Lounger</h5>
+        <span>Hospitality</span>
+      </div>
+
+      <!-- Storage / Conference -->
+      <div class="product-card">
+        <img src="assets/img/products/storage-cabinet-01.webp">
+        <h5>Filing Cabinet</h5>
+        <span>Steel Storage</span>
+      </div>
+
+      <div class="product-card">
+        <img src="assets/img/products/conference-table-01.webp">
+        <h5>Conference Table</h5>
+        <span>Modular System</span>
+      </div>
+
+      <!-- 可继续无限扩展 -->
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= ENGINEERING ================= -->
+<section class="section-padding bg-dark">
+  <div class="container grid-2">
+    <div>
+      <span class="section-tag">Engineering Backbone</span>
+      <h2>Furniture Engineering That Protects Your Brand</h2>
+      <ul class="eng-list">
+        <li>BIFMA / ANSI Structural Validation</li>
+        <li>ISTA 6A Packaging Engineering</li>
+        <li>KD Optimization for E-commerce</li>
+        <li>Compliance-first Manufacturing</li>
+      </ul>
+    </div>
+    <img src="assets/img/engineering-lab.webp" class="img-elite">
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta-banner cta-elite">
+  <div class="container">
+    <h2>Looking for a Reliable Furniture Manufacturing Partner?</h2>
+    <p>Catalog · Specs · Quotation · OEM / ODM</p>
+    <a href="/contact.html" class="btn btn-tech btn-tech-elite">Contact YiShen Global</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER (Injected) ===== -->
+<div id="footer"></div>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="/assets/js/i18n.js"></script>
+
+<script>
+fetch('/components/navbar.html')
+  .then(r => r.text())
+  .then(html => document.getElementById('navbar').innerHTML = html);
+
+fetch('/components/footer.html')
+  .then(r => r.text())
+  .then(html => document.getElementById('footer').innerHTML = html);
+</script>
 
 </body>
 </html>
