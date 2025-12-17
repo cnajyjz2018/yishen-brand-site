@@ -1,19 +1,31 @@
-<nav class="navbar">
-  <div class="navbar-container">
+<nav class="navbar navbar-elite">
+  <div class="container nav-wrapper">
 
-    <!-- Brand -->
-    <a href="/index.html" class="navbar-logo">
-      <img src="assets/img/logo-icon.webp" alt="YiShen Global" class="logo-icon">
-      <span class="brand-name">YiShen Global</span>
+    <!-- ✅ NAV 小尺寸图标（统一锁死高度，防止任何页面放大） -->
+    <a href="index.html" class="brand" aria-label="YiShen Global Home">
+      <img src="assets/img/logo-icon.webp" alt="YiShen Global" class="logo-icon" loading="eager" decoding="async">
     </a>
 
-    <!-- Menu -->
-    <ul class="navbar-menu">
-      <li><a href="/solutions.html">Solutions</a></li>
-      <li><a href="/industries.html">Industries</a></li>
-      <li><a href="/resources.html">Resources</a></li>
-      <li><a href="/contact.html" class="nav-cta">Contact</a></li>
-    </ul>
+    <div class="mobile-menu-btn" aria-label="Open menu" role="button" tabindex="0">
+      <i class="fas fa-bars"></i>
+    </div>
 
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="why-us.html">Why Us</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="industries.html">Industries</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html" class="nav-cta">Contact</a>
+
+      <!-- ✅ 语言切换（按你要求的写法，不 reload，不跳页） -->
+      <div class="lang-switch">
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('zh')">中文</button>
+        <button onclick="setLang('ja')">JP</button>
+        <button onclick="setLang('de')">DE</button>
+        <button onclick="setLang('ar')">AR</button>
+      </div>
+    </div>
   </div>
 </nav>
