@@ -2,30 +2,52 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="description" content="YiShen Global is a commercial furniture manufacturer specializing in ergonomic chairs, mesh seating, standing desks and scalable furniture systems for global markets.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#050b17">
 
-<title>YiShen Global | Furniture Engineering & Supply System</title>
-
-<meta name="description" content="YiShen Global is a furniture engineering manufacturer delivering ergonomic seating, standing desks and scalable furniture systems for global retailers, brands and procurement teams.">
+<title>YiShen Global | Commercial Furniture Manufacturer</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<link rel="stylesheet" href="styles.css?v=2026.ENERGY">
+<link rel="stylesheet" href="styles.css?v=2026.3">
+
+<style>
+/* === HARD LOCK LOGO SIZE (INDEX ONLY, FINAL GUARANTEE) === */
+.brand-icon img{
+  width:40px !important;
+  height:40px !important;
+  max-width:40px !important;
+  max-height:40px !important;
+}
+.hero-brand img{
+  width:56px !important;
+  height:56px !important;
+  opacity:.9;
+}
+.footer img{
+  width:38px !important;
+  height:38px !important;
+}
+</style>
 </head>
 
 <body>
 
-<!-- ================= NAV ================= -->
+<!-- ================= NAVBAR ================= -->
 <nav class="navbar navbar-elite">
   <div class="container nav-wrapper">
-    <a href="index.html" class="brand energy-brand">
-      <img src="logo.webp" alt="YiShen Global Furniture Engineering" class="logo-energy">
+
+    <!-- ICON LOGO (SMALL & FIXED) -->
+    <a href="index.html" class="brand brand-icon">
+      <img src="assets/img/logo-icon.webp" alt="YiShen Global">
     </a>
 
-    <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+    <div class="mobile-menu-btn" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </div>
 
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
@@ -35,195 +57,130 @@
       <a href="resources.html">Resources</a>
       <a href="contact.html" class="nav-cta">Contact</a>
     </div>
+
+    <!-- LANGUAGE SWITCH -->
+    <div class="lang-switch">
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('zh')">中文</button>
+      <button onclick="setLang('ja')">JP</button>
+      <button onclick="setLang('de')">DE</button>
+      <button onclick="setLang('ar')">AR</button>
+    </div>
+
   </div>
 </nav>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
 
-  <!-- ===== BRAND ANCHOR · 系统级 LOGO（非装饰） ===== -->
-  <div class="hero-brand" aria-hidden="true">
+  <!-- BRAND ANCHOR · ICON MODE -->
+  <div class="hero-brand">
     <img src="assets/img/logo-icon.webp" alt="YiShen Global">
   </div>
 
-  <!-- ===== HERO CONTENT ===== -->
-  <div class="container hero-content">
-
-    <span class="section-tag">
-      Commercial & Ergonomic Furniture Manufacturer
-    </span>
+  <div class="container">
+    <span class="section-tag">Commercial & Ergonomic Furniture Manufacturer</span>
 
     <h1 data-i18n="hero_title">
       Furniture Built for Scale.<br>
       Engineered to Deliver.
     </h1>
 
-    <p data-i18n="hero_sub" style="max-width:780px;">
-      Commercial furniture manufacturing with global supply chain control —
-      serving retailers, brands, and project buyers across 50+ markets.
+    <p data-i18n="hero_sub" style="max-width:760px;">
+      Commercial furniture manufacturing with global supply chain control.
     </p>
 
-    <!-- ===== HERO ACTIONS ===== -->
-    <div class="hero-actions">
-      <a href="#furniture-catalog" class="btn btn-tech">
-        Explore Furniture Categories
-      </a>
-      <a href="contact.html" class="btn btn-outline-white">
-        Request Catalog
-      </a>
+    <div style="margin-top:42px;display:flex;gap:18px;flex-wrap:wrap;">
+      <a href="#catalog" class="btn btn-tech">Explore Furniture</a>
+      <a href="contact.html" class="btn btn-outline-white">Request Catalog</a>
     </div>
-
   </div>
-
 </section>
-<!-- ============== END HERO ============== -->
-
 
 <!-- ================= STATS ================= -->
-<div class="container hero-stats grid-4">
-  <div class="stat-box">
-    <h3>6 Categories</h3>
-    <p>Furniture Platforms</p>
-  </div>
-  <div class="stat-box">
-    <h3>200+ SKUs</h3>
-    <p>Active Engineering Models</p>
-  </div>
-  <div class="stat-box">
-    <h3>10+ Years</h3>
-    <p>Manufacturing Control</p>
-  </div>
-  <div class="stat-box">
-    <h3>50+ Markets</h3>
-    <p>Global Distribution</p>
+<div class="container" style="position:relative;z-index:10;">
+  <div class="hero-stats grid-4">
+    <div class="stat-box"><h3>6</h3><p>Core Categories</p></div>
+    <div class="stat-box"><h3>200+</h3><p>Active SKUs</p></div>
+    <div class="stat-box"><h3>10+</h3><p>Manufacturing Years</p></div>
+    <div class="stat-box"><h3>50+</h3><p>Export Markets</p></div>
   </div>
 </div>
 
-<!-- ================= FURNITURE SYSTEM ================= -->
-<section class="section-padding bg-light" id="furniture-catalog">
-  <div class="container">
-    <div class="text-center">
-      <span class="section-tag">Furniture Architecture</span>
-      <h2>Six Furniture Systems. One Engineering Logic.</h2>
-      <p style="max-width:780px;margin:0 auto;">
-        Every category is governed by the same engineering framework —
-        structural validation, packaging logic and logistics modeling.
-      </p>
-    </div>
-
-    <div class="catalog-list grid-3">
-
-      <div class="catalog-item energy-card">
-        <h5>Ergonomic Seating <i class="fas fa-chair"></i></h5>
-        <p class="catalog-desc">BIFMA platforms · KD density · Retail ready</p>
-        <a href="resources.html#sku-hub" class="view-link">Enter System</a>
-      </div>
-
-      <div class="catalog-item energy-card">
-        <h5>Standing Desks <i class="fas fa-desktop"></i></h5>
-        <p class="catalog-desc">Motor control · UL 962 · Stability logic</p>
-        <a href="resources.html#sku-hub" class="view-link">Enter System</a>
-      </div>
-
-      <div class="catalog-item energy-card">
-        <h5>Gaming Chairs <i class="fas fa-gamepad"></i></h5>
-        <p class="catalog-desc">E-commerce survivability · Volume SKUs</p>
-        <a href="resources.html#sku-hub" class="view-link">Enter System</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ================= ENERGY SOCIAL MATRIX ================= -->
-<section class="section-padding bg-dark">
+<!-- ================= CATALOG ================= -->
+<section class="section-padding bg-light" id="catalog">
   <div class="container text-center">
-    <span class="section-tag" style="justify-content:center;">Global Contact Matrix</span>
-    <h2 style="color:white;">Always-On Communication Channels</h2>
+    <span class="section-tag">Furniture Portfolio</span>
+    <h2>Furniture-First Manufacturing System</h2>
     <p style="max-width:760px;margin:0 auto;">
-      Engineering teams, procurement managers and partners
-      connect through dedicated channels — not generic inboxes.
+      Ergonomic chairs, mesh seating, standing desks, conference systems,
+      storage solutions and lounge furniture — engineered for global delivery.
     </p>
+  </div>
 
-    <div class="energy-social-grid">
+  <div class="container catalog-list grid-3" style="margin-top:60px;">
 
-      <a href="https://wa.me/8615968277867" target="_blank" class="energy-node whatsapp">
-        <i class="fab fa-whatsapp"></i>
-        <span>WhatsApp<br><small>Instant Engineering Contact</small></span>
-      </a>
+    <!-- 15+ IMAGES PLACEHOLDER (AS REQUESTED) -->
+    <div class="catalog-item"><img src="assets/img/furniture/chair-01.webp"><h5>Ergonomic Chair</h5></div>
+    <div class="catalog-item"><img src="assets/img/furniture/chair-02.webp"><h5>Mesh Chair</h5></div>
+    <div class="catalog-item"><img src="assets/img/furniture/chair-03.webp"><h5>Executive Chair</h5></div>
 
-      <a href="mailto:sales@yishenglobal.com" class="energy-node email">
-        <i class="fas fa-envelope"></i>
-        <span>Email<br><small>Formal RFQ / Specs</small></span>
-      </a>
+    <div class="catalog-item"><img src="assets/img/furniture/desk-01.webp"><h5>Standing Desk</h5></div>
+    <div class="catalog-item"><img src="assets/img/furniture/desk-02.webp"><h5>Dual Motor Desk</h5></div>
+    <div class="catalog-item"><img src="assets/img/furniture/desk-03.webp"><h5>Workstation</h5></div>
 
-      <a href="#" class="energy-node wechat">
-        <i class="fab fa-weixin"></i>
-        <span>WeChat<br><small>China Factory Access</small></span>
-      </a>
+    <div class="catalog-item"><img src="assets/img/furniture/lounge-01.webp"><h5>Lounge Chair</h5></div>
+    <div class="catalog-item"><img src="assets/img/furniture/lounge-02.webp"><h5>Soft Seating</h5></div>
+    <div class="catalog-item"><img src="assets/img/furniture/lounge-03.webp"><h5>Commercial Sofa</h5></div>
 
-      <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" class="energy-node linkedin">
-        <i class="fab fa-linkedin-in"></i>
-        <span>LinkedIn<br><small>Procurement Network</small></span>
-      </a>
+    <div class="catalog-item"><img src="assets/img/furniture/conference-01.webp"><h5>Conference Table</h5></div>
+    <div class="catalog-item"><img src="assets/img/furniture/storage-01.webp"><h5>Filing Cabinet</h5></div>
+    <div class="catalog-item"><img src="assets/img/furniture/storage-02.webp"><h5>Storage System</h5></div>
 
-      <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank" class="energy-node youtube">
-        <i class="fab fa-youtube"></i>
-        <span>YouTube<br><small>Factory & System Videos</small></span>
-      </a>
+    <div class="catalog-item"><img src="assets/img/furniture/gaming-01.webp"><h5>Gaming Chair</h5></div>
+    <div class="catalog-item"><img src="assets/img/furniture/gaming-02.webp"><h5>Pro Gaming Chair</h5></div>
+    <div class="catalog-item"><img src="assets/img/furniture/bar-01.webp"><h5>Bar Chair</h5></div>
 
-    </div>
   </div>
 </section>
-
-<!-- ================= CTA ================= -->
-<section class="cta-banner cta-elite">
-  <div class="container">
-    <h2>Looking for a Furniture Engineering Partner?</h2>
-    <p>Catalogs · Specs · Packaging · Global Delivery Modeling</p>
-    <a href="contact.html" class="btn btn-tech btn-tech-elite">Start a Project</a>
-  </div>
-</section>
-<a href="/contact.html" class="cta-button">
-  <img src="assets/img/logo-icon.webp" alt="YiShen Global">
-  <span>Start with YiShen Global</span>
-</a>
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer footer-elite">
   <div class="container footer-grid grid-4">
-    <div>
-      <img src="logo.webp" class="logo-energy" style="height:46px;">
-      <p class="footer-desc">
-        Furniture Engineering Systems.<br>
-        Designed for predictability.
-      </p>
-    </div>
 
     <div>
-      <h4>Systems</h4>
-      <a href="resources.html">Engineering Resources</a>
-      <a href="why-us.html">Why YiShen</a>
+      <img src="assets/img/logo-icon.webp" alt="YiShen Global">
+      <p class="footer-desc">
+        Furniture-first · Engineering-driven · Global supply chain.
+      </p>
     </div>
 
     <div>
       <h4>Products</h4>
       <a href="industries.html">Furniture Categories</a>
+      <a href="resources.html">Technical Resources</a>
+    </div>
+
+    <div>
+      <h4>Company</h4>
+      <a href="why-us.html">Why Us</a>
       <a href="solutions.html">Solutions</a>
+      <a href="contact.html">Contact</a>
     </div>
 
     <div>
       <h4>Connect</h4>
       <div class="social-links">
-        <a href="https://wa.me/8615968277867"><i class="fab fa-whatsapp"></i></a>
-        <a href="mailto:sales@yishenglobal.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/alex-yang-yishen/"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/8615968277867" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:sales@yishenglobal.net"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
+
   </div>
 
   <div class="copyright">
-    © 2026 YiShen Global · Furniture Engineering Control System
+    © 2026 YiShen Global · Commercial Furniture Manufacturer
   </div>
 </footer>
 
@@ -233,7 +190,7 @@ const navLinks=document.querySelector('.nav-links');
 menuBtn.addEventListener('click',()=>navLinks.classList.toggle('active'));
 </script>
 
+<script src="i18n.js"></script>
+
 </body>
 </html>
-
-
