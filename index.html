@@ -2,32 +2,44 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="YiShen Global is a commercial furniture manufacturer specializing in ergonomic chairs, mesh seating, standing desks, and scalable furniture systems for global markets.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050b17">
+<meta name="description" content="YiShen Global is a commercial furniture manufacturer specializing in ergonomic seating, standing desks, and scalable furniture solutions.">
 <title>YiShen Global | Commercial Furniture Manufacturer</title>
 
-<!-- Fonts & Icons -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-<!-- Core Style (LOGO 已锁死尺寸) -->
-<link rel="stylesheet" href="styles.css?v=999">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<!-- ================= NAVBAR（小 LOGO 图标 · 全站统一） ================= -->
-<div id="site-navbar"></div>
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+  <div class="container nav-wrapper">
+    <a href="index.html" class="brand">
+      <!-- 🔒 NAV LOGO（小尺寸，锁死） -->
+      <img src="assets/img/logo-icon.webp" alt="YiShen Global">
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="why-us.html">Why Us</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="industries.html">Industries</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html" class="nav-cta">Contact Us</a>
+    </div>
+  </div>
+</nav>
 
 <!-- ================= HERO ================= -->
-<section class="hero hero-furniture">
+<section class="hero">
 
-  <!-- BRAND ANCHOR（仅首页使用的大 LOGO） -->
+  <!-- 🔒 HERO BRAND ANCHOR（你之前指定的高级用法） -->
   <div class="hero-brand">
-    <img src="logo.webp" alt="YiShen Global Furniture">
+    <img src="assets/img/logo-icon.webp" alt="YiShen Global Logo">
   </div>
 
   <div class="container">
@@ -38,167 +50,105 @@
       Engineered to Deliver.
     </h1>
 
-    <p data-i18n="hero_sub" style="max-width:780px;">
-      YiShen Global designs and manufactures commercial-grade furniture —
-      from ergonomic seating to smart workstations —
-      supporting global retailers, brands, and project buyers.
+    <p data-i18n="hero_sub">
+      Commercial furniture manufacturing with global supply chain control.
     </p>
 
     <div class="hero-cta">
-      <a href="#product-wall" class="btn btn-tech">Explore Furniture</a>
+      <a href="#products" class="btn btn-tech">Explore Products</a>
       <a href="contact.html" class="btn btn-outline-white">Request Catalog</a>
     </div>
   </div>
 </section>
 
-<!-- ================= CORE STATS ================= -->
-<section class="hero-stats-wrapper">
-  <div class="container grid-4 hero-stats">
-    <div class="stat-box">
-      <h3>6</h3>
-      <p>Core Furniture Categories</p>
-    </div>
-    <div class="stat-box">
-      <h3>200+</h3>
-      <p>Active SKUs</p>
-    </div>
-    <div class="stat-box">
-      <h3>10+</h3>
-      <p>Years Manufacturing</p>
-    </div>
-    <div class="stat-box">
-      <h3>50+</h3>
-      <p>Global Markets</p>
-    </div>
+<!-- ================= STATS ================= -->
+<div class="hero-stats-wrapper">
+  <div class="container grid-4">
+    <div class="stat-box"><h3>6</h3><p>Core Categories</p></div>
+    <div class="stat-box"><h3>200+</h3><p>Active SKUs</p></div>
+    <div class="stat-box"><h3>10+</h3><p>Manufacturing Years</p></div>
+    <div class="stat-box"><h3>50+</h3><p>Global Markets</p></div>
   </div>
-</section>
+</div>
 
-<!-- ================= TRUST ================= -->
-<section class="trust-bar">
+<!-- ================= PRODUCT WALL ================= -->
+<section class="section-padding bg-light" id="products">
   <div class="container">
-    <p class="trust-title">Trusted by Retailers · Brands · Project Buyers</p>
-    <div class="trust-logos">
-      <span>STAPLES</span>
-      <span>Office Depot</span>
-      <span>AUTONOMOUS</span>
-      <span>BIFMA</span>
-      <span>UL</span>
-    </div>
-  </div>
-</section>
+    <h2 class="category-title">Furniture Portfolio</h2>
 
-<!-- ================= PRODUCT WALL（20+ 图片） ================= -->
-<section class="section-padding bg-light" id="product-wall">
-  <div class="container">
-
-    <div class="text-center" style="margin-bottom:60px;">
-      <span class="section-tag">Furniture Portfolio</span>
-      <h2>Six Categories · Built for Global Scale</h2>
-      <p style="max-width:760px;margin:0 auto;">
-        Each category is engineered for durability, compliance,
-        and efficient global delivery.
-      </p>
-    </div>
-
-    <!-- ===== CATEGORY 1 ===== -->
-    <h3 class="category-title">Ergonomic & Mesh Chairs</h3>
+    <!-- ≥20 张产品图 -->
     <div class="product-grid grid-5">
-      <img src="assets/img/p/chair-01.webp">
-      <img src="assets/img/p/chair-02.webp">
-      <img src="assets/img/p/chair-03.webp">
-      <img src="assets/img/p/chair-04.webp">
-      <img src="assets/img/p/chair-05.webp">
-    </div>
+      <img src="assets/img/p/chair-1.webp" alt="">
+      <img src="assets/img/p/chair-2.webp" alt="">
+      <img src="assets/img/p/chair-3.webp" alt="">
+      <img src="assets/img/p/chair-4.webp" alt="">
+      <img src="assets/img/p/chair-5.webp" alt="">
 
-    <!-- ===== CATEGORY 2 ===== -->
-    <h3 class="category-title">Standing Desks</h3>
-    <div class="product-grid grid-5">
-      <img src="assets/img/p/desk-01.webp">
-      <img src="assets/img/p/desk-02.webp">
-      <img src="assets/img/p/desk-03.webp">
-      <img src="assets/img/p/desk-04.webp">
-      <img src="assets/img/p/desk-05.webp">
-    </div>
+      <img src="assets/img/p/desk-1.webp" alt="">
+      <img src="assets/img/p/desk-2.webp" alt="">
+      <img src="assets/img/p/desk-3.webp" alt="">
+      <img src="assets/img/p/desk-4.webp" alt="">
+      <img src="assets/img/p/desk-5.webp" alt="">
 
-    <!-- ===== CATEGORY 3 ===== -->
-    <h3 class="category-title">Gaming Chairs</h3>
-    <div class="product-grid grid-5">
-      <img src="assets/img/p/game-01.webp">
-      <img src="assets/img/p/game-02.webp">
-      <img src="assets/img/p/game-03.webp">
-      <img src="assets/img/p/game-04.webp">
-      <img src="assets/img/p/game-05.webp">
-    </div>
+      <img src="assets/img/p/lounge-1.webp" alt="">
+      <img src="assets/img/p/lounge-2.webp" alt="">
+      <img src="assets/img/p/lounge-3.webp" alt="">
+      <img src="assets/img/p/lounge-4.webp" alt="">
+      <img src="assets/img/p/lounge-5.webp" alt="">
 
-    <!-- ===== CATEGORY 4 ===== -->
-    <h3 class="category-title">Conference & Training Furniture</h3>
-    <div class="product-grid grid-5">
-      <img src="assets/img/p/conf-01.webp">
-      <img src="assets/img/p/conf-02.webp">
-      <img src="assets/img/p/conf-03.webp">
-      <img src="assets/img/p/conf-04.webp">
-      <img src="assets/img/p/conf-05.webp">
+      <img src="assets/img/p/gaming-1.webp" alt="">
+      <img src="assets/img/p/gaming-2.webp" alt="">
+      <img src="assets/img/p/gaming-3.webp" alt="">
+      <img src="assets/img/p/gaming-4.webp" alt="">
+      <img src="assets/img/p/gaming-5.webp" alt="">
     </div>
-
-    <!-- ===== CATEGORY 5 ===== -->
-    <h3 class="category-title">Storage & Filing</h3>
-    <div class="product-grid grid-5">
-      <img src="assets/img/p/store-01.webp">
-      <img src="assets/img/p/store-02.webp">
-      <img src="assets/img/p/store-03.webp">
-      <img src="assets/img/p/store-04.webp">
-      <img src="assets/img/p/store-05.webp">
-    </div>
-
-    <!-- ===== CATEGORY 6 ===== -->
-    <h3 class="category-title">Lounge & Soft Seating</h3>
-    <div class="product-grid grid-5">
-      <img src="assets/img/p/lounge-01.webp">
-      <img src="assets/img/p/lounge-02.webp">
-      <img src="assets/img/p/lounge-03.webp">
-      <img src="assets/img/p/lounge-04.webp">
-      <img src="assets/img/p/lounge-05.webp">
-    </div>
-
-  </div>
-</section>
-
-<!-- ================= ENGINEERING SUPPORT ================= -->
-<section class="section-padding bg-dark">
-  <div class="container grid-2">
-    <div>
-      <span class="section-tag">Engineering Backbone</span>
-      <h2 style="color:#fff;">Furniture First. Engineering in Support.</h2>
-      <p>
-        Compliance, packaging, and delivery engineering
-        exist to protect your furniture margin and brand reputation.
-      </p>
-      <ul class="eng-list">
-        <li>BIFMA / ANSI Structural Validation</li>
-        <li>ISTA 6A Packaging Engineering</li>
-        <li>KD Optimization for E-commerce</li>
-      </ul>
-    </div>
-    <img src="assets/img/lab.webp" class="img-elite">
   </div>
 </section>
 
 <!-- ================= CTA ================= -->
-<section class="cta-banner cta-elite">
+<section class="cta-banner">
   <div class="container">
     <h2>Looking for a Reliable Furniture Manufacturing Partner?</h2>
-    <p>Catalogs · Specifications · OEM / ODM · Quotation</p>
-    <a href="contact.html" class="btn btn-tech btn-tech-elite">
-      Contact YiShen Global
-    </a>
+    <p>Catalog · Specs · OEM / ODM · Global Delivery</p>
+    <a href="contact.html" class="btn btn-tech">Contact YiShen Global</a>
   </div>
 </section>
 
-<!-- ================= FOOTER（小 LOGO 图标） ================= -->
-<div id="site-footer"></div>
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer-grid grid-4">
+    <div>
+      <!-- 🔒 FOOTER LOGO（同一 icon） -->
+      <img src="assets/img/logo-icon.webp" alt="YiShen Global">
+      <p>Furniture-first global supply chain systems.</p>
+    </div>
 
-<!-- ================= COMPONENTS ================= -->
-<script src="assets/js/components.js"></script>
+    <div>
+      <h4>Company</h4>
+      <a href="why-us.html">Why Us</a><br>
+      <a href="industries.html">Industries</a>
+    </div>
+
+    <div>
+      <h4>Resources</h4>
+      <a href="resources.html">Engineering Data</a><br>
+      <a href="solutions.html">Solutions</a>
+    </div>
+
+    <div>
+      <h4>Connect</h4>
+      <a href="#">LinkedIn</a><br>
+      <a href="#">WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <p style="text-align:center;margin-top:30px;">© 2026 YiShen Global</p>
+  </div>
+</footer>
+
+<!-- I18N ENGINE（你之前那套可直接放这里） -->
+<script src="i18n.js"></script>
 
 </body>
 </html>
