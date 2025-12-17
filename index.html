@@ -1,202 +1,245 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<meta name="description" content="YiShen Global is a furniture-first manufacturer specializing in ergonomic chairs, mesh seating, standing desks and scalable furniture systems for global brands.">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050b17">
-<title>YiShen Global | Furniture Engineered for Scale</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="YiShen Global is a furniture-first manufacturer specializing in ergonomic chairs, mesh seating, gaming chairs, standing desks, and scalable commercial furniture for global markets.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050b17">
+  <title>YiShen Global | Furniture Manufacturer & Global Supply Chain</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/styles.css?v=317"> 
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
+  <!-- Core Styles -->
+  <link rel="stylesheet" href="styles.css?v=INDEX_FINAL_LOCK">
+
+  <!-- HARD LOCK LOGO (index 专用兜底) -->
+  <style>
+    .navbar .brand img,
+    .hero-brand img,
+    footer img{
+      width:42px !important;
+      height:42px !important;
+      max-width:42px !important;
+      max-height:42px !important;
+      object-fit:contain;
+    }
+  </style>
 </head>
+
 <body>
 
-<div id="navbar"></div>
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-elite">
+  <div class="container nav-wrapper">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo-icon.webp" alt="YiShen Global Logo">
+    </a>
 
-<section class="hero hero-elite" style="background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)), url('assets/img/header-hero-bg.webp'); background-position: center; background-size: cover;">
+    <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
 
-    <div class="hero-brand">
-        <img src="assets/img/logo-icon.webp" alt="YiShen Global Logo">
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="why-us.html">Why Us</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="industries.html">Industries</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html" class="nav-cta">Contact</a>
+
+      <div class="lang-switch">
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('zh')">中文</button>
+        <button onclick="setLang('ja')">JP</button>
+        <button onclick="setLang('de')">DE</button>
+        <button onclick="setLang('ar')">AR</button>
+      </div>
     </div>
+  </div>
+</nav>
 
-    <div class="container">
-        <span class="section-tag">Furniture Manufacturer · Global Supply Chain</span>
+<!-- ================= HERO ================= -->
+<section class="hero">
 
-        <h1 data-i18n="hero_title">
-            Furniture Built for Scale.<br>
-            Engineered to Deliver.
-        </h1>
+  <!-- BRAND ANCHOR -->
+  <div class="hero-brand">
+    <img src="assets/img/logo-icon.webp" alt="YiShen Global">
+  </div>
 
-        <p data-i18n="hero_sub" style="max-width:780px;">
-            A furniture-first manufacturing system combining product engineering, compliance control, and global supply chain execution for highly predictable large-scale delivery.
-        </p>
+  <div class="container">
+    <span class="section-tag">Furniture Manufacturer · Global Supply Chain</span>
 
-        <div class="hero-actions">
-            <a href="#catalog" class="btn btn-tech">Explore Furniture</a>
-            <a href="/contact.html" class="btn btn-outline-white">Request Catalog</a>
-        </div>
+    <h1 data-i18n="hero_title">
+      Furniture Built for Scale.<br>
+      Engineered to Deliver.
+    </h1>
+
+    <p data-i18n="hero_sub" style="max-width:760px;">
+      Furniture-first manufacturing system covering ergonomic chairs, mesh seating,
+      gaming chairs, standing desks, and commercial furniture — supported by
+      a predictable global supply chain.
+    </p>
+
+    <div style="margin-top:42px;display:flex;gap:18px;flex-wrap:wrap;">
+      <a href="#furniture-wall" class="btn btn-tech">Explore Furniture</a>
+      <a href="contact.html" class="btn btn-outline-white">Request Catalog</a>
     </div>
+  </div>
 </section>
 
+<!-- ================= STATS ================= -->
 <section class="hero-stats-wrap">
-    <div class="container grid-4 hero-stats-elite">
-        <div class="stat-box"><h3>6</h3><p>Core Furniture Categories</p></div>
-        <div class="stat-box"><h3>200+</h3><p>Active Furniture SKUs</p></div>
-        <div class="stat-box"><h3>BIFMA</h3><p>Structural Compliance</p></div>
-        <div class="stat-box"><h3>ISTA 6A</h3><p>Damage-Resistant Packaging</p></div>
-    </div>
+  <div class="container hero-stats grid-4">
+    <div class="stat-box"><h3>6+</h3><p>Core Furniture Categories</p></div>
+    <div class="stat-box"><h3>200+</h3><p>Active Furniture SKUs</p></div>
+    <div class="stat-box"><h3>10+</h3><p>Years Manufacturing</p></div>
+    <div class="stat-box"><h3>50+</h3><p>Global Markets</p></div>
+  </div>
 </section>
 
-<section class="section-padding">
-    <div class="container grid-2">
-        <div style="order: 2;">
-            <span class="section-tag">Engineering Backbone</span>
-            <h2>Manufacturing Certainty: From Lab to Market</h2>
-            <p>
-                Our core differentiation lies in embedding quality control and logistics requirements **into product engineering**. From component fatigue testing to Knock-Down (KD) packaging optimization, YiShen provides the highest level of supply chain predictability.
-            </p>
-            <ul class="eng-list" style="margin-top: 20px;">
-                <li><i class="fas fa-flask-vial tech-accent"></i> **Component Validation Lab:** In-house testing verifies material integrity and structural compliance before mass production.</li>
-                <li><i class="fas fa-certificate tech-accent"></i> **Global Compliance Management:** Ensuring all products meet BIFMA/ANSI, UL/CE, and customer-specific international standards.</li>
-                <li><i class="fas fa-box-open tech-accent"></i> **DTC Damage Reduction:** Professional ISTA 6A certified packaging engineering to drastically cut e-commerce claim rates.</li>
-            </ul>
-            <a href="/why-us.html" class="btn btn-tech" style="margin-top: 30px;">Explore the Engineering Lab</a>
-        </div>
-        <img src="assets/img/engineering-lab.webp" class="img-elite" alt="Engineering Lab testing furniture components" style="order: 1; border-radius: 8px;">
+<!-- ================= FURNITURE WALL ================= -->
+<section class="section-padding bg-light" id="furniture-wall">
+  <div class="container">
+
+    <div class="text-center" style="margin-bottom:60px;">
+      <span class="section-tag">Furniture Portfolio</span>
+      <h2>Commercial Furniture Platforms</h2>
+      <p style="max-width:760px;margin:0 auto;">
+        Each category below represents a scalable furniture platform,
+        engineered for retail, e-commerce, and project procurement.
+      </p>
     </div>
+
+    <!-- 20+ PRODUCT WALL -->
+    <div class="furniture-wall">
+
+      <!-- Ergonomic / Mesh -->
+      <div class="furn-item">
+        <img src="assets/img/products/product-chair.webp" alt="Ergonomic Mesh Chair">
+        <div class="cap"><b>Ergonomic / Mesh Chair</b><span>Task · Office · Project</span></div>
+      </div>
+      <div class="furn-item">
+        <img src="assets/img/products/ergo-SPro9001-context-office.webp" alt="Executive Chair">
+        <div class="cap"><b>Executive Chair</b><span>Leather · Premium</span></div>
+      </div>
+
+      <!-- Gaming -->
+      <div class="furn-item">
+        <img src="assets/img/products/gaming.webp" alt="Gaming Chair">
+        <div class="cap"><b>Gaming Chair</b><span>E-commerce Bestseller</span></div>
+      </div>
+      <div class="furn-item">
+        <img src="assets/img/products/gaming.webp" alt="Racing Gaming Chair">
+        <div class="cap"><b>Racing Style Gaming</b><span>High Back</span></div>
+      </div>
+
+      <!-- Standing Desk -->
+      <div class="furn-item">
+        <img src="assets/img/products/standing-desk-01.webp" alt="Standing Desk">
+        <div class="cap"><b>Standing Desk</b><span>Single / Dual Motor</span></div>
+      </div>
+      <div class="furn-item">
+        <img src="assets/img/products/standing-desk-01.webp" alt="Smart Desk">
+        <div class="cap"><b>Smart Workstation</b><span>Commercial Grade</span></div>
+      </div>
+
+      <!-- Lounge / Recliner -->
+      <div class="furn-item">
+        <img src="assets/img/products/lounge.webp" alt="Lounge Chair">
+        <div class="cap"><b>Lounge Chair</b><span>Office · Hospitality</span></div>
+      </div>
+      <div class="furn-item">
+        <img src="assets/img/products/recliner.webp" alt="Recliner">
+        <div class="cap"><b>Recliner</b><span>Comfort Seating</span></div>
+      </div>
+
+      <!-- Conference / Storage -->
+      <div class="furn-item">
+        <img src="assets/img/products/conference.webp" alt="Conference Furniture">
+        <div class="cap"><b>Conference Furniture</b><span>Meeting · Training</span></div>
+      </div>
+      <div class="furn-item">
+        <img src="assets/img/products/storage.webp" alt="Storage Cabinet">
+        <div class="cap"><b>Storage & Filing</b><span>Steel · Wood</span></div>
+      </div>
+
+      <!-- Fillers to reach 20+ -->
+      <div class="furn-item"><img src="assets/img/products/product-chair.webp"><div class="cap"><b>Task Chair</b><span>Volume Model</span></div></div>
+      <div class="furn-item"><img src="assets/img/products/product-chair.webp"><div class="cap"><b>Mesh Chair</b><span>Retail Ready</span></div></div>
+      <div class="furn-item"><img src="assets/img/products/lounge.webp"><div class="cap"><b>Accent Chair</b><span>Design Focus</span></div></div>
+      <div class="furn-item"><img src="assets/img/products/lounge.webp"><div class="cap"><b>Leisure Chair</b><span>Soft Seating</span></div></div>
+      <div class="furn-item"><img src="assets/img/products/recliner.webp"><div class="cap"><b>Lift Chair</b><span>Functional</span></div></div>
+      <div class="furn-item"><img src="assets/img/products/storage.webp"><div class="cap"><b>Pedestal</b><span>Office Storage</span></div></div>
+      <div class="furn-item"><img src="assets/img/products/conference.webp"><div class="cap"><b>Training Table</b><span>Modular</span></div></div>
+      <div class="furn-item"><img src="assets/img/products/standing-desk-01.webp"><div class="cap"><b>Desk Frame</b><span>OEM Platform</span></div></div>
+
+    </div>
+  </div>
 </section>
 
-<section class="section-padding bg-light" id="catalog">
-    <div class="container">
-
-        <div class="text-center section-head">
-            <span class="section-tag">Furniture Portfolio</span>
-            <h2>Six Core Furniture Categories · Designed for Global Delivery</h2>
-            <p>Each product line is built for durability, international compliance, and optimized container loading efficiency.</p>
-        </div>
-
-        <div class="product-wall">
-
-            <div class="product-card">
-                <img src="assets/img/products/mesh-chair-01.webp" alt="Ergonomic Mesh Chair">
-                <h5>Ergonomic Mesh Chair</h5>
-                <span>BIFMA · Office</span>
-            </div>
-
-            <div class="product-card">
-                <img src="assets/img/products/mesh-chair-02.webp" alt="Task Chair">
-                <h5>Task Chair</h5>
-                <span>Mesh / Fabric</span>
-            </div>
-
-            <div class="product-card">
-                <img src="assets/img/products/ergonomic-chair-01.webp" alt="Executive Chair">
-                <h5>Executive Chair</h5>
-                <span>High Back</span>
-            </div>
-
-            <div class="product-card">
-                <img src="assets/img/products/standing-desk-01.webp" alt="Smart Standing Desk">
-                <h5>Smart Standing Desk</h5>
-                <span>Dual Motor</span>
-            </div>
-
-            <div class="product-card">
-                <img src="assets/img/products/standing-desk-02.webp" alt="Electric Desk">
-                <h5>Electric Desk</h5>
-                <span>UL / CE Certified</span>
-            </div>
-
-            <div class="product-card">
-                <img src="assets/img/products/gaming-chair-01.webp" alt="Gaming Chair">
-                <h5>Gaming Chair</h5>
-                <span>E-commerce Bestseller</span>
-            </div>
-
-            <div class="product-card">
-                <img src="assets/img/products/lounge-chair-01.webp" alt="Accent Chair">
-                <h5>Accent Chair</h5>
-                <span>Commercial Grade</span>
-            </div>
-
-            <div class="product-card">
-                <img src="assets/img/products/lounge-chair-02.webp" alt="Lounger">
-                <h5>Lounger</h5>
-                <span>Hospitality</span>
-            </div>
-
-            <div class="product-card">
-                <img src="assets/img/products/storage-cabinet-01.webp" alt="Filing Cabinet">
-                <h5>Filing Cabinet</h5>
-                <span>Steel Storage</span>
-            </div>
-
-            <div class="product-card">
-                <img src="assets/img/products/conference-table-01.webp" alt="Conference Table">
-                <h5>Conference Table</h5>
-                <span>Modular System</span>
-            </div>
-            
-            <div class="product-card product-card-cta">
-                <i class="fas fa-download tech-accent" style="font-size: 2rem; margin-bottom: 10px;"></i>
-                <h5>View All 200+ SKUs</h5>
-                <p>Download full product lines and technical specs</p>
-                <a href="/resources.html" class="btn btn-tech">Download Resources</a>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section class="section-padding">
-    <div class="container grid-2">
-        <img src="assets/img/logistics-fulfillment.webp" class="img-elite" alt="Logistics and DDP Fulfillment operations" style="border-radius: 8px;">
-        <div>
-            <span class="section-tag">Global Execution</span>
-            <h2>Fulfillment Power: DDP Delivery & Volume Optimization</h2>
-            <p>
-                Manufacturing is only the start. Our true value is the ability to deliver goods efficiently, compliantly, and predictably across the globe. Through precise **KD loading optimization** and our DDP (Delivery Duty Paid) network, we minimize your logistics costs and risks.
-            </p>
-            <ul class="eng-list" style="margin-top: 20px;">
-                <li><i class="fas fa-truck-box tech-accent"></i> **B2B Volume Efficiency:** Accurate calculation of container (40'HQ) utilization to guarantee the lowest unit shipping cost.</li>
-                <li><i class="fas fa-handshake tech-accent"></i> **End-to-End DDP Service:** Covering ocean freight, customs clearance, duties, and final mile delivery for a seamless transaction.</li>
-                <li><i class="fas fa-industry tech-accent"></i> **OEM/ODM Elasticity:** Flexible manufacturing capacity to handle requirements from high-volume bulk orders to complex custom designs.</li>
-            </ul>
-            <a href="/solutions.html" class="btn btn-tech" style="margin-top: 30px;">View Full Supply Chain Solutions</a>
-        </div>
-    </div>
-</section>
-
+<!-- ================= CTA ================= -->
 <section class="cta-banner cta-elite">
-    <div class="container">
-        <h2>Seeking a Reliable Furniture Manufacturing & Global Supply Chain Partner?</h2>
-        <p>Catalog · Specifications · Quotation · OEM / ODM Partnerships</p>
-        <a href="/contact.html" class="btn btn-tech btn-tech-elite">Contact YiShen Global</a>
-    </div>
+  <div class="container">
+    <h2>Looking for a Reliable Furniture Manufacturing Partner?</h2>
+    <p>
+      OEM · ODM · Private Label · Global Delivery
+    </p>
+    <a href="contact.html" class="btn btn-tech btn-tech-elite">
+      Contact YiShen Global
+    </a>
+  </div>
 </section>
 
-<div id="footer"></div>
+<!-- ================= FOOTER ================= -->
+<footer class="footer footer-elite">
+  <div class="container footer-grid grid-4">
 
-<script src="/assets/js/i18n.js"></script>
+    <div>
+      <img src="assets/img/logo-icon.webp" alt="YiShen Global Logo">
+      <p class="footer-desc" style="margin-top:14px">
+        Furniture-first global manufacturing system.<br>
+        Supply chain predictability engineered.
+      </p>
+    </div>
+
+    <div>
+      <h4>Products</h4>
+      <a href="resources.html">Specifications</a>
+      <a href="industries.html">Applications</a>
+    </div>
+
+    <div>
+      <h4>Company</h4>
+      <a href="why-us.html">Why Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div>
+      <h4>Connect</h4>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://x.com/AlexYan03451555" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.facebook.com/alex.yang.427745" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/alexyang591/" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © 2026 YiShen Global · Furniture Engineered in China
+  </div>
+</footer>
 
 <script>
-// --- Navbar and Footer Component Injection ---
-// IMPORTANT: These files (navbar.html and footer.html) must exist in the /components/ folder 
-// or wherever your server expects them to be located.
-
-fetch('/components/navbar.html')
-    .then(r => r.text())
-    .then(html => document.getElementById('navbar').innerHTML = html);
-
-fetch('/components/footer.html')
-    .then(r => r.text())
-    .then(html => document.getElementById('footer').innerHTML = html);
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+  menuBtn.addEventListener('click',()=>navLinks.classList.toggle('active'));
 </script>
 
 </body>
