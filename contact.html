@@ -1,201 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="Contact YiShen Global. Furniture-first global supply chain. Engineering-led manufacturing & delivery systems." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#050b17" />
-  <title>Contact | YiShen Global</title>
+<meta charset="UTF-8">
+<meta name="description" content="Contact YiShen Global. Engineering-led furniture manufacturing and global supply chain systems.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050b17">
+<title>Contact | YiShen Global</title>
 
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" sizes="any" />
-  <link rel="apple-touch-icon" href="favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
 
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-
-  <!-- Core Styles -->
-  <link rel="stylesheet" href="styles.css?v=FINAL_LOCK" />
-
-  <style>
-    /* ===== Contact Page Elite Add-on (safe) ===== */
-    .page-header{
-      padding-top:140px;
-      padding-bottom:90px;
-      background:
-        radial-gradient(circle at 18% 22%, rgba(56,189,248,.18), transparent 40%),
-        linear-gradient(rgba(15,23,42,0.92), rgba(15,23,42,0.86)),
-        url('header-contact.webp');
-      background-size:cover;
-      background-position:center;
-    }
-    .section-tag{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      padding:8px 14px;
-      border:1px solid rgba(56,189,248,.35);
-      border-radius:999px;
-      color:#cbd5f5;
-      font-weight:600;
-      font-size:.9rem;
-      background:rgba(2,6,23,.35);
-    }
-    .contact-grid{
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:40px;
-      align-items:start;
-    }
-    .hud-card{
-      background:rgba(255,255,255,0.96);
-      border-radius:18px;
-      overflow:hidden;
-      box-shadow:0 20px 40px rgba(15,23,42,.08);
-      border:1px solid rgba(15,23,42,.06);
-    }
-    .hud-top{
-      padding:22px 22px 16px;
-      background:
-        radial-gradient(circle at 15% 25%, rgba(56,189,248,.18), transparent 40%),
-        linear-gradient(135deg,#020617,#050b17);
-      color:#fff;
-      position:relative;
-    }
-    .hud-top .hud-brand{
-      display:flex;align-items:center;gap:12px;
-      margin-bottom:10px;
-    }
-    .hud-top .hud-brand img{
-      width:42px;height:42px;object-fit:contain;
-      filter:drop-shadow(0 0 12px rgba(56,189,248,.7));
-      animation:logoPulse 4s infinite ease-in-out;
-    }
-    .hud-top h2{margin:0;font-size:1.25rem}
-    .hud-top p{margin:8px 0 0;opacity:.85;line-height:1.6}
-    .hud-body{padding:20px 22px 22px}
-    .hud-row{
-      display:grid;
-      grid-template-columns:150px 1fr;
-      gap:14px;
-      padding:12px 0;
-      border-bottom:1px solid rgba(15,23,42,.08);
-    }
-    .hud-row:last-child{border-bottom:none}
-    .hud-k{color:#334155;font-weight:700;font-size:.92rem}
-    .hud-v{color:#0f172a;font-weight:600}
-    .hud-v a{color:#0a7cff;text-decoration:none}
-    .hud-v a:hover{text-decoration:underline}
-
-    .contact-actions{
-      display:flex;flex-wrap:wrap;gap:12px;margin-top:16px
-    }
-    .mini-btn{
-      display:inline-flex;gap:10px;align-items:center;justify-content:center;
-      padding:12px 16px;border-radius:999px;
-      border:1px solid rgba(56,189,248,.35);
-      background:rgba(2,6,23,.04);
-      text-decoration:none;
-      font-weight:700;
-      color:#0f172a;
-      transition:.25s;
-    }
-    .mini-btn:hover{
-      transform:translateY(-2px);
-      box-shadow:0 0 0 1px rgba(56,189,248,.45), 0 0 18px rgba(56,189,248,.25);
-    }
-
-    .form-card{padding:24px 22px}
-    .field{margin-bottom:14px}
-    .field label{display:block;font-weight:700;margin-bottom:8px;color:#0f172a}
-    .field input,.field textarea,.field select{
-      width:100%;
-      border-radius:14px;
-      border:1px solid rgba(15,23,42,.12);
-      padding:12px 14px;
-      outline:none;
-      font-weight:600;
-      background:#fff;
-    }
-    .field textarea{min-height:130px;resize:vertical}
-    .form-note{
-      margin-top:10px;
-      font-size:.9rem;
-      color:#475569;
-      line-height:1.55;
-    }
-
-    .wall-title{margin-top:56px}
-    .wall-title h3{margin:0 0 10px}
-    .wall-title p{margin:0;color:#64748b}
-
-    .contact-wall{
-      display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-      gap:22px;
-      margin-top:26px;
-    }
-    .wall-item{
-      border-radius:16px;
-      overflow:hidden;
-      background:#fff;
-      box-shadow:0 20px 40px rgba(15,23,42,.08);
-      transition:.35s;
-      border:1px solid rgba(15,23,42,.06);
-    }
-    .wall-item img{width:100%;height:180px;object-fit:cover}
-    .wall-item .cap{padding:12px 14px}
-    .wall-item .cap b{display:block}
-    .wall-item .cap span{display:block;color:#64748b;font-weight:600;font-size:.86rem;margin-top:4px}
-    .wall-item:hover{
-      transform:translateY(-6px);
-      box-shadow:0 0 0 1px rgba(56,189,248,.45), 0 0 18px rgba(56,189,248,.25);
-    }
-
-    /* lang switch (your required markup) */
-    .lang-switch{
-      display:flex;gap:8px;align-items:center;flex-wrap:wrap;
-      margin-left:18px;
-    }
-    .lang-switch button{
-      border:1px solid rgba(56,189,248,.35);
-      background:rgba(2,6,23,.15);
-      color:#cbd5f5;
-      padding:8px 10px;
-      border-radius:999px;
-      font-weight:800;
-      cursor:pointer;
-      transition:.25s;
-    }
-    .lang-switch button:hover{
-      color:#fff;
-      box-shadow:0 0 0 1px rgba(56,189,248,.5), 0 0 16px rgba(56,189,248,.25);
-      transform:translateY(-1px);
-    }
-
-    @media(max-width:900px){
-      .contact-grid{grid-template-columns:1fr}
-      .hud-row{grid-template-columns:1fr;gap:6px}
-      .lang-switch{margin:12px 0 0; width:100%;}
-      .nav-wrapper{height:auto;padding:14px 0;align-items:flex-start}
-    }
-  </style>
+<!-- JSON-LD Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "YiShen Global",
+  "url": "https://yishenglobal.net",
+  "logo": "https://yishenglobal.net/logo/yishen-wordmark-horizontal.svg",
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "alex.yang@yishenglobal.net",
+    "telephone": "+86-159-6827-7867",
+    "availableLanguage": ["English","Chinese"]
+  }],
+  "sameAs": [
+    "https://www.linkedin.com/in/alex-yang-yishen/",
+    "https://x.com/AlexYan03451555",
+    "https://www.youtube.com/channel/@alexyang6074",
+    "https://www.facebook.com/alex.yang.427745",
+    "https://www.instagram.com/alexyang591/"
+  ]
+}
+</script>
 </head>
 
 <body>
 
-  <!-- ===== NAVBAR (Unified) ===== -->
-  <nav class="navbar">
+<!-- NAV -->
+<nav class="navbar">
   <div class="container nav-wrapper">
     <a href="index.html" class="brand">
-      <img src="logo.webp" class="site-logo" alt="YiShen Global">
+      <img src="logo/yishen-wordmark-horizontal.svg" class="logo-primary" alt="YiShen Global">
     </a>
-
     <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
-
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="why-us.html">Why Us</a>
@@ -207,230 +59,54 @@
   </div>
 </nav>
 
+<!-- HERO -->
+<header class="page-header bg-dark">
+  <div class="container">
+    <span class="section-tag">Contact & Programs</span>
+    <h1>Engineering-first.<br>Global supply chain, executed.</h1>
+    <p>
+      Reach YiShen Global for OEM/ODM furniture programs, compliance planning,
+      packaging engineering, and DDP delivery systems.
+    </p>
+  </div>
+</header>
 
-  <!-- ===== HEADER ===== -->
-  <header class="page-header bg-dark">
-    <div class="container">
-      <span class="section-tag"><i class="fa-solid fa-satellite-dish"></i> <span data-i18n="contact_tag">Contact & Programs</span></span>
-      <h1 style="margin-top:18px;font-size:clamp(2.1rem,4vw,3.3rem);" data-i18n="contact_title">
-        Furniture-first.<br>Global supply chain, engineered.
-      </h1>
-      <p style="margin-top:14px;max-width:860px;opacity:.9;line-height:1.7" data-i18n="contact_sub">
-        Reach YiShen Global for catalog requests, OEM/ODM programs, compliance planning, packaging engineering,
-        and DDP delivery execution across core furniture categories.
+<!-- MAIN -->
+<section class="section-padding">
+  <div class="container grid-2">
+
+    <!-- FORM -->
+    <div class="card">
+      <h2>Send a Request</h2>
+      <p>Share your SKU targets, market, volume and compliance needs.</p>
+
+      <form onsubmit="event.preventDefault();alert('Submitted. We will reply soon.');">
+        <input type="text" placeholder="Name" required>
+        <input type="text" placeholder="Company">
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Message (market, volume, MOQ, BIFMA / EN1335 / UL, DDP / FOB)"></textarea>
+        <button class="btn btn-tech">Submit</button>
+      </form>
+    </div>
+
+    <!-- HUD -->
+    <aside class="card">
+      <h3>Always-on Contact</h3>
+
+      <p><strong>Email</strong><br>
+        alex.yang@yishenglobal.net<br>
+        champion.yang@yishenglobal.net
       </p>
-    </div>
-  </header>
 
-  <!-- ===== MAIN ===== -->
-  <section class="section-padding">
-    <div class="container contact-grid">
-
-      <!-- LEFT: FORM -->
-      <div class="hud-card">
-        <div class="form-card">
-          <h2 style="margin:0 0 10px" data-i18n="form_title">Send a Request</h2>
-          <p style="margin:0;color:#64748b;font-weight:600;line-height:1.6" data-i18n="form_sub">
-            Tell us your target market, SKU type, compliance needs and delivery model. We reply with an engineering-first plan.
-          </p>
-
-          <form style="margin-top:18px" onsubmit="event.preventDefault(); alert(TEXT.form_ok?.[currentLang] || 'Submitted. We will reply soon.');">
-            <div class="field">
-              <label data-i18n="f_name">Name</label>
-              <input type="text" placeholder="Your name" required>
-            </div>
-
-            <div class="field">
-              <label data-i18n="f_company">Company</label>
-              <input type="text" placeholder="Company name">
-            </div>
-
-            <div class="field">
-              <label data-i18n="f_email">Email</label>
-              <input type="email" placeholder="name@company.com" required>
-            </div>
-
-            <div class="field">
-              <label data-i18n="f_interest">Product Interest</label>
-              <select>
-                <option>Ergonomic / Mesh Chairs</option>
-                <option>Gaming Chairs</option>
-                <option>Standing Desks</option>
-                <option>Conference Systems</option>
-                <option>Storage & Filing</option>
-                <option>Soft Seating / Lounge</option>
-                <option>Other (Tell us in message)</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label data-i18n="f_message">Message</label>
-              <textarea placeholder="Market, volume, target price band, MOQ, compliance needs (BIFMA/EN1335/UL/CE), DDP or FOB..." required></textarea>
-            </div>
-
-            <div class="contact-actions">
-              <button class="btn btn-tech" type="submit" style="border:none;cursor:pointer">
-                <i class="fa-solid fa-paper-plane"></i> <span data-i18n="f_submit">Submit</span>
-              </button>
-              <a class="mini-btn" href="resources.html">
-                <i class="fa-solid fa-database"></i> <span data-i18n="f_matrix">Open Planning Matrix</span>
-              </a>
-              <a class="mini-btn" href="home-and-office-furniture.html">
-                <i class="fa-solid fa-layer-group"></i> <span data-i18n="f_sku">SKU Library</span>
-              </a>
-            </div>
-
-            <div class="form-note" data-i18n="form_note">
-              Note: We can share engineering spec packs (2D/3D CAD, packaging drop-test logic, container density modeling)
-              after NDA if required.
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <!-- RIGHT: CONTACT HUD -->
-      <aside class="hud-card">
-        <div class="hud-top">
-          <div class="hud-brand">
-            <img src="assets/img/logo-icon.webp" alt="YiShen Global">
-            <div>
-              <h2>YiShen Global</h2>
-              <p data-i18n="hud_sub">Contact HUD · Always-on channels</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="hud-body">
-          <div class="hud-row">
-            <div class="hud-k">Email</div>
-            <div class="hud-v">
-              <a href="mailto:alex.yang@yishenglobal.net">alex.yang@yishenglobal.net</a><br>
-              <a href="mailto:champion.yang@yishenglobal.net">champion.yang@yishenglobal.net</a>
-            </div>
-          </div>
-
-          <div class="hud-row">
-            <div class="hud-k">WhatsApp 1</div>
-            <div class="hud-v">
-              <a href="https://wa.me/8615968277867" target="_blank" rel="noopener noreferrer">+86 159 6827 7867</a>
-            </div>
-          </div>
-
-          <div class="hud-row">
-            <div class="hud-k">WhatsApp 2</div>
-            <div class="hud-v">
-              <a href="https://wa.me/8618857277313" target="_blank" rel="noopener noreferrer">+86 188 5727 7313</a>
-            </div>
-          </div>
-
-          <div class="hud-row">
-            <div class="hud-k">WeChat</div>
-            <div class="hud-v">19530394133</div>
-          </div>
-
-          <div class="hud-row">
-            <div class="hud-k">Hotline</div>
-            <div class="hud-v">
-              <a href="tel:+8619530394133">+86 195 3039 4133</a><br>
-              <a href="tel:+8618857277313">+86 188 5727 7313</a>
-            </div>
-          </div>
-
-          <div class="hud-row">
-            <div class="hud-k">Base</div>
-            <div class="hud-v">Anji · Hangzhou · China</div>
-          </div>
-
-          <div style="margin-top:16px">
-            <div style="font-weight:800;margin-bottom:10px" data-i18n="hud_social">Social Matrix (5)</div>
-            <div class="social-links">
-              <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-              <a href="https://x.com/AlexYan03451555" target="_blank" aria-label="X (Twitter)" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
-              <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank" aria-label="YouTube" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-              <a href="https://www.facebook.com/alex.yang.427745" target="_blank" aria-label="Facebook" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://www.instagram.com/alexyang591/" target="_blank" aria-label="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-        </div>
-      </aside>
-
-    </div>
-
-    <!-- ===== CONTACT PRODUCT WALL (Furniture-first visual proof) ===== -->
-    <div class="container wall-title">
-      <h3 data-i18n="wall_title">Furniture Platforms We Deliver</h3>
-      <p data-i18n="wall_sub">A visual reference wall (replace images with your real SKU shots anytime — layout stays locked).</p>
-
-      <div class="contact-wall">
-        <a class="wall-item" href="resources.html">
-          <img src="product-chair.webp" alt="Ergonomic Chair">
-          <div class="cap"><b>Ergonomic / Mesh</b><span>Packaging + Compliance + DDP</span></div>
-        </a>
-        <a class="wall-item" href="resources.html">
-          <img src="gaming.webp" alt="Gaming Chair">
-          <div class="cap"><b>Gaming Seating</b><span>High-density KD, eCom ready</span></div>
-        </a>
-        <a class="wall-item" href="resources.html">
-          <img src="desk-DDUALX1-scene-office.webp" alt="Standing Desk">
-          <div class="cap"><b>Standing Desks</b><span>Frame stability, UL/CE logic</span></div>
-        </a>
-        <a class="wall-item" href="resources.html">
-          <img src="div-tech.webp" alt="Engineering Lab">
-          <div class="cap"><b>Engineering Lab</b><span>ISTA / BIFMA validation</span></div>
-        </a>
-        <a class="wall-item" href="industries.html">
-          <img src="div-industrial.webp" alt="Supply Chain">
-          <div class="cap"><b>Supply Chain</b><span>Global execution system</span></div>
-        </a>
-        <a class="wall-item" href="home-and-office-furniture.html">
-          <img src="ergo-SPro9001-context-office.webp" alt="SKU Series">
-          <div class="cap"><b>SKU Library</b><span>Expandable SKU pools</span></div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CTA ===== -->
-  <section class="cta-banner cta-elite">
-    <div class="container">
-      <span class="section-tag" style="justify-content:center;">
-        <i class="fa-solid fa-bolt"></i> <span data-i18n="cta_tag">Fast Track Program</span>
-      </span>
-      <h2 style="margin-top:16px" data-i18n="cta_title">Start with an Engineering Call</h2>
-      <p style="max-width:820px;margin:12px auto 26px;opacity:.9;line-height:1.7" data-i18n="cta_sub">
-        We align your SKU targets, packaging survivability, compliance risk, and delivery model into one controllable plan.
+      <p><strong>WhatsApp</strong><br>
+        +86 159 6827 7867<br>
+        +86 188 5727 7313
       </p>
-      <a href="https://wa.me/8615968277867" target="_blank" class="btn btn-tech btn-tech-elite" rel="noopener noreferrer">
-        <i class="fab fa-whatsapp"></i> <span data-i18n="cta_btn">WhatsApp Now</span>
-      </a>
-    </div>
-  </section>
 
-  <!-- ===== FOOTER ===== -->
- <footer class="footer">
-  <div class="container footer-grid grid-4">
+      <p><strong>WeChat</strong><br>19530394133</p>
 
-    <div>
-      <img src="logo.webp" class="site-logo" alt="YiShen Global">
-      <p style="margin-top:14px">
-        Furniture-first global supply chain systems.<br>
-        Engineered in China · Delivered Worldwide
-      </p>
-    </div>
+      <p><strong>Base</strong><br>Anji · Hangzhou · China</p>
 
-    <div>
-      <h4>Contact</h4>
-      <p>Email: alex.yang@yishenglobal.net</p>
-      <p>Email: champion.yang@yishenglobal.net</p>
-      <p>WhatsApp: +86 159 6827 7867</p>
-      <p>WhatsApp: +86 188 5727 7313</p>
-      <p>WeChat: 19530394133</p>
-      <p>Hotline: +86 195 3039 4133</p>
-      <p>Base: Anji · Hangzhou · China</p>
-    </div>
-
-    <div>
-      <h4>Social</h4>
       <div class="social-links">
         <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://x.com/AlexYan03451555" target="_blank"><i class="fab fa-x-twitter"></i></a>
@@ -438,167 +114,33 @@
         <a href="https://www.facebook.com/alex.yang.427745" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/alexyang591/" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
-    </div>
+    </aside>
 
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Start with an Engineering Call</h2>
+    <p>Align SKU, packaging survivability, compliance risk and delivery into one controllable plan.</p>
+    <a href="https://wa.me/8615968277867" class="btn btn-tech btn-tech-elite">
+      <i class="fab fa-whatsapp"></i> WhatsApp Now
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <img src="logo/yishen-wordmark-mono-white.svg" height="42">
+    <p>© 2026 YiShen Global · Engineered Supply Chain Infrastructure</p>
   </div>
 </footer>
 
+<a href="https://wa.me/8615968277867" class="floating-cta">
+  <img src="logo/yishen-icon-square.svg" class="logo-ai" alt="YiShen AI">
+</a>
 
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/8615968277867" target="_blank" class="floating-cta" aria-label="Contact via WhatsApp" rel="noopener noreferrer">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <script>
-    /* ===========================
-       Mobile menu
-    =========================== */
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    const toggleMenu = () => navLinks.classList.toggle('active');
-    menuBtn.addEventListener('click', toggleMenu);
-    menuBtn.addEventListener('keydown', e => { if (e.key === 'Enter') toggleMenu(); });
-
-    /* ===========================
-       YiShen Global I18N ENGINE
-       Furniture-first · Global
-    =========================== */
-    const LANGS = {
-      en:{dir:"ltr",name:"EN"},
-      zh:{dir:"ltr",name:"中文"},
-      ja:{dir:"ltr",name:"日本語"},
-      de:{dir:"ltr",name:"DE"},
-      ar:{dir:"rtl",name:"العربية"},
-      he:{dir:"rtl",name:"עברית"},
-      ru:{dir:"ltr",name:"RU"},
-      fr:{dir:"ltr",name:"FR"},
-      es:{dir:"ltr",name:"ES"},
-      pt:{dir:"ltr",name:"PT"},
-      ko:{dir:"ltr",name:"KO"},
-      it:{dir:"ltr",name:"IT"},
-      hi:{dir:"ltr",name:"HI"},
-      th:{dir:"ltr",name:"TH"},
-      ms:{dir:"ltr",name:"MY"},
-      mn:{dir:"ltr",name:"MN"},
-      sw:{dir:"ltr",name:"SW"},
-      nl:{dir:"ltr",name:"NL"},
-      pl:{dir:"ltr",name:"PL"},
-      sv:{dir:"ltr",name:"SE"},
-      fi:{dir:"ltr",name:"FI"},
-      cs:{dir:"ltr",name:"CZ"}
-    };
-
-    const TEXT = {
-      nav_home:{en:"Home",zh:"首页",ja:"ホーム",de:"Start",ar:"الرئيسية"},
-      nav_why:{en:"Why Us",zh:"为什么我们",ja:"強み",de:"Warum wir",ar:"لماذا نحن"},
-      nav_solutions:{en:"Solutions",zh:"解决方案",ja:"ソリューション",de:"Lösungen",ar:"الحلول"},
-      nav_industries:{en:"Industries",zh:"行业",ja:"業界",de:"Branchen",ar:"القطاعات"},
-      nav_resources:{en:"Resources",zh:"资源中心",ja:"リソース",de:"Ressourcen",ar:"الموارد"},
-      nav_contact:{en:"Contact",zh:"联系",ja:"お問い合わせ",de:"Kontakt",ar:"اتصل بنا"},
-
-      contact_tag:{en:"Contact & Programs",zh:"联系与合作项目",ja:"連絡・プログラム",de:"Kontakt & Programme",ar:"التواصل والبرامج"},
-      contact_title:{
-        en:"Furniture-first.<br>Global supply chain, engineered.",
-        zh:"家具为主线<br>全球供应链工程化落地",
-        ja:"家具を核に<br>グローバル供給網を設計",
-        de:"Möbel zuerst.<br>Lieferkette, engineered.",
-        ar:"الأثاث أولاً.<br>سلسلة توريد مُهندسة"
-      },
-      contact_sub:{
-        en:"Reach YiShen Global for catalog requests, OEM/ODM programs, compliance planning, packaging engineering, and DDP delivery execution across core furniture categories.",
-        zh:"获取目录、OEM/ODM合作、合规规划、包装工程与DDP交付体系（围绕核心家具品类）。",
-        ja:"カタログ、OEM/ODM、適合性、梱包工学、DDP配送まで一括対応。",
-        de:"Katalog, OEM/ODM, Compliance, Verpackungstechnik & DDP-Lieferung.",
-        ar:"للكتالوج وOEM/ODM والامتثال وهندسة التغليف وتسليم DDP."
-      },
-
-      form_title:{en:"Send a Request",zh:"发送需求",ja:"お問い合わせ送信",de:"Anfrage senden",ar:"أرسل طلباً"},
-      form_sub:{en:"Tell us your target market, SKU type, compliance needs and delivery model. We reply with an engineering-first plan.",
-        zh:"告诉我们目标市场、SKU类型、合规要求与交付方式，我们将以工程方案回复。",
-        ja:"市場・SKU・規格・配送モデルを共有してください。工学的に提案します。",
-        de:"Teilen Sie Markt, SKU, Compliance und Liefermodell. Wir antworten technisch.",
-        ar:"اذكر السوق وSKU والامتثال ونموذج التسليم وسنرد بخطة هندسية."
-      },
-      f_name:{en:"Name",zh:"姓名",ja:"氏名",de:"Name",ar:"الاسم"},
-      f_company:{en:"Company",zh:"公司",ja:"会社",de:"Firma",ar:"الشركة"},
-      f_email:{en:"Email",zh:"邮箱",ja:"メール",de:"E-Mail",ar:"البريد الإلكتروني"},
-      f_interest:{en:"Product Interest",zh:"产品意向",ja:"製品カテゴリ",de:"Produkt",ar:"المنتج"},
-      f_message:{en:"Message",zh:"留言",ja:"メッセージ",de:"Nachricht",ar:"رسالة"},
-      f_submit:{en:"Submit",zh:"提交",ja:"送信",de:"Senden",ar:"إرسال"},
-      f_matrix:{en:"Open Planning Matrix",zh:"打开规划矩阵",ja:"計画マトリクス",de:"Planungsmatrix",ar:"مصفوفة التخطيط"},
-      f_sku:{en:"SKU Library",zh:"SKU库",ja:"SKUライブラリ",de:"SKU-Bibliothek",ar:"مكتبة SKU"},
-      form_note:{
-        en:"Note: We can share engineering spec packs (2D/3D CAD, packaging drop-test logic, container density modeling) after NDA if required.",
-        zh:"备注：如需可在NDA后提供工程资料包（CAD、跌落测试逻辑、装柜密度模型）。",
-        ja:"必要に応じてNDA後にCAD等の技術資料を共有できます。",
-        de:"Hinweis: Technische Pakete nach NDA verfügbar.",
-        ar:"ملاحظة: يمكن مشاركة الملفات الهندسية بعد NDA."
-      },
-      form_ok:{
-        en:"Submitted. We will reply soon.",
-        zh:"已提交，我们会尽快回复。",
-        ja:"送信しました。まもなく返信します。",
-        de:"Gesendet. Wir melden uns bald.",
-        ar:"تم الإرسال. سنرد قريباً."
-      },
-
-      hud_sub:{en:"Contact HUD · Always-on channels",zh:"联系HUD · 常驻通道",ja:"連絡HUD · 常時",de:"Kontakt-HUD",ar:"لوحة التواصل"},
-      hud_social:{en:"Social Matrix (5)",zh:"社媒矩阵（5）",ja:"SNS（5）",de:"Social (5)",ar:"الشبكات (5)"},
-
-      wall_title:{en:"Furniture Platforms We Deliver",zh:"我们交付的家具平台",ja:"対応する家具プラットフォーム",de:"Möbel-Plattformen",ar:"منصات الأثاث"},
-      wall_sub:{en:"A visual reference wall (replace images with your real SKU shots anytime — layout stays locked).",
-        zh:"视觉参考墙（你随时替换成真实SKU图，布局也不会乱）。",
-        ja:"画像は差し替え可能（レイアウトは固定）。",
-        de:"Bilder austauschbar (Layout bleibt stabil).",
-        ar:"يمكن استبدال الصور (التخطيط ثابت)."
-      },
-
-      cta_tag:{en:"Fast Track Program",zh:"快速对接项目",ja:"高速プログラム",de:"Fast-Track",ar:"برنامج سريع"},
-      cta_title:{en:"Start with an Engineering Call",zh:"从一次工程沟通开始",ja:"エンジニア相談から",de:"Start mit Engineering-Call",ar:"ابدأ بمكالمة هندسية"},
-      cta_sub:{en:"We align your SKU targets, packaging survivability, compliance risk, and delivery model into one controllable plan.",
-        zh:"把SKU目标、包装生存率、合规风险与交付模式整合成可控方案。",
-        ja:"SKU/梱包/規格/配送を一つの計画へ。",
-        de:"SKU, Verpackung, Compliance und Lieferung in einem Plan.",
-        ar:"ننسق SKU والتغليف والامتثال والتسليم بخطة واحدة."
-      },
-      cta_btn:{en:"WhatsApp Now",zh:"立即WhatsApp",ja:"WhatsApp",de:"WhatsApp",ar:"واتساب"},
-
-      footer_desc:{
-        en:"Furniture-first global supply chain systems.<br>Predictability engineered — not promised.",
-        zh:"家具为主线的全球供应链体系。<br>可预测性交付——工程化实现。",
-        ja:"家具を核にした供給網。<br>予測可能性は設計する。",
-        de:"Möbel-zentrierte Lieferkette.<br>Planbarkeit ist engineered.",
-        ar:"سلسلة توريد للأثاث.<br>قابلية التنبؤ مُهندسة."
-      },
-      footer_company:{en:"Company",zh:"公司",ja:"会社",de:"Unternehmen",ar:"الشركة"},
-      footer_contact:{en:"Contact",zh:"联系",ja:"連絡先",de:"Kontakt",ar:"اتصال"},
-      footer_connect:{en:"Connect",zh:"关注",ja:"フォロー",de:"Verbinden",ar:"تواصل"}
-    };
-
-    let currentLang = "en";
-
-    function setLang(lang){
-      if(!LANGS[lang]) return;
-      currentLang = lang;
-
-      document.documentElement.lang = lang;
-      document.documentElement.dir  = LANGS[lang].dir;
-
-      document.querySelectorAll("[data-i18n]").forEach(el=>{
-        const key = el.dataset.i18n;
-        if(TEXT[key] && TEXT[key][lang]){
-          el.innerHTML = TEXT[key][lang];
-        } else if(TEXT[key] && TEXT[key]["en"]) {
-          el.innerHTML = TEXT[key]["en"];
-        }
-      });
-
-      localStorage.setItem("lang",lang);
-    }
-
-    const savedLang = localStorage.getItem("lang") || (navigator.language || "en").slice(0,2);
-    setLang(LANGS[savedLang] ? savedLang : "en");
-  </script>
-
+<script src="script.js"></script>
 </body>
 </html>
