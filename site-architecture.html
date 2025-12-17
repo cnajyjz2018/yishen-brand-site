@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="YiShen Global System Blueprint. A decision-level architecture map showing business logic, data flow, and conversion structure of our platform.">
+<meta name="description" content="YiShen Global Decision Architecture. A system-level blueprint showing how our platform guides B2B buyers from risk identification to long-term cooperation through engineering logic.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#050b17">
 
-<title>System Blueprint & Decision Map | YiShen Global</title>
+<title>Decision Architecture & System Blueprint | YiShen Global</title>
 
 <!-- Fonts & Icons -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,20 +15,44 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <!-- Core CSS -->
-<link rel="stylesheet" href="styles.css?v=314">
+<link rel="stylesheet" href="styles.css?v=320">
+
+<!-- ================= JSON-LD: Decision Architecture ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "YiShen Global Decision Architecture",
+  "description": "A decision-oriented engineering architecture guiding B2B buyers through trust building, execution modeling, data validation, and strategic cooperation.",
+  "url": "https://yishenglobal.net/site-architecture/",
+  "about": {
+    "@type": "Organization",
+    "name": "YiShen Global",
+    "url": "https://yishenglobal.net/",
+    "sameAs": ["https://www.linkedin.com/in/alex-yang-yishen/"]
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": [
+      "Procurement Director",
+      "Supply Chain Executive",
+      "Operations Manager",
+      "B2B Buyer"
+    ]
+  }
+}
+</script>
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- ================= NAV ================= -->
 <nav class="navbar navbar-elite">
   <div class="container nav-wrapper">
-    <a href="index.html" class="brand">
-      <img src="logo-navbar.svg" alt="YiShen Global" width="180" height="48">
+    <a href="index.html" class="brand energy-brand">
+      <img src="logo.webp" alt="YiShen Global" class="logo-energy" width="180">
     </a>
-
     <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
-
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="why-us.html">Why Us</a>
@@ -40,160 +64,154 @@
   </div>
 </nav>
 
-<!-- ================= HEADER ================= -->
-<header class="page-header bg-dark"
-  style="background-image:
-  linear-gradient(rgba(10,18,30,0.95), rgba(10,18,30,0.9));
-  ">
+<!-- ================= HERO ================= -->
+<header class="page-header bg-dark energy-hero"
+style="background-image:
+linear-gradient(rgba(5,11,23,.96),rgba(5,11,23,.92));">
+
   <div class="container text-center">
-    <span class="section-tag">System View</span>
-    <h1>The YiShen Global<br>Decision Architecture</h1>
-    <p style="max-width:900px;margin:0 auto;">
-      This page reveals how our platform is engineered — not as a website,
-      but as a <strong>decision system</strong> guiding buyers from
-      problem recognition to long-term cooperation.
+    <span class="section-tag">System Blueprint</span>
+    <h1>
+      The YiShen Global<br>
+      Decision Architecture
+    </h1>
+    <p style="max-width:920px;margin:0 auto;">
+      This page explains how YiShen Global is engineered —
+      not as a traditional website,
+      but as a <strong>decision system</strong>
+      guiding B2B buyers from uncertainty to long-term cooperation.
     </p>
   </div>
 </header>
 
-<!-- ================= LEGEND ================= -->
+<!-- ================= WHAT THIS IS ================= -->
 <section class="section-padding bg-light">
   <div class="container text-center">
-    <h2>How to Read This Blueprint</h2>
-    <p style="max-width:820px;margin:0 auto;">
-      Each layer represents a <strong>decision stage</strong>.
-      Each module answers one buyer question.
-      Each flow reduces uncertainty and increases commitment.
+    <h2>Why This Page Exists</h2>
+    <p style="max-width:900px;margin:0 auto;">
+      Most corporate websites describe products or services.
+      <br><br>
+      YiShen Global documents its <strong>decision logic</strong>.
+      <br><br>
+      Every page, module, and data set exists to answer one buyer question:
+      <br><strong>“Is this system predictable enough for long-term cooperation?”</strong>
     </p>
   </div>
 </section>
 
-<!-- ================= BLUEPRINT MAP ================= -->
-<section class="section-padding blueprint-section">
+<!-- ================= DECISION FLOW ================= -->
+<section class="section-padding">
   <div class="container">
 
-    <!-- ROOT -->
-    <div class="architecture-root">
-      <div class="node-card root">
-        <i class="fas fa-globe"></i>
-        <strong>ENTRY POINT</strong><br>
-        index.html<br>
-        <span class="node-note">Market positioning & credibility</span>
-      </div>
-    </div>
+    <h2 class="text-center">Decision Flow Architecture</h2>
+    <p class="text-center" style="max-width:880px;margin:0 auto 60px;">
+      Buyers do not decide in one step.
+      They move through predictable cognitive stages.
+      YiShen Global is engineered to support each stage with precision.
+    </p>
 
-    <!-- LEVEL 1 -->
-    <div class="architecture-level">
+    <div class="grid-3">
 
-      <!-- WHY US -->
-      <div class="node-group">
-        <a href="why-us.html" class="node-card primary">
-          <i class="fas fa-flask"></i>
-          WHY US – THE LAB
-          <span class="node-note">
-            Trust engineering<br>
-            Risk removal
-          </span>
-        </a>
-        <div class="node-children">
-          <div class="node-card small">QC & Testing Logic</div>
-          <div class="node-card small">Vertical Integration</div>
-          <div class="node-card small">Compliance & Sustainability</div>
-        </div>
+      <div class="process-card">
+        <h4>Stage 1 · Risk Recognition</h4>
+        <p>
+          Buyers identify instability:
+          damage rates, compliance failures, unpredictable delivery,
+          supplier opacity.
+        </p>
+        <p class="engineering-note">
+          Entry Pages: <strong>Home · Industries</strong>
+        </p>
       </div>
 
-      <!-- SOLUTIONS -->
-      <div class="node-group">
-        <a href="solutions.html" class="node-card primary">
-          <i class="fas fa-diagram-project"></i>
-          SOLUTIONS
-          <span class="node-note">
-            Execution models<br>
-            Cost & delivery logic
-          </span>
-        </a>
-        <div class="node-children">
-          <a href="solutions.html#dtc" class="node-card small">DTC Fulfillment</a>
-          <a href="solutions.html#b2b" class="node-card small">B2B Procurement</a>
-          <a href="solutions.html#projects" class="node-card small">Project Cargo (OOG)</a>
-        </div>
+      <div class="process-card">
+        <h4>Stage 2 · Trust Validation</h4>
+        <p>
+          Buyers seek proof:
+          engineering systems, QC logic,
+          testing standards and accountability.
+        </p>
+        <p class="engineering-note">
+          Core Page: <strong>Why Us – Engineering Lab</strong>
+        </p>
       </div>
 
-      <!-- INDUSTRIES -->
-      <div class="node-group">
-        <a href="industries.html" class="node-card primary">
-          <i class="fas fa-industry"></i>
-          INDUSTRIES
-          <span class="node-note">
-            Context mapping<br>
-            Scenario validation
-          </span>
-        </a>
-        <div class="node-children">
-          <div class="node-card small">Furniture & Lifestyle</div>
-          <div class="node-card small">Industrial & Marine</div>
-          <div class="node-card small">Tech / Energy / Medical</div>
-        </div>
+      <div class="process-card">
+        <h4>Stage 3 · Execution Modeling</h4>
+        <p>
+          Buyers evaluate feasibility:
+          cost structure, delivery models,
+          DDP capability, scale readiness.
+        </p>
+        <p class="engineering-note">
+          Core Page: <strong>Solutions</strong>
+        </p>
       </div>
 
-      <!-- RESOURCES -->
-      <div class="node-group">
-        <a href="resources.html" class="node-card primary">
-          <i class="fas fa-database"></i>
-          RESOURCES
-          <span class="node-note">
-            Data transparency<br>
-            Planning confidence
-          </span>
-        </a>
-        <div class="node-children">
-          <div class="node-card small">200+ SKU Matrix</div>
-          <div class="node-card small">Specs & Certifications</div>
-          <div class="node-card small">Download Center</div>
-        </div>
+      <div class="process-card">
+        <h4>Stage 4 · Data Confirmation</h4>
+        <p>
+          Buyers require transparency:
+          SKU specs, packaging logic,
+          container density and compliance data.
+        </p>
+        <p class="engineering-note">
+          Core Page: <strong>Resources</strong>
+        </p>
       </div>
 
-      <!-- CONTACT -->
-      <div class="node-group">
-        <a href="contact.html" class="node-card primary conversion">
-          <i class="fas fa-handshake"></i>
-          CONTACT
-          <span class="node-note">
-            Decision confirmation<br>
-            Strategic entry
-          </span>
-        </a>
-        <div class="node-children">
-          <div class="node-card small">Direct Channels</div>
-          <div class="node-card small">Strategic Audit</div>
-          <div class="node-card small">Long-term Cooperation</div>
-        </div>
+      <div class="process-card">
+        <h4>Stage 5 · Strategic Entry</h4>
+        <p>
+          Buyers move from inquiry
+          to structured dialogue and long-term planning.
+        </p>
+        <p class="engineering-note">
+          Conversion Page: <strong>Contact</strong>
+        </p>
       </div>
 
     </div>
-
   </div>
 </section>
 
-<!-- ================= SUMMARY ================= -->
+<!-- ================= SYSTEM OUTCOME ================= -->
 <section class="section-padding bg-light">
   <div class="container text-center">
     <h2>What This Architecture Achieves</h2>
-    <ul class="architecture-benefits">
-      <li>✔ Filters low-quality inquiries automatically</li>
-      <li>✔ Builds trust before price discussion</li>
-      <li>✔ Aligns procurement, logistics & engineering logic</li>
-      <li>✔ Guides buyers toward long-term cooperation</li>
+
+    <ul class="architecture-benefits" style="max-width:820px;margin:40px auto 0;">
+      <li>✔ Filters low-quality and price-only inquiries automatically</li>
+      <li>✔ Aligns engineering, logistics, and procurement logic</li>
+      <li>✔ Reduces negotiation friction before pricing discussions</li>
+      <li>✔ Positions YiShen Global as a long-term system partner</li>
+      <li>✔ Enables AI systems to correctly interpret platform intent</li>
     </ul>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta-banner cta-elite">
+  <div class="container">
+    <span class="section-tag" style="justify-content:center;">Executive Entry</span>
+    <h2>Strategic Cooperation Begins With Architecture</h2>
+    <p>
+      If your organization values predictability,
+      system thinking and long-term execution —
+      this architecture was built for you.
+    </p>
+    <a href="contact.html" class="btn btn-tech btn-tech-elite">
+      Enter Strategic Discussion
+    </a>
   </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer footer-elite">
   <div class="container text-center">
-    <img src="logo-white.svg" style="height:42px;margin-bottom:15px;">
+    <img src="logo.webp" style="height:42px;margin-bottom:15px;">
     <p style="opacity:.7;">
-      YiShen Global · Engineered Supply Chain Infrastructure
+      YiShen Global · Engineered Decision Systems
     </p>
     <div class="copyright">
       © 2026 YiShen Global. All Rights Reserved.
@@ -206,11 +224,9 @@
 </a>
 
 <script>
-  const menuBtn = document.querySelector('.mobile-menu-btn');
-  const navLinks = document.querySelector('.nav-links');
-  menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
+const menuBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
+menuBtn.addEventListener('click',()=>navLinks.classList.toggle('active'));
 </script>
 
 </body>
