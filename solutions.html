@@ -3,222 +3,255 @@
 <head>
   <meta charset="UTF-8">
   <title>Solutions | YiShen Global</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-        content="Furniture-first supply chain solutions. Engineering review, packaging SOP, cost-per-unit modeling, and DDP delivery systems.">
+  <meta name="description" content="YiShen Global solutions cover engineered furniture manufacturing, packaging optimization, compliance planning, and predictable global delivery.">
+
+  <!-- Brand / Favicon -->
+  <link rel="icon" href="yishen-logo-icon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="yishen-logo-icon.svg">
+  <meta name="theme-color" content="#06122A">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: #06122A;
+      color: #EAF0FF;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: rgba(6,18,42,0.95);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .logo img {
+      height: 28px;
+    }
+
+    .nav a {
+      margin-left: 28px;
+      font-size: 15px;
+      opacity: 0.9;
+    }
+
+    .nav a:hover {
+      opacity: 1;
+    }
+
+    .btn-contact {
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: #1E88E5;
+      margin-left: 32px;
+      font-weight: 500;
+    }
+
+    /* Page Header */
+    .page-hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 24px 60px;
+    }
+
+    .page-hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .page-hero p {
+      max-width: 700px;
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    /* Solutions */
+    .solutions {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 24px 100px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 36px;
+    }
+
+    .solution-card {
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 28px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .solution-card h3 {
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
+    .solution-card p {
+      font-size: 15px;
+      opacity: 0.9;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 40px 24px;
+      opacity: 0.85;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      font-size: 14px;
+    }
+
+    .footer-inner p {
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+
+      .page-hero h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- Header -->
-<div id="header"></div>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="logo.webp" alt="YiShen Global">
+        <span>YiShen Global</span>
+      </a>
 
-<main class="solutions-page">
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="industries.html">Industries</a>
+        <a href="why.html">Why Us</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html" class="btn-contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Furniture-First Supply Chain Solutions</h1>
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <h1>Engineering-led Solutions</h1>
     <p>
-      Not marketing promises.<br>
-      Engineering logic, cost control, and execution certainty.
+      YiShen Global delivers predictable results by engineering every layer of the
+      furniture supply chain — from product structure to packaging survivability
+      and global execution.
     </p>
   </section>
 
-  <!-- Solution Blocks -->
-  <section class="solutions-grid">
+  <!-- Solutions Grid -->
+  <section class="solutions">
 
     <div class="solution-card">
-      <h3>Engineering Review</h3>
+      <h3>Furniture Manufacturing Systems</h3>
       <p>
-        Every project starts with an engineering-first review — not a quote.
+        Ergonomic chairs, gaming chairs, desks, and seating systems engineered
+        for stability, cost control, and scalable production.
       </p>
-      <ul>
-        <li>Structure & material feasibility</li>
-        <li>Compliance & certification mapping</li>
-        <li>Risk & failure-point scanning</li>
-      </ul>
     </div>
 
     <div class="solution-card">
-      <h3>Packaging & SOP Design</h3>
+      <h3>Packaging Engineering</h3>
       <p>
-        Packaging is part of the product system — not an afterthought.
+        KD structures, drop-test logic, carton optimization, and container
+        density modeling to reduce damage and logistics cost.
       </p>
-      <ul>
-        <li>ISTA & drop-test logic</li>
-        <li>Flat-pack & container optimization</li>
-        <li>Damage rate reduction modeling</li>
-      </ul>
     </div>
 
     <div class="solution-card">
-      <h3>Cost-per-Unit Modeling</h3>
+      <h3>Compliance & Certification Planning</h3>
       <p>
-        We model landed cost before production decisions are made.
+        BIFMA, EN1335, CE, UL, and market-specific compliance planned at
+        engineering stage — not as an afterthought.
       </p>
-      <ul>
-        <li>40HQ / 20GP loading simulation</li>
-        <li>Material vs labor vs logistics breakdown</li>
-        <li>Margin safety analysis</li>
-      </ul>
     </div>
 
     <div class="solution-card">
-      <h3>Compliance & Market Logic</h3>
+      <h3>OEM / ODM Programs</h3>
       <p>
-        Different markets require different execution logic.
+        Private-label execution, SKU exclusivity, material selection,
+        and long-term product roadmaps for global brands.
       </p>
-      <ul>
-        <li>US / EU / UK / Middle East compliance paths</li>
-        <li>Documentation & audit readiness</li>
-        <li>Customs risk avoidance</li>
-      </ul>
     </div>
 
     <div class="solution-card">
-      <h3>DDP Delivery Systems</h3>
+      <h3>Global Delivery Execution</h3>
       <p>
-        Delivery is engineered — not outsourced blindly.
+        FOB, CIF, and DDP delivery models with predictable lead time,
+        documentation control, and execution transparency.
       </p>
-      <ul>
-        <li>DDP / DDU decision modeling</li>
-        <li>Last-mile risk ownership</li>
-        <li>After-sales failure isolation</li>
-      </ul>
     </div>
 
-    <div class="solution-card highlight">
-      <h3>YiShen AI Core</h3>
+    <div class="solution-card">
+      <h3>Engineering Review & Risk Control</h3>
       <p>
-        Always-on buyer response, backed by engineering proof.
+        Early-stage engineering review to identify cost, compliance,
+        and delivery risks before orders are placed.
       </p>
-      <ul>
-        <li>24/7 response layer</li>
-        <li>Risk scan → proof pack → follow-up</li>
-        <li>CRM & WhatsApp workflow ready</li>
-      </ul>
     </div>
 
   </section>
 
-  <!-- CTA -->
-  <section class="cta">
-    <h2>Start with an Engineering Review</h2>
-    <p>
-      If you require cost-per-unit modeling, landed cost scenarios, or
-      market-specific compliance interpretation — start here.
-    </p>
-    <a href="/contact.html" class="cta-btn">Contact Engineering Team</a>
-  </section>
-
-</main>
-
-<!-- Footer -->
-<div id="footer"></div>
-
-<!-- Load shared components -->
-<script>
-  fetch('/header.html')
-    .then(r => r.text())
-    .then(t => document.getElementById('header').innerHTML = t);
-
-  fetch('/footer.html')
-    .then(r => r.text())
-    .then(t => document.getElementById('footer').innerHTML = t);
-</script>
-
-<style>
-  body {
-    margin: 0;
-    font-family: Inter, system-ui, sans-serif;
-    background: #06122A;
-    color: #e8eef7;
-  }
-
-  .solutions-page {
-    max-width: 1200px;
-    margin: auto;
-    padding: 100px 24px 0;
-  }
-
-  .hero h1 {
-    font-size: 48px;
-    margin-bottom: 16px;
-  }
-
-  .hero p {
-    font-size: 20px;
-    color: #9fb4d1;
-    line-height: 1.5;
-  }
-
-  .solutions-grid {
-    margin-top: 80px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 32px;
-  }
-
-  .solution-card {
-    background: #0b1f3a;
-    padding: 28px;
-    border-radius: 18px;
-    border: 1px solid rgba(255,255,255,.08);
-  }
-
-  .solution-card h3 {
-    margin-top: 0;
-    margin-bottom: 12px;
-  }
-
-  .solution-card p {
-    color: #9fb4d1;
-    font-size: 15px;
-    margin-bottom: 12px;
-  }
-
-  .solution-card ul {
-    padding-left: 18px;
-    color: #cdd9ea;
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .solution-card.highlight {
-    background: linear-gradient(145deg, #0b2b55, #0b1f3a);
-    border-color: rgba(54,194,255,.35);
-  }
-
-  .cta {
-    margin-top: 120px;
-    padding: 60px 40px;
-    background: #0b1f3a;
-    border-radius: 24px;
-    text-align: center;
-  }
-
-  .cta h2 {
-    margin-top: 0;
-    font-size: 36px;
-  }
-
-  .cta p {
-    margin: 16px auto 32px;
-    max-width: 720px;
-    color: #9fb4d1;
-    font-size: 16px;
-  }
-
-  .cta-btn {
-    display: inline-block;
-    padding: 14px 28px;
-    border-radius: 999px;
-    background: #36c2ff;
-    color: #06122A;
-    font-weight: 600;
-    text-decoration: none;
-  }
-</style>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <p>Furniture-first global supply chain systems.</p>
+      <p>Engineered in China · Delivered Worldwide</p>
+      <br>
+      <p>Email: alex.yang@yishenglobal.net</p>
+      <p>Email: champion.yang@yishenglobal.net</p>
+      <p>WhatsApp: +86 159 6827 7867 · +86 188 5727 7313</p>
+      <p>WeChat: 19530394133</p>
+      <p>Base: Anji · Hangzhou · China</p>
+    </div>
+  </footer>
 
 </body>
 </html>
