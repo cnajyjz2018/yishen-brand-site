@@ -1,12 +1,12 @@
-function loadHTML(id, file) {
-  fetch(file)
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById(id).innerHTML = html;
-    });
+<script>
+async function loadHTML(id, url) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const res = await fetch(url);
+  el.innerHTML = await res.text();
 }
-
 document.addEventListener("DOMContentLoaded", () => {
-  loadHTML("header", "header.html");
-  loadHTML("footer", "footer.html");
+  loadHTML("header", "/partials/header.html");
+  loadHTML("footer", "/partials/footer.html");
 });
+</script>
