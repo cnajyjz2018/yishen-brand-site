@@ -1,267 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Solutions | YiShen Global</title>
+  <meta charset="UTF-8" />
+  <title>Solutions | Engineering-Driven Furniture Supply Chain</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="YiShen Global solutions cover engineered furniture manufacturing, packaging optimization, compliance planning, and predictable global delivery.">
-
-  <!-- Brand / Favicon -->
-  <link rel="icon" href="yishen-logo-icon.svg" type="image/svg+xml">
-  <link rel="alternate icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="yishen-logo-icon.svg">
+  <!-- Brand -->
+  <link rel="icon" href="/yishen-logo-icon.svg" type="image/svg+xml">
   <meta name="theme-color" content="#06122A">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-
-    body {
-      background: #06122A;
-      color: #EAF0FF;
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* Header */
-    .site-header {
-      position: sticky;
-      top: 0;
-      background: rgba(6,18,42,0.95);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      z-index: 1000;
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 18px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      font-size: 18px;
-    }
-
-    .logo img {
-      height: 28px;
-    }
-
-    .nav a {
-      margin-left: 28px;
-      font-size: 15px;
-      opacity: 0.9;
-    }
-
-    .nav a:hover {
-      opacity: 1;
-    }
-
-    .btn-contact {
-      padding: 8px 16px;
-      border-radius: 20px;
-      background: #1E88E5;
-      margin-left: 32px;
-      font-weight: 500;
-    }
-
-    /* Page Header */
-    .page-hero {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 100px 24px 60px;
-    }
-
-    .page-hero h1 {
-      font-size: 48px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .page-hero p {
-      max-width: 700px;
-      font-size: 18px;
-      opacity: 0.9;
-    }
-
-    /* Solutions */
-    .solutions {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 24px 100px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 36px;
-    }
-
-    .solution-card {
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 18px;
-      padding: 28px;
-      background: rgba(255,255,255,0.02);
-    }
-
-    .solution-card h3 {
-      font-size: 20px;
-      margin-bottom: 14px;
-    }
-
-    .solution-card p {
-      font-size: 15px;
-      opacity: 0.9;
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 40px 24px;
-      opacity: 0.85;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      font-size: 14px;
-    }
-
-    .footer-inner p {
-      margin-bottom: 8px;
-    }
-
-    @media (max-width: 768px) {
-      .nav {
-        display: none;
-      }
-
-      .page-hero h1 {
-        font-size: 36px;
-      }
-    }
-  </style>
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="nav-container">
-      <a href="index.html" class="logo">
-        <img src="logo.webp" alt="YiShen Global">
-        <span>YiShen Global</span>
-      </a>
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <img src="/yishen-logo-icon.svg" alt="YiShen Global">
+      <span>YiShen Global</span>
+    </a>
 
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="solutions.html">Solutions</a>
-        <a href="industries.html">Industries</a>
-        <a href="why.html">Why Us</a>
-        <a href="resources.html">Resources</a>
-        <a href="contact.html" class="btn-contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="solutions.html" class="active">Solutions</a>
+      <a href="industries.html">Industries</a>
+      <a href="why-us.html">Why Us</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html" class="cta">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- Page Hero -->
-  <section class="page-hero">
-    <h1>Engineering-led Solutions</h1>
-    <p>
-      YiShen Global delivers predictable results by engineering every layer of the
-      furniture supply chain — from product structure to packaging survivability
-      and global execution.
+<!-- ================= HERO ================= -->
+<section class="page-hero">
+  <div class="hero-inner">
+    <h1>Furniture-First Supply Chain Solutions</h1>
+    <p class="hero-sub">
+      Not marketing promises.<br>
+      Engineering logic, cost control, and execution certainty.
     </p>
-  </section>
+  </div>
+</section>
 
-  <!-- Solutions Grid -->
-  <section class="solutions">
+<!-- ================= INTRO ================= -->
+<section class="intro-section">
+  <div class="content">
+    <p class="lead">
+      YiShen Global does not sell “services”.  
+      We design and execute **furniture-specific supply chain systems**
+      where engineering, cost, compliance, and delivery are treated as one flow.
+    </p>
+  </div>
+</section>
 
-    <div class="solution-card">
-      <h3>Furniture Manufacturing Systems</h3>
-      <p>
-        Ergonomic chairs, gaming chairs, desks, and seating systems engineered
-        for stability, cost control, and scalable production.
-      </p>
+<!-- ================= SOLUTION BLOCKS ================= -->
+<section class="solution-section">
+  <div class="content">
+
+    <div class="solution-grid">
+
+      <!-- Engineering Review -->
+      <div class="solution-card">
+        <h2>Engineering Review</h2>
+        <p>
+          Every project starts with a structured engineering review —
+          before quotation, before production.
+        </p>
+        <ul>
+          <li>Specification & tolerance validation</li>
+          <li>Risk & feasibility scan</li>
+          <li>Packaging logic definition</li>
+          <li>Compliance awareness (EU / US / GCC)</li>
+        </ul>
+      </div>
+
+      <!-- Packaging & SOP -->
+      <div class="solution-card">
+        <h2>Packaging & SOP Design</h2>
+        <p>
+          Packaging is part of the product system —
+          not an afterthought.
+        </p>
+        <ul>
+          <li>Drop-test oriented carton logic</li>
+          <li>Container efficiency optimization</li>
+          <li>Damage-risk reduction</li>
+          <li>Assembly & unpacking logic</li>
+        </ul>
+      </div>
+
+      <!-- Cost Modeling -->
+      <div class="solution-card">
+        <h2>Cost-per-Unit Modeling</h2>
+        <p>
+          Cost is modeled, not guessed.
+        </p>
+        <ul>
+          <li>Unit cost breakdown</li>
+          <li>Carton & CBM efficiency</li>
+          <li>40HQ / LCL scenarios</li>
+          <li>Landed cost visibility</li>
+        </ul>
+      </div>
+
+      <!-- Production Coordination -->
+      <div class="solution-card">
+        <h2>Production Coordination</h2>
+        <p>
+          Engineering logic stays connected to factory execution.
+        </p>
+        <ul>
+          <li>Specification lock & change control</li>
+          <li>QC alignment with buyer standards</li>
+          <li>Pre-shipment validation</li>
+          <li>Documentation readiness</li>
+        </ul>
+      </div>
+
+      <!-- Logistics & Delivery -->
+      <div class="solution-card">
+        <h2>Logistics & Delivery System</h2>
+        <p>
+          Delivery is engineered, not outsourced blindly.
+        </p>
+        <ul>
+          <li>DDP / CIF / FOB scenario planning</li>
+          <li>Transit risk awareness</li>
+          <li>Destination-specific constraints</li>
+          <li>Predictable arrival timelines</li>
+        </ul>
+      </div>
+
+      <!-- Communication & Follow-up -->
+      <div class="solution-card">
+        <h2>Structured Buyer Communication</h2>
+        <p>
+          Buyers need clarity, not fragmented messages.
+        </p>
+        <ul>
+          <li>Single contact logic</li>
+          <li>Consistent documentation</li>
+          <li>Escalation clarity</li>
+          <li>Post-delivery follow-up flow</li>
+        </ul>
+      </div>
+
     </div>
+  </div>
+</section>
 
-    <div class="solution-card">
-      <h3>Packaging Engineering</h3>
-      <p>
-        KD structures, drop-test logic, carton optimization, and container
-        density modeling to reduce damage and logistics cost.
-      </p>
-    </div>
+<!-- ================= SYSTEM STATEMENT ================= -->
+<section class="system-section">
+  <div class="content">
+    <h2>This Is a System — Not a Menu</h2>
+    <p>
+      Each solution above is designed to function as part of one system.
+      Removing one element increases risk, cost, or instability.
+    </p>
+  </div>
+</section>
 
-    <div class="solution-card">
-      <h3>Compliance & Certification Planning</h3>
-      <p>
-        BIFMA, EN1335, CE, UL, and market-specific compliance planned at
-        engineering stage — not as an afterthought.
-      </p>
-    </div>
+<!-- ================= CTA ================= -->
+<section class="cta-section">
+  <div class="content">
+    <h2>Start With an Engineering Review</h2>
+    <p>
+      Before price. Before MOQ. Before timelines.<br>
+      A professional review determines whether a project should move forward.
+    </p>
+    <a href="contact.html" class="primary-btn">
+      Request Engineering Review
+    </a>
+  </div>
+</section>
 
-    <div class="solution-card">
-      <h3>OEM / ODM Programs</h3>
-      <p>
-        Private-label execution, SKU exclusivity, material selection,
-        and long-term product roadmaps for global brands.
-      </p>
-    </div>
-
-    <div class="solution-card">
-      <h3>Global Delivery Execution</h3>
-      <p>
-        FOB, CIF, and DDP delivery models with predictable lead time,
-        documentation control, and execution transparency.
-      </p>
-    </div>
-
-    <div class="solution-card">
-      <h3>Engineering Review & Risk Control</h3>
-      <p>
-        Early-stage engineering review to identify cost, compliance,
-        and delivery risks before orders are placed.
-      </p>
-    </div>
-
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-inner">
-      <p>Furniture-first global supply chain systems.</p>
-      <p>Engineered in China · Delivered Worldwide</p>
-      <br>
-      <p>Email: alex.yang@yishenglobal.net</p>
-      <p>Email: champion.yang@yishenglobal.net</p>
-      <p>WhatsApp: +86 159 6827 7867 · +86 188 5727 7313</p>
-      <p>WeChat: 19530394133</p>
-      <p>Base: Anji · Hangzhou · China</p>
-    </div>
-  </footer>
-
-</body>
-</html>
-<!-- =========================
- YiShen Global | Unified Footer
-========================= -->
+<!-- ================= FOOTER ================= -->
 <footer class="site-footer">
   <div class="footer-inner">
 
-    <!-- Brand / Positioning -->
     <div class="footer-col brand-col">
       <div class="footer-brand">
         <img src="/yishen-logo-icon.svg" alt="YiShen Global" />
@@ -273,7 +192,6 @@
       </p>
     </div>
 
-    <!-- Navigation -->
     <div class="footer-col">
       <h4>Company</h4>
       <a href="index.html">Home</a>
@@ -284,34 +202,33 @@
       <a href="contact.html">Contact</a>
     </div>
 
-    <!-- Contact -->
     <div class="footer-col">
       <h4>Contact</h4>
-      <p>Email<br>
-        <a href="mailto:alex.yang@yishenglobal.net">alex.yang@yishenglobal.net</a><br>
-        <a href="mailto:champion.yang@yishenglobal.net">champion.yang@yishenglobal.net</a>
+      <p>
+        alex.yang@yishenglobal.net<br>
+        champion.yang@yishenglobal.net
       </p>
-      <p>WhatsApp<br>
+      <p>
+        WhatsApp<br>
         +86 159 6827 7867<br>
         +86 188 5727 7313
       </p>
-      <p>WeChat<br>
-        19530394133
+      <p>
+        WeChat 19530394133
       </p>
-      <p>Base<br>
+      <p>
         Anji · Hangzhou · China
       </p>
     </div>
 
-    <!-- Social -->
     <div class="footer-col">
       <h4>Social</h4>
       <div class="footer-social">
-        <a href="#" aria-label="LinkedIn">in</a>
-        <a href="#" aria-label="X">x</a>
-        <a href="#" aria-label="YouTube">yt</a>
-        <a href="#" aria-label="Facebook">fb</a>
-        <a href="#" aria-label="Instagram">ig</a>
+        <a href="#">in</a>
+        <a href="#">x</a>
+        <a href="#">yt</a>
+        <a href="#">fb</a>
+        <a href="#">ig</a>
       </div>
     </div>
 
@@ -321,3 +238,6 @@
     © 2025 YiShen Global. Engineering logic over marketing promises.
   </div>
 </footer>
+
+</body>
+</html>
