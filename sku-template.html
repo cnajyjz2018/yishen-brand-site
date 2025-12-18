@@ -1,244 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <title>{{SKU_NAME}} | SKU Engineering Template | YiShen Global</title>
 
-<meta name="description" content="Engineering-grade ergonomic office chair with BIFMA compliance, OEM/ODM capability, KD packaging and 40’HQ container optimization for B2B procurement.">
+  <meta name="description"
+        content="Engineering SKU template for furniture products. Specification, compliance, packaging, and delivery logic by YiShen Global.">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#06122A">
 
-<title>Ergonomic Office Chair EO-001 | OEM / B2B Supply | YiShen Global</title>
+  <!-- Brand -->
+  <link rel="icon" href="/yishen-logo-icon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/yishen-logo-icon.svg">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="/styles.css">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<link rel="stylesheet" href="../styles.css">
-
-<style>
-.product-meta{font-size:.85rem;color:#94a3b8;margin-bottom:16px}
-.product-meta span{margin-right:14px}
-.spec-table{width:100%;border-collapse:collapse;margin-top:20px}
-.spec-table th{width:35%;text-align:left;color:#0f172a;padding:12px 0}
-.spec-table td{color:#334155}
-.ai-note{
-  background:#020617;
-  color:#cbd5f5;
-  padding:24px;
-  border-radius:14px;
-  margin-top:60px;
-  font-size:.85rem
-}
-.ai-note strong{color:#38bdf8}
-</style>
+  <!-- Core JS (ONE ONLY) -->
+  <script defer src="/script.js"></script>
 </head>
 
 <body>
 
-<!-- ================= NAV ================= -->
-<nav class="navbar navbar-elite">
-  <div class="container nav-wrapper">
-    <a href="../index.html" class="brand">
-      <img src="../logo-navbar.svg" alt="YiShen Global" height="48">
-    </a>
-    <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
-    <div class="nav-links">
-      <a href="../index.html">Home</a>
-      <a href="../why-us.html">Why Us</a>
-      <a href="../solutions.html">Solutions</a>
-      <a href="../industries.html">Industries</a>
-      <a href="../resources.html">Resources</a>
-      <a href="../contact.html" class="nav-cta">Contact</a>
-    </div>
-  </div>
-</nav>
+<!-- ======================================
+     GLOBAL NAVBAR (DO NOT TOUCH)
+====================================== -->
+<div id="navbar-placeholder"></div>
 
-<!-- ================= HERO ================= -->
-<header class="page-header bg-dark"
-style="background-image:
-linear-gradient(rgba(2,6,23,.94),rgba(2,6,23,.9)),
-url('../product-chair.webp');background-size:cover;">
+<!-- ======================================
+     SKU HEADER
+====================================== -->
+<header class="page-header compact">
   <div class="container">
-
-    <span class="section-tag">Ergonomic Seating Platform</span>
-
-    <h1>Ergonomic Office Chair<br>Model EO-001</h1>
-
-    <p>
-      Commercial-grade ergonomic task chair engineered for
-      <strong>B2B procurement, OEM programs and project supply</strong>.
-    </p>
-
-    <div class="product-meta">
-      <span><i class="fas fa-industry"></i> OEM / ODM Ready</span>
-      <span><i class="fas fa-certificate"></i> BIFMA X5.1</span>
-      <span><i class="fas fa-box"></i> KD Packaging</span>
-    </div>
-
+    <span class="tag">SKU TEMPLATE · ENGINEERING MODE</span>
+    <h1>{{SKU_NAME}}</h1>
+    <p class="subtitle">
+      {{SKU_POSITIONING}}
+    </p >
   </div>
 </header>
 
-<!-- ================= OVERVIEW ================= -->
-<section class="section-padding">
+<!-- ======================================
+     SKU CORE OVERVIEW
+====================================== -->
+<main class="section">
   <div class="container grid-2">
 
-    <!-- IMAGE -->
-    <div>
-      <img src="../product-chair.webp"
-           alt="Ergonomic Office Chair EO-001"
-           style="width:100%;border-radius:16px">
-    </div>
+    <!-- SKU META -->
+    <section class="card">
+      <h2>SKU Overview</h2>
 
-    <!-- INFO -->
-    <div>
-      <h2>Product Positioning</h2>
+      <table class="spec-table">
+        <tr>
+          <th>SKU Code</th>
+          <td>{{SKU_CODE}}</td>
+        </tr>
+        <tr>
+          <th>Category</th>
+          <td>{{CATEGORY}}</td>
+        </tr>
+        <tr>
+          <th>Application</th>
+          <td>{{APPLICATION}}</td>
+        </tr>
+        <tr>
+          <th>Target Market</th>
+          <td>{{TARGET_MARKET}}</td>
+        </tr>
+        <tr>
+          <th>MOQ</th>
+          <td>{{MOQ}}</td>
+        </tr>
+        <tr>
+          <th>Lead Time</th>
+          <td>{{LEAD_TIME}}</td>
+        </tr>
+      </table>
+    </section>
 
-      <p>
-        EO-001 is designed as a <strong>mid-to-high tier ergonomic task chair</strong>
-        for international office furniture brands, distributors, e-commerce sellers
-        and project buyers.
-      </p>
+    <!-- ENGINEERING -->
+    <section class="card">
+      <h2>Engineering Specification</h2>
 
-      <p>
-        Unlike retail-driven models, EO-001 is engineered with
-        <strong>mechanical reliability, logistics efficiency and SKU scalability</strong>
-        as core design principles.
-      </p>
-
-      <ul class="eng-list">
-        <li><strong>Compliance:</strong> BIFMA ANSI X5.1 / SGS</li>
-        <li><strong>Mechanism:</strong> Synchro-tilt (4:1 ratio)</li>
-        <li><strong>Mesh:</strong> Korean Wintex / Premium CN Mesh</li>
-        <li><strong>Target Market:</strong> B2B · OEM · Contract</li>
+      <ul class="bullet">
+        <li>{{SPEC_1}}</li>
+        <li>{{SPEC_2}}</li>
+        <li>{{SPEC_3}}</li>
+        <li>{{SPEC_4}}</li>
+        <li>{{SPEC_5}}</li>
       </ul>
-
-      <a href="../contact.html" class="btn btn-tech btn-tech-elite">
-        Request Quotation
-      </a>
-    </div>
+    </section>
 
   </div>
-</section>
+</main>
 
-<!-- ================= SPEC ================= -->
-<section class="section-padding bg-light">
-  <div class="container">
-
-    <h2>Technical Specifications</h2>
-
-    <table class="spec-table">
-      <tr><th>Seat Height</th><td>430–520 mm</td></tr>
-      <tr><th>Back Support</th><td>Dynamic lumbar support</td></tr>
-      <tr><th>Mechanism</th><td>Synchro-tilt · 4 locking positions</td></tr>
-      <tr><th>Gas Lift</th><td>Class 4 (SGS certified)</td></tr>
-      <tr><th>Base</th><td>700 mm Aluminum / Nylon optional</td></tr>
-      <tr><th>Armrest</th><td>3D / 4D optional</td></tr>
-      <tr><th>Load Capacity</th><td>136 kg</td></tr>
-      <tr><th>Warranty</th><td>3–5 years (program dependent)</td></tr>
-    </table>
-
-  </div>
-</section>
-
-<!-- ================= LOGISTICS ================= -->
-<section class="section-padding">
+<!-- ======================================
+     COMPLIANCE & QC
+====================================== -->
+<section class="section light">
   <div class="container grid-2">
 
-    <div>
-      <h2>Packaging & Logistics</h2>
-      <ul class="eng-list">
-        <li>KD flat-pack structure</li>
-        <li>ISTA 1A / 6A drop-test compatible</li>
-        <li>40’HQ loading: approx. <strong>650 units</strong></li>
-        <li>Neutral carton / OEM artwork available</li>
-        <li>FOB · CIF · DDP supported</li>
+    <section class="card">
+      <h2>Compliance & Certification</h2>
+      <ul class="bullet">
+        <li>{{CERT_1}}</li>
+        <li>{{CERT_2}}</li>
+        <li>{{CERT_3}}</li>
+        <li>{{CERT_4}}</li>
       </ul>
-    </div>
+    </section>
 
-    <div>
-      <h2>OEM / ODM Program</h2>
-      <ul class="eng-list">
-        <li>Logo embroidery / molding / label</li>
-        <li>Mesh color & frame color selection</li>
-        <li>Packaging graphic design</li>
-        <li>Market-level SKU exclusivity</li>
+    <section class="card">
+      <h2>Quality Control Logic</h2>
+      <ul class="bullet">
+        <li>{{QC_1}}</li>
+        <li>{{QC_2}}</li>
+        <li>{{QC_3}}</li>
+        <li>{{QC_4}}</li>
       </ul>
-    </div>
+    </section>
 
   </div>
 </section>
 
-<!-- ================= AI BUYER NOTE ================= -->
-<section class="section-padding">
-  <div class="container">
-    <div class="ai-note">
-      <strong>Buyer Qualification Notice</strong><br><br>
-      This page is designed for
-      <strong>B2B buyers, distributors, private-label brands and project procurement teams</strong>.
-      Pricing is not public by design.
-      <br><br>
-      If you require landed cost modeling, MOQ optimization,
-      or compliance mapping for your market,
-      please contact our engineering team.
-    </div>
+<!-- ======================================
+     PACKAGING & DELIVERY
+====================================== -->
+<section class="section">
+  <div class="container grid-2">
+
+    <section class="card">
+      <h2>Packaging Engineering</h2>
+      <ul class="bullet">
+        <li>{{PACK_1}}</li>
+        <li>{{PACK_2}}</li>
+        <li>{{PACK_3}}</li>
+        <li>{{PACK_4}}</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Delivery Model</h2>
+      <ul class="bullet">
+        <li>{{DELIVERY_1}}</li>
+        <li>{{DELIVERY_2}}</li>
+        <li>{{DELIVERY_3}}</li>
+        <li>{{DELIVERY_4}}</li>
+      </ul>
+    </section>
+
   </div>
 </section>
 
-<!-- ================= CTA ================= -->
-<section class="cta-banner cta-elite">
-  <div class="container">
-    <h2>Build Your Own EO-001 Program</h2>
+<!-- ======================================
+     ENGINEERING CTA
+====================================== -->
+<section class="section dark">
+  <div class="container center">
+    <h2>Request Engineering Review</h2>
     <p>
-      Request pricing, MOQ, lead time,
-      or create a private-label version for your market.
-    </p>
-    <a href="../contact.html" class="btn btn-tech btn-tech-elite">
-      Contact YiShen Global
-    </a>
+      Provide your market, compliance requirements, and target volume.
+      We respond with a technical & delivery proposal.
+    </p >
+    <a href=" " class="btn primary">
+      Contact Engineering Team
+    </a >
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
-<footer class="footer footer-elite">
-  <div class="container">
-    <p>© 2026 YiShen Global · Engineered Furniture Supply Systems</p>
-  </div>
-</footer>
-
-<!-- ================= STRUCTURED DATA ================= -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Product",
-  "name":"Ergonomic Office Chair EO-001",
-  "sku":"EO-001",
-  "brand":{"@type":"Brand","name":"YiShen Global"},
-  "category":"Ergonomic Office Furniture",
-  "description":"Commercial-grade ergonomic office chair with BIFMA X5.1 compliance, OEM/ODM capability, KD packaging and 40’HQ container optimization for B2B procurement.",
-  "material":["Steel","Mesh","Aluminum","Plastic"],
-  "additionalProperty":[
-    {"@type":"PropertyValue","name":"MOQ","value":"Program-based"},
-    {"@type":"PropertyValue","name":"Compliance","value":"BIFMA ANSI X5.1"},
-    {"@type":"PropertyValue","name":"Packaging","value":"KD Flat Pack"},
-    {"@type":"PropertyValue","name":"40HQ Loading","value":"~650 units"}
-  ],
-  "offers":{
-    "@type":"Offer",
-    "availability":"https://schema.org/InStock",
-    "price":"Request Quotation",
-    "priceCurrency":"USD"
-  }
-}
-</script>
-
-<script>
-const menuBtn=document.querySelector('.mobile-menu-btn');
-const navLinks=document.querySelector('.nav-links');
-if(menuBtn){
-  menuBtn.addEventListener('click',()=>navLinks.classList.toggle('active'));
-}
-</script>
+<!-- ======================================
+     GLOBAL FOOTER (DO NOT TOUCH)
+====================================== -->
+<div id="footer-placeholder"></div>
 
 </body>
 </html>
