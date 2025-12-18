@@ -2,303 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>YiShen Global</title>
-  <link rel="stylesheet" href="assets/css/main.css">
-  <script src="assets/js/include.js" defer></script>
+  <title>YiShen Global | Furniture-First Supply Systems</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/core/system.css">
 </head>
+
 <body>
 
-<div id="header"></div>
+<!-- Header -->
+<?php include("/core/header.html"); ?>
 
-<main>
-  <section class="hero">
+<main class="container">
+
+  <!-- HERO -->
+  <section>
     <h1>Predictable. Engineered. Global.</h1>
     <p>
-      YiShen Global builds furniture-first supply chain systems,
-      engineered for cost control, execution certainty, and scale.
+      YiShen Global builds furniture-first supply systems —  
+      engineered in China, executed globally, and designed to reduce uncertainty
+      across procurement, packaging, and logistics.
     </p>
   </section>
-</main>
 
-<div id="footer"></div>
+  <!-- POSITIONING -->
+  <section>
+    <h2>What YiShen Is</h2>
+    <p>
+      YiShen is not a trading company, not a catalog seller,
+      and not a logistics broker.
+    </p>
+    <ul>
+      <li>We engineer supply chains at SKU level</li>
+      <li>We design packaging and SOPs before execution</li>
+      <li>We model cost and risk before quotation</li>
+      <li>We deliver with predefined logistics architecture</li>
+    </ul>
+  </section>
 
-</body>
-</html>
+  <!-- WHAT PROBLEM WE SOLVE -->
+  <section>
+    <h2>The Problem We Solve</h2>
+    <p>
+      Most furniture supply chains fail not because of quality,
+      but because of unpredictability.
+    </p>
+    <ul>
+      <li>Unclear structural feasibility</li>
+      <li>Packaging damage after production</li>
+      <li>Logistics cost volatility</li>
+      <li>Execution risk shifting between parties</li>
+    </ul>
+    <p>
+      YiShen exists to remove these uncertainties before they become losses.
+    </p>
+  </section>
 
+  <!-- SYSTEM OVERVIEW -->
+  <section>
+    <h2>Our System Architecture</h2>
+    <p>
+      Every project follows the same engineering decision structure.
+    </p>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="YiShen Global builds furniture-first supply chain systems with engineering logic, cost control, and execution certainty.">
-
-  <!-- Brand / Favicon -->
-  <link rel="icon" href="yishen-logo-icon.svg" type="image/svg+xml">
-  <link rel="alternate icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="yishen-logo-icon.svg">
-  <meta name="theme-color" content="#06122A">
-
-  <!-- Basic Style -->
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-
-    body {
-      background: #06122A;
-      color: #EAF0FF;
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* Header */
-    .site-header {
-      position: sticky;
-      top: 0;
-      background: rgba(6,18,42,0.95);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      z-index: 1000;
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 18px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      font-size: 18px;
-    }
-
-    .logo img {
-      height: 28px;
-      width: auto;
-    }
-
-    .nav a {
-      margin-left: 28px;
-      font-size: 15px;
-      opacity: 0.9;
-    }
-
-    .nav a:hover {
-      opacity: 1;
-    }
-
-    .btn-contact {
-      padding: 8px 16px;
-      border-radius: 20px;
-      background: #1E88E5;
-      margin-left: 32px;
-      font-weight: 500;
-    }
-
-    /* Hero */
-    .hero {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 120px 24px 100px;
-    }
-
-    .hero h1 {
-      font-size: 56px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 24px;
-    }
-
-    .hero h1 span {
-      display: block;
-    }
-
-    .hero p {
-      max-width: 640px;
-      font-size: 18px;
-      opacity: 0.9;
-      margin-bottom: 36px;
-    }
-
-    .hero-actions a {
-      display: inline-block;
-      margin-right: 16px;
-      padding: 14px 28px;
-      border-radius: 28px;
-      font-size: 15px;
-      font-weight: 500;
-    }
-
-    .primary {
-      background: #1E88E5;
-    }
-
-    .secondary {
-      border: 1px solid rgba(255,255,255,0.25);
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 40px 24px;
-      opacity: 0.85;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      font-size: 14px;
-    }
-
-    .footer-inner p {
-      margin-bottom: 8px;
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      .nav {
-        display: none;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- Header -->
-  <header class="site-header">
-    <div class="nav-container">
-      <a href="index.html" class="logo">
-        <img src="logo.webp" alt="YiShen Global">
-        <span>YiShen Global</span>
-      </a>
-
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="solutions.html">Solutions</a>
-        <a href="industries.html">Industries</a>
-        <a href="why.html">Why Us</a>
-        <a href="resources.html">Resources</a>
-        <a href="contact.html" class="btn-contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <h1>
-      <span>Predictable.</span>
-      <span>Engineered.</span>
-      <span>Global.</span>
-    </h1>
+    <ul>
+      <li><strong>Engineering Review</strong> – structural logic, materials, tolerances</li>
+      <li><strong>Packaging & SOP Design</strong> – drop risk, carton logic, pallet rules</li>
+      <li><strong>Cost Predictability</strong> – BOM stability, logistics volatility</li>
+      <li><strong>Logistics Architecture</strong> – FOB / CIF / DDP by market</li>
+      <li><strong>Execution Control</strong> – inspection, loading, delivery SOP</li>
+    </ul>
 
     <p>
-      YiShen Global builds furniture-first supply chain systems —
-      engineered in China and delivered worldwide.
-      <br><br>
-      Not marketing promises.
-      Engineering logic, cost control, and execution certainty.
+      No quotation before engineering clarity.  
+      No execution without predictability.
     </p>
-
-    <div class="hero-actions">
-      <a href="solutions.html" class="primary">Explore Solutions</a>
-      <a href="contact.html" class="secondary">Start an Engineering Review</a>
-    </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-inner">
-      <p>Furniture-first global supply chain systems.</p>
-      <p>Engineered in China · Delivered Worldwide</p>
-      <br>
-      <p>Email: alex.yang@yishenglobal.net</p>
-      <p>Email: champion.yang@yishenglobal.net</p>
-      <p>WhatsApp: +86 159 6827 7867 · +86 188 5727 7313</p>
-      <p>WeChat: 19530394133</p>
-      <p>Base: Anji · Hangzhou · China</p>
-    </div>
-  </footer>
+  <!-- INDUSTRIES SNAPSHOT -->
+  <section>
+    <h2>Industries We Serve</h2>
+    <ul>
+      <li>Office seating & ergonomic furniture</li>
+      <li>Functional sofas & compressed packaging systems</li>
+      <li>Bamboo & wood furniture</li>
+      <li>WPC flooring systems</li>
+      <li>Chain & rigging hardware</li>
+      <li>Industrial project cargo</li>
+    </ul>
+    <p>
+      <a href="/industries.html">View Industries →</a>
+    </p>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <h2>Start with Engineering, Not Price</h2>
+    <p>
+      Before quotation. Before samples. Before risk.
+    </p>
+    <a href="/contact.html" class="btn">
+      Request Engineering Review
+    </a>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<?php include("/core/footer.html"); ?>
 
 </body>
 </html>
-<!-- =========================
- YiShen Global | Unified Footer
-========================= -->
-<footer class="site-footer">
-  <div class="footer-inner">
-
-    <!-- Brand / Positioning -->
-    <div class="footer-col brand-col">
-      <div class="footer-brand">
-        <img src="/yishen-logo-icon.svg" alt="YiShen Global" />
-        <strong>YiShen Global</strong>
-      </div>
-      <p>
-        Furniture-first global supply chain systems.<br>
-        Engineered in China · Delivered Worldwide.
-      </p>
-    </div>
-
-    <!-- Navigation -->
-    <div class="footer-col">
-      <h4>Company</h4>
-      <a href="index.html">Home</a>
-      <a href="why-us.html">Why Us</a>
-      <a href="solutions.html">Solutions</a>
-      <a href="industries.html">Industries</a>
-      <a href="resources.html">Resources</a>
-      <a href="contact.html">Contact</a>
-    </div>
-
-    <!-- Contact -->
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <p>Email<br>
-        <a href="mailto:alex.yang@yishenglobal.net">alex.yang@yishenglobal.net</a><br>
-        <a href="mailto:champion.yang@yishenglobal.net">champion.yang@yishenglobal.net</a>
-      </p>
-      <p>WhatsApp<br>
-        +86 159 6827 7867<br>
-        +86 188 5727 7313
-      </p>
-      <p>WeChat<br>
-        19530394133
-      </p>
-      <p>Base<br>
-        Anji · Hangzhou · China
-      </p>
-    </div>
-
-    <!-- Social -->
-    <div class="footer-col">
-      <h4>Social</h4>
-      <div class="footer-social">
-        <a href="#" aria-label="LinkedIn">in</a>
-        <a href="#" aria-label="X">x</a>
-        <a href="#" aria-label="YouTube">yt</a>
-        <a href="#" aria-label="Facebook">fb</a>
-        <a href="#" aria-label="Instagram">ig</a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    © 2025 YiShen Global. Engineering logic over marketing promises.
-  </div>
-</footer>
-
-
