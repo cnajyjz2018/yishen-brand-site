@@ -1,158 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact · YiShen Global</title>
-
-<link rel="stylesheet" href="styles.css">
-<link rel="icon" href="/yishen-logo-icon.svg" type="image/svg+xml">
-
-<meta name="theme-color" content="#06122A">
-<meta name="application-name" content="YiShen Global">
-
+  <meta charset="UTF-8">
+  <title>Contact | YiShen Global</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body class="page-contact">
 
-<!-- NAV -->
-<nav class="navbar">
-  <div class="container nav-inner">
-    <a href="index.html" class="brand">
-      <img src="yishen-logo-horizontal.svg" alt="YiShen Global" height="36">
-    </a>
-    <div class="nav-links">
-      <a href="solutions.html">Solutions</a>
-      <a href="industries.html">Industries</a>
-      <a href="why-us.html">Why Us</a>
-      <a href="resources.html">Resources</a>
-      <a href="contact.html" class="btn-primary">Contact</a>
-    </div>
-  </div>
-</nav>
+<body>
 
-<!-- HERO -->
-<header class="contact-hero">
-  <div class="container grid-2">
-    <div>
-      <h1>Start with an Engineering Review</h1>
-      <p class="hero-sub">
-        Furniture-first · AI-assisted · Client-facing.<br>
-        Get a professional evaluation before any quotation.
-      </p>
+<!-- 引入统一 Header -->
+<div id="header"></div>
 
-      <div class="cta-stack">
-        <button class="btn-primary" onclick="generatePDF()">
-          Generate Engineering Review PDF
-        </button>
-        <button class="btn-ghost" onclick="copyPayload()">
-          Copy Payload
-        </button>
-        <button class="btn-ghost" onclick="openEmailDraft()">
-          Open Email Draft
-        </button>
-      </div>
-    </div>
+<main class="contact-page">
+  <section class="intro">
+    <h1>Start with an Engineering Review</h1>
+    <p>
+      Furniture-first · AI-assisted · Client-facing.<br>
+      Get a professional evaluation before any quotation.
+    </p>
+  </section>
 
-    <!-- ALWAYS-ON CONTACT -->
-    <aside class="contact-card">
+  <section class="contact-grid">
+    <!-- 表单 -->
+    <form class="contact-form">
+      <label>
+        Your Name *
+        <input required>
+      </label>
+
+      <label>
+        Company *
+        <input required>
+      </label>
+
+      <label>
+        Business Email *
+        <input type="email" required>
+      </label>
+
+      <label>
+        Target Market
+        <input placeholder="US / EU / Middle East / LATAM">
+      </label>
+
+      <label>
+        Project / SKU / Pain Point
+        <textarea rows="4"></textarea>
+      </label>
+
+      <button type="submit">Submit for Engineering Review</button>
+    </form>
+
+    <!-- Always-on Contact -->
+    <div class="always-on">
       <h3>Always-on Contact</h3>
-
-      <p><strong>Email</strong><br>
+      <p>
+        <strong>Email</strong><br>
         alex.yang@yishenglobal.net<br>
         champion.yang@yishenglobal.net
       </p>
 
-      <p><strong>WhatsApp</strong><br>
+      <p>
+        <strong>WhatsApp</strong><br>
         +86 159 6827 7867<br>
         +86 188 5727 7313
       </p>
 
-      <p><strong>WeChat</strong><br>19530394133</p>
-
-      <p><strong>Base</strong><br>Anji · Hangzhou · China</p>
-
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank">in</a>
-        <a href="https://x.com/AlexYan03451555" target="_blank">x</a>
-        <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank">yt</a>
-        <a href="https://www.facebook.com/alex.yang.427745" target="_blank">fb</a>
-        <a href="https://www.instagram.com/alexyang591/" target="_blank">ig</a>
-      </div>
-    </aside>
-  </div>
-</header>
-
-<!-- FORM + AI SYSTEM -->
-<section class="contact-system">
-  <div class="container grid-2">
-
-    <!-- FORM -->
-    <form id="contactForm" class="contact-form">
-      <h2>Project Context</h2>
-
-      <input type="text" name="name" placeholder="Your Name *" required>
-      <input type="text" name="company" placeholder="Company *" required>
-      <input type="email" name="email" placeholder="Business Email *" required>
-      <input type="text" name="market" placeholder="Target Market">
-      <textarea name="message" placeholder="Project / SKU / Pain Point"></textarea>
-
-      <button type="submit" class="btn-primary">
-        Submit for Engineering Review
-      </button>
-    </form>
-
-    <!-- AI FOLLOW-UP -->
-    <div class="ai-panel">
-      <h3>WhatsApp Follow-up Tree</h3>
-      <p class="muted">
-        One-click messages — professional, consistent, buyer-friendly.
+      <p>
+        <strong>WeChat</strong><br>
+        19530394133
       </p>
 
-      <div class="rounds">
-        <button onclick="sendRound(1)">Round 1</button>
-        <button onclick="sendRound(2)">Round 2</button>
-        <button onclick="sendRound(3)">Round 3</button>
-      </div>
-
-      <h3 style="margin-top:32px">Engineering Review PDF</h3>
-      <p class="muted">
-        Generate a print-ready review page.<br>
-        Browser → Print → Save as PDF.
+      <p>
+        <strong>Base</strong><br>
+        Anji · Hangzhou · China
       </p>
     </div>
+  </section>
+</main>
 
-  </div>
-</section>
+<!-- 引入统一 Footer -->
+<div id="footer"></div>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container footer-grid">
+<script>
+  fetch('/header.html').then(r => r.text()).then(t => {
+    document.getElementById('header').innerHTML = t;
+  });
+  fetch('/footer.html').then(r => r.text()).then(t => {
+    document.getElementById('footer').innerHTML = t;
+  });
+</script>
 
-    <div>
-      <img src="yishen-logo-horizontal.svg" height="28">
-      <p class="muted">
-        Furniture-first global supply chain systems.<br>
-        Engineered in China · Delivered Worldwide
-      </p>
-    </div>
+<style>
+  body {
+    margin: 0;
+    font-family: Inter, system-ui, sans-serif;
+    background: #06122A;
+    color: #e8eef7;
+  }
 
-    <div>
-      <strong>Contact Alex</strong><br>
-      WhatsApp +86 159 6827 7867<br>
-      alex.yang@yishenglobal.net
-    </div>
+  .contact-page {
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 24px 0;
+  }
 
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank">in</a>
-      <a href="https://x.com/AlexYan03451555" target="_blank">x</a>
-      <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank">yt</a>
-      <a href="https://www.facebook.com/alex.yang.427745" target="_blank">fb</a>
-      <a href="https://www.instagram.com/alexyang591/" target="_blank">ig</a>
-    </div>
+  .intro h1 {
+    font-size: 44px;
+    margin-bottom: 16px;
+  }
+  .intro p {
+    color: #9fb4d1;
+    font-size: 18px;
+  }
 
-  </div>
-</footer>
+  .contact-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+  }
 
-<script src="script.js"></script>
+  .contact-form label {
+    display: block;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #9fb4d1;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+  }
+
+  .contact-form button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    border: none;
+    background: #36c2ff;
+    color: #06122A;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .always-on {
+    background: #0b1f3a;
+    padding: 28px;
+    border-radius: 16px;
+  }
+  .always-on h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .always-on p {
+    font-size: 14px;
+    color: #9fb4d1;
+    line-height: 1.6;
+  }
+</style>
+
 </body>
 </html>
