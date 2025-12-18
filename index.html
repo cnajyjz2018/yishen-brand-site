@@ -2,42 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>YiShen Global | Furniture-First · AI-Driven Supply Systems</title>
+  <title>YiShen Global | Furniture-First · AI-Driven</title>
 
-  <!-- Basic SEO -->
-  <meta name="description" content="YiShen Global is a furniture-first, AI-driven global supply system. Engineered in China, delivered worldwide.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="YiShen Global builds furniture-first, AI-driven global supply systems.">
 
-  <!-- ===============================
-       Favicon / Brand Identity (DO NOT CHANGE)
-  =============================== -->
+  <!-- Favicon / Brand Identity -->
   <link rel="icon" href="/yishen-logo-icon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/yishen-logo-icon.svg">
-
   <meta name="theme-color" content="#06122A">
   <meta name="application-name" content="YiShen Global">
   <meta name="apple-mobile-web-app-title" content="YiShen Global">
 
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Core Styles -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<!-- ===============================
-     NAVBAR
-=============================== -->
-<nav class="navbar navbar-elite">
+<!-- ================= NAV ================= -->
+<nav class="navbar">
   <div class="container nav-wrapper">
-    <a href="index.html" class="brand">
-      <img src="yishen-logo-horizontal.svg" alt="YiShen Global" height="44">
+
+    <!-- LOGO : Inline SVG + fallback -->
+    <a href="index.html" class="brand" style="display:flex;align-items:center;gap:10px">
+
+      <!-- Inline SVG（永不破图） -->
+      <svg width="160" height="40" viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg" aria-label="YiShen Global Logo">
+        <rect width="80" height="80" rx="14" fill="#0EA5E9"/>
+        <path d="M24 40 L40 24 L56 40 L40 56 Z" fill="#ffffff"/>
+        <text x="100" y="52"
+              font-family="Inter, Arial, sans-serif"
+              font-size="36"
+              font-weight="700"
+              fill="#0F172A">
+          YiShen Global
+        </text>
+      </svg>
+
+      <!-- img fallback（极端情况用） -->
+      <img src="/yishen-logo-horizontal.svg"
+           alt="YiShen Global"
+           style="display:none"
+           onerror="this.style.display='none'">
     </a>
 
     <div class="nav-links">
@@ -47,120 +60,46 @@
       <a href="resources.html">Resources</a>
       <a href="contact.html" class="nav-cta">Contact</a>
     </div>
-
-    <button class="mobile-menu-btn" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
   </div>
 </nav>
 
-<!-- ===============================
-     HERO
-=============================== -->
-<header class="hero hero-ai">
+<!-- ================= HERO ================= -->
+<header class="hero">
   <div class="container hero-grid">
 
-    <div class="hero-copy">
-      <span class="hero-tag">
-        ⚙ Furniture-First · AI-Driven
-      </span>
-
-      <h1>
-        Predictable.<br>
-        Engineered.<br>
-        Global.
-      </h1>
-
-      <p class="hero-sub">
-        YiShen Global builds furniture-first supply systems powered by AI,
-        engineered in China and delivered worldwide — with predictability as the core.
+    <div>
+      <span class="hero-tag">⚙ Furniture-First · AI-Driven</span>
+      <h1>Predictable.<br>Engineered.<br>Global.</h1>
+      <p>
+        YiShen Global builds furniture-first supply systems,
+        engineered in China and delivered worldwide.
       </p>
 
       <div class="hero-actions">
-        <a href="solutions.html" class="btn btn-tech btn-primary">
-          Explore Solutions
-        </a>
-        <a href="contact.html" class="btn btn-ghost">
-          Strategic Contact
-        </a>
+        <a href="solutions.html" class="btn-primary">Explore Solutions</a>
+        <a href="contact.html" class="btn-secondary">Contact Strategy</a>
       </div>
     </div>
 
     <div class="hero-visual">
-      <!-- Inline SVG / AI visual placeholder -->
-      <div class="ai-core-orbit">
-        <img src="yishen-logo-icon.svg" alt="YiShen AI Core" class="ai-core-logo">
-      </div>
+      <img src="/yishen-logo-icon.svg" alt="YiShen AI Core" style="width:140px">
     </div>
 
   </div>
 </header>
 
-<!-- ===============================
-     VALUE STRIP
-=============================== -->
-<section class="value-strip">
-  <div class="container grid-3">
-
-    <div class="value-card">
-      <h3>Furniture-First</h3>
-      <p>
-        Chairs, sofas, desks, bamboo, WPC —
-        engineered from a manufacturing mindset, not a trading one.
-      </p>
-    </div>
-
-    <div class="value-card">
-      <h3>AI-Driven</h3>
-      <p>
-        AI embedded across sourcing, quoting, logistics,
-        client strategy and post-order execution.
-      </p>
-    </div>
-
-    <div class="value-card">
-      <h3>Predictability</h3>
-      <p>
-        Lead time, quality, packaging, documentation —
-        engineered to be defendable inside your organization.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ===============================
-     CTA
-=============================== -->
-<section class="cta-banner cta-elite">
-  <div class="container">
-    <h2>Build a Defendable Supply System</h2>
-    <p>
-      This is not about cheaper furniture.
-      It is about supply predictability you can stand behind.
-    </p>
-    <a href="contact.html" class="btn btn-tech btn-tech-elite">
-      Contact YiShen Global
-    </a>
-  </div>
-</section>
-
-<!-- ===============================
-     FOOTER
-=============================== -->
-<footer class="footer footer-elite">
-  <div class="container footer-grid grid-3">
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer-grid">
 
     <div>
-      <img src="yishen-logo-horizontal.svg" class="site-logo" alt="YiShen Global">
-      <p style="margin-top:14px">
+      <p>
         Furniture-first global supply systems.<br>
         Engineered in China · Delivered Worldwide
       </p>
     </div>
 
     <div>
-      <h4>Contact</h4>
       <p>Email: alex.yang@yishenglobal.net</p>
       <p>Email: champion.yang@yishenglobal.net</p>
       <p>WhatsApp: +86 159 6827 7867</p>
@@ -169,256 +108,21 @@
       <p>Base: Anji · Hangzhou · China</p>
     </div>
 
-    <div>
-      <h4>Social</h4>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://x.com/AlexYan03451555" target="_blank"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.facebook.com/alex.yang.427745" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/alexyang591/" target="_blank"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-
-  </div>
-</footer>
-
-<!-- Floating WhatsApp CTA -->
-<a href="https://wa.me/8615968277867" class="floating-cta">
-  <img src="yishen-logo-icon.svg" class="logo-ai" alt="YiShen AI">
-</a>
-
-<!-- Core Script -->
-<script src="script.js"></script>
-
-</body>
-</html>
-      <a href="solutions.html">Solutions</a>
-      <a href="industries.html">Industries</a>
-      <a href="resources.html">Resources</a>
-      <a href="contact.html" class="nav-cta">Contact</a>
-    </div>
-  </div>
-</nav>
-
-<!-- ================= HERO ================= -->
-<header class="hero bg-dark">
-  <div class="container hero-grid">
-
-    <div class="hero-content">
-      <span class="section-tag">
-        <i class="fa-solid fa-microchip"></i>
-        Furniture-First · AI-Driven
-      </span>
-
-      <h1>
-        Predictable Furniture Supply.<br>
-        <span class="accent">Engineered — Not Promised.</span>
-      </h1>
-
-      <p class="hero-sub">
-        YiShen Global is an AI-driven, furniture-first global supply chain system.
-        We engineer manufacturing, compliance, packaging and delivery into one
-        controllable workflow.
-      </p>
-
-      <div class="hero-actions">
-        <a href="contact.html" class="btn btn-tech btn-tech-elite">
-          Start Engineering Review
-        </a>
-        <a href="why-us.html" class="btn btn-ghost">
-          Why This System Works
-        </a>
-      </div>
-    </div>
-
-    <div class="hero-visual">
-      <img src="hero-furniture-system.webp" alt="Furniture supply chain system visualization">
-    </div>
-
-  </div>
-</header>
-
-<!-- ================= TRUST STRIP ================= -->
-<section class="trust-strip">
-  <div class="container trust-grid">
-    <span>BIFMA / EN1335</span>
-    <span>ISTA Packaging</span>
-    <span>OEM / ODM</span>
-    <span>DDP / FOB / CIF</span>
-    <span>Furniture-Only Focus</span>
-  </div>
-</section>
-
-<!-- ================= WHAT WE ARE ================= -->
-<section class="section-padding">
-  <div class="container grid-2">
-
-    <div>
-      <h2>Not a Trading Company.<br>Not a Factory Website.</h2>
-      <p>
-        YiShen Global is a <strong>decision system</strong>.
-        Built for buyers who care about predictability,
-        not just price.
-      </p>
-
-      <ul class="eng-list">
-        <li>Furniture manufacturing logic</li>
-        <li>Compliance & certification planning</li>
-        <li>Packaging survivability engineering</li>
-        <li>AI-assisted sales & follow-up</li>
-        <li>DDP delivery execution</li>
-      </ul>
-    </div>
-
-    <div class="card-highlight">
-      <h3>What Buyers Actually Want</h3>
-      <p>
-        • Will this pass compliance?<br>
-        • Will it survive shipping?<br>
-        • Will it arrive on time?<br>
-        • Who owns the risk?
-      </p>
-      <p class="accent">
-        Our system answers these questions
-        <strong>before price discussion</strong>.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ================= CORE MODULES ================= -->
-<section class="section-padding bg-light">
-  <div class="container">
-    <h2 class="text-center">System Modules</h2>
-
-    <div class="grid-3">
-
-      <div class="module-card">
-        <i class="fa-solid fa-industry"></i>
-        <h3>Furniture Engineering</h3>
-        <p>SKU feasibility, structure logic, materials and durability.</p>
-      </div>
-
-      <div class="module-card">
-        <i class="fa-solid fa-box"></i>
-        <h3>Packaging Intelligence</h3>
-        <p>Drop-test logic, KD optimization, container density modeling.</p>
-      </div>
-
-      <div class="module-card">
-        <i class="fa-solid fa-globe"></i>
-        <h3>Global Delivery</h3>
-        <p>DDP execution, documentation, risk ownership.</p>
-      </div>
-
-      <div class="module-card">
-        <i class="fa-solid fa-robot"></i>
-        <h3>AI Sales Brain</h3>
-        <p>Consultant-style replies, localization insight, price anchoring.</p>
-      </div>
-
-      <div class="module-card">
-        <i class="fa-solid fa-chart-line"></i>
-        <h3>Market Intelligence</h3>
-        <p>Buyer psychology, region logic, category scaling.</p>
-      </div>
-
-      <div class="module-card">
-        <i class="fa-solid fa-handshake"></i>
-        <h3>Long-Term Cooperation</h3>
-        <p>Not one order — a repeatable system.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ================= FURNITURE FOCUS ================= -->
-<section class="section-padding">
-  <div class="container text-center">
-    <h2>Furniture Is the Core</h2>
-    <p class="max-800">
-      Every system decision is built around furniture:
-      chairs, desks, seating, projects — not generic products.
-    </p>
-
-    <div class="grid-4 image-wall">
-      <img src="product-chair.webp" alt="Ergonomic chair">
-      <img src="gaming.webp" alt="Gaming chair">
-      <img src="desk-DDUALX1-scene-office.webp" alt="Standing desk">
-      <img src="sofa.webp" alt="Sofa seating">
-    </div>
-  </div>
-</section>
-
-<!-- ================= CTA ================= -->
-<section class="cta-banner cta-elite">
-  <div class="container">
-    <span class="section-tag">
-      <i class="fa-solid fa-bolt"></i>
-      Start Here
-    </span>
-
-    <h2>Begin With an Engineering Review</h2>
-    <p>
-      We align SKU, packaging, compliance and delivery
-      into one controllable plan.
-    </p>
-
-    <a href="contact.html" class="btn btn-tech btn-tech-elite">
-      Contact YiShen Global
-    </a>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <div class="container footer-grid grid-4">
-
-    <div>
-      <img src="logo.webp" class="site-logo" alt="YiShen Global">
-      <p>
-        Furniture-first global supply chain systems.<br>
-        Engineered in China · Delivered Worldwide
-      </p>
-    </div>
-
-    <div>
-      <h4>System</h4>
-      <a href="why-us.html">Why Us</a>
-      <a href="solutions.html">Solutions</a>
-      <a href="resources.html">Resources</a>
-    </div>
-
-    <div>
-      <h4>Industries</h4>
-      <a href="industries.html">Furniture</a>
-      <a href="industries.html">Projects</a>
-      <a href="industries.html">Retail & Brands</a>
-    </div>
-
-    <div>
-      <h4>Connect</h4>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://x.com/AlexYan03451555" target="_blank"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.facebook.com/alex.yang.427745" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/alexyang591/" target="_blank"><i class="fab fa-instagram"></i></a>
-      </div>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://x.com/AlexYan03451555" target="_blank"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/alex.yang.427745" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/alexyang591/" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
 
   </div>
 </footer>
 
 <a href="https://wa.me/8615968277867" class="floating-cta">
-  <i class="fab fa-whatsapp"></i>
+  <img src="/yishen-logo-icon.svg" alt="YiShen AI">
 </a>
 
 <script src="script.js"></script>
 </body>
 </html>
-
-
