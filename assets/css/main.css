@@ -1,102 +1,68 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+* { box-sizing: border-box; margin:0; padding:0; }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  background: #0b1c2d;
-  color: #e6edf3;
-  line-height: 1.6;
+  font-family: Inter, Arial, sans-serif;
+  background:#0b1628;
+  color:#eaf1ff;
 }
 
-/* Header */
 .site-header {
-  background: rgba(10, 25, 45, 0.95);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  position:sticky;
+  top:0;
+  background:#0b1628;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  z-index:1000;
 }
 
 .nav-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 16px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 600;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
 }
 
-.logo img {
-  height: 28px;
+.logo img { height:28px; }
+
+.nav a {
+  margin-left:20px;
+  color:#cfe0ff;
+  text-decoration:none;
 }
 
-.main-nav a {
-  margin-left: 24px;
-  color: #cfd8e3;
-  text-decoration: none;
-  font-size: 15px;
+.nav .cta {
+  padding:6px 14px;
+  border:1px solid #4da3ff;
+  border-radius:20px;
 }
 
-.main-nav a:hover {
-  color: #ffffff;
-}
-
-.main-nav .cta {
-  padding: 8px 14px;
-  border-radius: 6px;
-  background: #1f6feb;
-  color: #fff;
-}
-
-/* Main */
 main {
-  max-width: 1200px;
-  margin: auto;
-  padding: 80px 24px;
+  max-width:1200px;
+  margin:auto;
+  padding:80px 20px;
 }
 
-.hero h1 {
-  font-size: 44px;
-  margin-bottom: 16px;
-}
+h1 { font-size:42px; margin-bottom:20px; }
+h2 { font-size:26px; margin:40px 0 16px; }
 
-.hero p {
-  max-width: 700px;
-  color: #b8c4d6;
-}
-
-/* Sections */
-.section {
-  margin-top: 80px;
-}
-
-.section h2 {
-  font-size: 28px;
-  margin-bottom: 16px;
-}
-
-.section p {
-  max-width: 800px;
-  color: #c0cada;
-}
-
-/* Footer */
 .site-footer {
-  border-top: 1px solid rgba(255,255,255,0.08);
-  margin-top: 100px;
-  padding: 40px 24px;
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:40px 20px;
 }
 
 .footer-inner {
-  max-width: 1200px;
-  margin: auto;
-  font-size: 14px;
-  color: #9fb0c3;
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
 }
