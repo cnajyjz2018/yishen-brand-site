@@ -1,109 +1,224 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YiShen Global</title>
+/* =========================================================
+   YiShen Global — i18n Engine
+   Version: 2026 Stable
+   Scope: All Pages / All Components
+   ========================================================= */
 
-  <!-- 样式 -->
-  <link rel="stylesheet" href="styles.css">
-</head>
+(function () {
+  "use strict";
 
-<body>
+  /* =============================
+     1. Core Configuration
+     ============================= */
 
-  <!-- 页面内容 -->
-  <section class="hero">
-    <h1 data-i18n="hero_title"></h1>
-    <p data-i18n="hero_sub"></p>
-  </section>
-
-  <!-- 👇👇👇 这里开始放 I18N ENGINE（PART A） -->
-  <!-- YiShen Global I18N ENGINE -->
-  <script>
-  /* ===========================
-     YiShen Global I18N ENGINE
-     Furniture-first · Global
-  =========================== */
-
-  const LANGS = {
-    en:{dir:"ltr",name:"EN"},
-    zh:{dir:"ltr",name:"中文"},
-    ja:{dir:"ltr",name:"日本語"},
-    ko:{dir:"ltr",name:"한국어"},
-    ar:{dir:"rtl",name:"العربية"},
-    he:{dir:"rtl",name:"עברית"},
-    ru:{dir:"ltr",name:"RU"},
-    fr:{dir:"ltr",name:"FR"},
-    de:{dir:"ltr",name:"DE"},
-    it:{dir:"ltr",name:"IT"},
-    es:{dir:"ltr",name:"ES"},
-    pt:{dir:"ltr",name:"PT"},
-    nl:{dir:"ltr",name:"NL"},
-    pl:{dir:"ltr",name:"PL"},
-    sv:{dir:"ltr",name:"SE"},
-    fi:{dir:"ltr",name:"FI"},
-    cs:{dir:"ltr",name:"CZ"},
-    hi:{dir:"ltr",name:"HI"},
-    th:{dir:"ltr",name:"TH"},
-    ms:{dir:"ltr",name:"MY"},
-    mn:{dir:"ltr",name:"MN"},
-    sw:{dir:"ltr",name:"SW"}
+  const I18N_CONFIG = {
+    defaultLang: "en",
+    storageKey: "yishen_lang",
+    attr: "data-i18n",
+    fallback: true,
+    debug: false
   };
 
-  const TEXT = {
-    hero_title:{
-      en:"Furniture Built for Scale. Engineered to Deliver.",
-      zh:"为规模而生的家具 · 为交付而工程化",
-      ja:"スケールのための家具。工学的に設計。",
-      ko:"확장을 위해 설계된 가구. 전달을 위해 엔지니어링.",
-      de:"Möbel für globale Skalierung entwickelt.",
-      it:"Arredi progettati per la scala globale.",
-      fr:"Mobilier conçu pour l’échelle mondiale.",
-      es:"Muebles diseñados para crecer globalmente.",
-      pt:"Móveis projetados para escala global.",
-      ru:"Мебель, созданная для масштабирования.",
-      ar:"أثاث مصمم للتوسع والتسليم",
-      he:"ריהוט שנבנה להתרחבות",
-      hi:"वैश्विक स्केल के लिए डिज़ाइन किया गया फर्नीचर",
-      th:"เฟอร์นิเจอร์สำหรับการขยายระดับโลก",
-      ms:"Perabot untuk skala global.",
-      mn:"Дэлхийн хэмжээнд тэлэхэд зориулагдсан тавилга",
-      sw:"Samani kwa kiwango cha kimataifa"
+  /* =============================
+     2. Language Packs
+     （可无限扩展）
+     ============================= */
+
+  const LANG = {
+
+    en: {
+      common: {
+        nav: {
+          home: "Home",
+          solutions: "Solutions",
+          industries: "Industries",
+          resources: "Resources",
+          why: "Why Us",
+          contact: "Contact"
+        },
+        footer: {
+          tagline: "Furniture-first global supply chain systems.",
+          base: "Anji · Hangzhou · China"
+        }
+      },
+
+      home: {
+        hero: {
+          title: "Engineering Predictable Furniture Supply",
+          subtitle: "Furniture-first systems built for global execution"
+        }
+      },
+
+      solutions: {
+        hero: {
+          title: "Solutions Built on Execution Logic",
+          subtitle: "Not services. Systems."
+        }
+      },
+
+      industries: {
+        hero: {
+          title: "Industries We Serve",
+          subtitle: "Furniture as the core system"
+        }
+      },
+
+      resources: {
+        hero: {
+          title: "Decision-Grade Resources",
+          subtitle: "Built to reduce sourcing risk"
+        }
+      },
+
+      why: {
+        hero: {
+          title: "Why YiShen Global",
+          subtitle: "Because predictability is engineered"
+        }
+      },
+
+      contact: {
+        hero: {
+          title: "Always-on Contact",
+          subtitle: "Structured conversations start here"
+        }
+      }
     },
 
-    hero_sub:{
-      en:"Commercial furniture manufacturing with global supply chain control.",
-      zh:"以家具制造为核心的全球供应链体系",
-      ja:"家具製造を中核としたグローバル供給網",
-      ko:"가구 제조 중심의 글로벌 공급망",
-      de:"Möbelfertigung mit globaler Lieferkettenkontrolle",
-      fr:"Fabrication de mobilier avec contrôle logistique mondial",
-      ar:"تصنيع أثاث مع نظام توريد عالمي"
+    zh: {
+      common: {
+        nav: {
+          home: "首页",
+          solutions: "解决方案",
+          industries: "行业",
+          resources: "资源",
+          why: "为什么是我们",
+          contact: "联系"
+        },
+        footer: {
+          tagline: "以家具为核心的全球供应链系统。",
+          base: "中国 · 安吉 / 杭州"
+        }
+      },
+
+      home: {
+        hero: {
+          title: "可预测的家具供应工程系统",
+          subtitle: "以执行力为核心的全球家具体系"
+        }
+      },
+
+      solutions: {
+        hero: {
+          title: "基于工程逻辑的解决方案",
+          subtitle: "不是服务，而是系统"
+        }
+      },
+
+      industries: {
+        hero: {
+          title: "我们服务的行业",
+          subtitle: "家具是母系统"
+        }
+      },
+
+      resources: {
+        hero: {
+          title: "决策级资源中心",
+          subtitle: "为降低采购风险而生"
+        }
+      },
+
+      why: {
+        hero: {
+          title: "为什么选择一深",
+          subtitle: "因为稳定是被设计出来的"
+        }
+      },
+
+      contact: {
+        hero: {
+          title: "随时可联系",
+          subtitle: "从结构化沟通开始"
+        }
+      }
     }
+
   };
 
-  function setLang(lang){
-    if(!LANGS[lang]) return;
+  /* =============================
+     3. Utilities
+     ============================= */
 
-    document.documentElement.lang = lang;
-    document.documentElement.dir  = LANGS[lang].dir;
+  function log(...args) {
+    if (I18N_CONFIG.debug) {
+      console.log("[i18n]", ...args);
+    }
+  }
 
-    document.querySelectorAll("[data-i18n]").forEach(el=>{
-      const key = el.dataset.i18n;
-      if(TEXT[key] && TEXT[key][lang]){
-        el.innerText = TEXT[key][lang];
+  function get(obj, path) {
+    return path.split(".").reduce((o, k) => (o ? o[k] : null), obj);
+  }
+
+  function detectLang() {
+    const saved = localStorage.getItem(I18N_CONFIG.storageKey);
+    if (saved && LANG[saved]) return saved;
+
+    const htmlLang = document.documentElement.lang;
+    if (htmlLang && LANG[htmlLang]) return htmlLang;
+
+    return I18N_CONFIG.defaultLang;
+  }
+
+  /* =============================
+     4. Core Apply Function
+     ============================= */
+
+  function applyLang(lang) {
+    const dict = LANG[lang] || LANG[I18N_CONFIG.defaultLang];
+    const nodes = document.querySelectorAll(`[${I18N_CONFIG.attr}]`);
+
+    nodes.forEach(node => {
+      const key = node.getAttribute(I18N_CONFIG.attr);
+      const value = get(dict, key);
+
+      if (value !== null && value !== undefined) {
+        node.textContent = value;
+      } else if (I18N_CONFIG.fallback) {
+        const fallbackValue = get(LANG[I18N_CONFIG.defaultLang], key);
+        if (fallbackValue) node.textContent = fallbackValue;
       }
     });
 
-    localStorage.setItem("lang",lang);
+    document.documentElement.lang = lang;
+    localStorage.setItem(I18N_CONFIG.storageKey, lang);
+    log("Language applied:", lang);
   }
 
-  const savedLang = localStorage.getItem("lang") 
-    || navigator.language.slice(0,2);
+  /* =============================
+     5. Public API
+     ============================= */
 
-  setLang(LANGS[savedLang] ? savedLang : "en");
-  </script>
-  <!-- 👆👆👆 I18N ENGINE 结束 -->
+  window.YiShenI18N = {
+    setLang(lang) {
+      if (!LANG[lang]) return;
+      applyLang(lang);
+    },
+    getLang() {
+      return detectLang();
+    },
+    available() {
+      return Object.keys(LANG);
+    }
+  };
 
-</body>
-</html>
+  /* =============================
+     6. Init on DOM Ready
+     ============================= */
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const lang = detectLang();
+    applyLang(lang);
+  });
+
+})();
