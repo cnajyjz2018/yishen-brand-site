@@ -1,63 +1,17 @@
-<!-- header.html -->
-<header id="site-header">
-  <div class="nav">
-    <div class="logo">
-      <img src="/yishen-logo-icon.svg" alt="YiShen Global">
-      <span>YiShen Global</span>
-    </div>
+<header class="site-header">
+  <div class="nav-container">
+    <a href="/index.html" class="brand">
+      <img src="/yishen-logo-icon.svg" alt="YiShen Global" class="brand-logo">
+      <span class="brand-name">YiShen Global</span>
+    </a>
 
-    <nav class="nav-links">
-      <a href="/">Home</a>
+    <nav class="main-nav">
+      <a href="/index.html">Home</a>
       <a href="/solutions.html">Solutions</a>
       <a href="/industries.html">Industries</a>
       <a href="/why.html">Why Us</a>
       <a href="/resources.html">Resources</a>
+      <a href="/contact.html" class="btn-contact">Contact</a>
     </nav>
-
-    <a class="nav-cta" href="/contact.html">Contact</a>
   </div>
 </header>
-
-<style>
-  #site-header {
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    background: rgba(6,18,42,.88);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255,255,255,.08);
-  }
-  .nav {
-    max-width: 1200px;
-    margin: auto;
-    padding: 14px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 600;
-    color: #e8eef7;
-  }
-  .logo img { height: 28px; }
-
-  .nav-links a {
-    margin: 0 14px;
-    color: #e8eef7;
-    text-decoration: none;
-    opacity: .85;
-  }
-  .nav-links a:hover { opacity: 1; }
-
-  .nav-cta {
-    padding: 8px 16px;
-    border-radius: 999px;
-    background: rgba(54,194,255,.18);
-    color: #36c2ff;
-    text-decoration: none;
-    font-weight: 500;
-  }
-</style>
