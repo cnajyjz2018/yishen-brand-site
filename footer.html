@@ -1,63 +1,65 @@
-<!-- header.html -->
-<header id="site-header">
-  <div class="nav">
-    <div class="logo">
-      <img src="/yishen-logo-icon.svg" alt="YiShen Global">
-      <span>YiShen Global</span>
+<!-- footer.html -->
+<footer id="site-footer">
+  <div class="footer-inner">
+    <div>
+      <h4>YiShen Global</h4>
+      <p>
+        Furniture-first global supply chain systems.<br>
+        Engineered in China · Delivered Worldwide.
+      </p>
     </div>
 
-    <nav class="nav-links">
-      <a href="/">Home</a>
-      <a href="/solutions.html">Solutions</a>
-      <a href="/industries.html">Industries</a>
-      <a href="/why.html">Why Us</a>
-      <a href="/resources.html">Resources</a>
-    </nav>
+    <div>
+      <h4>Contact</h4>
+      <p>
+        alex.yang@yishenglobal.net<br>
+        champion.yang@yishenglobal.net<br><br>
+        WhatsApp: +86 159 6827 7867<br>
+        WhatsApp: +86 188 5727 7313<br>
+        WeChat: 19530394133<br>
+        Base: Anji · Hangzhou · China
+      </p>
+    </div>
 
-    <a class="nav-cta" href="/contact.html">Contact</a>
+    <div>
+      <h4>Social</h4>
+      <div class="social">
+        <a href="#">LinkedIn</a>
+        <a href="#">X</a>
+        <a href="#">YouTube</a>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
   </div>
-</header>
+</footer>
 
 <style>
-  #site-header {
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    background: rgba(6,18,42,.88);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255,255,255,.08);
+  #site-footer {
+    background: #040d1f;
+    border-top: 1px solid rgba(255,255,255,.08);
+    margin-top: 120px;
   }
-  .nav {
+  .footer-inner {
     max-width: 1200px;
     margin: auto;
-    padding: 14px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 600;
+    padding: 48px 24px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
     color: #e8eef7;
   }
-  .logo img { height: 28px; }
-
-  .nav-links a {
-    margin: 0 14px;
-    color: #e8eef7;
-    text-decoration: none;
-    opacity: .85;
+  #site-footer h4 { margin-bottom: 12px; }
+  #site-footer p {
+    font-size: 14px;
+    color: #9fb4d1;
+    line-height: 1.6;
   }
-  .nav-links a:hover { opacity: 1; }
-
-  .nav-cta {
-    padding: 8px 16px;
-    border-radius: 999px;
-    background: rgba(54,194,255,.18);
-    color: #36c2ff;
+  .social a {
+    display: inline-block;
+    margin-right: 12px;
+    color: #9fb4d1;
     text-decoration: none;
-    font-weight: 500;
+    font-size: 14px;
   }
 </style>
