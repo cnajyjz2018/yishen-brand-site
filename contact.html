@@ -1,34 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="description" content="Contact YiShen Global. Engineering-led furniture manufacturing and global supply chain systems.">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050b17">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Contact YiShen Global. Furniture-first global supply chain. Engineering-led OEM / ODM & DDP execution."/>
 <title>Contact | YiShen Global</title>
 
+<!-- Core -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <link rel="stylesheet" href="styles.css">
 
-<!-- JSON-LD Organization -->
+<!-- ========= JSON-LD ========= -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "YiShen Global",
-  "url": "https://yishenglobal.net",
-  "logo": "https://yishenglobal.net/logo/yishen-wordmark-horizontal.svg",
-  "contactPoint": [{
-    "@type": "ContactPoint",
-    "contactType": "sales",
-    "email": "alex.yang@yishenglobal.net",
-    "telephone": "+86-159-6827-7867",
-    "availableLanguage": ["English","Chinese"]
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"YiShen Global",
+  "url":"https://yishenglobal.net",
+  "logo":"https://yishenglobal.net/logo/yishen-wordmark-horizontal.svg",
+  "contactPoint":[{
+    "@type":"ContactPoint",
+    "contactType":"sales",
+    "email":"alex.yang@yishenglobal.net",
+    "telephone":"+86-159-6827-7867",
+    "availableLanguage":["English","Chinese"]
   }],
-  "sameAs": [
+  "sameAs":[
     "https://www.linkedin.com/in/alex-yang-yishen/",
     "https://x.com/AlexYan03451555",
     "https://www.youtube.com/channel/@alexyang6074",
@@ -37,6 +36,29 @@
   ]
 }
 </script>
+
+<style>
+body{font-family:Inter,sans-serif;background:#020617;color:#e5e7eb;margin:0}
+.container{max-width:1180px;margin:auto;padding:0 24px}
+.page-header{padding:120px 0 80px;background:
+radial-gradient(circle at 20% 20%,rgba(56,189,248,.18),transparent 40%),
+linear-gradient(180deg,#020617,#050b17)}
+h1{font-size:clamp(2.2rem,4vw,3.2rem);margin:16px 0}
+.section-tag{display:inline-block;border:1px solid rgba(56,189,248,.4);
+padding:8px 16px;border-radius:999px;font-weight:700}
+.grid-2{display:grid;grid-template-columns:1.2fr .8fr;gap:40px}
+.card{background:#fff;color:#020617;border-radius:18px;padding:28px;
+box-shadow:0 20px 40px rgba(0,0,0,.25)}
+input,select,textarea{width:100%;padding:12px 14px;border-radius:12px;
+border:1px solid #cbd5e1;font-weight:600;margin-bottom:14px}
+button{cursor:pointer}
+.btn{background:#0a63ff;color:#fff;border:none;padding:14px 22px;
+border-radius:999px;font-weight:800}
+.social-links a{margin-right:12px;font-size:1.2rem;color:#0a63ff}
+.cta-banner{padding:80px 0;text-align:center;background:
+linear-gradient(135deg,#020617,#020b22)}
+@media(max-width:900px){.grid-2{grid-template-columns:1fr}}
+</style>
 </head>
 
 <body>
@@ -45,11 +67,8 @@
 <nav class="navbar">
   <div class="container nav-wrapper">
     <a href="index.html" class="brand">
-      <img src="logo.webp" class="site-logo" alt="YiShen Global">
+      <img src="logo.webp" alt="YiShen Global" style="height:48px">
     </a>
-
-    <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
-
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="why-us.html">Why Us</a>
@@ -61,35 +80,48 @@
   </div>
 </nav>
 
-
 <!-- HERO -->
-<header class="page-header bg-dark">
+<header class="page-header">
   <div class="container">
     <span class="section-tag">Contact & Programs</span>
-    <h1>Engineering-first.<br>Global supply chain, executed.</h1>
-    <p>
-      Reach YiShen Global for OEM/ODM furniture programs, compliance planning,
-      packaging engineering, and DDP delivery systems.
-    </p>
+    <h1>Furniture-first.<br>Global supply chain, engineered.</h1>
+    <p>OEM / ODM furniture programs · Compliance · Packaging · DDP execution</p>
   </div>
 </header>
 
 <!-- MAIN -->
-<section class="section-padding">
-  <div class="container grid-2">
+<section class="container" style="padding:80px 0">
+  <div class="grid-2">
 
     <!-- FORM -->
     <div class="card">
       <h2>Send a Request</h2>
-      <p>Share your SKU targets, market, volume and compliance needs.</p>
+      <p>AI-assisted · Engineering-first response</p>
 
-      <form onsubmit="event.preventDefault();alert('Submitted. We will reply soon.');">
+      <form id="contactForm">
         <input type="text" placeholder="Name" required>
         <input type="text" placeholder="Company">
         <input type="email" placeholder="Email" required>
-        <textarea placeholder="Message (market, volume, MOQ, BIFMA / EN1335 / UL, DDP / FOB)"></textarea>
-        <button class="btn btn-tech">Submit</button>
+
+        <select>
+          <option>Ergonomic / Mesh Chairs</option>
+          <option>Gaming Chairs</option>
+          <option>Standing Desks</option>
+          <option>Sofa / Lounge</option>
+          <option>Project Furniture</option>
+        </select>
+
+        <textarea placeholder="Market, quantity, compliance (BIFMA / EN1335 / UL), delivery (DDP / FOB)"></textarea>
+
+        <button class="btn" type="submit">
+          <i class="fa-solid fa-paper-plane"></i> Submit
+        </button>
       </form>
+
+      <p style="margin-top:14px;font-size:.9rem;color:#475569">
+        After submission, you will receive an **Engineering Review PDF**
+        and a consultant-level reply.
+      </p>
     </div>
 
     <!-- HUD -->
@@ -110,6 +142,7 @@
 
       <p><strong>Base</strong><br>Anji · Hangzhou · China</p>
 
+      <h4 style="margin-top:20px">Connect</h4>
       <div class="social-links">
         <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://x.com/AlexYan03451555" target="_blank"><i class="fab fa-x-twitter"></i></a>
@@ -117,6 +150,13 @@
         <a href="https://www.facebook.com/alex.yang.427745" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/alexyang591/" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
+
+      <a href="https://www.linkedin.com/in/alex-yang-yishen/"
+         target="_blank"
+         class="btn"
+         style="display:inline-block;margin-top:20px;background:#0a66c2">
+        <i class="fab fa-linkedin"></i> Add me on LinkedIn
+      </a>
     </aside>
 
   </div>
@@ -126,54 +166,29 @@
 <section class="cta-banner">
   <div class="container">
     <h2>Start with an Engineering Call</h2>
-    <p>Align SKU, packaging survivability, compliance risk and delivery into one controllable plan.</p>
-    <a href="https://wa.me/8615968277867" class="btn btn-tech btn-tech-elite">
+    <p>SKU · Packaging survivability · Compliance · Delivery — one controllable plan</p>
+    <a href="https://wa.me/8615968277867" class="btn">
       <i class="fab fa-whatsapp"></i> WhatsApp Now
     </a>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
-  <div class="container footer-grid grid-4">
-
-    <div>
-      <img src="logo.webp" class="site-logo" alt="YiShen Global">
-      <p style="margin-top:14px">
-        Furniture-first global supply chain systems.<br>
-        Engineered in China · Delivered Worldwide
-      </p>
-    </div>
-
-    <div>
-      <h4>Contact</h4>
-      <p>Email: alex.yang@yishenglobal.net</p>
-      <p>Email: champion.yang@yishenglobal.net</p>
-      <p>WhatsApp: +86 159 6827 7867</p>
-      <p>WhatsApp: +86 188 5727 7313</p>
-      <p>WeChat: 19530394133</p>
-      <p>Hotline: +86 195 3039 4133</p>
-      <p>Base: Anji · Hangzhou · China</p>
-    </div>
-
-    <div>
-      <h4>Social</h4>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://x.com/AlexYan03451555" target="_blank"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.facebook.com/alex.yang.427745" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/alexyang591/" target="_blank"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-
+  <div class="container">
+    <p style="text-align:center;opacity:.7">
+      © 2026 YiShen Global · Furniture-first global supply chain
+    </p>
   </div>
 </footer>
 
+<script>
+document.getElementById('contactForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  alert("Submitted. Our AI consultant will reply shortly.");
+  // 🔌 Webhook / CRM / Auto-PDF hook goes here
+});
+</script>
 
-<a href="https://wa.me/8615968277867" class="floating-cta">
-  <img src="logo/yishen-icon-square.svg" class="logo-ai" alt="YiShen AI">
-</a>
-
-<script src="script.js"></script>
 </body>
 </html>
