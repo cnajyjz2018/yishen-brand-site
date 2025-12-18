@@ -1,304 +1,173 @@
-/* =========================================================
+/* =========================
    YiShen Global – Core Styles
-   System Version: 2026 (Frozen)
-   Design Logic: Engineering / Furniture / Structure-first
-   ========================================================= */
+   Version: 2026 LOCKED
+   ========================= */
 
-/* ------------------------
-   0. CSS Reset (Safe)
-------------------------- */
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
-}
-
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-color: #050b17;
-  color: #e6edf7;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-  height: auto;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-ul {
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
+html, body {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #0b0f19;
+  color: #e6e8ee;
+  line-height: 1.6;
+}
 
-/* ------------------------
-   1. Layout Containers
-------------------------- */
+/* ---------- Layout ---------- */
+
 .container {
-  width: 100%;
-  max-width: 1280px;
-  margin-inline: auto;
-  padding-inline: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-.section {
+section {
   padding: 96px 0;
 }
 
-.section-tight {
-  padding: 64px 0;
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
+h1 { font-size: 56px; }
+h2 { font-size: 40px; }
+h3 { font-size: 24px; }
 
-/* ------------------------
-   2. Navbar (2026 · 永不消失)
-------------------------- */
-.navbar {
-  position: sticky;
+p {
+  color: #b6bccf;
+  max-width: 720px;
+}
+
+/* ---------- NAVBAR (核心绳子) ---------- */
+
+.site-navbar {
+  position: fixed;
   top: 0;
-  z-index: 999;
-  background: rgba(5, 11, 23, 0.88);
-  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 72px;
+  background: rgba(6, 10, 22, 0.85);
+  backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
+  z-index: 9999;
 }
 
-.navbar-inner {
+.nav-inner {
+  max-width: 1200px;
+  height: 72px;
+  margin: 0 auto;
+  padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
 }
 
-.nav-brand img {
-  height: 36px;
-  width: auto;
+.nav-logo img {
+  height: 34px;
+  display: block;
 }
 
 .nav-menu {
   display: flex;
-  gap: 28px;
-  align-items: center;
+  list-style: none;
+  gap: 32px;
 }
 
 .nav-menu a {
-  font-size: 14px;
-  font-weight: 500;
-  opacity: 0.8;
-  position: relative;
+  color: #cfd5e6;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.2s ease;
 }
 
-.nav-menu a:hover,
-.nav-menu a.active {
-  opacity: 1;
+.nav-menu a:hover {
+  color: #6aa7ff;
 }
 
-.nav-menu a.active::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 0;
+.nav-cta {
+  padding: 8px 16px;
+  border: 1px solid #6aa7ff;
+  border-radius: 6px;
+  color: #6aa7ff;
+}
+
+.nav-spacer {
+  height: 72px;
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 64px;
+}
+
+.hero img {
   width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg,#2cb7ff,#0a63ff);
-}
-
-.nav-toggle {
-  display: none;
-  cursor: pointer;
-}
-
-
-/* ------------------------
-   3. Hero / Page Header
-------------------------- */
-.page-header {
-  padding: 120px 0 96px;
-  background:
-    radial-gradient(600px at 20% 10%, rgba(44,183,255,0.18), transparent 40%),
-    linear-gradient(180deg, #050b17 0%, #020617 100%);
-}
-
-.page-header h1 {
-  font-size: clamp(32px, 4vw, 56px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  max-width: 860px;
-}
-
-.page-header p {
-  max-width: 720px;
-  margin-top: 16px;
-  font-size: 17px;
-  color: #b8c6e0;
-}
-
-
-/* ------------------------
-   4. Grid System (Logic-first)
-------------------------- */
-.grid {
-  display: grid;
-  gap: 40px;
-}
-
-.grid-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.grid-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.grid-4 {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-
-/* ------------------------
-   5. Cards (Engineering Blocks)
-------------------------- */
-.card {
-  background: linear-gradient(180deg,#0b1220,#060b15);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 14px;
-  padding: 28px;
-}
-
-.card h3 {
-  font-size: 18px;
-  margin-bottom: 12px;
-}
-
-.card p {
-  font-size: 14.5px;
-  color: #b3c1dc;
-}
-
-
-/* ------------------------
-   6. Image Usage (不浪费图)
-------------------------- */
-.media-block {
-  display: grid;
-  gap: 24px;
-}
-
-.media-block img {
-  border-radius: 12px;
+  border-radius: 16px;
   object-fit: cover;
 }
 
-.media-hero {
-  height: 420px;
+/* ---------- IMAGE SYSTEM ---------- */
+
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
 }
 
-.media-half {
-  height: 260px;
+.img-grid img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
 }
 
+/* ---------- FOOTER ---------- */
 
-/* ------------------------
-   7. Footer (不重复 · 不变态)
-------------------------- */
 .footer {
-  background: #020617;
+  background: #060a16;
   border-top: 1px solid rgba(255,255,255,0.06);
-  padding: 72px 0 48px;
+  padding: 64px 0;
 }
 
 .footer-grid {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 40px;
 }
 
-.footer h4 {
-  font-size: 14px;
-  margin-bottom: 16px;
-  opacity: 0.9;
-}
-
 .footer p {
-  font-size: 13.5px;
-  color: #b3c1dc;
-  margin-bottom: 8px;
-}
-
-.social-links {
-  display: flex;
-  gap: 14px;
+  font-size: 14px;
 }
 
 .social-links a {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.06);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.25s;
+  margin-right: 12px;
+  color: #cfd5e6;
+  font-size: 18px;
 }
 
 .social-links a:hover {
-  background: rgba(44,183,255,0.25);
+  color: #6aa7ff;
 }
 
+/* ---------- Responsive ---------- */
 
-/* ------------------------
-   8. Reveal Animation (轻)
-------------------------- */
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .6s ease, transform .6s ease;
-}
-
-[data-reveal].revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-/* ------------------------
-   9. Responsive
-------------------------- */
 @media (max-width: 900px) {
-  .grid-2,
-  .grid-3,
-  .grid-4 {
+  h1 { font-size: 40px; }
+  .hero-grid {
     grid-template-columns: 1fr;
   }
-
   .nav-menu {
-    position: absolute;
-    top: 72px;
-    left: 0;
-    right: 0;
-    background: #050b17;
-    flex-direction: column;
-    padding: 24px;
-    display: none;
-  }
-
-  .nav-menu.open {
-    display: flex;
-  }
-
-  .nav-toggle {
-    display: block;
+    display: none; /* 2026 v1：先锁 PC 稳定 */
   }
 }
