@@ -1,37 +1,16 @@
-# ================================
-# YiShen Global – AI & SEO Optimized Robots
-# Furniture-first · Engineered Supply Chain
-# ================================
-
 User-agent: *
 Allow: /
 
-# Core public pages (high priority for AI understanding)
-Allow: /index.html
-Allow: /why-us.html
-Allow: /solutions.html
-Allow: /industries.html
-Allow: /resources.html
-Allow: /contact.html
-Allow: /home-and-office-furniture.html
+# Block system / dev files if any (optional, safe)
+Disallow: /tmp/
+Disallow: /dev/
+Disallow: /private/
 
-# Static assets (important for AI page rendering & UX)
+# Allow assets explicitly (SEO-safe)
 Allow: /assets/
-Allow: /styles.css
-Allow: /i18n-engine.js
+Allow: /images/
+Allow: /css/
+Allow: /js/
 
-# Explicitly allow AI & LLM crawlers
-User-agent: GPTBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-# Sitemap declaration
+# Sitemap (official)
 Sitemap: https://yishenglobal.net/sitemap.xml
