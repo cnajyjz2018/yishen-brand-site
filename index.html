@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="YiShen Global builds furniture-first, AI-driven global supply systems.">
 
-  <!-- Favicon / Brand Identity -->
+  <!-- Brand / Favicon -->
   <link rel="icon" href="/yishen-logo-icon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/yishen-logo-icon.svg">
@@ -24,17 +24,15 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="home-page">
 
 <!-- ================= NAV ================= -->
-<nav class="navbar">
-  <div class="container nav-wrapper">
+<nav class="nav-main">
+  <div class="nav-container">
 
-    <!-- LOGO : Inline SVG + fallback -->
-    <a href="index.html" class="brand" style="display:flex;align-items:center;gap:10px">
-
-      <!-- Inline SVG（永不破图） -->
-      <svg width="160" height="40" viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg" aria-label="YiShen Global Logo">
+    <!-- LOGO（唯一真源） -->
+    <a href="index.html" class="nav-brand">
+      <svg width="150" height="40" viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg" aria-label="YiShen Global">
         <rect width="80" height="80" rx="14" fill="#0EA5E9"/>
         <path d="M24 40 L40 24 L56 40 L40 56 Z" fill="#ffffff"/>
         <text x="100" y="52"
@@ -45,12 +43,6 @@
           YiShen Global
         </text>
       </svg>
-
-      <!-- img fallback（极端情况用） -->
-      <img src="/yishen-logo-horizontal.svg"
-           alt="YiShen Global"
-           style="display:none"
-           onerror="this.style.display='none'">
     </a>
 
     <div class="nav-links">
@@ -60,29 +52,30 @@
       <a href="resources.html">Resources</a>
       <a href="contact.html" class="nav-cta">Contact</a>
     </div>
+
   </div>
 </nav>
 
 <!-- ================= HERO ================= -->
-<header class="hero">
-  <div class="container hero-grid">
+<header class="home-hero">
+  <div class="home-hero-inner">
 
-    <div>
-      <span class="hero-tag">⚙ Furniture-First · AI-Driven</span>
-      <h1>Predictable.<br>Engineered.<br>Global.</h1>
-      <p>
-        YiShen Global builds furniture-first supply systems,
-        engineered in China and delivered worldwide.
-      </p>
+    <span class="home-tag">⚙ Furniture-First · AI-Driven</span>
 
-      <div class="hero-actions">
-        <a href="solutions.html" class="btn-primary">Explore Solutions</a>
-        <a href="contact.html" class="btn-secondary">Contact Strategy</a>
-      </div>
-    </div>
+    <h1 class="home-title">
+      Predictable.<br>
+      Engineered.<br>
+      Global.
+    </h1>
 
-    <div class="hero-visual">
-      <img src="/yishen-logo-icon.svg" alt="YiShen AI Core" style="width:140px">
+    <p class="home-subtitle">
+      YiShen Global builds furniture-first supply systems,<br>
+      engineered in China and delivered worldwide.
+    </p>
+
+    <div class="home-actions">
+      <a href="solutions.html" class="btn-primary">Explore Solutions</a>
+      <a href="contact.html" class="btn-secondary">Contact Strategy</a>
     </div>
 
   </div>
@@ -90,7 +83,7 @@
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
-  <div class="container footer-grid">
+  <div class="footer-container">
 
     <div>
       <p>
@@ -108,7 +101,7 @@
       <p>Base: Anji · Hangzhou · China</p>
     </div>
 
-    <div class="social-links">
+    <div class="footer-social">
       <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
       <a href="https://x.com/AlexYan03451555" target="_blank"><i class="fab fa-x-twitter"></i></a>
       <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank"><i class="fab fa-youtube"></i></a>
