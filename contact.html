@@ -1,194 +1,411 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Contact YiShen Global. Furniture-first global supply chain. Engineering-led OEM / ODM & DDP execution."/>
-<title>Contact | YiShen Global</title>
-
-<!-- Core -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-<link rel="stylesheet" href="styles.css">
-
-<!-- ========= JSON-LD ========= -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Organization",
-  "name":"YiShen Global",
-  "url":"https://yishenglobal.net",
-  "logo":"https://yishenglobal.net/logo/yishen-wordmark-horizontal.svg",
-  "contactPoint":[{
-    "@type":"ContactPoint",
-    "contactType":"sales",
-    "email":"alex.yang@yishenglobal.net",
-    "telephone":"+86-159-6827-7867",
-    "availableLanguage":["English","Chinese"]
-  }],
-  "sameAs":[
-    "https://www.linkedin.com/in/alex-yang-yishen/",
-    "https://x.com/AlexYan03451555",
-    "https://www.youtube.com/channel/@alexyang6074",
-    "https://www.facebook.com/alex.yang.427745",
-    "https://www.instagram.com/alexyang591/"
-  ]
-}
-</script>
-
-<style>
-body{font-family:Inter,sans-serif;background:#020617;color:#e5e7eb;margin:0}
-.container{max-width:1180px;margin:auto;padding:0 24px}
-.page-header{padding:120px 0 80px;background:
-radial-gradient(circle at 20% 20%,rgba(56,189,248,.18),transparent 40%),
-linear-gradient(180deg,#020617,#050b17)}
-h1{font-size:clamp(2.2rem,4vw,3.2rem);margin:16px 0}
-.section-tag{display:inline-block;border:1px solid rgba(56,189,248,.4);
-padding:8px 16px;border-radius:999px;font-weight:700}
-.grid-2{display:grid;grid-template-columns:1.2fr .8fr;gap:40px}
-.card{background:#fff;color:#020617;border-radius:18px;padding:28px;
-box-shadow:0 20px 40px rgba(0,0,0,.25)}
-input,select,textarea{width:100%;padding:12px 14px;border-radius:12px;
-border:1px solid #cbd5e1;font-weight:600;margin-bottom:14px}
-button{cursor:pointer}
-.btn{background:#0a63ff;color:#fff;border:none;padding:14px 22px;
-border-radius:999px;font-weight:800}
-.social-links a{margin-right:12px;font-size:1.2rem;color:#0a63ff}
-.cta-banner{padding:80px 0;text-align:center;background:
-linear-gradient(135deg,#020617,#020b22)}
-@media(max-width:900px){.grid-2{grid-template-columns:1fr}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | YiShen Global</title>
+  <meta name="description" content="Always-on contact, engineering review PDF, CRM-ready lead capture, and WhatsApp follow-up tree." />
+  <meta name="theme-color" content="#06122A" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body>
+<body class="page-contact">
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="YiShen Global Home">
+        <img class="brand-logo" src="/yishen-logo-horizontal.svg" alt="YiShen Global"
+             onerror="this.onerror=null;this.src='logo.webp';" />
+      </a>
 
-<!-- NAV -->
-<nav class="navbar">
-  <div class="container nav-wrapper">
-    <a href="index.html" class="brand">
-      <img src="logo.webp" alt="YiShen Global" style="height:48px">
-    </a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="why-us.html">Why Us</a>
-      <a href="solutions.html">Solutions</a>
-      <a href="industries.html">Industries</a>
-      <a href="resources.html">Resources</a>
-      <a href="contact.html" class="active nav-cta">Contact</a>
+      <nav class="nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="solutions.html">Solutions</a>
+        <a class="nav-link" href="industries.html">Industries</a>
+        <a class="nav-link" href="why-us.html">Why Us</a>
+        <a class="nav-link" href="resources.html">Resources</a>
+        <a class="nav-cta active" href="contact.html">Contact</a>
+      </nav>
     </div>
-  </div>
-</nav>
+  </header>
 
-<!-- HERO -->
-<header class="page-header">
-  <div class="container">
-    <span class="section-tag">Contact & Programs</span>
-    <h1>Furniture-first.<br>Global supply chain, engineered.</h1>
-    <p>OEM / ODM furniture programs · Compliance · Packaging · DDP execution</p>
-  </div>
-</header>
+  <main class="contact">
+    <div class="container contact-grid">
+      <section class="contact-main">
+        <div class="section-head">
+          <div class="eyebrow">
+            <span class="dot"></span>
+            <span>Contact → CRM → Auto Reply</span>
+          </div>
+          <h1>Always-on Contact</h1>
+          <p class="muted">
+            Submit your request and get an instant “Engineering Review” PDF-ready summary + WhatsApp follow-up prompts.
+          </p>
+        </div>
 
-<!-- MAIN -->
-<section class="container" style="padding:80px 0">
-  <div class="grid-2">
+        <!-- CRM Lead Form -->
+        <div id="crm" class="glass-card form-card">
+          <h3>Request a Supplier / Engineering Review</h3>
+          <p class="muted">This form stores a lead locally (for demo). It also generates a PDF-ready page and WhatsApp scripts.</p>
 
-    <!-- FORM -->
-    <div class="card">
-      <h2>Send a Request</h2>
-      <p>AI-assisted · Engineering-first response</p>
+          <form id="leadForm" class="lead-form">
+            <div class="field-row">
+              <div class="field">
+                <label>Name</label>
+                <input name="name" type="text" placeholder="Your name" required />
+              </div>
+              <div class="field">
+                <label>Company</label>
+                <input name="company" type="text" placeholder="Company / Organization" required />
+              </div>
+            </div>
 
-      <form id="contactForm">
-        <input type="text" placeholder="Name" required>
-        <input type="text" placeholder="Company">
-        <input type="email" placeholder="Email" required>
+            <div class="field-row">
+              <div class="field">
+                <label>Email</label>
+                <input name="email" type="email" placeholder="you@company.com" required />
+              </div>
+              <div class="field">
+                <label>Country / Market</label>
+                <input name="market" type="text" placeholder="e.g., Saudi Arabia / USA / EU" required />
+              </div>
+            </div>
 
-        <select>
-          <option>Ergonomic / Mesh Chairs</option>
-          <option>Gaming Chairs</option>
-          <option>Standing Desks</option>
-          <option>Sofa / Lounge</option>
-          <option>Project Furniture</option>
-        </select>
+            <div class="field-row">
+              <div class="field">
+                <label>Product</label>
+                <input name="product" type="text" placeholder="Office chair / Gaming chair / Standing desk..." required />
+              </div>
+              <div class="field">
+                <label>Volume</label>
+                <input name="volume" type="text" placeholder="MOQ / Monthly volume / Target order size" />
+              </div>
+            </div>
 
-        <textarea placeholder="Market, quantity, compliance (BIFMA / EN1335 / UL), delivery (DDP / FOB)"></textarea>
+            <div class="field">
+              <label>Key Requirements</label>
+              <textarea name="requirements" rows="5" placeholder="Lead time, packaging, certifications, customization, price target, compliance..." required></textarea>
+            </div>
 
-        <button class="btn" type="submit">
-          <i class="fa-solid fa-paper-plane"></i> Submit
-        </button>
-      </form>
+            <div class="form-actions">
+              <button class="btn primary" type="submit">Submit → Generate Review</button>
+              <button class="btn ghost" type="button" id="btnPdf">Generate Engineering Review PDF</button>
+            </div>
 
-      <p style="margin-top:14px;font-size:.9rem;color:#475569">
-        After submission, you will receive an **Engineering Review PDF**
-        and a consultant-level reply.
-      </p>
+            <div class="notice" id="notice" hidden>
+              <strong>Saved.</strong> Review prepared. Use the buttons below to copy Notion payload or open WhatsApp follow-ups.
+            </div>
+          </form>
+
+          <!-- Automation Outputs -->
+          <div class="outputs">
+            <div class="output">
+              <h4>Notion → AI Risk Summary Payload</h4>
+              <p class="muted">Copy this JSON into Notion (or any AI tool) for instant risk scan & strategy.</p>
+              <textarea id="notionPayload" rows="6" readonly></textarea>
+              <div class="mini-actions">
+                <button class="btn small ghost" id="btnCopy">Copy Payload</button>
+                <button class="btn small ghost" id="btnMail">Open Email Draft</button>
+              </div>
+            </div>
+
+            <div class="output">
+              <h4>WhatsApp Follow-up Tree (3 Rounds)</h4>
+              <p class="muted">One-click messages — consistent, professional, and buyer-friendly.</p>
+              <div class="wa-actions">
+                <a class="btn small primary" id="wa1" href="https://wa.me/8615968277867" target="_blank" rel="noopener">Round 1</a>
+                <a class="btn small ghost" id="wa2" href="https://wa.me/8615968277867" target="_blank" rel="noopener">Round 2</a>
+                <a class="btn small ghost" id="wa3" href="https://wa.me/8615968277867" target="_blank" rel="noopener">Round 3</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Engineering Review anchor -->
+        <div id="engineering-review" class="glass-card">
+          <h3>Engineering Review PDF (Client-facing)</h3>
+          <p class="muted">
+            Click “Generate Engineering Review PDF” above. It opens a print-ready review page. Use browser “Print → Save as PDF”.
+          </p>
+        </div>
+      </section>
+
+      <!-- Aside: your official contacts (UNCHANGED) -->
+      <aside class="contact-aside glass-card">
+        <h3>Always-on Contact</h3>
+
+        <p><strong>Email</strong><br>
+          alex.yang@yishenglobal.net<br>
+          champion.yang@yishenglobal.net
+        </p>
+
+        <p><strong>WhatsApp</strong><br>
+          +86 159 6827 7867<br>
+          +86 188 5727 7313
+        </p>
+
+        <p><strong>WeChat</strong><br>19530394133</p>
+
+        <p><strong>Base</strong><br>Anji · Hangzhou · China</p>
+
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <span class="si">in</span>
+          </a>
+          <a href="https://x.com/AlexYan03451555" target="_blank" rel="noopener" aria-label="X">
+            <span class="si">x</span>
+          </a>
+          <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank" rel="noopener" aria-label="YouTube">
+            <span class="si">yt</span>
+          </a>
+          <a href="https://www.facebook.com/alex.yang.427745" target="_blank" rel="noopener" aria-label="Facebook">
+            <span class="si">f</span>
+          </a>
+          <a href="https://www.instagram.com/alexyang591/" target="_blank" rel="noopener" aria-label="Instagram">
+            <span class="si">ig</span>
+          </a>
+        </div>
+      </aside>
     </div>
+  </main>
 
-    <!-- HUD -->
-    <aside class="card">
-      <h3>Always-on Contact</h3>
-
-      <p><strong>Email</strong><br>
-        alex.yang@yishenglobal.net<br>
-        champion.yang@yishenglobal.net
-      </p>
-
-      <p><strong>WhatsApp</strong><br>
-        +86 159 6827 7867<br>
-        +86 188 5727 7313
-      </p>
-
-      <p><strong>WeChat</strong><br>19530394133</p>
-
-      <p><strong>Base</strong><br>Anji · Hangzhou · China</p>
-
-      <h4 style="margin-top:20px">Connect</h4>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://x.com/AlexYan03451555" target="_blank"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.facebook.com/alex.yang.427745" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/alexyang591/" target="_blank"><i class="fab fa-instagram"></i></a>
+  <!-- Footer (your contact block preserved) -->
+  <footer class="footer">
+    <div class="container footer-grid grid-3">
+      <div>
+        <img src="logo.webp" class="footer-logo" alt="YiShen Global"
+             onerror="this.onerror=null;this.src='/yishen-logo-horizontal.svg';">
+        <p style="margin-top:14px" class="muted">
+          Furniture-first global supply chain systems.<br>
+          Engineered in China · Delivered Worldwide
+        </p>
       </div>
 
-      <a href="https://www.linkedin.com/in/alex-yang-yishen/"
-         target="_blank"
-         class="btn"
-         style="display:inline-block;margin-top:20px;background:#0a66c2">
-        <i class="fab fa-linkedin"></i> Add me on LinkedIn
-      </a>
-    </aside>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: alex.yang@yishenglobal.net</p>
+        <p>Email: champion.yang@yishenglobal.net</p>
+        <p>WhatsApp: +86 159 6827 7867</p>
+        <p>WhatsApp: +86 188 5727 7313</p>
+        <p>WeChat: 19530394133</p>
+        <p>Hotline: +86 195 3039 4133</p>
+        <p>Base: Anji · Hangzhou · China</p>
+      </div>
 
+      <div>
+        <h4>Social</h4>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" rel="noopener"><span class="si">in</span></a>
+          <a href="https://x.com/AlexYan03451555" target="_blank" rel="noopener"><span class="si">x</span></a>
+          <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank" rel="noopener"><span class="si">yt</span></a>
+          <a href="https://www.facebook.com/alex.yang.427745" target="_blank" rel="noopener"><span class="si">f</span></a>
+          <a href="https://www.instagram.com/alexyang591/" target="_blank" rel="noopener"><span class="si">ig</span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating CTA (kept + safer fallback) -->
+  <a href="https://wa.me/8615968277867" class="floating-cta" aria-label="WhatsApp Alex">
+    <img src="logo/yishen-icon-square.svg" class="logo-ai" alt="YiShen AI"
+         onerror="this.onerror=null;this.src='/yishen-logo-icon.svg';">
+  </a>
+
+  <script>
+    const form = document.getElementById('leadForm');
+    const notice = document.getElementById('notice');
+    const payloadBox = document.getElementById('notionPayload');
+
+    const btnCopy = document.getElementById('btnCopy');
+    const btnMail = document.getElementById('btnMail');
+    const btnPdf  = document.getElementById('btnPdf');
+
+    const wa1 = document.getElementById('wa1');
+    const wa2 = document.getElementById('wa2');
+    const wa3 = document.getElementById('wa3');
+
+    function buildPayload(data) {
+      return {
+        source: "Website Contact (YiShen Global)",
+        timestamp: new Date().toISOString(),
+        buyer: {
+          name: data.name,
+          company: data.company,
+          email: data.email,
+          market: data.market
+        },
+        request: {
+          product: data.product,
+          volume: data.volume || "",
+          requirements: data.requirements
+        },
+        ai_review_prompt: "Summarize buyer risks (lead time, packaging, compliance, payment), propose strategy (soft/hard/mixed), and generate 3-step follow-up plan + proof pack checklist."
+      };
+    }
+
+    function waText(round, data) {
+      const base = `Hi ${data.name}, this is Alex from YiShen Global.`;
+      const ctx  = `I reviewed your request: ${data.product} / ${data.market}.`;
+      if (round === 1) return `${base} Thanks for reaching out. ${ctx} Could you confirm target order volume and required certifications?`;
+      if (round === 2) return `${base} Quick update: I can prepare an Engineering Review (spec + packaging + compliance checklist) for ${data.product}. What is your preferred delivery term (FOB/CIF/DDP)?`;
+      return `${base} Final check: if you share 2–3 competitor links or your current SKU spec, I’ll return a clear improvement plan + best-fit packaging & lead-time schedule.`;
+    }
+
+    function setWhatsAppLinks(data) {
+      const phone = "8615968277867"; // official WhatsApp in your snippet
+      wa1.href = `https://wa.me/${phone}?text=${encodeURIComponent(waText(1, data))}`;
+      wa2.href = `https://wa.me/${phone}?text=${encodeURIComponent(waText(2, data))}`;
+      wa3.href = `https://wa.me/${phone}?text=${encodeURIComponent(waText(3, data))}`;
+    }
+
+    function openEmailDraft(data) {
+      const to = "alex.yang@yishenglobal.net,champion.yang@yishenglobal.net";
+      const subject = `Engineering Review Request — ${data.company} (${data.market})`;
+      const body =
+`Hi Alex,
+
+My request:
+- Name: ${data.name}
+- Company: ${data.company}
+- Email: ${data.email}
+- Market: ${data.market}
+- Product: ${data.product}
+- Volume: ${data.volume || "N/A"}
+
+Key requirements:
+${data.requirements}
+
+Please prepare an Engineering Review + next steps.
+
+Thanks,`;
+      window.location.href = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+
+    function openPrintReview(data) {
+      const w = window.open("", "_blank");
+      const html = `
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Engineering Review — YiShen Global</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+  body{font-family:Arial,Helvetica,sans-serif;margin:32px;color:#0b1220}
+  h1{margin:0 0 8px}
+  .muted{color:#55657a}
+  .box{border:1px solid #d6dde8;border-radius:12px;padding:16px;margin:14px 0}
+  .row{display:flex;gap:18px;flex-wrap:wrap}
+  .col{flex:1;min-width:260px}
+  ul{margin:8px 0 0 18px}
+  .sig{margin-top:22px}
+</style>
+</head>
+<body>
+  <h1>Engineering Review (Client-Facing)</h1>
+  <div class="muted">YiShen Global · Furniture-first supply chain systems</div>
+
+  <div class="box">
+    <div class="row">
+      <div class="col"><strong>Buyer</strong><br>${data.name} · ${data.company}<br>${data.email}</div>
+      <div class="col"><strong>Market</strong><br>${data.market}</div>
+      <div class="col"><strong>Product</strong><br>${data.product}<br><strong>Volume</strong><br>${data.volume || "N/A"}</div>
+    </div>
   </div>
-</section>
 
-<!-- CTA -->
-<section class="cta-banner">
-  <div class="container">
-    <h2>Start with an Engineering Call</h2>
-    <p>SKU · Packaging survivability · Compliance · Delivery — one controllable plan</p>
-    <a href="https://wa.me/8615968277867" class="btn">
-      <i class="fab fa-whatsapp"></i> WhatsApp Now
-    </a>
+  <div class="box">
+    <strong>Key Requirements</strong>
+    <div style="margin-top:8px;white-space:pre-wrap">${data.requirements}</div>
   </div>
-</section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <p style="text-align:center;opacity:.7">
-      © 2026 YiShen Global · Furniture-first global supply chain
-    </p>
+  <div class="box">
+    <strong>Proof Pack Checklist</strong>
+    <ul>
+      <li>Specification control + tolerance notes</li>
+      <li>Packaging logic (drop-test ready) + carton markings</li>
+      <li>Compliance matrix (market-specific)</li>
+      <li>Lead-time map + escalation path</li>
+      <li>After-sales risk mitigation sheet</li>
+    </ul>
   </div>
-</footer>
 
-<script>
-document.getElementById('contactForm').addEventListener('submit',e=>{
-  e.preventDefault();
-  alert("Submitted. Our AI consultant will reply shortly.");
-  // 🔌 Webhook / CRM / Auto-PDF hook goes here
-});
-</script>
+  <div class="box">
+    <strong>Next Step</strong>
+    <ul>
+      <li>Confirm target delivery term (FOB/CIF/DDP)</li>
+      <li>Share competitor SKU / spec (optional) to benchmark</li>
+      <li>We return a finalized review + schedule within 24–48h</li>
+    </ul>
+  </div>
 
+  <div class="sig">
+    <strong>Always-on Contact</strong><br>
+    Email: alex.yang@yishenglobal.net / champion.yang@yishenglobal.net<br>
+    WhatsApp: +86 159 6827 7867 / +86 188 5727 7313<br>
+    WeChat: 19530394133 · Base: Anji · Hangzhou · China
+  </div>
+
+  <script>window.print();</script>
+</body>
+</html>`;
+      w.document.open();
+      w.document.write(html);
+      w.document.close();
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const data = Object.fromEntries(fd.entries());
+
+      const payload = buildPayload(data);
+      payloadBox.value = JSON.stringify(payload, null, 2);
+
+      localStorage.setItem("yishen_lead_last", JSON.stringify(payload));
+      notice.hidden = false;
+
+      setWhatsAppLinks(data);
+    });
+
+    btnCopy.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(payloadBox.value || "");
+        btnCopy.textContent = "Copied";
+        setTimeout(()=>btnCopy.textContent="Copy Payload", 1200);
+      } catch {
+        alert("Copy failed. Please manually copy the text.");
+      }
+    });
+
+    btnMail.addEventListener('click', () => {
+      const fd = new FormData(form);
+      const data = Object.fromEntries(fd.entries());
+      if (!data.name || !data.company || !data.email) {
+        alert("Please fill Name/Company/Email first.");
+        return;
+      }
+      openEmailDraft(data);
+    });
+
+    btnPdf.addEventListener('click', () => {
+      const fd = new FormData(form);
+      const data = Object.fromEntries(fd.entries());
+      if (!data.name || !data.company || !data.email || !data.product || !data.market) {
+        alert("Please fill at least Name/Company/Email/Product/Market first.");
+        return;
+      }
+      openPrintReview(data);
+    });
+
+    // Restore last lead (optional)
+    window.addEventListener('load', () => {
+      const last = localStorage.getItem("yishen_lead_last");
+      if (!last) return;
+      try {
+        const obj = JSON.parse(last);
+        payloadBox.value = JSON.stringify(obj, null, 2);
+      } catch {}
+    });
+  </script>
 </body>
 </html>
