@@ -1,9 +1,30 @@
-async function loadComponent(id, url) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  const res = await fetch(url);
-  el.innerHTML = await res.text();
+/**
+ * YiShen Global Website Runtime Include Engine
+ * Version: 2026
+ * Purpose:
+ * - Auto inject navbar & footer
+ * - Make static HTML behave like a real website
+ */
+
+async function loadComponent(selector, url) {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Failed to load ${url}`);
+    const html = await res.text();
+    document.querySelector(selector).innerHTML = html;
+  } catch (err) {
+    console.error(err);
+  }
 }
 
-loadComponent("site-navbar", "/components/navbar.html");
-loadComponent("site-footer", "/components/footer.html");
+document.addEventListener("DOMContentLoaded", () => {
+  // Inject navbar
+  if (document.querySelector("#navbar")) {
+    loadComponent("#navbar", "/components/navbar.html");
+  }
+
+  // Inject footer
+  if (document.querySelector("#footer")) {
+    loadComponent("#footer", "/components/footer.html");
+  }
+});
