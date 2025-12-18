@@ -271,3 +271,76 @@ p{color:#334155}
   .nav-links.active{transform:translateX(0)}
   .nav-links a{display:block;margin:18px 0;color:#e5e7eb}
 }
+/* ===================================================
+   YiShen Global — AI Logo Motion System
+   Engineering-grade / B2B safe
+=================================================== */
+
+.logo-ai-wrap {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+/* Base logo */
+.ai-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 0 0 rgba(44,183,255,0));
+  transition: transform .4s ease, filter .4s ease;
+}
+
+/* Idle AI breathing */
+@keyframes aiBreath {
+  0%,100% { filter: drop-shadow(0 0 2px rgba(44,183,255,.15)); }
+  50%     { filter: drop-shadow(0 0 10px rgba(44,183,255,.35)); }
+}
+
+.ai-logo {
+  animation: aiBreath 6s ease-in-out infinite;
+}
+
+/* Hover elevation */
+.logo-ai-wrap:hover .ai-logo {
+  transform: translateY(-1px);
+  filter:
+    drop-shadow(0 0 6px rgba(44,183,255,.45))
+    drop-shadow(0 0 18px rgba(44,183,255,.35));
+}
+
+/* AI Scan Line */
+.ai-scan {
+  position: absolute;
+  top: -120%;
+  left: -20%;
+  width: 140%;
+  height: 40%;
+  background: linear-gradient(
+    120deg,
+    transparent 20%,
+    rgba(44,183,255,.12) 50%,
+    transparent 80%
+  );
+  transform: skewY(-6deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Scan on hover */
+.logo-ai-wrap:hover .ai-scan {
+  opacity: 1;
+  animation: aiScanMove 1.2s ease-out forwards;
+}
+
+@keyframes aiScanMove {
+  from { top: -120%; }
+  to   { top: 140%; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ai-logo { height: 36px; }
+}
+
+
