@@ -1,393 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="description" content="YiShen Global System Blueprint. A decision-level architecture map showing business logic, data flow, routing and conversion structure — engineered for furniture-led supply chain control.">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050b17">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Site Architecture | YiShen Global · 2026</title>
 
-<title>System Blueprint & Decision Architecture | YiShen Global</title>
+  <meta name="description" content="System-level site architecture of YiShen Global. A furniture-first AI-driven B2B acquisition, decision, and conversion platform." />
+  <meta name="theme-color" content="#06122A">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
 
 <body>
 
-<!-- ================= NAV ================= -->
-<nav class="navbar navbar-elite">
-  <div class="container nav-wrapper">
-    <a href="index.html" class="brand">
-      <img src="logo.webp" alt="YiShen Global" width="180">
-    </a>
+<!-- ================= NAVBAR ================= -->
+<div id="navbar-placeholder"></div>
 
-    <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+<main class="page-wrapper">
 
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="why-us.html">Why Us</a>
-      <a href="solutions.html">Solutions</a>
-      <a href="industries.html">Industries</a>
-      <a href="resources.html">Resources</a>
-      <a href="contact.html" class="nav-cta">Contact</a>
+  <!-- ================= HERO ================= -->
+  <section class="hero hero-architecture">
+    <div class="container">
+      <h1>Site Architecture</h1>
+      <p class="hero-subtitle">
+        A furniture-first, AI-driven B2B system — not a brochure.
+      </p >
+      <span class="version-tag">System Version · 2026</span>
     </div>
-  </div>
-</nav>
+  </section>
 
-<!-- ================= HEADER ================= -->
-<header class="page-header bg-dark"
-style="background-image:
-linear-gradient(rgba(2,6,23,.96),rgba(2,6,23,.90)),
-url('header-architecture.webp');background-position:center;background-size:cover;">
-  <div class="container text-center">
-    <span class="section-tag">System Blueprint</span>
-    <h1>The YiShen Global<br>Decision Architecture</h1>
-    <p style="max-width:980px;margin:0 auto;">
-      This is not a website map.  
-      This is a <strong>buyer decision system</strong> engineered to move
-      qualified procurement leaders from uncertainty to commitment —
-      using <strong>proof, control logic, and execution models</strong>.
-    </p>
-
-    <div style="margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-      <a href="#map" class="btn btn-tech btn-tech-elite"><i class="fa-solid fa-diagram-project"></i> View Blueprint Map</a>
-      <a href="#routing" class="btn btn-outline-white"><i class="fa-solid fa-route"></i> Routing Logic</a>
-      <a href="#modules" class="btn btn-outline-white"><i class="fa-solid fa-cubes"></i> Modules</a>
+  <!-- ================= CORE PHILOSOPHY ================= -->
+  <section class="section">
+    <div class="container narrow">
+      <h2>01 · Core Philosophy</h2>
+      <p>
+        YiShen Global is engineered as a <strong>decision system</strong>,
+        not a visual catalog.
+      </p >
+      <ul class="logic-list">
+        <li>Website ≠ Image gallery</li>
+        <li>Website ≠ Brand storytelling only</li>
+        <li><strong>Website = Buyer decision acceleration system</strong></li>
+      </ul>
     </div>
-  </div>
-</header>
+  </section>
 
-<!-- ================= LEGEND ================= -->
-<section class="section-padding bg-light" id="modules">
-  <div class="container">
-    <div class="grid-2" style="align-items:start;gap:60px;">
-      <div>
-        <span class="section-tag">How to Read</span>
-        <h2>Every Page Answers One Buyer Question</h2>
-        <p>
-          Each module below is designed around a single procurement question.
-          Together they form a closed loop that reduces risk, increases confidence,
-          and accelerates cooperation.
-        </p>
+  <!-- ================= SYSTEM LAYERS ================= -->
+  <section class="section section-light">
+    <div class="container">
+      <h2>02 · System Layers</h2>
 
-        <div class="grid-3" style="margin-top:26px;">
-          <div class="process-card">
-            <h4><i class="fa-solid fa-circle-question tech-accent"></i> WHY</h4>
-            <p>Why should I trust this supplier/system?</p>
-          </div>
-          <div class="process-card">
-            <h4><i class="fa-solid fa-sitemap tech-accent"></i> HOW</h4>
-            <p>How is execution controlled at scale?</p>
-          </div>
-          <div class="process-card">
-            <h4><i class="fa-solid fa-shield-halved tech-accent"></i> PROOF</h4>
-            <p>Where is the data to support decisions?</p>
-          </div>
+      <div class="architecture-grid">
+
+        <div class="arch-card">
+          <h3>Layer A · Entry</h3>
+          <p>Capture buyer intent and traffic.</p >
+          <ul>
+            <li>index.html</li>
+            <li>SEO / AI search</li>
+            <li>LinkedIn & content loops</li>
+          </ul>
         </div>
-      </div>
 
-      <div class="process-card">
-        <h3>Qualified Buyer Outcomes</h3>
-        <ul class="eng-list" style="margin-top:14px;">
-          <li><strong>Fast internal approval</strong> (you can defend the decision)</li>
-          <li><strong>Lower hidden cost</strong> (returns, damages, noncompliance)</li>
-          <li><strong>Predictable delivery</strong> (less firefighting / escalation)</li>
-          <li><strong>Stable SKU governance</strong> (control beats chaos)</li>
-        </ul>
-
-        <div style="margin-top:18px;padding:14px;border-radius:14px;background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.18);">
-          <strong>Core principle:</strong> Predictability is engineered, not promised.
+        <div class="arch-card">
+          <h3>Layer B · Understanding</h3>
+          <p>Explain how the system works.</p >
+          <ul>
+            <li>solutions.html</li>
+            <li>industries.html</li>
+            <li>why-us.html</li>
+          </ul>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ================= BLUEPRINT MAP ================= -->
-<section class="section-padding" id="map">
-  <div class="container">
-    <div class="text-center">
-      <span class="section-tag" style="justify-content:center;">Blueprint Map</span>
-      <h2>Decision Flow: Entry → Trust → Execution → Data → Action</h2>
-      <p style="max-width:980px;margin:0 auto 40px;">
-        Use this map to understand how the system guides buyer decisions.
-        Each node links to a page that performs a specific conversion job.
-      </p>
-    </div>
-
-    <!-- MAP (CSS-light, no dependencies) -->
-    <div style="display:grid;gap:18px;max-width:1100px;margin:0 auto;">
-      <!-- ENTRY -->
-      <div class="process-card" style="border:1px solid rgba(56,189,248,.22);background:rgba(2,6,23,.55);">
-        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-          <div style="min-width:220px;">
-            <span class="section-tag" style="margin:0;">ENTRY POINT</span>
-            <h3 style="margin:10px 0 0;color:#fff;">index.html</h3>
-            <p style="margin:8px 0 0;color:#cbd5f5;">
-              Positioning + credibility + immediate CTA
-            </p>
-          </div>
-
-          <div style="flex:1;display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;">
-            <a class="btn btn-tech" href="index.html"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open Entry</a>
-            <a class="btn btn-outline-white" href="contact.html"><i class="fa-solid fa-headset"></i> Contact</a>
-          </div>
+        <div class="arch-card">
+          <h3>Layer C · Evidence</h3>
+          <p>Provide proof, structure, and logic.</p >
+          <ul>
+            <li>resources.html</li>
+            <li>SKU / engineering logic</li>
+            <li>Packaging & logistics data</li>
+          </ul>
         </div>
-      </div>
 
-      <!-- LEVEL 1 -->
-      <div class="grid-4" style="gap:14px;">
-        <a href="why-us.html" class="process-card" style="display:block;">
-          <span class="section-tag">WHY (Trust)</span>
-          <h3>Why Us — The Lab</h3>
-          <p>Engineering credibility, QC logic, risk removal.</p>
-          <div style="margin-top:10px;font-size:.85rem;color:#94a3b8;">
-            Modules: BIFMA / ISTA / Traceability / Survivability
-          </div>
-        </a>
-
-        <a href="solutions.html" class="process-card" style="display:block;">
-          <span class="section-tag">HOW (Execution)</span>
-          <h3>Solutions</h3>
-          <p>Execution models for DTC, B2B, Projects.</p>
-          <div style="margin-top:10px;font-size:.85rem;color:#94a3b8;">
-            Modules: Fulfillment / Procurement / Project Cargo
-          </div>
-        </a>
-
-        <a href="industries.html" class="process-card" style="display:block;">
-          <span class="section-tag">WHERE (Context)</span>
-          <h3>Industries</h3>
-          <p>Scenario mapping across buyer realities.</p>
-          <div style="margin-top:10px;font-size:.85rem;color:#94a3b8;">
-            Modules: Furniture / Industrial / Tech & New Energy
-          </div>
-        </a>
-
-        <a href="resources.html" class="process-card" style="display:block;">
-          <span class="section-tag">PROOF (Data)</span>
-          <h3>Resources</h3>
-          <p>Planning matrix, compliance logic, download hub.</p>
-          <div style="margin-top:10px;font-size:.85rem;color:#94a3b8;">
-            Modules: SKU pools / Compliance packs / Density models
-          </div>
-        </a>
-      </div>
-
-      <!-- LEVEL 2 (SKU & RFQ) -->
-      <div class="grid-2" style="gap:14px;">
-        <a href="sku-detail.html" class="process-card" style="display:block;">
-          <span class="section-tag">SKU CONTROL</span>
-          <h3>sku-detail.html</h3>
-          <p>Component-level specs, MOQ logic, 40’HQ loading metrics.</p>
-          <div style="margin-top:10px;font-size:.85rem;color:#94a3b8;">
-            Purpose: defendable procurement decision + faster approvals.
-          </div>
-        </a>
-
-        <a href="home-and-office-furniture.html" class="process-card" style="display:block;">
-          <span class="section-tag">RFQ TOOL</span>
-          <h3>Furniture SKU Selector</h3>
-          <p>Expandable SKU list + RFQ via WhatsApp. Built for speed.</p>
-          <div style="margin-top:10px;font-size:.85rem;color:#94a3b8;">
-            Purpose: reduce friction → increase qualified inquiries.
-          </div>
-        </a>
-      </div>
-
-      <!-- FINAL CONVERSION -->
-      <div class="process-card" style="border:1px solid rgba(56,189,248,.22);background:rgba(2,6,23,.55);">
-        <div class="grid-2" style="align-items:center;gap:18px;">
-          <div>
-            <span class="section-tag">ACTION</span>
-            <h3 style="color:#fff;margin-top:10px;">contact.html</h3>
-            <p style="color:#cbd5f5;">
-              Conversion funnel with direct channels, engineering contact,
-              and strategic audit entry.
-            </p>
-          </div>
-          <div style="display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap;">
-            <a class="btn btn-tech btn-tech-elite" href="contact.html">
-              <i class="fa-solid fa-paper-plane"></i> Start a Project
-            </a>
-            <a class="btn btn-outline-white" href="resources.html">
-              <i class="fa-solid fa-database"></i> Review Data First
-            </a>
-          </div>
+        <div class="arch-card">
+          <h3>Layer D · Conversion</h3>
+          <p>Turn intent into action.</p >
+          <ul>
+            <li>contact.html</li>
+            <li>CRM trigger</li>
+            <li>Auto-response & follow-up</li>
+          </ul>
         </div>
-      </div>
 
-    </div>
-
-  </div>
-</section>
-
-<!-- ================= ROUTING LOGIC ================= -->
-<section class="section-padding bg-light" id="routing">
-  <div class="container">
-    <div class="text-center">
-      <span class="section-tag" style="justify-content:center;">Routing Logic</span>
-      <h2>AI-Friendly Buyer Routing — Who Should Read What First</h2>
-      <p style="max-width:980px;margin:0 auto 45px;">
-        This routing model allows both humans and AI agents to choose the
-        fastest path based on buyer type and decision stage.
-      </p>
-    </div>
-
-    <div class="grid-3">
-      <div class="process-card">
-        <h3><i class="fa-solid fa-user-tie tech-accent"></i> Procurement Manager</h3>
-        <p>Needs predictability, documentation, reduced hidden costs.</p>
-        <ul class="eng-list">
-          <li>Start: <a href="resources.html" class="tech-accent">Resources</a></li>
-          <li>Then: <a href="sku-detail.html" class="tech-accent">SKU Detail</a></li>
-          <li>Close: <a href="contact.html" class="tech-accent">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="process-card">
-        <h3><i class="fa-solid fa-boxes-stacked tech-accent"></i> Distributor / Wholesaler</h3>
-        <p>Wants category winners, stable supply, fast replenishment.</p>
-        <ul class="eng-list">
-          <li>Start: <a href="solutions.html" class="tech-accent">Solutions</a></li>
-          <li>Then: <a href="resources.html" class="tech-accent">Resources</a></li>
-          <li>Close: <a href="contact.html" class="tech-accent">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="process-card">
-        <h3><i class="fa-solid fa-store tech-accent"></i> Retail Buyer / E-commerce</h3>
-        <p>Needs conversion lift, packaging survivability, low returns.</p>
-        <ul class="eng-list">
-          <li>Start: <a href="why-us.html" class="tech-accent">Why Us</a></li>
-          <li>Then: <a href="solutions.html" class="tech-accent">Solutions</a></li>
-          <li>Close: <a href="home-and-office-furniture.html" class="tech-accent">RFQ Tool</a></li>
-        </ul>
       </div>
     </div>
+  </section>
 
-    <div class="process-card" style="margin-top:18px;">
-      <h3><i class="fa-solid fa-shield-halved tech-accent"></i> Internal Approval Shortcut</h3>
-      <p style="max-width:980px">
-        If your buyer needs to defend the decision internally, send them:
-        <strong>Why Us</strong> (credibility) + <strong>Resources</strong> (proof) + <strong>SKU Detail</strong> (spec governance).
-        This trio reduces friction in procurement committees.
-      </p>
-      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
-        <a class="btn btn-tech" href="why-us.html"><i class="fa-solid fa-flask"></i> Why Us</a>
-        <a class="btn btn-tech" href="resources.html"><i class="fa-solid fa-database"></i> Resources</a>
-        <a class="btn btn-tech" href="sku-detail.html"><i class="fa-solid fa-table"></i> SKU Detail</a>
-      </div>
+  <!-- ================= PAGE ROLE MAP ================= -->
+  <section class="section">
+    <div class="container">
+      <h2>03 · Page Role Map</h2>
+
+      <table class="architecture-table">
+        <thead>
+          <tr>
+            <th>Page</th>
+            <th>Role</th>
+            <th>Buyer Question Answered</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Index</td>
+            <td>Entry & Positioning</td>
+            <td>Who are you?</td>
+          </tr>
+          <tr>
+            <td>Solutions</td>
+            <td>System Explanation</td>
+            <td>How do you solve my problem?</td>
+          </tr>
+          <tr>
+            <td>Industries</td>
+            <td>Applicability Logic</td>
+            <td>Is this for my business?</td>
+          </tr>
+          <tr>
+            <td>Why Us</td>
+            <td>Decision Justification</td>
+            <td>Why choose you?</td>
+          </tr>
+          <tr>
+            <td>Resources</td>
+            <td>Trust & Depth</td>
+            <td>Can I trust your execution?</td>
+          </tr>
+          <tr>
+            <td>Contact</td>
+            <td>Action</td>
+            <td>How do I start?</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ================= AI / DATA FLOW ================= -->
-<section class="section-padding">
-  <div class="container">
-    <div class="text-center">
-      <span class="section-tag" style="justify-content:center;">Data Flow</span>
-      <h2>What the System Communicates (Without Marketing Noise)</h2>
-      <p style="max-width:980px;margin:0 auto 40px;">
-        This layer is designed for AI and senior buyers:
-        clear entities, clear modules, clear proof, and clear next action.
-      </p>
+  <!-- ================= INDUSTRY EXPANSION ================= -->
+  <section class="section section-light">
+    <div class="container narrow">
+      <h2>04 · Expansion Logic</h2>
+      <p>
+        The system is <strong>industry-extendable</strong> without redesign.
+      </p >
+
+      <ul class="logic-list">
+        <li>Furniture (core)</li>
+        <li>Bamboo & Wood Products</li>
+        <li>WPC & Flooring</li>
+        <li>Chains / Industrial Products</li>
+        <li>Future categories via same structure</li>
+      </ul>
     </div>
+  </section>
 
-    <div class="grid-2" style="gap:14px;">
-      <div class="process-card">
-        <h3>Evidence Types</h3>
-        <ul class="eng-list">
-          <li><strong>Compliance:</strong> BIFMA / EN1335 / UL (program dependent)</li>
-          <li><strong>Packaging:</strong> ISTA / drop & vibration survivability logic</li>
-          <li><strong>Density:</strong> 40’HQ load plans + KD optimization</li>
-          <li><strong>Traceability:</strong> component suppliers & spec governance</li>
-        </ul>
-      </div>
+  <!-- ================= AI ROLE ================= -->
+  <section class="section">
+    <div class="container narrow">
+      <h2>05 · AI Governance</h2>
+      <p>
+        AI is not decoration here.
+        It governs:
+      </p >
 
-      <div class="process-card">
-        <h3>Decision Outcomes</h3>
-        <ul class="eng-list">
-          <li><strong>Lower returns</strong> → stronger margin protection</li>
-          <li><strong>Stable ETA</strong> → fewer escalations & stockouts</li>
-          <li><strong>Predictable landed cost</strong> → better pricing decisions</li>
-          <li><strong>SKU governance</strong> → scalable procurement control</li>
-        </ul>
-      </div>
+      <ul class="logic-list">
+        <li>Buyer profiling</li>
+        <li>Content generation</li>
+        <li>Lead qualification</li>
+        <li>CRM automation</li>
+        <li>Decision acceleration</li>
+      </ul>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ================= CTA ================= -->
-<section class="cta-banner cta-elite">
-  <div class="container">
-    <span class="section-tag" style="justify-content:center;">Next Step</span>
-    <h2>Use This Blueprint to Start the Right Conversation</h2>
-    <p style="max-width:900px;margin:0 auto 24px;">
-      If you want pricing only, this system is not for you.  
-      If you want <strong>predictability at scale</strong>, start here:
-      share your category, market, target price band, and annual volume.
-    </p>
-
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-      <a href="contact.html" class="btn btn-tech btn-tech-elite">
-        <i class="fa-solid fa-paper-plane"></i> Request System Review
-      </a>
-      <a href="resources.html" class="btn btn-outline-white">
-        <i class="fa-solid fa-database"></i> Review Engineering Data
-      </a>
-    </div>
-  </div>
-</section>
+</main>
 
 <!-- ================= FOOTER ================= -->
-<footer class="footer footer-elite">
-  <div class="container footer-grid grid-4">
-    <div>
-      <img src="logo.webp" height="48">
-      <p class="footer-desc">
-        YiShen Global · Furniture-led engineering systems.<br>
-        Predictability is engineered.
-      </p>
-    </div>
-
-    <div>
-      <h4>Blueprint</h4>
-      <a href="#map">Map</a>
-      <a href="#routing">Routing Logic</a>
-      <a href="#modules">Modules</a>
-    </div>
-
-    <div>
-      <h4>Core Pages</h4>
-      <a href="why-us.html">Why Us</a>
-      <a href="solutions.html">Solutions</a>
-      <a href="resources.html">Resources</a>
-    </div>
-
-    <div>
-      <h4>Connect</h4>
-      <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank">LinkedIn</a>
-    </div>
-  </div>
-
-  <div class="copyright">
-    © 2026 YiShen Global · System Blueprint
-  </div>
-</footer>
-
-<a href="https://wa.me/8615968277867" class="floating-cta">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-<script>
-const menuBtn = document.querySelector('.mobile-menu-btn');
-const navLinks = document.querySelector('.nav-links');
-menuBtn && navLinks && menuBtn.addEventListener('click',()=>navLinks.classList.toggle('active'));
-</script>
+<div id="footer-placeholder"></div>
 
 </body>
 </html>
