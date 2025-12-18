@@ -1,39 +1,30 @@
-<!-- =========================
-     YiShen Global NAVBAR
-     Furniture-first · Locked Logo
-========================= -->
-<nav class="navbar navbar-elite">
-  <div class="container nav-wrapper">
+/**
+ * YiShen Global Website Runtime Include Engine
+ * Version: 2026
+ * Purpose:
+ * - Auto inject navbar & footer
+ * - Make static HTML behave like a real website
+ */
 
-    <!-- BRAND -->
-    <a href="/index.html" class="brand">
-      <img src="/assets/img/logo-icon.webp" alt="YiShen Global Logo">
-      <span class="brand-name">YiShen Global</span>
-    </a>
+async function loadComponent(selector, url) {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Failed to load ${url}`);
+    const html = await res.text();
+    document.querySelector(selector).innerHTML = html;
+  } catch (err) {
+    console.error(err);
+  }
+}
 
-    <!-- MOBILE -->
-    <div class="mobile-menu-btn" aria-label="Menu">
-      <i class="fas fa-bars"></i>
-    </div>
+document.addEventListener("DOMContentLoaded", () => {
+  // Inject navbar
+  if (document.querySelector("#navbar")) {
+    loadComponent("#navbar", "/components/navbar.html");
+  }
 
-    <!-- LINKS -->
-    <div class="nav-links">
-      <a href="/index.html">Home</a>
-      <a href="/why-us.html">Why Us</a>
-      <a href="/solutions.html">Solutions</a>
-      <a href="/industries.html">Industries</a>
-      <a href="/resources.html">Resources</a>
-      <a href="/contact.html" class="nav-cta">Contact</a>
-    </div>
-
-    <!-- LANG SWITCH -->
-    <div class="lang-switch">
-      <button onclick="setLang('en')">EN</button>
-      <button onclick="setLang('zh')">中文</button>
-      <button onclick="setLang('ja')">JP</button>
-      <button onclick="setLang('de')">DE</button>
-      <button onclick="setLang('ar')">AR</button>
-    </div>
-
-  </div>
-</nav>
+  // Inject footer
+  if (document.querySelector("#footer")) {
+    loadComponent("#footer", "/components/footer.html");
+  }
+});
