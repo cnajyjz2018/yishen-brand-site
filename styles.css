@@ -108,3 +108,50 @@ h1, h2, h3 {
     padding: 4rem 2rem;
   }
 }
+.resources-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.res-block {
+  margin-bottom: 90px;
+}
+
+.res-block h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.res-desc {
+  font-size: 16px;
+  opacity: 0.8;
+  margin-bottom: 22px;
+}
+
+.res-list {
+  list-style: none;
+  padding: 0;
+}
+
+.res-list li {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.res-cta {
+  text-align: center;
+  padding: 70px 30px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.res-cta h2 {
+  font-size: 30px;
+  margin-bottom: 14px;
+}
+
+.res-cta p {
+  margin-bottom: 26px;
+}
