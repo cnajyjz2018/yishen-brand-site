@@ -1,30 +1,22 @@
-/**
- * YiShen Global Website Runtime Include Engine
- * Version: 2026
- * Purpose:
- * - Auto inject navbar & footer
- * - Make static HTML behave like a real website
- */
+<nav class="navbar">
+  <div class="nav-inner">
 
-async function loadComponent(selector, url) {
-  try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`Failed to load ${url}`);
-    const html = await res.text();
-    document.querySelector(selector).innerHTML = html;
-  } catch (err) {
-    console.error(err);
-  }
-}
+    <a href=" " class="logo">
+      < img src="/logo.webp" alt="YiShen Global">
+    </a >
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Inject navbar
-  if (document.querySelector("#navbar")) {
-    loadComponent("#navbar", "/components/navbar.html");
-  }
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a ></li>
+      <li><a href="/solutions.html">Solutions</a ></li>
+      <li><a href="/industries.html">Industries</a ></li>
+      <li><a href="/why-us.html">Why Us</a ></li>
+      <li><a href="/resources.html">Resources</a ></li>
+      <li><a href="/contact.html" class="nav-cta">Contact</a ></li>
+    </ul>
 
-  // Inject footer
-  if (document.querySelector("#footer")) {
-    loadComponent("#footer", "/components/footer.html");
-  }
-});
+    <div class="nav-toggle" id="navToggle">
+      <span></span><span></span><span></span>
+    </div>
+
+  </div>
+</nav>
