@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/why.html",
+      "destination": "/why-us.html",
+      "permanent": true
+    }
+  ]
+}
