@@ -29,8 +29,8 @@
             will-change: transform;
         }
 
-        /* LOGO SOVEREIGNTY PATCH: Forced 32px height with 280px safety width */
-        .site-logo {
+        /* LOGO SOVEREIGNTY PATCH: Physical alignment for "The Perfect Look" */
+        .site-logo, .footer-logo-wrapper svg {
             display: flex !important;
             align-items: center !important;
             height: 32px !important; 
@@ -47,9 +47,9 @@
             overflow: visible !important;
         }
 
-        /* HERO ALIGNMENT: 35% Deep Space Gradient over High-Res Banner */
+        /* HERO TENSION: 35% Deep Space Gradient over High-Res Banner */
         .page-hero {
-            height: 65vh;
+            height: 70vh;
             display: flex;
             align-items: center;
             background: linear-gradient(90deg, var(--deep-space) 35%, rgba(1, 4, 9, 0.3) 75%, transparent 100%), 
@@ -84,6 +84,8 @@
             font-size: 0.85rem;
             color: var(--text-muted);
         }
+
+        .footer-grid > div:first-child { min-width: 300px !important; }
     </style>
 </head>
 <body>
@@ -154,6 +156,29 @@
     </div>
 </section>
 
+<section class="section" style="border-top: 1px solid rgba(255,255,255,0.05); padding: 120px 8%;">
+    <div class="container">
+        <span class="tag">SYSTEM_ARCHITECTURE</span>
+        <h2 style="color:white; margin: 20px 0;">System vs. SKU Thinking</h2>
+        
+        <div class="grid-2" style="display:grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; margin-top: 40px;">
+            <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.7;">
+                While traditional suppliers optimize individual SKUs for margin, we optimize <b>SKU Systems</b> for scale. This allows you to expand categories without collapsing your operations team.
+            </p>
+            <div class="grid-2" style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div style="border-left: 2px solid var(--industrial-gray); padding-left: 20px;">
+                    <h4 style="color:white; font-size: 0.9rem; margin-bottom: 10px;">Shared Components</h4>
+                    <p style="font-size: 0.8rem; color: #64748b;">Reducing inventory complexity through modular parts.</p>
+                </div>
+                <div style="border-left: 2px solid var(--industrial-gray); padding-left: 20px;">
+                    <h4 style="color:white; font-size: 0.9rem; margin-bottom: 10px;">Modular Compliance</h4>
+                    <p style="font-size: 0.8rem; color: #64748b;">Repeatable documentation for rapid market entry.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="section" style="background: rgba(14, 165, 233, 0.02); padding: 120px 8%;">
     <div class="container">
         <span class="tag">02_PREDICTABILITY</span>
@@ -199,8 +224,25 @@
     <div class="container">
         <div class="footer-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:60px;">
             <div>
-                <img src="/Yishen-Global-Logo-Mark-32px.png" alt="Yishen" style="height:32px; opacity:0.8;">
-                <p style="margin-top:25px; font-size: 0.85rem; color: #475569; line-height:1.7;">
+                <div class="footer-logo-wrapper" style="margin-bottom: 25px;">
+                    <svg width="280" height="32" viewBox="0 0 280 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="overflow: visible !important;">
+                        <g fill="white">
+                            <path d="M2 14L8 10V24L2 28V14Z" fill-opacity="1"/>
+                            <path d="M8 10L14 14V28L8 24V10Z" fill-opacity="0.6"/>
+                            <path d="M2 14L8 18L14 14L8 10L2 14Z" fill-opacity="0.8"/>
+                            <path d="M17 6L23 2V24L17 28V6Z" fill-opacity="1"/>
+                            <path d="M23 2L29 6V28L23 24V2Z" fill-opacity="0.6"/>
+                            <path d="M17 6L23 10L29 6L23 2L17 6Z" fill-opacity="0.8"/>
+                            <path d="M32 14L38 10V24L32 28V14Z" fill-opacity="1"/>
+                            <path d="M38 10L44 14V28L38 24V10Z" fill-opacity="0.6"/>
+                            <path d="M32 14L38 18L44 14L38 10L32 14Z" fill-opacity="0.8"/>
+                        </g>
+                        <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
+                        <text x="56" y="18" fill="white" style="font-family:'Inter', sans-serif; font-weight:700; font-size:18px; letter-spacing:0.2px;">Yishen Global</text>
+                        <text x="56" y="27" fill="white" fill-opacity="0.4" style="font-family:'JetBrains Mono', monospace; font-size:6.5px; text-transform: uppercase; letter-spacing:0.4px;">Coordinated Industrial Architecture</text>
+                    </svg>
+                </div>
+                <p style="font-size: 0.85rem; color: #475569; line-height:1.7;">
                     Engineering-led furniture supply chain systems.<br>
                     Integrated Architecture · Delivered Worldwide
                 </p>
