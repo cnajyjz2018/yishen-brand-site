@@ -1,36 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Industries & Clusters | YISHEN GLOBAL</title>
+    <title>Industries & Clusters | Yishen Global</title>
     <meta name="description" content="Furniture-first industries supported by integrated manufacturing, kinetic motion, and aerospace biomechanics systems.">
-    
+    <meta name="keywords" content="Furniture Supply Chain, BIFMA Compliance, Office Seating Engineering, Marine Hardware, Bamboo Composite, ISTA Packaging">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
     <link rel="stylesheet" href="styles.css?v=2026">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap">
-    
+
     <style>
+        :root {
+            --performance-red: #A11219;
+            --neon-blue: #0ea5e3;
+            --deep-space: #010409;
+            --surface: rgba(255, 255, 255, 0.03);
+            --text-muted: #94a3b8;
+        }
+
+        /* 数字化微光追踪补丁 */
+        #cursor-glow {
+            position: fixed; width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
+            border-radius: 50%; pointer-events: none; z-index: 1; transform: translate(-50%, -50%);
+        }
+
+        /* 行业标签样式补齐 */
         .sector-tag {
             display: inline-block;
             font-family: 'JetBrains Mono';
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: var(--neon-blue);
-            border: 1px solid var(--neon-blue);
+            border: 1px solid rgba(14, 165, 233, 0.3);
             padding: 4px 10px;
             margin-right: 8px;
             margin-bottom: 15px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        .industry-list {
-            margin-top: 20px;
-            list-style: none;
+
+        /* 页面 Hero 统筹补丁 */
+        .page-hero {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, var(--deep-space) 40%, transparent 100%), 
+                        url('/Yishen-Global-Hero-Banner-2026.webp');
+            background-size: cover;
+            background-position: center;
+            position: relative;
         }
+
+        /* 行业列表样式补足 */
+        .industry-list { margin-top: 20px; list-style: none; padding: 0; }
         .industry-list li {
             position: relative;
             padding-left: 20px;
-            margin-bottom: 10px;
-            color: #94a3b8;
-            font-size: 0.95rem;
+            margin-bottom: 12px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
         .industry-list li::before {
             content: "•";
@@ -38,66 +68,75 @@
             left: 0;
             color: var(--neon-blue);
         }
-        .capability-box {
-            border-top: 1px solid var(--industrial-gray);
-            margin-top: 25px;
-            padding-top: 20px;
-        }
+
+        /* 权威 Logo 尺寸锁定 */
+        .site-logo svg { height: 32px; width: auto; overflow: visible; display: block; }
     </style>
 </head>
 <body>
 
 <div id="cursor-glow"></div>
 
-<nav class="site-navbar">
-    <div class="nav-inner">
-        <div class="nav-logo">
-            <a href="index.html">
-                <img src="logo-white.webp" alt="YISHEN GLOBAL">
-            </a>
-        </div>
-        <div class="nav-menu">
-            <a href="index.html">System</a>
-            <a href="solutions.html">Solutions</a>
-            <a href="industries.html" class="active">Industries</a>
-            <a href="resources.html">Resources</a>
-            <a href="contact.html" class="nav-cta">Initiate Briefing</a>
+<nav id="master-nav" class="site-navbar" style="position:fixed; width:100%; z-index:1000; background:rgba(1,4,9,0.9); backdrop-filter:blur(20px);">
+    <div class="nav-inner" style="display:flex; justify-content:space-between; align-items:center; max-width:1440px; margin:0 auto; padding:15px 5%;">
+        <a href="index.html" class="site-logo">
+            <svg width="220" height="32" viewBox="0 0 220 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g fill="white">
+                    <path d="M2 14L8 10V24L2 28V14Z" fill-opacity="1"/>
+                    <path d="M8 10L14 14V28L8 24V10Z" fill-opacity="0.6"/>
+                    <path d="M2 14L8 18L14 14L8 10L2 14Z" fill-opacity="0.8"/>
+                    <path d="M17 6L23 2V24L17 28V6Z" fill-opacity="1"/>
+                    <path d="M23 2L29 6V28L23 24V2Z" fill-opacity="0.6"/>
+                    <path d="M17 6L23 10L29 6L23 2L17 6Z" fill-opacity="0.8"/>
+                    <path d="M32 14L38 10V24L32 28V14Z" fill-opacity="1"/>
+                    <path d="M38 10L44 14V28L38 24V10Z" fill-opacity="0.6"/>
+                    <path d="M32 14L38 18L44 14L38 10L32 14Z" fill-opacity="0.8"/>
+                </g>
+                <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
+                <text x="52" y="18" fill="white" style="font-family:'Inter', sans-serif; font-weight:700; font-size:17px; letter-spacing:0.2px;">Yishen Global</text>
+                <text x="52" y="27" fill="white" fill-opacity="0.4" style="font-family:'JetBrains Mono', monospace; font-size:6.5px; letter-spacing:0.3px; text-transform: uppercase;">Coordinated Industrial Architecture</text>
+            </svg>
+        </a>
+
+        <div class="nav-links" style="display:flex; gap:25px; align-items:center;">
+            <a href="index.html" style="color:white; text-decoration:none; font-family:'JetBrains Mono'; font-size:0.75rem;">SYSTEM</a>
+            <a href="solutions.html" style="color:white; text-decoration:none; font-family:'JetBrains Mono'; font-size:0.75rem;">SOLUTIONS</a>
+            <a href="industries.html" class="active" style="color:var(--neon-blue); text-decoration:none; font-family:'JetBrains Mono'; font-size:0.75rem;">INDUSTRIES</a>
+            <a href="resources.html" style="color:white; text-decoration:none; font-family:'JetBrains Mono'; font-size:0.75rem;">RESOURCES</a>
+            <a href="javascript:void(0)" data-connect="LinkedIn" style="color:var(--neon-blue); border:1px solid rgba(14,165,233,0.3); padding:6px 12px; font-family:'JetBrains Mono'; font-size:0.7rem;">CONNECT_API</a>
         </div>
     </div>
 </nav>
 
-<div class="nav-spacer"></div>
-
-<header class="page-hero small" style="background: linear-gradient(90deg, var(--deep-space) 40%, transparent 100%), url('header-main.webp'); background-size: cover;">
-    <div class="container">
-        <span class="tag">[ VERTICAL_APPLICATION_MATRIX ]</span>
-        <h1>Industries We Serve</h1>
-        <p>
-            Furniture-first supply chain systems engineered for cross-category 
-            manufacturing, packaging, and logistical stability.
+<header class="page-hero">
+    <div class="container" style="padding: 0 8%;">
+        <span class="tag" style="color:var(--neon-blue); font-family:'JetBrains Mono';">[ VERTICAL_APPLICATION_MATRIX ]</span>
+        <h1 style="color:white; font-size: 3.5rem; font-weight:900; margin: 20px 0;">Industries We Serve</h1>
+        <p style="color:var(--text-muted); max-width:600px; font-size:1.1rem;">
+            Furniture-first supply chain systems engineered for cross-category manufacturing, packaging, and logistical stability. 
         </p>
     </div>
 </header>
 
-<section style="background: var(--deep-space); padding: 80px 0;">
+<section style="background: var(--deep-space); padding: 80px 8%;">
     <div class="container">
-        <p style="max-width:820px; font-size: 1.15rem; color: #94a3b8; border-left: 3px solid var(--neon-blue); padding-left: 25px;">
-            YiShen Global does not treat industries as isolated markets. We build adaptive systems that bridge the gap between heavy-duty mechanics and commercial furniture, ensuring deterministic output across all sectors.
+        <p style="max-width:820px; font-size: 1.15rem; color: var(--text-muted); border-left: 3px solid var(--neon-blue); padding-left: 25px;">
+            Yishen Global builds adaptive systems that bridge the gap between heavy-duty mechanics and commercial furniture, ensuring deterministic output across all sectors. [cite: 24]
         </p>
     </div>
 </section>
 
-<section class="section">
+<section class="section" style="padding: 80px 8%;">
     <div class="container">
         <span class="tag">01_CORE_FURNITURE</span>
-        <h2 style="margin-bottom: 50px;">Furniture Sector Sovereignty</h2>
+        <h2 style="color:white; margin: 20px 0 50px;">Furniture Sector Sovereignty</h2>
 
-        <div class="grid-2">
-            <div class="node-card">
+        <div class="grid-2" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap:30px;">
+            <div class="node-card" style="background:var(--surface); padding:40px; border:1px solid rgba(255,255,255,0.05);">
                 <span class="sector-tag">BIFMA_G1</span>
                 <span class="sector-tag">EN_1335</span>
-                <h3>Office & Professional</h3>
-                <p>Ergonomic task chairs and workstations designed for global corporate standards. Integrated with aerospace-grade energy absorption.</p>
+                <h3 style="color:white;">Office & Professional</h3>
+                <p style="color:var(--text-muted);">Ergonomic task chairs and workstations designed for global corporate standards. Integrated with aerospace-grade energy absorption.</p>
                 <ul class="industry-list">
                     <li>Active lumbar synchronization</li>
                     <li>Mesh & task seating compliance planning</li>
@@ -105,11 +144,11 @@
                 </ul>
             </div>
 
-            <div class="node-card">
+            <div class="node-card" style="background:var(--surface); padding:40px; border:1px solid rgba(255,255,255,0.05);">
                 <span class="sector-tag">KD_LOGIC</span>
                 <span class="sector-tag">RETAIL_READY</span>
-                <h3>Residential & Living</h3>
-                <p>Living and bedroom furniture optimized for container density. Engineered for the intersection of durability and compact-space utility.</p>
+                <h3 style="color:white;">Residential & Living</h3>
+                <p style="color:var(--text-muted);">Living and bedroom furniture optimized for container density. Engineered for the intersection of durability and compact-space utility.</p>
                 <ul class="industry-list">
                     <li>Flat-pack survivability modeling</li>
                     <li>E-commerce distribution packaging</li>
@@ -118,12 +157,12 @@
             </div>
         </div>
 
-        <div class="grid-2" style="margin-top:30px;">
-            <div class="node-card">
+        <div class="grid-2" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap:30px; margin-top:30px;">
+            <div class="node-card" style="background:var(--surface); padding:40px; border:1px solid rgba(255,255,255,0.05);">
                 <span class="sector-tag">UV_STABLE</span>
                 <span class="sector-tag">ANTI_CORROSION</span>
-                <h3>Outdoor & Leisure</h3>
-                <p>Weather-resistant seating and hybrid indoor-outdoor products engineered with WPC and metal-grade durability.</p>
+                <h3 style="color:white;">Outdoor & Leisure</h3>
+                <p style="color:var(--text-muted);">Weather-resistant seating and hybrid indoor-outdoor products engineered with WPC and metal-grade durability.</p>
                 <ul class="industry-list">
                     <li>Marine-grade material integration</li>
                     <li>Structural leisure component supply</li>
@@ -131,11 +170,11 @@
                 </ul>
             </div>
 
-            <div class="node-card">
+            <div class="node-card" style="background:var(--surface); padding:40px; border:1px solid rgba(255,255,255,0.05);">
                 <span class="sector-tag">8000N_THRUST</span>
                 <span class="sector-tag">MODULAR</span>
-                <h3>Functional & Kinetic</h3>
-                <p>Folding furniture, powered modular systems, and space-saving mechanisms utilizing high-load linear drive technology.</p>
+                <h3 style="color:white;">Functional & Kinetic</h3>
+                <p style="color:var(--text-muted);">Folding furniture, powered modular systems, and space-saving mechanisms utilizing high-load linear drive technology.</p>
                 <ul class="industry-list">
                     <li>Motorized height-adjustment integration</li>
                     <li>Rapid assembly mechanical logic</li>
@@ -146,100 +185,37 @@
     </div>
 </section>
 
-<section class="section" style="background: rgba(14, 165, 233, 0.01);">
+<footer class="footer" style="padding: 80px 8%; background: #000; border-top: 1px solid rgba(255,255,255,0.05);">
     <div class="container">
-        <span class="tag">02_EXTENDED_MATERIALS</span>
-        <h2 style="margin-bottom: 50px;">Material Application Framework</h2>
-
-        <div class="grid-3">
-            <div class="node-card">
-                <h3>Bamboo & Engineered Wood</h3>
-                <p>Sustainability-aligned furniture grades with structural stability for heavy-duty commercial use.</p>
-                <span class="stats-node">> DENSITY: 1200KG/M3</span>
-            </div>
-
-            <div class="node-card">
-                <h3>WPC Flooring & Panels</h3>
-                <p>Integrated flooring and interior panel systems, bridging the gap between construction and furniture projects.</p>
-                <span class="stats-node">> EN_13501-1_FIRE_CLASS</span>
-            </div>
-
-            <div class="node-card">
-                <h3>Mechanical Components</h3>
-                <p>Structural metal components and transmission chains supporting the kinetic backbone of furniture systems.</p>
-                <span class="stats-node">> ISO_9001_CERTIFIED</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section">
-    <div class="container">
-        <span class="tag">03_PARTNERS</span>
-        <h2>System Beneficiaries</h2>
-
-        <div class="grid-2" style="margin-top: 40px;">
-            <div style="border-left: 1px solid var(--industrial-gray); padding: 40px;">
-                <h3 style="color: var(--neon-blue); font-family: 'JetBrains Mono'; font-size: 1rem;">BRANDS_&_IMPORTERS</h3>
-                <p style="margin-top: 15px; color: #94a3b8;">International entities seeking predictable supply across multi-category furniture portfolios and global market entries.</p>
-            </div>
-
-            <div style="border-left: 1px solid var(--industrial-gray); padding: 40px;">
-                <h3 style="color: var(--neon-blue); font-family: 'JetBrains Mono'; font-size: 1rem;">DISTRIBUTORS_&_PROJECTS</h3>
-                <p style="margin-top: 15px; color: #94a3b8;">Decision-makers managing office developments, senior living, or hospitality projects requiring multi-SKU architectural coordination.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="cta" style="background: var(--nav-bg); padding: 120px 0; text-align: center;">
-    <div class="container">
-        <h2>Initiate Industrial Alignment</h2>
-        <p style="margin-bottom: 40px; color: #94a3b8;">We align materials, engineering, and logistics before the conversation begins.</p>
-        <a href="contact.html" class="btn-primary" style="padding: 20px 60px;">Request Industry Briefing</a>
-    </div>
-</section>
-
-<footer class="footer">
-    <div class="container">
-        <div class="shield-footer">
-            <img src="partners-shield.webp" alt="Supply Chain Shield" style="width: 100%; opacity: 0.25;">
-        </div>
-        <div class="footer-grid">
+        <div class="footer-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:40px;">
             <div>
-                <img src="logo-white.webp" alt="YISHEN GLOBAL" style="height:28px;">
-                <p style="margin-top:20px; font-size: 0.8rem; color: #475569;">
+                <img src="/Yishen-Global-Logo-Mark-32px.png" alt="Yishen" style="height:32px; opacity:0.8;">
+                <p style="margin-top:20px; font-size: 0.8rem; color: #475569; line-height:1.6;">
                     Engineering-led furniture supply chain systems.<br>
-                    Integrated Architecture · Delivered Worldwide
+                    Integrated Architecture · Delivered Worldwide 
                 </p>
             </div>
-
             <div>
-                <h4>Navigation</h4>
-                <p><a href="index.html">System</a></p>
-                <p><a href="solutions.html">Solutions</a></p>
-                <p><a href="why-us.html">Why Us</a></p>
-                <p><a href="resources.html">Resources</a></p>
-            </div>
-
-            <div>
-                <h4>Direct Protocol</h4>
-                <p>alex.yang@yishenglobal.net</p>
-                <p>WhatsApp: +86 188 5727 7313</p>
-                <p>WhatsApp: +86 159 6827 7867</p>
+                <h4 style="color:white; margin-bottom:20px;">Direct Protocol</h4>
+                <p style="color:#475569; font-size:0.85rem;">alex.yang@yishenglobal.net</p>
+                <p style="color:#475569; font-size:0.85rem;">WhatsApp: +86 188 5727 7313</p>
             </div>
         </div>
-        <div style="margin-top: 60px; text-align: center; font-size: 0.7rem; color: #475569; letter-spacing: 2px;">
-            &copy; 2026 YISHEN GLOBAL // COORDINATED INDUSTRIAL ARCHITECTURE
+        <div style="margin-top: 60px; text-align: center; font-size: 0.65rem; color: #334155; letter-spacing: 2px; text-transform: uppercase;">
+            &copy; 2026 Yishen Global // COORDINATED INDUSTRIAL ARCHITECTURE // ALL DATA ENCRYPTED. 
         </div>
     </div>
 </footer>
 
+<script src="main-engine.js"></script>
 <script>
+    /* 数字化微光追踪集成 */
     const glow = document.getElementById('cursor-glow');
     document.addEventListener('mousemove', (e) => {
-        glow.style.left = e.clientX + 'px';
-        glow.style.top = e.clientY + 'px';
+        requestAnimationFrame(() => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
     });
 </script>
 
