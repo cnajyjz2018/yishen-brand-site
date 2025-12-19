@@ -11,26 +11,39 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
-    
     <link rel="stylesheet" href="styles.css">
 
     <style>
         /* =========================================================
-           LOGO & 视觉主权强制补丁
+           2026 视觉主权统筹补丁
            ========================================================= */
-        .site-logo img, .nav-logo img {
-            height: 32px !important; /* 锁定 32px 精致高度 */
-            width: auto; /* 保持 2.5:1 比例不变形 */
-            object-fit: contain; /* 确保图标完整显示 */
-            filter: drop-shadow(0 0 10px var(--neon-blue));
-            transition: var(--transition-main);
+        :root {
+            --performance-red: #A11219; /* 家族传承：燊之火底色 */
+            --neon-blue: #0ea5e3;
+            --deep-space: #010409;
+        }
+
+        /* 强制锁定导航栏 Logo 32px 易读性高度 */
+        .site-logo {
+            display: flex;
+            align-items: center;
+            height: 32px !important; 
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.4));
+        }
+
+        .site-logo svg {
+            height: 32px;
+            width: auto;
+            display: block;
         }
         
         @media (max-width: 1024px) {
-            .site-logo img, .nav-logo img { height: 28px !important; }
+            .site-logo { height: 28px !important; }
+            .site-logo svg { height: 28px; }
         }
 
-        /* 补丁：Hero 背景严格执行 16:9 比例 */
+        /* Hero 背景严格 16:9 统筹 */
         .hero {
             height: 100vh; display: flex; align-items: center; padding: 0 8%;
             background: linear-gradient(90deg, var(--deep-space) 30%, transparent 100%), url('header-main.webp');
@@ -39,9 +52,13 @@
             position: relative;
         }
 
-        /* 动态浮动关键帧补丁 */
+        /* 动态浮动关键帧 */
         @keyframes float { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-40px) rotate(15deg); } }
         .float-icon { animation: float 18s infinite ease-in-out; }
+
+        /* 栅格节点 16:9 比例锁定 */
+        .lazy-container { aspect-ratio: 16 / 9; overflow: hidden; background: #0a0a0a; }
+        .lazy-container img { width: 100%; height: 100%; object-fit: cover; }
     </style>
 </head>
 <body>
@@ -51,7 +68,24 @@
     <nav id="master-nav" class="site-navbar">
         <div class="nav-inner">
             <a href="index.html" class="brand-block site-logo">
-                <img src="logo-white.webp" class="nav-logo" alt="YISHEN GLOBAL">
+                <svg width="180" height="32" viewBox="0 0 180 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="white">
+                        <path d="M2 14L8 10V24L2 28V14Z" fill-opacity="1"/>
+                        <path d="M8 10L14 14V28L8 24V10Z" fill-opacity="0.7"/>
+                        <path d="M2 14L8 18L14 14L8 10L2 14Z" fill-opacity="0.9"/>
+                        
+                        <path d="M17 6L23 2V24L17 28V6Z" fill-opacity="1"/>
+                        <path d="M23 2L29 6V28L23 24V2Z" fill-opacity="0.7"/>
+                        <path d="M17 6L23 10L29 6L23 2L17 6Z" fill-opacity="0.9"/>
+                        
+                        <path d="M32 14L38 10V24L32 28V14Z" fill-opacity="1"/>
+                        <path d="M38 10L44 14V28L38 24V10Z" fill-opacity="0.7"/>
+                        <path d="M32 14L38 18L44 14L38 10L32 14Z" fill-opacity="0.9"/>
+                    </g>
+                    <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
+                    <text x="54" y="18" fill="white" style="font-family:'Inter', sans-serif; font-weight:900; font-size:16px; letter-spacing:1px;">YISHEN GLOBAL</text>
+                    <text x="54" y="27" fill="white" fill-opacity="0.5" style="font-family:'JetBrains Mono', monospace; font-size:6px; letter-spacing:0.5px;">COORDINATED INDUSTRIAL ARCHITECTURE</text>
+                </svg>
             </a>
 
             <div class="mobile-toggle" onclick="MainEngine.toggleMobileMenu()">
@@ -98,7 +132,7 @@
                 <a href="resources.html" style="color: #64748b; font-family: 'JetBrains Mono'; text-decoration: none; font-size: 0.8rem; padding: 22px;">[ VIEW_TECHNICAL_DATA ]</a>
             </div>
         </div>
-        <img src="brand-icon.webp" class="float-icon" alt="System Kinetic Core" style="position: absolute; right: 5%; bottom: 10%; width: 260px; opacity: 0.3;">
+        <img src="brand-icon.webp" class="float-icon" alt="System Kinetic Core" style="position: absolute; right: 5%; bottom: 10%; width: 260px; opacity: 0.15;">
     </header>
 
     <section class="section" id="matrix" style="padding: 120px 8%;">
@@ -110,8 +144,7 @@
         <div class="node-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; margin-top: 60px;">
             <div class="node-card">
                 <div class="lazy-container">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" 
-                         data-src="div-industrial.webp" alt="Furniture Systems" style="width:100%">
+                    <img src="div-industrial.webp" alt="Furniture Systems">
                 </div>
                 <h4 data-i18n="cluster_1" style="margin-top: 25px; color: var(--neon-blue);">Furniture Systems</h4>
                 <p>8000N kinetic thrust capacity integrated with spacecraft-grade energy absorption.</p>
@@ -120,8 +153,7 @@
 
             <div class="node-card">
                 <div class="lazy-container">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" 
-                         data-src="ergo-SPro9001-hero-01.webp" alt="Precision Seating" style="width:100%">
+                    <img src="ergo-SPro9001-hero-01.webp" alt="Precision Seating">
                 </div>
                 <h4 data-i18n="cluster_2" style="margin-top: 25px; color: var(--neon-blue);">Precision Seating</h4>
                 <p>Biomechanical ergonomic lumbar nodes designed for high-density enterprise trade.</p>
@@ -130,8 +162,7 @@
 
             <div class="node-card">
                 <div class="lazy-container">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" 
-                         data-src="div-container-optimization.webp" alt="Kinetic Logistics" style="width:100%">
+                    <img src="div-container-optimization.webp" alt="Kinetic Logistics">
                 </div>
                 <h4 data-i18n="cluster_3" style="margin-top: 25px; color: var(--neon-blue);">Kinetic Logistics</h4>
                 <p>Mathematical container density optimization and ISTA-6A survivability modeling.</p>
@@ -152,11 +183,11 @@
     <script src="main-engine.js"></script>
 
     <script>
-        /* 补丁：导航栏滚动及尺寸对齐 */
+        /* 导航栏动态缩放：同步 32px 渲染补丁 */
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('master-nav');
             if (window.scrollY > 80) {
-                nav.style.height = '80px';
+                nav.style.height = '70px';
                 nav.style.background = 'rgba(1, 4, 9, 0.98)';
             } else {
                 nav.style.height = '100px';
