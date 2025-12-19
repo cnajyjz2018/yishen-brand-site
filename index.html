@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YISHEN GLOBAL | Integrated Supply Chain Architect</title>
-    <meta name="description" content="YiShen Global - An integrated supply chain system leveraging heavy machinery, kinetic motion, and aerospace biomechanics for global spatial solutions.">
-    <meta name="keywords" content="Supply Chain Integration, Linear Drive, Ergonomic Seating, WPC Flooring, Bamboo Engineering, Global Logistics, Motion Furniture">
+    <title>YISHEN GLOBAL | Engineering-Led Furniture Supply Chain</title>
+    <meta name="description" content="Furniture first. Supply chain, engineered. We design and execute furniture systems integrated with heavy-duty mechanics, kinetic motion, and aerospace biomechanics.">
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap">
     
@@ -14,8 +13,7 @@
             --neon-blue: #0ea5e9;
             --deep-space: #010409;
             --industrial-gray: #1e293b;
-            --glass: rgba(15, 23, 42, 0.9);
-            --border-glow: rgba(14, 165, 233, 0.3);
+            --glass: rgba(15, 23, 42, 0.95);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,80 +25,101 @@
             line-height: 1.6;
         }
 
-        /* Mouse Glow Effect */
+        /* Interactive Element */
         #cursor-glow {
             position: fixed; width: 600px; height: 600px;
             background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
             pointer-events: none; z-index: 9999; transform: translate(-50%, -50%);
         }
 
-        /* Navigation */
+        /* Nav Bar */
         nav {
             position: fixed; top: 0; width: 100%; padding: 25px 5%;
             display: flex; justify-content: space-between; align-items: center;
             z-index: 1000; background: linear-gradient(to bottom, var(--deep-space), transparent);
         }
-        .nav-logo { height: 26px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.2)); }
+        .nav-logo { height: 26px; }
         .system-status { font-family: 'JetBrains Mono'; color: var(--neon-blue); font-size: 0.65rem; letter-spacing: 2px; }
 
-        /* Hero Section */
+        /* Hero: Engineering-Led Manifesto */
         .hero {
             height: 100vh; display: flex; align-items: center; padding: 0 8%;
-            background: linear-gradient(90deg, var(--deep-space) 25%, transparent 100%), url('header-main.webp');
+            background: linear-gradient(90deg, var(--deep-space) 30%, transparent 100%), url('header-main.webp');
             background-size: cover; background-position: center;
         }
         .hero-content { max-width: 950px; }
-        .hero-content h1 { font-size: clamp(3rem, 8vw, 5.8rem); font-weight: 900; line-height: 0.85; margin-bottom: 30px; letter-spacing: -4px; }
-        .hero-content p { font-size: 1.3rem; color: #94a3b8; max-width: 700px; border-left: 3px solid var(--neon-blue); padding-left: 25px; }
-
-        /* Integrated Nodes */
-        .section { padding: 140px 8%; position: relative; }
-        .tag { font-family: 'JetBrains Mono'; color: var(--neon-blue); font-size: 0.8rem; display: block; margin-bottom: 20px; letter-spacing: 5px; }
-        h2 { font-size: 3.2rem; margin-bottom: 60px; font-weight: 900; letter-spacing: -2px; }
-
-        .grid-container {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px;
+        .hero-content h2 { font-size: 1.5rem; color: var(--neon-blue); margin-bottom: 20px; font-weight: 400; font-family: 'JetBrains Mono'; }
+        .hero-content h1 { font-size: clamp(3rem, 7vw, 6rem); font-weight: 900; line-height: 0.85; margin-bottom: 30px; letter-spacing: -4px; }
+        .hero-content p { font-size: 1.25rem; color: #94a3b8; max-width: 680px; margin-bottom: 45px; border-left: 3px solid var(--neon-blue); padding-left: 25px; }
+        
+        .btn {
+            display: inline-block; padding: 18px 40px; border: 1px solid var(--neon-blue);
+            color: #fff; text-decoration: none; font-family: 'JetBrains Mono'; font-size: 0.85rem;
+            transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); margin-right: 20px;
         }
-        .node-card {
-            background: var(--glass); border: 1px solid var(--industrial-gray); padding: 55px;
-            transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative; overflow: hidden;
-        }
-        .node-card:hover { border-color: var(--neon-blue); transform: translateY(-12px); background: rgba(14, 165, 233, 0.04); }
-        .node-card h3 { font-size: 1.7rem; margin-bottom: 25px; color: #fff; text-transform: uppercase; }
-        .node-card p { color: #64748b; font-size: 1.05rem; }
-        .stats-badge { font-family: 'JetBrains Mono'; font-size: 0.75rem; color: var(--neon-blue); margin-top: 35px; display: block; border-top: 1px solid #1e293b; padding-top: 20px; }
+        .btn:hover { background: var(--neon-blue); color: #000; box-shadow: 0 0 30px var(--neon-blue); transform: scale(1.05); }
 
-        /* Audit Module */
-        .audit-flex {
-            display: flex; gap: 80px; align-items: center; margin-top: 60px;
-        }
-        .audit-image { flex: 1.2; }
-        .audit-image img { width: 100%; border: 1px solid var(--industrial-gray); opacity: 0.8; }
-        .audit-text { flex: 0.8; }
+        /* Problem Section */
+        .section { padding: 140px 8%; border-bottom: 1px solid #1e293b; position: relative; }
+        .tag { font-family: 'JetBrains Mono'; color: var(--neon-blue); font-size: 0.75rem; display: block; margin-bottom: 20px; letter-spacing: 5px; }
+        
+        .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .problem-text h3 { font-size: 3rem; margin-bottom: 35px; line-height: 1; font-weight: 900; }
+        .problem-text b { color: var(--neon-blue); }
 
-        /* Floating Brand Icon */
-        .float-icon {
-            position: absolute; right: 5%; top: 5%; width: 200px; animation: floatAnim 10s ease-in-out infinite; opacity: 0.7;
+        /* Integration System Grid */
+        .system-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2px;
+            background: #1e293b; margin-top: 60px; border: 1px solid #1e293b;
         }
-        @keyframes floatAnim { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-40px) rotate(8deg); } }
-
-        /* Industrial Shield */
-        .shield-box { text-align: center; padding: 100px 8%; background: #000; }
-        .shield-img { 
-            max-width: 1100px; width: 100%; margin-top: 60px; 
-            opacity: 0.4; filter: grayscale(1) invert(1); transition: 1s;
+        .system-card {
+            background: var(--deep-space); padding: 60px;
+            transition: 0.5s;
         }
-        .shield-img:hover { opacity: 1; filter: grayscale(0) invert(0); }
+        .system-card:hover { background: rgba(14, 165, 233, 0.05); }
+        .system-card h4 { font-size: 1.4rem; margin-bottom: 25px; color: #fff; text-transform: uppercase; font-weight: 900; }
+        .system-card p { font-size: 1rem; color: #64748b; }
+        .stats-node { font-family: 'JetBrains Mono'; color: var(--neon-blue); font-size: 0.7rem; margin-top: 30px; display: block; opacity: 0.8; }
 
+        /* Resource & Audit Module */
+        .audit-visual { margin-top: 80px; position: relative; }
+        .audit-visual img { width: 100%; border: 1px solid var(--industrial-gray); opacity: 0.8; transition: 1s; }
+        .audit-visual:hover img { opacity: 1; filter: contrast(1.1); }
+        .audit-overlay {
+            position: absolute; bottom: 50px; right: 50px; background: var(--glass);
+            padding: 40px; border-left: 5px solid var(--neon-blue); max-width: 450px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Floating Icon */
+        .float-gear {
+            position: absolute; right: 5%; top: 5%; width: 220px; animation: floatAnim 12s ease-in-out infinite; opacity: 0.6; pointer-events: none;
+        }
+        @keyframes floatAnim { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-40px) rotate(10deg); } }
+
+        /* Targeted Audience List */
+        .audience-matrix {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 60px;
+        }
+        .audience-node { 
+            border-left: 1px solid #1e293b; padding-left: 25px; font-size: 1rem; color: #cbd5e1; 
+            transition: 0.3s;
+        }
+        .audience-node:hover { border-left: 4px solid var(--neon-blue); color: #fff; }
+
+        /* Footer CTA */
+        .final-cta { text-align: center; padding: 150px 8%; background: radial-gradient(circle at center, #051937, #000); }
+        .final-cta h2 { font-size: 4rem; margin-bottom: 30px; font-weight: 900; letter-spacing: -2px; }
+        
         footer {
-            padding: 80px 8%; text-align: center; border-top: 1px solid var(--industrial-gray);
-            font-size: 0.75rem; color: #475569; font-family: 'JetBrains Mono'; text-transform: uppercase; letter-spacing: 2px;
+            padding: 60px 8%; text-align: center; font-size: 0.75rem; color: #475569;
+            font-family: 'JetBrains Mono'; letter-spacing: 3px; border-top: 1px solid #1e293b;
         }
 
         @media (max-width: 1024px) {
+            .problem-grid { grid-template-columns: 1fr; }
             .hero { background-position: 85% center; }
-            .audit-flex { flex-direction: column; }
+            .audit-overlay { position: static; max-width: 100%; margin-top: 20px; }
         }
     </style>
 </head>
@@ -110,81 +129,114 @@
 
     <nav>
         <img src="logo-white.webp" class="nav-logo" alt="YISHEN ARCHITECT">
-        <div class="system-status">ALEX_C_YANG // CORE_VERSION_2026 // HS_DATA_LOCKED</div>
+        <div class="system-status">CORE_STABILITY // HS_CODE_AUDIT // EST_2026</div>
     </nav>
 
     <header class="hero">
         <div class="hero-content">
-            <span class="tag">INTEGRATED_SUPPLY_CHAIN_ARCHITECT</span>
-            <h1>TOTAL<br>INTEGRATION.</h1>
+            <h2>Furniture first. Supply chain, engineered.</h2>
+            <h1>INTEGRATED<br>SYSTEMS.</h1>
             <p>
-                Synthesizing heavy-duty mechanics, kinetic motion, and aerospace biomechanics into high-value spatial assets. 
-                We redefine the sovereignty of global supply chains through end-to-end integration.
+                YiShen Global is not a trading company. We design and execute furniture supply chain systems that buyers can rely on, scale, and defend internally through multi-industry technical integration.
             </p>
+            <div style="margin-top: 40px;">
+                <a href="#system" class="btn">VIEW THE SYSTEM</a>
+                <a href="#audit" class="btn" style="border-color: #475569; color: #94a3b8;">DATA AUDIT</a>
+            </div>
         </div>
     </header>
 
-    <section class="section">
-        <img src="brand-icon.webp" class="float-icon" alt="System Nucleus">
-        <span class="tag">[ 01_INFRASTRUCTURE_NODES ]</span>
-        <h2>Integrated Matrix</h2>
-        
-        <div class="grid-container">
-            <div class="node-card">
-                <h3>Kinetic Drive Systems</h3>
-                <p>Integrating world-class linear actuator clusters. Enabling vertical evolution for spatial environments with 8000N thrust capacity and silent operation protocols.</p>
-                <span class="stats-badge">SPEC: 8000N_THRUST // TESTED: 100,000_CYCLES</span>
-            </div>
-            <div class="node-card">
-                <h3>Aerospace Biomechanics</h3>
-                <p>Migrating spacecraft energy-absorption structures and postural algorithms. Real-time spinal alignment through advanced biomechanical pressure mapping.</p>
-                <span class="stats-badge">TECH: SPACECRAFT_TRANSFER // DYNAMIC_SYNC_ACTIVE</span>
-            </div>
-            <div class="node-card">
-                <h3>High-Performance Surfaces</h3>
-                <p>Mastering heavy-duty bamboo composites and patented WPC flooring systems. Multi-national manufacturing footprint (VN/TH) for total trade compliance.</p>
-                <span class="stats-badge">MATERIAL: HS_9403_CERTIFIED // ESG_LEVEL_A</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" style="background: rgba(14, 165, 233, 0.01);">
-        <span class="tag">[ 02_DATA_INTEGRITY_AUDIT ]</span>
-        <div class="audit-flex">
-            <div class="audit-image">
-                <img src="header-resources.webp" alt="Supply Chain Audit">
-            </div>
-            <div class="audit-text">
-                <h2>Verified Integrity</h2>
-                <p style="margin-top: 30px;">
-                    Our supply chain control is dictated by verified customs data (HS Code 7315 / 9403) rather than brand inflation. 
-                    YiShen Global aggregates the most competitive industrial parameters, ensuring absolute transparency and traceability from raw material to final deployment.
+    <section class="section" id="problem">
+        <img src="brand-icon.webp" class="float-gear" alt="Integration Gear">
+        <div class="problem-grid">
+            <div class="problem-text">
+                <span class="tag">[ THE_DIAGNOSIS ]</span>
+                <h3>Sourcing failures are caused by <b>system instability.</b></h3>
+                <p>
+                    Most global furniture issues arise from unclear ownership, fragile packaging, and compliance surprises. We solve this by integrating <b>Heavy Machinery</b>, <b>Linear Drive</b>, and <b>Aerospace Standards</b> into the furniture core.
                 </p>
             </div>
+            <div class="audit-visual" id="audit">
+                <img src="header-resources.webp" alt="Supply Chain Data Audit">
+                <div class="audit-overlay">
+                    <span class="tag">// ARCHITECT_NOTE</span>
+                    We engineer <b>stability</b> into every node. From 8000N kinetic thrust to spacecraft-grade energy absorption.
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="shield-box">
-        <span class="tag">[ 03_GLOBAL_LOGISTICS_MATRIX ]</span>
-        <h2>Industrial Alliance Shield</h2>
-        <p style="color: #64748b; margin-top: 20px;">Integrating 100+ specialized industrial categories. Backed by strategic overseas hubs for 48H deterministic global delivery.</p>
-        <img src="partners-shield.webp" class="shield-img" alt="Supply Chain Shield">
+    <section class="section" id="system">
+        <span class="tag">[ THE_YISHEN_CORE ]</span>
+        <h2>Structural Matrix</h2>
+        <div class="system-grid">
+            <div class="system-card">
+                <h4>Furniture Engineering</h4>
+                <p>Integrating <b>Heavy-Duty Bamboo</b> and <b>WPC Surface Engineering</b> with precise SKU structural logic designed before production.</p>
+                <span class="stats-node">DENSITY: 1200KG/M3 // ESG_A</span>
+            </div>
+            <div class="system-card">
+                <h4>Kinetic Motion</h4>
+                <p>Leveraging <b>Linear Drive Clusters</b> from specialized hubs to enable 8000N thrust capacity in spatial environments.</p>
+                <span class="stats-node">DRIVE: 8000N // LIFE: 100K_CYCLES</span>
+            </div>
+            <div class="system-card">
+                <h4>Spacecraft Biomechanics</h4>
+                <p>Migrating <b>Spacecraft Crew Seat</b> absorption tech and postural algorithms into ergonomic lumbar support systems.</p>
+                <span class="stats-node">SYNC: DYNAMIC // ABSORB: 90%</span>
+            </div>
+            <div class="system-card">
+                <h4>Packaging Engineering</h4>
+                <p>Survivability modeling and container density optimization to ensure <b>zero-failure</b> global delivery.</p>
+                <span class="stats-node">MODEL: DROP_RISK_SHIELD</span>
+            </div>
+            <div class="system-card">
+                <h4>Compliance Pathway</h4>
+                <p>BIFMA, EN1335, and UL planning integrated early. Full <b>HS Code (7315/9403)</b> traceability and audit integrity.</p>
+                <span class="stats-node">AUDIT: HS_DATA_LOCKED</span>
+            </div>
+            <div class="system-card">
+                <h4>One Accountable Hub</h4>
+                <p>No fragmented suppliers or technical excuses. One engineered system for retailers, brands, and distributors.</p>
+                <span class="stats-node">INTERFACE: ARCHITECT_ONE</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <span class="tag">[ DESIGNED_FOR ]</span>
+        <h3>Strategic Integration Partners</h3>
+        <div class="audience-matrix">
+            <div class="audience-node">Furniture brands expanding across regions</div>
+            <div class="audience-node">Retailers demanding predictable delivery</div>
+            <div class="audience-node">E-commerce sellers sensitive to failure</div>
+            <div class="audience-node">Procurement teams tired of excuses</div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <h2>Start with the System.</h2>
+        <p style="margin: 0 auto 50px; color: #94a3b8; max-width: 700px; font-size: 1.2rem;">
+            If you are evaluating suppliers beyond samples and quotations, YiShen Global is built for that conversation.
+        </p>
+        <a href="mailto:architect@yishen.global" class="btn" style="padding: 22px 70px; font-size: 1rem;">DISCUSS YOUR PROJECT</a>
+        
+        <div style="margin-top: 100px;">
+            <img src="partners-shield.webp" class="shield-img" style="max-width: 950px; width: 100%; opacity: 0.3; filter: grayscale(1) invert(1);" alt="Integrated Clusters">
+        </div>
     </section>
 
     <footer>
-        &copy; 2026 YISHEN GLOBAL ARCHITECT. ALL RIGHTS RESERVED.
-        <br>DEPLOYED VIA ENCRYPTED INDUSTRIAL CHAIN PROTOCOL.
+        &copy; 2026 YISHEN GLOBAL // COORDINATED INDUSTRIAL ARCHITECTURE // HS_CODE_AUDITED // ALL RIGHTS RESERVED.
     </footer>
 
     <script>
-        // Smooth Cursor Glow
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             glow.style.left = e.clientX + 'px';
             glow.style.top = e.clientY + 'px';
         });
 
-        // Parallax Effect
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             document.querySelector('.hero').style.backgroundPositionY = scrolled * 0.4 + 'px';
