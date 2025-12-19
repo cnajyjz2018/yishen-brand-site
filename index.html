@@ -8,26 +8,29 @@
     <meta name="description" content="Engineering furniture supply chains for predictable global delivery. Integrated systems covering office seating, marine rigging, and structural bio-materials.">
     <meta name="keywords" content="Furniture Supply Chain, BIFMA Compliance, Office Seating Engineering, Marine Hardware, Bamboo Composite, ISTA Packaging">
 
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
     
     <link rel="stylesheet" href="styles.css">
 
     <style>
         /* =========================================================
-           LOGO 精准比例补丁：锁定 32px (对应素材 250x100)
+           LOGO & 视觉主权强制补丁
            ========================================================= */
-        .nav-logo img {
-            height: 32px !important; /* 精致比例，不喧宾夺主 */
-            width: auto; /* 自动计算宽度以保持 2.5:1 纵横比 */
+        .site-logo img, .nav-logo img {
+            height: 32px !important; /* 锁定 32px 精致高度 */
+            width: auto; /* 保持 2.5:1 比例不变形 */
+            object-fit: contain; /* 确保图标完整显示 */
             filter: drop-shadow(0 0 10px var(--neon-blue));
             transition: var(--transition-main);
         }
         
         @media (max-width: 1024px) {
-            .nav-logo img { height: 28px !important; }
+            .site-logo img, .nav-logo img { height: 28px !important; }
         }
 
-        /* 统筹补丁：Hero 背景严格执行 16:9 比例 */
+        /* 补丁：Hero 背景严格执行 16:9 比例 */
         .hero {
             height: 100vh; display: flex; align-items: center; padding: 0 8%;
             background: linear-gradient(90deg, var(--deep-space) 30%, transparent 100%), url('header-main.webp');
@@ -47,7 +50,7 @@
 
     <nav id="master-nav" class="site-navbar">
         <div class="nav-inner">
-            <a href="index.html" class="brand-block">
+            <a href="index.html" class="brand-block site-logo">
                 <img src="logo-white.webp" class="nav-logo" alt="YISHEN GLOBAL">
             </a>
 
@@ -149,7 +152,7 @@
     <script src="main-engine.js"></script>
 
     <script>
-        // 补丁：导航栏滚动动效同步
+        /* 补丁：导航栏滚动及尺寸对齐 */
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('master-nav');
             if (window.scrollY > 80) {
