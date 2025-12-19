@@ -1,16 +1,41 @@
+# =========================================================
+# YiShen Global — Search Engine Protocol
+# Version: 2026.MASTER
+# =========================================================
+
 User-agent: *
 Allow: /
 
-# Block system / dev files if any (optional, safe)
-Disallow: /tmp/
-Disallow: /dev/
-Disallow: /private/
-
-# Allow assets explicitly (SEO-safe)
+# ---------------------------------------------------------
+# ASSET INDEXING (SEO-SAFE PROTOCOL)
+# Explicitly allowing crawlers to access visual and logic assets 
+# to ensure high-fidelity rendering (Critical for Architecture Sites)
+# ---------------------------------------------------------
 Allow: /assets/
 Allow: /images/
 Allow: /css/
 Allow: /js/
+Allow: /*.webp$
+Allow: /*.css$
+Allow: /*.js$
 
-# Sitemap (official)
+# ---------------------------------------------------------
+# SYSTEM SHIELD (BLOCKING SENSITIVE/NON-CONTENT NODES)
+# Prevent indexing of temporary or development fragments
+# ---------------------------------------------------------
+Disallow: /tmp/
+Disallow: /dev/
+Disallow: /private/
+Disallow: /components/  # Block if components are just fragments
+Disallow: /README.md
+Disallow: /i18n-engine.js # Optional: keep logic internal
+
+# ---------------------------------------------------------
+# DEEP LINKING NODES (SITEMAP INTEGRATION)
+# Directing AI crawlers to the hierarchical logic blueprint
+# ---------------------------------------------------------
 Sitemap: https://yishenglobal.net/sitemap.xml
+
+# =========================================================
+# END OF PROTOCOL
+# =========================================================
