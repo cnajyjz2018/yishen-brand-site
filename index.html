@@ -1,151 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YISHEN GLOBAL | Coordinated Industrial Architecture</title>
     
-    <meta name="description" content="YiShen Global: Engineering furniture supply chains for predictable global delivery. Integrated systems covering office seating, marine rigging, and structural bio-materials.">
+    <meta name="description" content="Engineering furniture supply chains for predictable global delivery. Integrated systems covering office seating, marine rigging, and structural bio-materials.">
     <meta name="keywords" content="Furniture Supply Chain, BIFMA Compliance, Office Seating Engineering, Marine Hardware, Bamboo Composite, ISTA Packaging">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
     
+    <link rel="stylesheet" href="styles.css">
+
     <style>
-        :root {
-            --neon-blue: #0ea5e9;
-            --deep-space: #010409;
-            --industrial-gray: #1e293b;
-            --glass: rgba(15, 23, 42, 0.9);
-            --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            --nav-height: 100px;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
-        
-        body { 
-            background-color: var(--deep-space); 
-            color: #fff; 
-            font-family: 'Inter', sans-serif; 
-            overflow-x: hidden;
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* -----------------------------------------
-           INTERACTIVE ENGINE: Digital Twin Glow
-        ----------------------------------------- */
-        #cursor-glow {
-            position: fixed; width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
-            pointer-events: none; z-index: 9999; transform: translate(-50%, -50%);
-            will-change: transform;
-        }
-
-        /* -----------------------------------------
-           NAVBAR: Command Center Header
-        ----------------------------------------- */
-        nav {
-            position: fixed; top: 0; left: 0; width: 100%; height: var(--nav-height);
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 0 6%; z-index: 10000;
-            background: linear-gradient(to bottom, var(--deep-space) 40%, transparent);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            transition: var(--transition);
-        }
-
-        .brand-block { display: flex; align-items: center; gap: 20px; text-decoration: none; }
-        .nav-logo { height: 55px; width: auto; filter: drop-shadow(0 0 15px var(--neon-blue)); }
-        
-        .nav-links { display: flex; gap: 45px; }
-        .nav-links a {
-            color: #94a3b8; text-decoration: none; font-size: 0.75rem;
-            font-family: 'JetBrains Mono'; letter-spacing: 2px; text-transform: uppercase;
-            transition: var(--transition);
-        }
-        .nav-links a:hover, .nav-links a.active { color: var(--neon-blue); text-shadow: 0 0 8px var(--neon-blue); }
-
-        .system-display {
-            display: flex; align-items: center; gap: 25px;
-            font-family: 'JetBrains Mono'; font-size: 0.6rem; color: #475569;
-        }
-        .status-dot { 
-            width: 6px; height: 6px; background: #22c55e; border-radius: 50%; 
-            display: inline-block; margin-right: 8px; box-shadow: 0 0 10px #22c55e;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-
-        /* -----------------------------------------
-           HERO: The System Manifesto
-        ----------------------------------------- */
+        /* 针对首屏 Hero 的特定统筹：确保背景图与导航栏和谐 */
         .hero {
             height: 100vh; display: flex; align-items: center; padding: 0 8%;
             background: linear-gradient(90deg, var(--deep-space) 30%, transparent 100%), url('header-main.webp');
             background-size: cover; background-position: center;
             position: relative;
-        }
-        .hero-content { max-width: 1000px; z-index: 2; }
-        .hero-content span.tag { 
-            font-family: 'JetBrains Mono'; color: var(--neon-blue); 
-            font-size: 0.9rem; letter-spacing: 6px; margin-bottom: 30px; display: block;
-        }
-        .hero-content h1 { 
-            font-size: clamp(3.5rem, 9vw, 8rem); font-weight: 900; 
-            line-height: 0.85; letter-spacing: -6px; margin-bottom: 35px;
-            text-transform: uppercase;
-        }
-        .hero-content p { 
-            max-width: 650px; color: #94a3b8; font-size: 1.25rem; 
-            border-left: 3px solid var(--neon-blue); padding-left: 30px; margin-bottom: 60px;
-        }
-
-        .btn-group { display: flex; gap: 25px; }
-        .btn-main {
-            padding: 22px 55px; background: var(--neon-blue); color: #000;
-            text-decoration: none; font-family: 'JetBrains Mono'; font-weight: 700; font-size: 0.85rem;
-            transition: var(--transition); clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
-        }
-        .btn-main:hover { background: #fff; box-shadow: 0 0 40px var(--neon-blue); transform: translateY(-5px); }
-
-        .float-icon { position: absolute; right: 5%; bottom: 12%; width: 300px; opacity: 0.5; animation: float 18s infinite ease-in-out; }
-        @keyframes float { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-60px) rotate(15deg); } }
-
-        /* -----------------------------------------
-           DIAGNOSIS: Challenges & Boolean Logic
-        ----------------------------------------- */
-        .section { padding: 160px 8%; border-bottom: 1px solid rgba(255,255,255,0.05); position: relative; }
-        .grid-header { margin-bottom: 80px; max-width: 800px; }
-        .grid-header h3 { font-size: 4rem; font-weight: 900; line-height: 1; letter-spacing: -2px; }
-
-        .node-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.05); }
-        .node-card { background: var(--deep-space); padding: 70px; transition: var(--transition); position: relative; overflow: hidden; }
-        .node-card:hover { background: rgba(14, 165, 233, 0.03); }
-        .node-card h4 { font-family: 'JetBrains Mono'; font-size: 1.4rem; color: var(--neon-blue); margin-bottom: 25px; }
-        .node-card p { color: #64748b; font-size: 1.05rem; }
-        .node-card .stats { font-family: 'JetBrains Mono'; font-size: 0.7rem; color: #475569; margin-top: 40px; display: block; letter-spacing: 2px; }
-
-        /* -----------------------------------------
-           VISUAL AUDIT: The ISTA Hook
-        ----------------------------------------- */
-        .audit-container { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 100px; align-items: center; }
-        .audit-visual img { width: 100%; border: 1px solid rgba(255,255,255,0.1); filter: grayscale(0.5); transition: var(--transition); }
-        .audit-visual:hover img { filter: grayscale(0); }
-        
-        /* -----------------------------------------
-           FOOTER: Global Cluster Endorsement
-        ----------------------------------------- */
-        footer { padding: 120px 8% 60px; background: #000; text-align: center; }
-        .shield-img { height: 160px; opacity: 0.25; margin-bottom: 60px; filter: grayscale(1) invert(1); }
-        .footer-legal { font-family: 'JetBrains Mono'; font-size: 0.65rem; color: #334155; letter-spacing: 4px; border-top: 1px solid #111; padding-top: 40px; }
-
-        /* -----------------------------------------
-           RESPONSIVE MATRIX
-        ----------------------------------------- */
-        @media (max-width: 1200px) {
-            .nav-links, .system-display { display: none; }
-            .hero-content h1 { font-size: 4.5rem; }
-            .audit-container { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -153,35 +26,49 @@
 
     <div id="cursor-glow"></div>
 
-    <nav id="master-nav">
-        <a href="index.html" class="brand-block">
-            <img src="logo-white.webp" class="nav-logo" alt="YISHEN GLOBAL ARCHITECT">
-        </a>
+    <nav id="master-nav" class="site-navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="brand-block">
+                <img src="logo-white.webp" class="nav-logo" alt="YISHEN GLOBAL ARCHITECT">
+            </a>
 
-        <div class="nav-links">
-            <a href="index.html" class="active">Systems</a>
-            <a href="solutions.html">Solutions</a>
-            <a href="industries.html">Industries</a>
-            <a href="why-us.html">Protocol</a>
-            <a href="resources.html">Data</a>
-        </div>
+            <div class="nav-links">
+                <a href="index.html" class="active" data-i18n="nav_system">Systems</a>
+                <a href="solutions.html" data-i18n="nav_solutions">Solutions</a>
+                <a href="industries.html" data-i18n="nav_industries">Industries</a>
+                <a href="why-us.html" data-i18n="nav_whyus">Protocol</a>
+                <a href="resources.html" data-i18n="nav_resources">Data Center</a>
+                
+                <select class="lang-switcher" onchange="MasterEngine.switchLang(this.value)" 
+                        style="background:none; color:var(--neon-blue); border:1px solid rgba(14,165,233,0.3); padding:5px 10px; font-family:'JetBrains Mono'; cursor:pointer; font-size: 0.7rem;">
+                    <option value="en">English (US/UK)</option>
+                    <option value="zh">简体中文 (China)</option>
+                    <option value="ar">العربية (Middle East)</option>
+                    <option value="de">Deutsch (EU)</option>
+                    <option value="vi">Tiếng Việt (APEC)</option>
+                    <option value="ru">Русский (CIS)</option>
+                    <option value="es">Español (LatAm)</option>
+                </select>
+            </div>
 
-        <div class="system-display">
-            <div><span class="status-dot"></span>SYS_OPERATIONAL</div>
-            <div>VER_2026.MASTER</div>
-            <a href="contact.html" style="color: var(--neon-blue); text-decoration: none; border: 1px solid var(--neon-blue); padding: 8px 15px;">BRIEFING</a>
+            <div class="system-display">
+                <div><span class="status-dot"></span>SYS_OPERATIONAL</div>
+                <div>VER_2026.MASTER</div>
+            </div>
         </div>
     </nav>
 
+    <div class="nav-spacer"></div>
+
     <header class="hero">
         <div class="hero-content">
-            <span class="tag">[ DETERMINISTIC_SUPPLY_CHAIN ]</span>
-            <h1>Architecture<br>Over Sourcing.</h1>
-            <p>
+            <span class="tag" data-i18n="hero_tag">[ DETERMINISTIC_SUPPLY_CHAIN ]</span>
+            <h1 data-i18n="hero_h1">Architecture<br>Over Sourcing.</h1>
+            <p data-i18n="hero_p">
                 Yishen Global is not a trading company. We architect integrated furniture supply chain systems where <b>Aerospace Biomechanics</b>, <b>Linear Motion</b>, and <b>Structural Stability</b> are fused into a single predictable path.
             </p>
             <div class="btn-group">
-                <a href="#matrix" class="btn-main">INITIATE_SYSTEM_AUDIT</a>
+                <a href="#matrix" class="btn-main" data-i18n="cta_start">INITIATE_SYSTEM_AUDIT</a>
                 <a href="resources.html" style="color: #64748b; font-family: 'JetBrains Mono'; text-decoration: none; font-size: 0.8rem; padding: 20px;">[ VIEW_TECHNICAL_DATA ]</a>
             </div>
         </div>
@@ -191,73 +78,55 @@
     <section class="section">
         <div class="grid-header">
             <span class="tag">01_THE_DIAGNOSIS</span>
-            <h3>Sourcing fails are caused by <b>fragmented logic.</b></h3>
+            <h3 data-i18n="prob_h2">Sourcing fails are caused by <b>fragmented logic.</b></h3>
         </div>
         
         <div class="node-grid" id="matrix">
             <div class="node-card">
-                <h4>Furniture Systems</h4>
-                <p>Integrating 8000N kinetic thrust capacity with spacecraft-grade energy absorption algorithms in ergonomic lumbar nodes.</p>
+                <div class="lazy-container">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" 
+                         data-src="div-industrial.webp" alt="Industrial Audit" style="width:100%">
+                </div>
+                <h4 data-i18n="cluster_1">Furniture Systems</h4>
+                <p>Integrating 8000N kinetic thrust capacity with spacecraft-grade energy absorption algorithms.</p>
                 <span class="stats">NODE: LUMBAR_ACTIVE // THRUST: 8000N</span>
             </div>
-            <div class="node-card">
-                <h4>Bio-Materials</h4>
-                <p>Structural Bamboo and WPC composite surface engineering designed for high-load environmental stability (ESG-A Class).</p>
-                <span class="stats">DENSITY: 1200KG/M3 // TOX_0</span>
-            </div>
-            <div class="node-card">
-                <h4>Marine Rigging</h4>
-                <p>High-tensile Grade 100 chain systems and salt-mist resistant nautical hardware. Full HS Code 7315 traceability.</p>
-                <span class="stats">COMPLIANCE: HS_7315 // LOAD: G100</span>
-            </div>
-        </div>
-    </section>
 
-    <section class="section">
-        <div class="audit-container">
-            <div class="audit-text">
-                <span class="tag">02_SURVIVABILITY</span>
-                <h3 style="font-size: 3.5rem; font-weight: 900; margin-bottom: 30px;">Engineered<br>Delivery.</h3>
-                <p style="color: #94a3b8; font-size: 1.15rem; margin-bottom: 40px;">
-                    We solve failures at the design phase. Packaging survivability (ISTA-6A) and container density optimization are mapped mathematically before production begins.
-                </p>
-                <div style="display: flex; gap: 40px;">
-                    <div><h5 style="color: var(--neon-blue);">ISTA-6A</h5><small>DROP_TEST_CERT</small></div>
-                    <div><h5 style="color: var(--neon-blue);">98%</h5><small>LOAD_EFFICIENCY</small></div>
-                    <div><h5 style="color: var(--neon-blue);">0.04%</h5><small>REMA_RATE</small></div>
+            <div class="node-card">
+                <div class="lazy-container">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" 
+                         data-src="ergo-SPro9001-hero-01.webp" alt="Flagship SKU" style="width:100%">
                 </div>
+                <h4 data-i18n="cluster_2">Precision Seating</h4>
+                <p>Engineering the SPro 9001 Series: A biomechanical node for high-density enterprise environments.</p>
+                <span class="stats">SYNC: DYNAMIC // ABSORB: 90%</span>
             </div>
-            <div class="audit-visual">
-                
-                <img src="div-container-optimization.webp" alt="Loading Logic Optimization">
+
+            <div class="node-card">
+                <div class="lazy-container">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" 
+                         data-src="div-container-optimization.webp" alt="Logistics Optimization" style="width:100%">
+                </div>
+                <h4 data-i18n="cluster_3">Kinetic Logistics</h4>
+                <p>Mathematical container density optimization and ISTA-6A survivability modeling.</p>
+                <span class="stats">MODEL: DROP_TEST_READY // LOAD: 98%</span>
             </div>
         </div>
-    </section>
-
-    <section class="section" style="text-align: center; background: radial-gradient(circle at center, #051937, #000);">
-        <h2 style="font-size: 5rem; font-weight: 900; letter-spacing: -4px; margin-bottom: 40px;">Design the System.</h2>
-        <p style="max-width: 750px; margin: 0 auto 60px; color: #94a3b8; font-size: 1.3rem;">
-            If you are evaluating partners beyond speculative quotes, YiShen Global provides the architectural stability your procurement team requires.
-        </p>
-        <a href="contact.html" class="btn-main" style="padding: 25px 80px; font-size: 1.1rem;">INITIATE_PROJECT_BRIEFING</a>
     </section>
 
     <footer>
-        <img src="partners-shield.webp" class="shield-img" alt="Coordinated Industrial Cluster">
+        <div class="shield-container">
+            <img src="partners-shield.webp" class="shield-img" alt="Coordinated Industrial Cluster">
+        </div>
         <div class="footer-legal">
             &copy; 2026 YISHEN GLOBAL // COORDINATED INDUSTRIAL ARCHITECTURE // HS_CODE_LOCKED // ALL DATA ENCRYPTED.
         </div>
     </footer>
 
-    <script>
-        // Cursor Engine
-        const glow = document.getElementById('cursor-glow');
-        document.addEventListener('mousemove', (e) => {
-            glow.style.left = e.clientX + 'px';
-            glow.style.top = e.clientY + 'px';
-        });
+    <script src="main-engine.js"></script>
 
-        // Navbar Scroll Logic
+    <script>
+        // 补丁：导航栏滚动动效同步
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('master-nav');
             if (window.scrollY > 80) {
