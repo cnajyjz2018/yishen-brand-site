@@ -9,30 +9,43 @@ const MainEngine = {
     isMenuOpen: false,
 
     /**
-     * 1. 中心化社交协议 (Sovereign Social Protocol)
-     * 深度解决技术链路：集成 Alex 正确的个人 LinkedIn 与 WhatsApp 多号码集群
+     * 1. 中心化社交与联系协议 (Sovereign Social & Contact Protocol)
+     * 深度解决技术链路：集成 Alex & Champion 核心团队及微信 API 直连模式
      */
     socialProtocol: {
-        // 领英个人主页：补全协议头，确保浏览器精准跳转
+        // 领英个人主页：补全协议头，确保浏览器精准跳转 
         LinkedIn: "https://www.linkedin.com/in/alex-yang-yishen/", 
         
-        // WhatsApp 集群：支持数组管理，默认唤起主联系人
+        // WhatsApp 集群：支持数组管理，默认唤起 Alex 主联系人 
         WhatsApp: [
             "https://wa.me/8618857277313",
             "https://wa.me/8615968277867"
         ],
         
+        // 团队电邮矩阵 
+        Email: [
+            "alex.yang@yishenglobal.net",
+            "champion.yang@yishenglobal.net"
+        ],
+
+        // 官方热线 (Hotline API) 
+        Hotline: [
+            "+86 188 5727 7313",
+            "+86 195 3039 4133"
+        ],
+        
+        // 微信直连：支持通过特定链接或扫码协议贯通
+        WeChat: "https://work.weixin.qq.com/ca/dg800057277313", // 示例：企业微信直连码路径
+        
         Instagram: "https://instagram.com/yishen_global",
-        X: "https://x.com/yishen_global",
-        Email: "alex.yang@yishenglobal.net",
-        WeChat: "yishen_support" 
+        X: "https://x.com/yishen_global"
     },
 
     /**
      * 系统初始化点火 (Ignition)
      */
     async init() {
-        console.log("%c [SYS] Master Engine Ignition... ", "background: #0ea5e3; color: #000; font-weight: bold;");
+        console.log("%c [SYS] Master Engine Ignition... ", "background: #0ea5e9; color: #000; font-weight: bold;");
 
         // 1. 加载全球语种资源包
         try {
@@ -59,7 +72,7 @@ const MainEngine = {
 
     /**
      * 2. 社交媒体路由分发补丁 (The API Dispatcher)
-     * 确保全站任何 data-connect 按钮点击后，通过统一逻辑唤起，支持多号码识别
+     * 确保全站任何 data-connect 按钮点击后，通过统一逻辑唤起
      */
     bindSocialActions() {
         document.querySelectorAll('[data-connect]').forEach(btn => {
@@ -71,18 +84,30 @@ const MainEngine = {
     },
 
     /**
-     * 执行 API 唤起逻辑
+     * 执行 API 唤起逻辑 (互联互通模式)
      * @param {string} platform - 目标平台名称
      */
     executeAPI(platform) {
         let target = this.socialProtocol[platform];
         
-        // WhatsApp 特殊逻辑：如果是数组，默认打开首选联系人，确保业务不断联
+        // 智能分发逻辑：如果是数组（如 WhatsApp/Email/Hotline），默认调用首选联系人
         if (Array.isArray(target)) {
+            // 特殊处理 Email：唤起邮件客户端
+            if (platform === 'Email') {
+                window.location.href = `mailto:${target[0]}`;
+                return;
+            }
             target = target[0]; 
         }
 
         if (target) {
+            // 如果是电话热线，唤起拨号
+            if (platform === 'Hotline') {
+                window.location.href = `tel:${target.replace(/\s+/g, '')}`;
+                return;
+            }
+            
+            // 微信/领英/WhatsApp 均执行新窗口唤起
             window.open(target, '_blank');
             console.log(`[SYS] Sovereign Route Triggered: ${platform}`);
         } else {
@@ -115,7 +140,7 @@ const MainEngine = {
     },
 
     /**
-     * 全语种实时映射引擎 (支持 RTL 镜像补丁)
+     * 全语种实时映射引擎
      */
     switchLang(lang) {
         if (!this.langData || !this.langData[lang]) return;
@@ -138,38 +163,6 @@ const MainEngine = {
     },
 
     /**
-     * 高科技蓝/动漫懒加载补丁 (集成了 Cyber Scanner 动画)
-     */
-    initLazyLoad() {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    const container = img.parentElement;
-
-                    if (container && container.classList.contains('lazy-container')) {
-                        const scanner = document.createElement('div');
-                        scanner.className = 'cyber-scanner';
-                        container.appendChild(scanner);
-                        
-                        img.src = img.dataset.src;
-                        img.onload = () => {
-                            img.classList.add('img-loaded');
-                            setTimeout(() => scanner.remove(), 1200);
-                        };
-                    } else {
-                        img.src = img.dataset.src;
-                        img.onload = () => img.classList.add('img-loaded');
-                    }
-                    observer.unobserve(img);
-                }
-            });
-        }, { rootMargin: "0px 0px 300px 0px" });
-
-        document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
-    },
-
-    /**
      * 数字化微光追踪 (Digital Twin Aura)
      */
     initCursorGlow() {
@@ -184,18 +177,43 @@ const MainEngine = {
     },
 
     /**
-     * 导航栏滚动逻辑
+     * 懒加载与 Cyber Scanner 动效
+     */
+    initLazyLoad() {
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    const container = img.parentElement;
+                    if (container && container.classList.contains('lazy-container')) {
+                        const scanner = document.createElement('div');
+                        scanner.className = 'cyber-scanner';
+                        container.appendChild(scanner);
+                        img.src = img.dataset.src;
+                        img.onload = () => {
+                            img.classList.add('img-loaded');
+                            setTimeout(() => scanner.remove(), 1200);
+                        };
+                    } else {
+                        img.src = img.dataset.src;
+                        img.onload = () => img.classList.add('img-loaded');
+                    }
+                    imageObserver.unobserve(img);
+                }
+            });
+        }, { rootMargin: "0px 0px 300px 0px" });
+        document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
+    },
+
+    /**
+     * 导航栏状态控制
      */
     handleScroll() {
         const nav = document.getElementById('master-nav');
-        if (!nav) return;
-        if (window.scrollY > 60) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
+        if (nav) {
+            window.scrollY > 60 ? nav.classList.add('scrolled') : nav.classList.remove('scrolled');
         }
     }
 };
 
-// 系统自启动
 document.addEventListener('DOMContentLoaded', () => MainEngine.init());
