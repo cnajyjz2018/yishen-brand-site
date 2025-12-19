@@ -1,0 +1,32 @@
+{
+  "en": {
+    "nav_system": "System",
+    "nav_solutions": "Solutions",
+    "nav_industries": "Industries",
+    "nav_whyus": "Protocol",
+    "nav_resources": "Data Center",
+    "hero_title": "INDUSTRIAL SOVEREIGNTY",
+    "hero_subtitle": "Furniture-first supply chain architecture for global trade nodes.",
+    "cta_start": "INITIALIZE PROTOCOL"
+  },
+  "zh": {
+    "nav_system": "系统总控",
+    "nav_solutions": "解决方案",
+    "nav_industries": "产业集群",
+    "nav_whyus": "合作协议",
+    "nav_resources": "数据中心",
+    "hero_title": "工业主权 · 全球集成",
+    "hero_subtitle": "为全球进口商构建的数字化供应链架构。",
+    "cta_start": "初始化协议"
+  },
+  "ar": {
+    "nav_system": "النظام",
+    "nav_solutions": "الحلول",
+    "nav_industries": "الصناعات",
+    "nav_whyus": "البروتوكول",
+    "nav_resources": "مركز البيانات",
+    "hero_title": "السيادة الصناعية",
+    "hero_subtitle": "بنية سلسلة التوريد المتكاملة للمستوردين العالميين.",
+    "cta_start": "تهيئة البروتوكول"
+  }
+}
