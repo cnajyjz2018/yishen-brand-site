@@ -1,28 +1,81 @@
 {
-  "YS-OC-2026-A01": {
+  {
+  "YS-OFFICE-ERGO-01": {
+    "sector": "OFFICE_INFRASTRUCTURE",
+    "title": "Architectural Task System A1",
+    "desc": "High-density enterprise seating system with biomechanical posture alignment.",
+    "img": "sku-office-a1.webp",
+    "specs": {
+      "Chassis": "Multi-lock Synchro Kinetic",
+      "Lumbar": "Dynamic Adaptive Node",
+      "Weight Capacity": "150kg Verified"
+    },
+    "compliance": ["BIFMA X5.1-2026", "EN 1335 Type-A", "ISO 9001"],
+    "logistics": { "cbm": "97.2%", "fail": "0.01%" }
+  },
+  "YS-MED-CARE-99": {
+    "sector": "MEDICAL_HEALTHCARE",
+    "title": "Sterile Clinical Hub Node",
+    "desc": "Anti-microbial seating architecture designed for 24/7 high-sterility environments.",
+    "img": "sku-medical-care.webp",
+    "specs": {
+      "Material": "Silver-Ion Shield Polymer",
+      "Chemical Resistance": "Grade-A Bleach Resistant",
+      "Static Load": "200kg"
+    },
+    "compliance": ["ISO 22196 (Anti-microbial)", "FDA Class I", "UL Fire Rating"],
+    "logistics": { "cbm": "96.5%", "fail": "0.00%" }
+  },
+  "YS-AERO-TACT-09": {
     "sector": "AERO_MILITARY",
     "title": "Tactical Command Seating",
-    "desc": "Engineered for 24/7 high-stress operations with 9G shock absorption.",
-    "img": "sku-render-military.webp",
+    "desc": "G-Force calibrated seating for mission-critical command and control centers.",
+    "img": "sku-aero-tactical.webp",
     "specs": {
-      "Actuation": "Multi-lock Kinetic Drive",
-      "Static Load": "450 KG / 1000 lbs",
-      "Shock Absorption": "9G Peak Calibration"
+      "Vibration Damping": "Aero-Grade Calibrated",
+      "Fire Retardant": "UL94-V0 Protocol",
+      "Impact Peak": "9G Resistance"
     },
-    "compliance": ["BIFMA X5.1-2026", "MIL-STD-810H", "Salt Mist 2000H"],
-    "logistics": { "cbm": "97.4%", "fail": "0.00%" }
+    "compliance": ["MIL-STD-810H", "ASTM E84 Class A", "Salt Mist 2000H"],
+    "logistics": { "cbm": "95.8%", "fail": "0.00%" }
   },
-  "YS-CHAIN-G80": {
-    "sector": "MARINE_HARDWARE",
-    "title": "Anchor Chain Node G80",
-    "desc": "High-tensile alloy steel marine mooring systems for extreme offshore environments.",
-    "img": "sku-anchor.webp",
+  "YS-BAMBOO-STR-02": {
+    "sector": "BIO_BUILDING_MATERIALS",
+    "title": "Structural Bamboo Decking",
+    "desc": "Carbon-negative architectural decking with extreme dimension stability.",
+    "img": "sku-bamboo-decking.webp",
     "specs": {
-      "Grade": "Grade 80 Steel",
-      "Breaking Force": "800 KN",
-      "Surface": "Hot-Dip Galv / 120μm"
+      "Density": "1.25 g/cm³",
+      "Hardness": "Janka 3800+",
+      "Expansion Rate": "< 0.04%"
+    },
+    "compliance": ["FSC Certified", "LEED Integrated", "CE EN 15534"],
+    "logistics": { "cbm": "98.5%", "fail": "0.05%" }
+  },
+  "YS-MARINE-CHAIN-G80": {
+    "sector": "MARINE_LOGISTICS",
+    "title": "Heavy-Node Anchor Chain G80",
+    "desc": "Marine-grade alloy steel mooring systems for extreme offshore environments.",
+    "img": "sku-anchor-chain.webp",
+    "specs": {
+      "Breaking Force": "850 KN",
+      "Surface": "Hot-Dip Galvanized 120μm",
+      "Alloy Grade": "Grade 80 / S-Level"
     },
     "compliance": ["ABS Verified", "DNV Certified", "ISO 1704"],
-    "logistics": { "cbm": "98.8%", "fail": "0.01%" }
+    "logistics": { "cbm": "99.2%", "fail": "0.01%" }
+  },
+  "YS-LOCK-ULTRA-S1": {
+    "sector": "INDUSTRIAL_HARDWARE",
+    "title": "High-Security Modular Lock",
+    "desc": "Anti-intrusion locking architecture with extreme salt-mist resistance.",
+    "img": "sku-hardware-lock.webp",
+    "specs": {
+      "Mechanism": "Hardened Steel / 6-Pin",
+      "Corrosion Rating": "Grade 5 (EN 1670)",
+      "Cycle Life": "500,000 Operations"
+    },
+    "compliance": ["EN 12209", "CE Marked", "ISO 14001"],
+    "logistics": { "cbm": "98.9%", "fail": "0.02%" }
   }
 }
