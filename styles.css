@@ -1,12 +1,11 @@
 /* =========================================================
    YISHEN GLOBAL — Integrated Architectural Stylesheet
    Version: 2026.FINAL.MASTER (The Integrated Sovereign)
-   Concept: Kinetic Stability & Multi-Industry Intelligence
+   Logic: Multi-Device Sovereignty & Precision Engineering
 ========================================================= */
 
 /* ========== 01. TOKENS & SYSTEM VARIABLES ========== */
 :root {
-    /* Colors - Fusing deep space blue with kinetic neon */
     --neon-blue: #0ea5e9;
     --neon-glow: rgba(14, 165, 233, 0.4);
     --deep-space: #010409;          /* Core Black Body */
@@ -44,7 +43,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Cursor Glow - Activated via Digital Twin Logic */
 #cursor-glow {
     position: fixed;
     width: 600px;
@@ -65,16 +63,11 @@ body {
     height: var(--navbar-height);
     background: var(--nav-bg);
     backdrop-filter: blur(15px);
-    z-index: 10000 !important; /* Forces layer sovereignty above all elements */
+    z-index: 10000 !important;
     border-bottom: 1px solid rgba(14, 165, 233, 0.15);
     display: flex;
     align-items: center;
     transition: var(--transition-main);
-}
-
-.site-navbar.scrolled {
-    height: 80px;
-    background: rgba(1, 4, 9, 0.98);
 }
 
 .nav-inner {
@@ -85,24 +78,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-/* Scientific Logo Sovereignty: High-Res Scaled */
-.nav-logo {
-    display: flex;
-    align-items: center;
+    position: relative;
 }
 
 .nav-logo img {
     height: 55px; /* Locked height for professional brand presence */
     width: auto;
-    filter: drop-shadow(0 0 12px var(--neon-glow));
+    filter: drop-shadow(0 0 12px var(--neon-blue));
     transition: var(--transition-main);
     display: block;
-}
-
-.nav-logo img:hover {
-    transform: scale(1.05);
 }
 
 .nav-menu {
@@ -120,40 +104,50 @@ body {
     letter-spacing: 2px;
     text-transform: uppercase;
     transition: var(--transition-main);
-    position: relative;
 }
 
 .nav-menu a:hover, .nav-menu a.active {
     opacity: 1;
     color: var(--neon-blue);
-    text-shadow: 0 0 10px var(--neon-glow);
-}
-
-.nav-menu .nav-cta {
-    padding: 10px 24px;
-    border: 1px solid var(--neon-blue);
-    color: var(--neon-blue);
-    opacity: 1;
-    font-weight: 700;
-    background: rgba(14, 165, 233, 0.05);
-}
-
-.nav-menu .nav-cta:hover {
-    background: var(--neon-blue);
-    color: #000;
-    box-shadow: 0 0 25px var(--neon-glow);
+    text-shadow: 0 0 10px var(--neon-blue);
 }
 
 .nav-spacer { height: var(--navbar-height); }
 
-/* ========== 04. ANIME LAZY LOAD PATCH (高科技蓝动效) ========== */
+/* ========== 04. MOBILE TOGGLE (汉堡菜单核心补丁) ========== */
+.mobile-toggle {
+    display: none;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    z-index: 10001;
+}
+
+.mobile-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--neon-blue);
+    position: absolute;
+    transition: 0.3s ease;
+}
+
+.mobile-toggle span:nth-child(2) { top: 9px; }
+.mobile-toggle span:nth-child(3) { top: 18px; }
+
+/* 汉堡按钮变成 X 的状态 */
+.mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+.mobile-toggle.active span:nth-child(2) { opacity: 0; }
+.mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -7px); }
+
+/* ========== 05. ANIME LAZY LOAD (高科技蓝动效补丁) ========== */
 .lazy-container {
     position: relative;
     background: #06122a;
     overflow: hidden;
 }
 
-/* 初始隐藏状态 */
 img[data-src] {
     opacity: 0;
     transform: scale(1.05);
@@ -161,14 +155,12 @@ img[data-src] {
     filter: brightness(2) blur(10px);
 }
 
-/* 加载成功状态 - 动漫重组效果 */
 img.img-loaded {
     opacity: 1;
     transform: scale(1);
     filter: brightness(1) blur(0);
 }
 
-/* 电子扫描线 */
 .cyber-scanner {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 3px;
@@ -184,7 +176,7 @@ img.img-loaded {
     100% { top: 105%; opacity: 0; }
 }
 
-/* ========== 05. HERO & ARCHITECTURAL GRID ========== */
+/* ========== 06. HERO & ARCHITECTURAL GRID ========== */
 .page-hero {
     height: 90vh;
     display: flex;
@@ -194,206 +186,114 @@ img.img-loaded {
     background-size: cover;
     background-position: center;
     position: relative;
-    border-bottom: 1px solid var(--industrial-gray);
+    padding: 0 8%;
 }
 
 .page-hero h1 {
-    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-size: clamp(2.5rem, 8vw, 6.5rem);
     font-weight: 900;
     line-height: 0.85;
-    margin-bottom: 30px;
     letter-spacing: -4px;
     text-transform: uppercase;
 }
 
-.page-hero p {
-    font-size: 1.3rem;
-    color: var(--text-dim);
-    max-width: 650px;
-    border-left: 4px solid var(--neon-blue);
-    padding-left: 28px;
-    margin-bottom: 45px;
-}
-
-/* ========== 06. NODE SYSTEM (120 SKU ARCHITECTURE) ========== */
-.section {
-    padding: 140px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-.tag {
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--neon-blue);
-    font-size: 0.75rem;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 25px;
-}
+/* ========== 07. NODE SYSTEM (120 SKU MATRIX) ========== */
+.section { padding: 100px 8%; border-bottom: 1px solid rgba(255,255,255,0.05); }
 
 .node-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 24px;
-    margin-top: 60px;
 }
 
 .node-card {
     background: var(--glass);
     border: 1px solid var(--industrial-gray);
-    padding: 55px;
+    padding: 40px;
     transition: var(--transition-main);
-    position: relative;
-    overflow: hidden;
 }
 
 .node-card:hover {
     border-color: var(--neon-blue);
-    transform: translateY(-12px);
+    transform: translateY(-10px);
     background: rgba(14, 165, 233, 0.04);
 }
 
-.node-card h3 {
-    font-size: 1.6rem;
-    margin-bottom: 18px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-}
-
-.stats-node {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--neon-blue);
-    margin-top: 35px;
-    display: block;
-    opacity: 0.7;
-    letter-spacing: 2px;
-}
-
-/* ========== 07. ENGINEERING TABLES & SPECS ========== */
-.architecture-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 40px 0;
-}
-
-.architecture-table td {
-    padding: 22px 0;
-    border-bottom: 1px solid var(--industrial-gray);
-    color: var(--text-dim);
-    font-size: 0.95rem;
-}
-
-.architecture-table tr td:first-child {
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--neon-blue);
-    width: 35%;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* ========== 08. CONVERSION & PROTOCOL BUTTONS ========== */
+/* ========== 08. CONVERSION BUTTONS ========== */
 .btn-primary {
     display: inline-block;
-    padding: 22px 55px;
+    padding: 20px 50px;
     background: var(--neon-blue);
     color: #000;
-    font-weight: 900;
-    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800;
+    font-family: 'JetBrains Mono';
     text-transform: uppercase;
-    letter-spacing: 2px;
-    text-decoration: none;
-    border: none;
-    transition: var(--transition-main);
-    cursor: pointer;
     clip-path: polygon(8% 0, 100% 0, 92% 100%, 0% 100%);
+    text-decoration: none;
+    transition: var(--transition-main);
 }
 
 .btn-primary:hover {
     background: #fff;
-    box-shadow: 0 0 40px var(--neon-glow);
+    box-shadow: 0 0 30px var(--neon-blue);
     transform: translateY(-5px);
 }
 
-/* ========== 09. FOOTER SHIELD (Cluster Backing) ========== */
-.footer {
-    background: #000;
-    padding: 120px 0 60px;
-    border-top: 1px solid var(--industrial-gray);
+/* ========== 09. RTL ADAPTATION (阿拉伯语补丁) ========== */
+[dir="rtl"] { font-family: 'Amiri', serif; }
+[dir="rtl"] .nav-inner { flex-direction: row-reverse; }
+[dir="rtl"] .page-hero { text-align: right; }
+
+/* ========== 10. RESPONSIVE MATRIX (完美移动端全兼容补丁) ========== */
+@media (max-width: 1024px) {
+    :root { --navbar-height: 80px; }
+    .nav-logo img { height: 45px; }
+    
+    .mobile-toggle { display: block; }
+    
+    .nav-menu {
+        display: none; /* 初始隐藏 */
+        flex-direction: column;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw; height: 100vh;
+        background: rgba(1, 4, 9, 0.98);
+        backdrop-filter: blur(20px);
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        z-index: 10000;
+    }
+    
+    .nav-menu.mobile-active { display: flex; animation: navFadeIn 0.4s ease forwards; }
+    
+    @keyframes navFadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .nav-menu a { font-size: 1.5rem; opacity: 1; color: #fff; }
+
+    .node-grid { grid-template-columns: 1fr; }
+    .page-hero h1 { font-size: 3.2rem; }
+    .nav-inner { padding: 0 20px; }
 }
+
+/* ========== 11. FOOTER & AMBIENT ANIMATION ========== */
+.footer { padding: 80px 8%; background: #000; text-align: center; }
 
 .shield-footer {
-    max-width: 850px;
-    margin: 0 auto 80px;
-    opacity: 0.25;
-    filter: grayscale(1) invert(1);
-    transition: opacity 0.5s;
+    max-width: 600px; margin: 0 auto 40px;
+    opacity: 0.2; filter: grayscale(1) invert(1);
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 80px;
-}
-
-.footer h4 {
-    font-family: 'JetBrains Mono';
-    color: var(--neon-blue);
-    margin-bottom: 25px;
-    letter-spacing: 3px;
-    font-size: 0.8rem;
-}
-
-/* ========== 10. MULTILINGUAL & RTL ADAPTATION ========== */
-[dir="rtl"] {
-    font-family: 'Amiri', serif;
-}
-[dir="rtl"] .hero-content p {
-    border-left: none;
-    border-right: 4px solid var(--neon-blue);
-    padding-left: 0;
-    padding-right: 28px;
-}
-
-/* ========== 11. RESPONSIVE MATRIX ========== */
-@media (max-width: 1200px) {
-    .nav-inner { padding: 0 30px; }
-    .nav-menu { gap: 20px; }
-    .footer-grid { gap: 40px; }
-}
-
-@media (max-width: 1024px) {
-    .nav-menu { display: none; }
-    .nav-logo img { height: 42px; }
-    :root { --navbar-height: 80px; }
-    .footer-grid { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 768px) {
-    .page-hero { height: auto; padding: 180px 0 100px; text-align: left; }
-    .node-grid { grid-template-columns: 1fr; }
-}
-
-/* Ambient Kinetic Gear Animation */
 .float-gear {
-    position: absolute; 
-    right: 5%; 
-    top: 5%; 
-    width: 260px;
+    position: absolute; right: 5%; top: 5%; width: 200px;
     animation: floatGear 20s ease-in-out infinite;
-    opacity: 0.4;
-    pointer-events: none;
-    z-index: 1;
+    opacity: 0.3; pointer-events: none;
 }
 
 @keyframes floatGear {
     0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-60px) rotate(15deg); }
+    50% { transform: translateY(-40px) rotate(15deg); }
 }
