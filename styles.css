@@ -8,8 +8,9 @@
 :root {
     --neon-blue: #0ea5e9;
     --neon-glow: rgba(14, 165, 233, 0.4);
-    --deep-space: #010409;          /* Core Black Body */
-    --nav-bg: rgba(6, 18, 42, 0.92); /* Frosted Industrial Blue */
+    --performance-red: #A11219;      /* 家族传承：燊之火底色 */
+    --deep-space: #010409;           /* Core Black Body */
+    --nav-bg: rgba(1, 4, 9, 0.92);   /* 优化为深色工业感背景  */
     --industrial-gray: #1e293b;
     --glass: rgba(15, 23, 42, 0.85);
     
@@ -19,7 +20,7 @@
     
     /* Animation & Physics */
     --transition-main: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    --navbar-height: 80px; /* 精准适配 32px 简约 Logo */
+    --navbar-height: 80px;           /* 精准适配 32px 矢量 Logo  */
 }
 
 /* ========== 02. BASE RESET & DIGITAL TWIN GLOW ========== */
@@ -43,7 +44,7 @@ body {
     overflow-x: hidden;
 }
 
-/* 数字化微光补丁 */
+/* 数字化微光补丁 - 600px 扩散半径  */
 #cursor-glow {
     position: fixed;
     width: 600px;
@@ -79,20 +80,23 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
 }
 
-/* 精准比例补丁：Logo 缩小至 32px (与 Contact 页一致) */
-.nav-logo img {
-    height: 32px; 
+/* 补丁：视觉主权强制修复 - 解决实拍图中 Logo 破损与挤压  */
+.site-logo {
+    display: flex;
+    align-items: center;
+    height: 32px !important; 
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.4));
+    text-decoration: none;
+}
+
+.site-logo svg {
+    height: 32px;
     width: auto;
-    filter: drop-shadow(0 0 10px var(--neon-blue));
-    transition: var(--transition-main);
     display: block;
-}
-
-.nav-logo img:hover {
-    transform: scale(1.05);
+    overflow: visible; /* 补丁：强制不隐藏超出部分，解决文字显示不全  */
 }
 
 .nav-menu {
@@ -120,77 +124,17 @@ body {
 
 .nav-spacer { height: var(--navbar-height); }
 
-/* ========== 04. MOBILE TOGGLE (汉堡菜单核心补丁) ========== */
-.mobile-toggle {
-    display: none;
-    width: 25px;
-    height: 18px;
-    position: relative;
-    cursor: pointer;
-    z-index: 10001;
-}
-
-.mobile-toggle span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: var(--neon-blue);
-    position: absolute;
-    transition: 0.3s ease;
-}
-
-.mobile-toggle span:nth-child(2) { top: 8px; }
-.mobile-toggle span:nth-child(3) { top: 16px; }
-
-/* 汉堡按钮变成 X 的状态补丁 */
-.mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.mobile-toggle.active span:nth-child(2) { opacity: 0; }
-.mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
-
-/* ========== 05. ANIME LAZY LOAD (高科技蓝动效补丁) ========== */
-.lazy-container {
-    position: relative;
-    background: #06122a;
-    overflow: hidden;
-}
-
-img[data-src] {
-    opacity: 0;
-    transform: scale(1.03);
-    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    filter: brightness(1.5) blur(8px);
-}
-
-img.img-loaded {
-    opacity: 1;
-    transform: scale(1);
-    filter: brightness(1) blur(0);
-}
-
-.cyber-scanner {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 2px;
-    background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
-    box-shadow: 0 0 15px var(--neon-blue);
-    z-index: 10;
-    animation: scanMove 2.5s infinite ease-in-out;
-}
-
-@keyframes scanMove {
-    0% { top: -5%; opacity: 0; }
-    50% { opacity: 1; }
-    100% { top: 105%; opacity: 0; }
-}
-
-/* ========== 06. HERO & ARCHITECTURAL GRID ========== */
-.page-hero {
+/* ========== 04. HERO & BORDERLESS VISION ========== */
+/* 针对高清 Banner 的背景位置微调补丁  */
+.hero, .page-hero {
     height: 90vh;
     display: flex;
     align-items: center;
+    /* 修复：线性渐变提供 35% 黑色遮罩，确保左侧文字可读  */
     background: linear-gradient(90deg, var(--deep-space) 35%, transparent 100%), 
-                url('header-main.webp');
+                url('/Yishen-Global-Hero-Banner-2026.webp');
     background-size: cover;
-    background-position: center;
+    background-position: center right; /* 修复：将高清背景偏右，避开左侧文字区域  */
     position: relative;
     padding: 0 8%;
 }
@@ -203,7 +147,7 @@ img.img-loaded {
     text-transform: uppercase;
 }
 
-/* ========== 07. NODE SYSTEM (120 SKU MATRIX) ========== */
+/* ========== 05. NODE SYSTEM (120 SKU MATRIX) ========== */
 .section { padding: 80px 8%; border-bottom: 1px solid rgba(255,255,255,0.05); }
 
 .node-grid {
@@ -225,37 +169,32 @@ img.img-loaded {
     background: rgba(14, 165, 233, 0.04);
 }
 
-/* ========== 08. CONVERSION BUTTONS ========== */
-.btn-primary {
-    display: inline-block;
-    padding: 18px 45px;
+/* ========== 06. MOBILE TOGGLE & RESPONSIVE ========== */
+.mobile-toggle {
+    display: none;
+    width: 25px; height: 18px;
+    position: relative;
+    cursor: pointer;
+    z-index: 10001;
+}
+
+.mobile-toggle span {
+    display: block; width: 100%; height: 2px;
     background: var(--neon-blue);
-    color: #000;
-    font-weight: 800;
-    font-family: 'JetBrains Mono';
-    text-transform: uppercase;
-    clip-path: polygon(8% 0, 100% 0, 92% 100%, 0% 100%);
-    text-decoration: none;
-    transition: var(--transition-main);
-    font-size: 0.85rem;
+    position: absolute; transition: 0.3s ease;
 }
 
-.btn-primary:hover {
-    background: #fff;
-    box-shadow: 0 0 30px var(--neon-blue);
-    transform: translateY(-5px);
-}
+.mobile-toggle span:nth-child(2) { top: 8px; }
+.mobile-toggle span:nth-child(3) { top: 16px; }
 
-/* ========== 09. RTL & MULTILINGUAL ADAPTATION ========== */
-[dir="rtl"] { font-family: 'Amiri', serif; }
-[dir="rtl"] .nav-inner { flex-direction: row-reverse; }
-[dir="rtl"] .page-hero { text-align: right; }
-[dir="rtl"] .hero-content p { border-left: none; border-right: 4px solid var(--neon-blue); padding-left: 0; padding-right: 20px; }
+/* 变成 X 的动漫逻辑  */
+.mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.mobile-toggle.active span:nth-child(2) { opacity: 0; }
+.mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
 
-/* ========== 10. RESPONSIVE MATRIX (移动端全兼容补丁) ========== */
 @media (max-width: 1024px) {
     :root { --navbar-height: 70px; }
-    .nav-logo img { height: 28px; } /* 移动端进一步微缩 */
+    .site-logo { height: 28px !important; }
     
     .mobile-toggle { display: block; }
     
@@ -266,7 +205,6 @@ img.img-loaded {
         top: 0; left: 0;
         width: 100vw; height: 100vh;
         background: rgba(1, 4, 9, 0.98);
-        backdrop-filter: blur(20px);
         justify-content: center;
         align-items: center;
         gap: 40px;
@@ -274,34 +212,60 @@ img.img-loaded {
     }
     
     .nav-menu.mobile-active { display: flex; animation: navFadeIn 0.4s ease forwards; }
-    
-    @keyframes navFadeIn {
-        from { opacity: 0; transform: translateY(-20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    
-    .nav-menu a { font-size: 1.3rem; opacity: 1; color: #fff; }
-
-    .node-grid { grid-template-columns: 1fr; }
     .page-hero h1 { font-size: 3rem; }
-    .nav-inner { padding: 0 20px; }
 }
 
-/* ========== 11. FOOTER & AMBIENT ANIMATION ========== */
-.footer { padding: 80px 8%; background: #000; text-align: center; }
+/* ========== 07. ANIME LAZY LOAD (Cyber Scanner) ========== */
+.lazy-container {
+    position: relative;
+    background: #06122a;
+    overflow: hidden;
+}
 
-.shield-footer {
-    max-width: 600px; margin: 0 auto 40px;
-    opacity: 0.2; filter: grayscale(1) invert(1);
+img[data-src] {
+    opacity: 0;
+    transform: scale(1.03);
+    transition: opacity 0.8s ease, transform 0.8 cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+img.img-loaded { opacity: 1; transform: scale(1); }
+
+.cyber-scanner {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+    box-shadow: 0 0 15px var(--neon-blue);
+    animation: scanMove 2.5s infinite ease-in-out;
+}
+
+@keyframes scanMove {
+    0% { top: -5%; opacity: 0; }
+    50% { opacity: 1; }
+    100% { top: 105%; opacity: 0; }
+}
+
+/* ========== 08. CONVERSION & AMBIENT ========== */
+.btn-primary {
+    display: inline-block;
+    padding: 18px 45px;
+    background: var(--neon-blue);
+    color: #000;
+    font-weight: 800;
+    font-family: 'JetBrains Mono';
+    clip-path: polygon(8% 0, 100% 0, 92% 100%, 0% 100%);
+    text-decoration: none;
+    transition: var(--transition-main);
 }
 
 .float-gear {
     position: absolute; right: 5%; top: 5%; width: 180px;
     animation: floatGear 20s ease-in-out infinite;
-    opacity: 0.25; pointer-events: none;
+    opacity: 0.15; pointer-events: none;
 }
 
 @keyframes floatGear {
     0%, 100% { transform: translateY(0) rotate(0deg); }
     50% { transform: translateY(-30px) rotate(15deg); }
 }
+
+.footer { padding: 80px 8%; background: #000; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
