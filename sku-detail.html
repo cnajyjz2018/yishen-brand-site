@@ -1,178 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>SKU Engineering Detail | YiShen Global</title>
-
-  <meta name="description" content="Engineering-level SKU detail for office and home furniture. Specifications, compliance, packaging, and delivery logic by YiShen Global.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#06122A">
-
-  <!-- Brand -->
-  <link rel="icon" href="/yishen-logo-icon.svg" type="image/svg+xml">
-  <link rel="alternate icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/yishen-logo-icon.svg">
-
-  <!-- Core CSS -->
-  <link rel="stylesheet" href="/styles.css">
-
-  <!-- Core JS -->
-  <script defer src="/script.js"></script>
+    <meta charset="UTF-8">
+    <title>SKU Engineering Detail | YISHEN GLOBAL</title>
+    <meta name="description" content="Technical specifications and engineering logic for YS-OC-2026 Series.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css?v=2026">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap">
 </head>
-
 <body>
 
-<!-- =============================
-     NAVBAR (GLOBAL · STABLE)
-============================= -->
-<div id="navbar-placeholder"></div>
+<div id="cursor-glow"></div>
 
-<!-- =============================
-     PAGE HEADER
-============================= -->
-<header class="page-header compact">
-  <div class="container">
-    <span class="tag">SKU ENGINEERING DETAIL</span>
-    <h1>Office & Home Furniture SKU</h1>
-    <p class="subtitle">
-      Engineering-level structure covering specification, compliance,
-      packaging survivability, and global delivery logic.
-    </p >
-  </div>
+<nav class="site-navbar">
+    <div class="nav-inner">
+        <div class="nav-logo">
+            <a href="index.html"><img src="logo-white.webp" alt="YISHEN GLOBAL"></a>
+        </div>
+        <div class="nav-menu">
+            <a href="home-and-office-furniture.html">Back to Systems</a>
+            <a href="resources.html">Resources</a>
+            <a href="contact.html" class="nav-cta">Initiate Briefing</a>
+        </div>
+    </div>
+</nav>
+
+<div class="nav-spacer"></div>
+
+<header class="page-hero small" style="background: linear-gradient(90deg, var(--deep-space) 40%, transparent 100%), url('header-resources.webp'); background-size: cover;">
+    <div class="container">
+        <span class="tag">[ SKU_TECHNICAL_PASSPORT ]</span>
+        <h1>YS-OC-2026-A01</h1>
+        <p>Architectural Seating System: High-load kinetic drive with aerospace-grade biomechanics.</p>
+    </div>
 </header>
 
-<!-- =============================
-     SKU CORE
-============================= -->
 <main class="section">
-  <div class="container grid-2">
+    <div class="container">
+        <div class="grid-2" style="align-items: start; gap: 60px;">
+            
+            <div class="sku-gallery">
+                <div class="main-view" style="border: 1px solid var(--industrial-gray); padding: 20px; background: #000;">
+                    <img src="ergo-SPro9001-hero-01.webp" alt="Primary SKU View" style="width: 100%;">
+                </div>
+                <div class="grid-2" style="margin-top: 20px; gap: 20px;">
+                    <div class="sub-view" style="border: 1px solid var(--industrial-gray); padding: 10px;">
+                        <span class="tag" style="font-size: 0.6rem;">MATERIAL_SCAN</span>
+                        <img src="mesh.webp" alt="Mesh Detail" style="width: 100%;">
+                    </div>
+                    <div class="sub-view" style="border: 1px solid var(--industrial-gray); padding: 10px;">
+                        <span class="tag" style="font-size: 0.6rem;">RIGGING_LOGIC</span>
+                        <img src="product-rigging.webp" alt="Rigging Detail" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
 
-    <!-- LEFT: SKU META -->
-    <section class="card">
-      <h2>SKU Overview</h2>
+            <div class="sku-specs">
+                <div class="node-card">
+                    <h3>Core Specifications</h3>
+                    <table class="architecture-table" style="margin-top: 20px;">
+                        <tr><td>SKU CODE</td><td style="color: var(--neon-blue);">YS-OC-2026-A01</td></tr>
+                        <tr><td>CHASSIS</td><td>Aluminum Alloy / Multi-lock Synchro</td></tr>
+                        <tr><td>ACTUATION</td><td>Class 4 Gas Lift (120kg Rated)</td></tr>
+                        <tr><td>MESH TYPE</td><td>High-Elasticity Breathable Polymer</td></tr>
+                        <tr><td>BASE</td><td>350mm Reinforced Nylon / Alloy</td></tr>
+                    </table>
+                </div>
 
-      <table class="spec-table">
-        <tr>
-          <th>SKU Code</th>
-          <td>YS-OC-2026-A01</td>
-        </tr>
-        <tr>
-          <th>Category</th>
-          <td>Office Chair / Ergonomic Seating</td>
-        </tr>
-        <tr>
-          <th>Application</th>
-          <td>Office · Home Office · Commercial Projects</td>
-        </tr>
-        <tr>
-          <th>Target Market</th>
-          <td>EU · North America · Middle East · Asia-Pacific</td>
-        </tr>
-        <tr>
-          <th>MOQ</th>
-          <td>Flexible (OEM / ODM supported)</td>
-        </tr>
-        <tr>
-          <th>Lead Time</th>
-          <td>30–45 days (after sample approval)</td>
-        </tr>
-      </table>
-    </section>
-
-    <!-- RIGHT: ENGINEERING -->
-    <section class="card">
-      <h2>Engineering Specification</h2>
-
-      <ul class="bullet">
-        <li>Frame: Reinforced steel / aluminum alloy options</li>
-        <li>Seat: High-density molded foam or mesh system</li>
-        <li>Base: Nylon / Aluminum (BIFMA tested)</li>
-        <li>Mechanism: Multi-lock synchro-tilt / Donati compatible</li>
-        <li>Gas Lift: Class 3 / Class 4 certified</li>
-        <li>Load Capacity: ≥ 120 kg (configurable)</li>
-      </ul>
-    </section>
-
-  </div>
+                <div class="node-card" style="margin-top: 30px;">
+                    <span class="tag">COMPLIANCE_MATRIX</span>
+                    <ul class="logic-list" style="margin-top: 15px;">
+                        <li>BIFMA X5.1 Certified (Cycle Tested)</li>
+                        <li>EN 1335 Type-A Ergonomic Standard</li>
+                        <li>REACH / RoHS Chemical Compliance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
-<!-- =============================
-     COMPLIANCE & CERTIFICATION
-============================= -->
-<section class="section light">
-  <div class="container grid-2">
-
-    <section class="card">
-      <h2>Compliance & Testing</h2>
-      <ul class="bullet">
-        <li>BIFMA X5.1 (Office Seating)</li>
-        <li>EN 1335 (EU)</li>
-        <li>REACH / RoHS material compliance</li>
-        <li>Fire retardant foam (optional)</li>
-        <li>ISTA packaging validation available</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>Quality Control</h2>
-      <ul class="bullet">
-        <li>Incoming material inspection</li>
-        <li>In-line assembly checks</li>
-        <li>Function & load testing</li>
-        <li>Final AQL inspection before shipment</li>
-      </ul>
-    </section>
-
-  </div>
+<section class="section" style="background: rgba(14, 165, 233, 0.02);">
+    <div class="container grid-2">
+        <div class="text-block">
+            <span class="tag">LOGISTICS_ENGINEERING</span>
+            <h2>Packaging Survivability</h2>
+            <p style="color: #94a3b8; margin-top: 20px;">
+                Our packaging is designed for <b>Last-Mile Sovereignty</b>. Using ISTA 3A modeling, we ensure zero-defect delivery across global retail and e-commerce nodes.
+            </p>
+            <ul class="industry-list" style="margin-top: 30px;">
+                <li>KD Flat-pack structure for 95% container utilization</li>
+                <li>Drop-test optimized 5-ply reinforced cartons</li>
+                <li>Custom palletization logic for bulk commercial projects</li>
+            </ul>
+        </div>
+        <div class="visual-block" style="border: 1px solid var(--industrial-gray);">
+            <img src="div-packaging-ista6a.webp" alt="Packaging Audit" style="width: 100%; opacity: 0.7;">
+        </div>
+    </div>
 </section>
 
-<!-- =============================
-     PACKAGING & DELIVERY
-============================= -->
-<section class="section">
-  <div class="container grid-2">
-
-    <section class="card">
-      <h2>Packaging Engineering</h2>
-      <ul class="bullet">
-        <li>KD flat-pack structure</li>
-        <li>Drop-test optimized carton (ISTA 1A / 3A)</li>
-        <li>High container utilization ratio</li>
-        <li>E-commerce & retail-ready options</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>Delivery Model</h2>
-      <ul class="bullet">
-        <li>FOB / CIF / DDP supported</li>
-        <li>Global logistics coordination</li>
-        <li>Customs documentation prepared</li>
-        <li>Predictable lead-time tracking</li>
-      </ul>
-    </section>
-
-  </div>
+<section class="cta" style="padding: 100px 0; text-align: center;">
+    <div class="container">
+        <h2>Request Technical BOM & CAD</h2>
+        <p style="color: #94a3b8; margin-bottom: 40px;">Detailed engineering drawings and material breakdown available for verified procurement briefs.</p>
+        <div class="grid-2" style="max-width: 600px; margin: 0 auto; gap: 20px;">
+            <a href="contact.html" class="btn-primary">Connect with Engineer</a>
+            <a href="resources.html" class="btn" style="border: 1px solid var(--industrial-gray);">Download Data Sheet</a>
+        </div>
+    </div>
 </section>
 
-<!-- =============================
-     CTA
-============================= -->
-<section class="section dark">
-  <div class="container center">
-    <h2>Request Engineering Review</h2>
-    <p>
-      Share your target market, compliance requirement, and order volume.
-      Our team will respond with a technical proposal.
-    </p >
-    <a href=" " class="btn primary">Contact Engineering Team</a >
-  </div>
-</section>
+<footer class="footer">
+    <div class="container">
+        <div class="shield-footer">
+            <img src="partners-shield.webp" alt="System Shield" style="width: 100%; opacity: 0.2;">
+        </div>
+        <div style="text-align: center; font-size: 0.7rem; color: #475569; letter-spacing: 2px;">
+            &copy; 2026 YISHEN GLOBAL // SKU_ID: YS-OC-2026-A01 // DATA_PROTECTED
+        </div>
+    </div>
+</footer>
 
-<!-- =============================
-     FOOTER (GLOBAL · STABLE)
-============================= -->
-<div id="footer-placeholder"></div>
+<script>
+    const glow = document.getElementById('cursor-glow');
+    document.addEventListener('mousemove', (e) => {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top = e.clientY + 'px';
+    });
+</script>
 
 </body>
 </html>
