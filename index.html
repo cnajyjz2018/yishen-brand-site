@@ -2,26 +2,133 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="YiShen Global: Furniture-first manufacturer specializing in ergonomic seating, standing desks, and engineered supply chain fulfillment for global brands.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#050b17">
+    <meta name="description" content="YiShen Global: A furniture-first manufacturing system combining engineering, compliance, and global supply chain execution.">
     <title>YiShen Global | Furniture Engineered for Scale</title>
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <link rel="stylesheet" href="styles.css?v=319"> 
+    <style>
+        /* ===== 核心工程美学变量 ===== */
+        :root {
+            --primary: #38bdf8;       /* 科技蓝 */
+            --bg-dark: #050b17;      /* 深空底色 */
+            --card-bg: #0f172a;      /* 卡片背景 */
+            --text-main: #f8fafc;    /* 主文字 */
+            --text-dim: #94a3b8;     /* 次文字 */
+            --nav-blur: rgba(5, 11, 23, 0.85);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        /* ===== 全局重置 ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-dark); 
+            color: var(--text-main); 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* ===== 导航栏 (Elite Style) ===== */
+        .navbar {
+            position: fixed; top: 0; width: 100%; height: 80px;
+            background: var(--nav-blur); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border); z-index: 1000;
+            display: flex; align-items: center;
+        }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .brand img { height: 42px; width: auto; }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { font-weight: 500; font-size: 0.95rem; color: var(--text-dim); }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+        .nav-cta {
+            background: var(--primary); color: #000 !important;
+            padding: 10px 20px; border-radius: 6px; font-weight: 700 !important;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            padding: 180px 0 100px;
+            background: radial-gradient(circle at 20% 30%, #0c1e3d 0%, #050b17 100%);
+            text-align: left;
+        }
+        .section-tag {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--primary); font-weight: 700; font-size: 0.85rem;
+            text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px;
+        }
+        .hero h1 { 
+            font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; font-weight: 800;
+            margin-bottom: 24px; max-width: 900px;
+        }
+        .hero p { max-width: 650px; font-size: 1.25rem; color: var(--text-dim); margin-bottom: 40px; }
+        .hero-btns { display: flex; gap: 16px; }
+        .btn { padding: 16px 32px; border-radius: 8px; font-weight: 700; transition: 0.3s; cursor: pointer; }
+        .btn-tech { background: var(--primary); color: #000; border: none; }
+        .btn-outline { border: 1px solid var(--border); color: #fff; background: transparent; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2); }
+
+        /* ===== Stats & Grid Layout ===== */
+        .stats-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 24px; padding: 60px 0; border-bottom: 1px solid var(--border);
+        }
+        .stat-item h3 { font-size: 2.5rem; color: var(--primary); }
+        .stat-item p { color: var(--text-dim); font-weight: 500; }
+
+        .section-padding { padding: 100px 0; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        
+        /* ===== Product Cards ===== */
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 50px; }
+        .product-card {
+            background: var(--card-bg); border-radius: 16px; border: 1px solid var(--border);
+            overflow: hidden; transition: 0.4s;
+        }
+        .product-card:hover { border-color: var(--primary); transform: translateY(-10px); }
+        .product-card img { width: 100%; height: 240px; object-fit: cover; }
+        .product-info { padding: 24px; }
+        .product-info h4 { font-size: 1.25rem; margin-bottom: 8px; }
+        .product-info p { font-size: 0.95rem; color: var(--text-dim); }
+
+        /* ===== CTA Banner ===== */
+        .cta-banner {
+            background: var(--primary); color: #000; padding: 80px 0; text-align: center;
+            border-radius: 20px; margin: 40px 0;
+        }
+        .cta-banner h2 { font-size: 2.5rem; margin-bottom: 16px; color: #000; }
+        .cta-banner p { font-weight: 500; opacity: 0.8; margin-bottom: 32px; }
+
+        /* ===== Footer ===== */
+        .footer { padding: 80px 0 40px; background: #020617; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 60px; }
+        .footer h4 { margin-bottom: 24px; font-size: 1rem; text-transform: uppercase; color: #fff; }
+        .footer-links a { display: block; margin-bottom: 12px; color: var(--text-dim); }
+        .footer-links a:hover { color: var(--primary); }
+        .copyright { border-top: 1px solid var(--border); padding-top: 30px; text-align: center; color: var(--text-dim); font-size: 0.85rem; }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .grid-2, .footer-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container nav-wrapper">
             <a href="index.html" class="brand">
-                <img src="assets/img/logo-white.webp" alt="YiShen Global Logo" width="180" height="70">
+                <strong style="font-size: 1.5rem; color: #fff;">YISHEN <span style="color: var(--primary);">GLOBAL</span></strong>
             </a>
-            <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
             <div class="nav-links">
                 <a href="index.html" class="active">Home</a>
                 <a href="why-us.html">Why Us</a>
@@ -33,129 +140,116 @@
         </div>
     </nav>
 
-    <header class="hero hero-elite" style="background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('assets/img/header-hero-bg.webp'); background-position: center; background-size: cover;">
+    <header class="hero">
         <div class="container">
-            <span class="section-tag">Furniture Manufacturer · Global Supply Chain</span>
+            <span class="section-tag"><i class="fas fa-microchip"></i> Engineered Reliability</span>
             <h1>Furniture Built for Scale.<br>Engineered to Deliver.</h1>
-            <p>We provide a furniture-first manufacturing system that integrates product engineering, BIFMA compliance, and global DDP fulfillment into one seamless operation.</p>
-            <div class="hero-actions">
-                <a href="#catalog" class="btn btn-tech">Explore Portfolio</a>
-                <a href="contact.html" class="btn btn-outline-white">Request Quotation</a>
+            <p>We combine product engineering, structural compliance, and global supply chain execution into one predictable manufacturing system.</p>
+            <div class="hero-btns">
+                <a href="#portfolio" class="btn btn-tech">Explore Portfolio</a>
+                <a href="contact.html" class="btn btn-outline">Request Catalog</a>
             </div>
         </div>
     </header>
 
-    <section class="hero-stats-wrap">
-        <div class="container grid-4 hero-stats-elite">
-            <div class="stat-box"><h3>6</h3><p>Furniture Categories</p></div>
-            <div class="stat-box"><h3>200+</h3><p>Active SKUs</p></div>
-            <div class="stat-box"><h3>BIFMA</h3><p>Certified Standards</p></div>
-            <div class="stat-box"><h3>DDP</h3><p>Global Delivery</p></div>
-        </div>
+    <section class="container stats-grid">
+        <div class="stat-item"><h3>6</h3><p>Furniture Categories</p></div>
+        <div class="stat-item"><h3>200+</h3><p>Active SKUs</p></div>
+        <div class="stat-item"><h3>BIFMA</h3><p>Compliance Ready</p></div>
+        <div class="stat-item"><h3>DDP</h3><p>Global Fulfillment</p></div>
     </section>
 
-    <section class="section-padding">
-        <div class="container grid-2" style="align-items: center;">
-            <div class="image-stack">
-                <img src="assets/img/engineering-lab.webp" alt="Engineering Lab" class="img-elite" style="border-radius: 12px;">
-            </div>
+    <section class="section-padding container">
+        <div class="grid-2">
             <div>
-                <span class="section-tag">The YiShen Advantage</span>
-                <h2>We Don’t Just Make Furniture; We Engineer Certainty.</h2>
-                <p>Every product in our portfolio undergoes rigorous structural validation in our in-house lab. We focus on the high-stakes metrics that matter to global brands: structural integrity, packaging resilience, and shipping density.</p>
-                <ul class="eng-list">
-                    <li><i class="fas fa-microchip"></i> **BIFMA / ANSI Validation:** Structural testing for long-term commercial use.</li>
-                    <li><i class="fas fa-box-open"></i> **ISTA 6A Packaging:** Engineered to survive high-volume e-commerce shipping.</li>
-                    <li><i class="fas fa-container-storage"></i> **Volume Optimization:** Advanced KD (Knock-Down) designs to maximize 40'HQ load factor.</li>
+                <span class="section-tag">Manufacturing Backbone</span>
+                <h2>What We Do: The Furniture-First System</h2>
+                <p>We don't just sell products; we engineer supply chain certainty. From ergonomic seating to smart desking, YiShen Global integrates manufacturing, ISTA 6A packaging, and door-to-door delivery into a single controllable pipeline.</p>
+                <ul style="margin-top: 24px;">
+                    <li style="margin-bottom: 16px;"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> **Structural Validation:** Every component is tested for commercial durability.</li>
+                    <li style="margin-bottom: 16px;"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> **Volume Optimization:** KD designs built to maximize container load factors.</li>
                 </ul>
             </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80" alt="Furniture Engineering" style="width: 100%; border-radius: 12px; border: 1px solid var(--border);">
+            </div>
         </div>
     </section>
 
-    <section class="section-padding bg-light" id="catalog">
-        <div class="container">
-            <div class="text-center" style="margin-bottom: 50px;">
-                <span class="section-tag" style="justify-content:center;">Product Portfolio</span>
-                <h2>6 Core Categories · Built for Scale</h2>
+    <section class="section-padding container" id="portfolio">
+        <div style="text-align: center;">
+            <span class="section-tag">Our Expertise</span>
+            <h2>Core Furniture Platforms</h2>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1505843490701-5be5d0b19d58?auto=format&fit=crop&w=600&q=80" alt="Office Seating">
+                <div class="product-info">
+                    <h4>Office & Seating</h4>
+                    <p>Ergonomic task chairs and conference seating engineered for B2B standards.</p>
+                </div>
             </div>
-            
-            <div class="product-wall">
-                <div class="product-card">
-                    <img src="assets/img/products/mesh-chair-01.webp" alt="Mesh Chair">
-                    <h5>Ergonomic Seating</h5>
-                    <span>BIFMA · Office · Project</span>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=600&q=80" alt="Standing Desks">
+                <div class="product-info">
+                    <h4>Smart Desking</h4>
+                    <p>Height-adjustable frames and modular workspace systems for modern offices.</p>
                 </div>
-                <div class="product-card">
-                    <img src="assets/img/products/standing-desk-01.webp" alt="Standing Desk">
-                    <h5>Smart Desking</h5>
-                    <span>Dual Motor · UL Certified</span>
-                </div>
-                <div class="product-card">
-                    <img src="assets/img/products/gaming-chair-01.webp" alt="Gaming Chair">
-                    <h5>E-sports Seating</h5>
-                    <span>DTC Bestsellers</span>
-                </div>
-                <div class="product-card">
-                    <img src="assets/img/products/lounge-chair-01.webp" alt="Lounge Chair">
-                    <h5>Lounge & Hospitality</h5>
-                    <span>Commercial Grade</span>
-                </div>
-                <div class="product-card">
-                    <img src="assets/img/products/storage-cabinet-01.webp" alt="Storage">
-                    <h5>Steel Storage</h5>
-                    <span>Filing · Pedestals</span>
-                </div>
-                <div class="product-card">
-                    <img src="assets/img/products/conference-table-01.webp" alt="Conference">
-                    <h5>Modular Systems</h5>
-                    <span>Meeting Room Solutions</span>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80" alt="Living Furniture">
+                <div class="product-info">
+                    <h4>Home & Living</h4>
+                    <p>Sofas and accent furniture optimized for KD packaging and retail logistics.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-banner cta-elite">
-        <div class="container">
-            <h2>Ready to Secure Your Furniture Supply Chain?</h2>
-            <p>Connect with our engineering team for full specifications and B2B volume pricing.</p>
-            <a href="contact.html" class="btn btn-tech">Start Your Audit</a>
-        </div>
-    </section>
+    <div class="container">
+        <section class="cta-banner">
+            <h2>Start with a System, Not a Quote.</h2>
+            <p>Connect with our engineering team to define your procurement roadmap.</p>
+            <a href="contact.html" class="btn btn-tech" style="background: #000; color: #fff;">Talk to an Engineer</a>
+        </section>
+    </div>
 
     <footer class="footer">
-        <div class="container footer-grid grid-4">
+        <div class="container footer-grid">
             <div>
-                <h3>YiShen Global</h3>
-                <p>Furniture-first supply chain systems.<br>Predictability engineered.</p>
+                <strong style="font-size: 1.5rem; color: #fff;">YISHEN GLOBAL</strong>
+                <p style="margin-top: 16px; color: var(--text-dim);">
+                    Furniture-first global supply chain systems.<br>
+                    Engineered in China. Delivered Worldwide.
+                </p>
             </div>
-            <div>
+            <div class="footer-links">
                 <h4>Solutions</h4>
-                <a href="solutions.html">DTC Fulfillment</a>
                 <a href="solutions.html">B2B Procurement</a>
-                <a href="solutions.html">Project Logistics</a>
+                <a href="solutions.html">DDP Fulfillment</a>
+                <a href="solutions.html">Project Cargo</a>
             </div>
-            <div>
-                <h4>Resources</h4>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <a href="why-us.html">Why Us</a>
                 <a href="resources.html">Technical Data</a>
-                <a href="resources.html">Certifications</a>
-                <a href="why-us.html">The Lab</a>
+                <a href="contact.html">Contact</a>
             </div>
-            <div>
-                <h4>Connect</h4>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
+            <div class="footer-links">
+                <h4>Follow</h4>
+                <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             </div>
         </div>
-        <div class="copyright">© 2026 YiShen Global · Engineered in China</div>
+        <div class="copyright">
+            © 2026 YiShen Global. All Rights Reserved.
+        </div>
     </footer>
 
     <script>
-        const menuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        menuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+        // Simple menu toggle for future use
+        const nav = document.querySelector('.nav-links');
+        // Add mobile toggle logic here if needed
     </script>
 </body>
 </html>
