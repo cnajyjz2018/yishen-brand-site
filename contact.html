@@ -29,7 +29,7 @@
             will-change: transform;
         }
 
-        /* 强制视觉主权锁定补丁：彻底解决 Logo 太大、裁切、遮挡问题 */
+        /* 强制视觉主权锁定补丁：彻底解决之前照片中 Logo 遮挡问题 */
         .site-logo, .footer-logo-wrapper svg {
             display: flex !important;
             align-items: center !important;
@@ -112,11 +112,11 @@
         }
     </style>
 </head>
-<body>
+<body style="background-color: var(--deep-space);">
 
     <div id="cursor-glow"></div>
 
-    <nav class="site-navbar" style="position:fixed; width:100%; top:0; left:0; z-index:1000; background:rgba(1,4,9,0.9); backdrop-filter:blur(20px);">
+    <nav class="site-navbar" style="position:fixed; width:100%; top:0; left:0; z-index:10000; background:rgba(1,4,9,0.9); backdrop-filter:blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05);">
         <div class="nav-inner" style="max-width:1440px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; width:100%; padding: 15px 5%;">
             <a href="index.html" class="site-logo">
                 <svg width="280" height="32" viewBox="0 0 280 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -138,7 +138,8 @@
             </a>
             <div class="nav-menu" style="display:flex; gap:30px;">
                 <a href="index.html" style="color:#fff; text-decoration:none; font-family:'JetBrains Mono'; font-size:0.75rem;">SYSTEM</a>
-                <a href="resources.html" style="color:#fff; text-decoration:none; font-family:'JetBrains Mono'; font-size:0.75rem;">RESOURCES</a>
+                <a href="solutions.html" style="color:#fff; text-decoration:none; font-family:'JetBrains Mono'; font-size:0.75rem;">SOLUTIONS</a>
+                <a href="site-architecture.html" style="color:#fff; text-decoration:none; font-family:'JetBrains Mono'; font-size:0.75rem;">ARCHITECTURE</a>
                 <a href="contact.html" class="nav-cta active" style="color:var(--neon-blue); text-decoration:none; font-family:'JetBrains Mono'; font-size:0.75rem; border:1px solid var(--neon-blue); padding:5px 15px;">INITIATE BRIEFING</a>
             </div>
         </div>
@@ -149,13 +150,13 @@
     <header class="page-hero small" style="background: linear-gradient(90deg, var(--deep-space) 45%, transparent 100%), url('header-resources.webp'); background-size: cover; background-position: center right; padding: 100px 8% 60px;">
         <div class="container">
             <span class="tag" style="color: var(--neon-blue); font-family:'JetBrains Mono';">[ GLOBAL_ACCESS_INITIALIZATION ]</span>
-            <h1 style="margin: 20px 0; font-size: 3.5rem; font-weight:900;">Initiate<br>System Briefing.</h1>
+            <h1 style="margin: 20px 0; font-size: clamp(2rem, 5vw, 3.5rem); font-weight:900; line-height: 1.1;">Initiate<br>System Briefing.</h1>
             <p style="max-width: 550px; color: var(--text-dim); font-size: 1.1rem;">Connect with our multi-node communication matrix for project-level stability and industrial coordination.</p>
         </div>
     </header>
 
     <section class="section" style="padding: 80px 8%;">
-        <div class="container grid-2" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px;">
+        <div class="container grid-2" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 80px;">
             
             <div class="contact-details">
                 <span class="tag">[ CHANNELS ]</span>
@@ -225,7 +226,7 @@
 
     <footer class="footer" style="padding: 100px 8% 50px; border-top: 1px solid rgba(255,255,255,0.05); background: #000;">
         <div class="container">
-            <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 60px;">
+            <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 60px;">
                 <div>
                     <div class="footer-logo-wrapper" style="margin-bottom: 25px;">
                         <svg width="280" height="32" viewBox="0 0 280 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -260,6 +261,7 @@
 
     <script src="main-engine.js"></script>
     <script>
+        // 数字化微光跟随逻辑
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             requestAnimationFrame(() => {
