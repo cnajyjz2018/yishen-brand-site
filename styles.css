@@ -1,55 +1,46 @@
 /* =========================================================
    YISHEN GLOBAL — Integrated Architectural Stylesheet
    Version: 2026.FINAL.MASTER (The Integrated Sovereign)
-   Logic: Multi-Device Sovereignty & Precision Engineering
-   Patch: Full-Scale Logo Refinement & Content Recovery
+   Patch: Full-Scale Logo Physical Guard & Frame Recovery
 ========================================================= */
 
-/* ========== 01. TOKENS & SYSTEM VARIABLES ========== */
+/* ========== 01. 系统变量与原子协议 ========== */
 :root {
-    --neon-blue: #0ea5e9;
+    --neon-blue: #0ea5e3;
     --neon-glow: rgba(14, 165, 233, 0.4);
-    --performance-red: #A11219;      /* 家族传承：燊之火底色 */
-    --deep-space: #010409;           /* Core Black Body */
-    --nav-bg: rgba(1, 4, 9, 0.92);   /* 深色工业感背景 */
+    --performance-red: #A11219;      /* 品牌传承：燊之火底色 */
+    --deep-space: #010409;           /* 核心背景黑 */
+    --nav-bg: rgba(1, 4, 9, 0.92);   /* 毛玻璃导航背景 */
     --industrial-gray: #1e293b;
-    --glass: rgba(15, 23, 42, 0.85);
+    --surface: rgba(255, 255, 255, 0.03);
     
-    /* Text Typography */
+    /* 文本层级协议 */
     --text-main: #f8fafc;
     --text-dim: #94a3b8;
     
-    /* Animation & Physics */
+    /* 物理常数 */
     --transition-main: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    --navbar-height: 80px;           /* 精准适配 32px 矢量 Logo */
+    --navbar-height: 80px;           /* 完美承载 32px Logo */
 }
 
-/* ========== 02. BASE RESET & DIGITAL TWIN GLOW ========== */
+/* ========== 02. 全局重置与交互底层 ========== */
 *, *::before, *::after { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-    -webkit-font-smoothing: antialiased;
-}
-
-html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+    margin: 0; padding: 0; box-sizing: border-box; 
 }
 
 body {
     background-color: var(--deep-space);
     color: var(--text-main);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Inter', -apple-system, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* 数字化微光补丁 - 600px 扩散半径 */
+/* 数字化微光补丁：600px 覆盖，will-change 优化性能 */
 #cursor-glow {
     position: fixed;
-    width: 600px;
-    height: 600px;
+    width: 600px; height: 600px;
     background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
     pointer-events: none;
     z-index: 9998;
@@ -57,54 +48,43 @@ body {
     will-change: transform;
 }
 
-/* ========== 03. LOGO 全程式视觉加固（解决尺寸过大与破损） ========== */
-.site-logo {
+/* ========== 03. LOGO 物理防御补丁 (核心修复) ========== */
+/* 强制解决照片中反馈的 Logo 遮挡、放大、破损问题 */
+.site-logo, .nav-logo img, .site-logo svg {
+    height: 32px !important;         /* 强制物理高度 32px，严禁溢出 */
+    width: auto !important;          /* 保持比例 */
+    max-height: 32px !important;
     display: flex !important;
     align-items: center !important;
-    height: 32px !important;         /* 强制锁定 32px 高度，解决过大问题 */
-    width: auto !important;
     text-decoration: none !important;
-    overflow: visible !important;     /* 核心：允许文字超出容器而不被裁切 */
+    overflow: visible !important;     /* 确保 SVG 内部文字（如 Global）不被裁切 */
     filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.3));
     transition: var(--transition-main);
 }
 
 .site-logo svg {
-    height: 32px !important;         /* 锁定矢量图形物理高度 */
-    width: auto !important;
     display: block !important;
-    overflow: visible !important;     /* 确保 SVG 内部文字（如 Global）显示完整 */
 }
 
-.site-logo:hover {
-    transform: scale(1.02);
-    filter: drop-shadow(0 0 15px var(--neon-blue));
-}
-
-/* ========== 04. NAVIGATION (SOVEREIGN COMMAND CENTER) ========== */
+/* ========== 04. 导航指挥中心 (Sovereign Navbar) ========== */
 .site-navbar {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: 0; left: 0; width: 100%;
     height: var(--navbar-height);
     background: var(--nav-bg);
     backdrop-filter: blur(15px);
-    z-index: 10000 !important;
+    z-index: 10000;
     border-bottom: 1px solid rgba(14, 165, 233, 0.15);
-    display: flex;
-    align-items: center;
-    transition: var(--transition-main);
 }
 
 .nav-inner {
-    width: 100%;
-    max-width: 1400px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
+    height: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* 强制两端分布：Logo 左，菜单右 */
+    align-items: center !important;
 }
 
 .nav-menu {
@@ -130,44 +110,36 @@ body {
     text-shadow: 0 0 10px var(--neon-blue);
 }
 
-.nav-spacer { height: var(--navbar-height); }
-
-/* ========== 05. HERO & BORDERLESS VISION ========== */
+/* ========== 05. 视觉避障 Hero 补丁 ========== */
 .hero, .page-hero {
-    height: 90vh;
+    height: 85vh;
     display: flex;
     align-items: center;
-    /* 修复：线性渐变提供 35% 黑色遮罩，并调用高清 Banner */
+    /* 35% 黑色遮罩确保左侧文字可读性，Banner 焦点右偏移避开遮挡 */
     background: linear-gradient(90deg, var(--deep-space) 35%, transparent 100%), 
                 url('/Yishen-Global-Hero-Banner-2026.webp');
     background-size: cover;
-    background-position: center right; /* 将图像焦点向右移，避开左侧文字区 */
+    background-position: center right;
     position: relative;
     padding: 0 8%;
 }
 
-.page-hero h1 {
-    font-size: clamp(2.2rem, 8vw, 6rem);
-    font-weight: 900;
-    line-height: 0.85;
-    letter-spacing: -3px;
-    text-transform: uppercase;
-}
+/* ========== 06. 找回重要框架：NODE & CLUSTER SYSTEM ========== */
+.section { padding: 100px 8%; border-bottom: 1px solid rgba(255,255,255,0.05); }
 
-/* ========== 06. NODE SYSTEM (120 SKU MATRIX) ========== */
-.section { padding: 80px 8%; border-bottom: 1px solid rgba(255,255,255,0.05); }
-
-.node-grid {
+.protocol-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px;
+    gap: 30px;
 }
 
 .node-card {
-    background: var(--glass);
-    border: 1px solid var(--industrial-gray);
-    padding: 35px;
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 45px;
     transition: var(--transition-main);
+    position: relative;
+    overflow: hidden;
 }
 
 .node-card:hover {
@@ -176,99 +148,50 @@ body {
     background: rgba(14, 165, 233, 0.04);
 }
 
-/* ========== 07. MOBILE TOGGLE & RESPONSIVE ========== */
-.mobile-toggle {
-    display: none;
-    width: 25px; height: 18px;
+.node-card .tag {
+    color: var(--neon-blue);
+    font-family: 'JetBrains Mono';
+    font-size: 0.7rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* ========== 07. 工业审计标签 (Audit Tag) ========== */
+.audit-box {
     position: relative;
-    cursor: pointer;
-    z-index: 10001;
+    border: 1px solid rgba(14, 165, 233, 0.2);
+    padding: 10px;
+    background: #000;
 }
 
-.mobile-toggle span {
-    display: block; width: 100%; height: 2px;
+.audit-tag {
+    position: absolute;
+    bottom: 20px; left: 20px;
     background: var(--neon-blue);
-    position: absolute; transition: 0.3s ease;
+    color: #000;
+    padding: 10px 20px;
+    font-family: 'JetBrains Mono';
+    font-size: 0.7rem;
+    font-weight: 700;
 }
 
-.mobile-toggle span:nth-child(2) { top: 8px; }
-.mobile-toggle span:nth-child(3) { top: 16px; }
-
+/* ========== 08. 响应式补丁 ========== */
 @media (max-width: 1024px) {
-    :root { --navbar-height: 70px; }
+    .nav-inner { padding: 0 20px; }
     .site-logo { height: 28px !important; }
-    .site-logo svg { height: 28px !important; }
-    
-    .mobile-toggle { display: block; }
-    
-    .nav-menu {
-        display: none; 
-        flex-direction: column;
-        position: fixed;
-        top: 0; left: 0;
-        width: 100vw; height: 100vh;
-        background: rgba(1, 4, 9, 0.98);
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-        z-index: 10000;
-    }
-    
-    .nav-menu.mobile-active { display: flex; animation: navFadeIn 0.4s ease forwards; }
+    .hero { background-position: center; padding: 0 5%; }
     .page-hero h1 { font-size: 3rem; }
 }
 
-/* ========== 08. ANIME LAZY LOAD (Cyber Scanner) ========== */
-.lazy-container {
-    position: relative;
-    background: #06122a;
-    overflow: hidden;
+/* ========== 09. 补齐页脚视觉一致性 ========== */
+.footer {
+    padding: 100px 8% 50px;
+    background: #000;
+    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-img[data-src] {
-    opacity: 0;
-    transform: scale(1.03);
-    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+.footer-logo-wrapper svg {
+    height: 32px !important;
+    width: auto !important;
+    overflow: visible !important;
 }
-
-img.img-loaded { opacity: 1; transform: scale(1); }
-
-.cyber-scanner {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 2px;
-    background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
-    box-shadow: 0 0 15px var(--neon-blue);
-    animation: scanMove 2.5s infinite ease-in-out;
-}
-
-@keyframes scanMove {
-    0% { top: -5%; opacity: 0; }
-    50% { opacity: 1; }
-    100% { top: 105%; opacity: 0; }
-}
-
-/* ========== 09. CONVERSION & FOOTER ========== */
-.btn-primary {
-    display: inline-block;
-    padding: 18px 45px;
-    background: var(--neon-blue);
-    color: #000;
-    font-weight: 800;
-    font-family: 'JetBrains Mono';
-    clip-path: polygon(8% 0, 100% 0, 92% 100%, 0% 100%);
-    text-decoration: none;
-    transition: var(--transition-main);
-}
-
-.float-gear {
-    position: absolute; right: 5%; top: 5%; width: 180px;
-    animation: floatGear 20s ease-in-out infinite;
-    opacity: 0.15; pointer-events: none;
-}
-
-@keyframes floatGear {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-30px) rotate(15deg); }
-}
-
-.footer { padding: 80px 8%; background: #000; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
