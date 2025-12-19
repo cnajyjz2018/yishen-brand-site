@@ -32,7 +32,11 @@
                 <img src="logo-white.webp" class="nav-logo" alt="YISHEN GLOBAL ARCHITECT">
             </a>
 
-            <div class="nav-links">
+            <div class="mobile-toggle" onclick="MasterEngine.toggleMobileMenu()">
+                <span></span><span></span><span></span>
+            </div>
+
+            <div class="nav-links" id="main-menu">
                 <a href="index.html" class="active" data-i18n="nav_system">Systems</a>
                 <a href="solutions.html" data-i18n="nav_solutions">Solutions</a>
                 <a href="industries.html" data-i18n="nav_industries">Industries</a>
@@ -75,13 +79,13 @@
         <img src="brand-icon.webp" class="float-icon" alt="System Kinetic Core">
     </header>
 
-    <section class="section">
+    <section class="section" id="matrix">
         <div class="grid-header">
             <span class="tag">01_THE_DIAGNOSIS</span>
             <h3 data-i18n="prob_h2">Sourcing fails are caused by <b>fragmented logic.</b></h3>
         </div>
         
-        <div class="node-grid" id="matrix">
+        <div class="node-grid">
             <div class="node-card">
                 <div class="lazy-container">
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" 
@@ -126,7 +130,7 @@
     <script src="main-engine.js"></script>
 
     <script>
-        // 补丁：导航栏滚动动效同步
+        // 补丁：导航栏滚动及移动端兼容动效同步
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('master-nav');
             if (window.scrollY > 80) {
