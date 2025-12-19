@@ -3,123 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YISHEN GLOBAL | Engineering-Led Furniture Supply Chain</title>
-    <meta name="description" content="Furniture first. Supply chain, engineered. We design and execute furniture systems integrated with heavy-duty mechanics, kinetic motion, and aerospace biomechanics.">
+    <title>YISHEN GLOBAL | Coordinated Industrial Architecture</title>
     
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap">
+    <meta name="description" content="YiShen Global: Engineering furniture supply chains for predictable global delivery. Integrated systems covering office seating, marine rigging, and structural bio-materials.">
+    <meta name="keywords" content="Furniture Supply Chain, BIFMA Compliance, Office Seating Engineering, Marine Hardware, Bamboo Composite, ISTA Packaging">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
     
     <style>
         :root {
             --neon-blue: #0ea5e9;
             --deep-space: #010409;
             --industrial-gray: #1e293b;
-            --glass: rgba(15, 23, 42, 0.95);
+            --glass: rgba(15, 23, 42, 0.9);
+            --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            --nav-height: 100px;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        
         body { 
             background-color: var(--deep-space); 
             color: #fff; 
             font-family: 'Inter', sans-serif; 
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Interactive Element */
+        /* -----------------------------------------
+           INTERACTIVE ENGINE: Digital Twin Glow
+        ----------------------------------------- */
         #cursor-glow {
             position: fixed; width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
             pointer-events: none; z-index: 9999; transform: translate(-50%, -50%);
+            will-change: transform;
         }
 
-        /* Nav Bar */
+        /* -----------------------------------------
+           NAVBAR: Command Center Header
+        ----------------------------------------- */
         nav {
-            position: fixed; top: 0; width: 100%; padding: 25px 5%;
-            display: flex; justify-content: space-between; align-items: center;
-            z-index: 1000; background: linear-gradient(to bottom, var(--deep-space), transparent);
+            position: fixed; top: 0; left: 0; width: 100%; height: var(--nav-height);
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 6%; z-index: 10000;
+            background: linear-gradient(to bottom, var(--deep-space) 40%, transparent);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
         }
-        .nav-logo { height: 26px; }
-        .system-status { font-family: 'JetBrains Mono'; color: var(--neon-blue); font-size: 0.65rem; letter-spacing: 2px; }
 
-        /* Hero: Engineering-Led Manifesto */
+        .brand-block { display: flex; align-items: center; gap: 20px; text-decoration: none; }
+        .nav-logo { height: 55px; width: auto; filter: drop-shadow(0 0 15px var(--neon-blue)); }
+        
+        .nav-links { display: flex; gap: 45px; }
+        .nav-links a {
+            color: #94a3b8; text-decoration: none; font-size: 0.75rem;
+            font-family: 'JetBrains Mono'; letter-spacing: 2px; text-transform: uppercase;
+            transition: var(--transition);
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--neon-blue); text-shadow: 0 0 8px var(--neon-blue); }
+
+        .system-display {
+            display: flex; align-items: center; gap: 25px;
+            font-family: 'JetBrains Mono'; font-size: 0.6rem; color: #475569;
+        }
+        .status-dot { 
+            width: 6px; height: 6px; background: #22c55e; border-radius: 50%; 
+            display: inline-block; margin-right: 8px; box-shadow: 0 0 10px #22c55e;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        /* -----------------------------------------
+           HERO: The System Manifesto
+        ----------------------------------------- */
         .hero {
             height: 100vh; display: flex; align-items: center; padding: 0 8%;
             background: linear-gradient(90deg, var(--deep-space) 30%, transparent 100%), url('header-main.webp');
             background-size: cover; background-position: center;
+            position: relative;
         }
-        .hero-content { max-width: 950px; }
-        .hero-content h2 { font-size: 1.5rem; color: var(--neon-blue); margin-bottom: 20px; font-weight: 400; font-family: 'JetBrains Mono'; }
-        .hero-content h1 { font-size: clamp(3rem, 7vw, 6rem); font-weight: 900; line-height: 0.85; margin-bottom: 30px; letter-spacing: -4px; }
-        .hero-content p { font-size: 1.25rem; color: #94a3b8; max-width: 680px; margin-bottom: 45px; border-left: 3px solid var(--neon-blue); padding-left: 25px; }
+        .hero-content { max-width: 1000px; z-index: 2; }
+        .hero-content span.tag { 
+            font-family: 'JetBrains Mono'; color: var(--neon-blue); 
+            font-size: 0.9rem; letter-spacing: 6px; margin-bottom: 30px; display: block;
+        }
+        .hero-content h1 { 
+            font-size: clamp(3.5rem, 9vw, 8rem); font-weight: 900; 
+            line-height: 0.85; letter-spacing: -6px; margin-bottom: 35px;
+            text-transform: uppercase;
+        }
+        .hero-content p { 
+            max-width: 650px; color: #94a3b8; font-size: 1.25rem; 
+            border-left: 3px solid var(--neon-blue); padding-left: 30px; margin-bottom: 60px;
+        }
+
+        .btn-group { display: flex; gap: 25px; }
+        .btn-main {
+            padding: 22px 55px; background: var(--neon-blue); color: #000;
+            text-decoration: none; font-family: 'JetBrains Mono'; font-weight: 700; font-size: 0.85rem;
+            transition: var(--transition); clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+        }
+        .btn-main:hover { background: #fff; box-shadow: 0 0 40px var(--neon-blue); transform: translateY(-5px); }
+
+        .float-icon { position: absolute; right: 5%; bottom: 12%; width: 300px; opacity: 0.5; animation: float 18s infinite ease-in-out; }
+        @keyframes float { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-60px) rotate(15deg); } }
+
+        /* -----------------------------------------
+           DIAGNOSIS: Challenges & Boolean Logic
+        ----------------------------------------- */
+        .section { padding: 160px 8%; border-bottom: 1px solid rgba(255,255,255,0.05); position: relative; }
+        .grid-header { margin-bottom: 80px; max-width: 800px; }
+        .grid-header h3 { font-size: 4rem; font-weight: 900; line-height: 1; letter-spacing: -2px; }
+
+        .node-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.05); }
+        .node-card { background: var(--deep-space); padding: 70px; transition: var(--transition); position: relative; overflow: hidden; }
+        .node-card:hover { background: rgba(14, 165, 233, 0.03); }
+        .node-card h4 { font-family: 'JetBrains Mono'; font-size: 1.4rem; color: var(--neon-blue); margin-bottom: 25px; }
+        .node-card p { color: #64748b; font-size: 1.05rem; }
+        .node-card .stats { font-family: 'JetBrains Mono'; font-size: 0.7rem; color: #475569; margin-top: 40px; display: block; letter-spacing: 2px; }
+
+        /* -----------------------------------------
+           VISUAL AUDIT: The ISTA Hook
+        ----------------------------------------- */
+        .audit-container { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 100px; align-items: center; }
+        .audit-visual img { width: 100%; border: 1px solid rgba(255,255,255,0.1); filter: grayscale(0.5); transition: var(--transition); }
+        .audit-visual:hover img { filter: grayscale(0); }
         
-        .btn {
-            display: inline-block; padding: 18px 40px; border: 1px solid var(--neon-blue);
-            color: #fff; text-decoration: none; font-family: 'JetBrains Mono'; font-size: 0.85rem;
-            transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); margin-right: 20px;
-        }
-        .btn:hover { background: var(--neon-blue); color: #000; box-shadow: 0 0 30px var(--neon-blue); transform: scale(1.05); }
+        /* -----------------------------------------
+           FOOTER: Global Cluster Endorsement
+        ----------------------------------------- */
+        footer { padding: 120px 8% 60px; background: #000; text-align: center; }
+        .shield-img { height: 160px; opacity: 0.25; margin-bottom: 60px; filter: grayscale(1) invert(1); }
+        .footer-legal { font-family: 'JetBrains Mono'; font-size: 0.65rem; color: #334155; letter-spacing: 4px; border-top: 1px solid #111; padding-top: 40px; }
 
-        /* Problem Section */
-        .section { padding: 140px 8%; border-bottom: 1px solid #1e293b; position: relative; }
-        .tag { font-family: 'JetBrains Mono'; color: var(--neon-blue); font-size: 0.75rem; display: block; margin-bottom: 20px; letter-spacing: 5px; }
-        
-        .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-        .problem-text h3 { font-size: 3rem; margin-bottom: 35px; line-height: 1; font-weight: 900; }
-        .problem-text b { color: var(--neon-blue); }
-
-        /* Integration System Grid */
-        .system-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2px;
-            background: #1e293b; margin-top: 60px; border: 1px solid #1e293b;
-        }
-        .system-card {
-            background: var(--deep-space); padding: 60px;
-            transition: 0.5s;
-        }
-        .system-card:hover { background: rgba(14, 165, 233, 0.05); }
-        .system-card h4 { font-size: 1.4rem; margin-bottom: 25px; color: #fff; text-transform: uppercase; font-weight: 900; }
-        .system-card p { font-size: 1rem; color: #64748b; }
-        .stats-node { font-family: 'JetBrains Mono'; color: var(--neon-blue); font-size: 0.7rem; margin-top: 30px; display: block; opacity: 0.8; }
-
-        /* Resource & Audit Module */
-        .audit-visual { margin-top: 80px; position: relative; }
-        .audit-visual img { width: 100%; border: 1px solid var(--industrial-gray); opacity: 0.8; transition: 1s; }
-        .audit-visual:hover img { opacity: 1; filter: contrast(1.1); }
-        .audit-overlay {
-            position: absolute; bottom: 50px; right: 50px; background: var(--glass);
-            padding: 40px; border-left: 5px solid var(--neon-blue); max-width: 450px;
-            backdrop-filter: blur(10px);
-        }
-
-        /* Floating Icon */
-        .float-gear {
-            position: absolute; right: 5%; top: 5%; width: 220px; animation: floatAnim 12s ease-in-out infinite; opacity: 0.6; pointer-events: none;
-        }
-        @keyframes floatAnim { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-40px) rotate(10deg); } }
-
-        /* Targeted Audience List */
-        .audience-matrix {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 60px;
-        }
-        .audience-node { 
-            border-left: 1px solid #1e293b; padding-left: 25px; font-size: 1rem; color: #cbd5e1; 
-            transition: 0.3s;
-        }
-        .audience-node:hover { border-left: 4px solid var(--neon-blue); color: #fff; }
-
-        /* Footer CTA */
-        .final-cta { text-align: center; padding: 150px 8%; background: radial-gradient(circle at center, #051937, #000); }
-        .final-cta h2 { font-size: 4rem; margin-bottom: 30px; font-weight: 900; letter-spacing: -2px; }
-        
-        footer {
-            padding: 60px 8%; text-align: center; font-size: 0.75rem; color: #475569;
-            font-family: 'JetBrains Mono'; letter-spacing: 3px; border-top: 1px solid #1e293b;
-        }
-
-        @media (max-width: 1024px) {
-            .problem-grid { grid-template-columns: 1fr; }
-            .hero { background-position: 85% center; }
-            .audit-overlay { position: static; max-width: 100%; margin-top: 20px; }
+        /* -----------------------------------------
+           RESPONSIVE MATRIX
+        ----------------------------------------- */
+        @media (max-width: 1200px) {
+            .nav-links, .system-display { display: none; }
+            .hero-content h1 { font-size: 4.5rem; }
+            .audit-container { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -127,119 +153,120 @@
 
     <div id="cursor-glow"></div>
 
-    <nav>
-        <img src="logo-white.webp" class="nav-logo" alt="YISHEN ARCHITECT">
-        <div class="system-status">CORE_STABILITY // HS_CODE_AUDIT // EST_2026</div>
+    <nav id="master-nav">
+        <a href="index.html" class="brand-block">
+            <img src="logo-white.webp" class="nav-logo" alt="YISHEN GLOBAL ARCHITECT">
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html" class="active">Systems</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="industries.html">Industries</a>
+            <a href="why-us.html">Protocol</a>
+            <a href="resources.html">Data</a>
+        </div>
+
+        <div class="system-display">
+            <div><span class="status-dot"></span>SYS_OPERATIONAL</div>
+            <div>VER_2026.MASTER</div>
+            <a href="contact.html" style="color: var(--neon-blue); text-decoration: none; border: 1px solid var(--neon-blue); padding: 8px 15px;">BRIEFING</a>
+        </div>
     </nav>
 
     <header class="hero">
         <div class="hero-content">
-            <h2>Furniture first. Supply chain, engineered.</h2>
-            <h1>INTEGRATED<br>SYSTEMS.</h1>
+            <span class="tag">[ DETERMINISTIC_SUPPLY_CHAIN ]</span>
+            <h1>Architecture<br>Over Sourcing.</h1>
             <p>
-                YiShen Global is not a trading company. We design and execute furniture supply chain systems that buyers can rely on, scale, and defend internally through multi-industry technical integration.
+                Yishen Global is not a trading company. We architect integrated furniture supply chain systems where <b>Aerospace Biomechanics</b>, <b>Linear Motion</b>, and <b>Structural Stability</b> are fused into a single predictable path.
             </p>
-            <div style="margin-top: 40px;">
-                <a href="#system" class="btn">VIEW THE SYSTEM</a>
-                <a href="#audit" class="btn" style="border-color: #475569; color: #94a3b8;">DATA AUDIT</a>
+            <div class="btn-group">
+                <a href="#matrix" class="btn-main">INITIATE_SYSTEM_AUDIT</a>
+                <a href="resources.html" style="color: #64748b; font-family: 'JetBrains Mono'; text-decoration: none; font-size: 0.8rem; padding: 20px;">[ VIEW_TECHNICAL_DATA ]</a>
             </div>
         </div>
+        <img src="brand-icon.webp" class="float-icon" alt="System Kinetic Core">
     </header>
 
-    <section class="section" id="problem">
-        <img src="brand-icon.webp" class="float-gear" alt="Integration Gear">
-        <div class="problem-grid">
-            <div class="problem-text">
-                <span class="tag">[ THE_DIAGNOSIS ]</span>
-                <h3>Sourcing failures are caused by <b>system instability.</b></h3>
-                <p>
-                    Most global furniture issues arise from unclear ownership, fragile packaging, and compliance surprises. We solve this by integrating <b>Heavy Machinery</b>, <b>Linear Drive</b>, and <b>Aerospace Standards</b> into the furniture core.
-                </p>
-            </div>
-            <div class="audit-visual" id="audit">
-                <img src="header-resources.webp" alt="Supply Chain Data Audit">
-                <div class="audit-overlay">
-                    <span class="tag">// ARCHITECT_NOTE</span>
-                    We engineer <b>stability</b> into every node. From 8000N kinetic thrust to spacecraft-grade energy absorption.
-                </div>
-            </div>
+    <section class="section">
+        <div class="grid-header">
+            <span class="tag">01_THE_DIAGNOSIS</span>
+            <h3>Sourcing fails are caused by <b>fragmented logic.</b></h3>
         </div>
-    </section>
-
-    <section class="section" id="system">
-        <span class="tag">[ THE_YISHEN_CORE ]</span>
-        <h2>Structural Matrix</h2>
-        <div class="system-grid">
-            <div class="system-card">
-                <h4>Furniture Engineering</h4>
-                <p>Integrating <b>Heavy-Duty Bamboo</b> and <b>WPC Surface Engineering</b> with precise SKU structural logic designed before production.</p>
-                <span class="stats-node">DENSITY: 1200KG/M3 // ESG_A</span>
+        
+        <div class="node-grid" id="matrix">
+            <div class="node-card">
+                <h4>Furniture Systems</h4>
+                <p>Integrating 8000N kinetic thrust capacity with spacecraft-grade energy absorption algorithms in ergonomic lumbar nodes.</p>
+                <span class="stats">NODE: LUMBAR_ACTIVE // THRUST: 8000N</span>
             </div>
-            <div class="system-card">
-                <h4>Kinetic Motion</h4>
-                <p>Leveraging <b>Linear Drive Clusters</b> from specialized hubs to enable 8000N thrust capacity in spatial environments.</p>
-                <span class="stats-node">DRIVE: 8000N // LIFE: 100K_CYCLES</span>
+            <div class="node-card">
+                <h4>Bio-Materials</h4>
+                <p>Structural Bamboo and WPC composite surface engineering designed for high-load environmental stability (ESG-A Class).</p>
+                <span class="stats">DENSITY: 1200KG/M3 // TOX_0</span>
             </div>
-            <div class="system-card">
-                <h4>Spacecraft Biomechanics</h4>
-                <p>Migrating <b>Spacecraft Crew Seat</b> absorption tech and postural algorithms into ergonomic lumbar support systems.</p>
-                <span class="stats-node">SYNC: DYNAMIC // ABSORB: 90%</span>
-            </div>
-            <div class="system-card">
-                <h4>Packaging Engineering</h4>
-                <p>Survivability modeling and container density optimization to ensure <b>zero-failure</b> global delivery.</p>
-                <span class="stats-node">MODEL: DROP_RISK_SHIELD</span>
-            </div>
-            <div class="system-card">
-                <h4>Compliance Pathway</h4>
-                <p>BIFMA, EN1335, and UL planning integrated early. Full <b>HS Code (7315/9403)</b> traceability and audit integrity.</p>
-                <span class="stats-node">AUDIT: HS_DATA_LOCKED</span>
-            </div>
-            <div class="system-card">
-                <h4>One Accountable Hub</h4>
-                <p>No fragmented suppliers or technical excuses. One engineered system for retailers, brands, and distributors.</p>
-                <span class="stats-node">INTERFACE: ARCHITECT_ONE</span>
+            <div class="node-card">
+                <h4>Marine Rigging</h4>
+                <p>High-tensile Grade 100 chain systems and salt-mist resistant nautical hardware. Full HS Code 7315 traceability.</p>
+                <span class="stats">COMPLIANCE: HS_7315 // LOAD: G100</span>
             </div>
         </div>
     </section>
 
     <section class="section">
-        <span class="tag">[ DESIGNED_FOR ]</span>
-        <h3>Strategic Integration Partners</h3>
-        <div class="audience-matrix">
-            <div class="audience-node">Furniture brands expanding across regions</div>
-            <div class="audience-node">Retailers demanding predictable delivery</div>
-            <div class="audience-node">E-commerce sellers sensitive to failure</div>
-            <div class="audience-node">Procurement teams tired of excuses</div>
+        <div class="audit-container">
+            <div class="audit-text">
+                <span class="tag">02_SURVIVABILITY</span>
+                <h3 style="font-size: 3.5rem; font-weight: 900; margin-bottom: 30px;">Engineered<br>Delivery.</h3>
+                <p style="color: #94a3b8; font-size: 1.15rem; margin-bottom: 40px;">
+                    We solve failures at the design phase. Packaging survivability (ISTA-6A) and container density optimization are mapped mathematically before production begins.
+                </p>
+                <div style="display: flex; gap: 40px;">
+                    <div><h5 style="color: var(--neon-blue);">ISTA-6A</h5><small>DROP_TEST_CERT</small></div>
+                    <div><h5 style="color: var(--neon-blue);">98%</h5><small>LOAD_EFFICIENCY</small></div>
+                    <div><h5 style="color: var(--neon-blue);">0.04%</h5><small>REMA_RATE</small></div>
+                </div>
+            </div>
+            <div class="audit-visual">
+                
+                <img src="div-container-optimization.webp" alt="Loading Logic Optimization">
+            </div>
         </div>
     </section>
 
-    <section class="final-cta">
-        <h2>Start with the System.</h2>
-        <p style="margin: 0 auto 50px; color: #94a3b8; max-width: 700px; font-size: 1.2rem;">
-            If you are evaluating suppliers beyond samples and quotations, YiShen Global is built for that conversation.
+    <section class="section" style="text-align: center; background: radial-gradient(circle at center, #051937, #000);">
+        <h2 style="font-size: 5rem; font-weight: 900; letter-spacing: -4px; margin-bottom: 40px;">Design the System.</h2>
+        <p style="max-width: 750px; margin: 0 auto 60px; color: #94a3b8; font-size: 1.3rem;">
+            If you are evaluating partners beyond speculative quotes, YiShen Global provides the architectural stability your procurement team requires.
         </p>
-        <a href="mailto:architect@yishen.global" class="btn" style="padding: 22px 70px; font-size: 1rem;">DISCUSS YOUR PROJECT</a>
-        
-        <div style="margin-top: 100px;">
-            <img src="partners-shield.webp" class="shield-img" style="max-width: 950px; width: 100%; opacity: 0.3; filter: grayscale(1) invert(1);" alt="Integrated Clusters">
-        </div>
+        <a href="contact.html" class="btn-main" style="padding: 25px 80px; font-size: 1.1rem;">INITIATE_PROJECT_BRIEFING</a>
     </section>
 
     <footer>
-        &copy; 2026 YISHEN GLOBAL // COORDINATED INDUSTRIAL ARCHITECTURE // HS_CODE_AUDITED // ALL RIGHTS RESERVED.
+        <img src="partners-shield.webp" class="shield-img" alt="Coordinated Industrial Cluster">
+        <div class="footer-legal">
+            &copy; 2026 YISHEN GLOBAL // COORDINATED INDUSTRIAL ARCHITECTURE // HS_CODE_LOCKED // ALL DATA ENCRYPTED.
+        </div>
     </footer>
 
     <script>
+        // Cursor Engine
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             glow.style.left = e.clientX + 'px';
             glow.style.top = e.clientY + 'px';
         });
 
+        // Navbar Scroll Logic
         window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            document.querySelector('.hero').style.backgroundPositionY = scrolled * 0.4 + 'px';
+            const nav = document.getElementById('master-nav');
+            if (window.scrollY > 80) {
+                nav.style.height = '80px';
+                nav.style.background = 'rgba(1, 4, 9, 0.98)';
+            } else {
+                nav.style.height = '100px';
+                nav.style.background = 'linear-gradient(to bottom, var(--deep-space) 40%, transparent)';
+            }
         });
     </script>
 </body>
