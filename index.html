@@ -13,22 +13,26 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        /* 统筹补丁：Logo 精准比例控制 (32px) */
+        /* =========================================================
+           LOGO 精准比例补丁：锁定 32px (对应素材 250x100)
+           ========================================================= */
         .nav-logo img {
-            height: 32px !important;
-            width: auto;
+            height: 32px !important; /* 精致比例，不喧宾夺主 */
+            width: auto; /* 自动计算宽度以保持 2.5:1 纵横比 */
             filter: drop-shadow(0 0 10px var(--neon-blue));
             transition: var(--transition-main);
         }
+        
         @media (max-width: 1024px) {
             .nav-logo img { height: 28px !important; }
         }
 
-        /* 统筹补丁：Hero 视界与背景融合 */
+        /* 统筹补丁：Hero 背景严格执行 16:9 比例 */
         .hero {
             height: 100vh; display: flex; align-items: center; padding: 0 8%;
             background: linear-gradient(90deg, var(--deep-space) 30%, transparent 100%), url('header-main.webp');
-            background-size: cover; background-position: center;
+            background-size: cover; 
+            background-position: center;
             position: relative;
         }
 
@@ -104,7 +108,7 @@
             <div class="node-card">
                 <div class="lazy-container">
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" 
-                         data-src="div-industrial.webp" alt="Industrial Node" style="width:100%">
+                         data-src="div-industrial.webp" alt="Furniture Systems" style="width:100%">
                 </div>
                 <h4 data-i18n="cluster_1" style="margin-top: 25px; color: var(--neon-blue);">Furniture Systems</h4>
                 <p>8000N kinetic thrust capacity integrated with spacecraft-grade energy absorption.</p>
@@ -114,7 +118,7 @@
             <div class="node-card">
                 <div class="lazy-container">
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" 
-                         data-src="ergo-SPro9001-hero-01.webp" alt="Flagship Node" style="width:100%">
+                         data-src="ergo-SPro9001-hero-01.webp" alt="Precision Seating" style="width:100%">
                 </div>
                 <h4 data-i18n="cluster_2" style="margin-top: 25px; color: var(--neon-blue);">Precision Seating</h4>
                 <p>Biomechanical ergonomic lumbar nodes designed for high-density enterprise trade.</p>
@@ -124,7 +128,7 @@
             <div class="node-card">
                 <div class="lazy-container">
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" 
-                         data-src="div-container-optimization.webp" alt="Logistics Node" style="width:100%">
+                         data-src="div-container-optimization.webp" alt="Kinetic Logistics" style="width:100%">
                 </div>
                 <h4 data-i18n="cluster_3" style="margin-top: 25px; color: var(--neon-blue);">Kinetic Logistics</h4>
                 <p>Mathematical container density optimization and ISTA-6A survivability modeling.</p>
