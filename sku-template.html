@@ -1,179 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>{{SKU_NAME}} | SKU Engineering Template | YiShen Global</title>
+    <meta charset="UTF-8">
+    <title>{{SKU_NAME}} | SKU Engineering Specification | YISHEN GLOBAL</title>
 
-  <meta name="description"
-        content="Engineering SKU template for furniture products. Specification, compliance, packaging, and delivery logic by YiShen Global.">
+    <meta name="description" content="Technical engineering data for {{SKU_NAME}}. Covers {{CATEGORY}} specifications, compliance standards, and logistics modeling.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#06122A">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#06122A">
+    <link rel="icon" href="/yishen-logo-icon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/yishen-logo-icon.svg">
 
-  <!-- Brand -->
-  <link rel="icon" href="/yishen-logo-icon.svg" type="image/svg+xml">
-  <link rel="alternate icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/yishen-logo-icon.svg">
+    <link rel="stylesheet" href="styles.css?v=2026">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap">
 
-  <!-- Core CSS -->
-  <link rel="stylesheet" href="/styles.css">
-
-  <!-- Core JS (ONE ONLY) -->
-  <script defer src="/script.js"></script>
+    <script defer src="script.js"></script>
 </head>
 
 <body>
 
-<!-- ======================================
-     GLOBAL NAVBAR (DO NOT TOUCH)
-====================================== -->
-<div id="navbar-placeholder"></div>
+<div id="cursor-glow"></div>
 
-<!-- ======================================
-     SKU HEADER
-====================================== -->
-<header class="page-header compact">
-  <div class="container">
-    <span class="tag">SKU TEMPLATE · ENGINEERING MODE</span>
-    <h1>{{SKU_NAME}}</h1>
-    <p class="subtitle">
-      {{SKU_POSITIONING}}
-    </p >
-  </div>
+<nav class="site-navbar">
+    <div class="nav-inner">
+        <div class="nav-logo">
+            <a href="index.html"><img src="logo-white.webp" alt="YISHEN GLOBAL"></a>
+        </div>
+        <div class="nav-menu">
+            <a href="index.html">System</a>
+            <a href="home-and-office-furniture.html">Solutions</a>
+            <a href="resources.html">Resources</a>
+            <a href="contact.html" class="nav-cta active">Initiate Briefing</a>
+        </div>
+    </div>
+</nav>
+
+<div class="nav-spacer"></div>
+
+<header class="page-hero small" style="background: linear-gradient(90deg, var(--deep-space) 40%, transparent 100%), url('header-resources.webp'); background-size: cover;">
+    <div class="container">
+        <span class="tag">[ SKU_PASSPORT_STABLE ]</span>
+        <h1 style="text-transform: uppercase; letter-spacing: -2px;">{{SKU_NAME}}</h1>
+        <p class="subtitle" style="border-left: 2px solid var(--neon-blue); padding-left: 20px; color: var(--text-dim);">
+            {{SKU_POSITIONING}}
+        </p>
+    </div>
 </header>
 
-<!-- ======================================
-     SKU CORE OVERVIEW
-====================================== -->
 <main class="section">
-  <div class="container grid-2">
+    <div class="container">
+        <div class="grid-2" style="gap: 60px; align-items: start;">
+            
+            <section class="node-card" style="padding: 40px; background: var(--glass);">
+                <span class="tag">// CORE_IDENTIFICATION</span>
+                <h2 style="margin-bottom: 30px;">SKU Overview</h2>
 
-    <!-- SKU META -->
-    <section class="card">
-      <h2>SKU Overview</h2>
+                <table class="architecture-table" style="width: 100%;">
+                    <tr><th>SKU Code</th><td style="font-family: 'JetBrains Mono'; color: var(--neon-blue);">{{SKU_CODE}}</td></tr>
+                    <tr><th>Category</th><td>{{CATEGORY}}</td></tr>
+                    <tr><th>Application</th><td>{{APPLICATION}}</td></tr>
+                    <tr><th>Target Market</th><td>{{TARGET_MARKET}}</td></tr>
+                    <tr><th>MOQ Protocol</th><td>{{MOQ}}</td></tr>
+                    <tr><th>Lead Logic</th><td>{{LEAD_TIME}}</td></tr>
+                </table>
+            </section>
 
-      <table class="spec-table">
-        <tr>
-          <th>SKU Code</th>
-          <td>{{SKU_CODE}}</td>
-        </tr>
-        <tr>
-          <th>Category</th>
-          <td>{{CATEGORY}}</td>
-        </tr>
-        <tr>
-          <th>Application</th>
-          <td>{{APPLICATION}}</td>
-        </tr>
-        <tr>
-          <th>Target Market</th>
-          <td>{{TARGET_MARKET}}</td>
-        </tr>
-        <tr>
-          <th>MOQ</th>
-          <td>{{MOQ}}</td>
-        </tr>
-        <tr>
-          <th>Lead Time</th>
-          <td>{{LEAD_TIME}}</td>
-        </tr>
-      </table>
-    </section>
+            <section class="node-card" style="padding: 40px; border-left: 1px solid var(--industrial-gray);">
+                <span class="tag">// TECH_PARAMETERS</span>
+                <h2 style="margin-bottom: 30px;">Engineering Spec</h2>
 
-    <!-- ENGINEERING -->
-    <section class="card">
-      <h2>Engineering Specification</h2>
-
-      <ul class="bullet">
-        <li>{{SPEC_1}}</li>
-        <li>{{SPEC_2}}</li>
-        <li>{{SPEC_3}}</li>
-        <li>{{SPEC_4}}</li>
-        <li>{{SPEC_5}}</li>
-      </ul>
-    </section>
-
-  </div>
+                <ul class="logic-list" style="list-style: none;">
+                    <li><strong style="color: #fff;">01:</strong> {{SPEC_1}}</li>
+                    <li><strong style="color: #fff;">02:</strong> {{SPEC_2}}</li>
+                    <li><strong style="color: #fff;">03:</strong> {{SPEC_3}}</li>
+                    <li><strong style="color: #fff;">04:</strong> {{SPEC_4}}</li>
+                    <li><strong style="color: #fff;">05:</strong> {{SPEC_5}}</li>
+                </ul>
+            </section>
+        </div>
+    </div>
 </main>
 
-<!-- ======================================
-     COMPLIANCE & QC
-====================================== -->
-<section class="section light">
-  <div class="container grid-2">
+<section class="section" style="background: rgba(14, 165, 233, 0.02);">
+    <div class="container grid-2" style="gap: 30px;">
 
-    <section class="card">
-      <h2>Compliance & Certification</h2>
-      <ul class="bullet">
-        <li>{{CERT_1}}</li>
-        <li>{{CERT_2}}</li>
-        <li>{{CERT_3}}</li>
-        <li>{{CERT_4}}</li>
-      </ul>
-    </section>
+        <div class="node-card">
+            <span class="tag">AUDIT_COMPLIANCE</span>
+            <h3>Compliance & Certification</h3>
+            <ul class="industry-list" style="margin-top: 20px;">
+                <li>{{CERT_1}}</li>
+                <li>{{CERT_2}}</li>
+                <li>{{CERT_3}}</li>
+                <li>{{CERT_4}}</li>
+            </ul>
+        </div>
 
-    <section class="card">
-      <h2>Quality Control Logic</h2>
-      <ul class="bullet">
-        <li>{{QC_1}}</li>
-        <li>{{QC_2}}</li>
-        <li>{{QC_3}}</li>
-        <li>{{QC_4}}</li>
-      </ul>
-    </section>
+        <div class="node-card">
+            <span class="tag">QUALITY_PROTOCOL</span>
+            <h3>Quality Control Logic</h3>
+            <ul class="industry-list" style="margin-top: 20px;">
+                <li>{{QC_1}}</li>
+                <li>{{QC_2}}</li>
+                <li>{{QC_3}}</li>
+                <li>{{QC_4}}</li>
+            </ul>
+        </div>
 
-  </div>
+    </div>
 </section>
 
-<!-- ======================================
-     PACKAGING & DELIVERY
-====================================== -->
 <section class="section">
-  <div class="container grid-2">
+    <div class="container grid-2" style="gap: 30px;">
 
-    <section class="card">
-      <h2>Packaging Engineering</h2>
-      <ul class="bullet">
-        <li>{{PACK_1}}</li>
-        <li>{{PACK_2}}</li>
-        <li>{{PACK_3}}</li>
-        <li>{{PACK_4}}</li>
-      </ul>
-    </section>
+        <div class="node-card">
+            <span class="tag">SURVIVABILITY_MODEL</span>
+            <h3>Packaging Engineering</h3>
+            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 20px;">ISTA-standard protection for zero-defect terminal delivery.</p>
+            <ul class="logic-list">
+                <li>{{PACK_1}}</li>
+                <li>{{PACK_2}}</li>
+                <li>{{PACK_3}}</li>
+                <li>{{PACK_4}}</li>
+            </ul>
+        </div>
 
-    <section class="card">
-      <h2>Delivery Model</h2>
-      <ul class="bullet">
-        <li>{{DELIVERY_1}}</li>
-        <li>{{DELIVERY_2}}</li>
-        <li>{{DELIVERY_3}}</li>
-        <li>{{DELIVERY_4}}</li>
-      </ul>
-    </section>
+        <div class="node-card">
+            <span class="tag">LOGISTICS_DRIVE</span>
+            <h3>Delivery Model</h3>
+            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 20px;">Global shipping coordination and customs audit ready.</p>
+            <ul class="logic-list">
+                <li>{{DELIVERY_1}}</li>
+                <li>{{DELIVERY_2}}</li>
+                <li>{{DELIVERY_3}}</li>
+                <li>{{DELIVERY_4}}</li>
+            </ul>
+        </div>
 
-  </div>
+    </div>
 </section>
 
-<!-- ======================================
-     ENGINEERING CTA
-====================================== -->
-<section class="section dark">
-  <div class="container center">
-    <h2>Request Engineering Review</h2>
-    <p>
-      Provide your market, compliance requirements, and target volume.
-      We respond with a technical & delivery proposal.
-    </p >
-    <a href=" " class="btn primary">
-      Contact Engineering Team
-    </a >
-  </div>
+<section class="cta" style="background: var(--nav-bg); padding: 100px 0; text-align: center;">
+    <div class="container">
+        <span class="tag">REQUEST_BRIEF</span>
+        <h2 style="margin: 20px 0;">Request Engineering Review</h2>
+        <p style="max-width: 600px; margin: 0 auto 40px; color: var(--text-dim);">
+            Provide your market, compliance requirements, and target volume. 
+            We respond with a technical & delivery proposal within 24H.
+        </p>
+        <a href="contact.html" class="btn-primary" style="padding: 20px 60px;">
+            Contact Engineering Team
+        </a>
+    </div>
 </section>
 
-<!-- ======================================
-     GLOBAL FOOTER (DO NOT TOUCH)
-====================================== -->
-<div id="footer-placeholder"></div>
+<footer class="footer">
+    <div class="container">
+        <div class="shield-footer">
+            <img src="partners-shield.webp" alt="System Shield" style="width: 100%; opacity: 0.2;">
+        </div>
+        <div class="footer-grid">
+            <div>
+                <h4 style="font-family: 'JetBrains Mono'; color: var(--neon-blue);">YISHEN_SKU_NODE</h4>
+                <p>Engineered for Predictability.<br>Data Sovereignty Protocol Enabled.</p>
+            </div>
+            <div>
+                <h4>Briefing</h4>
+                <p>+86 188 5727 7313</p>
+                <p>+86 159 6827 7867</p>
+            </div>
+        </div>
+        <div style="margin-top: 60px; text-align: center; font-size: 0.65rem; color: #475569; letter-spacing: 2px;">
+            &copy; 2026 YISHEN GLOBAL // COORDINATED INDUSTRIAL ARCHITECTURE
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Cursor Glow Integration
+    const glow = document.getElementById('cursor-glow');
+    document.addEventListener('mousemove', (e) => {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top = e.clientY + 'px';
+    });
+</script>
 
 </body>
 </html>
