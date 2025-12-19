@@ -1,54 +1,62 @@
 /* =========================================================
    YISHEN GLOBAL — Integrated Architectural Stylesheet
-   Version: 2026.FINAL (Hybrid Master)
-   Logic: System Sovereignty & Precision Engineering
+   Version: 2026.FINAL.MASTER (The Integrated Sovereign)
+   Concept: Kinetic Stability & Multi-Industry Intelligence
 ========================================================= */
 
-/* ========== 01. TOKENS & DESIGN SYSTEM ========== */
+/* ========== 01. TOKENS & SYSTEM VARIABLES ========== */
 :root {
     /* Colors - Fusing deep space blue with kinetic neon */
     --neon-blue: #0ea5e9;
     --neon-glow: rgba(14, 165, 233, 0.4);
-    --deep-space: #010409;          /* Core Black */
-    --nav-bg: rgba(6, 18, 42, 0.95); /* Semi-transparent Deep Blue */
+    --deep-space: #010409;          /* Core Black Body */
+    --nav-bg: rgba(6, 18, 42, 0.92); /* Frosted Industrial Blue */
     --industrial-gray: #1e293b;
     --glass: rgba(15, 23, 42, 0.85);
     
-    /* Text */
+    /* Text Typography */
     --text-main: #f8fafc;
     --text-dim: #94a3b8;
     
-    /* Animation */
-    --transition-main: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    --navbar-height: 90px; /* Increased for Logo visibility */
+    /* Animation & Physics */
+    --transition-main: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --navbar-height: 100px; /* Scientifically scaled for 55px high-res logo */
 }
 
-/* ========== 02. BASE RESET & GLOW ENGINE ========== */
-*, *::before, *::after { box-sizing: border-box; }
+/* ========== 02. BASE RESET & DIGITAL TWIN GLOW ========== */
+*, *::before, *::after { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    -webkit-font-smoothing: antialiased;
+}
 
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background-color: var(--deep-space);
-    color: var(--text-main);
+html {
     scroll-behavior: smooth;
     overflow-x: hidden;
-    line-height: 1.6;
 }
 
-/* Digital Twin Glow - Cursor Tracking */
+body {
+    background-color: var(--deep-space);
+    color: var(--text-main);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Cursor Glow - Activated via Digital Twin Logic */
 #cursor-glow {
     position: fixed;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
     pointer-events: none;
     z-index: 9998;
     transform: translate(-50%, -50%);
+    will-change: transform;
 }
 
-/* ========== 03. NAVIGATION (FIXED & SCALED) ========== */
+/* ========== 03. NAVIGATION (SOVEREIGN COMMAND CENTER) ========== */
 .site-navbar {
     position: fixed;
     top: 0;
@@ -56,11 +64,18 @@ html, body {
     width: 100%;
     height: var(--navbar-height);
     background: var(--nav-bg);
-    backdrop-filter: blur(12px);
-    z-index: 9999 !important; /* Force top layer */
+    backdrop-filter: blur(15px);
+    z-index: 10000 !important; /* Forces layer sovereignty above all elements */
     border-bottom: 1px solid rgba(14, 165, 233, 0.15);
     display: flex;
     align-items: center;
+    transition: var(--transition-main);
+}
+
+/* Auto-collapse on scroll (Optional via JS toggle class) */
+.site-navbar.scrolled {
+    height: 80px;
+    background: rgba(1, 4, 9, 0.98);
 }
 
 .nav-inner {
@@ -73,17 +88,18 @@ html, body {
     align-items: center;
 }
 
-/* Scientific Logo Optimization: Clarity & Scale */
+/* Scientific Logo Sovereignty: High-Res Scaled */
 .nav-logo {
     display: flex;
     align-items: center;
 }
 
 .nav-logo img {
-    height: 55px; /* Scaled from 28px to 55px for readability */
+    height: 55px; /* Locked height for professional brand presence */
     width: auto;
-    filter: drop-shadow(0 0 10px var(--neon-glow));
+    filter: drop-shadow(0 0 12px var(--neon-glow));
     transition: var(--transition-main);
+    display: block;
 }
 
 .nav-logo img:hover {
@@ -93,45 +109,48 @@ html, body {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 35px;
 }
 
 .nav-menu a {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #ffffff;
     text-decoration: none;
     opacity: 0.6;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     transition: var(--transition-main);
+    position: relative;
 }
 
 .nav-menu a:hover, .nav-menu a.active {
     opacity: 1;
     color: var(--neon-blue);
-    text-shadow: 0 0 8px var(--neon-glow);
+    text-shadow: 0 0 10px var(--neon-glow);
 }
 
+/* Dynamic CTA in Navbar */
 .nav-menu .nav-cta {
-    padding: 10px 20px;
+    padding: 10px 24px;
     border: 1px solid var(--neon-blue);
     color: var(--neon-blue);
     opacity: 1;
     font-weight: 700;
+    background: rgba(14, 165, 233, 0.05);
 }
 
 .nav-menu .nav-cta:hover {
     background: var(--neon-blue);
     color: #000;
-    box-shadow: 0 0 20px var(--neon-glow);
+    box-shadow: 0 0 25px var(--neon-glow);
 }
 
-/* Prevents Hero from hiding under Navbar */
 .nav-spacer { height: var(--navbar-height); }
 
 /* ========== 04. HERO & ARCHITECTURAL GRID ========== */
 .page-hero {
-    height: 85vh;
+    height: 90vh;
     display: flex;
     align-items: center;
     background: linear-gradient(90deg, var(--deep-space) 35%, transparent 100%), 
@@ -139,35 +158,43 @@ html, body {
     background-size: cover;
     background-position: center;
     position: relative;
+    border-bottom: 1px solid var(--industrial-gray);
 }
 
 .page-hero h1 {
-    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-size: clamp(3rem, 8vw, 6.5rem);
     font-weight: 900;
-    line-height: 0.9;
-    margin-bottom: 24px;
-    letter-spacing: -3px;
+    line-height: 0.85;
+    margin-bottom: 30px;
+    letter-spacing: -4px;
     text-transform: uppercase;
 }
 
 .page-hero p {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     color: var(--text-dim);
-    max-width: 600px;
+    max-width: 650px;
     border-left: 4px solid var(--neon-blue);
-    padding-left: 24px;
+    padding-left: 28px;
+    margin-bottom: 45px;
 }
 
-/* ========== 05. NODE SYSTEM (120 SKU GRID) ========== */
+/* ========== 05. NODE SYSTEM (120 SKU ARCHITECTURE) ========== */
 .section {
-    padding: 120px 0;
-    border-bottom: 1px solid var(--industrial-gray);
+    padding: 140px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
 .tag {
     font-family: 'JetBrains Mono', monospace;
     color: var(--neon-blue);
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     letter-spacing: 5px;
     text-transform: uppercase;
     display: block;
@@ -176,15 +203,16 @@ html, body {
 
 .node-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 24px;
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
+/* Industrial Component Cards */
 .node-card {
     background: var(--glass);
     border: 1px solid var(--industrial-gray);
-    padding: 48px;
+    padding: 55px;
     transition: var(--transition-main);
     position: relative;
     overflow: hidden;
@@ -192,109 +220,140 @@ html, body {
 
 .node-card:hover {
     border-color: var(--neon-blue);
-    transform: translateY(-10px);
+    transform: translateY(-12px);
     background: rgba(14, 165, 233, 0.04);
 }
 
 .node-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
 
 .stats-node {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.65rem;
     color: var(--neon-blue);
-    margin-top: 30px;
+    margin-top: 35px;
     display: block;
-    opacity: 0.8;
+    opacity: 0.7;
+    letter-spacing: 2px;
 }
 
 /* ========== 06. ENGINEERING TABLES & SPECS ========== */
 .architecture-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 30px 0;
+    margin: 40px 0;
 }
 
 .architecture-table td {
-    padding: 18px 0;
+    padding: 22px 0;
     border-bottom: 1px solid var(--industrial-gray);
     color: var(--text-dim);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .architecture-table tr td:first-child {
     font-family: 'JetBrains Mono', monospace;
     color: var(--neon-blue);
-    width: 40%;
+    width: 35%;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* ========== 07. CONVERSION & BUTTONS ========== */
+/* ========== 07. CONVERSION & PROTOCOL BUTTONS ========== */
 .btn-primary {
     display: inline-block;
-    padding: 20px 48px;
+    padding: 22px 55px;
     background: var(--neon-blue);
     color: #000;
-    font-weight: 800;
+    font-weight: 900;
     font-family: 'JetBrains Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-decoration: none;
     border: none;
-    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition-main);
     cursor: pointer;
+    clip-path: polygon(8% 0, 100% 0, 92% 100%, 0% 100%);
 }
 
 .btn-primary:hover {
     background: #fff;
-    box-shadow: 0 0 30px var(--neon-glow);
-    transform: scale(1.02);
+    box-shadow: 0 0 40px var(--neon-glow);
+    transform: translateY(-5px);
 }
 
-/* ========== 08. FOOTER SHIELD (Industrial Endorsement) ========== */
+/* ========== 08. FOOTER SHIELD (Cluster Backing) ========== */
 .footer {
     background: #000;
-    padding: 100px 0;
+    padding: 120px 0 60px;
     border-top: 1px solid var(--industrial-gray);
 }
 
 .shield-footer {
-    max-width: 700px;
-    margin: 0 auto 60px;
-    opacity: 0.2;
+    max-width: 850px;
+    margin: 0 auto 80px;
+    opacity: 0.25;
     filter: grayscale(1) invert(1);
+    transition: opacity 0.5s;
+}
+
+.shield-footer:hover {
+    opacity: 0.5;
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    gap: 60px;
+    gap: 80px;
+}
+
+.footer h4 {
+    font-family: 'JetBrains Mono';
+    color: var(--neon-blue);
+    margin-bottom: 25px;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
 }
 
 /* ========== 09. RESPONSIVE MATRIX ========== */
+@media (max-width: 1200px) {
+    .nav-inner { padding: 0 30px; }
+    .nav-menu { gap: 20px; }
+    .footer-grid { gap: 40px; }
+}
+
 @media (max-width: 1024px) {
-    .nav-inner { padding: 0 20px; }
-    .nav-menu { gap: 15px; }
-    .nav-logo img { height: 40px; }
-    .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+    .nav-menu { display: none; } /* Use Hamburger Menu for Mobile */
+    .nav-logo img { height: 42px; }
+    --navbar-height: 80px;
+    .footer-grid { grid-template-columns: 1fr; }
+    .architecture-table tr td:first-child { width: 50%; }
 }
 
 @media (max-width: 768px) {
-    .nav-menu { display: none; } /* Mobile Menu should be handled via JS */
-    .page-hero { height: auto; padding: 150px 0 80px; }
-    .grid-2 { grid-template-columns: 1fr; }
+    .page-hero { height: auto; padding: 180px 0 100px; text-align: left; }
+    .node-grid { grid-template-columns: 1fr; }
+    .btn-primary { width: 100%; text-align: center; }
 }
 
-/* Ambient Gear Animation */
+/* Ambient Kinetic Gear Animation */
 .float-gear {
-    position: absolute; right: 8%; top: 10%; width: 180px;
-    animation: floatGear 12s ease-in-out infinite;
-    opacity: 0.3;
+    position: absolute; 
+    right: 5%; 
+    top: 5%; 
+    width: 260px;
+    animation: floatGear 20s ease-in-out infinite;
+    opacity: 0.4;
     pointer-events: none;
+    z-index: 1;
 }
 
 @keyframes floatGear {
     0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-40px) rotate(25deg); }
+    50% { transform: translateY(-60px) rotate(15deg); }
 }
