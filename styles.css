@@ -72,7 +72,6 @@ body {
     transition: var(--transition-main);
 }
 
-/* Auto-collapse on scroll (Optional via JS toggle class) */
 .site-navbar.scrolled {
     height: 80px;
     background: rgba(1, 4, 9, 0.98);
@@ -130,7 +129,6 @@ body {
     text-shadow: 0 0 10px var(--neon-glow);
 }
 
-/* Dynamic CTA in Navbar */
 .nav-menu .nav-cta {
     padding: 10px 24px;
     border: 1px solid var(--neon-blue);
@@ -148,7 +146,45 @@ body {
 
 .nav-spacer { height: var(--navbar-height); }
 
-/* ========== 04. HERO & ARCHITECTURAL GRID ========== */
+/* ========== 04. ANIME LAZY LOAD PATCH (高科技蓝动效) ========== */
+.lazy-container {
+    position: relative;
+    background: #06122a;
+    overflow: hidden;
+}
+
+/* 初始隐藏状态 */
+img[data-src] {
+    opacity: 0;
+    transform: scale(1.05);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: brightness(2) blur(10px);
+}
+
+/* 加载成功状态 - 动漫重组效果 */
+img.img-loaded {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1) blur(0);
+}
+
+/* 电子扫描线 */
+.cyber-scanner {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+    box-shadow: 0 0 15px var(--neon-blue);
+    z-index: 10;
+    animation: scanMove 2s infinite ease-in-out;
+}
+
+@keyframes scanMove {
+    0% { top: -5%; opacity: 0; }
+    50% { opacity: 1; }
+    100% { top: 105%; opacity: 0; }
+}
+
+/* ========== 05. HERO & ARCHITECTURAL GRID ========== */
 .page-hero {
     height: 90vh;
     display: flex;
@@ -179,7 +215,7 @@ body {
     margin-bottom: 45px;
 }
 
-/* ========== 05. NODE SYSTEM (120 SKU ARCHITECTURE) ========== */
+/* ========== 06. NODE SYSTEM (120 SKU ARCHITECTURE) ========== */
 .section {
     padding: 140px 0;
     border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -208,7 +244,6 @@ body {
     margin-top: 60px;
 }
 
-/* Industrial Component Cards */
 .node-card {
     background: var(--glass);
     border: 1px solid var(--industrial-gray);
@@ -241,7 +276,7 @@ body {
     letter-spacing: 2px;
 }
 
-/* ========== 06. ENGINEERING TABLES & SPECS ========== */
+/* ========== 07. ENGINEERING TABLES & SPECS ========== */
 .architecture-table {
     width: 100%;
     border-collapse: collapse;
@@ -264,7 +299,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* ========== 07. CONVERSION & PROTOCOL BUTTONS ========== */
+/* ========== 08. CONVERSION & PROTOCOL BUTTONS ========== */
 .btn-primary {
     display: inline-block;
     padding: 22px 55px;
@@ -287,7 +322,7 @@ body {
     transform: translateY(-5px);
 }
 
-/* ========== 08. FOOTER SHIELD (Cluster Backing) ========== */
+/* ========== 09. FOOTER SHIELD (Cluster Backing) ========== */
 .footer {
     background: #000;
     padding: 120px 0 60px;
@@ -300,10 +335,6 @@ body {
     opacity: 0.25;
     filter: grayscale(1) invert(1);
     transition: opacity 0.5s;
-}
-
-.shield-footer:hover {
-    opacity: 0.5;
 }
 
 .footer-grid {
@@ -320,7 +351,18 @@ body {
     font-size: 0.8rem;
 }
 
-/* ========== 09. RESPONSIVE MATRIX ========== */
+/* ========== 10. MULTILINGUAL & RTL ADAPTATION ========== */
+[dir="rtl"] {
+    font-family: 'Amiri', serif;
+}
+[dir="rtl"] .hero-content p {
+    border-left: none;
+    border-right: 4px solid var(--neon-blue);
+    padding-left: 0;
+    padding-right: 28px;
+}
+
+/* ========== 11. RESPONSIVE MATRIX ========== */
 @media (max-width: 1200px) {
     .nav-inner { padding: 0 30px; }
     .nav-menu { gap: 20px; }
@@ -328,17 +370,15 @@ body {
 }
 
 @media (max-width: 1024px) {
-    .nav-menu { display: none; } /* Use Hamburger Menu for Mobile */
+    .nav-menu { display: none; }
     .nav-logo img { height: 42px; }
-    --navbar-height: 80px;
+    :root { --navbar-height: 80px; }
     .footer-grid { grid-template-columns: 1fr; }
-    .architecture-table tr td:first-child { width: 50%; }
 }
 
 @media (max-width: 768px) {
     .page-hero { height: auto; padding: 180px 0 100px; text-align: left; }
     .node-grid { grid-template-columns: 1fr; }
-    .btn-primary { width: 100%; text-align: center; }
 }
 
 /* Ambient Kinetic Gear Animation */
