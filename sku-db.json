@@ -1,0 +1,28 @@
+{
+  "YS-OC-2026-A01": {
+    "sector": "AERO_MILITARY",
+    "title": "Tactical Command Seating",
+    "desc": "Engineered for 24/7 high-stress operations with 9G shock absorption.",
+    "img": "sku-render-military.webp",
+    "specs": {
+      "Actuation": "Multi-lock Kinetic Drive",
+      "Static Load": "450 KG / 1000 lbs",
+      "Shock Absorption": "9G Peak Calibration"
+    },
+    "compliance": ["BIFMA X5.1-2026", "MIL-STD-810H", "Salt Mist 2000H"],
+    "logistics": { "cbm": "97.4%", "fail": "0.00%" }
+  },
+  "YS-CHAIN-G80": {
+    "sector": "MARINE_HARDWARE",
+    "title": "Anchor Chain Node G80",
+    "desc": "High-tensile alloy steel marine mooring systems for extreme offshore environments.",
+    "img": "sku-anchor.webp",
+    "specs": {
+      "Grade": "Grade 80 Steel",
+      "Breaking Force": "800 KN",
+      "Surface": "Hot-Dip Galv / 120μm"
+    },
+    "compliance": ["ABS Verified", "DNV Certified", "ISO 1704"],
+    "logistics": { "cbm": "98.8%", "fail": "0.01%" }
+  }
+}
