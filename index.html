@@ -13,13 +13,28 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        /* 针对首屏 Hero 的特定统筹：确保背景图与导航栏和谐 */
+        /* 统筹补丁：Logo 精准比例控制 (32px) */
+        .nav-logo img {
+            height: 32px !important;
+            width: auto;
+            filter: drop-shadow(0 0 10px var(--neon-blue));
+            transition: var(--transition-main);
+        }
+        @media (max-width: 1024px) {
+            .nav-logo img { height: 28px !important; }
+        }
+
+        /* 统筹补丁：Hero 视界与背景融合 */
         .hero {
             height: 100vh; display: flex; align-items: center; padding: 0 8%;
             background: linear-gradient(90deg, var(--deep-space) 30%, transparent 100%), url('header-main.webp');
             background-size: cover; background-position: center;
             position: relative;
         }
+
+        /* 动态浮动关键帧补丁 */
+        @keyframes float { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-40px) rotate(15deg); } }
+        .float-icon { animation: float 18s infinite ease-in-out; }
     </style>
 </head>
 <body>
@@ -29,10 +44,10 @@
     <nav id="master-nav" class="site-navbar">
         <div class="nav-inner">
             <a href="index.html" class="brand-block">
-                <img src="logo-white.webp" class="nav-logo" alt="YISHEN GLOBAL ARCHITECT">
+                <img src="logo-white.webp" class="nav-logo" alt="YISHEN GLOBAL">
             </a>
 
-            <div class="mobile-toggle" onclick="MasterEngine.toggleMobileMenu()">
+            <div class="mobile-toggle" onclick="MainEngine.toggleMobileMenu()">
                 <span></span><span></span><span></span>
             </div>
 
@@ -43,13 +58,13 @@
                 <a href="why-us.html" data-i18n="nav_whyus">Protocol</a>
                 <a href="resources.html" data-i18n="nav_resources">Data Center</a>
                 
-                <select class="lang-switcher" onchange="MasterEngine.switchLang(this.value)" 
+                <select class="lang-switcher" onchange="MainEngine.switchLang(this.value)" 
                         style="background:none; color:var(--neon-blue); border:1px solid rgba(14,165,233,0.3); padding:5px 10px; font-family:'JetBrains Mono'; cursor:pointer; font-size: 0.7rem;">
-                    <option value="en">English (US/UK)</option>
+                    <option value="en">English (Global)</option>
                     <option value="zh">简体中文 (China)</option>
                     <option value="ar">العربية (Middle East)</option>
-                    <option value="de">Deutsch (EU)</option>
-                    <option value="vi">Tiếng Việt (APEC)</option>
+                    <option value="de">Deutsch (Europe)</option>
+                    <option value="vi">Tiếng Việt (ASEAN)</option>
                     <option value="ru">Русский (CIS)</option>
                     <option value="es">Español (LatAm)</option>
                 </select>
@@ -57,7 +72,7 @@
 
             <div class="system-display">
                 <div><span class="status-dot"></span>SYS_OPERATIONAL</div>
-                <div>VER_2026.MASTER</div>
+                <div class="desktop-only">VER_2026.MASTER</div>
             </div>
         </div>
     </nav>
@@ -69,60 +84,60 @@
             <span class="tag" data-i18n="hero_tag">[ DETERMINISTIC_SUPPLY_CHAIN ]</span>
             <h1 data-i18n="hero_h1">Architecture<br>Over Sourcing.</h1>
             <p data-i18n="hero_p">
-                Yishen Global is not a trading company. We architect integrated furniture supply chain systems where <b>Aerospace Biomechanics</b>, <b>Linear Motion</b>, and <b>Structural Stability</b> are fused into a single predictable path.
+                YiShen Global architects integrated furniture supply chain systems where <b>Aerospace Biomechanics</b>, <b>Linear Motion</b>, and <b>Logistics Density</b> are fused into a single predictable path.
             </p>
             <div class="btn-group">
-                <a href="#matrix" class="btn-main" data-i18n="cta_start">INITIATE_SYSTEM_AUDIT</a>
-                <a href="resources.html" style="color: #64748b; font-family: 'JetBrains Mono'; text-decoration: none; font-size: 0.8rem; padding: 20px;">[ VIEW_TECHNICAL_DATA ]</a>
+                <a href="#matrix" class="btn-main" data-i18n="cta_start" style="padding: 22px 55px; background: var(--neon-blue); color: #000; text-decoration: none; font-family: 'JetBrains Mono'; font-weight: 700; clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%); display: inline-block;">INITIATE_PROTOCOL</a>
+                <a href="resources.html" style="color: #64748b; font-family: 'JetBrains Mono'; text-decoration: none; font-size: 0.8rem; padding: 22px;">[ VIEW_TECHNICAL_DATA ]</a>
             </div>
         </div>
-        <img src="brand-icon.webp" class="float-icon" alt="System Kinetic Core">
+        <img src="brand-icon.webp" class="float-icon" alt="System Kinetic Core" style="position: absolute; right: 5%; bottom: 10%; width: 260px; opacity: 0.3;">
     </header>
 
-    <section class="section" id="matrix">
+    <section class="section" id="matrix" style="padding: 120px 8%;">
         <div class="grid-header">
             <span class="tag">01_THE_DIAGNOSIS</span>
-            <h3 data-i18n="prob_h2">Sourcing fails are caused by <b>fragmented logic.</b></h3>
+            <h3 data-i18n="prob_h2" style="font-size: 3.5rem; font-weight: 900; margin-top: 20px;">System Integrity Nodes</h3>
         </div>
         
-        <div class="node-grid">
+        <div class="node-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; margin-top: 60px;">
             <div class="node-card">
                 <div class="lazy-container">
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" 
-                         data-src="div-industrial.webp" alt="Industrial Audit" style="width:100%">
+                         data-src="div-industrial.webp" alt="Industrial Node" style="width:100%">
                 </div>
-                <h4 data-i18n="cluster_1">Furniture Systems</h4>
-                <p>Integrating 8000N kinetic thrust capacity with spacecraft-grade energy absorption algorithms.</p>
-                <span class="stats">NODE: LUMBAR_ACTIVE // THRUST: 8000N</span>
+                <h4 data-i18n="cluster_1" style="margin-top: 25px; color: var(--neon-blue);">Furniture Systems</h4>
+                <p>8000N kinetic thrust capacity integrated with spacecraft-grade energy absorption.</p>
+                <span class="stats">NODE: MFG_ACTIVE // HS_CODE: 9403</span>
             </div>
 
             <div class="node-card">
                 <div class="lazy-container">
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" 
-                         data-src="ergo-SPro9001-hero-01.webp" alt="Flagship SKU" style="width:100%">
+                         data-src="ergo-SPro9001-hero-01.webp" alt="Flagship Node" style="width:100%">
                 </div>
-                <h4 data-i18n="cluster_2">Precision Seating</h4>
-                <p>Engineering the SPro 9001 Series: A biomechanical node for high-density enterprise environments.</p>
+                <h4 data-i18n="cluster_2" style="margin-top: 25px; color: var(--neon-blue);">Precision Seating</h4>
+                <p>Biomechanical ergonomic lumbar nodes designed for high-density enterprise trade.</p>
                 <span class="stats">SYNC: DYNAMIC // ABSORB: 90%</span>
             </div>
 
             <div class="node-card">
                 <div class="lazy-container">
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" 
-                         data-src="div-container-optimization.webp" alt="Logistics Optimization" style="width:100%">
+                         data-src="div-container-optimization.webp" alt="Logistics Node" style="width:100%">
                 </div>
-                <h4 data-i18n="cluster_3">Kinetic Logistics</h4>
+                <h4 data-i18n="cluster_3" style="margin-top: 25px; color: var(--neon-blue);">Kinetic Logistics</h4>
                 <p>Mathematical container density optimization and ISTA-6A survivability modeling.</p>
                 <span class="stats">MODEL: DROP_TEST_READY // LOAD: 98%</span>
             </div>
         </div>
     </section>
 
-    <footer>
+    <footer class="footer" style="padding: 100px 8% 50px; background: #000; text-align: center; border-top: 1px solid #1e293b;">
         <div class="shield-container">
-            <img src="partners-shield.webp" class="shield-img" alt="Coordinated Industrial Cluster">
+            <img src="partners-shield.webp" class="shield-img" alt="Coordinated Industrial Cluster" style="height: 120px; opacity: 0.2; filter: grayscale(1) invert(1); margin-bottom: 40px;">
         </div>
-        <div class="footer-legal">
+        <div class="footer-legal" style="font-family: 'JetBrains Mono'; font-size: 0.65rem; color: #334155; letter-spacing: 3px;">
             &copy; 2026 YISHEN GLOBAL // COORDINATED INDUSTRIAL ARCHITECTURE // HS_CODE_LOCKED // ALL DATA ENCRYPTED.
         </div>
     </footer>
@@ -130,7 +145,7 @@
     <script src="main-engine.js"></script>
 
     <script>
-        // 补丁：导航栏滚动及移动端兼容动效同步
+        // 补丁：导航栏滚动动效同步
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('master-nav');
             if (window.scrollY > 80) {
