@@ -1,0 +1,32 @@
+{
+  "YS-OC-2026-A01": {
+    "sector": "AERO_MILITARY",
+    "title": "Tactical Command Hub",
+    "hero_img": "military-render-01.webp",
+    "highlights": ["FR UL94-V0", "Anti-Static", "9G Shockproof"],
+    "specs": {
+      "chassis": "Aerospace Aluminum Alloy",
+      "capacity": "180kg Dynamic / 450kg Static",
+      "compliance": "MIL-STD-810H / BIFMA"
+    },
+    "logistics": {
+      "cbm_eff": "97.4%",
+      "fail_rate": "0.00% (ISTA-6A)"
+    }
+  },
+  "YS-MED-9002": {
+    "sector": "MEDICAL",
+    "title": "Clinical Biomechanical Seating",
+    "hero_img": "medical-render-02.webp",
+    "highlights": ["Silver-Ion Shield", "Chemical Resistant", "ISO 22196"],
+    "specs": {
+      "surface": "Antimicrobial Polymer",
+      "base": "Seamless Stainless Steel",
+      "compliance": "ISO 22196 / FDA Class I"
+    },
+    "logistics": {
+      "cbm_eff": "98.1%",
+      "fail_rate": "0.02%"
+    }
+  }
+}
