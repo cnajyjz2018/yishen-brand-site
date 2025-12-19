@@ -42,23 +42,47 @@
         }
         .site-logo svg { height: 32px !important; width: auto !important; display: block !important; overflow: visible !important; }
 
-        /* ARCHITECTURE GRID SYSTEM */
-        .architecture-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2px;
-            background: var(--industrial-gray);
-            margin: 50px 0;
-            border: 1px solid var(--industrial-gray);
+        /* MAP ARCHITECTURE GRID */
+        .map-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 40px; 
+            padding: 60px 0; 
         }
-        .arch-card {
-            background: var(--deep-space);
-            padding: 45px;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        .map-sector h3 { 
+            color: var(--neon-blue); 
+            font-family: 'JetBrains Mono'; 
+            font-size: 0.8rem; 
+            border-bottom: 1px solid #333; 
+            padding-bottom: 10px; 
+            margin-bottom: 20px; 
+            letter-spacing: 2px;
         }
-        .arch-card:hover { background: rgba(14, 165, 233, 0.05); }
-        .arch-card h3 { color: var(--neon-blue); font-family: 'JetBrains Mono'; font-size: 0.95rem; margin-bottom: 20px; text-transform: uppercase; }
-        
+        .map-link { 
+            display: block; 
+            color: #fff; 
+            text-decoration: none; 
+            margin-bottom: 15px; 
+            font-size: 0.95rem; 
+            opacity: 0.7; 
+            transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1); 
+            font-family: 'Inter', sans-serif;
+        }
+        .map-link:hover { 
+            opacity: 1; 
+            padding-left: 10px; 
+            color: var(--performance-red); 
+        }
+        .node-status { 
+            font-size: 0.6rem; 
+            background: #111; 
+            padding: 2px 8px; 
+            margin-left: 10px; 
+            vertical-align: middle; 
+            font-family: 'JetBrains Mono';
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
         /* DETERMINISTIC DECISION TABLE */
         .architecture-table {
             width: 100%; border-collapse: collapse; margin-top: 40px; font-size: 0.9rem;
@@ -71,11 +95,6 @@
             padding: 25px; border-bottom: 1px solid var(--industrial-gray); color: #94a3b8;
         }
 
-        .logic-list { list-style: none; margin-top: 25px; }
-        .logic-list li {
-            padding: 15px 0; border-left: 2px solid var(--neon-blue); padding-left: 25px;
-            margin-bottom: 15px; background: rgba(14, 165, 233, 0.02); color: var(--text-dim);
-        }
         .version-tag {
             display: inline-block; margin-top: 25px; padding: 6px 18px; border: 1px solid var(--neon-blue);
             color: var(--neon-blue); font-family: 'JetBrains Mono'; font-size: 0.7rem; text-transform: uppercase;
@@ -83,24 +102,16 @@
     </style>
 </head>
 
-<body>
+<body style="background: var(--deep-space);">
 
 <div id="cursor-glow"></div>
 
-<nav id="master-nav" class="site-navbar" style="position:fixed; width:100%; top:0; left:0; z-index:1000; background:rgba(1,4,9,0.9); backdrop-filter:blur(20px);">
-    <div class="nav-inner" style="display:flex; justify-content:space-between; align-items:center; max-width:1440px; margin:0 auto; padding:15px 5%;">
+<nav id="master-nav" class="site-navbar" style="position:fixed; width:100%; top:0; left:0; z-index:10000; background:rgba(1,4,9,0.9); backdrop-filter:blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <div class="nav-inner" style="max-width:1440px; margin:0 auto; padding:15px 5%; display:flex; justify-content:space-between; align-items:center;">
         <a href="index.html" class="site-logo">
             <svg width="280" height="32" viewBox="0 0 280 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g fill="white">
-                    <path d="M2 14L8 10V24L2 28V14Z" fill-opacity="1"/>
-                    <path d="M8 10L14 14V28L8 24V10Z" fill-opacity="0.6"/>
-                    <path d="M2 14L8 18L14 14L8 10L2 14Z" fill-opacity="0.8"/>
-                    <path d="M17 6L23 2V24L17 28V6Z" fill-opacity="1"/>
-                    <path d="M23 2L29 6V28L23 24V2Z" fill-opacity="0.6"/>
-                    <path d="M17 6L23 10L29 6L23 2L17 6Z" fill-opacity="0.8"/>
-                    <path d="M32 14L38 10V24L32 28V14Z" fill-opacity="1"/>
-                    <path d="M38 10L44 14V28L38 24V10Z" fill-opacity="0.6"/>
-                    <path d="M32 14L38 18L44 14L38 10L32 14Z" fill-opacity="0.8"/>
+                    <path d="M2 14L8 10V24L2 28V14Z" fill-opacity="1"/><path d="M17 6L23 2V24L17 28V6Z" fill-opacity="1"/><path d="M32 14L38 10V24L32 28V14Z" fill-opacity="1"/>
                 </g>
                 <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
                 <text x="56" y="18" fill="white" style="font-family:'Inter', sans-serif; font-weight:700; font-size:18px; letter-spacing:0.2px;">Yishen Global</text>
@@ -110,8 +121,9 @@
 
         <div class="nav-links" style="display:flex; gap:25px; align-items:center;">
             <a href="index.html" style="color:white; text-decoration:none; font-family:'JetBrains Mono'; font-size:0.75rem;">SYSTEM</a>
-            <a href="resources.html" style="color:white; text-decoration:none; font-family:'JetBrains Mono'; font-size:0.75rem;">RESOURCES</a>
-            <a href="site-architecture.html" class="active" style="color:var(--neon-blue); text-decoration:none; font-family:'JetBrains Mono'; font-size:0.75rem;">ARCHITECTURE</a>
+            <a href="solutions.html" style="color:white; text-decoration:none; font-family:'JetBrains Mono'; font-size:0.75rem;">SOLUTIONS</a>
+            <a href="industries.html" style="color:white; text-decoration:none; font-family:'JetBrains Mono'; font-size:0.75rem;">INDUSTRIES</a>
+            <a href="site-architecture.html" class="active" style="color:var(--neon-blue); text-decoration:none; font-family:'JetBrains Mono'; font-size:0.75rem;">MAP</a>
             <a href="#" data-connect="LinkedIn" style="color:var(--neon-blue); border:1px solid rgba(14,165,233,0.3); padding:6px 12px; font-family:'JetBrains Mono'; font-size:0.7rem; text-decoration:none; border-radius:2px;">CONNECT_API</a>
         </div>
     </div>
@@ -119,146 +131,89 @@
 
 <div class="nav-spacer" style="height: 80px;"></div>
 
-<main class="container" style="padding: 0 5%;">
+<main class="container" style="padding: 0 8%;">
 
-    <header class="page-hero small" style="background: linear-gradient(90deg, var(--deep-space) 40%, transparent 100%), url('header-main.webp'); background-size: cover; background-position: center right; padding: 100px 8% 60px;">
+    <header class="page-hero small" style="background: linear-gradient(90deg, var(--deep-space) 40%, transparent 100%), url('header-main.webp'); background-size: cover; background-position: center right; padding: 100px 0 60px;">
         <div class="hero-content">
             <span class="tag" style="color:var(--neon-blue); font-family:'JetBrains Mono';">[ SYSTEM_DESIGN_BLUEPRINT ]</span>
             <h1 style="color:white; font-size: clamp(2.5rem, 8vw, 4.2rem); font-weight:900; line-height:1.05; margin: 25px 0;">Site Architecture.</h1>
             <p style="color:var(--text-dim); max-width: 650px; font-size: 1.2rem; line-height: 1.6;">
-                A furniture-first, engineering-driven B2B acquisition and conversion system — architected for decision stability.
+                A furniture-first, engineering-driven B2B acquisition system — architected for industrial decision stability.
             </p>
             <span class="version-tag">System Version · 2026.Master</span>
         </div>
     </header>
 
-    <section class="section" style="padding: 80px 8%;">
-        <span class="tag">01_PHILOSOPHY</span>
-        <h2 style="color:white; margin: 20px 0 40px;">Core Logic</h2>
-        <p style="color: #94a3b8; max-width: 800px; font-size: 1.15rem; line-height: 1.8;">
-            YiShen Global is engineered as a <b>decision system</b>, not a visual catalog. We remove the friction between complex industrial data and buyer acquisition.
-        </p>
-        <ul class="logic-list">
-            <li><strong>Website ≠ Image gallery:</strong> We prioritize technical parameters over artistic fluff.</li>
-            <li><strong>Website ≠ Storytelling:</strong> We focus on architectural evidence and supply chain stability.</li>
-            <li><strong>Website = Decision acceleration:</strong> Engineered to turn procurement intent into verified action.</li>
-        </ul>
-    </section>
-
-    <section class="section" style="padding: 80px 8%; background: rgba(14, 165, 233, 0.02);">
-        <span class="tag">02_SYSTEM_LAYERS</span>
-        <h2 style="color:white; margin: 20px 0 40px;">Architectural Stack</h2>
-        
-        <div class="architecture-grid">
-            <div class="arch-card">
-                <h3>Layer A · Entry</h3>
-                <p style="color: var(--text-dim); font-size: 0.9rem;">Capturing intent through precision positioning.</p>
-                <ul style="font-size: 0.8rem; margin-top:20px; color: #64748b; line-height: 2.2; font-family: 'JetBrains Mono';">
-                    <li>// index.html</li>
-                    <li>// SEO / Strategic Intent</li>
-                    <li>// LinkedIn Loop Integration</li>
-                </ul>
+    <section class="section" style="padding: 60px 0;">
+        <div class="map-grid">
+            <div class="map-sector">
+                <h3>01_CORE_SYSTEM</h3>
+                <a href="index.html" class="map-link">Terminal Index <span class="node-status">ACTIVE</span></a>
+                <a href="solutions.html" class="map-link">Solution Matrix <span class="node-status">ACTIVE</span></a>
+                <a href="why-us.html" class="map-link">Logic Sovereignty <span class="node-status">ACTIVE</span></a>
             </div>
-
-            <div class="arch-card">
-                <h3>Layer B · Logic</h3>
-                <p style="color: var(--text-dim); font-size: 0.9rem;">Explaining the "System-First" methodology.</p>
-                <ul style="font-size: 0.8rem; margin-top:20px; color: #64748b; line-height: 2.2; font-family: 'JetBrains Mono';">
-                    <li>// solutions.html</li>
-                    <li>// industries.html</li>
-                    <li>// why-us.html</li>
-                </ul>
+            <div class="map-sector">
+                <h3>02_VERTICAL_CLUSTERS</h3>
+                <a href="industries.html" class="map-link">Industrial Verticals</a>
+                <a href="sku-detail.html?sector=office" class="map-link">Office Seating Systems</a>
+                <a href="sku-detail.html?sector=medical" class="map-link">Medical Infrastructure</a>
+                <a href="sku-detail.html?sector=aero" class="map-link">Aero-Military Nodes</a>
             </div>
-
-            <div class="arch-card">
-                <h3>Layer C · Evidence</h3>
-                <p style="color: var(--text-dim); font-size: 0.9rem;">Providing deterministic proof and data depth.</p>
-                <ul style="font-size: 0.8rem; margin-top:20px; color: #64748b; line-height: 2.2; font-family: 'JetBrains Mono';">
-                    <li>// resources.html</li>
-                    <li>// engineering-logic.data</li>
-                    <li>// logistics_modeling.webp</li>
-                </ul>
+            <div class="map-sector">
+                <h3>03_INTELLIGENCE</h3>
+                <a href="resources.html" class="map-link">Intel Matrix</a>
+                <a href="duns-certified.html" class="map-link">DUNS Verification <span class="node-status" style="color:var(--neon-blue);">ENCRYPTED</span></a>
+                <span class="map-link" data-intel="Panju" style="cursor:pointer;">Live Trade Flow API</span>
             </div>
-
-            <div class="arch-card">
-                <h3>Layer D · Action</h3>
-                <p style="color: var(--text-dim); font-size: 0.9rem;">Converting verified interest into project briefs.</p>
-                <ul style="font-size: 0.8rem; margin-top:20px; color: #64748b; line-height: 2.2; font-family: 'JetBrains Mono';">
-                    <li>// contact.html</li>
-                    <li>// CRM Intake Protocol</li>
-                    <li>// Briefing Automation</li>
-                </ul>
+            <div class="map-sector">
+                <h3>04_CONTACT_GATEWAY</h3>
+                <a href="contact.html" class="map-link">Initiate Briefing</a>
+                <a href="support.html" class="map-link">Technical Support</a>
             </div>
         </div>
     </section>
 
-    <section class="section" style="padding: 80px 8%;">
-        <span class="tag">03_ROLE_MAPPING</span>
-        <h2 style="color:white; margin: 20px 0 40px;">Decision Path Matrix</h2>
+    <section class="section" style="padding: 80px 0; border-top: 1px solid rgba(255,255,255,0.05);">
+        <span class="tag">DECISION_LOGIC</span>
+        <h2 style="color:white; margin: 20px 0 40px;">Conversion Logic Flow</h2>
+        
         <div style="overflow-x: auto;">
             <table class="architecture-table">
                 <thead>
                     <tr>
-                        <th>Page Node</th>
-                        <th>Role in System</th>
-                        <th>Buyer Question Answered</th>
+                        <th>Architecture Node</th>
+                        <th>Strategic Role</th>
+                        <th>Industrial Intent Captured</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Index</td>
-                        <td>Entry & Positioning</td>
-                        <td>Does this system fit my scale?</td>
+                        <td>Index / Home</td>
+                        <td>Positioning</td>
+                        <td>Establishment of Industrial Sovereignty</td>
                     </tr>
                     <tr>
                         <td>Solutions</td>
-                        <td>System Explanation</td>
-                        <td>How is stability engineered?</td>
+                        <td>Methodology</td>
+                        <td>Validation of System Stability Logic</td>
                     </tr>
                     <tr>
                         <td>Industries</td>
-                        <td>Applicability Logic</td>
-                        <td>Is this for my specific category?</td>
+                        <td>Applicability</td>
+                        <td>Matching SKU Clusters to Demand</td>
                     </tr>
                     <tr>
                         <td>Resources</td>
-                        <td>Trust & Depth</td>
-                        <td>Is the technical data verified?</td>
+                        <td>Evidence</td>
+                        <td>Verification of Technical Compliance (BIFMA/ISTA)</td>
                     </tr>
                     <tr>
                         <td>Contact</td>
-                        <td>Conversion</td>
-                        <td>How do I initiate the audit?</td>
+                        <td>Action</td>
+                        <td>Execution of Technical Briefing</td>
                     </tr>
                 </tbody>
             </table>
-        </div>
-    </section>
-
-    <section class="section" style="padding: 80px 8%; border-bottom: none;">
-        <div class="grid-2" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 80px;">
-            <div>
-                <span class="tag">04_EXPANSION</span>
-                <h2 style="color:white; margin: 20px 0;">Scalable Nodes</h2>
-                <p style="color: #64748b; line-height: 1.8;">The architecture is category-agnostic, designed to integrate multiple industrial verticals into one stable supply chain.</p>
-                <ul class="logic-list" style="font-size: 0.85rem;">
-                    <li>Kinetic Furniture (Core Hub)</li>
-                    <li>Advanced Surface Materials (WPC/Wood)</li>
-                    <li>Industrial Drive Components</li>
-                    <li>Future Verticals via same logic</li>
-                </ul>
-            </div>
-            <div>
-                <span class="tag">05_GOVERNANCE</span>
-                <h2 style="color:white; margin: 20px 0;">Integrated Logic</h2>
-                <p style="color: #64748b; line-height: 1.8;">The system utilizes advanced data governance to accelerate procurement cycles:</p>
-                <ul class="logic-list" style="font-size: 0.85rem;">
-                    <li>Lead Qualification Protocols</li>
-                    <li>Automated Briefing Intakes</li>
-                    <li>Decision-Acceleration Content</li>
-                    <li>Predictive Logistics Integration</li>
-                </ul>
-            </div>
         </div>
     </section>
 
@@ -271,10 +226,7 @@
                 <div class="footer-logo-wrapper" style="margin-bottom: 25px;">
                     <svg width="280" height="32" viewBox="0 0 280 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g fill="white">
-                            <path d="M2 14L8 10V24L2 28V14Z" fill-opacity="1"/>
-                            <path d="M8 10L14 14V28L8 24V10Z" fill-opacity="0.6"/>
-                            <path d="M17 6L23 2V24L17 28V6Z" fill-opacity="1"/>
-                            <path d="M32 14L38 10V24L32 28V14Z" fill-opacity="1"/>
+                            <path d="M2 14L8 10V24L2 28V14Z" fill-opacity="1"/><path d="M17 6L23 2V24L17 28V6Z" fill-opacity="1"/><path d="M32 14L38 10V24L32 28V14Z" fill-opacity="1"/>
                         </g>
                         <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
                         <text x="56" y="18" fill="white" style="font-family:'Inter', sans-serif; font-weight:700; font-size:18px;">Yishen Global</text>
@@ -286,10 +238,9 @@
                 </p>
             </div>
             <div>
-                <h4 style="color:white; margin-bottom:25px; font-family:'JetBrains Mono'; font-size: 0.9rem;">Navigation</h4>
-                <p style="margin-bottom:12px;"><a href="index.html" style="color: #475569; text-decoration: none; font-size:0.9rem;">System Home</a></p>
-                <p style="margin-bottom:12px;"><a href="solutions.html" style="color: #475569; text-decoration: none; font-size:0.9rem;">Solution Matrix</a></p>
-                <p style="margin-bottom:12px;"><a href="contact.html" style="color: #475569; text-decoration: none; font-size:0.9rem;">Initiate Briefing</a></p>
+                <h4 style="color:white; margin-bottom:25px; font-family:'JetBrains Mono'; font-size: 0.9rem;">Governance</h4>
+                <p style="margin-bottom:12px;"><a href="sitemap.xml" style="color: #475569; text-decoration: none; font-size:0.9rem;">Sitemap XML</a></p>
+                <p style="margin-bottom:12px;"><a href="robots.txt" style="color: #475569; text-decoration: none; font-size:0.9rem;">Robot Protocols</a></p>
             </div>
             <div>
                 <h4 style="color:white; margin-bottom:25px; font-family:'JetBrains Mono'; font-size: 0.9rem;">Contact Node</h4>
@@ -297,7 +248,7 @@
                 <p style="color:#475569; font-size:0.9rem;">WhatsApp: +86 188 5727 7313</p>
             </div>
         </div>
-        <div style="margin-top: 80px; text-align: center; font-size: 0.65rem; color: #334155; letter-spacing: 3px; text-transform: uppercase; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 40px;">
+        <div style="margin-top: 80px; text-align: center; font-size: 0.65rem; color: #334155; letter-spacing: 3px; text-transform: uppercase;">
             &copy; 2026 Yishen Global // ARCHITECTURAL INTELLECTUAL PROPERTY // DATA ENCRYPTED.
         </div>
     </div>
