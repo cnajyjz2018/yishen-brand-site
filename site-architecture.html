@@ -1,192 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Site Architecture | YiShen Global · 2026</title>
-
-  <meta name="description" content="System-level site architecture of YiShen Global. A furniture-first AI-driven B2B acquisition, decision, and conversion platform." />
-  <meta name="theme-color" content="#06122A">
-
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Architecture | YISHEN GLOBAL · 2026</title>
+    <meta name="description" content="System-level site architecture of YiShen Global. A furniture-first B2B acquisition, decision, and conversion platform.">
+    <meta name="theme-color" content="#06122A">
+    <link rel="stylesheet" href="styles.css?v=2026">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap">
+    <style>
+        /* Specific Architecture Page Overrides */
+        .architecture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2px;
+            background: var(--industrial-gray);
+            margin: 50px 0;
+            border: 1px solid var(--industrial-gray);
+        }
+        .arch-card {
+            background: var(--deep-space);
+            padding: 40px;
+            transition: var(--transition-main);
+        }
+        .arch-card:hover { background: rgba(14, 165, 233, 0.05); }
+        .arch-card h3 { color: var(--neon-blue); font-family: 'JetBrains Mono'; font-size: 0.9rem; margin-bottom: 15px; }
+        
+        .architecture-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+        .architecture-table th {
+            text-align: left;
+            padding: 20px;
+            background: var(--industrial-gray);
+            color: var(--neon-blue);
+            font-family: 'JetBrains Mono';
+            text-transform: uppercase;
+        }
+        .architecture-table td {
+            padding: 20px;
+            border-bottom: 1px solid var(--industrial-gray);
+            color: #94a3b8;
+        }
+        .logic-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        .logic-list li {
+            padding: 10px 0;
+            border-left: 2px solid var(--neon-blue);
+            padding-left: 20px;
+            margin-bottom: 10px;
+            background: rgba(14, 165, 233, 0.02);
+        }
+        .version-tag {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 5px 15px;
+            border: 1px solid var(--neon-blue);
+            color: var(--neon-blue);
+            font-family: 'JetBrains Mono';
+            font-size: 0.7rem;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<div id="navbar-placeholder"></div>
+<div id="cursor-glow"></div>
 
-<main class="page-wrapper">
-
-  <!-- ================= HERO ================= -->
-  <section class="hero hero-architecture">
-    <div class="container">
-      <h1>Site Architecture</h1>
-      <p class="hero-subtitle">
-        A furniture-first, AI-driven B2B system — not a brochure.
-      </p >
-      <span class="version-tag">System Version · 2026</span>
-    </div>
-  </section>
-
-  <!-- ================= CORE PHILOSOPHY ================= -->
-  <section class="section">
-    <div class="container narrow">
-      <h2>01 · Core Philosophy</h2>
-      <p>
-        YiShen Global is engineered as a <strong>decision system</strong>,
-        not a visual catalog.
-      </p >
-      <ul class="logic-list">
-        <li>Website ≠ Image gallery</li>
-        <li>Website ≠ Brand storytelling only</li>
-        <li><strong>Website = Buyer decision acceleration system</strong></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ================= SYSTEM LAYERS ================= -->
-  <section class="section section-light">
-    <div class="container">
-      <h2>02 · System Layers</h2>
-
-      <div class="architecture-grid">
-
-        <div class="arch-card">
-          <h3>Layer A · Entry</h3>
-          <p>Capture buyer intent and traffic.</p >
-          <ul>
-            <li>index.html</li>
-            <li>SEO / AI search</li>
-            <li>LinkedIn & content loops</li>
-          </ul>
+<nav class="site-navbar">
+    <div class="nav-inner">
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="logo-white.webp" alt="YISHEN GLOBAL">
+            </a>
         </div>
-
-        <div class="arch-card">
-          <h3>Layer B · Understanding</h3>
-          <p>Explain how the system works.</p >
-          <ul>
-            <li>solutions.html</li>
-            <li>industries.html</li>
-            <li>why-us.html</li>
-          </ul>
+        <div class="nav-menu">
+            <a href="index.html">System</a>
+            <a href="resources.html">Resources</a>
+            <a href="site-architecture.html" class="active">Architecture</a>
+            <a href="contact.html" class="nav-cta">Initiate Briefing</a>
         </div>
+    </div>
+</nav>
 
-        <div class="arch-card">
-          <h3>Layer C · Evidence</h3>
-          <p>Provide proof, structure, and logic.</p >
-          <ul>
-            <li>resources.html</li>
-            <li>SKU / engineering logic</li>
-            <li>Packaging & logistics data</li>
-          </ul>
+<div class="nav-spacer"></div>
+
+<main class="container">
+
+    <header class="page-hero small" style="background: linear-gradient(90deg, var(--deep-space) 40%, transparent 100%), url('header-main.webp'); background-size: cover;">
+        <div class="hero-content">
+            <span class="tag">[ SYSTEM_DESIGN_BLUEPRINT ]</span>
+            <h1>Site Architecture.</h1>
+            <p>
+                A furniture-first, engineering-driven B2B acquisition and conversion system — architected for decision stability.
+            </p>
+            <span class="version-tag">System Version · 2026.Master</span>
         </div>
+    </header>
 
-        <div class="arch-card">
-          <h3>Layer D · Conversion</h3>
-          <p>Turn intent into action.</p >
-          <ul>
-            <li>contact.html</li>
-            <li>CRM trigger</li>
-            <li>Auto-response & follow-up</li>
-          </ul>
+    <section class="section">
+        <span class="tag">01_PHILOSOPHY</span>
+        <h2>Core Logic</h2>
+        <p style="color: #94a3b8; max-width: 800px;">
+            YiShen Global is engineered as a <b>decision system</b>, not a visual catalog. We remove the friction between complex industrial data and buyer acquisition.
+        </p>
+        <ul class="logic-list">
+            <li><strong>Website ≠ Image gallery:</strong> We prioritize technical parameters over artistic fluff.</li>
+            <li><strong>Website ≠ Storytelling:</strong> We focus on architectural evidence and supply chain stability.</li>
+            <li><strong>Website = Decision acceleration:</strong> Engineered to turn procurement intent into verified action.</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <span class="tag">02_SYSTEM_LAYERS</span>
+        <h2>Architectural Stack</h2>
+        
+        
+
+        <div class="architecture-grid">
+            <div class="arch-card">
+                <h3>Layer A · Entry</h3>
+                <p>Capturing intent through precision positioning.</p>
+                <ul style="font-size: 0.8rem; margin-top:15px; color: #64748b; line-height: 2;">
+                    <li>// index.html</li>
+                    <li>// SEO / Strategic Intent</li>
+                    <li>// LinkedIn Loop Integration</li>
+                </ul>
+            </div>
+
+            <div class="arch-card">
+                <h3>Layer B · Logic</h3>
+                <p>Explaining the "System-First" methodology.</p>
+                <ul style="font-size: 0.8rem; margin-top:15px; color: #64748b; line-height: 2;">
+                    <li>// solutions.html</li>
+                    <li>// industries.html</li>
+                    <li>// why-us.html</li>
+                </ul>
+            </div>
+
+            <div class="arch-card">
+                <h3>Layer C · Evidence</h3>
+                <p>Providing deterministic proof and data depth.</p>
+                <ul style="font-size: 0.8rem; margin-top:15px; color: #64748b; line-height: 2;">
+                    <li>// resources.html</li>
+                    <li>// engineering-logic.data</li>
+                    <li>// logistics_modeling.webp</li>
+                </ul>
+            </div>
+
+            <div class="arch-card">
+                <h3>Layer D · Action</h3>
+                <p>Converting verified interest into project briefs.</p>
+                <ul style="font-size: 0.8rem; margin-top:15px; color: #64748b; line-height: 2;">
+                    <li>// contact.html</li>
+                    <li>// CRM Intake Protocol</li>
+                    <li>// Briefing Automation</li>
+                </ul>
+            </div>
         </div>
+    </section>
 
-      </div>
-    </div>
-  </section>
+    <section class="section">
+        <span class="tag">03_ROLE_MAPPING</span>
+        <h2>Decision Path</h2>
+        <table class="architecture-table">
+            <thead>
+                <tr>
+                    <th>Page Node</th>
+                    <th>Role in System</th>
+                    <th>Buyer Question Answered</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Index</td>
+                    <td>Entry & Positioning</td>
+                    <td>Does this system fit my scale?</td>
+                </tr>
+                <tr>
+                    <td>Solutions</td>
+                    <td>System Explanation</td>
+                    <td>How is stability engineered?</td>
+                </tr>
+                <tr>
+                    <td>Industries</td>
+                    <td>Applicability Logic</td>
+                    <td>Is this for my specific category?</td>
+                </tr>
+                <tr>
+                    <td>Resources</td>
+                    <td>Trust & Depth</td>
+                    <td>Is the technical data verified?</td>
+                </tr>
+                <tr>
+                    <td>Contact</td>
+                    <td>Conversion</td>
+                    <td>How do I initiate the audit?</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
-  <!-- ================= PAGE ROLE MAP ================= -->
-  <section class="section">
-    <div class="container">
-      <h2>03 · Page Role Map</h2>
-
-      <table class="architecture-table">
-        <thead>
-          <tr>
-            <th>Page</th>
-            <th>Role</th>
-            <th>Buyer Question Answered</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Index</td>
-            <td>Entry & Positioning</td>
-            <td>Who are you?</td>
-          </tr>
-          <tr>
-            <td>Solutions</td>
-            <td>System Explanation</td>
-            <td>How do you solve my problem?</td>
-          </tr>
-          <tr>
-            <td>Industries</td>
-            <td>Applicability Logic</td>
-            <td>Is this for my business?</td>
-          </tr>
-          <tr>
-            <td>Why Us</td>
-            <td>Decision Justification</td>
-            <td>Why choose you?</td>
-          </tr>
-          <tr>
-            <td>Resources</td>
-            <td>Trust & Depth</td>
-            <td>Can I trust your execution?</td>
-          </tr>
-          <tr>
-            <td>Contact</td>
-            <td>Action</td>
-            <td>How do I start?</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- ================= INDUSTRY EXPANSION ================= -->
-  <section class="section section-light">
-    <div class="container narrow">
-      <h2>04 · Expansion Logic</h2>
-      <p>
-        The system is <strong>industry-extendable</strong> without redesign.
-      </p >
-
-      <ul class="logic-list">
-        <li>Furniture (core)</li>
-        <li>Bamboo & Wood Products</li>
-        <li>WPC & Flooring</li>
-        <li>Chains / Industrial Products</li>
-        <li>Future categories via same structure</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ================= AI ROLE ================= -->
-  <section class="section">
-    <div class="container narrow">
-      <h2>05 · AI Governance</h2>
-      <p>
-        AI is not decoration here.
-        It governs:
-      </p >
-
-      <ul class="logic-list">
-        <li>Buyer profiling</li>
-        <li>Content generation</li>
-        <li>Lead qualification</li>
-        <li>CRM automation</li>
-        <li>Decision acceleration</li>
-      </ul>
-    </div>
-  </section>
+    <section class="section grid-2" style="border-bottom: none;">
+        <div>
+            <span class="tag">04_EXPANSION</span>
+            <h2>Scalable Nodes</h2>
+            <p style="color: #64748b;">The architecture is category-agnostic, designed to integrate multiple industrial verticals into one stable supply chain.</p>
+            <ul class="logic-list" style="font-size: 0.85rem;">
+                <li>Kinetic Furniture (Core Hub)</li>
+                <li>Advanced Surface Materials (WPC/Wood)</li>
+                <li>Industrial Drive Components</li>
+                <li>Future Verticals via same logic</li>
+            </ul>
+        </div>
+        <div>
+            <span class="tag">05_GOVERNANCE</span>
+            <h2>Integrated Logic</h2>
+            <p style="color: #64748b;">The system utilizes advanced data governance to accelerate procurement cycles:</p>
+            <ul class="logic-list" style="font-size: 0.85rem;">
+                <li>Lead Qualification Protocols</li>
+                <li>Automated Briefing Intakes</li>
+                <li>Decision-Acceleration Content</li>
+                <li>Predictive Logistics Integration</li>
+            </ul>
+        </div>
+    </section>
 
 </main>
 
-<!-- ================= FOOTER ================= -->
-<div id="footer-placeholder"></div>
+<footer class="footer">
+    <div class="container">
+        <div class="shield-footer">
+            <img src="partners-shield.webp" alt="Supply Chain Shield" style="width: 100%; opacity: 0.2;">
+        </div>
+        <div class="footer-grid">
+            <div>
+                <h4 style="font-family: 'JetBrains Mono'; color: var(--neon-blue);">YISHEN_SYSTEM</h4>
+                <p>Coordinated Industrial Architecture.<br>Engineered for Global Stability.</p>
+            </div>
+            <div>
+                <h4>Navigation</h4>
+                <p><a href="index.html">System</a></p>
+                <p><a href="resources.html">Resources</a></p>
+                <p><a href="contact.html">Briefing</a></p>
+            </div>
+            <div>
+                <h4>Contact Nodes</h4>
+                <p>+86 188 5727 7313</p>
+                <p>+86 159 6827 7867</p>
+            </div>
+        </div>
+        <div style="margin-top: 50px; text-align: center; font-size: 0.65rem; color: #475569; letter-spacing: 2px;">
+            &copy; 2026 YISHEN GLOBAL // ARCHITECTURAL MASTER // ENCRYPTED 
+        </div>
+    </div>
+</footer>
+
+<script>
+    const glow = document.getElementById('cursor-glow');
+    document.addEventListener('mousemove', (e) => {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top = e.clientY + 'px';
+    });
+</script>
 
 </body>
 </html>
