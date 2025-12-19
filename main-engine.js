@@ -10,22 +10,29 @@ const MainEngine = {
 
     /**
      * 1. 中心化社交协议 (Sovereign Social Protocol)
-     * 解决“联系方式重复”的痛点：全站调用此唯一数据源
+     * 深度解决技术链路：集成 Alex 正确的个人 LinkedIn 与 WhatsApp 多号码集群
      */
     socialProtocol: {
-        LinkedIn: "https://www.linkedin.com/company/yishen-global",
-        WhatsApp: "https://wa.me/你的电话号码", 
+        // 领英个人主页：补全协议头，确保浏览器精准跳转
+        LinkedIn: "https://www.linkedin.com/in/alex-yang-yishen/", 
+        
+        // WhatsApp 集群：支持数组管理，默认唤起主联系人
+        WhatsApp: [
+            "https://wa.me/8618857277313",
+            "https://wa.me/8615968277867"
+        ],
+        
         Instagram: "https://instagram.com/yishen_global",
         X: "https://x.com/yishen_global",
-        WeChat: "yishen_support", // 仅在特定交互中弹出
-        Email: "protocol@yishenglobal.com"
+        Email: "alex.yang@yishenglobal.net",
+        WeChat: "yishen_support" 
     },
 
     /**
-     * 系统初始化点火
+     * 系统初始化点火 (Ignition)
      */
     async init() {
-        console.log("%c [SYS] Master Engine Ignition... ", "background: #0ea5e9; color: #000; font-weight: bold;");
+        console.log("%c [SYS] Master Engine Ignition... ", "background: #0ea5e3; color: #000; font-weight: bold;");
 
         // 1. 加载全球语种资源包
         try {
@@ -43,7 +50,7 @@ const MainEngine = {
         // 3. 激活数字化微光追踪 (Digital Twin Aura)
         this.initCursorGlow();
 
-        // 4. 初始化社交媒体 API 绑定 (防止重复渲染)
+        // 4. 初始化社交媒体 API 绑定 (解决 404 与重复渲染)
         this.bindSocialActions();
 
         // 5. 监听全局导航栏滚动状态
@@ -51,24 +58,40 @@ const MainEngine = {
     },
 
     /**
-     * 2. 社交媒体路由分发补丁
-     * 确保全站任何按钮点击后，通过统一 API 跳转，不产生重复冗余
+     * 2. 社交媒体路由分发补丁 (The API Dispatcher)
+     * 确保全站任何 data-connect 按钮点击后，通过统一逻辑唤起，支持多号码识别
      */
     bindSocialActions() {
         document.querySelectorAll('[data-connect]').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const platform = btn.getAttribute('data-connect');
-                const url = this.socialProtocol[platform];
-                if (url) {
-                    window.open(url, '_blank');
-                    console.log(`[SYS] API Route Executed: ${platform}`);
-                }
+                this.executeAPI(platform);
             });
         });
     },
 
     /**
-     * 移动端汉堡菜单开关逻辑
+     * 执行 API 唤起逻辑
+     * @param {string} platform - 目标平台名称
+     */
+    executeAPI(platform) {
+        let target = this.socialProtocol[platform];
+        
+        // WhatsApp 特殊逻辑：如果是数组，默认打开首选联系人，确保业务不断联
+        if (Array.isArray(target)) {
+            target = target[0]; 
+        }
+
+        if (target) {
+            window.open(target, '_blank');
+            console.log(`[SYS] Sovereign Route Triggered: ${platform}`);
+        } else {
+            console.error(`[SYS] Route Protocol Failure: ${platform} is not defined.`);
+        }
+    },
+
+    /**
+     * 移动端汉堡菜单开关逻辑 (集成动漫逻辑补丁)
      */
     toggleMobileMenu() {
         const menu = document.getElementById('main-menu');
@@ -78,7 +101,6 @@ const MainEngine = {
         menu.classList.toggle('mobile-active');
         toggle.classList.toggle('active');
 
-        // 汉堡按钮动漫逻辑补丁
         if (this.isMenuOpen) {
             toggle.children[0].style.transform = "rotate(45deg) translate(6px, 6px)";
             toggle.children[1].style.opacity = "0";
@@ -116,7 +138,7 @@ const MainEngine = {
     },
 
     /**
-     * 高科技蓝/动漫懒加载补丁 (集成了 Cyber Scanner)
+     * 高科技蓝/动漫懒加载补丁 (集成了 Cyber Scanner 动画)
      */
     initLazyLoad() {
         const imageObserver = new IntersectionObserver((entries, observer) => {
@@ -148,7 +170,7 @@ const MainEngine = {
     },
 
     /**
-     * 数字化微光追踪
+     * 数字化微光追踪 (Digital Twin Aura)
      */
     initCursorGlow() {
         const glow = document.getElementById('cursor-glow');
@@ -162,7 +184,7 @@ const MainEngine = {
     },
 
     /**
-     * 导航栏滚动逻辑同步
+     * 导航栏滚动逻辑
      */
     handleScroll() {
         const nav = document.getElementById('master-nav');
