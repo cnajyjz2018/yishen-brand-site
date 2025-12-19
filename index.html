@@ -51,8 +51,12 @@
         .node-card:hover { background: rgba(14, 165, 233, 0.04); border-left: 2px solid var(--neon-blue); transform: translateX(10px); }
         
         /* 导航栏补丁 */
-        .site-navbar { position: fixed; width: 100%; z-index: 1000; background: rgba(1, 4, 9, 0.85); backdrop-filter: blur(20px); transition: 0.3s; }
+        .site-navbar { position: fixed; width: 100%; top:0; left:0; z-index: 1000; background: rgba(1, 4, 9, 0.85); backdrop-filter: blur(20px); transition: 0.3s; }
         .nav-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1440px; margin: 0 auto; padding: 15px 5%; }
+        
+        /* 强制补丁：Logo 物理防御，解决挤压与裁切 */
+        .site-logo { display: flex; align-items: center; height: 32px !important; text-decoration: none; overflow: visible !important; }
+        .site-logo svg { height: 32px; width: auto; overflow: visible !important; }
     </style>
 </head>
 <body>
@@ -62,7 +66,7 @@
     <nav id="master-nav" class="site-navbar">
         <div class="nav-inner">
             <a href="index.html" class="site-logo">
-                <svg width="240" height="32" viewBox="0 0 240 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="260" height="32" viewBox="0 0 260 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g fill="white">
                         <path d="M2 14L8 10V24L2 28V14Z" fill-opacity="1"/>
                         <path d="M8 10L14 14V28L8 24V10Z" fill-opacity="0.6"/>
@@ -75,15 +79,16 @@
                         <path d="M32 14L38 18L44 14L38 10L32 14Z" fill-opacity="0.8"/>
                     </g>
                     <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
-                    <text x="54" y="18" fill="white" style="font-family:'Inter', sans-serif; font-weight:700; font-size:17.5px; letter-spacing:0.1px;">Yishen Global</text>
-                    <text x="54" y="27" fill="white" fill-opacity="0.4" style="font-family:'JetBrains Mono', monospace; font-size:6.5px; text-transform: uppercase;">Coordinated Industrial Architecture</text>
+                    <text x="54" y="18" fill="white" style="font-family:'Inter', sans-serif; font-weight:700; font-size:18px; letter-spacing:0.2px;">Yishen Global</text>
+                    <text x="54" y="27" fill="white" fill-opacity="0.4" style="font-family:'JetBrains Mono', monospace; font-size:6.5px; text-transform: uppercase; letter-spacing:0.4px;">Coordinated Industrial Architecture</text>
                 </svg>
             </a>
 
             <div class="nav-links" id="main-menu" style="display: flex; gap: 25px; align-items: center;">
                 <a href="#systems" style="color:white; text-decoration:none; font-family:'JetBrains Mono'; font-size:0.75rem;">[ SYSTEMS ]</a>
                 <a href="#compliance" style="color:white; text-decoration:none; font-family:'JetBrains Mono'; font-size:0.75rem;">[ COMPLIANCE ]</a>
-                <a href="javascript:void(0)" data-connect="LinkedIn" style="color:var(--neon-blue); text-decoration:none; font-family:'JetBrains Mono'; font-size:0.75rem; border:1px solid rgba(14,165,233,0.3); padding:6px 12px; border-radius:2px;">CONNECT_API</a>
+                
+                <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" style="color:var(--neon-blue); border:1px solid rgba(14,165,233,0.3); padding:6px 12px; font-family:'JetBrains Mono'; font-size:0.7rem; text-decoration:none; border-radius:2px;">CONNECT_API</a>
                 
                 <select class="lang-switcher" onchange="MainEngine.switchLang(this.value)" style="background:none; color:white; border:none; font-family:'JetBrains Mono'; font-size:0.7rem; cursor:pointer;">
                     <option value="en">EN</option>
@@ -170,5 +175,17 @@
     </footer>
 
     <script src="main-engine.js"></script>
+    <script>
+        // 数字化微光跟随逻辑集成
+        const glow = document.getElementById('cursor-glow');
+        if (glow) {
+            document.addEventListener('mousemove', (e) => {
+                requestAnimationFrame(() => {
+                    glow.style.left = e.clientX + 'px';
+                    glow.style.top = e.clientY + 'px';
+                });
+            });
+        }
+    </script>
 </body>
 </html>
