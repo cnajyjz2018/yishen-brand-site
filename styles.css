@@ -1,16 +1,17 @@
 /* =========================================================
    YISHEN GLOBAL — Integrated Architectural Stylesheet
    Version: 2026.FINAL.MASTER (The Integrated Sovereign)
-   Patch: Full-Scale Logo Physical Guard & Frame Recovery
+   Logic: Multi-Device Sovereignty & Precision Engineering
+   Patches: Logo Physical Guard, Content Recovery, Navigation Fix
 ========================================================= */
 
-/* ========== 01. 系统变量与原子协议 ========== */
+/* ========== 01. TOKENS & SYSTEM VARIABLES ========== */
 :root {
     --neon-blue: #0ea5e3;
     --neon-glow: rgba(14, 165, 233, 0.4);
     --performance-red: #A11219;      /* 品牌传承：燊之火底色 */
     --deep-space: #010409;           /* 核心背景黑 */
-    --nav-bg: rgba(1, 4, 9, 0.92);   /* 毛玻璃导航背景 */
+    --nav-bg: rgba(1, 4, 9, 0.95);   /* 毛玻璃导航背景 */
     --industrial-gray: #1e293b;
     --surface: rgba(255, 255, 255, 0.03);
     
@@ -20,21 +21,26 @@
     
     /* 物理常数 */
     --transition-main: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    --navbar-height: 80px;           /* 完美承载 32px Logo */
+    --navbar-height: 80px;           /* 完美承载 32px 矢量 Logo */
 }
 
-/* ========== 02. 全局重置与交互底层 ========== */
+/* ========== 02. BASE RESET & DIGITAL TWIN GLOW ========== */
 *, *::before, *::after { 
     margin: 0; padding: 0; box-sizing: border-box; 
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
     background-color: var(--deep-space);
     color: var(--text-main);
-    font-family: 'Inter', -apple-system, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
 }
 
 /* 数字化微光补丁：600px 覆盖，will-change 优化性能 */
@@ -49,15 +55,15 @@ body {
 }
 
 /* ========== 03. LOGO 物理防御补丁 (核心修复) ========== */
-/* 强制解决照片中反馈的 Logo 遮挡、放大、破损问题 */
+/* 强制解决照片中反馈的 Logo 遮挡、尺寸失控与破损问题 */
 .site-logo, .nav-logo img, .site-logo svg {
     height: 32px !important;         /* 强制物理高度 32px，严禁溢出 */
-    width: auto !important;          /* 保持比例 */
+    width: auto !important;          /* 保持矢量比例 */
     max-height: 32px !important;
     display: flex !important;
     align-items: center !important;
     text-decoration: none !important;
-    overflow: visible !important;     /* 确保 SVG 内部文字（如 Global）不被裁切 */
+    overflow: visible !important;     /* 核心：确保 SVG 内部文字不被裁切 */
     filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.3));
     transition: var(--transition-main);
 }
@@ -66,24 +72,32 @@ body {
     display: block !important;
 }
 
+.site-logo:hover {
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 15px var(--neon-blue));
+}
+
 /* ========== 04. 导航指挥中心 (Sovereign Navbar) ========== */
 .site-navbar {
     position: fixed;
     top: 0; left: 0; width: 100%;
-    height: var(--navbar-height);
-    background: var(--nav-bg);
-    backdrop-filter: blur(15px);
-    z-index: 10000;
+    height: var(--navbar-height) !important;
+    background: var(--nav-bg) !important;
+    backdrop-filter: blur(10px);
+    z-index: 99999 !important;        /* 确保导航永远置顶 */
     border-bottom: 1px solid rgba(14, 165, 233, 0.15);
+    display: flex;
+    align-items: center;
 }
 
 .nav-inner {
+    width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 5%;
     height: 100%;
-    display: flex;
-    justify-content: space-between; /* 强制两端分布：Logo 左，菜单右 */
+    display: flex !important;
+    justify-content: space-between !important;
     align-items: center !important;
 }
 
@@ -110,12 +124,14 @@ body {
     text-shadow: 0 0 10px var(--neon-blue);
 }
 
-/* ========== 05. 视觉避障 Hero 补丁 ========== */
+.nav-spacer { height: var(--navbar-height); }
+
+/* ========== 05. 视觉避障 HERO 系统 ========== */
 .hero, .page-hero {
-    height: 85vh;
+    height: 90vh;
     display: flex;
     align-items: center;
-    /* 35% 黑色遮罩确保左侧文字可读性，Banner 焦点右偏移避开遮挡 */
+    /* 线性渐变提供 35% 黑色遮罩保护文字，Banner 焦点向右偏移 */
     background: linear-gradient(90deg, var(--deep-space) 35%, transparent 100%), 
                 url('/Yishen-Global-Hero-Banner-2026.webp');
     background-size: cover;
@@ -124,8 +140,16 @@ body {
     padding: 0 8%;
 }
 
+.page-hero h1 {
+    font-size: clamp(2.2rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+}
+
 /* ========== 06. 找回重要框架：NODE & CLUSTER SYSTEM ========== */
-.section { padding: 100px 8%; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.section { padding: 80px 8%; border-bottom: 1px solid rgba(255,255,255,0.05); }
 
 .protocol-grid {
     display: grid;
@@ -156,7 +180,7 @@ body {
     display: block;
 }
 
-/* ========== 07. 工业审计标签 (Audit Tag) ========== */
+/* ========== 07. 工业审计与合规组件 ========== */
 .audit-box {
     position: relative;
     border: 1px solid rgba(14, 165, 233, 0.2);
@@ -175,23 +199,35 @@ body {
     font-weight: 700;
 }
 
-/* ========== 08. 响应式补丁 ========== */
+/* ========== 08. 响应式与移动端主权 ========== */
 @media (max-width: 1024px) {
+    :root { --navbar-height: 70px; }
     .nav-inner { padding: 0 20px; }
     .site-logo { height: 28px !important; }
+    .site-logo svg { height: 28px !important; }
+    
     .hero { background-position: center; padding: 0 5%; }
     .page-hero h1 { font-size: 3rem; }
 }
 
 /* ========== 09. 补齐页脚视觉一致性 ========== */
 .footer {
-    padding: 100px 8% 50px;
+    padding: 80px 8% 50px;
     background: #000;
     border-top: 1px solid rgba(255,255,255,0.05);
+    text-align: center;
 }
 
 .footer-logo-wrapper svg {
     height: 32px !important;
     width: auto !important;
     overflow: visible !important;
+}
+
+.footer-legal {
+    font-family: 'JetBrains Mono';
+    font-size: 0.65rem;
+    color: #475569;
+    letter-spacing: 2px;
+    margin-top: 40px;
 }
