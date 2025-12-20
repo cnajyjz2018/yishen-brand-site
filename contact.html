@@ -7,7 +7,7 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
-    <link rel="stylesheet" href="styles.css?v=2026">
+    <link rel="stylesheet" href="styles.css?v=2026.FINAL">
 
     <style>
         :root {
@@ -69,7 +69,7 @@
 
     <nav id="master-nav">
         <div class="max-w-[1440px] mx-auto px-6 w-full flex items-center justify-between">
-            <a href="index.html" class="flex items-center" style="height: 32px;">
+            <a href="index.html" class="site-logo">
                 <svg width="280" height="32" viewBox="0 0 280 32" fill="none" style="overflow: visible;">
                     <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
                     <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
@@ -81,8 +81,17 @@
                 <a href="why-us.html" class="hover:text-[#0ea5e3]">01_WHY_YISHEN</a>
                 <a href="solutions.html" class="hover:text-[#0ea5e3]">02_SOLUTIONS</a>
                 <a href="industries.html" class="hover:text-[#0ea5e3]">03_INDUSTRIES</a>
-                <a href="resources.html" class="hover:text-[#0ea5e3]">04_RESOURCES</a>
-                <a href="contact.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm">INITIATE_BRIEFING</a>
+                
+                <div class="relative group">
+                    <button onclick="toggleSpringMenu('res-menu')" class="hover:text-[#0ea5e3] uppercase">04_RESOURCES ▼</button>
+                    <div id="res-menu" class="accordion-content absolute top-full right-0 mt-4 w-64 bg-[#010409]/98 border border-white/10 p-5 shadow-2xl">
+                        <a href="resources.html" class="block py-2 text-gray-400 hover:text-white border-b border-white/5">HS_CODE_DATABASE</a>
+                        <a href="site-architecture.html" class="block py-2 text-gray-400 hover:text-white border-b border-white/5">SITE_ARCHITECTURE</a>
+                        <a href="sitemap.xml" target="_blank" class="block py-2 text-gray-400 hover:text-white">XML_SITEMAP_INDEX</a>
+                    </div>
+                </div>
+                
+                <a href="contact.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase">Initiate_Briefing</a>
             </div>
         </div>
     </nav>
@@ -146,12 +155,12 @@
 
     <footer class="bg-[#000] pt-24 pb-12 border-t border-white/5">
         <div class="max-w-[1440px] mx-auto px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 py-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 py-16 border-b border-white/5">
                 <div class="space-y-4">
-                    <h5 class="text-white font-bold text-xs uppercase tracking-widest">Sovereignty</h5>
+                    <h5 class="text-white font-bold text-xs uppercase tracking-widest">Master_Index</h5>
                     <ul class="text-[10px] text-gray-600 space-y-2 font-mono uppercase">
-                        <li><a href="why-us.html" class="hover:text-white transition">Why Yishen</a></li>
-                        <li><a href="solutions.html" class="hover:text-white transition">Stability Sol</a></li>
+                        <li><a href="site-architecture.html" class="hover:text-white">01_Blueprint_Map</a></li>
+                        <li><a href="sitemap.xml" target="_blank" class="hover:text-white">02_Sitemap_XML</a></li>
                     </ul>
                 </div>
 
@@ -169,23 +178,32 @@
                     </div>
                     <div style="display: flex !important; flex-wrap: nowrap !important; align-items: center; gap: 24px;" class="opacity-30 grayscale hover:grayscale-0 transition-all duration-500">
                         <a href="https://www.visa.com" target="_blank" style="flex-shrink: 0 !important; display: block;">
-                            <img src="./visa-mastercard.png" style="height: 16px; width: auto; max-width: none !important;" alt="Secure Payment Gateways">
+                            <img src="./visa-mastercard.png" style="height: 16px; width: auto; max-width: none !important;" alt="Secure Payments">
                         </a>
                         <span class="text-[8px] font-mono text-gray-500 uppercase tracking-[2px] whitespace-nowrap">Encrypted_Settlement_Active</span>
                     </div>
                 </div>
             </div>
-            <div class="pt-8 border-t border-white/5 text-center">
-                <p class="text-[9px] font-mono text-gray-800 tracking-[4px] uppercase">&copy; 2026 YISHEN GLOBAL // COORDINATED INDUSTRIAL ARCHITECTURE.</p>
+            <div class="pt-8 text-center">
+                <p class="text-[9px] font-mono text-gray-800 tracking-[4px] uppercase">&copy; 2026 YISHEN GLOBAL // ARCHITECTURE_VERIFIED.</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // 核心逻辑引擎
+        function toggleSpringMenu(id) {
+            const el = document.getElementById(id);
+            if (el.style.maxHeight === '0px' || el.style.maxHeight === '') {
+                el.style.maxHeight = el.scrollHeight + "px";
+            } else { el.style.maxHeight = "0px"; }
+        }
+
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             requestAnimationFrame(() => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; });
         });
+
         document.getElementById('briefing-form').addEventListener('submit', function(e) {
             e.preventDefault(); alert('PROTOCOL INITIATED. AN ARCHITECT WILL CONTACT YOU WITHIN 24H.');
         });
