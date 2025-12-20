@@ -1,7 +1,7 @@
 /* =========================================================
    YiShen Global — Integrated Master Styles (2026.FINAL)
+   Logic: Layout Sovereignty, Anti-Clipping, GPU Glow, Mobile-Fit
    Version: 2026.FINAL.MASTER (All Patches Integrated)
-   Patches: Layout Sovereignty, Anti-Clipping, GPU Glow, Mobile-Fit
    ========================================================= */
 
 :root {
@@ -13,7 +13,7 @@
     --spring-curve: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 01_Core_Reset */
+/* 01_Core_Reset & Base */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body { 
@@ -49,21 +49,45 @@ body {
     justify-content: space-between; align-items: center;
 }
 
-/* 04_Spring_Action_Core (Navigation Logic) */
+/* 04_Navigation_Interaction (Spring Core) */
 .accordion-content {
     max-height: 0; overflow: hidden;
     transition: max-height 0.4s var(--spring-curve);
     background: rgba(255, 255, 255, 0.02);
 }
 
-/* 05_Logo_Guard (Physical Defense) */
 .site-logo svg {
     height: 32px !important; width: auto !important;
     display: block !important; overflow: visible !important;
     filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.3));
 }
 
-/* 06_Mobile_Responsive_Engine */
+/* 05_Footer_Graphics_Defense (Anti-Clipping Patch) */
+footer .flex-shrink-0 {
+    flex-shrink: 0 !important; /* 强制锁定物理尺寸，绝不允许父容器挤压 */
+}
+
+footer img {
+    max-width: none !important;      /* 撤销限制，防止挤压变形 */
+    display: block !important;       /* 消除基线偏移 */
+    inline-block !important;         /* 兼容性平滑处理 */
+    vertical-align: middle;
+    backface-visibility: hidden;     /* 解决渲染锯齿 */
+    -webkit-user-drag: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 06_Global_Intelligence_Matrix (Grayscale Filter) */
+.grayscale { 
+    filter: grayscale(100%); 
+    transition: filter 0.5s var(--spring-curve); 
+}
+
+.grayscale:hover { 
+    filter: grayscale(0%); 
+}
+
+/* 07_Mobile_Responsive_Engine (Huawei/iOS Optimization) */
 @media (max-width: 768px) {
     /* 彻底解决手机端“看不全”和“滑不动”Bug */
     .hero, .page-hero { 
@@ -74,7 +98,24 @@ body {
     
     .nav-container { padding: 0 20px; }
 
-    /* 页脚矩阵自动降维对齐，防止文字重叠 */
+    /* 页脚响应式对齐修正 */
+    footer .items-end {
+        align-items: center !important;    /* 手机端强制居中防止靠右截断 */
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    footer .flex-nowrap {
+        justify-content: center !important; /* 图标手机端居中排布 */
+    }
+
+    /* 解决窄屏文字溢出 */
+    footer span.whitespace-nowrap {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    /* 页脚矩阵自动降维对齐 */
     footer .grid-cols-5, footer .grid-cols-4, footer .grid-cols-2 { 
         grid-template-columns: repeat(2, 1fr) !important; 
         gap: 24px !important; 
@@ -83,7 +124,7 @@ body {
     footer .aspect-[21/9] { aspect-ratio: 4/3 !important; }
 }
 
-/* 07_Utility_Link_Matrix */
+/* 08_Utility_Link_Matrix */
 .nav-link {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.7rem; letter-spacing: 0.1em;
