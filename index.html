@@ -18,7 +18,7 @@
             --spring-curve: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* 数字化微光引擎 */
+        /* 数字化微光补丁 */
         #cursor-glow {
             position: fixed; width: 600px; height: 600px;
             background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
@@ -26,34 +26,35 @@
             will-change: transform; mix-blend-mode: screen;
         }
 
-        /* 弹簧伸缩核心逻辑 */
+        /* 弹簧导航逻辑 */
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--spring-curve); }
 
-        /* 强制主权 Logo 防护 */
-        .site-logo, .site-logo svg { 
-            display: flex !important; align-items: center !important; height: 32px !important; 
-            width: auto !important; overflow: visible !important; filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.3)); 
+        /* 强制主权 Logo 防御 */
+        .site-logo, .site-logo svg, .footer-logo-wrapper svg {
+            display: flex !important; align-items: center !important; height: 32px !important;
+            width: auto !important; text-decoration: none !important; overflow: visible !important;
+            filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.3));
         }
 
-        /* 物理对齐补丁 */
+        /* 响应式对齐补丁 */
         .hero {
             display: flex; align-items: center; padding: 0 8%; padding-top: 80px;
             background: linear-gradient(90deg, var(--deep-space) 35%, rgba(1, 4, 9, 0.4) 60%, transparent 100%), 
                         url('ergo-SPro9001-hero-01.webp');
-            background-size: cover; background-position: center right; min-height: 100vh;
+            background-size: cover; background-position: center right; position: relative; min-height: 100vh;
         }
 
         @media (max-width: 768px) {
-            .hero { padding: 140px 5% 60px; height: auto !important; min-height: 100vh; }
-            footer .grid-cols-5, footer .grid-cols-4, footer .grid-cols-2 { grid-template-columns: repeat(2, 1fr) !important; gap: 24px !important; }
-            .mobile-items-center { align-items: center !important; text-align: center !important; }
+            .hero { height: auto; min-height: 100vh; padding: 120px 5% 60px; }
+            footer .grid-cols-5, footer .grid-cols-4, footer .grid-cols-2 { 
+                grid-template-columns: repeat(2, 1fr) !important; gap: 24px !important; 
+            }
+            .mobile-center { align-items: center !important; text-align: center !important; }
         }
 
-        /* 图标防破碎 & API 高亮 */
+        /* 修复右下角破碎的核心：图标物理渲染锁定 */
         .flex-shrink-0 { flex-shrink: 0 !important; }
         footer img { max-width: none !important; backface-visibility: hidden; }
-        .api-direct-link { transition: 0.3s; }
-        .api-direct-link:hover { color: var(--neon-blue); text-shadow: 0 0 10px var(--neon-blue); }
     </style>
 </head>
 <body class="bg-[#010409] text-white selection:bg-[#0ea5e3]">
@@ -73,7 +74,7 @@
             <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem]">
                 <div class="relative group">
                     <button onclick="toggleSpringMenu('why-us-menu')" class="hover:text-[#0ea5e3] uppercase flex items-center">WHY_YISHEN <span class="ml-1 text-[0.5rem]">▼</span></button>
-                    <div id="why-us-menu" class="accordion-content absolute top-full left-0 mt-4 w-[300px] bg-[#010409]/95 border border-white/10 p-5 shadow-2xl">
+                    <div id="why-us-menu" class="accordion-content absolute top-full left-0 mt-4 w-[320px] bg-[#010409]/95 border border-white/10 p-5 shadow-2xl">
                         <a href="why-us.html" class="block border-l border-white/10 pl-4 hover:border-[#0ea5e3] transition">
                             <span class="block text-white font-bold uppercase">Industrial Sovereignty</span>
                             <span class="text-[0.6rem] text-gray-500 italic">Predictability Engineered.</span>
@@ -91,7 +92,7 @@
 
                 <a href="industries.html" class="hover:text-[#0ea5e3]">INDUSTRIES</a>
                 <a href="resources.html" class="hover:text-[#0ea5e3]">RESOURCES</a>
-                <a href="contact.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black hover:bg-white transition-all rounded-sm uppercase italic">Initiate_Briefing</a>
+                <a href="contact.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black hover:bg-white transition-all rounded-sm">INITIATE_BRIEFING</a>
             </div>
 
             <button class="lg:hidden text-white" onclick="toggleSpringMenu('mobile-drawer')">
@@ -111,8 +112,8 @@
 
     <header class="hero">
         <div class="hero-content z-[2] max-w-[1000px]">
-            <span class="font-mono tracking-[4px] text-[#0ea5e3] text-sm uppercase">[ MISSION_CRITICAL_INFRASTRUCTURE ]</span>
-            <h1 class="text-white text-[clamp(2.5rem,8vw,5.5rem)] font-[900] leading-[1] my-8 uppercase">Architecture Over Sourcing.</h1>
+            <span class="font-mono tracking-[4px] text-[#0ea5e3] text-sm uppercase">[ MISSION_CRITICAL_ARCHITECTURE ]</span>
+            <h1 class="text-white text-[clamp(2.5rem,8vw,5.5rem)] font-[900] leading-[1] my-8 uppercase">Architecture<br>Over Sourcing.</h1>
             <p class="text-[#8b949e] max-w-[700px] text-lg lg:text-xl leading-relaxed mb-12">
                 Integrated supply chain protocols where <b>Structural Integrity</b> and <b>Logistics Density</b> are fused into a deterministic path.
             </p>
@@ -123,7 +124,7 @@
         </div>
     </header>
 
-    <footer class="bg-[#000] pt-24 pb-12 border-t border-white/5 font-inter" id="footer-contact">
+    <footer class="bg-[#000] pt-24 pb-12 border-t border-white/5 font-inter">
         <div class="max-w-[1440px] mx-auto px-8">
             <div class="mb-20 grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
                 <div class="lg:col-span-2">
@@ -137,14 +138,15 @@
                 </div>
                 <div class="space-y-8 border-l border-white/10 pl-8 font-mono">
                     <div>
-                        <h5 class="text-[#0ea5e3] text-[10px] uppercase mb-2 tracking-[2px]">Director_Briefing</h5>
-                        <a href="https://wa.me/8618857277313" class="block text-white text-lg font-bold api-direct-link">WA: +86 188 5727 7313</a>
-                        <a href="mailto:alex.yang@yishenglobal.net" class="text-gray-500 text-xs api-direct-link italic">alex.yang@yishenglobal.net</a>
+                        <h5 class="text-[#0ea5e3] text-[10px] uppercase mb-2">Director_Briefing</h5>
+                        <a href="mailto:alex.yang@yishenglobal.net" class="text-sm text-white hover:text-[#0ea5e3]">alex.yang@yishenglobal.net</a>
+                        <p class="text-xs text-gray-500 mt-1 tracking-widest">+86 188 5727 7313</p>
                     </div>
                     <div>
-                        <h5 class="text-[#0ea5e3] text-[10px] uppercase mb-2 tracking-[2px]">Support_Node</h5>
-                        <a href="https://wa.me/8615968277867" class="block text-white text-lg font-bold api-direct-link">WA: +86 159 6827 7867</a>
-                        <a href="mailto:champion.yang@yishenglobal.net" class="text-gray-500 text-xs api-direct-link italic">champion.yang@yishenglobal.net</a>
+                        <h5 class="text-[#0ea5e3] text-[10px] uppercase mb-2">Global_Operations</h5>
+                        <p class="text-[10px] text-gray-500 uppercase leading-relaxed">
+                            Wood Dale, IL 60191, USA<br>Zhejiang Cluster, China<br>Thailand Hub Node
+                        </p>
                     </div>
                 </div>
             </div>
@@ -160,13 +162,13 @@
                 <div class="space-y-4">
                     <h5 class="text-white font-bold text-xs uppercase tracking-widest">Intel Matrix</h5>
                     <ul class="text-[10px] text-gray-600 space-y-2 font-mono uppercase">
-                        <li><button data-intel="Panju" class="hover:text-white">Panjiva Intelligence</button></li>
-                        <li><button data-intel="Trademo" class="hover:text-white">Trademo Compliance</button></li>
-                        <li><a href="resources.html" class="hover:text-white">Technical Evidence</a></li>
+                        <li><button data-intel="Panju">Panjiva Intelligence</button></li>
+                        <li><button data-intel="Trademo">Trademo Compliance</button></li>
+                        <li><a href="resources.html" class="hover:text-white transition">Technical Evidence</a></li>
                     </ul>
                 </div>
 
-                <div class="col-span-2 lg:col-span-3 flex flex-col items-end justify-center space-y-6 mobile-items-center">
+                <div class="col-span-2 lg:col-span-3 flex flex-col items-end justify-center space-y-6 mobile-center">
                     <div class="flex flex-nowrap gap-8 items-center opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
                         <a href="https://www.bifma.org" target="_blank" title="BIFMA Certified" class="block flex-shrink-0">
                             <img src="bifma-badge.png" class="h-6 w-auto object-contain pointer-events-none" alt="BIFMA">
@@ -174,9 +176,9 @@
                         <a href="https://ista.org" target="_blank" title="ISTA Compliance" class="block flex-shrink-0">
                             <img src="ista-badge.png" class="h-6 w-auto object-contain pointer-events-none" alt="ISTA">
                         </a>
-                        <div class="block flex-shrink-0">
-                            <img src="iso9001.png" class="h-8 w-auto object-contain" alt="ISO9001">
-                        </div>
+                        <a href="https://www.iso.org/iso-9001-quality-management.html" target="_blank" class="block flex-shrink-0">
+                            <img src="iso9001.png" class="h-8 w-auto object-contain pointer-events-none" alt="ISO9001">
+                        </a>
                     </div>
 
                     <div class="flex flex-nowrap gap-6 items-center opacity-30 grayscale hover:grayscale-0 transition-all duration-500">
@@ -188,17 +190,4 @@
                 </div>
             </div>
 
-            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-[9px] font-mono text-gray-800 tracking-[4px] uppercase text-center">
-                    &copy; 2026 YISHEN GLOBAL // COORDINATED INDUSTRIAL ARCHITECTURE // DATA ENCRYPTED.
-                </p>
-                <div class="flex gap-6 font-mono text-[9px] text-gray-500 uppercase">
-                    <a href="site-architecture.html">Blueprint_Map</a><a href="robots.txt">Bot_Protocols</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="main-engine.js"></script>
-</body>
-</html>
+            <div class="pt-8 border-t border-white
