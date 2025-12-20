@@ -3,22 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Industries Matrix | Yishen Global</title>
+    <title>Industrial Clusters | Sovereign Furniture & Supply Chain | YISHEN GLOBAL</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap">
-    <link rel="stylesheet" href="styles.css?v=2026">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="styles.css?v=2026.FINAL">
 
     <style>
-        :root {
-            --neon-blue: #0ea5e3;
-            --performance-red: #A11219;
-            --deep-space: #010409;
-            --navbar-height: 80px;
-            --spring-curve: cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* DIGITAL TWIN GLOW - GPU 优化 */
+        :root { --neon-blue: #0ea5e3; --performance-red: #A11219; --navbar-height: 80px; }
+        
+        /* 数字化微光引擎 */
         #cursor-glow {
             position: fixed; width: 600px; height: 600px;
             background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
@@ -26,22 +20,31 @@
             will-change: transform; mix-blend-mode: screen;
         }
 
-        /* 强制导航主权防护 */
-        #master-nav {
-            position: fixed; top: 0; left: 0; width: 100%; height: var(--navbar-height);
-            background: rgba(1, 4, 9, 0.95); backdrop-filter: blur(24px);
-            z-index: 100000 !important; border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            display: flex; align-items: center;
+        /* 沉浸式行业 Hero 区：整合场景大图 */
+        .ind-hero {
+            padding: 180px 8% 100px;
+            background: linear-gradient(90deg, #010409 40%, transparent 100%), 
+                        url('desk-DDUALX1-scene-office.webp') center right / cover no-repeat;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* 工业级灰度引擎 */
-        .grayscale { filter: grayscale(100%); transition: 0.5s var(--spring-curve); }
+        .sku-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .sku-card:hover { border-color: var(--neon-blue); transform: translateY(-10px); background: rgba(14, 165, 233, 0.02); }
+
+        .grayscale { filter: grayscale(100%); transition: 0.5s; }
         .grayscale:hover { filter: grayscale(0%); opacity: 1 !important; }
 
+        /* 物理补丁：锁定图标防破碎 */
+        footer a { flex: 0 0 auto !important; }
+        footer img { max-width: none !important; min-width: 80px; }
+
         @media (max-width: 768px) {
-            .hero-pt { padding-top: 140px !important; }
+            .ind-hero { padding-top: 140px; background: #010409; }
             .mobile-items-center { align-items: center !important; text-align: center !important; width: 100% !important; }
-            footer .flex-nowrap { justify-content: center !important; }
         }
     </style>
 </head>
@@ -49,82 +52,135 @@
 
     <div id="cursor-glow"></div>
 
-    <nav id="master-nav">
+    <nav id="master-nav" style="position: fixed; top: 0; left: 0; width: 100%; height: var(--navbar-height); background: rgba(1, 4, 9, 0.95); backdrop-filter: blur(24px); z-index: 100000 !important; border-bottom: 1px solid rgba(255, 255, 255, 0.08); display: flex; align-items: center;">
         <div class="max-w-[1440px] mx-auto px-6 w-full flex items-center justify-between">
-            <a href="index.html" class="flex items-center">
-                <svg width="280" height="32" viewBox="0 0 280 32" fill="none" style="overflow: visible;">
+            <a href="index.html" class="site-logo">
+                <svg width="280" height="32" viewBox="0 0 280 32" fill="none" style="overflow: visible !important;">
                     <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
                     <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
                     <text x="56" y="18" fill="white" style="font-family:'Inter'; font-weight:700; font-size:18px;">Yishen Global</text>
                 </svg>
             </a>
-
-            <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest">
-                <a href="index.html" class="hover:text-[#0ea5e3]">00_TERMINAL</a>
-                <a href="why-us.html" class="hover:text-[#0ea5e3]">01_WHY_YISHEN</a>
-                <a href="solutions.html" class="hover:text-[#0ea5e3]">02_SOLUTIONS</a>
-                <a href="contact.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase">Initiate_Briefing</a>
+            <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400">
+                <a href="why-us.html" class="hover:text-white transition">01_GENESIS</a>
+                <a href="solutions.html" class="hover:text-white transition">02_ARCHITECTURES</a>
+                <a href="industries.html" class="text-white border-b border-[#0ea5e3]">03_CLUSTERS</a>
+                <div class="relative group">
+                    <button onclick="toggleSpringMenu('res-menu')" class="hover:text-white uppercase">04_RESOURCES ▼</button>
+                    <div id="res-menu" class="absolute top-full right-0 mt-4 w-64 bg-[#010409] border border-white/10 p-5 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                        <a href="site-architecture.html" class="block py-2 text-gray-400 hover:text-white border-b border-white/5">BLUEPRINT_MAP</a>
+                        <a href="resources.html" class="block py-2 text-gray-400 hover:text-white">DATA_DATABASE</a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 
-    <main class="pt-32 pb-20 px-[8%] hero-pt">
-        <span class="font-mono text-[#0ea5e3] text-sm uppercase tracking-widest">[ INDUSTRY_CLUSTERS_ACTIVE ]</span>
-        <h1 class="text-white text-5xl font-black mt-6 mb-12 uppercase leading-tight">Vertical<br>Sovereignty.</h1>
-        
-        <div class="grid lg:grid-cols-3 gap-8">
-            <div class="p-8 bg-white/5 border border-white/10 hover:border-[#0ea5e3]/50 transition-colors">
-                <h3 class="text-xl font-bold mb-4 uppercase">Office Seating</h3>
-                <p class="text-sm text-gray-400">Precision ergonomic architecture for mission-critical environments.</p>
+    <header class="ind-hero">
+        <div class="max-w-[1000px]">
+            <span class="font-mono tracking-[6px] text-[#0ea5e3] text-sm uppercase">[ SECTOR_SOVEREIGNTY_ACTIVE ]</span>
+            <h1 class="text-white text-[clamp(2.5rem,8vw,5.5rem)] font-[900] leading-[1] my-8 uppercase">Furniture<br>Sovereignty.</h1>
+            <p class="text-gray-400 text-xl max-w-[650px] leading-relaxed">
+                As our **Core Domain**, we architect premium seating and workstation clusters, backed by a deterministic **Supply Chain Backbone**.
+            </p>
+        </div>
+    </header>
+
+    <section class="py-24 px-[8%]">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-white/5 pb-8 gap-6">
+            <div>
+                <h2 class="text-4xl font-black uppercase italic">Product Matrix.</h2>
+                <p class="font-mono text-xs text-[#0ea5e3] mt-3 uppercase tracking-[2px]">// DATA_INTEGRITY: SKU_DATABASE_V2</p>
             </div>
-            <div class="p-8 bg-white/5 border border-white/10 hover:border-[#0ea5e3]/50 transition-colors">
-                <h3 class="text-xl font-bold mb-4 uppercase">Logistic Systems</h3>
-                <p class="text-sm text-gray-400">High-density packing protocols and integrated distribution nodes.</p>
-            </div>
-            <div class="p-8 bg-white/5 border border-white/10 hover:border-[#0ea5e3]/50 transition-colors">
-                <h3 class="text-xl font-bold mb-4 uppercase">Industrial Fabric</h3>
-                <p class="text-sm text-gray-400">Advanced skeletal engineering and material deterministic paths.</p>
+            <div class="flex gap-4 font-mono text-[10px]">
+                <button class="px-6 py-2 border border-[#0ea5e3] text-[#0ea5e3] tracking-widest hover:bg-[#0ea5e3] hover:text-black transition">FILTER_FURNITURE</button>
+                <button class="px-6 py-2 border border-white/10 text-gray-500 tracking-widest hover:border-white transition">FILTER_LOGISTICS</button>
             </div>
         </div>
-    </main>
 
-    <footer class="bg-[#000] py-16 border-t border-white/5">
-        <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-10">
-            <div class="text-[10px] font-mono text-gray-600 uppercase tracking-widest mobile-items-center">
-                © 2026 Yishen Global // Deterministic_Path // Encrypted Node
+        <div id="sku-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div class="col-span-full py-20 text-center font-mono text-gray-700 animate-pulse uppercase tracking-[4px]">
+                Synchronizing_Product_Nodes...
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-[8%] bg-white/[0.01] border-y border-white/5">
+        <div class="max-w-[1440px] mx-auto">
+            <span class="font-mono text-[#A11219] text-xs uppercase tracking-[4px] mb-6 block">// THE_BACKBONE</span>
+            <h2 class="text-3xl font-black uppercase mb-16">Deterministic Supply Protocols</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="group">
+                    <div class="overflow-hidden aspect-square mb-6 bg-black">
+                        <img src="div-packaging-ista6a.webp" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                    </div>
+                    <h4 class="font-bold uppercase text-sm mb-2">ISTA-6A Certification</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed font-mono">Structural protection engineering for high-density global shipping.</p>
+                </div>
+
+                <div class="group">
+                    <div class="overflow-hidden aspect-square mb-6 bg-black">
+                        <img src="div-container-optimization.webp" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                    </div>
+                    <h4 class="font-bold uppercase text-sm mb-2">Load Density Optimization</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed font-mono">Maximized cubic efficiency per maritime and rail node.</p>
+                </div>
+
+                <div class="group">
+                    <div class="overflow-hidden aspect-square mb-6 bg-black">
+                        <img src="engineering-lab.webp" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                    </div>
+                    <h4 class="font-bold uppercase text-sm mb-2">BIFMA Testing Sovereignty</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed font-mono">Internal lab verification for 100% mechanical reliability.</p>
+                </div>
+
+                <div class="group">
+                    <div class="overflow-hidden aspect-square mb-6 bg-black">
+                        <img src="div-heavy-lift-crating.webp" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                    </div>
+                    <h4 class="font-bold uppercase text-sm mb-2">Mission-Critical Crating</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed font-mono">Custom industrial shielding for oversized logistics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#000] py-20 border-t border-white/5">
+        <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="space-y-4">
+                <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Architecture_Verified</div>
+                <div class="flex gap-4 text-[9px] font-mono text-gray-800 uppercase tracking-widest">
+                    <a href="site-architecture.html" class="hover:text-white transition">Blueprint_Map</a> / 
+                    <a href="sitemap.xml" target="_blank" class="hover:text-white transition">XML_Sitemap</a>
+                </div>
             </div>
             
             <div class="flex flex-col items-end gap-6 mobile-items-center">
-                <div style="display: flex !important; flex-wrap: nowrap !important; align-items: center; gap: 32px;" class="opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-                    <a href="https://www.bifma.org" target="_blank" style="flex-shrink: 0 !important; display: block;">
-                        <img src="./bifma-badge.png" style="height: 24px; width: auto; max-width: none !important;" alt="BIFMA">
-                    </a>
-                    <a href="https://ista.org" target="_blank" style="flex-shrink: 0 !important; display: block;">
-                        <img src="./ista-badge.png" style="height: 24px; width: auto; max-width: none !important;" alt="ISTA">
-                    </a>
-                    <a href="https://www.iso.org/iso-9001-quality-management.html" target="_blank" style="flex-shrink: 0 !important; display: block;">
-                        <img src="./iso9001.png" style="height: 32px; width: auto; max-width: none !important;" alt="ISO9001">
-                    </a>
+                <div style="display: flex !important; flex-wrap: nowrap !important; align-items: center; gap: 32px; width: auto;" class="opacity-40 grayscale hover:grayscale-0">
+                    <a href="https://www.bifma.org" target="_blank" style="flex: 0 0 auto !important; min-width: 80px !important;"><img src="./bifma-badge.png" style="height: 24px; width: auto; max-width: none !important;"></a>
+                    <a href="https://ista.org" target="_blank" style="flex: 0 0 auto !important; min-width: 80px !important;"><img src="./ista-badge.png" style="height: 24px; width: auto; max-width: none !important;"></a>
+                    <a href="https://www.iso.org" target="_blank" style="flex: 0 0 auto !important; min-width: 100px !important;"><img src="./iso9001.png" style="height: 32px; width: auto; max-width: none !important;"></a>
                 </div>
-
-                <div style="display: flex !important; flex-wrap: nowrap !important; align-items: center; gap: 24px;" class="opacity-30 grayscale hover:grayscale-0 transition-all duration-500">
-                    <a href="https://www.visa.com" target="_blank" style="flex-shrink: 0 !important; display: block;">
-                        <img src="./visa-mastercard.png" style="height: 16px; width: auto; max-width: none !important;" alt="Secure Payment Gateways">
-                    </a>
-                    <span class="text-[8px] font-mono text-gray-500 uppercase tracking-[2px] whitespace-nowrap">Encrypted_Settlement</span>
+                <div class="flex items-center gap-4 opacity-30 grayscale hover:grayscale-0">
+                    <img src="./visa-mastercard.png" style="height: 16px; width: auto; max-width: none !important; flex: 0 0 auto !important;">
+                    <span class="text-[8px] font-mono text-gray-600 tracking-widest uppercase">Secured_Settlement_Protocol</span>
                 </div>
             </div>
         </div>
     </footer>
 
+    <script src="sku-list-renderer.js"></script>
     <script>
-        const glow = document.getElementById('cursor-glow');
-        document.addEventListener('mousemove', (e) => {
-            requestAnimationFrame(() => {
-                glow.style.left = e.clientX + 'px';
-                glow.style.top = e.clientY + 'px';
-            });
-        });
+        function toggleSpringMenu(id) {
+            const el = document.getElementById(id);
+            if (el.style.maxHeight === '0px' || el.style.maxHeight === '') { el.style.maxHeight = el.scrollHeight + "px"; } 
+            else { el.style.maxHeight = "0px"; }
+        }
+        document.onmousemove = (e) => {
+            const glow = document.getElementById('cursor-glow');
+            requestAnimationFrame(() => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; });
+        };
     </script>
 </body>
 </html>
