@@ -2,14 +2,15 @@
    YiShen Global — Integrated Master Engine 2026
    Version: 2026.FINAL.MASTER (Integrated & Frozen)
    Logic: Navigation Spring-Action, i18n Sync, Intel Matrix Routing
+   Patches: Layout Sovereignty (Logo Guard, Anti-Clipping, GPU Glow)
    ========================================================= */
 
 /**
- * Global Interaction Hooks
- * 这些函数放在全局作用域，确保 HTML 中的 onclick 属性可直接调用
+ * 1. 核心交互钩子 (Global Interaction Hooks)
+ * 放在全局作用域，确保 HTML 中的 onclick 属性可直接调用
  */
 
-// 1. 核心交互：弹簧式伸缩菜单
+// 弹簧式伸缩菜单逻辑 - 解决 SKU 目录过长无法翻页的 Bug
 function toggleSpringMenu(id) {
     const el = document.getElementById(id);
     if (!el) return;
@@ -17,7 +18,7 @@ function toggleSpringMenu(id) {
     // 状态判定：判定当前菜单是否已展开
     const isExpanded = el.style.maxHeight !== '0px' && el.style.maxHeight !== '';
     
-    // 弹簧物理逻辑：展开目标，同时互斥关闭其他同级内容
+    // 弹簧物理逻辑：展开目标，同时互斥关闭其他同级内容（吸取 Panjiva & ImportGenius 逻辑）
     if (!isExpanded) {
         document.querySelectorAll('.accordion-content').forEach(menu => {
             menu.style.maxHeight = '0px';
@@ -29,7 +30,7 @@ function toggleSpringMenu(id) {
     }
 }
 
-// 2. 手机端子菜单增强：处理嵌套展开高度计算与防截断补丁
+// 移动端子菜单增强逻辑 - 特别针对华为和 iOS 系统解除父容器高度限制
 function toggleSubMenu(id) {
     const el = document.getElementById(id);
     const parent = document.getElementById('mobile-drawer'); // 对应移动端侧边栏 ID
@@ -38,7 +39,7 @@ function toggleSubMenu(id) {
     const isExpanded = el.style.maxHeight !== '0px' && el.style.maxHeight !== '';
     el.style.maxHeight = isExpanded ? '0px' : el.scrollHeight + "px";
 
-    // 补丁：如果子菜单展开，强制父容器高度设为 auto，防止内容被截断
+    // 补丁：如果子菜单展开，强制父容器高度设为 auto，防止内容在手机端被截断
     if (parent && !isExpanded) {
         setTimeout(() => {
             parent.style.maxHeight = 'none';
@@ -46,6 +47,9 @@ function toggleSubMenu(id) {
     }
 }
 
+/**
+ * 2. 核心引擎对象 (MainEngine)
+ */
 const MainEngine = {
     langData: null,
     currentLang: localStorage.getItem('lang') || 'en',
@@ -53,9 +57,10 @@ const MainEngine = {
     async init() {
         console.log("%c [SYS] Master Engine Ignition... ", "background: #A11219; color: #fff; font-weight: bold;");
         
-        await this.initI18n();      // 1. 初始化多语种
-        this.bindGlobalEvents();    // 2. 绑定全局事件 (社交 & 情报矩阵)
-        this.initUX();              // 3. 激活 UX 动效与安全补丁
+        await this.initI18n();      // 初始化多语种同步
+        this.bindGlobalEvents();    // 绑定社交 & 情报矩阵路由
+        this.initUX();              // 激活数字化微光与安全补丁
+        this.applyPhysicalPatches(); // 注入布局主权物理补丁
     },
 
     async initI18n() {
@@ -68,9 +73,6 @@ const MainEngine = {
         }
     },
 
-    /**
-     * 多语种切换引擎 (支持动态 SKU 字段翻译)
-     */
     switchLang(lang) {
         if (!this.langData || !this.langData[lang]) return;
         this.currentLang = lang;
@@ -81,27 +83,12 @@ const MainEngine = {
             if (this.langData[lang][key]) el.innerHTML = this.langData[lang][key];
         });
 
-        if (typeof renderSKU === 'function') renderSKU();
-        
         document.documentElement.lang = lang;
         console.log(`[SYS] Language Switched: ${lang}`);
     },
 
     bindGlobalEvents() {
-        // 社交媒体分发 [data-connect]
-        document.querySelectorAll('[data-connect]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const platform = btn.getAttribute('data-connect');
-                const socialProtocols = {
-                    LinkedIn: "https://www.linkedin.com/in/alex-yang-yishen/",
-                    WhatsApp: "https://wa.me/8618857277313",
-                    WeChat: "https://work.weixin.qq.com/ca/dg800057277313"
-                };
-                if (socialProtocols[platform]) window.open(socialProtocols[platform], '_blank');
-            });
-        });
-
-        // 情报矩阵分发 [data-intel] - 吸取 ImportGenius & Trademo 优势
+        // 情报矩阵分发 [data-intel] - 路由至全球贸易情报节点
         document.querySelectorAll('[data-intel]').forEach(btn => {
             btn.addEventListener('click', () => {
                 const node = btn.getAttribute('data-intel');
@@ -112,14 +99,11 @@ const MainEngine = {
                     ZoomInfo: "https://www.zoominfo.com",
                     Gemini: "https://gemini.google.com"
                 };
-                if (intelMatrix[node]) {
-                    console.log(`[SYS] Routing to Intel Node: ${node}`);
-                    window.open(intelMatrix[node], '_blank');
-                }
+                if (intelMatrix[node]) window.open(intelMatrix[node], '_blank');
             });
         });
 
-        // 交互补丁：点击外部自动收起弹簧菜单
+        // 交互补丁：点击外部自动收起弹簧菜单（提升 Windows 办公端体验）
         document.addEventListener("click", (e) => {
             if (!e.target.closest('#master-nav') && !e.target.closest('.accordion-content')) {
                 document.querySelectorAll('.accordion-content').forEach(menu => {
@@ -130,7 +114,7 @@ const MainEngine = {
     },
 
     initUX() {
-        // 数字化微光跟随 (Digital Twin Glow)
+        // 数字化微光跟随 - 启用 GPU 加速解决掉帧 Bug
         const glow = document.getElementById('cursor-glow');
         if (glow) {
             document.addEventListener('mousemove', (e) => {
@@ -141,26 +125,30 @@ const MainEngine = {
             });
         }
 
-        // 图片加载守护 (Image Load Guard) - 防止 120+ SKU 闪烁
-        const images = document.querySelectorAll("img");
-        images.forEach(img => {
+        // 图片加载守护 - 防止 120+ SKU 导致的布局闪烁
+        document.querySelectorAll("img").forEach(img => {
             if (!img.hasAttribute("loading")) img.setAttribute("loading", "lazy");
             img.addEventListener("error", () => { img.style.display = "none"; });
         });
+    },
 
-        // 平滑入场动效
-        const revealItems = document.querySelectorAll("[data-reveal]");
-        if ("IntersectionObserver" in window && revealItems.length) {
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("revealed");
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            revealItems.forEach(item => observer.observe(item));
-        }
+    /**
+     * 3. 布局主权物理补丁：动态注入修复样式
+     */
+    applyPhysicalPatches() {
+        const style = document.createElement('style');
+        style.innerHTML = `
+            /* 强制 Logo 防御逻辑 */
+            .site-logo, .site-logo svg { height: 32px !important; width: auto !important; overflow: visible !important; }
+            /* 弹簧菜单层级主权 */
+            #master-nav { z-index: 100000 !important; backdrop-filter: blur(20px); }
+            /* 响应式布局修正：解决手机端看不到第二页的 Bug */
+            @media (max-width: 768px) {
+                .hero { height: auto !important; padding-top: 120px !important; padding-bottom: 60px !important; }
+            }
+        `;
+        document.head.appendChild(style);
+        console.log("[SYS] Layout Sovereignty Patches Injected.");
     }
 };
 
