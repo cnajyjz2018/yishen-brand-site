@@ -205,3 +205,70 @@ body {
     margin-top: 40px;
     text-align: center;
 }
+/* =========================================================
+   YiShen Global — Layout Sovereignty Patch (v2026.1)
+   目的：解决 Logo 截断、Hero 遮挡、移动端重叠等 Bug
+   ========================================================= */
+
+/* 1. 强制 Logo 防御：确保 SVG 在任何分辨率下不被压缩或截断 */
+.site-logo, .site-logo svg {
+    height: 32px !important;
+    width: auto !important;
+    max-width: 280px !important;
+    display: flex !important;
+    align-items: center !important;
+    overflow: visible !important; /* 确保文字边缘不被切掉 */
+    filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.2));
+}
+
+/* 2. 导航栏层级补丁：确保“弹簧菜单”永远在最高层，不被 Hero 遮挡 */
+#master-nav {
+    z-index: 100000 !important; /* 绝对置顶 */
+    background: rgba(1, 4, 9, 0.85);
+    backdrop-filter: blur(20px); /* 磨砂玻璃效果增强高级感 */
+}
+
+/* 3. Hero 区域“视觉保险”：针对 Windows 宽屏与手机竖屏的完美适配 */
+.hero {
+    position: relative;
+    padding-top: 80px; /* 预留导航栏高度，防止内容重叠 */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    /* 核心补丁：35% 深度黑色渐变，保护标题不被背景图干扰 */
+    background: linear-gradient(90deg, #010409 35%, rgba(1, 4, 9, 0.4) 60%, transparent 100%), 
+                url('/Yishen-Global-Hero-Banner-2026.webp');
+    background-size: cover;
+    background-position: center right;
+}
+
+/* 4. 移动端 (华为/iOS) 专项优化：解决手机端“看不见第二页”的问题 */
+@media (max-width: 768px) {
+    .hero {
+        padding: 120px 5% 60px; /* 增加顶部间距，为手机导航留出空间 */
+        background: linear-gradient(180deg, #010409 40%, rgba(1, 4, 9, 0.6) 100%), 
+                    url('/Yishen-Global-Hero-Banner-2026.webp');
+        background-position: center; /* 手机端背景图居中，防止人物或产品被切掉 */
+        height: auto; /* 允许根据内容高度伸缩 */
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2.5rem, 10vw, 3.5rem) !important; /* 动态字号防止爆框 */
+        line-height: 1.1;
+    }
+
+    /* 手机端导航弹簧分支间距 */
+    .accordion-content {
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 4px;
+        margin-top: 5px;
+    }
+}
+
+/* 5. 数字化微光性能补丁：解决 Windows 高刷新率屏幕下的掉帧问题 */
+#cursor-glow {
+    will-change: transform; /* 启用 GPU 加速 */
+    pointer-events: none;
+    mix-blend-mode: screen; /* 增强发光感 */
+}
+
