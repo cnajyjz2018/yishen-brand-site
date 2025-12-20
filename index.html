@@ -1,75 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Yishen Global | Coordinated Industrial Architecture</title>
+    <title>Yishen Global | Integrated Industrial Architecture</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
-    <link rel="stylesheet" href="styles.css?v=2026">
-
-    <style>
-        :root {
-            --performance-red: #A11219;
-            --neon-blue: #0ea5e3;
-            --deep-space: #010409;
-            --surface: rgba(255, 255, 255, 0.03);
-            --spring-curve: cubic-bezier(0.4, 0, 0.2, 1);
-            --navbar-height: 80px;
-        }
-
-        /* 01_物理主权 CSS 补丁集 */
-        #master-nav {
-            position: fixed; top: 0; left: 0; width: 100%; height: var(--navbar-height);
-            background: rgba(1, 4, 9, 0.95); backdrop-filter: blur(24px);
-            z-index: 100000 !important; border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            display: flex; align-items: center;
-        }
-
-        /* 解决图标破碎的核心物理防御 */
-        footer .flex-shrink-0 { flex-shrink: 0 !important; }
-        footer img {
-            max-width: none !important; /* 撤销容器对图片的限制 */
-            display: block !important;
-            backface-visibility: hidden; /* 优化 GPU 渲染，彻底消除破碎感 */
-            -webkit-user-drag: none;
-        }
-
-        /* 数字化微光补丁 */
-        #cursor-glow {
-            position: fixed; width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
-            border-radius: 50%; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%);
-            will-change: transform; mix-blend-mode: screen;
-        }
-
-        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--spring-curve); }
-
-        .site-logo, .site-logo svg { 
-            display: flex !important; align-items: center !important; height: 32px !important; 
-            width: auto !important; overflow: visible !important; filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.3)); 
-        }
-
-        /* 02_响应式对齐补丁 */
-        @media (max-width: 768px) {
-            .hero { padding-top: 140px; padding-bottom: 60px; height: auto !important; min-height: 100vh; }
-            .mobile-items-center { align-items: center !important; text-align: center !important; width: 100% !important; }
-            footer .flex-nowrap { justify-content: center !important; }
-            footer span.whitespace-nowrap { font-size: 7px; letter-spacing: 1px; }
-            footer .grid-cols-2, footer .grid-cols-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 24px !important; }
-        }
-
-        .grayscale { filter: grayscale(100%); transition: filter 0.5s var(--spring-curve); }
-        .grayscale:hover { filter: grayscale(0%); }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap">
+    <link rel="stylesheet" href="styles.css?v=2026.FINAL">
 </head>
-<body class="bg-[#010409] text-white selection:bg-[#0ea5e3]">
+<body class="bg-[#010409] text-white">
 
     <div id="cursor-glow"></div>
 
     <nav id="master-nav">
-        <div class="max-w-[1440px] mx-auto px-6 w-full flex items-center justify-between">
+        <div class="nav-container">
             <a href="index.html" class="site-logo">
                 <svg width="280" height="32" viewBox="0 0 280 32" fill="none">
                     <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
@@ -78,58 +23,41 @@
                 </svg>
             </a>
 
-            <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem]">
+            <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest">
+                <a href="why-us.html" class="nav-link">01_WHY_YISHEN</a>
                 <div class="relative group">
-                    <button onclick="toggleSpringMenu('why-menu')" class="hover:text-[#0ea5e3] uppercase flex items-center">WHY_YISHEN ▼</button>
-                    <div id="why-menu" class="accordion-content absolute top-full left-0 mt-4 w-[280px] bg-[#010409]/98 border border-white/10 p-5 shadow-2xl">
-                        <a href="why-us.html" class="block border-l border-white/10 pl-4 hover:border-[#0ea5e3] transition text-white font-bold uppercase">Industrial Sovereignty</a>
+                    <button onclick="toggleSpringMenu('sol-menu')" class="nav-link uppercase">02_SOLUTIONS ▼</button>
+                    <div id="sol-menu" class="accordion-content absolute top-full left-0 mt-4 w-64 bg-[#010409]/98 border border-white/10 p-4 shadow-2xl">
+                        <a href="solutions.html" class="block py-2 text-gray-400 hover:text-white border-b border-white/5">Supply Chain Architecture</a>
+                        <a href="industries.html" class="block py-1 text-gray-400 hover:text-white">Vertical Clusters</a>
                     </div>
                 </div>
-                <a href="solutions.html" class="hover:text-[#0ea5e3]">SOLUTIONS</a>
-                <a href="industries.html" class="hover:text-[#0ea5e3]">INDUSTRIES</a>
-                <a href="resources.html" class="hover:text-[#0ea5e3]">RESOURCES</a>
-                <a href="contact.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black hover:bg-white transition-all rounded-sm uppercase italic">Initiate_Briefing</a>
-            </div>
-
-            <button class="lg:hidden text-white" onclick="toggleSpringMenu('mobile-drawer')">
-                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16m-7 6h7"/></svg>
-            </button>
-        </div>
-
-        <div id="mobile-drawer" class="accordion-content lg:hidden bg-[#010409] px-6 border-t border-white/5">
-            <div class="py-10 space-y-6 font-mono text-sm uppercase text-center">
-                <a href="index.html" class="block border-b border-white/5 pb-2">01_Terminal</a>
-                <a href="why-us.html" class="block border-b border-white/5 pb-2">02_Why_Yishen</a>
-                <a href="contact.html" class="block py-4 bg-[#0ea5e3] text-black font-black italic">GET_IN_TOUCH</a>
+                <a href="resources.html" class="nav-link">03_RESOURCES</a>
+                <a href="contact.html" class="px-6 py-2 bg-[#0ea5e3] text-black font-black hover:bg-white transition-all italic rounded-sm">INITIATE_BRIEFING</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero flex items-center px-[8%] min-h-screen relative" style="background: linear-gradient(90deg, #010409 35%, transparent 100%), url('ergo-SPro9001-hero-01.webp') center right / cover no-repeat;">
-        <div class="max-w-[800px] z-[2]">
-            <span class="font-mono tracking-[4px] text-[#0ea5e3] text-sm uppercase">[ COORDINATED_INDUSTRIAL_ARCHITECTURE ]</span>
-            <h1 class="text-white text-[clamp(2.5rem,8vw,5.5rem)] font-[900] leading-[1.1] my-8 uppercase">Architecture Over Sourcing.</h1>
-            <p class="text-[#8b949e] text-lg lg:text-xl leading-relaxed mb-12">Supply chain protocols where <b>Structural Integrity</b> and <b>Logistics Density</b> are fused into a singular deterministic path.</p>
-            <div class="flex gap-6">
-                <a href="contact.html" class="px-8 py-4 bg-[#0ea5e3] text-black font-black uppercase tracking-tighter hover:bg-white transition-all italic">Start Audit</a>
-            </div>
+    <header class="hero flex items-center px-[8%]" style="background: linear-gradient(90deg, #010409 35%, transparent 100%), url('ergo-SPro9001-hero-01.webp') center right / cover no-repeat;">
+        <div class="max-w-[800px] z-[10]">
+            <span class="font-mono tracking-[4px] text-[#0ea5e3] text-sm uppercase">[ MISSION_CRITICAL_INFRASTRUCTURE ]</span>
+            <h1 class="text-white text-[clamp(2.5rem,8vw,5.5rem)] font-[900] leading-[1.1] my-8 uppercase">Architecture<br>Over Sourcing.</h1>
+            <p class="text-[#8b949e] text-lg lg:text-xl leading-relaxed mb-12">Integrated supply chain protocols where <b>Structural Integrity</b> and <b>Logistics Density</b> are fused into a deterministic path.</p>
+            <a href="contact.html" class="px-8 py-4 bg-[#0ea5e3] text-black font-black uppercase tracking-tighter hover:bg-white transition-all">Start Audit</a>
         </div>
     </header>
 
-    <footer class="bg-[#000] pt-24 pb-12 border-t border-white/5">
+    <footer class="bg-[#000] pt-24 pb-12 border-t border-white/5 font-inter">
         <div class="max-w-[1440px] mx-auto px-8">
             <div class="mb-20 grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
                 <div class="lg:col-span-2">
-                    <span class="tag text-[#0ea5e3] font-mono text-xs uppercase tracking-[4px] block mb-4">[ GLOBAL_OPERATIONAL_NODES ]</span>
-                    <div class="relative w-full aspect-[21/9] bg-white/5 border border-white/10 rounded-sm overflow-hidden group">
-                        <img src="div-container-optimization.webp" class="w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 transition-all duration-1000">
-                    </div>
+                    <span class="tag text-[#0ea5e3] font-mono text-xs uppercase tracking-[4px] block mb-4">[ GLOBAL_NODES_ACTIVE ]</span>
+                    <img src="div-container-optimization.webp" class="w-full aspect-[21/9] object-cover opacity-30 grayscale hover:grayscale-0 transition duration-1000 border border-white/10">
                 </div>
                 <div class="space-y-8 border-l border-white/10 pl-8 font-mono">
                     <div>
-                        <h5 class="text-[#0ea5e3] text-[10px] uppercase mb-2 tracking-[2px]">Contact_Gateway</h5>
+                        <h5 class="text-[#0ea5e3] text-[10px] uppercase mb-2">Director_Gateway</h5>
                         <a href="https://wa.me/8618857277313" class="block text-white text-lg font-bold hover:text-[#0ea5e3]">WA: +86 188 5727 7313</a>
-                        <a href="mailto:alex.yang@yishenglobal.net" class="text-gray-500 text-xs italic">alex.yang@yishenglobal.net</a>
                     </div>
                 </div>
             </div>
@@ -137,39 +65,50 @@
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 py-16 border-t border-white/5">
                 <div class="space-y-4">
                     <h5 class="text-white font-bold text-xs uppercase tracking-widest">Sovereignty</h5>
-                    <ul class="text-[10px] text-gray-600 space-y-2 font-mono uppercase">
-                        <li><a href="why-us.html" class="hover:text-white transition">Why Yishen</a></li>
-                        <li><a href="solutions.html" class="hover:text-white transition">Solutions Matrix</a></li>
+                    <ul class="text-[10px] text-gray-600 space-y-2 font-mono">
+                        <li><a href="why-us.html" class="hover:text-white">Why Yishen</a></li>
+                        <li><a href="solutions.html" class="hover:text-white">Coordinated Stability</a></li>
                     </ul>
                 </div>
 
                 <div class="col-span-2 lg:col-span-3 flex flex-col items-end justify-center space-y-6 mobile-items-center">
-                    <div class="flex flex-nowrap gap-8 items-center opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-                        <a href="https://www.bifma.org" target="_blank" class="block flex-shrink-0">
-                            <img src="bifma-badge.png" class="h-6 w-auto object-contain" alt="BIFMA">
+                    <div class="flex flex-nowrap gap-8 items-center opacity-40 grayscale hover:grayscale-0 transition duration-500">
+                        <a href="https://www.bifma.org" target="_blank" class="flex-shrink-0">
+                            <img src="bifma-badge.png" class="h-6 w-auto" alt="BIFMA">
                         </a>
-                        <a href="https://ista.org" target="_blank" class="block flex-shrink-0">
-                            <img src="ista-badge.png" class="h-6 w-auto object-contain" alt="ISTA">
+                        <a href="https://ista.org" target="_blank" class="flex-shrink-0">
+                            <img src="ista-badge.png" class="h-6 w-auto" alt="ISTA">
                         </a>
-                        <a href="https://www.iso.org/iso-9001-quality-management.html" target="_blank" class="block flex-shrink-0">
-                            <img src="iso9001.png" class="h-8 w-auto object-contain" alt="ISO9001">
+                        <a href="https://www.iso.org/iso-9001-quality-management.html" target="_blank" class="flex-shrink-0">
+                            <img src="iso9001.png" class="h-8 w-auto" alt="ISO9001">
                         </a>
                     </div>
-                    <div class="flex flex-nowrap gap-6 items-center opacity-30 grayscale hover:grayscale-0 transition-all duration-500">
-                        <a href="https://www.visa.com" target="_blank" class="block flex-shrink-0">
-                            <img src="visa-mastercard.png" class="h-4 w-auto object-contain" alt="Payment Gateways">
+                    <div class="flex flex-nowrap gap-6 items-center opacity-30 grayscale hover:grayscale-0 transition duration-500">
+                        <a href="https://www.visa.com" target="_blank" class="flex-shrink-0">
+                            <img src="visa-mastercard.png" class="h-4 w-auto" alt="Payments">
                         </a>
                         <span class="text-[8px] font-mono text-gray-500 uppercase tracking-[2px] whitespace-nowrap">Encrypted_Settlement_Active</span>
                     </div>
                 </div>
             </div>
-
-            <div class="pt-8 border-t border-white/5 text-center">
-                <p class="text-[9px] font-mono text-gray-800 tracking-[4px] uppercase">&copy; 2026 YISHEN GLOBAL // COORDINATED INDUSTRIAL ARCHITECTURE.</p>
-            </div>
         </div>
     </footer>
 
-    <script src="main-engine.js"></script>
+    <script>
+        // 核心交互逻辑引擎
+        function toggleSpringMenu(id) {
+            const el = document.getElementById(id);
+            if (el.style.maxHeight === '0px' || el.style.maxHeight === '') {
+                el.style.maxHeight = el.scrollHeight + "px";
+            } else { el.style.maxHeight = "0px"; }
+        }
+        document.onmousemove = (e) => {
+            const glow = document.getElementById('cursor-glow');
+            requestAnimationFrame(() => {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top = e.clientY + 'px';
+            });
+        };
+    </script>
 </body>
 </html>
