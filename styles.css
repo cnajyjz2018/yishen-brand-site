@@ -1,8 +1,8 @@
 /* =========================================================
-   YISHEN GLOBAL — Integrated Architectural Stylesheet
+   YISHEN GLOBAL — Integrated Master Stylesheet
    Version: 2026.FINAL.MASTER (The Integrated Sovereign)
    Logic: Multi-Device Sovereignty & Precision Engineering
-   Patches: Logo Physical Guard, Spring-Action UI, Mobile Recovery
+   Patches: Logo Physical Guard, Spring-Action UI, Visual Shield
 ========================================================= */
 
 /* ========== 01. TOKENS & SYSTEM VARIABLES ========== */
@@ -41,49 +41,41 @@ body {
     color: var(--text-main);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
-/* 数字化微光补丁：600px 覆盖，will-change 优化性能 */
+/* 数字化微光补丁：600px 覆盖，will-change 启用 GPU 加速 */
 #cursor-glow {
     position: fixed;
     width: 600px; height: 600px;
     background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
     pointer-events: none;
-    z-index: 9998;
+    z-index: 9999;
     transform: translate(-50%, -50%);
     will-change: transform;
+    mix-blend-mode: screen; 
 }
 
 /* ========== 03. 弹簧伸缩补丁 (Spring-Action Patch) ========== */
-/* 解决手机端由于内容过多导致的截断问题，确保收放自如 */
 .accordion-content {
-    max-height: 0;                 /* 必须显式设为 0 启动动画 */
-    overflow: hidden;              /* 隐藏溢出内容，实现裁剪效果 */
+    max-height: 0;                 /* 必须显式设为 0 启动弹簧效果 */
+    overflow: hidden;
     transition: max-height 0.4s var(--spring-curve);
-    /* 核心补丁：确保下拉内容不被 Hero 遮挡 */
-    z-index: 100000; 
+    z-index: 100000 !important;    /* 弹簧菜单绝对主权置顶 */
     position: relative;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 4px;
 }
 
 /* ========== 04. LOGO 物理防御补丁 (核心修复) ========== */
-/* 强制解决 Logo 遮挡、尺寸失控与破损问题 */
 .site-logo, .nav-logo img, .site-logo svg {
     height: 32px !important;         /* 强制物理高度 32px */
-    width: auto !important;          /* 保持矢量比例 */
-    max-height: 32px !important;
+    width: auto !important;
+    max-width: 280px !important;
     display: flex !important;
     align-items: center !important;
-    text-decoration: none !important;
-    overflow: visible !important;     /* 确保 SVG 内部文字不被裁切 */
+    overflow: visible !important;     /* 确保矢量文字边缘不被切掉 */
     filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.3));
     transition: var(--transition-main);
-}
-
-.site-logo:hover {
-    transform: scale(1.02);
-    filter: drop-shadow(0 0 15px var(--neon-blue));
 }
 
 /* ========== 05. 导航指挥中心 (Sovereign Navbar) ========== */
@@ -92,11 +84,9 @@ body {
     top: 0; left: 0; width: 100%;
     height: var(--navbar-height) !important;
     background: var(--nav-bg) !important;
-    backdrop-filter: blur(10px);
-    z-index: 99999 !important;        /* 导航永远置顶 */
+    backdrop-filter: blur(20px);      /* 磨砂玻璃效果增强工具感 */
+    z-index: 100000 !important;       /* 确保导航永远在最高层 */
     border-bottom: 1px solid rgba(14, 165, 233, 0.15);
-    display: flex;
-    align-items: center;
 }
 
 .nav-inner {
@@ -105,96 +95,74 @@ body {
     margin: 0 auto;
     padding: 0 5%;
     height: 100%;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-}
-
-.nav-menu {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 35px;
 }
 
-.nav-menu a {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    color: #ffffff;
-    opacity: 0.6;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: var(--transition-main);
-}
-
-.nav-menu a:hover, .nav-menu a.active {
-    opacity: 1;
-    color: var(--neon-blue);
-    text-shadow: 0 0 10px var(--neon-blue);
-}
-
-/* ========== 06. 视觉避障 HERO 系统 ========== */
+/* ========== 06. 视觉保险 HERO 系统 ========== */
 .hero, .page-hero {
-    height: 90vh;
+    position: relative;
+    padding-top: var(--navbar-height); /* 预留导航栏高度，防止内容重叠 */
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    /* 线性渐变遮罩保护工业标题，Banner 焦点偏移 */
+    padding-left: 8%;
+    padding-right: 8%;
+    /* 核心补丁：35% 深度左侧遮罩保护工业标题 */
     background: linear-gradient(90deg, var(--deep-space) 35%, rgba(1, 4, 9, 0.4) 60%, transparent 100%), 
                 url('/Yishen-Global-Hero-Banner-2026.webp');
     background-size: cover;
     background-position: center right;
-    position: relative;
-    padding: 0 8%;
 }
 
-.page-hero h1 {
-    font-size: clamp(2.2rem, 8vw, 6rem);
+.hero-content h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem); /* 动态字号防止 Windows 缩放爆框 */
     font-weight: 900;
-    line-height: 0.85;
-    letter-spacing: -3px;
-    text-transform: uppercase;
+    line-height: 1.05;
+    letter-spacing: -2px;
 }
 
-/* ========== 07. NODE & CLUSTER SYSTEM ========== */
+/* ========== 07. 移动端 (华为/iOS) 专项优化 ========== */
+@media (max-width: 768px) {
+    :root { --navbar-height: 70px; }
+    
+    .hero {
+        padding: 120px 5% 60px;       /* 增加顶部安全间距，防止 Logo 遮挡 */
+        background: linear-gradient(180deg, var(--deep-space) 40%, rgba(1, 4, 9, 0.6) 100%), 
+                    url('/Yishen-Global-Hero-Banner-2026.webp');
+        background-position: center;
+        height: auto;                 /* 解决看不见第二页的 Bug：允许高度伸缩 */
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2.2rem, 10vw, 3.2rem) !important;
+        line-height: 1.1;
+    }
+}
+
+/* ========== 08. NODE & CLUSTER SYSTEM ========== */
 .section { padding: 80px 8%; border-bottom: 1px solid rgba(255,255,255,0.05); }
 
 .node-card {
     background: var(--surface);
     border: 1px solid rgba(255,255,255,0.05);
-    padding: 45px;
+    padding: 35px;
     transition: var(--transition-main);
 }
 
 .node-card:hover {
     border-color: var(--neon-blue);
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     background: rgba(14, 165, 233, 0.04);
 }
 
-/* ========== 08. 响应式与移动端主权 ========== */
-@media (max-width: 1024px) {
-    :root { --navbar-height: 70px; }
-    .nav-inner { padding: 0 20px; }
-    .site-logo, .site-logo svg { height: 28px !important; }
-    
-    /* 解决手机端由于高度问题看不见的 Bug */
-    .hero { background-position: center; padding: 100px 5% 50px; height: auto; min-height: 85vh; }
-    .page-hero h1 { font-size: 3rem; }
-
-    /* 在手机端开启弹簧导航的基础间距 */
-    .accordion-content { background: #000; padding: 0 20px; }
-}
-
-/* ========== 09. 页脚视觉一致性 ========== */
+/* ========== 09. 页脚一致性 ========== */
 .footer {
     padding: 80px 8% 50px;
     background: #000;
     border-top: 1px solid rgba(255,255,255,0.05);
-}
-
-.footer-logo-wrapper svg {
-    height: 32px !important;
-    width: auto !important;
-    overflow: visible !important;
+    text-align: center;
 }
 
 .footer-legal {
@@ -203,72 +171,4 @@ body {
     color: #475569;
     letter-spacing: 2px;
     margin-top: 40px;
-    text-align: center;
 }
-/* =========================================================
-   YiShen Global — Layout Sovereignty Patch (v2026.1)
-   目的：解决 Logo 截断、Hero 遮挡、移动端重叠等 Bug
-   ========================================================= */
-
-/* 1. 强制 Logo 防御：确保 SVG 在任何分辨率下不被压缩或截断 */
-.site-logo, .site-logo svg {
-    height: 32px !important;
-    width: auto !important;
-    max-width: 280px !important;
-    display: flex !important;
-    align-items: center !important;
-    overflow: visible !important; /* 确保文字边缘不被切掉 */
-    filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.2));
-}
-
-/* 2. 导航栏层级补丁：确保“弹簧菜单”永远在最高层，不被 Hero 遮挡 */
-#master-nav {
-    z-index: 100000 !important; /* 绝对置顶 */
-    background: rgba(1, 4, 9, 0.85);
-    backdrop-filter: blur(20px); /* 磨砂玻璃效果增强高级感 */
-}
-
-/* 3. Hero 区域“视觉保险”：针对 Windows 宽屏与手机竖屏的完美适配 */
-.hero {
-    position: relative;
-    padding-top: 80px; /* 预留导航栏高度，防止内容重叠 */
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    /* 核心补丁：35% 深度黑色渐变，保护标题不被背景图干扰 */
-    background: linear-gradient(90deg, #010409 35%, rgba(1, 4, 9, 0.4) 60%, transparent 100%), 
-                url('/Yishen-Global-Hero-Banner-2026.webp');
-    background-size: cover;
-    background-position: center right;
-}
-
-/* 4. 移动端 (华为/iOS) 专项优化：解决手机端“看不见第二页”的问题 */
-@media (max-width: 768px) {
-    .hero {
-        padding: 120px 5% 60px; /* 增加顶部间距，为手机导航留出空间 */
-        background: linear-gradient(180deg, #010409 40%, rgba(1, 4, 9, 0.6) 100%), 
-                    url('/Yishen-Global-Hero-Banner-2026.webp');
-        background-position: center; /* 手机端背景图居中，防止人物或产品被切掉 */
-        height: auto; /* 允许根据内容高度伸缩 */
-    }
-
-    .hero-content h1 {
-        font-size: clamp(2.5rem, 10vw, 3.5rem) !important; /* 动态字号防止爆框 */
-        line-height: 1.1;
-    }
-
-    /* 手机端导航弹簧分支间距 */
-    .accordion-content {
-        background: rgba(255, 255, 255, 0.02);
-        border-radius: 4px;
-        margin-top: 5px;
-    }
-}
-
-/* 5. 数字化微光性能补丁：解决 Windows 高刷新率屏幕下的掉帧问题 */
-#cursor-glow {
-    will-change: transform; /* 启用 GPU 加速 */
-    pointer-events: none;
-    mix-blend-mode: screen; /* 增强发光感 */
-}
-
