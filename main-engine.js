@@ -10,7 +10,7 @@
  * 放在全局作用域，确保 HTML 中的 onclick 属性可直接调用
  */
 
-// 弹簧式伸缩菜单逻辑 - 解决手机端因 SKU 目录过长无法查看页底的 Bug
+// 弹簧式伸缩菜单逻辑 - 解决手机端由于 SKU 目录过长无法查看页底的 Bug
 function toggleSpringMenu(id) {
     const el = document.getElementById(id);
     if (!el) return;
@@ -167,11 +167,16 @@ const MainEngine = {
             .site-logo, .site-logo svg, .footer-logo-wrapper svg { height: 32px !important; width: auto !important; overflow: visible !important; }
             /* 弹簧菜单层级主权置顶 */
             #master-nav { z-index: 100000 !important; backdrop-filter: blur(20px); }
-            /* 手机端英雄区域高度修复：解决看不见第二页的 Bug */
+            /* 手机端响应式修正：解决页脚矩阵看不全与 Hero 遮挡 Bug */
             @media (max-width: 768px) {
                 .hero, .page-hero { height: auto !important; padding-top: 120px !important; padding-bottom: 60px !important; }
-                /* 页脚矩阵在手机端自适应 */
-                footer .grid-cols-5 { grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; }
+                /* 页脚矩阵在手机端自适应，防止内容截断 */
+                footer .grid-cols-2, footer .grid-cols-4, footer .grid-cols-5 { 
+                    grid-template-columns: repeat(2, 1fr) !important; 
+                    gap: 24px !important; 
+                }
+                /* 强化地图在手机端的显示比例 */
+                footer .aspect-[21/9] { aspect-ratio: 4/3 !important; }
             }
         `;
         document.head.appendChild(style);
