@@ -1,32 +1,68 @@
 {
-  "YS-OC-2026-A01": {
-    "sector": "AERO_MILITARY",
-    "title": "Tactical Command Hub",
-    "hero_img": "military-render-01.webp",
-    "highlights": ["FR UL94-V0", "Anti-Static", "9G Shockproof"],
-    "specs": {
-      "chassis": "Aerospace Aluminum Alloy",
-      "capacity": "180kg Dynamic / 450kg Static",
-      "compliance": "MIL-STD-810H / BIFMA"
+  "products": [
+    {
+      "id": "YS-OC-2026-A01",
+      "category": "AERO_MILITARY",
+      "name": "Tactical Command Hub",
+      "tagline": "Mission-Critical Command Architecture",
+      "specs": "MIL-STD-810H Compliant / 9G Shockproof / FR UL94-V0",
+      "image": "military-render-01.webp",
+      "url": "sku-detail.html?id=YS-OC-2026-A01",
+      "technical_data": {
+        "material": "Aerospace Aluminum Alloy + Anti-Static Chassis",
+        "standard": "MIL-STD-810H / BIFMA / FR UL94-V0",
+        "load_capacity": "180kg Dynamic / 450kg Static",
+        "logistics": "ISTA-6A Protocol / 97.4% CBM Efficiency",
+        "warranty": "Lifetime Tactical Integrity Warranty"
+      }
     },
-    "logistics": {
-      "cbm_eff": "97.4%",
-      "fail_rate": "0.00% (ISTA-6A)"
-    }
-  },
-  "YS-MED-9002": {
-    "sector": "MEDICAL",
-    "title": "Clinical Biomechanical Seating",
-    "hero_img": "medical-render-02.webp",
-    "highlights": ["Silver-Ion Shield", "Chemical Resistant", "ISO 22196"],
-    "specs": {
-      "surface": "Antimicrobial Polymer",
-      "base": "Seamless Stainless Steel",
-      "compliance": "ISO 22196 / FDA Class I"
+    {
+      "id": "YS-MED-9002",
+      "category": "MEDICAL",
+      "name": "Clinical Biomechanical Seating",
+      "tagline": "Antimicrobial Biomechanical Architecture",
+      "specs": "Silver-Ion Shield / Chemical Resistant / FDA Class I",
+      "image": "medical-render-02.webp",
+      "url": "sku-detail.html?id=YS-MED-9002",
+      "technical_data": {
+        "material": "Silver-Ion Antimicrobial Polymer + Stainless Steel",
+        "standard": "ISO 22196 / FDA Class I / CE Medical",
+        "load_capacity": "150kg Precision Dynamic Control",
+        "logistics": "Medical-Grade Packaging / 98.1% CBM Eff",
+        "warranty": "15-Year Clinical Reliability Warranty"
+      }
     },
-    "logistics": {
-      "cbm_eff": "98.1%",
-      "fail_rate": "0.02%"
+    {
+      "id": "SPro-9001",
+      "category": "Office Seating",
+      "name": "Sovereign Pro 9001",
+      "tagline": "The Gold Standard of Ergonomic Architecture",
+      "specs": "BIFMA Certified / ISTA-6A Ready / High-Density Mesh",
+      "image": "product-chair.webp",
+      "url": "sku-detail.html?id=spro-9001",
+      "technical_data": {
+        "material": "Reinforced Glass Fiber Nylon + PA Mesh",
+        "standard": "BIFMA G1-2013 / ANSI Certified",
+        "load_capacity": "300 lbs (136 kg) Structural Integrity",
+        "logistics": "ISTA-6A Protocol / 0.18 CBM per node",
+        "warranty": "10-Year Industrial Sovereignty Warranty"
+      }
+    },
+    {
+      "id": "D-UAL-X1",
+      "category": "Architectural Desks",
+      "name": "D-UAL X1 Workstation",
+      "tagline": "Precision Height-Adjustment System",
+      "specs": "Dual-Motor / Integrated Power Node / Anti-Collision",
+      "image": "desk-DDUALX1-scene-office.webp",
+      "url": "sku-detail.html?id=d-ual-x1",
+      "technical_data": {
+        "material": "Carbon Steel Framework + E0 Grade Top",
+        "standard": "CE / UL 962 Certified Nodes",
+        "load_capacity": "120 kg Dynamic Stability",
+        "logistics": "Flat-Pack Optimization / Cubic-Max Packing",
+        "warranty": "5-Year Electronic System Warranty"
+      }
     }
-  }
+  ]
 }
