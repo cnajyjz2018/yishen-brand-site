@@ -10,16 +10,49 @@
     <link rel="stylesheet" href="styles.css?v=2026.FINAL">
 
     <style>
-        :root { --neon-blue: #0ea5e3; --navbar-height: 80px; --spring-curve: cubic-bezier(0.4, 0, 0.2, 1); }
-        #cursor-glow { position: fixed; width: 600px; height: 600px; background: radial-gradient(circle, rgba(14,165,233,0.12) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%); will-change: transform; mix-blend-mode: screen; }
-        #master-nav { position: fixed; top: 0; left: 0; width: 100%; height: var(--navbar-height); background: rgba(1, 4, 9, 0.95); backdrop-filter: blur(24px); z-index: 100000 !important; border-bottom: 1px solid rgba(255, 255, 255, 0.08); display: flex; align-items: center; }
-        .hero { display: flex; align-items: center; padding: 0 8%; background: linear-gradient(90deg, #010409 35%, transparent 100%), url('ergo-SPro9001-hero-01.webp') center right / cover no-repeat; min-height: 100vh; }
-        .grayscale { filter: grayscale(100%); transition: 0.5s var(--spring-curve); }
+        :root {
+            --neon-blue: #0ea5e3;
+            --navbar-height: 80px;
+            --spring-curve: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* 数字化微光引擎 - GPU 优化 */
+        #cursor-glow {
+            position: fixed; width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
+            border-radius: 50%; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%);
+            will-change: transform; mix-blend-mode: screen;
+        }
+
+        /* 强制导航主权防护 */
+        #master-nav {
+            position: fixed; top: 0; left: 0; width: 100%; height: var(--navbar-height);
+            background: rgba(1, 4, 9, 0.95); backdrop-filter: blur(24px);
+            z-index: 100000 !important; border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex; align-items: center;
+        }
+
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--spring-curve); }
+
+        /* 全球工业滤镜 */
+        .grayscale { filter: grayscale(100%); transition: filter 0.5s var(--spring-curve); }
         .grayscale:hover { filter: grayscale(0%); opacity: 1 !important; }
-        @media (max-width: 768px) { .hero { padding-top: 140px; } .mobile-items-center { align-items: center !important; text-align: center !important; width: 100% !important; } }
+
+        .hero {
+            display: flex; align-items: center; padding: 0 8%;
+            background: linear-gradient(90deg, #010409 35%, transparent 100%), 
+                        url('ergo-SPro9001-hero-01.webp') center right / cover no-repeat;
+            position: relative; min-height: 100vh;
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding-top: 140px; height: auto !important; min-height: 100vh; }
+            .mobile-items-center { align-items: center !important; text-align: center !important; width: 100% !important; }
+            footer .flex-nowrap { justify-content: center !important; }
+        }
     </style>
 </head>
-<body class="bg-[#010409] text-white">
+<body class="bg-[#010409] text-white selection:bg-[#0ea5e3]">
 
     <div id="cursor-glow"></div>
 
@@ -32,12 +65,22 @@
                     <text x="56" y="18" fill="white" style="font-family:'Inter'; font-weight:700; font-size:18px;">Yishen Global</text>
                 </svg>
             </a>
+
             <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest">
                 <a href="why-us.html" class="hover:text-[#0ea5e3]">01_WHY_YISHEN</a>
                 <a href="solutions.html" class="hover:text-[#0ea5e3]">02_SOLUTIONS</a>
                 <a href="industries.html" class="hover:text-[#0ea5e3]">03_INDUSTRIES</a>
-                <a href="site-architecture.html" class="hover:text-[#0ea5e3] text-gray-500">04_ARCH</a>
-                <a href="contact.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm">INITIATE_BRIEFING</a>
+                
+                <div class="relative group">
+                    <button onclick="toggleSpringMenu('res-menu')" class="hover:text-[#0ea5e3] uppercase">04_RESOURCES ▼</button>
+                    <div id="res-menu" class="accordion-content absolute top-full right-0 mt-4 w-64 bg-[#010409]/98 border border-white/10 p-5 shadow-2xl">
+                        <a href="resources.html" class="block py-2 text-gray-400 hover:text-white border-b border-white/5">HS_CODE_DATABASE</a>
+                        <a href="site-architecture.html" class="block py-2 text-gray-400 hover:text-white border-b border-white/5">SITE_ARCHITECTURE</a>
+                        <a href="sitemap.xml" target="_blank" class="block py-2 text-gray-400 hover:text-white">XML_SITEMAP_INDEX</a>
+                    </div>
+                </div>
+                
+                <a href="contact.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase">Initiate_Briefing</a>
             </div>
         </div>
     </nav>
@@ -45,12 +88,12 @@
     <header class="hero">
         <div class="max-w-[800px] z-[10]">
             <span class="font-mono tracking-[4px] text-[#0ea5e3] text-sm uppercase">[ MISSION_CRITICAL_INFRASTRUCTURE ]</span>
-            <h1 class="text-white text-[clamp(2.5rem,8vw,5.5rem)] font-[900] leading-[1.1] my-8 uppercase">Architecture Over Sourcing.</h1>
+            <h1 class="text-white text-[clamp(2.5rem,8vw,5.5rem)] font-[900] leading-[1.1] my-8 uppercase">Architecture<br>Over Sourcing.</h1>
             <p class="text-[#8b949e] text-lg lg:text-xl leading-relaxed mb-12">Integrated supply chain protocols where <b>Structural Integrity</b> and <b>Logistics Density</b> are fused into a deterministic path.</p>
         </div>
     </header>
 
-    <footer class="bg-[#000] pt-24 pb-12 border-t border-white/5">
+    <footer class="bg-[#000] pt-24 pb-12 border-t border-white/5 font-inter">
         <div class="max-w-[1440px] mx-auto px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 py-16 border-b border-white/5">
                 <div class="space-y-4">
@@ -73,11 +116,12 @@
                             <img src="./iso9001.png" style="height: 32px; width: auto; max-width: none !important;" alt="ISO9001">
                         </a>
                     </div>
+
                     <div style="display: flex !important; flex-wrap: nowrap !important; align-items: center; gap: 24px;" class="opacity-30 grayscale hover:grayscale-0 transition duration-500">
                         <a href="https://www.visa.com" target="_blank" style="flex-shrink: 0 !important; display: block;">
-                            <img src="./visa-mastercard.png" style="height: 16px; width: auto; max-width: none !important;" alt="Payments">
+                            <img src="./visa-mastercard.png" style="height: 16px; width: auto; max-width: none !important;" alt="VisaMastercard">
                         </a>
-                        <span class="text-[8px] font-mono text-gray-500 uppercase tracking-[2px] whitespace-nowrap">Encrypted_Settlement</span>
+                        <span style="font-size: 8px; white-space: nowrap !important;" class="font-mono text-gray-500 uppercase tracking-[2px]">Encrypted_Settlement</span>
                     </div>
                 </div>
             </div>
@@ -86,9 +130,21 @@
     </footer>
 
     <script>
+        // 核心交互逻辑引擎
+        function toggleSpringMenu(id) {
+            const el = document.getElementById(id);
+            if (el.style.maxHeight === '0px' || el.style.maxHeight === '') {
+                el.style.maxHeight = el.scrollHeight + "px";
+            } else { el.style.maxHeight = "0px"; }
+        }
+
+        // GPU 加速鼠标追踪
         document.onmousemove = (e) => {
             const glow = document.getElementById('cursor-glow');
-            requestAnimationFrame(() => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; });
+            requestAnimationFrame(() => {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top = e.clientY + 'px';
+            });
         };
     </script>
 </body>
