@@ -31,18 +31,17 @@
             will-change: transform;
         }
 
-        /* 弹簧伸缩导航动画补丁 */
+        /* 弹簧伸缩导航动画核心 */
         .accordion-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            background: rgba(255,255,255,0.02);
         }
 
         /* 强制主权 Logo 保护 */
         .site-logo svg { height: 32px !important; width: auto !important; display: block !important; overflow: visible !important; }
 
-        /* 响应式断点补丁：解决手机端看不见第二页的 Bug */
+        /* 响应式断点补丁 */
         @media (max-width: 768px) {
             .hero { height: auto; min-height: 100vh; padding: 120px 5%; }
             .spec-grid { grid-template-columns: 1fr 1fr; }
@@ -84,10 +83,19 @@
 
             <div class="hidden lg:flex items-center space-x-8 font-mono text-[0.7rem]">
                 <div class="relative group">
-                    <button onclick="toggleSpringMenu('prod-menu')" class="hover:text-[#0ea5e3] transition-colors uppercase tracking-widest">Systems_Matrix ▼</button>
+                    <button onclick="toggleSpringMenu('prod-menu')" class="hover:text-[#0ea5e3] transition-colors uppercase tracking-widest flex items-center">
+                        Systems_Matrix <span class="ml-1 text-[0.5rem]">▼</span>
+                    </button>
+                    <div id="prod-menu" class="accordion-content absolute top-full left-0 mt-2 bg-[#010409]/95 backdrop-blur-md border border-white/5 rounded-sm lg:w-64">
+                        <div class="p-4 space-y-3">
+                            <a href="#systems" class="block text-gray-400 hover:text-[#0ea5e3] transition-colors border-l border-white/10 pl-3">Furniture Nodes</a>
+                            <a href="#compliance" class="block text-gray-400 hover:text-[#0ea5e3] transition-colors border-l border-white/10 pl-3">Compliance Protocols</a>
+                            <a href="#" class="block text-gray-400 hover:text-[#0ea5e3] transition-colors border-l border-white/10 pl-3">Logistic Density</a>
+                        </div>
+                    </div>
                 </div>
                 <a href="#" class="hover:text-[#0ea5e3]">HS_DATABASE</a>
-                <a href="#" class="px-4 py-2 border border-[#0ea5e3]/30 text-[#0ea5e3] rounded-sm">CONNECT_API</a>
+                <a href="#" class="px-4 py-2 border border-[#0ea5e3]/30 text-[#0ea5e3] rounded-sm hover:bg-[#0ea5e3]/10 transition-all">CONNECT_API</a>
                 <select class="bg-transparent border-none text-white outline-none cursor-pointer">
                     <option value="en">EN</option>
                     <option value="zh">ZH</option>
@@ -107,13 +115,13 @@
                 <div class="border-b border-white/5 pb-2">
                     <button onclick="toggleSubMenu('mob-sub-1')" class="flex justify-between w-full text-[#0ea5e3]">01_SYSTEMS ▼</button>
                     <div id="mob-sub-1" class="accordion-content pl-4 pt-2 space-y-2 text-gray-500">
-                        <p>Furniture Systems</p>
-                        <p>Precision Seating</p>
-                        <p>Kinetic Logistics</p>
+                        <p class="py-1">Furniture Systems</p>
+                        <p class="py-1">Precision Seating</p>
+                        <p class="py-1">Kinetic Logistics</p>
                     </div>
                 </div>
-                <a href="#" class="block py-2">02_COMPLIANCE</a>
-                <a href="#" class="block py-2">03_GLOBAL_MAP</a>
+                <a href="#" class="block py-2 border-b border-white/5">02_COMPLIANCE</a>
+                <a href="#" class="block py-2 border-b border-white/5">03_GLOBAL_MAP</a>
             </div>
         </div>
     </nav>
@@ -135,7 +143,7 @@
         </div>
     </header>
 
-    <section class="section">
+    <section id="systems" class="section">
         <div class="mb-12">
             <span class="px-2 py-1 bg-[#0ea5e3]/10 text-[#0ea5e3] font-mono text-xs">[ GLOBAL_INTEL_MATRIX_ACTIVE ]</span>
             <h2 class="text-3xl lg:text-4xl font-black mt-4">Intelligence Dashboard.</h2>
@@ -231,36 +239,61 @@
     </div>
 
     <script>
-        // 数字化微光跟随
+        // 数字化微光跟随逻辑
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             requestAnimationFrame(() => {
-                glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px';
+                glow.style.left = e.clientX + 'px'; 
+                glow.style.top = e.clientY + 'px';
             });
         });
 
-        // 弹簧式折叠逻辑：互斥展开
+        /**
+         * 弹簧伸缩逻辑核心
+         */
         function toggleSpringMenu(id) {
             const el = document.getElementById(id);
+            if (!el) return;
+
             const isExpanded = el.style.maxHeight !== '0px' && el.style.maxHeight !== '';
             
-            // 如果是手机端主菜单，关闭所有其他分支
-            if(id === 'mobile-drawer') {
-                el.style.maxHeight = isExpanded ? '0px' : el.scrollHeight + 'px';
-            } else {
-                el.style.maxHeight = isExpanded ? '0px' : el.scrollHeight + 'px';
+            // 互斥展开逻辑：如果是主导航，关闭其他已打开的导航（可选）
+            if (id === 'prod-menu' || id === 'mobile-drawer') {
+                // 如果需要点击按钮关闭另一个，可在此添加逻辑
             }
+
+            el.style.maxHeight = isExpanded ? '0px' : el.scrollHeight + 'px';
         }
 
+        /**
+         * 手机子菜单逻辑
+         */
         function toggleSubMenu(id) {
             const el = document.getElementById(id);
             const parent = document.getElementById('mobile-drawer');
+            if (!el || !parent) return;
+
             const isExpanded = el.style.maxHeight !== '0px' && el.style.maxHeight !== '';
             
             el.style.maxHeight = isExpanded ? '0px' : el.scrollHeight + 'px';
-            // 同步调整父级高度以确保不被遮挡
-            if(!isExpanded) parent.style.maxHeight = (parent.scrollHeight + el.scrollHeight) + 'px';
+
+            // 同步调整父级高度以确保手机端展开不被裁剪
+            if (!isExpanded) {
+                // 等待微小延迟让 DOM 计算准确
+                setTimeout(() => {
+                    parent.style.maxHeight = 'none'; // 展开子菜单时，主菜单高度限制解除
+                }, 10);
+            }
         }
+
+        // 点击页面其他地方关闭桌面下拉菜单
+        window.addEventListener('click', function(e) {
+            const prodMenu = document.getElementById('prod-menu');
+            const menuBtn = prodMenu.previousElementSibling;
+            if (!prodMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                prodMenu.style.maxHeight = '0px';
+            }
+        });
     </script>
 </body>
 </html>
