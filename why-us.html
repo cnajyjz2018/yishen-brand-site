@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>The Genesis | Legacy & Industrial Sovereignty | YISHEN GLOBAL</title>
+    <title>Our Genesis | Legacy & Industrial Sovereignty | YISHEN GLOBAL</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
@@ -12,41 +12,41 @@
     <style>
         :root { --neon-blue: #0ea5e3; --performance-red: #A11219; --deep-space: #010409; --navbar-height: 80px; }
         
-        /* 数字化微光引擎 */
-        #cursor-glow {
-            position: fixed; width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
-            border-radius: 50%; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%);
-            will-change: transform; mix-blend-mode: screen;
-        }
-
-        /* 品牌故事视觉深度：流光背景 */
+        /* 叙事级视觉深度 */
         .genesis-hero {
-            position: relative; padding: 200px 8% 120px;
+            position: relative; padding: 220px 8% 120px;
             background: radial-gradient(circle at 15% 50%, rgba(14, 165, 233, 0.08) 0%, transparent 45%),
                         linear-gradient(180deg, #010409 0%, #000 100%);
             overflow: hidden;
         }
 
-        /* “熠燊” 水印：构建品牌物理厚度 */
+        /* 熠燊水印：构建品牌主权厚度 */
         .brand-watermark {
-            position: absolute; bottom: -5%; right: -2%; font-size: 20vw;
+            position: absolute; bottom: -5%; right: -2%; font-size: 22vw;
             font-weight: 900; color: rgba(255, 255, 255, 0.015);
-            pointer-events: none; z-index: 0; user-select: none;
+            pointer-events: none; z-index: 0; user-select: none; line-height: 1;
         }
 
         .narrative-card {
-            border-left: 2px solid rgba(14, 165, 233, 0.2);
+            border-left: 1px solid rgba(14, 165, 233, 0.2);
             padding-left: 40px; transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .narrative-card:hover { border-left-color: var(--neon-blue); background: rgba(14, 165, 233, 0.03); }
 
-        /* 强制物理断根补丁 */
+        /* GPU 加速微光 */
+        #cursor-glow {
+            position: fixed; width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
+            border-radius: 50%; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%);
+            will-change: transform;
+        }
+
+        /* 物理断根防御补丁 */
         footer a { flex: 0 0 auto !important; }
         footer img { max-width: none !important; min-width: 80px; }
 
         @media (max-width: 768px) {
-            .genesis-hero { padding-top: 140px; }
+            .genesis-hero { padding-top: 160px; }
             .narrative-card { padding-left: 20px; }
             .mobile-items-center { align-items: center !important; text-align: center !important; width: 100% !important; }
         }
@@ -72,8 +72,8 @@
                 <div class="relative group">
                     <button onclick="toggleSpringMenu('res-menu')" class="hover:text-white uppercase flex items-center">04_Resources <span class="ml-1 text-[0.5rem]">▼</span></button>
                     <div id="res-menu" class="absolute top-full right-0 mt-4 w-64 bg-[#010409]/98 border border-white/10 p-5 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-                        <a href="site-architecture.html" class="block py-2 text-gray-400 hover:text-white border-b border-white/5">Blueprint_Map</a>
-                        <a href="resources.html" class="block py-2 text-gray-400 hover:text-white border-b border-white/5">Data_Database</a>
+                        <a href="site-architecture.html" class="block py-2 text-gray-400 hover:text-white border-b border-white/5">Architecture_Blueprint</a>
+                        <a href="resources.html" class="block py-2 text-gray-400 hover:text-white border-b border-white/5">HS_Code_Database</a>
                         <a href="sitemap.xml" target="_blank" class="block py-2 text-gray-400 hover:text-white">XML_Sitemap</a>
                     </div>
                 </div>
@@ -84,88 +84,91 @@
 
     <header class="genesis-hero">
         <div class="brand-watermark">熠燊</div>
-        <div class="relative z-10 max-w-[1100px]">
-            <span class="font-mono tracking-[6px] text-[#0ea5e3] text-xs uppercase">[ THE_GENESIS_PROTOCOL ]</span>
-            <h1 class="text-white text-[clamp(2.5rem,8vw,6.5rem)] font-[900] leading-[0.95] my-10 uppercase tracking-tighter">
-                Legacy <br><span class="text-transparent" style="-webkit-text-stroke: 1px #fff;">Defined By</span> <br>Precision.
+        <div class="relative z-10 max-w-[1200px]">
+            <span class="font-mono tracking-[8px] text-[#0ea5e3] text-xs uppercase">[ THE_GENESIS_PROTOCOL ]</span>
+            <h1 class="text-white text-[clamp(3rem,10vw,7rem)] font-[900] leading-[0.9] my-12 uppercase tracking-tighter">
+                Light <br><span class="text-transparent" style="-webkit-text-stroke: 1px #fff;">Defining</span> <br>Integrity.
             </h1>
             
-            <div class="grid lg:grid-cols-2 gap-20 mt-24">
+            <div class="grid lg:grid-cols-2 gap-24 mt-24">
                 <div class="narrative-card">
-                    <h3 class="text-3xl font-black mb-6 italic uppercase tracking-tight">“熠” (Yì) — Radiant Intelligence.</h3>
-                    <p class="text-gray-400 leading-relaxed text-lg mb-6">
-                        以孙女杨佳熠之名，定义为工业架构中的“情报之光”。光影交织代表了 YISHEN GLOBAL 对供应链透明度的绝对掌控。从 BIM 数字化对齐到 HS Code 预申报，每一处基石都在“熠熠生辉”中展现其预测力。
+                    <h3 class="text-3xl font-black mb-8 italic uppercase tracking-tight">“熠” (Yì) — Radiant Intelligence.</h3>
+                    <p class="text-gray-400 leading-relaxed text-lg mb-8">
+                        以孙女杨佳熠之名，锚定工业架构中的“情报主权”。在混沌的全球贸易流中，“熠”是绝对的预测性（Predictability）——它是 BIM 数字化建模的毫厘不差，是 HS Code 的深层对齐，是照亮供应链盲区的每一缕光束。
                     </p>
-                    <div class="text-[#0ea5e3] font-mono text-xs tracking-widest uppercase">// Illuminating_Industrial_Paths</div>
+                    <div class="text-[#0ea5e3] font-mono text-xs tracking-[4px] uppercase">// ILLUMINATING_INDUSTRIAL_PATHS</div>
                 </div>
 
                 <div class="narrative-card">
-                    <h3 class="text-3xl font-black mb-6 italic uppercase tracking-tight">“燊” (Shēn) — Deterministic Vigor.</h3>
-                    <p class="text-gray-400 leading-relaxed text-lg mb-6">
-                        以儿子杨福燊之名，代表三火立于木，繁荣而稳固。这是物理层面的铁律：通过 BIFMA 的结构锻造与 ISTA 的运输协议，我们将“家族荣誉”转化为每一个交付节点的确定性繁荣。
+                    <h3 class="text-3xl font-black mb-8 italic uppercase tracking-tight">“燊” (Shēn) — Deterministic Vigor.</h3>
+                    <p class="text-gray-400 leading-relaxed text-lg mb-8">
+                        以儿子杨福燊之名，承载三火立于木的繁荣铁律。这是物理层面的确定性（Determinism）——通过 BIFMA 的结构锻造与 ISTA 的运输协议，我们将“家族荣誉”转化为每一个产业节点的稳固动能。
                     </p>
-                    <div class="text-[#A11219] font-mono text-xs tracking-widest uppercase">// Forging_Physical_Sovereignty</div>
+                    <div class="text-[#A11219] font-mono text-xs tracking-[4px] uppercase">// FORGING_PHYSICAL_SOVEREIGNTY</div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="py-24 px-[8%] border-t border-white/5 bg-white/[0.01]">
-        <div class="max-w-[1440px] mx-auto">
-            <h4 class="font-mono text-[#0ea5e3] text-xs uppercase tracking-[4px] mb-20 text-center">// BRAND_SOVEREIGNTY_IMPACT</h4>
-            <div class="grid md:grid-cols-3 gap-16">
-                <div class="space-y-6">
-                    <div class="text-4xl font-black text-white italic uppercase">Trust.</div>
+    <section class="py-32 px-[8%] border-t border-white/5 bg-white/[0.01]">
+        <div class="max-w-[1440px] mx-auto text-center">
+            <h4 class="font-mono text-[#0ea5e3] text-xs uppercase tracking-[6px] mb-24">// BRAND_CREDIT_LEVERAGE</h4>
+            <div class="grid md:grid-cols-3 gap-20">
+                <div class="space-y-8">
+                    <div class="text-5xl font-black text-white italic uppercase tracking-tighter">Legacy.</div>
                     <p class="text-sm text-gray-500 leading-relaxed italic">我们将“家族名誉”转化为“全球商业信用”。选择熠燊，即是选择一份押注了三代人名誉的长期交付保障。</p>
                 </div>
-                <div class="space-y-6">
-                    <div class="text-4xl font-black text-white italic uppercase">Density.</div>
-                    <p class="text-sm text-gray-500 leading-relaxed italic">消除工业“噪音”，在设计主权与物流密度之间建立强耦合，确保每一个环节都具备确定性。</p>
+                <div class="space-y-8">
+                    <div class="text-5xl font-black text-white italic uppercase tracking-tighter">Density.</div>
+                    <p class="text-sm text-gray-500 leading-relaxed italic">消除工业“噪音”，在设计主权与物流密度之间建立高强度耦合，确保每一处结构都具备确定性。</p>
                 </div>
-                <div class="space-y-6">
-                    <div class="text-4xl font-black text-white italic uppercase">Vigor.</div>
-                    <p class="text-sm text-gray-500 leading-relaxed italic">构筑“木生火”的良性循环。为全球客户打造具备确定性增长潜力的工业基石。</p>
+                <div class="space-y-8">
+                    <div class="text-5xl font-black text-white italic uppercase tracking-tighter">Eternity.</div>
+                    <p class="text-sm text-gray-500 leading-relaxed italic">构筑“木生火”的良性循环。通过持续的技术迭代，为全球客户打造具备确定性增长潜力的工业基石。</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="bg-[#000] py-20 border-t border-white/5 font-inter">
-        <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-12">
-            <div class="space-y-4">
-                <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Architecture_Verified</div>
-                <div class="flex gap-4 text-[9px] font-mono text-gray-800"><a href="site-architecture.html">BLUEPRINT</a> / <a href="sitemap.xml">XML_MAP</a></div>
-            </div>
-            
-            <div class="flex flex-col items-end gap-6 mobile-items-center">
-                <div style="display: flex !important; flex-wrap: nowrap !important; align-items: center; gap: 32px; width: auto;" class="opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-                    <a href="https://www.bifma.org" target="_blank" style="flex: 0 0 auto !important; min-width: 80px !important;">
-                        <img src="./bifma-badge.png" style="height: 24px; width: auto; max-width: none !important;" alt="BIFMA">
-                    </a>
-                    <a href="https://ista.org" target="_blank" style="flex: 0 0 auto !important; min-width: 80px !important;">
-                        <img src="./ista-badge.png" style="height: 24px; width: auto; max-width: none !important;" alt="ISTA">
-                    </a>
-                    <a href="https://www.iso.org/iso-9001-quality-management.html" target="_blank" style="flex: 0 0 auto !important; min-width: 100px !important;">
-                        <img src="./iso9001.png" style="height: 32px; width: auto; max-width: none !important;" alt="ISO9001">
-                    </a>
+        <div class="max-w-[1440px] mx-auto px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-12 pb-16 border-b border-white/5">
+                <div class="space-y-4">
+                    <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Architecture_Verified</div>
+                    <div class="flex gap-6 text-[9px] font-mono text-gray-800 uppercase tracking-widest">
+                        <a href="site-architecture.html" class="hover:text-white transition">Blueprint_Map</a>
+                        <a href="sitemap.xml" target="_blank" class="hover:text-white transition">XML_Index</a>
+                    </div>
                 </div>
-                <div class="flex items-center gap-4 opacity-30 grayscale hover:grayscale-0 transition-all">
-                    <img src="./visa-mastercard.png" style="height: 16px; width: auto; max-width: none !important; flex: 0 0 auto !important;">
-                    <span class="text-[8px] font-mono text-gray-600 tracking-widest uppercase">Secured_Global_Settlement</span>
+
+                <div class="flex flex-col items-end gap-6 mobile-items-center">
+                    <div style="display: flex !important; flex-wrap: nowrap !important; align-items: center; gap: 32px; width: auto;" class="opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+                        <a href="https://www.bifma.org" target="_blank" style="flex: 0 0 auto !important; min-width: 80px !important;">
+                            <img src="./bifma-badge.png" style="height: 24px; width: auto; max-width: none !important;" alt="BIFMA">
+                        </a>
+                        <a href="https://ista.org" target="_blank" style="flex: 0 0 auto !important; min-width: 80px !important;">
+                            <img src="./ista-badge.png" style="height: 24px; width: auto; max-width: none !important;" alt="ISTA">
+                        </a>
+                        <a href="https://www.iso.org/iso-9001-quality-management.html" target="_blank" style="flex: 0 0 auto !important; min-width: 100px !important;">
+                            <img src="./iso9001.png" style="height: 32px; width: auto; max-width: none !important;" alt="ISO9001">
+                        </a>
+                    </div>
+                    <div class="flex items-center gap-4 opacity-30 grayscale hover:grayscale-0 transition-all">
+                        <img src="./visa-mastercard.png" style="height: 16px; width: auto; max-width: none !important; flex: 0 0 auto !important;">
+                        <span class="text-[8px] font-mono text-gray-600 tracking-[3px] uppercase">Secured_Global_Settlement</span>
+                    </div>
                 </div>
             </div>
+            <p class="pt-8 text-[9px] font-mono text-gray-900 tracking-[8px] uppercase text-center">Coordinated Industrial Architecture // Legacy Excellence.</p>
         </div>
     </footer>
 
     <script>
-        // 找回交互核心
         function toggleSpringMenu(id) {
             const el = document.getElementById(id);
             if (el.style.maxHeight === '0px' || el.style.maxHeight === '') { el.style.maxHeight = el.scrollHeight + "px"; } 
             else { el.style.maxHeight = "0px"; }
         }
-
-        // GPU 加速鼠标追踪
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             requestAnimationFrame(() => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; });
