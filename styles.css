@@ -2,7 +2,7 @@
    YISHEN GLOBAL — Integrated Architectural Stylesheet
    Version: 2026.FINAL.MASTER (The Integrated Sovereign)
    Logic: Multi-Device Sovereignty & Precision Engineering
-   Patches: Logo Physical Guard, Content Recovery, Navigation Fix
+   Patches: Logo Physical Guard, Spring-Action UI, Mobile Recovery
 ========================================================= */
 
 /* ========== 01. TOKENS & SYSTEM VARIABLES ========== */
@@ -10,7 +10,7 @@
     --neon-blue: #0ea5e3;
     --neon-glow: rgba(14, 165, 233, 0.4);
     --performance-red: #A11219;      /* 品牌传承：燊之火底色 */
-    --deep-space: #010409;           /* 核心背景黑 */
+    --deep-space: #010409;            /* 核心背景黑 */
     --nav-bg: rgba(1, 4, 9, 0.95);   /* 毛玻璃导航背景 */
     --industrial-gray: #1e293b;
     --surface: rgba(255, 255, 255, 0.03);
@@ -19,8 +19,9 @@
     --text-main: #f8fafc;
     --text-dim: #94a3b8;
     
-    /* 物理常数 */
+    /* 物理常数与动画曲线 */
     --transition-main: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --spring-curve: cubic-bezier(0.4, 0, 0.2, 1);
     --navbar-height: 80px;           /* 完美承载 32px 矢量 Logo */
 }
 
@@ -54,22 +55,30 @@ body {
     will-change: transform;
 }
 
-/* ========== 03. LOGO 物理防御补丁 (核心修复) ========== */
-/* 强制解决照片中反馈的 Logo 遮挡、尺寸失控与破损问题 */
+/* ========== 03. 弹簧伸缩补丁 (Spring-Action Patch) ========== */
+/* 解决手机端由于内容过多导致的截断问题，确保收放自如 */
+.accordion-content {
+    max-height: 0;                 /* 必须显式设为 0 启动动画 */
+    overflow: hidden;              /* 隐藏溢出内容，实现裁剪效果 */
+    transition: max-height 0.4s var(--spring-curve);
+    /* 核心补丁：确保下拉内容不被 Hero 遮挡 */
+    z-index: 100000; 
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* ========== 04. LOGO 物理防御补丁 (核心修复) ========== */
+/* 强制解决 Logo 遮挡、尺寸失控与破损问题 */
 .site-logo, .nav-logo img, .site-logo svg {
-    height: 32px !important;         /* 强制物理高度 32px，严禁溢出 */
+    height: 32px !important;         /* 强制物理高度 32px */
     width: auto !important;          /* 保持矢量比例 */
     max-height: 32px !important;
     display: flex !important;
     align-items: center !important;
     text-decoration: none !important;
-    overflow: visible !important;     /* 核心：确保 SVG 内部文字不被裁切 */
+    overflow: visible !important;     /* 确保 SVG 内部文字不被裁切 */
     filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.3));
     transition: var(--transition-main);
-}
-
-.site-logo svg {
-    display: block !important;
 }
 
 .site-logo:hover {
@@ -77,14 +86,14 @@ body {
     filter: drop-shadow(0 0 15px var(--neon-blue));
 }
 
-/* ========== 04. 导航指挥中心 (Sovereign Navbar) ========== */
+/* ========== 05. 导航指挥中心 (Sovereign Navbar) ========== */
 .site-navbar {
     position: fixed;
     top: 0; left: 0; width: 100%;
     height: var(--navbar-height) !important;
     background: var(--nav-bg) !important;
     backdrop-filter: blur(10px);
-    z-index: 99999 !important;        /* 确保导航永远置顶 */
+    z-index: 99999 !important;        /* 导航永远置顶 */
     border-bottom: 1px solid rgba(14, 165, 233, 0.15);
     display: flex;
     align-items: center;
@@ -111,7 +120,6 @@ body {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
     color: #ffffff;
-    text-decoration: none;
     opacity: 0.6;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -124,15 +132,13 @@ body {
     text-shadow: 0 0 10px var(--neon-blue);
 }
 
-.nav-spacer { height: var(--navbar-height); }
-
-/* ========== 05. 视觉避障 HERO 系统 ========== */
+/* ========== 06. 视觉避障 HERO 系统 ========== */
 .hero, .page-hero {
     height: 90vh;
     display: flex;
     align-items: center;
-    /* 线性渐变提供 35% 黑色遮罩保护文字，Banner 焦点向右偏移 */
-    background: linear-gradient(90deg, var(--deep-space) 35%, transparent 100%), 
+    /* 线性渐变遮罩保护工业标题，Banner 焦点偏移 */
+    background: linear-gradient(90deg, var(--deep-space) 35%, rgba(1, 4, 9, 0.4) 60%, transparent 100%), 
                 url('/Yishen-Global-Hero-Banner-2026.webp');
     background-size: cover;
     background-position: center right;
@@ -148,22 +154,14 @@ body {
     text-transform: uppercase;
 }
 
-/* ========== 06. 找回重要框架：NODE & CLUSTER SYSTEM ========== */
+/* ========== 07. NODE & CLUSTER SYSTEM ========== */
 .section { padding: 80px 8%; border-bottom: 1px solid rgba(255,255,255,0.05); }
-
-.protocol-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-}
 
 .node-card {
     background: var(--surface);
     border: 1px solid rgba(255,255,255,0.05);
     padding: 45px;
     transition: var(--transition-main);
-    position: relative;
-    overflow: hidden;
 }
 
 .node-card:hover {
@@ -172,50 +170,25 @@ body {
     background: rgba(14, 165, 233, 0.04);
 }
 
-.node-card .tag {
-    color: var(--neon-blue);
-    font-family: 'JetBrains Mono';
-    font-size: 0.7rem;
-    margin-bottom: 20px;
-    display: block;
-}
-
-/* ========== 07. 工业审计与合规组件 ========== */
-.audit-box {
-    position: relative;
-    border: 1px solid rgba(14, 165, 233, 0.2);
-    padding: 10px;
-    background: #000;
-}
-
-.audit-tag {
-    position: absolute;
-    bottom: 20px; left: 20px;
-    background: var(--neon-blue);
-    color: #000;
-    padding: 10px 20px;
-    font-family: 'JetBrains Mono';
-    font-size: 0.7rem;
-    font-weight: 700;
-}
-
 /* ========== 08. 响应式与移动端主权 ========== */
 @media (max-width: 1024px) {
     :root { --navbar-height: 70px; }
     .nav-inner { padding: 0 20px; }
-    .site-logo { height: 28px !important; }
-    .site-logo svg { height: 28px !important; }
+    .site-logo, .site-logo svg { height: 28px !important; }
     
-    .hero { background-position: center; padding: 0 5%; }
+    /* 解决手机端由于高度问题看不见的 Bug */
+    .hero { background-position: center; padding: 100px 5% 50px; height: auto; min-height: 85vh; }
     .page-hero h1 { font-size: 3rem; }
+
+    /* 在手机端开启弹簧导航的基础间距 */
+    .accordion-content { background: #000; padding: 0 20px; }
 }
 
-/* ========== 09. 补齐页脚视觉一致性 ========== */
+/* ========== 09. 页脚视觉一致性 ========== */
 .footer {
     padding: 80px 8% 50px;
     background: #000;
     border-top: 1px solid rgba(255,255,255,0.05);
-    text-align: center;
 }
 
 .footer-logo-wrapper svg {
@@ -230,4 +203,5 @@ body {
     color: #475569;
     letter-spacing: 2px;
     margin-top: 40px;
+    text-align: center;
 }
