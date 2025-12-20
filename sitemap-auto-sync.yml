@@ -1,0 +1,35 @@
+name: Generate XML Sitemap Protocol
+
+on:
+  push:
+    branches: [ main ]  # 当主分支有代码推送时触发
+    paths:
+      - '**.html'
+      - 'sku-database.json'
+      - 'generate_sitemap.py'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 赋予脚本写回仓库的权限
+
+    steps:
+    - name: 01_Checkout_Sovereign_Code
+      uses: actions/checkout@v4
+
+    - name: 02_Setup_Python_Environment
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: 03_Execute_Sitemap_Generator
+      run: python generate_sitemap.py
+
+    - name: 04_Commit_and_Push_Changes
+      run: |
+        git config --global user.name 'Yishen-Bot'
+        git config --global user.email 'bot@yishenglobal.net'
+        git add sitemap.xml
+        # 只有在 sitemap 发生变化时才提交，防止死循环
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Automated Sitemap Update [System Sync]" && git push)
