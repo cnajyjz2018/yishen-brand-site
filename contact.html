@@ -14,8 +14,7 @@
             --neon-blue: #0ea5e3;
             --performance-red: #A11219;
             --deep-space: #010409;
-            --industrial-gray: #1e293b;
-            --text-dim: #94a3b8;
+            --navbar-height: 80px;
             --spring-curve: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -27,15 +26,15 @@
             will-change: transform; mix-blend-mode: screen;
         }
 
-        /* 弹簧伸缩核心 */
-        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--spring-curve); }
-
-        /* 强制主权 Logo 物理防御 */
-        .site-logo, .site-logo svg, .footer-logo-wrapper svg {
-            display: flex !important; align-items: center !important; height: 32px !important;
-            width: auto !important; text-decoration: none !important; overflow: visible !important;
-            filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.3));
+        /* 强制导航主权防护 */
+        #master-nav {
+            position: fixed; top: 0; left: 0; width: 100%; height: var(--navbar-height);
+            background: rgba(1, 4, 9, 0.95); backdrop-filter: blur(24px);
+            z-index: 100000 !important; border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex; align-items: center;
         }
+
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--spring-curve); }
 
         /* 节点内容增强 */
         .contact-node h4 {
@@ -46,200 +45,149 @@
         .api-link { color: #fff; text-decoration: none; transition: 0.3s; cursor: pointer; }
         .api-link:hover { color: var(--neon-blue); text-shadow: 0 0 10px var(--neon-blue); }
 
-        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-top: 25px; }
         .social-tag {
             border: 1px solid rgba(255,255,255,0.1); padding: 12px; text-align: center;
-            font-family: 'JetBrains Mono'; font-size: 0.65rem; color: var(--text-dim);
+            font-family: 'JetBrains Mono'; font-size: 0.65rem; color: #94a3b8;
             transition: 0.4s; display: block; text-decoration: none; background: rgba(255,255,255,0.02);
         }
         .social-tag:hover { border-color: var(--neon-blue); color: var(--neon-blue); transform: translateY(-2px); }
 
+        /* 响应式对齐补丁 */
         @media (max-width: 768px) {
             .grid-2 { grid-template-columns: 1fr !important; gap: 40px !important; }
-            footer .grid-cols-5, footer .grid-cols-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 24px !important; }
+            .mobile-items-center { align-items: center !important; text-align: center !important; width: 100% !important; }
+            footer .flex-nowrap { justify-content: center !important; }
         }
+
+        .grayscale { filter: grayscale(100%); transition: filter 0.5s var(--spring-curve); }
+        .grayscale:hover { filter: grayscale(0%); opacity: 1 !important; }
     </style>
 </head>
 <body class="bg-[#010409] text-white selection:bg-[#0ea5e3]">
 
     <div id="cursor-glow"></div>
 
-    <nav id="master-nav" class="fixed top-0 left-0 z-[100000] w-full bg-[#010409]/90 backdrop-blur-xl border-b border-white/5">
-        <div class="max-w-[1440px] mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="index.html" class="site-logo">
-                <svg width="280" height="32" viewBox="0 0 280 32" fill="none">
+    <nav id="master-nav">
+        <div class="max-w-[1440px] mx-auto px-6 w-full flex items-center justify-between">
+            <a href="index.html" class="flex items-center" style="height: 32px;">
+                <svg width="280" height="32" viewBox="0 0 280 32" fill="none" style="overflow: visible;">
                     <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
                     <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
                     <text x="56" y="18" fill="white" style="font-family:'Inter'; font-weight:700; font-size:18px;">Yishen Global</text>
                 </svg>
             </a>
 
-            <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem]">
-                <div class="relative group">
-                    <button onclick="toggleSpringMenu('why-us-menu')" class="hover:text-[#0ea5e3] uppercase tracking-widest flex items-center">
-                        WHY_YISHEN <span class="ml-1 text-[0.5rem]">▼</span>
-                    </button>
-                    <div id="why-us-menu" class="accordion-content absolute top-full left-0 mt-4 w-[320px] bg-[#010409]/95 border border-white/10 p-5 shadow-2xl">
-                        <a href="why-us.html" class="block border-l border-white/10 pl-4 hover:border-[#0ea5e3] transition">
-                            <span class="block text-white font-bold uppercase">Industrial Sovereignty</span>
-                            <span class="text-[0.6rem] text-gray-500 italic">Predictability Engineered.</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="relative group">
-                    <button onclick="toggleSpringMenu('sol-menu')" class="hover:text-[#0ea5e3] uppercase tracking-widest flex items-center">
-                        SOLUTIONS <span class="ml-1 text-[0.5rem]">▼</span>
-                    </button>
-                    <div id="sol-menu" class="accordion-content absolute top-full left-0 mt-4 w-[320px] bg-[#010409]/95 border border-white/10 p-5 shadow-2xl">
-                        <a href="solutions.html" class="block py-2 text-gray-400 hover:text-white border-b border-white/5">Coordinated Stability</a>
-                        <a href="solutions.html#matrix" class="block py-2 text-gray-400 hover:text-white">Supply Chain Architecture</a>
-                    </div>
-                </div>
-                <a href="industries.html" class="hover:text-[#0ea5e3]">INDUSTRIES</a>
-                <a href="resources.html" class="hover:text-[#0ea5e3]">RESOURCES</a>
-                <a href="contact.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black hover:bg-white transition-all rounded-sm uppercase italic">Initiate_Briefing</a>
-            </div>
-
-            <button class="lg:hidden text-white" onclick="toggleSpringMenu('mobile-drawer')">
-                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16m-7 6h7"/></svg>
-            </button>
-        </div>
-
-        <div id="mobile-drawer" class="accordion-content lg:hidden bg-[#010409] px-6 border-t border-white/5">
-            <div class="py-10 space-y-6 font-mono text-sm uppercase text-center">
-                <a href="index.html" class="block border-b border-white/5 pb-2">01_Terminal_Index</a>
-                <a href="why-us.html" class="block border-b border-white/5 pb-2">02_Why_Yishen</a>
-                <a href="industries.html" class="block border-b border-white/5 pb-2">04_Industries_Cluster</a>
-                <a href="contact.html" class="block py-4 bg-[#0ea5e3] text-black font-black">GET_IN_TOUCH</a>
+            <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest">
+                <a href="why-us.html" class="hover:text-[#0ea5e3]">01_WHY_YISHEN</a>
+                <a href="solutions.html" class="hover:text-[#0ea5e3]">02_SOLUTIONS</a>
+                <a href="industries.html" class="hover:text-[#0ea5e3]">03_INDUSTRIES</a>
+                <a href="resources.html" class="hover:text-[#0ea5e3]">04_RESOURCES</a>
+                <a href="contact.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm">INITIATE_BRIEFING</a>
             </div>
         </div>
     </nav>
 
-    <header class="page-hero small" style="background: linear-gradient(90deg, var(--deep-space) 45%, transparent 100%), url('header-resources.webp'); background-size: cover; background-position: center right; padding: 160px 8% 60px;">
+    <header class="page-hero" style="background: linear-gradient(90deg, #010409 45%, transparent 100%), url('header-resources.webp') center right / cover no-repeat; padding: 160px 8% 60px;">
         <div class="container">
             <span class="font-mono tracking-[4px] text-[#0ea5e3] text-xs uppercase">[ GLOBAL_ACCESS_INITIALIZATION ]</span>
-            <h1 class="text-white text-[clamp(2.5rem,8vw,4rem)] font-[900] leading-[1.1] my-6 uppercase">Initiate<br>System Briefing.</h1>
+            <h1 class="text-white text-[clamp(2.5rem,8vw,4rem)] font-[900] leading-[1.1] my-6 uppercase">Initiate System Briefing.</h1>
             <p class="text-gray-400 max-w-[550px] text-lg">Connect with our multi-node communication matrix for project-level stability.</p>
         </div>
     </header>
 
-    <section class="section border-t border-white/5">
+    <section class="section border-t border-white/5 py-20">
         <div class="container grid-2" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; padding: 0 8%;">
             
             <div class="contact-details">
-                <span class="font-mono text-[#0ea5e3] text-xs uppercase tracking-[3px] block mb-4">[ CHANNELS ]</span>
-                <h3 style="font-size: 2.5rem; margin: 15px 0 50px;" class="font-black uppercase tracking-tighter">Communication<br>Nodes.</h3>
+                <h3 class="text-white text-4xl font-black uppercase mb-12">Communication Nodes.</h3>
 
-                <div class="contact-node">
-                    <h4>GLOBAL_HOTLINES</h4>
-                    <p>Channel 01: <span class="api-link font-bold">+86 188 5727 7313</span></p>
-                    <p>Channel 02: <span class="api-link font-bold">+86 159 6827 7867</span></p>
-                    <p>Channel 03: <span class="api-link font-bold">+86 195 3039 4133</span></p>
-                </div>
-
-                <div class="contact-node">
+                <div class="contact-node mb-10">
                     <h4>WHATSAPP_SECURE_API</h4>
-                    <p>Primary Hub (Alex): <a href="https://wa.me/8618857277313" class="api-link font-bold">+86 188 5727 7313</a></p>
-                    <p>Secondary Hub (Champion): <a href="https://wa.me/8615968277867" class="api-link font-bold">+86 159 6827 7867</a></p>
+                    <p class="mb-2">Hub 01 (Alex): <a href="https://wa.me/8618857277313" class="api-link font-bold">+86 188 5727 7313</a></p>
+                    <p>Hub 02 (Champion): <a href="https://wa.me/8615968277867" class="api-link font-bold">+86 159 6827 7867</a></p>
                 </div>
 
-                <div class="contact-node">
+                <div class="contact-node mb-10">
                     <h4>EMAIL_DIRECT_直链</h4>
-                    <p>Director Alex: <a href="mailto:alex.yang@yishenglobal.net" class="api-link">alex.yang@yishenglobal.net</a></p>
-                    <p>Support Champion: <a href="mailto:champion.yang@yishenglobal.net" class="api-link">champion.yang@yishenglobal.net</a></p>
+                    <p class="mb-2">Director: <a href="mailto:alex.yang@yishenglobal.net" class="api-link font-bold">alex.yang@yishenglobal.net</a></p>
+                    <p>Support: <a href="mailto:champion.yang@yishenglobal.net" class="api-link font-bold">champion.yang@yishenglobal.net</a></p>
                 </div>
 
                 <div class="contact-node">
                     <h4>SOCIAL_MEDIA_MATRICES</h4>
-                    <div class="social-grid">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-6">
                         <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" class="social-tag">LINKEDIN_INTEL</a>
                         <a href="https://wa.me/8618857277313" target="_blank" class="social-tag">WHATSAPP_API</a>
-                        <a href="https://x.com/yishenglobal" target="_blank" class="social-tag">X_TWITTER</a>
-                        <a href="https://instagram.com/yishen_global" target="_blank" class="social-tag">INSTAGRAM</a>
                         <a href="https://youtube.com/@yishenglobal" target="_blank" class="social-tag">YOUTUBE_ENGINE</a>
-                        <a href="#" class="social-tag">WECHAT_SECURE</a>
                     </div>
                 </div>
             </div>
 
-            <div class="contact-form-area">
-                <div class="contact-form">
-                    <span class="font-mono text-[#0ea5e3] text-[0.6rem] uppercase block mb-8">// PROJECT_BRIEF_FORM</span>
-                    <form action="#" id="briefing-form">
-                        <label>ORGANIZATION / NAME</label>
-                        <input type="text" placeholder="e.g. Director of Procurement" required>
-                        <label>DIRECT PROTOCOL EMAIL</label>
-                        <input type="email" placeholder="official@enterprise.com" required>
-                        <label>TECHNICAL BRIEF</label>
-                        <textarea rows="6" placeholder="Define SKU complexity or stability requirements..."></textarea>
-                        <button type="submit" class="w-full py-5 bg-[#0ea5e3] text-black font-black font-mono text-sm uppercase tracking-widest hover:bg-white transition-all">Submit for System Audit</button>
-                    </form>
-                </div>
+            <div class="contact-form-area bg-white/5 p-10 border border-white/10">
+                <span class="font-mono text-[#0ea5e3] text-[0.6rem] uppercase block mb-8">// PROJECT_BRIEF_FORM</span>
+                <form id="briefing-form" class="space-y-6">
+                    <div>
+                        <label class="block text-[10px] font-mono text-gray-500 mb-2 uppercase tracking-widest">Organization / Name</label>
+                        <input type="text" class="w-full bg-black/50 border border-white/10 p-4 text-sm focus:border-[#0ea5e3] outline-none" required>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-mono text-gray-500 mb-2 uppercase tracking-widest">Protocol Email</label>
+                        <input type="email" class="w-full bg-black/50 border border-white/10 p-4 text-sm focus:border-[#0ea5e3] outline-none" required>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-mono text-gray-500 mb-2 uppercase tracking-widest">Technical Brief</label>
+                        <textarea rows="5" class="w-full bg-black/50 border border-white/10 p-4 text-sm focus:border-[#0ea5e3] outline-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-5 bg-[#0ea5e3] text-black font-black font-mono text-sm uppercase tracking-widest hover:bg-white transition-all">Submit for System Audit</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <footer class="bg-[#000] pt-24 pb-12 border-t border-white/5 font-inter">
+    <footer class="bg-[#000] pt-24 pb-12 border-t border-white/5">
         <div class="max-w-[1440px] mx-auto px-8">
-            <div class="mb-20 grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-                <div class="lg:col-span-2">
-                    <span class="tag text-[#0ea5e3] font-mono text-xs uppercase tracking-[4px] block mb-4">[ GLOBAL_OPERATIONAL_NODES ]</span>
-                    <h4 class="text-3xl font-black text-white mb-6 uppercase tracking-tighter">Integrated Distribution Infrastructure.</h4>
-                    <div class="relative w-full aspect-[21/9] bg-white/5 border border-white/10 rounded-sm overflow-hidden group">
-                        <img src="div-container-optimization.webp" class="w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 transition-all duration-1000">
-                        <div class="absolute top-[40%] left-[22%] w-3 h-3 bg-[#0ea5e3] rounded-full animate-ping"></div>
-                        <div class="absolute top-[45%] left-[78%] w-3 h-3 bg-[#0ea5e3] rounded-full animate-ping"></div>
-                        <div class="absolute top-[60%] left-[75%] w-3 h-3 bg-[#0ea5e3] rounded-full animate-ping"></div>
-                    </div>
-                </div>
-                <div class="space-y-6 border-l border-white/10 pl-8 font-mono">
-                    <div>
-                        <h5 class="text-[#0ea5e3] text-xs uppercase mb-2">North_America_Hub</h5>
-                        <p class="text-sm text-white italic">Wood Dale, IL 60191, USA</p>
-                    </div>
-                    <div>
-                        <h5 class="text-[#0ea5e3] text-xs uppercase mb-2">Asia_Cluster</h5>
-                        <p class="text-sm text-gray-500 uppercase leading-relaxed">Zhejiang, China // Thailand Gateway Node</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 py-16 border-t border-white/5">
-                <div class="space-y-4 text-xs font-mono uppercase">
-                    <h5 class="text-white font-bold tracking-widest mb-4">Sovereignty</h5>
-                    <ul class="text-gray-600 space-y-2">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 py-16">
+                <div class="space-y-4">
+                    <h5 class="text-white font-bold text-xs uppercase tracking-widest">Sovereignty</h5>
+                    <ul class="text-[10px] text-gray-600 space-y-2 font-mono uppercase">
                         <li><a href="why-us.html" class="hover:text-white transition">Why Yishen</a></li>
                         <li><a href="solutions.html" class="hover:text-white transition">Stability Sol</a></li>
                     </ul>
                 </div>
-                <div class="space-y-4 text-xs font-mono uppercase">
-                    <h5 class="text-white font-bold tracking-widest mb-4">Database</h5>
-                    <ul class="text-gray-600 space-y-2">
-                        <li><a href="resources.html" class="hover:text-white transition">HS Code 9401</a></li>
-                        <li><button data-intel="Panju" class="hover:text-white">Panjiva Intel</button></li>
-                    </ul>
-                </div>
-                <div class="col-span-2 lg:col-span-3 flex flex-col items-end justify-center space-y-6 opacity-30 grayscale transition duration-500 hover:grayscale-0">
-                    <div class="flex gap-8 items-center"><img src="bifma-badge.png" class="h-6"><img src="ista-badge.png" class="h-6"></div>
-                    <div class="flex gap-4"><img src="visa-mastercard.png" class="h-4"></div>
+
+                <div class="col-span-2 lg:col-span-3 flex flex-col items-end justify-center space-y-6 mobile-items-center">
+                    <div style="display: flex !important; flex-wrap: nowrap !important; align-items: center; gap: 32px;" class="opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+                        <a href="https://www.bifma.org" target="_blank" style="flex-shrink: 0 !important; display: block;">
+                            <img src="./bifma-badge.png" style="height: 24px; width: auto; max-width: none !important;" alt="BIFMA">
+                        </a>
+                        <a href="https://ista.org" target="_blank" style="flex-shrink: 0 !important; display: block;">
+                            <img src="./ista-badge.png" style="height: 24px; width: auto; max-width: none !important;" alt="ISTA">
+                        </a>
+                        <a href="https://www.iso.org/iso-9001-quality-management.html" target="_blank" style="flex-shrink: 0 !important; display: block;">
+                            <img src="./iso9001.png" style="height: 32px; width: auto; max-width: none !important;" alt="ISO9001">
+                        </a>
+                    </div>
+                    <div style="display: flex !important; flex-wrap: nowrap !important; align-items: center; gap: 24px;" class="opacity-30 grayscale hover:grayscale-0 transition-all duration-500">
+                        <a href="https://www.visa.com" target="_blank" style="flex-shrink: 0 !important; display: block;">
+                            <img src="./visa-mastercard.png" style="height: 16px; width: auto; max-width: none !important;" alt="Secure Payment Gateways">
+                        </a>
+                        <span class="text-[8px] font-mono text-gray-500 uppercase tracking-[2px] whitespace-nowrap">Encrypted_Settlement_Active</span>
+                    </div>
                 </div>
             </div>
-
-            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-[9px] font-mono text-gray-800 tracking-[4px] uppercase text-center">&copy; 2026 YISHEN GLOBAL // COORDINATED INDUSTRIAL ARCHITECTURE // ENCRYPTED NODE.</p>
-                <div class="flex gap-6 font-mono text-[9px] text-gray-500 uppercase"><a href="site-architecture.html">Blueprint_Map</a></div>
+            <div class="pt-8 border-t border-white/5 text-center">
+                <p class="text-[9px] font-mono text-gray-800 tracking-[4px] uppercase">&copy; 2026 YISHEN GLOBAL // COORDINATED INDUSTRIAL ARCHITECTURE.</p>
             </div>
         </div>
     </footer>
 
-    <script src="main-engine.js"></script>
     <script>
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             requestAnimationFrame(() => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; });
         });
         document.getElementById('briefing-form').addEventListener('submit', function(e) {
-            e.preventDefault(); alert('PROTOCOL INITIATED. AN ARCHITECT WILL CONTACT YOU VIA SECURE CHANNELS WITHIN 24H.');
+            e.preventDefault(); alert('PROTOCOL INITIATED. AN ARCHITECT WILL CONTACT YOU WITHIN 24H.');
         });
     </script>
 </body>
