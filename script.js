@@ -31,7 +31,7 @@ function toggleSpringMenu(id) {
 }
 
 /**
- * 手机端子菜单增强：处理嵌套展开高度计算
+ * 手机端子菜单增强：处理嵌套展开高度计算与防截断补丁
  */
 function toggleSubMenu(id) {
     const el = document.getElementById(id);
@@ -39,9 +39,11 @@ function toggleSubMenu(id) {
     if (!el) return;
 
     const isExpanded = el.style.maxHeight !== '0px' && el.style.maxHeight !== '';
+    
+    // 物理动作：设置子菜单高度
     el.style.maxHeight = isExpanded ? '0px' : el.scrollHeight + "px";
 
-    // 补丁：如果子菜单展开，强制父容器高度设为 auto，防止内容截断
+    // 核心补丁：如果子菜单展开，强制父容器高度设为 auto，防止内容被父级容器的隐藏溢出截断
     if (parent && !isExpanded) {
         setTimeout(() => {
             parent.style.maxHeight = 'none';
@@ -77,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* ---------------------------------------------------------
-       3. NAVBAR ACTIVE STATE (页面高亮逻辑)
+       3. NAVBAR ACTIVE STATE (当前页面高亮逻辑)
        --------------------------------------------------------- */
     const navLinks = document.querySelectorAll(".nav-links a");
     const currentPath = window.location.pathname.replace(/\/$/, "");
@@ -113,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* ---------------------------------------------------------
-       6. SECTION REVEAL (吸取 MillerKnoll 极简动效感)
+       6. SECTION REVEAL (平滑入场动效)
        --------------------------------------------------------- */
     const revealItems = document.querySelectorAll("[data-reveal]");
     if ("IntersectionObserver" in window && revealItems.length) {
@@ -130,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ---------------------------------------------------------
-       7. LOGGING & DEBUG (主权检测)
+       7. LOGGING & DEBUG (多导航冲突检测)
        --------------------------------------------------------- */
     const navbars = document.querySelectorAll("nav");
     if (navbars.length > 1) {
