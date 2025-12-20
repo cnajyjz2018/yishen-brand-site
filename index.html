@@ -1,22 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Yishen Global | Integrated Industrial Architecture</title>
+    <title>Yishen Global | Coordinated Industrial Architecture</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap">
     <link rel="stylesheet" href="styles.css?v=2026.FINAL">
+
+    <style>
+        :root {
+            --neon-blue: #0ea5e3;
+            --deep-space: #010409;
+            --navbar-height: 80px;
+            --spring-curve: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* 数字化微光引擎 - GPU 优化版 */
+        #cursor-glow {
+            position: fixed; width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
+            border-radius: 50%; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%);
+            will-change: transform; mix-blend-mode: screen;
+        }
+
+        /* 强制导航主权防护 */
+        #master-nav {
+            position: fixed; top: 0; left: 0; width: 100%; height: var(--navbar-height);
+            background: rgba(1, 4, 9, 0.95); backdrop-filter: blur(24px);
+            z-index: 100000 !important; border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex; align-items: center;
+        }
+
+        .nav-container {
+            width: 100%; max-width: 1440px; margin: 0 auto;
+            padding: 0 40px; display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--spring-curve); }
+
+        /* 全球工业滤镜 */
+        .grayscale { filter: grayscale(100%); transition: filter 0.5s var(--spring-curve); }
+        .grayscale:hover { filter: grayscale(0%); opacity: 1 !important; }
+
+        .hero {
+            display: flex; align-items: center; padding: 0 8%;
+            background: linear-gradient(90deg, #010409 35%, transparent 100%), 
+                        url('ergo-SPro9001-hero-01.webp') center right / cover no-repeat;
+            position: relative; min-height: 100vh;
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding-top: 140px; height: auto !important; min-height: 100vh; }
+            .mobile-items-center { align-items: center !important; text-align: center !important; width: 100% !important; }
+        }
+    </style>
 </head>
-<body class="bg-[#010409] text-white">
+<body class="bg-[#010409] text-white selection:bg-[#0ea5e3]">
 
     <div id="cursor-glow"></div>
 
     <nav id="master-nav">
         <div class="nav-container">
             <a href="index.html" class="site-logo">
-                <svg width="280" height="32" viewBox="0 0 280 32" fill="none">
+                <svg width="280" height="32" viewBox="0 0 280 32" fill="none" style="overflow: visible;">
                     <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
                     <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
                     <text x="56" y="18" fill="white" style="font-family:'Inter'; font-weight:700; font-size:18px;">Yishen Global</text>
@@ -24,21 +72,21 @@
             </a>
 
             <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest">
-                <a href="why-us.html" class="nav-link">01_WHY_YISHEN</a>
+                <a href="why-us.html" class="nav-link hover:text-[#0ea5e3]">01_WHY_YISHEN</a>
                 <div class="relative group">
-                    <button onclick="toggleSpringMenu('sol-menu')" class="nav-link uppercase">02_SOLUTIONS ▼</button>
+                    <button onclick="toggleSpringMenu('sol-menu')" class="nav-link uppercase hover:text-[#0ea5e3]">02_SOLUTIONS ▼</button>
                     <div id="sol-menu" class="accordion-content absolute top-full left-0 mt-4 w-64 bg-[#010409]/98 border border-white/10 p-4 shadow-2xl">
                         <a href="solutions.html" class="block py-2 text-gray-400 hover:text-white border-b border-white/5">Supply Chain Architecture</a>
                         <a href="industries.html" class="block py-1 text-gray-400 hover:text-white">Vertical Clusters</a>
                     </div>
                 </div>
-                <a href="resources.html" class="nav-link">03_RESOURCES</a>
+                <a href="resources.html" class="nav-link hover:text-[#0ea5e3]">03_RESOURCES</a>
                 <a href="contact.html" class="px-6 py-2 bg-[#0ea5e3] text-black font-black hover:bg-white transition-all italic rounded-sm">INITIATE_BRIEFING</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero flex items-center px-[8%]" style="background: linear-gradient(90deg, #010409 35%, transparent 100%), url('ergo-SPro9001-hero-01.webp') center right / cover no-repeat;">
+    <header class="hero">
         <div class="max-w-[800px] z-[10]">
             <span class="font-mono tracking-[4px] text-[#0ea5e3] text-sm uppercase">[ MISSION_CRITICAL_INFRASTRUCTURE ]</span>
             <h1 class="text-white text-[clamp(2.5rem,8vw,5.5rem)] font-[900] leading-[1.1] my-8 uppercase">Architecture<br>Over Sourcing.</h1>
@@ -66,26 +114,27 @@
                 <div class="space-y-4">
                     <h5 class="text-white font-bold text-xs uppercase tracking-widest">Sovereignty</h5>
                     <ul class="text-[10px] text-gray-600 space-y-2 font-mono">
-                        <li><a href="why-us.html" class="hover:text-white">Why Yishen</a></li>
-                        <li><a href="solutions.html" class="hover:text-white">Coordinated Stability</a></li>
+                        <li><a href="why-us.html" class="hover:text-white transition">Why Yishen</a></li>
+                        <li><a href="solutions.html" class="hover:text-white transition">Coordinated Stability</a></li>
                     </ul>
                 </div>
 
                 <div class="col-span-2 lg:col-span-3 flex flex-col items-end justify-center space-y-6 mobile-items-center">
-                    <div class="flex flex-nowrap gap-8 items-center opacity-40 grayscale hover:grayscale-0 transition duration-500">
-                        <a href="https://www.bifma.org" target="_blank" class="flex-shrink-0">
-                            <img src="bifma-badge.png" class="h-6 w-auto" alt="BIFMA">
+                    <div style="display: flex !important; flex-wrap: nowrap !important; align-items: center; gap: 32px;" class="opacity-40 grayscale hover:grayscale-0 transition duration-500">
+                        <a href="https://www.bifma.org" target="_blank" style="flex-shrink: 0 !important; display: block;">
+                            <img src="./bifma-badge.png" style="height: 24px; width: auto; max-width: none !important;" alt="BIFMA">
                         </a>
-                        <a href="https://ista.org" target="_blank" class="flex-shrink-0">
-                            <img src="ista-badge.png" class="h-6 w-auto" alt="ISTA">
+                        <a href="https://ista.org" target="_blank" style="flex-shrink: 0 !important; display: block;">
+                            <img src="./ista-badge.png" style="height: 24px; width: auto; max-width: none !important;" alt="ISTA">
                         </a>
-                        <a href="https://www.iso.org/iso-9001-quality-management.html" target="_blank" class="flex-shrink-0">
-                            <img src="iso9001.png" class="h-8 w-auto" alt="ISO9001">
+                        <a href="https://www.iso.org/iso-9001-quality-management.html" target="_blank" style="flex-shrink: 0 !important; display: block;">
+                            <img src="./iso9001.png" style="height: 32px; width: auto; max-width: none !important;" alt="ISO9001">
                         </a>
                     </div>
-                    <div class="flex flex-nowrap gap-6 items-center opacity-30 grayscale hover:grayscale-0 transition duration-500">
-                        <a href="https://www.visa.com" target="_blank" class="flex-shrink-0">
-                            <img src="visa-mastercard.png" class="h-4 w-auto" alt="Payments">
+
+                    <div style="display: flex !important; flex-wrap: nowrap !important; align-items: center; gap: 24px;" class="opacity-30 grayscale hover:grayscale-0 transition duration-500">
+                        <a href="https://www.visa.com" target="_blank" style="flex-shrink: 0 !important; display: block;">
+                            <img src="./visa-mastercard.png" style="height: 16px; width: auto; max-width: none !important;" alt="VisaMastercard">
                         </a>
                         <span class="text-[8px] font-mono text-gray-500 uppercase tracking-[2px] whitespace-nowrap">Encrypted_Settlement_Active</span>
                     </div>
@@ -102,6 +151,8 @@
                 el.style.maxHeight = el.scrollHeight + "px";
             } else { el.style.maxHeight = "0px"; }
         }
+
+        // GPU 加速鼠标追踪
         document.onmousemove = (e) => {
             const glow = document.getElementById('cursor-glow');
             requestAnimationFrame(() => {
