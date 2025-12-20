@@ -1,0 +1,29 @@
+name: Generate XML Sitemap
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ '**.html', 'sku-database.json' ]
+
+jobs:
+  sitemap_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Run Sitemap Generator
+      run: python generate_sitemap.py
+
+    - name: Commit and Push Sitemap
+      run: |
+        git config --global user.name 'Yishen-Bot'
+        git config --global user.email 'bot@yishenglobal.net'
+        git add sitemap.xml
+        git commit -m "Automated Sitemap Update [System Sync]"
+        git push
