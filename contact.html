@@ -7,7 +7,6 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
-    <link rel="stylesheet" href="styles.css?v=2026.FINAL">
 
     <style>
         :root { --neon-blue: #0ea5e3; --performance-red: #A11219; --deep-space: #010409; }
@@ -29,12 +28,12 @@
         .node-card {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 24px; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            padding: 20px; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             position: relative; overflow: hidden;
         }
-        .node-card:hover { border-color: var(--neon-blue); background: rgba(14, 165, 233, 0.05); transform: translateY(-5px); }
-        .node-card::before { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--neon-blue); transition: width 0.4s ease; }
-        .node-card:hover::before { width: 100%; }
+        .node-card:hover { border-color: var(--neon-blue); background: rgba(14, 165, 233, 0.05); transform: translateY(-3px); }
+        .node-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--neon-blue); transition: width 0.4s ease; }
+        .node-card:hover::after { width: 100%; }
 
         .social-icon { width: 22px; height: 22px; filter: grayscale(1) brightness(1.5); transition: 0.4s; }
         .node-card:hover .social-icon { filter: grayscale(0) drop-shadow(0 0 8px var(--neon-blue)); transform: scale(1.1); }
@@ -72,12 +71,9 @@
                 <div>
                     <div class="flex items-center gap-3 mb-4">
                         <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                        <span class="font-mono text-[#0ea5e3] text-xs uppercase tracking-[4px]">Direct_Access_Ready</span>
+                        <span class="font-mono text-[#0ea5e3] text-xs uppercase tracking-[4px]">Direct_Link_Active</span>
                     </div>
                     <h1 class="text-white text-[clamp(2.5rem,6vw,4.5rem)] font-black uppercase leading-[0.9] mb-8">Connect<br>The Matrix.</h1>
-                    <p class="text-gray-500 max-w-[500px] font-mono text-sm uppercase italic border-l-2 border-[#A11219] pl-6 leading-relaxed">
-                        Establishing dual-node communication protocols for global industrial coordination.
-                    </p>
                 </div>
 
                 <div class="space-y-4">
@@ -85,10 +81,10 @@
                     <div class="grid grid-cols-1 gap-4">
                         <a href="tel:+8619530394133" class="node-card border-l-4 border-l-[#A11219] bg-white/[0.04] group">
                             <div class="flex-1">
-                                <div class="text-[9px] font-mono text-[#A11219]">MAIN_HOTLINE</div>
+                                <div class="text-[9px] font-mono text-[#A11219]">MAIN_COMMAND_HOTLINE</div>
                                 <div class="text-xl font-black group-hover:text-white transition">+86 195 3039 4133</div>
                             </div>
-                            <span class="text-[8px] font-mono bg-[#A11219] px-2 py-1">PRIORITY</span>
+                            <span class="text-[8px] font-mono bg-[#A11219] px-2 py-1">PRIORITY_ALPHA</span>
                         </a>
                         <a href="tel:+8618857277313" class="node-card border-l-4 border-l-white/10 group">
                             <div class="flex-1">
@@ -103,16 +99,16 @@
                     <h4 class="font-mono text-[10px] text-gray-600 uppercase tracking-[3px]">Executive_Mail_Nodes</h4>
                     <div class="grid md:grid-cols-2 gap-4">
                         <a href="mailto:alex.yang@yishenglobal.net" class="node-card border-l-4 border-l-[#0ea5e3]">
-                            <div><div class="text-[9px] font-mono text-[#0ea5e3]">ALEX_YANG</div><div class="text-[11px] font-bold">alex.yang@...</div></div>
+                            <div><div class="text-[9px] font-mono text-[#0ea5e3]">ALEX_YANG</div><div class="text-xs font-bold uppercase">Executive_Node</div></div>
                         </a>
                         <a href="mailto:champion.yang@yishenglobal.net" class="node-card border-l-4 border-l-[#0ea5e3]">
-                            <div><div class="text-[9px] font-mono text-[#0ea5e3]">CHAMPION_YANG</div><div class="text-[11px] font-bold">champion.yang@...</div></div>
+                            <div><div class="text-[9px] font-mono text-[#0ea5e3]">CHAMPION_YANG</div><div class="text-xs font-bold uppercase">Operations_Node</div></div>
                         </a>
                         <a href="mailto:sales@yishenglobal.net" class="node-card border-l-4 border-l-white/10">
-                            <div><div class="text-[9px] font-mono text-gray-500">SALES_RFQ</div><div class="text-[11px] font-bold">sales@...</div></div>
+                            <div><div class="text-[9px] font-mono text-gray-500">SALES_RFQ</div><div class="text-xs font-bold uppercase">Commercial_Node</div></div>
                         </a>
                         <a href="mailto:info@yishenglobal.net" class="node-card border-l-4 border-l-white/10">
-                            <div><div class="text-[9px] font-mono text-gray-500">GENERAL_INFO</div><div class="text-[11px] font-bold">info@...</div></div>
+                            <div><div class="text-[9px] font-mono text-gray-500">GENERAL_INFO</div><div class="text-xs font-bold uppercase">Inquiry_Node</div></div>
                         </a>
                     </div>
                 </div>
@@ -128,56 +124,41 @@
                             <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="social-icon">
                             <div><div class="text-[8px] font-mono text-[#0ea5e3]">WHATSAPP_02</div><div class="text-[10px] font-bold">+86 159...</div></div>
                         </a>
+                        <a href="https://x.com/yishenglobal" target="_blank" class="node-card">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968958.png" class="social-icon">
+                            <div class="text-[10px] font-bold uppercase">X_Intel</div>
+                        </a>
                         <a href="https://facebook.com/yishenglobal" target="_blank" class="node-card">
                             <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon">
-                            <div class="text-[10px] font-bold">FACEBOOK</div>
+                            <div class="text-[10px] font-bold uppercase">Facebook</div>
                         </a>
                         <a href="https://linkedin.com/company/yishenglobal" target="_blank" class="node-card">
                             <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="social-icon">
-                            <div class="text-[10px] font-bold">LINKEDIN</div>
+                            <div class="text-[10px] font-bold uppercase">LinkedIn</div>
                         </a>
                         <a href="https://youtube.com/@yishenglobal" target="_blank" class="node-card">
                             <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" class="social-icon">
-                            <div class="text-[10px] font-bold">YOUTUBE</div>
-                        </a>
-                        <a href="https://instagram.com/yishenglobal" target="_blank" class="node-card">
-                            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" class="social-icon">
-                            <div class="text-[10px] font-bold">INSTAGRAM</div>
+                            <div class="text-[10px] font-bold uppercase">YouTube</div>
                         </a>
                     </div>
                 </div>
             </div>
 
             <div class="lg:sticky lg:top-32">
-                <div class="bg-white/[0.03] p-10 border border-white/10 backdrop-blur-xl rounded-sm shadow-2xl">
-                    <h3 class="text-3xl font-black italic uppercase mb-8 tracking-tighter">Mission_Briefing.</h3>
-                    <form class="space-y-6" id="contact-form">
+                <div class="bg-white/[0.03] p-10 border border-white/10 backdrop-blur-xl rounded-sm">
+                    <h3 class="text-3xl font-black italic uppercase mb-8 tracking-tighter">Briefing_Terminal</h3>
+                    <form class="space-y-6">
                         <div class="grid md:grid-cols-2 gap-6">
-                            <div class="space-y-2">
-                                <label class="text-[9px] font-mono text-gray-500 uppercase tracking-widest">Client_Identity</label>
-                                <input type="text" placeholder="NAME / COMPANY" class="w-full p-4 text-xs outline-none focus:border-[#0ea5e3] transition-all" required>
-                            </div>
-                            <div class="space-y-2">
-                                <label class="text-[9px] font-mono text-gray-500 uppercase tracking-widest">Return_Node</label>
-                                <input type="email" placeholder="EMAIL@DOMAIN.COM" class="w-full p-4 text-xs outline-none focus:border-[#0ea5e3] transition-all" required>
-                            </div>
+                            <input type="text" placeholder="CLIENT_IDENTITY" class="bg-black border border-white/10 p-4 text-xs font-mono outline-none focus:border-[#0ea5e3]">
+                            <input type="email" placeholder="COMMS_NODE (EMAIL)" class="bg-black border border-white/10 p-4 text-xs font-mono outline-none focus:border-[#0ea5e3]">
                         </div>
-                        <div class="space-y-2">
-                            <label class="text-[9px] font-mono text-gray-500 uppercase tracking-widest">Project_Protocol</label>
-                            <select class="w-full p-4 text-xs outline-none appearance-none cursor-pointer">
-                                <option>RFQ_GENERAL</option>
-                                <option>MILITARY_SPEC_AUDIT</option>
-                                <option>MEDICAL_FACILITY_BRIEF</option>
-                                <option>LOGISTICS_OPTIMIZATION</option>
-                            </select>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-[9px] font-mono text-gray-500 uppercase tracking-widest">Intelligence_Data</label>
-                            <textarea rows="6" placeholder="TRANSMIT SPECIFICATIONS..." class="w-full p-4 text-xs outline-none resize-none focus:border-[#0ea5e3] transition-all"></textarea>
-                        </div>
-                        <button type="submit" class="w-full py-6 bg-white text-black font-black uppercase tracking-[4px] hover:bg-[#0ea5e3] hover:text-white transition-all duration-500">
-                            Initiate_Transmission
-                        </button>
+                        <select class="w-full bg-black border border-white/10 p-4 text-xs font-mono outline-none appearance-none focus:border-[#0ea5e3]">
+                            <option>RFQ_GENERAL</option>
+                            <option>TECHNICAL_AUDIT</option>
+                            <option>BULK_PROCUREMENT</option>
+                        </select>
+                        <textarea rows="6" placeholder="TRANSMIT MISSION SPECIFICATIONS..." class="w-full bg-black border border-white/10 p-4 text-xs font-mono outline-none focus:border-[#0ea5e3] resize-none"></textarea>
+                        <button type="submit" class="w-full py-6 bg-white text-black font-black uppercase tracking-[4px] hover:bg-[#0ea5e3] hover:text-white transition-all">Submit_Protocol</button>
                     </form>
                 </div>
             </div>
@@ -187,7 +168,7 @@
 
     <footer class="bg-[#000] py-20 border-t border-white/5">
         <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-12">
-            <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Terminal_Secured</div>
+            <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Link_Verified</div>
             <div style="display: flex !important; flex-wrap: nowrap !important; align-items: center; gap: 32px; width: auto;" class="opacity-40 grayscale hover:grayscale-0">
                 <a href="https://www.bifma.org" target="_blank" style="flex: 0 0 auto !important; min-width: 80px !important;"><img src="./bifma-badge.png" style="height: 24px; width: auto;"></a>
                 <a href="https://ista.org" target="_blank" style="flex: 0 0 auto !important; min-width: 80px !important;"><img src="./ista-badge.png" style="height: 24px; width: auto;"></a>
@@ -203,17 +184,6 @@
                 glow.style.left = e.clientX + 'px';
                 glow.style.top = e.clientY + 'px';
             });
-        });
-
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const btn = this.querySelector('button');
-            btn.innerText = "TRANSMITTING...";
-            setTimeout(() => {
-                btn.innerText = "SUCCESS: DATA_SYNCED";
-                btn.classList.replace('bg-white', 'bg-green-600');
-                btn.classList.add('text-white');
-            }, 1200);
         });
     </script>
 </body>
