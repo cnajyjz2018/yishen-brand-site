@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Yishen Global | Coordinated Industrial Architecture</title>
+    <title>Index Console | Global Industrial Orchestration | YISHEN GLOBAL</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
     <link rel="stylesheet" href="styles.css?v=2026.FINAL.MASTER">
 
     <style>
@@ -17,7 +17,7 @@
             --spring-curve: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* DIGITAL TWIN GLOW - GPU 优化 */
+        /* DIGITAL TWIN GLOW - GPU 优化渲染 */
         #cursor-glow {
             position: fixed; width: 600px; height: 600px;
             background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
@@ -31,7 +31,7 @@
             padding: 0 8%; background: var(--deep-space); overflow: hidden;
         }
 
-        /* 纯净代码勋章样式 */
+        /* 纯净代码勋章样式 - 彻底根除碎图 */
         .sovereign-tag {
             padding: 4px 12px; border: 1px solid rgba(255, 255, 255, 0.1);
             font-family: 'JetBrains Mono', monospace; font-size: 9px;
@@ -51,8 +51,8 @@
 
     <div id="cursor-glow"></div>
 
-    <nav id="master-nav">
-        <div class="nav-container">
+    <nav id="master-nav" class="fixed top-0 left-0 w-full z-[100000] bg-[#010409]/95 backdrop-blur-xl border-b border-white/5 h-20 flex items-center">
+        <div class="max-w-[1440px] mx-auto px-6 w-full flex items-center justify-between">
             <a href="index.html" class="site-logo">
                 <svg width="280" height="32" viewBox="0 0 280 32" fill="none">
                     <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
@@ -61,11 +61,11 @@
                 </svg>
             </a>
             <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400">
-                <a href="why-us.html" class="hover:text-white transition">01_GENESIS</a>
+                <a href="yishen-genesis.html" class="hover:text-white transition">01_GENESIS</a>
                 <a href="sovereign-matrix.html" class="hover:text-white transition">02_MATRIX</a>
-                <a href="site-architecture.html" class="hover:text-white transition">03_BLUEPRINT</a>
-                <a href="intelligence-intel.html" class="hover:text-white transition">04_INTEL</a>
-                <a href="tactical-briefing.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase">Initiate</a>
+                <a href="intelligence-intel.html" class="hover:text-white transition">03_INTEL</a>
+                <a href="tactical-briefing.html" class="hover:text-white transition">04_BRIEFING</a>
+                <a href="tactical-briefing.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase">Deploy_Sovereignty</a>
             </div>
         </div>
     </nav>
@@ -78,8 +78,8 @@
         </div>
 
         <div class="max-w-[850px] z-[10]">
-            <span class="font-mono tracking-[4px] text-[#0ea5e3] text-sm uppercase">[ GLOBAL_INDUSTRIAL_ARCHITECTURE ]</span>
-            <h1 class="text-white text-[clamp(2.5rem,8vw,5rem)] font-[900] leading-[1.1] my-8 uppercase italic">Architecture Over Sourcing.</h1>
+            <span class="font-mono tracking-[4px] text-[#0ea5e3] text-sm uppercase">[ GLOBAL_INDUSTRIAL_ARCHITECTURE_V4 ]</span>
+            <h1 class="text-white text-[clamp(2.5rem,8vw,5rem)] font-[900] leading-[1.1] my-8 uppercase italic tracking-tighter">Architecture Over Sourcing.</h1>
             <p class="text-[#8b949e] text-lg lg:text-xl leading-relaxed mb-12">Fusing structural integrity with mission-critical density protocols.</p>
 
             <div class="agent-console p-6 mt-12 max-w-[700px]">
@@ -115,7 +115,7 @@
             </div>
             
             <div class="flex flex-col md:flex-row justify-between items-center mt-12 gap-8">
-                <p class="text-[9px] font-mono text-gray-800 tracking-[4px] uppercase mobile-items-center">
+                <p class="text-[9px] font-mono text-gray-800 tracking-[4px] mobile-items-center uppercase">
                     &copy; 2026 YISHEN GLOBAL // ARCHITECTURAL_IP_SECURED.
                 </p>
                 <div class="flex items-center gap-6 opacity-30 grayscale font-mono text-[8px] uppercase tracking-widest">
@@ -128,7 +128,7 @@
     </footer>
 
     <script>
-        // GPU 加速鼠标微光引擎同步
+        // GPU 加速鼠标追踪同步
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             requestAnimationFrame(() => {
@@ -137,7 +137,7 @@
             });
         });
 
-        // AI Agent 模拟逻辑
+        // AI Agent 模拟逻辑：集成 Reddit 舆情
         function runAgent() {
             const input = document.getElementById('user-task');
             const output = document.getElementById('agent-output');
