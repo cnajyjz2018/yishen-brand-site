@@ -1,6 +1,6 @@
 /* =========================================================
    YiShen Global — Integrated Master Styles (v4.0.FINAL.MASTER)
-   Logic: Layout Sovereignty, Anti-Clipping, GPU Glow, AI Agent Terminal
+   Logic: Layout Sovereignty, Anti-Clipping, GPU Glow, Sovereign Badge Engine
    Version: 4.0.FINAL.MASTER (All Historical Patches Integrated)
    Authority: Strategic Architecture Group
    ========================================================= */
@@ -82,77 +82,60 @@ body {
     background-size: 32px 32px;
 }
 
-/* Video Infrastructure & Interaction */
-.hero-video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    overflow: hidden;
-}
-
-.hero-video-container video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.55;
-    pointer-events: none;
-}
-
-.accordion-content {
-    max-height: 0; 
-    overflow: hidden;
-    transition: max-height 0.4s var(--spring-curve);
-    background: rgba(255, 255, 255, 0.02);
-}
-
-.site-logo svg {
-    height: 32px !important; 
-    width: auto !important;
-    display: block !important; 
-    overflow: visible !important;
-    filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.3));
-}
-
-/* 05_Graphics_Defense: Anti-Clipping & Grayscale */
-.grayscale-active, .grayscale { 
-    filter: grayscale(100%) contrast(1.1); 
-    transition: all 0.5s var(--spring-curve); 
-    opacity: 0.45;
-}
-
-.grayscale-active:hover, .grayscale:hover { 
-    filter: grayscale(0%) contrast(1); 
-    opacity: 1;
-    transform: translateY(-2px) scale(1.03);
-}
-
-/* Footer Image Integrity: 强制禁止压缩与变形 */
-footer .flex-shrink-0, 
-footer a[style*="flex-shrink: 0"] {
-    flex-shrink: 0 !important; 
-    white-space: nowrap !important; 
-    display: inline-block !important;
-}
-
-footer img {
-    max-width: none !important; 
-    height: auto;
-    display: block !important;
-    backface-visibility: hidden;
-    -webkit-user-drag: none;
-}
-
-/* 06_AI_Agent_Terminal_Framework: 终端态交互 */
-.agent-console {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(14, 165, 233, 0.2);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-    border-radius: 2px;
+/* 05_SOVEREIGN_BADGE_ENGINE: 彻底消除图片依赖 */
+.sov-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 3px solid var(--neon-blue);
+    font-family: 'JetBrains Mono', monospace;
     transition: all 0.4s var(--spring-curve);
+    cursor: crosshair;
+}
+
+.sov-badge:hover {
+    background: rgba(14, 165, 233, 0.08);
+    border-color: var(--neon-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.sov-badge .badge-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #8b949e;
+    text-transform: uppercase;
+    margin-right: 10px;
+}
+
+.sov-badge .badge-value {
+    font-size: 10px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* 针对 VISA/付款主权的极简渲染 */
+.pay-sov {
+    border-left: 3px solid #fff;
+    opacity: 0.5;
+    filter: grayscale(1);
+}
+
+.pay-sov:hover {
+    opacity: 1;
+    filter: grayscale(0);
+}
+
+/* 06_AI_Agent_Terminal_Framework & Typography */
+.terminal-log {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--terminal-green);
+    opacity: 0.8;
+    letter-spacing: 0.5px;
 }
 
 .execute-btn {
@@ -171,14 +154,6 @@ footer img {
     box-shadow: 0 0 30px rgba(14, 165, 233, 0.4);
 }
 
-.terminal-log {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--terminal-green);
-    opacity: 0.8;
-    letter-spacing: 0.5px;
-}
-
 /* 07_Mobile_Responsive_Engine */
 @media (max-width: 768px) {
     :root { --navbar-height: 70px; }
@@ -190,13 +165,6 @@ footer img {
     }
 
     .nav-container { padding: 0 20px; }
-
-    footer .grid-cols-5, 
-    footer .grid-cols-4, 
-    footer .grid-cols-2 { 
-        grid-template-columns: repeat(2, 1fr) !important; 
-        gap: 24px !important; 
-    }
 
     .mobile-items-center {
         align-items: center !important;
@@ -214,7 +182,7 @@ footer img {
     }
 }
 
-/* 08_Utility_Typography */
+/* 08_Utility_Navigation */
 .nav-link {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.7rem; 
