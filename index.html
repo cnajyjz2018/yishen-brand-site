@@ -14,48 +14,52 @@
         body { background-color: var(--bg-deep); font-family: 'Inter', sans-serif; color: #ffffff; margin: 0; overflow-x: hidden; }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
 
+        /* V5.0 仪式感加载动画 */
+        #loading-screen { position: fixed; inset: 0; z-index: 99999; background: #010409; display: flex; flex-direction: column; items: center; justify-content: center; }
+        .progress-bar { width: 240px; height: 2px; background: rgba(255,255,255,0.05); margin-top: 25px; }
+        #bar-fill { height: 100%; background: var(--brand-blue); width: 0%; transition: 2.2s cubic-bezier(0.1, 0.5, 0.1, 1); }
+
         /* V5.0 拓扑背景 */
         .topology-bg { background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.03) 1px, transparent 0); background-size: 40px 40px; }
         .hero-assets { background: radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.1) 0%, transparent 50%); }
         
         #cursor-glow { position: fixed; width: 600px; height: 600px; background: radial-gradient(circle, rgba(14, 165, 233, 0.05) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 0; transform: translate(-50%, -50%); will-change: transform; }
 
-        /* 认证图标点亮：解除禁令 */
-        .cert-node { filter: grayscale(100%); opacity: 0.4; transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; }
-        .cert-node:hover { filter: grayscale(0%); opacity: 1; transform: translateY(-5px) scale(1.1); }
+        .cert-node { filter: grayscale(100%); opacity: 0.4; transition: 0.5s; cursor: pointer; }
+        .cert-node:hover { filter: grayscale(0%); opacity: 1; transform: translateY(-3px); }
 
-        /* 视频扫描线 */
-        .scan-line { position: absolute; width: 100%; height: 2px; background: var(--brand-blue); opacity: 0.5; animation: video-scan 4s linear infinite; }
-        @keyframes video-scan { 0% { top: 0%; opacity: 0; } 50% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
+        .scan-line { position: absolute; width: 100%; height: 2px; background: var(--brand-blue); opacity: 0.3; animation: video-scan 4s linear infinite; }
+        @keyframes video-scan { 0% { top: 0%; } 100% { top: 100%; } }
         
-        .partner-glow { box-shadow: 0 0 25px rgba(14, 165, 227, 0.6); border-color: #ffd700 !important; }
+        .glass-panel { background: rgba(1, 4, 9, 0.9); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: var(--brand-blue); border-radius: 2px; }
-
-        .glass-panel { background: rgba(1, 4, 9, 0.9); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
     </style>
 </head>
 <body class="topology-bg selection:bg-[#0ea5e3]">
 
+    <div id="loading-screen">
+        <span class="text-white font-black italic text-2xl uppercase tracking-tighter">Yishen_Global_V5.0</span>
+        <div class="progress-bar"><div id="bar-fill"></div></div>
+        <span class="text-[#0ea5e3] font-mono text-[8px] mt-4 tracking-[5px] animate-pulse">// INITIALIZING_SOVEREIGNTY_PROTOCOL</span>
+    </div>
+
     <div id="cursor-glow"></div>
 
-    <nav id="master-nav" class="fixed w-full z-[100] transition-all duration-300 border-b border-white/5 bg-[#010409]/80 backdrop-blur-xl">
-        <div class="max-w-[1440px] mx-auto h-20 flex items-center justify-between px-8">
+    <nav id="master-nav" class="fixed w-full z-[100] border-b border-white/5 bg-[#010409]/80 backdrop-blur-xl h-20 flex items-center">
+        <div class="max-w-[1440px] mx-auto w-full flex items-center justify-between px-8">
             <a href="index.html" class="flex flex-col">
                 <span class="text-white font-black italic text-xl tracking-tighter uppercase leading-none">Yishen Global</span>
                 <span class="text-[#0ea5e3] font-mono text-[8px] tracking-[3px] uppercase">Sovereignty_V5.0</span>
             </a>
-            
             <div class="hidden lg:flex items-center space-x-8 font-mono text-[0.7rem] tracking-widest text-gray-400">
                 <a href="genesis.html" class="hover:text-white transition">01_GENESIS</a>
                 <a href="architectures.html" class="hover:text-white transition">02_ARCHITECTURES</a>
                 <a href="clusters.html" class="hover:text-white transition">03_CLUSTERS</a>
                 <a href="resources.html" class="hover:text-white transition border-b-2 border-[#0ea5e3] pb-1">04_RESOURCES</a>
-                
                 <div class="flex items-center gap-4 border-l border-white/10 pl-6 ml-4">
                     <button onclick="connectNode('whatsapp')" class="hover:text-[#25D366] transition-colors"><i class="fab fa-whatsapp text-lg"></i></button>
                     <button onclick="connectNode('linkedin')" class="hover:text-[#0077B5] transition-colors"><i class="fab fa-linkedin text-lg"></i></button>
-                    <button onclick="connectNode('instagram')" class="hover:text-[#E1306C] transition-colors"><i class="fab fa-instagram text-lg"></i></button>
                 </div>
             </div>
         </div>
@@ -72,145 +76,114 @@
             <div class="bg-white/5 border border-white/10 rounded-lg overflow-hidden shadow-2xl">
                 <div class="p-3 border-b border-white/10 bg-white/5 flex justify-between items-center">
                     <span class="font-mono text-[9px] text-[#0ea5e3] uppercase italic">// HS_INTEL_ENGINE</span>
-                    <span class="text-[8px] text-gray-500 font-mono">2026_VERSION</span>
+                    <span class="text-[8px] text-gray-500 font-mono">SYNCED</span>
                 </div>
                 <div class="p-4">
-                    <input type="text" id="hs-input" onkeyup="searchHSCode()" placeholder="Search product HS Code (e.g. 9403)..." class="w-full bg-black/40 border border-white/10 p-2 text-xs font-mono text-white focus:outline-none focus:border-[#0ea5e3] transition">
+                    <input type="text" id="hs-input" onkeyup="searchHSCode()" placeholder="Search product intelligence..." class="w-full bg-black/40 border border-white/10 p-4 text-xs font-mono text-white focus:outline-none focus:border-[#0ea5e3] transition rounded">
                     <div id="hs-results" class="mt-2 max-h-32 overflow-y-auto custom-scrollbar text-[10px]"></div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="py-24 bg-[#010409] border-t border-white/5 relative overflow-hidden">
-        <div class="container mx-auto px-[8%] relative z-10">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-                <h2 class="text-white text-5xl font-black italic uppercase tracking-tighter">Global <span class="text-[#0ea5e3]">Perspectives</span></h2>
-                <div class="flex bg-white/5 p-1 rounded-full border border-white/10">
-                    <button onclick="switchPerspective('michael')" id="btn-michael" class="px-8 py-3 rounded-full font-mono text-xs transition-all bg-[#0ea5e3] text-black font-bold uppercase">Node_USA: Michael</button>
-                    <button onclick="switchPerspective('sarah')" id="btn-sarah" class="px-8 py-3 rounded-full font-mono text-xs transition-all text-gray-500 hover:text-white uppercase">Node_EU: Sarah</button>
+    <section class="py-12 px-[8%]">
+        <div class="glass-panel p-10 rounded-2xl border-t-4 border-[#0ea5e3]">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-8">
+                <div class="max-w-xl">
+                    <span class="font-mono text-[#0ea5e3] tracking-[5px] text-[10px] uppercase animate-pulse">// ACTIVE_RECONNAISSANCE_PROTOCOL</span>
+                    <h2 class="text-white text-3xl font-black italic uppercase mt-4 tracking-tighter">Targeting <span class="text-[#0ea5e3]">Engine.</span></h2>
+                    <p class="text-gray-500 font-mono text-[10px] mt-4 leading-relaxed">基于 Trademo/Apollo 数据对撞，实时扫描 E-ZONE 潜在买家。</p>
                 </div>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-16 items-start">
-                <div class="relative rounded-2xl overflow-hidden border border-white/10 aspect-video bg-slate-900 shadow-2xl group">
-                    <img id="perspective-img" src="public/assets/system/global-ops-monitor-v5.webp" class="w-full h-full object-cover transition-all duration-700">
-                    <div id="perspective-tag" class="absolute bottom-6 left-6 px-4 py-1 bg-[#0ea5e3] text-black font-mono text-[10px] font-bold uppercase tracking-widest">Predictability_Protocol</div>
-                </div>
-                
-                <div class="space-y-8">
-                    <div class="flex items-center gap-6">
-                        <div id="perspective-avatar" class="w-24 h-24 rounded-full border-2 border-[#0ea5e3] bg-gray-800 flex items-center justify-center overflow-hidden transition-all duration-500">
-                            <img src="public/assets/branding/avatar-MichaelT.webp" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 id="perspective-name" class="text-white text-3xl font-black italic uppercase">Michael T.</h4>
-                            <p id="perspective-title" class="text-[#0ea5e3] font-mono text-[10px] tracking-widest uppercase">North America Operations Chief</p>
-                        </div>
+                <div class="grid grid-cols-3 gap-4">
+                    <div onclick="window.open('https://www.apollo.io')" class="p-3 bg-white/5 border border-white/10 rounded hover:border-[#0ea5e3] cursor-pointer text-center">
+                        <i class="fa-solid fa-satellite-dish text-[#0ea5e3] mb-2"></i>
+                        <div class="text-[8px] font-mono">APOLLO</div>
                     </div>
-                    
-                    <p id="perspective-text" class="text-gray-400 text-xl italic leading-relaxed border-l-4 border-[#A11219] pl-8 transition-all duration-500">
-                        "系统就位。我是 Michael T.，正在同步北美主权。"
-                    </p>
-
-                    <div id="tactical-brief" class="p-4 border border-[#0ea5e3]/20 bg-[#0ea5e3]/5 hidden">
-                        <div class="text-[#0ea5e3] font-mono text-[9px] mb-2 uppercase tracking-widest animate-pulse">// COMMAND_INSIGHT: 《随风一翻都是订单》</div>
-                        <p id="tactical-quote" class="italic text-gray-300 text-sm"></p>
+                    <div onclick="window.open('https://www.importgenius.com')" class="p-3 bg-white/5 border border-white/10 rounded hover:border-[#0ea5e3] cursor-pointer text-center">
+                        <i class="fa-solid fa-ship text-[#A11219] mb-2"></i>
+                        <div class="text-[8px] font-mono">CUSTOMS</div>
                     </div>
-                    
-                    <button onclick="playManifesto()" class="group flex items-center gap-4 text-white hover:text-[#0ea5e3] transition-all font-mono text-xs uppercase tracking-[0.2em]">
-                        <span class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-[#0ea5e3] bg-white/5 group-hover:bg-[#0ea5e3]/10"><i class="fa-solid fa-play"></i></span>
-                        Play_Node_Manifesto
-                    </button>
+                    <div onclick="window.open('https://www.zoominfo.com')" class="p-3 bg-white/5 border border-white/10 rounded hover:border-[#0ea5e3] cursor-pointer text-center">
+                        <i class="fa-solid fa-id-card text-white mb-2"></i>
+                        <div class="text-[8px] font-mono">ZOOM_INFO</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <div class="fixed bottom-6 right-6 z-[5000] flex flex-col items-end gap-3 group">
-        <div id="hub-tag" class="opacity-0 group-hover:opacity-100 transition-all duration-500 bg-[#0ea5e3] text-black font-mono text-[9px] px-3 py-1 font-bold uppercase italic tracking-widest translate-y-2 group-hover:translate-y-0 shadow-lg">
-            // ACCESS_COMPLIANCE_API
-        </div>
-        <div class="glass-panel p-3 rounded-xl shadow-2xl flex flex-wrap max-w-[200px] justify-end gap-4 transition-all duration-500 hover:border-[#0ea5e3]/40">
-            <div onclick="verifyCert('bifma')" class="cert-node w-6 h-6 flex items-center justify-center" title="BIFMA"><img src="public/assets/icons/bifma.webp" class="max-w-full max-h-full grayscale hover:grayscale-0"></div>
-            <div onclick="verifyCert('bsci')" class="cert-node w-6 h-6 flex items-center justify-center" title="BSCI"><img src="public/assets/icons/bsci.webp" class="max-w-full max-h-full grayscale hover:grayscale-0"></div>
-            <div onclick="verifyCert('ul')" class="cert-node w-6 h-6 flex items-center justify-center" title="UL"><img src="public/assets/icons/ul.webp" class="max-w-full max-h-full grayscale hover:grayscale-0"></div>
-            <div onclick="verifyCert('iso9001')" class="cert-node w-6 h-6 flex items-center justify-center" title="ISO 9001"><img src="public/assets/icons/iso9001.webp" class="max-w-full max-h-full grayscale hover:grayscale-0"></div>
-            <div onclick="verifyCert('fsc')" class="cert-node w-6 h-6 flex items-center justify-center" title="FSC"><img src="public/assets/icons/fsc.webp" class="max-w-full max-h-full grayscale hover:grayscale-0"></div>
-            <div onclick="verifyCert('ista')" class="cert-node w-6 h-6 flex items-center justify-center" title="ISTA"><img src="public/assets/icons/ista.webp" class="max-w-full max-h-full grayscale hover:grayscale-0"></div>
-            <div onclick="verifyCert('visa')" class="cert-node w-6 h-6 flex items-center justify-center" title="VISA"><img src="public/assets/icons/visa.webp" class="max-w-full max-h-full grayscale hover:grayscale-0"></div>
+        <div class="opacity-0 group-hover:opacity-100 transition-all duration-500 bg-[#0ea5e3] text-black font-mono text-[9px] px-3 py-1 font-bold italic tracking-widest">// ACCESS_COMPLIANCE_API</div>
+        <div class="glass-panel p-3 rounded-xl shadow-2xl flex flex-wrap max-w-[200px] justify-end gap-4">
+            <div onclick="previewResource('bifma')" class="cert-node h-6"><img src="public/assets/icons/bifma.webp" class="h-full"></div>
+            <div onclick="previewResource('ul')" class="cert-node h-6"><img src="public/assets/icons/ul.webp" class="h-full"></div>
+            <div onclick="previewResource('fsc')" class="cert-node h-6"><img src="public/assets/icons/fsc.webp" class="h-full"></div>
+            <div onclick="previewResource('iso9001')" class="cert-node h-6"><img src="public/assets/icons/iso9001.webp" class="h-full"></div>
         </div>
     </div>
 
-    <div id="video-modal" class="fixed inset-0 z-[6000] hidden bg-black/95 backdrop-blur-3xl flex items-center justify-center p-8">
-        <div class="w-full max-w-5xl aspect-video border border-white/10 relative">
-            <video id="manifesto-player" class="w-full h-full object-contain"><source src="" type="video/mp4"></video>
+    <div id="asset-modal" class="fixed inset-0 z-[6000] hidden bg-black/98 flex flex-col items-center justify-center p-6 backdrop-blur-2xl">
+        <div class="w-full max-w-6xl flex justify-between items-center mb-4 px-2">
+            <span id="preview-title" class="font-mono text-[10px] text-[#0ea5e3] tracking-[4px] uppercase italic">// LOADING_RESOURCE...</span>
+            <button onclick="closePreview()" class="text-white/40 hover:text-white font-mono text-[10px] uppercase">Terminate_Link [X]</button>
+        </div>
+        <div class="w-full max-w-6xl h-[80vh] border border-white/10 relative bg-white/5 rounded-lg overflow-hidden">
+            <iframe id="preview-frame" src="" class="w-full h-full border-none"></iframe>
             <div class="scan-line"></div>
-            <button onclick="closeManifesto()" class="absolute -top-12 right-0 text-white font-mono text-xs uppercase hover:text-[#0ea5e3]">Terminate_Link [X]</button>
         </div>
     </div>
-
-    <footer class="py-12 px-[8%] border-t border-white/5 bg-black text-center text-gray-600 font-mono text-[10px] tracking-widest uppercase">
-        &copy; 2025 Yishen Global Sovereignty. All Assets Encrypted via V5.0 Protocol.
-    </footer>
 
     <script>
-        const data = {
-            michael: { img: "public/assets/system/global-ops-monitor-v5.webp", tag: "Predictability_Protocol", name: "Michael T.", title: "North America Operations Chief", text: "在北美市场，确定性就是主权。YiShen V5.0 是确定性的同步引擎。", color: "#0ea5e3", avatar: "public/assets/branding/avatar-MichaelT.webp", video: "public/assets/videos/michael-manifesto.mp4", quote: "订单不是随风飘来的，而是随‘系统’而来的。翻开每一页，都是确定的主权。" },
-            sarah: { img: "public/assets/industries/medical-clinical-lab.webp", tag: "Precision_Compliance", name: "Sarah J.", title: "European Market Strategy", text: "欧洲市场对品质的挑剔近乎偏执。合规是制造主权的门槛。", color: "#A11219", avatar: "public/assets/branding/avatar-SarahJ.webp", video: "public/assets/videos/sarah-manifesto.mp4" }
+        // [PROTOCOL] 资源索引
+        const certAssets = {
+            bifma: { url: "public/assets/docs/bifma.pdf", title: "BIFMA_STRUCTURAL_PROTOCOL" },
+            ul: { url: "public/assets/docs/ul.pdf", title: "UL_SAFETY_VALIDATED" },
+            fsc: { url: "public/assets/docs/fsc.pdf", title: "FSC_SUSTAINABILITY_CREDENTIAL" },
+            iso9001: { url: "public/assets/docs/iso9001.pdf", title: "ISO_9001_QUALITY_MANAGEMENT" }
         };
 
-        const certs = { bifma: "https://www.bifma.org", bsci: "https://www.amfori.org", iso9001: "https://www.iso.org", ul: "https://directory.ul.com", fsc: "https://fsc.org", ista: "https://ista.org", visa: "https://www.visa.com" };
-        const hsDatabase = [ { code: "9403.3000", desc: "Wooden Office Furniture" }, { code: "9401.3000", desc: "Swivel Seats" }, { code: "9403.1000", desc: "Metal Office Furniture" } ];
+        // [FIX] 防闪退预览协议
+        function previewResource(key) {
+            if (window.event) window.event.preventDefault();
+            const asset = certAssets[key];
+            const modal = document.getElementById('asset-modal');
+            const iframe = document.getElementById('preview-frame');
+            if (asset && modal && iframe) {
+                iframe.src = asset.url;
+                document.getElementById('preview-title').innerText = asset.title;
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                window.open("https://www.bifma.org", '_blank');
+            }
+        }
 
-        function verifyCert(key) { window.open(certs[key], '_blank'); }
-        function connectNode(key) { const urls = { whatsapp: "https://wa.me/yournumber", linkedin: "https://linkedin.com/in/yourbio", instagram: "https://instagram.com/yishen" }; window.open(urls[key], '_blank'); }
+        function closePreview() {
+            document.getElementById('asset-modal').classList.add('hidden');
+            document.getElementById('preview-frame').src = '';
+            document.body.style.overflow = 'auto';
+        }
 
+        // [ENGINE] HS Intel
+        const hsDB = [ { code: "9403.3000", desc: "Wooden Office Furniture" }, { code: "3918.9000", desc: "WPC Decking" }, { code: "4409.2100", desc: "Bamboo Flooring" } ];
         function searchHSCode() {
             const q = document.getElementById('hs-input').value.toLowerCase();
-            const res = hsDatabase.filter(i => i.code.includes(q) || i.desc.toLowerCase().includes(q));
-            document.getElementById('hs-results').innerHTML = res.map(i => `<div class="p-2 border-b border-white/5 flex justify-between"><span>${i.code}</span><span class="text-gray-500 uppercase">${i.desc}</span></div>`).join('');
+            const res = hsDB.filter(i => i.code.includes(q) || i.desc.toLowerCase().includes(q));
+            document.getElementById('hs-results').innerHTML = res.map(i => `<div class="p-2 border-b border-white/5 flex justify-between items-center"><span class="text-[#0ea5e3] font-bold">${i.code}</span><span class="text-gray-500 uppercase">${i.desc}</span></div>`).join('');
         }
 
-        function switchPerspective(node) {
-            const p = data[node];
-            const isPartner = localStorage.getItem('yishen_profile') === 'Tactical_Partner';
-            document.getElementById('perspective-img').src = p.img;
-            document.getElementById('perspective-tag').innerText = p.tag;
-            document.getElementById('perspective-tag').style.backgroundColor = p.color;
-            document.getElementById('perspective-name').innerText = p.name;
-            document.getElementById('perspective-title').innerText = p.title;
-            document.getElementById('perspective-title').style.color = p.color;
-
-            if (node === 'michael' && isPartner) {
-                document.getElementById('perspective-text').innerText = "欢迎回来，我的老战友。今天准备好翻开哪一页订单？";
-                document.getElementById('perspective-avatar').classList.add('partner-glow');
-            } else {
-                document.getElementById('perspective-text').innerText = p.text;
-                document.getElementById('perspective-avatar').classList.remove('partner-glow');
-            }
-
-            const av = document.getElementById('perspective-avatar');
-            av.style.borderColor = p.color;
-            av.innerHTML = `<img src="${p.avatar}" class="w-full h-full object-cover">`;
-            document.getElementById('tactical-brief').classList.toggle('hidden', node !== 'michael');
-            if(node === 'michael') { document.getElementById('tactical-quote').innerText = p.quote; localStorage.setItem('yishen_profile', 'Tactical_Partner'); }
-            
-            document.getElementById('btn-michael').className = node === 'michael' ? "px-8 py-3 rounded-full font-mono text-xs transition-all bg-[#0ea5e3] text-black font-bold uppercase" : "px-8 py-3 rounded-full font-mono text-xs transition-all text-gray-500 hover:text-white uppercase";
-            document.getElementById('btn-sarah').className = node === 'sarah' ? "px-8 py-3 rounded-full font-mono text-xs transition-all bg-[#A11219] text-white font-bold uppercase" : "px-8 py-3 rounded-full font-mono text-xs transition-all text-gray-500 hover:text-white uppercase";
-        }
-
-        function playManifesto() {
-            const player = document.getElementById('manifesto-player');
-            player.querySelector('source').src = document.getElementById('btn-michael').classList.contains('bg-[#0ea5e3]') ? data.michael.video : data.sarah.video;
-            player.load(); document.getElementById('video-modal').classList.remove('hidden'); player.play();
-        }
-
-        function closeManifesto() { document.getElementById('video-modal').classList.add('hidden'); document.getElementById('manifesto-player').pause(); }
+        // [INIT] 加载控制
+        window.addEventListener('load', () => {
+            document.getElementById('bar-fill').style.width = '100%';
+            setTimeout(() => {
+                document.getElementById('loading-screen').style.opacity = '0';
+                setTimeout(() => { document.getElementById('loading-screen').style.display = 'none'; }, 700);
+            }, 2500);
+            searchHSCode();
+        });
 
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => { requestAnimationFrame(() => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; }); });
-        document.addEventListener('DOMContentLoaded', () => { switchPerspective('michael'); searchHSCode(); });
     </script>
 </body>
 </html>
