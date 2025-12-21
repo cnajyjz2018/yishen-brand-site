@@ -24,22 +24,13 @@
         }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
 
-        /* V5.0 拓扑背景 */
+        /* V5.0 拓扑背景补丁 */
         .topology-bg {
             background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.03) 1px, transparent 0);
             background-size: 40px 40px;
         }
         .hero-assets {
             background: radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.1) 0%, transparent 50%);
-        }
-        .node-skeleton {
-            background: linear-gradient(90deg, #010409 25%, #050a12 50%, #010409 75%);
-            background-size: 200% 100%;
-            animation: pulse-shimmer 2s infinite linear;
-        }
-        @keyframes pulse-shimmer {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
         }
         
         #cursor-glow {
@@ -49,7 +40,7 @@
             transform: translate(-50%, -50%); will-change: transform;
         }
 
-        /* 认证图标点亮逻辑 */
+        /* 认证图标点亮逻辑：解除禁令 */
         .cert-node { 
             filter: grayscale(100%); 
             opacity: 0.4; 
@@ -114,11 +105,11 @@
             <span class="font-mono text-[#0ea5e3] tracking-[5px] uppercase text-xs animate-pulse">// SYSTEM_IGNITION_ACTIVE</span>
             <h1 class="text-white text-[clamp(2.5rem,8vw,5.5rem)] font-[900] leading-[0.9] my-8 uppercase italic tracking-tighter">Sovereign<br>Integration.</h1>
             <div class="mt-12 flex flex-col md:flex-row gap-12 items-center">
-                <div class="w-full md:w-1/2 border border-white/10 p-4 bg-black/40 node-skeleton group overflow-hidden rounded-xl">
-                    <img src="public/assets/products/seating-node-01.webp" alt="Flagship" class="w-full h-auto opacity-0 transition-opacity duration-700" onload="this.style.opacity='1'; this.parentElement.classList.remove('node-skeleton')">
+                <div class="w-full md:w-1/2 border border-white/10 p-4 bg-black/40 group overflow-hidden rounded-xl">
+                    <img src="public/assets/products/seating-node-01.webp" alt="Flagship" class="w-full h-auto transition-transform duration-700 group-hover:scale-105">
                 </div>
-                <div class="md:w-1/2 space-y-8">
-                    <p class="text-[#8b949e] text-lg lg:text-xl italic border-l-2 border-[#A11219] pl-8 leading-relaxed">28 Strategic clusters synchronized via V5.0 architecture. Orders don't blow in the wind; they follow the system.</p>
+                <div class="md:w-1/2 space-y-8 text-gray-400">
+                    <p class="text-lg italic border-l-2 border-[#A11219] pl-8">"Orders follow the system. Flipping pages, capturing sovereignty." [Ref: 《随风一翻都是订单》]</p>
                 </div>
             </div>
         </div>
@@ -127,9 +118,7 @@
     <section class="py-24 bg-[#010409] border-t border-white/5 relative overflow-hidden">
         <div class="container mx-auto px-[8%] relative z-10">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-                <div>
-                    <h2 class="text-white text-5xl font-black italic uppercase tracking-tighter">Global <span class="text-[#0ea5e3]">Perspectives</span></h2>
-                </div>
+                <h2 class="text-white text-5xl font-black italic uppercase tracking-tighter">Global <span class="text-[#0ea5e3]">Perspectives</span></h2>
                 <div class="flex bg-white/5 p-1 rounded-full border border-white/10">
                     <button onclick="switchPerspective('michael')" id="btn-michael" class="px-8 py-3 rounded-full font-mono text-xs tracking-widest transition-all bg-[#0ea5e3] text-black font-bold uppercase">Node_USA: Michael</button>
                     <button onclick="switchPerspective('sarah')" id="btn-sarah" class="px-8 py-3 rounded-full font-mono text-xs tracking-widest transition-all text-gray-500 hover:text-white uppercase">Node_EU: Sarah</button>
@@ -172,7 +161,7 @@
 
                     <div id="tactical-brief" class="p-4 border border-[#0ea5e3]/20 bg-[#0ea5e3]/5 hidden">
                         <div class="text-[#0ea5e3] font-mono text-[9px] mb-2 uppercase tracking-widest animate-pulse">// COMMAND_INSIGHT: 《随风一翻都是订单》</div>
-                        <p class="italic text-gray-300 text-sm">"订单不是随风飘来的，而是随‘系统’而来的。翻开每一页，都是确定的主权。"</p>
+                        <p id="tactical-quote" class="italic text-gray-300 text-sm"></p>
                     </div>
                     
                     <button onclick="playManifesto()" class="group flex items-center gap-4 text-white hover:text-[#0ea5e3] transition-all font-mono text-xs uppercase tracking-[0.2em]">
@@ -187,7 +176,7 @@
     </section>
 
     <div id="video-modal" class="fixed inset-0 z-[2000] hidden bg-black/95 backdrop-blur-3xl flex items-center justify-center p-8">
-        <div class="w-full max-w-5xl aspect-video border border-white/10 relative">
+        <div class="w-full max-w-5xl aspect-video border border-white/10 relative bg-black">
             <video id="manifesto-player" class="w-full h-full object-contain"><source src="" type="video/mp4"></video>
             <div class="scan-line"></div>
             <button onclick="closeManifesto()" class="absolute -top-12 right-0 text-white font-mono text-xs tracking-widest uppercase hover:text-[#0ea5e3]">Terminate_Link [X]</button>
@@ -206,9 +195,9 @@
                 name: "Michael T.",
                 title: "North America Operations Chief",
                 text: "在北美市场，确定性就是主权。YiShen V5.0 是确定性的同步引擎。",
-                color: "#0ea5e3", 
-                avatar: "public/assets/branding/avatar-MichaelT.webp",
-                video: "public/assets/videos/michael-manifesto.mp4"
+                color: "#0ea5e3", avatar: "public/assets/branding/avatar-MichaelT.webp",
+                video: "public/assets/videos/michael-manifesto.mp4",
+                quote: "订单不是随风飘来的，而是随‘系统’而来的。翻开每一页，都是确定的主权。"
             },
             sarah: {
                 img: "public/assets/industries/medical-clinical-lab.webp",
@@ -216,29 +205,23 @@
                 name: "Sarah J.",
                 title: "European Market Strategy",
                 text: "欧洲市场对品质的挑剔近乎偏执。合规是制造主权的门槛。",
-                color: "#A11219", 
-                avatar: "public/assets/branding/avatar-SarahJ.webp",
+                color: "#A11219", avatar: "public/assets/branding/avatar-SarahJ.webp",
                 video: "public/assets/videos/sarah-manifesto.mp4"
             }
         };
 
         const certs = {
-            bifma: "https://www.bifma.org",
-            bsci: "https://www.amfori.org",
-            iso9001: "https://www.iso.org",
-            ul: "https://directory.ul.com",
-            fsc: "https://fsc.org",
-            ista: "https://ista.org",
-            visa: "https://www.visa.com"
+            bifma: "https://www.bifma.org", bsci: "https://www.amfori.org", iso9001: "https://www.iso.org",
+            ul: "https://directory.ul.com", fsc: "https://fsc.org", ista: "https://ista.org", visa: "https://www.visa.com"
         };
 
         function verifyCert(key) { window.open(certs[key], '_blank'); }
 
         function connectNode(key) {
-            const urls = {
-                whatsapp: "https://wa.me/861XXXXXXXXX",
-                linkedin: "https://linkedin.com/in/yourprofile",
-                instagram: "https://instagram.com/yishen"
+            const urls = { 
+                whatsapp: "https://wa.me/your-number", 
+                linkedin: "https://linkedin.com/in/your-profile", 
+                instagram: "https://instagram.com/yishen" 
             };
             window.open(urls[key], '_blank');
         }
@@ -253,8 +236,7 @@
             document.getElementById('perspective-name').innerText = p.name;
             document.getElementById('perspective-title').innerText = p.title;
             document.getElementById('perspective-title').style.color = p.color;
-            
-            // 战友识别
+
             if (node === 'michael' && profile === 'Tactical_Partner') {
                 document.getElementById('perspective-text').innerText = "欢迎回来，我的老战友。今天准备好翻开哪一页订单？";
                 document.getElementById('perspective-avatar').classList.add('partner-glow');
@@ -267,8 +249,14 @@
             av.style.borderColor = p.color;
             av.innerHTML = `<img src="${p.avatar}" class="w-full h-full object-cover">`;
 
-            document.getElementById('tactical-brief').classList.toggle('hidden', node !== 'michael');
-            if(node === 'michael') localStorage.setItem('yishen_profile', 'Tactical_Partner');
+            const brief = document.getElementById('tactical-brief');
+            if(node === 'michael') { 
+                brief.classList.remove('hidden'); 
+                document.getElementById('tactical-quote').innerText = p.quote; 
+                localStorage.setItem('yishen_profile', 'Tactical_Partner'); 
+            } else { 
+                brief.classList.add('hidden'); 
+            }
 
             updateButtonUI(node);
         }
@@ -283,23 +271,20 @@
             const player = document.getElementById('manifesto-player');
             const isMichael = document.getElementById('btn-michael').classList.contains('bg-[#0ea5e3]');
             player.querySelector('source').src = isMichael ? data.michael.video : data.sarah.video;
-            player.load();
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-            player.play();
+            player.load(); modal.classList.remove('hidden'); player.play();
         }
 
-        function closeManifesto() {
-            document.getElementById('video-modal').classList.add('hidden');
-            document.getElementById('manifesto-player').pause();
-            document.body.style.overflow = 'auto';
+        function closeManifesto() { 
+            document.getElementById('video-modal').classList.add('hidden'); 
+            document.getElementById('manifesto-player').pause(); 
+            document.body.style.overflow = 'auto'; 
         }
 
         const glow = document.getElementById('cursor-glow');
-        document.addEventListener('mousemove', (e) => {
+        document.addEventListener('mousemove', (e) => { 
             requestAnimationFrame(() => {
-                glow.style.left = e.clientX + 'px';
-                glow.style.top = e.clientY + 'px';
+                glow.style.left = e.clientX + 'px'; 
+                glow.style.top = e.clientY + 'px'; 
             });
         });
 
