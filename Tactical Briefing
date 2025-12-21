@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tactical Briefing | Command Link | YISHEN GLOBAL</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="styles.css?v=2026.FINAL.MASTER">
+
+    <style>
+        :root { --neon-blue: #0ea5e3; --performance-red: #A11219; --deep-space: #010409; }
+        body { background-color: var(--deep-space); color: #fff; font-family: 'Inter', sans-serif; }
+        
+        /* 权威框架：拓扑网格背景 */
+        .topology-grid { background-image: radial-gradient(rgba(14, 165, 233, 0.12) 1px, transparent 1px); background-size: 30px 30px; }
+        
+        /* DIGITAL TWIN GLOW - GPU 优化渲染 */
+        #cursor-glow { 
+            position: fixed; width: 600px; height: 600px; 
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 70%); 
+            border-radius: 50%; pointer-events: none; z-index: 9999; 
+            transform: translate(-50%, -50%); will-change: transform; mix-blend-mode: screen;
+        }
+
+        /* 联络节点卡片：工业对撞风格 */
+        .node-card { 
+            background: rgba(255, 255, 255, 0.02); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+            position: relative; overflow: hidden;
+        }
+        .node-card:hover { border-color: var(--neon-blue); background: rgba(14, 165, 233, 0.05); transform: translateY(-3px); }
+        .node-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--neon-blue); transition: width 0.4s ease; }
+        .node-card:hover::after { width: 100%; }
+
+        /* 纯代码主权标签 */
+        .sovereign-tag {
+            padding: 4px 12px; border: 1px solid rgba(255, 255, 255, 0.1);
+            font-family: 'JetBrains Mono', monospace; font-size: 9px;
+            text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
+        }
+        .sovereign-tag:hover { border-color: var(--neon-blue); color: var(--neon-blue); }
+
+        @media (max-width: 768px) {
+            .hero-pt { padding-top: 140px !important; }
+            .mobile-items-center { align-items: center !important; text-align: center !important; width: 100% !important; }
+        }
+    </style>
+</head>
+<body class="topology-grid selection:bg-[#0ea5e3]">
+
+    <div id="cursor-glow"></div>
+
+    <nav id="master-nav" class="fixed top-0 left-0 w-full z-[10000] bg-[#010409]/90 backdrop-blur-xl border-b border-white/5 h-20 flex items-center">
+        <div class="max-w-[1440px] mx-auto px-6 w-full flex items-center justify-between">
+            <a href="index.html" class="site-logo">
+                <svg width="280" height="32" viewBox="0 0 280 32" fill="none">
+                    <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
+                    <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
+                    <text x="56" y="18" fill="white" style="font-family:'Inter'; font-weight:700; font-size:18px;">Yishen Global</text>
+                </svg>
+            </a>
+            <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400">
+                <a href="why-us.html" class="hover:text-white transition">01_GENESIS</a>
+                <a href="sovereign-matrix.html" class="hover:text-white transition">02_MATRIX</a>
+                <a href="intelligence-intel.html" class="hover:text-white transition">03_INTEL</a>
+                <a href="tactical-briefing.html" class="text-white border-b border-[#0ea5e3]">04_BRIEFING</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="hero-pt pt-40 pb-24 px-[8%] max-w-[1440px] mx-auto">
+        <div class="grid lg:grid-cols-2 gap-24 items-start">
+            
+            <div class="space-y-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                        <span class="font-mono text-[#0ea5e3] text-xs uppercase tracking-[4px]">Direct_Link_Active</span>
+                    </div>
+                    <h1 class="text-white text-[clamp(2.5rem,6vw,4.5rem)] font-black uppercase leading-[0.9] mb-8 italic">Connect<br>The Matrix.</h1>
+                    <p class="text-gray-400 text-lg italic border-l-2 border-[#A11219] pl-8">
+                        下达全球供应链指令。我们的架构根据 Reddit 舆情及海关大数据进行实时同步。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="node-card">
+                        <div class="text-[9px] font-mono text-[#A11219] mb-2 uppercase tracking-[2px]">Primary_Voice_Link</div>
+                        <div class="text-2xl font-black">+86 195 3039 4133</div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="node-card">
+                            <div class="text-[9px] font-mono text-[#0ea5e3] mb-1">ALEX_YANG</div>
+                            <div class="text-xs font-bold font-mono">alex.yang@...</div>
+                        </div>
+                        <div class="node-card">
+                            <div class="text-[9px] font-mono text-[#0ea5e3] mb-1">CHAMPION_YANG</div>
+                            <div class="text-xs font-bold font-mono">champion.yang@...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:sticky lg:top-32">
+                <div class="bg-white/[0.03] p-12 border-2 border-white/10 backdrop-blur-3xl shadow-2xl">
+                    <h3 class="text-4xl font-black italic uppercase mb-10 text-white tracking-tighter">Submit_brief.</h3>
+                    <p class="text-[#0ea5e3] font-mono text-[10px] mb-10 tracking-[2px] uppercase">下达全球供应链收割指令。我们将在 24 小时内完成主权节点匹配。</p>
+                    
+                    <form class="space-y-8">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <input type="text" placeholder="COMMANDER_IDENTITY" class="w-full bg-black border border-white/10 p-5 text-xs font-mono outline-none text-[#0ea5e3] focus:border-[#0ea5e3]">
+                            <input type="email" placeholder="COMMS_NODE" class="w-full bg-black border border-white/10 p-5 text-xs font-mono outline-none text-[#0ea5e3] focus:border-[#0ea5e3]">
+                        </div>
+                        
+                        <select class="w-full bg-black border border-white/10 p-5 text-xs font-mono text-[#0ea5e3] outline-none appearance-none focus:border-[#0ea5e3]">
+                            <option>RETAIL_ASSET_HARVEST (Large Scale)</option>
+                            <option>SPECIALIZED_NODE_DEPLOYMENT (Military/Special)</option>
+                            <option>REDDIT_DRIVEN_BOM_AUDIT</option>
+                        </select>
+                        
+                        <textarea rows="6" placeholder="MISSION_PARAMETERS (Specifications)..." class="w-full bg-black border border-white/10 p-5 text-xs font-mono text-[#0ea5e3] outline-none resize-none focus:border-[#0ea5e3]"></textarea>
+                        
+                        <button type="submit" class="w-full py-6 bg-[#0ea5e3] text-black font-black uppercase tracking-[8px] hover:bg-white transition-all shadow-[0_0_30px_rgba(14,165,233,0.3)]">
+                            DEPLOY_SOVEREIGNTY
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#000] py-24 border-t border-white/5 font-inter">
+        <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="mobile-items-center">
+                <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Command_Link_Verified</div>
+                <div class="flex gap-6 mt-4 text-[9px] font-mono text-gray-800 uppercase tracking-widest">
+                    <a href="site-architecture.html" class="hover:text-white transition">Blueprint_Map</a> / 
+                    <a href="sitemap.xml" target="_blank" class="hover:text-white transition">XML_Index</a>
+                </div>
+            </div>
+            
+            <div class="flex flex-wrap items-center gap-6 mobile-items-center opacity-60">
+                <div class="sovereign-tag">BIFMA_X5.1_VERIFIED</div>
+                <div class="sovereign-tag">ISTA_6A_CERTIFIED</div>
+                <div class="sovereign-tag">ISO9001_SYSTEM</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // GPU 加速鼠标追踪引擎
+        const glow = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => {
+            requestAnimationFrame(() => {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top = e.clientY + 'px';
+            });
+        });
+    </script>
+</body>
+</html>
