@@ -21,37 +21,33 @@
             will-change: transform; mix-blend-mode: screen;
         }
 
-        .matrix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 30px; }
-        
-        .asset-node {
-            background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 50px; transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden;
-        }
-        .asset-node:hover { border-color: var(--neon-blue); background: rgba(14, 165, 233, 0.04); transform: translateY(-10px); }
-
         /* 碎图防御补丁：用纯代码节点块替代图片 */
-        .node-visual-mock {
-            width: 100%; aspect-ratio: 1/1; background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%);
-            border: 1px solid rgba(255,255,255,0.05); margin-bottom: 30px; display: flex; align-items: center; justify-content: center;
-            position: relative; overflow: hidden;
+        .node-visual-stub {
+            width: 100%; aspect-ratio: 1/1; 
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+            border: 1px solid rgba(255,255,255,0.1); margin-bottom: 30px;
+            display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;
         }
-        .node-visual-mock::after {
-            content: "DIGITAL_TWIN_ACTIVE"; font-family: 'JetBrains Mono'; font-size: 8px; color: var(--neon-blue);
-            letter-spacing: 4px; animation: pulse 2s infinite;
-        }
-
-        .forecast-badge {
-            font-family: 'JetBrains Mono'; font-size: 0.55rem; color: #fff;
-            background: var(--performance-red); padding: 2px 8px; margin-bottom: 20px; display: inline-block;
+        .node-visual-stub::before {
+            content: "DIGITAL_TWIN_ACTIVE"; font-family: 'JetBrains Mono'; font-size: 8px; 
+            color: var(--neon-blue); letter-spacing: 4px; animation: pulse 2s infinite;
         }
 
-        /* 纯代码勋章样式 */
+        /* 纯代码主权认证标签 */
         .sovereign-tag {
             padding: 4px 12px; border: 1px solid rgba(255, 255, 255, 0.1);
             font-family: 'JetBrains Mono', monospace; font-size: 9px;
             text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
         }
-        .sovereign-tag:hover { border-color: var(--neon-blue); color: var(--neon-blue); }
+        .sovereign-tag:hover { border-color: var(--neon-blue); color: var(--neon-blue); background: rgba(14, 165, 233, 0.05); }
+
+        .matrix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 30px; }
+        
+        .asset-node {
+            background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 50px; transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); position: relative;
+        }
+        .asset-node:hover { border-color: var(--neon-blue); background: rgba(14, 165, 233, 0.04); transform: translateY(-10px); }
 
         @media (max-width: 768px) {
             .hero-pt { padding-top: 140px !important; }
@@ -73,9 +69,11 @@
                 </svg>
             </a>
             <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400">
-                <a href="index.html" class="hover:text-white transition">00_TERMINAL</a>
-                <a href="sovereign-matrix.html" class="text-white border-b border-[#0ea5e3]">02_ASSET_MATRIX</a>
-                <a href="contact.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase">Initiate_Audit</a>
+                <a href="index.html" class="hover:text-white transition">00_CONSOLE</a>
+                <a href="sovereign-matrix.html" class="text-white border-b border-[#0ea5e3]">01_MATRIX</a>
+                <a href="intelligence-intel.html" class="hover:text-white transition">02_INTEL</a>
+                <a href="tactical-briefing.html" class="hover:text-white transition">03_BRIEFING</a>
+                <a href="tactical-briefing.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase">Deploy_Sovereignty</a>
             </div>
         </div>
     </nav>
@@ -85,7 +83,7 @@
             <span class="font-mono tracking-[8px] text-[#0ea5e3] text-sm uppercase">[ SOVEREIGN_ASSET_MATRIX_V4.0 ]</span>
             <h1 class="text-white text-[clamp(3.5rem,10vw,7rem)] font-[900] leading-[0.9] my-12 uppercase italic tracking-tighter">Deterministic<br>Assets.</h1>
             <p class="text-gray-400 text-xl max-w-[850px] leading-relaxed italic border-l-2 border-[#A11219] pl-10">
-                科学集成：我们将办公、特种、户外及九大工业族群（长虹制链）统一并入资产矩阵。每一项物理资产均已匹配全球下游画像。
+                科学集成：我们将全品类家具由“寻源”转向“主权确定性”。涵盖办公、特种、长虹工业链条及碳中和材料。
             </p>
         </div>
     </header>
@@ -93,15 +91,15 @@
     <main class="py-24 px-[8%]">
         <div class="mb-24 p-10 bg-[#A11219]/5 border border-[#A11219]/20">
             <h4 class="font-mono text-[#A11219] text-xs uppercase tracking-[4px] mb-6">// 2026_INDUSTRIAL_FORECAST</h4>
-            <div class="grid md:grid-cols-2 gap-12 text-sm leading-relaxed text-gray-400 font-inter">
-                <p>研究指出：2026 年全球家具供应链将向 **“物理主权（Physical Sovereignty）”** 迁移。大型买家（Ashley, JYSK）将要求 100% 的 BIM 数据对撞和 ISTA-6A 生存模型。</p>
-                <p>预测方向：材料主权将向 **Carbon-Negative (碳负性)** 倾斜。Yishen Global 的竹制工艺与长虹制链体系已全面整合，以应对欧盟即将到来的碳关税（CBAM）。</p>
+            <div class="grid md:grid-cols-2 gap-12 text-sm leading-relaxed text-gray-400">
+                <p>研究指出：2026 全球家具供应链将进入“物理主权”时代。大型买家（Ashley, ODP）将强制要求 100% 的 BIM 数据对撞和 ISTA-6A 生存验证。</p>
+                <p>预测方向：主权材料将向 Carbon-Negative 倾斜。Yishen 碳中和竹材与长虹高强度制链现已全面并入资产账本。</p>
             </div>
         </div>
 
         <div id="sku-container" class="matrix-grid">
             <div class="asset-node">
-                <div class="node-visual-mock"></div>
+                <div class="node-visual-stub"></div>
                 <div class="h-4 w-2/3 bg-white/5 animate-pulse mb-4"></div>
                 <div class="h-8 w-full bg-white/5 animate-pulse"></div>
             </div>
@@ -109,14 +107,13 @@
 
         <div class="mt-32 p-12 bg-[#0ea5e3]/5 border-2 border-[#0ea5e3]/20 backdrop-blur-3xl">
             <h4 class="font-mono text-[#0ea5e3] text-sm uppercase tracking-[4px] mb-8">// TOP_TIER_RETAIL_PROTOCOL</h4>
-            <p class="text-gray-400 italic mb-8 text-lg">
-                针对 Fortune 500 级采购商：我们已完成与 **Panjiva/ImportGenius** 数据库的深度对撞。您的供应稳定性数据（HS 9401/9403/7315）已通过 Yishen Architecture 验证。
+            <p class="text-gray-400 italic mb-8 text-lg leading-relaxed">
+                针对 Fortune 500 级采购决策者：我们已完成与 Panjiva/ImportGenius 数据库的深度对撞。您的供应稳定性指标（HS 9401/9403/7315）已通过 Yishen Architecture 物理验证。
             </p>
             <div class="flex flex-wrap gap-12 opacity-50 font-mono text-[10px]">
                 <span class="border-r border-white/10 pr-12">TARGET: ASHLEY_FURNITURE</span>
-                <span class="border-r border-white/10 pr-12">TARGET: OFFICE_DEPOT</span>
+                <span class="border-r border-white/10 pr-12">TARGET: ODP_CORP</span>
                 <span class="border-r border-white/10 pr-12">TARGET: LOWES_COMPANIES</span>
-                <span>TARGET: FORNEY_TOOLS</span>
             </div>
         </div>
     </main>
@@ -141,7 +138,7 @@
 
     <script src="asset-distributor.js"></script>
     <script>
-        // GPU 加速鼠标追踪引擎同步
+        // GPU 追踪补丁同步
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             requestAnimationFrame(() => {
