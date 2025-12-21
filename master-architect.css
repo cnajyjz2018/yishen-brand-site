@@ -1,8 +1,8 @@
 /* =========================================================
    YiShen Global — Integrated Master Styles (v4.0.FINAL.MASTER)
-   Logic: Layout Sovereignty, Anti-Clipping, GPU Glow, Sovereign Badge Engine
+   Logic: Layout Sovereignty, Sovereign Badges, HS_CODE Engine
    Version: 4.0.FINAL.MASTER (All Historical Patches Integrated)
-   Authority: Strategic Architecture Group
+   Authority: Strategic Architecture Group / Yishen HQ
    ========================================================= */
 
 :root {
@@ -117,19 +117,44 @@ body {
     text-transform: uppercase;
 }
 
-/* 针对 VISA/付款主权的极简渲染 */
+/* 针对支付/财务主权的渲染 */
 .pay-sov {
     border-left: 3px solid #fff;
     opacity: 0.5;
     filter: grayscale(1);
 }
 
-.pay-sov:hover {
-    opacity: 1;
-    filter: grayscale(0);
+.pay-sov:hover { opacity: 1; filter: grayscale(0); }
+
+/* 06_HS_CODE_SPEC_ENGINE: 工业参数代码化渲染 */
+.node-hscode {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(14, 165, 233, 0.05);
+    border: 1px solid rgba(14, 165, 233, 0.2);
+    padding: 2px 8px;
+    margin-top: 15px;
 }
 
-/* 06_AI_Agent_Terminal_Framework & Typography */
+.node-hscode::before {
+    content: "HS";
+    font-family: 'JetBrains Mono';
+    font-size: 8px;
+    background: var(--neon-blue);
+    color: #000;
+    padding: 2px 4px;
+    margin-right: 6px;
+    font-weight: 900;
+}
+
+.hscode-value {
+    font-family: 'JetBrains Mono';
+    font-size: 11px;
+    color: var(--neon-blue);
+    letter-spacing: 1px;
+}
+
+/* 07_AI_Agent_Terminal_Framework & Typography */
 .terminal-log {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
@@ -154,7 +179,7 @@ body {
     box-shadow: 0 0 30px rgba(14, 165, 233, 0.4);
 }
 
-/* 07_Mobile_Responsive_Engine */
+/* 08_Mobile_Responsive_Engine */
 @media (max-width: 768px) {
     :root { --navbar-height: 70px; }
     
@@ -171,18 +196,9 @@ body {
         text-align: center !important;
         width: 100% !important;
     }
-
-    footer .flex-nowrap {
-        justify-content: center !important;
-    }
-
-    footer span.whitespace-nowrap {
-        font-size: 7px;
-        letter-spacing: 1px;
-    }
 }
 
-/* 08_Utility_Navigation */
+/* 09_Utility_Navigation */
 .nav-link {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.7rem; 
