@@ -10,9 +10,18 @@
     <link rel="stylesheet" href="master-architect.css">
 
     <style>
-        /* V5.0 布局主权补丁 */
+        /* V5.0 布局主权补丁：工业级占位与氛围渲染 */
         .hero-assets {
             background: radial-gradient(circle at center, rgba(14, 165, 233, 0.05) 0%, transparent 70%);
+        }
+        .node-skeleton {
+            background: linear-gradient(90deg, #010409 25%, #050a12 50%, #010409 75%);
+            background-size: 200% 100%;
+            animation: pulse-shimmer 2s infinite linear;
+        }
+        @keyframes pulse-shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
         }
     </style>
 </head>
@@ -20,8 +29,8 @@
 
     <div id="cursor-glow"></div>
 
-    <nav id="master-nav">
-        <div class="nav-container">
+    <nav id="master-nav" class="fixed w-full z-[100] transition-all duration-300 border-b border-white/5 bg-[#010409]/80 backdrop-blur-xl">
+        <div class="nav-container h-20 flex items-center justify-between px-8">
             <a href="index.html" class="site-logo">
                 <svg width="280" height="32" viewBox="0 0 280 32" fill="none">
                     <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
@@ -46,14 +55,21 @@
             </h1>
             
             <div class="mt-12 flex flex-col md:flex-row gap-8 items-center">
-                <div class="w-full md:w-1/2 border border-white/10 p-2 bg-black/40">
-                    <img src="public/assets/products/seating-node-01.webp" alt="Node Alpha Asset" class="w-full h-auto">
+                <div class="w-full md:w-1/2 border border-white/10 p-2 bg-black/40 node-skeleton group overflow-hidden">
+                    <img src="public/assets/products/seating-node-01.webp" 
+                         alt="Node Alpha Asset" 
+                         class="w-full h-auto opacity-0 transition-all duration-700 group-hover:scale-105"
+                         onload="this.style.opacity='1'; this.parentElement.classList.remove('node-skeleton')">
                 </div>
                 <div class="md:w-1/2">
                     <p class="text-[#8b949e] text-lg lg:text-xl italic border-l-2 border-[#A11219] pl-8">
                         28 Strategic clusters synchronized via V5.0 architecture. 
                         Physical assets mapped in public/assets/ for 24/7 autonomous harvesting.
                     </p>
+                    <div class="mt-8 flex gap-4">
+                        <div class="sov-badge"><span class="badge-label">PROTOCOL</span><span class="badge-value">BIFMA</span></div>
+                        <div class="sov-badge" style="border-left-color: #A11219;"><span class="badge-label">TEST</span><span class="badge-value">ISTA-6A</span></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,35 +77,6 @@
 
     <section class="py-24 px-[8%] border-t border-white/5 bg-[#010409]">
         <div class="max-w-4xl mx-auto">
-            <div class="bg-black/80 border border-white/10 p-8">
+            <div class="bg-black/80 border border-white/10 p-8 shadow-2xl shadow-[#0ea5e3]/5">
                 <div class="flex items-center justify-between mb-6">
-                    <span class="text-[#0ea5e3] font-mono text-[10px] tracking-[3px]">// MISSION_CONTROL</span>
-                    <span class="text-[9px] font-mono text-gray-600 uppercase italic">Status: Online</span>
-                </div>
-                <div class="flex gap-4">
-                    <input type="text" id="user-task" placeholder="ENTER MISSION PARAMETERS..." class="flex-1 bg-black border border-white/10 p-4 text-xs font-mono text-[#0ea5e3] outline-none focus:border-[#0ea5e3]">
-                    <button onclick="runAgent()" class="bg-[#0ea5e3] px-8 py-4 text-black font-black text-xs uppercase hover:bg-white transition-all">Execute</button>
-                </div>
-                <div id="agent-output" class="mt-6 terminal-log min-h-[100px] p-4 bg-black/40 border-l-2 border-[#0ea5e3]">
-                    > Waiting for mission briefing...
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-black py-20 border-t border-white/5">
-        <div class="nav-container flex flex-col md:flex-row justify-between items-center gap-10">
-            <div class="flex flex-wrap gap-4">
-                <div class="sov-badge"><span class="badge-label">NODE</span><span class="badge-value">V5_ACTIVE</span></div>
-                <div class="sov-badge" style="border-left-color: var(--performance-red);"><span class="badge-label">INTEL</span><span class="badge-value">CONNECTED</span></div>
-            </div>
-            <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">
-                © 2026 Yishen Global // Command_Center_Sovereign
-            </div>
-        </div>
-    </footer>
-
-    <script src="scripts/hq-core-gate.js?v=5.0"></script>
-    
-</body>
-</html>
+                    <span class="text-[#0ea
