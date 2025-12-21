@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --brand-blue: #0ea5e3; --brand-red: #A11219; --brand-gold: #ffd700; --bg-deep: #010409; }
-        body { background-color: var(--brand-blue); background-color: var(--bg-deep); font-family: 'Inter', sans-serif; color: #ffffff; margin: 0; overflow-x: hidden; }
+        body { background-color: var(--bg-deep); font-family: 'Inter', sans-serif; color: #ffffff; margin: 0; overflow-x: hidden; }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
         
         /* 仪式感加载补丁 */
@@ -25,18 +25,18 @@
             transform: translate(-50%, -50%); will-change: transform; mix-blend-mode: screen;
         }
 
-        .genesis-hero { background: radial-gradient(circle at 10% 40%, rgba(14, 165, 233, 0.1) 0%, transparent 50%); }
-        .hanzi-watermark { position: absolute; font-size: 15rem; font-weight: 900; color: white; opacity: 0.03; pointer-events: none; text-transform: uppercase; }
+        .genesis-hero { background: radial-gradient(circle at 10% 40%, rgba(14, 165, 233, 0.05) 0%, transparent 50%); }
+        .hanzi-watermark { position: absolute; font-size: 18rem; font-weight: 900; color: white; opacity: 0.02; pointer-events: none; text-transform: uppercase; z-index: 0; }
         
-        .story-card { background: rgba(255,255,255,0.01); border-left: 2px solid var(--brand-blue); padding: 50px; transition: 0.5s; position: relative; overflow: hidden; }
+        .story-card { background: rgba(255,255,255,0.01); border-left: 2px solid var(--brand-blue); padding: 60px; transition: 0.5s; position: relative; overflow: hidden; z-index: 10; }
         .story-card:hover { background: rgba(14, 165, 227, 0.03); transform: translateX(15px); border-left-color: var(--brand-gold); }
 
         .glass-panel { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); }
         .scan-line { position: absolute; width: 100%; height: 2px; background: var(--brand-blue); opacity: 0.3; animation: scan 4s linear infinite; }
         @keyframes scan { 0% { top: 0%; } 100% { top: 100%; } }
 
-        .cert-node { filter: grayscale(100%); opacity: 0.4; transition: 0.5s; cursor: pointer; }
-        .cert-node:hover { filter: grayscale(0%); opacity: 1; transform: translateY(-3px); }
+        /* 代际时间线装饰 */
+        .timeline-marker { position: absolute; left: -2px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, transparent, var(--brand-blue), transparent); }
     </style>
 </head>
 <body class="genesis-hero selection:bg-[#0ea5e3]">
@@ -78,16 +78,18 @@
         
 
         <div class="grid lg:grid-cols-1 gap-12 relative mb-32">
+            
             <div class="story-card">
                 <div class="hanzi-watermark" style="left: -20px; top: 0;">彬</div>
-                <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="flex flex-col md:flex-row gap-12 items-center relative">
                     <div class="md:w-1/3">
-                        <span class="font-mono text-[#0ea5e3] text-xs uppercase">// Generation_01: Prosperity</span>
+                        <span class="font-mono text-[#0ea5e3] text-xs uppercase">// Gen_01: Prosperity & Roots</span>
                         <h3 class="text-5xl font-black italic text-white mt-4 uppercase">Chang Bin</h3>
+                        <p class="text-[#0ea5e3] font-mono text-[10px] mt-2">EST. 1988 // INDUSTRIAL_FOUNDATION</p>
                     </div>
                     <div class="md:w-2/3">
                         <p class="text-gray-400 text-lg leading-relaxed">
-                            礼仪与坚韧的奠基者。确立了 Yishen 在传统制造领域的诚信主权，为后续向海洋与高科技基建领域扩张奠定了原始信用背书。确保每一份全球合同都受控于牢不可破的握手。
+                            礼仪与坚韧的奠基者。确立了 Yishen 在传统制造领域的诚信主权，为后续向海洋与高科技基建领域扩张奠定了原始信用背书。确保每一份全球合同都受控于牢不可破的握手，开创了 38 年零违约记录。
                         </p>
                     </div>
                 </div>
@@ -95,14 +97,15 @@
 
             <div class="story-card border-l-[#A11219]">
                 <div class="hanzi-watermark" style="right: 20px; top: 0;">燊</div>
-                <div class="flex flex-col md:flex-row-reverse gap-12 items-center">
+                <div class="flex flex-col md:flex-row-reverse gap-12 items-center relative">
                     <div class="md:w-1/3 text-right">
-                        <span class="font-mono text-[#A11219] text-xs uppercase">// Generation_02: Vigor</span>
+                        <span class="font-mono text-[#A11219] text-xs uppercase">// Gen_02: Vigor & Expansion</span>
                         <h3 class="text-5xl font-black italic text-white mt-4 uppercase">Fortune Shen</h3>
+                        <p class="text-[#A11219] font-mono text-[10px] mt-2">SECURED_MARITIME_HARDWARE // HS_7315</p>
                     </div>
                     <div class="md:w-2/3">
                         <p class="text-gray-400 text-lg leading-relaxed">
-                            繁荣与物理火力的执行者。引入长虹制链（HS 7315）与高强度合金主权，将母舰的触角延伸至全球港口五金与起重系统，定义了大规模制造的物理级确定性。
+                            繁荣与物理火力的执行者。引入长虹制链（HS 7315）与高强度合金主权，将母舰的触角延伸至全球港口五金与起重系统。他定义了大规模制造的“物理级确定性”，将 G80/G100 级链条的主权插在了南美与欧洲的各大港口。
                         </p>
                     </div>
                 </div>
@@ -110,31 +113,37 @@
 
             <div class="story-card border-l-white">
                 <div class="hanzi-watermark" style="left: 40%; top: -20px;">熠</div>
-                <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="flex flex-col md:flex-row gap-12 items-center relative">
                     <div class="md:w-1/3">
-                        <span class="font-mono text-white text-xs uppercase">// Generation_03: Intelligence</span>
+                        <span class="font-mono text-white text-xs uppercase">// Gen_03: Intelligence & Light</span>
                         <h3 class="text-5xl font-black italic text-white mt-4 uppercase">Jia Yi</h3>
+                        <p class="text-white font-mono text-[10px] mt-2">DATA_SOVEREIGNTY // AI_TERMINAL_V5</p>
                     </div>
                     <div class="md:w-2/3">
                         <p class="text-gray-400 text-lg leading-relaxed">
-                            智慧与光芒的驱动者。通过 AI 算法将传统墨水转化为数字化透明度，集成 Trademo/ImportGenius 对撞算法，实现针对北美避税主权与拉美市场的毫秒级同步。
+                            智慧与光芒的驱动者。通过 AI 算法将传统墨水转化为数字化透明度，集成 Trademo/ImportGenius 对撞算法。他通过数字化护照（Technical Passport）实现了针对北美避税主权与拉美市场的毫秒级同步，完成了母舰从物理实体向数字情报实体的跨越。
                         </p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <section class="mt-32 p-16 border border-white/5 rounded-3xl bg-white/[0.01] flex flex-col md:flex-row justify-between items-center gap-12 glass-panel">
+        <section class="mt-32 p-16 border border-white/5 rounded-3xl bg-white/[0.01] flex flex-col md:flex-row justify-between items-center gap-12 glass-panel relative overflow-hidden">
             <div class="scan-line"></div>
-            <div class="max-w-2xl">
+            <div class="max-w-2xl relative z-10">
                 <h4 class="text-[#ffd700] font-mono text-xs uppercase tracking-[5px] mb-6">// SOVEREIGN_CREDIT_VERIFICATION</h4>
                 <p class="text-gray-400 text-sm leading-relaxed italic">
-                    三代基因不仅是家族的，更是全球通用的信用货币。我们已完成邓白氏（D-U-N-S）编码 545277884 的全方位验证，作为美加墨 500 强企业的顶级合规供应商。
+                    三代人的基因沉淀已转化为全球通用的信用货币。我们已完成邓白氏（D-U-N-S）编码 545277884 的全方位验证，作为美加墨 500 强企业的顶级合规供应商，我们代表了 B2B 贸易中的最终确定性。
                 </p>
             </div>
-            <div class="bg-black/50 p-8 border border-white/10 text-center rounded-xl min-w-[280px]">
-                <span class="block text-gray-600 font-mono text-[9px] uppercase mb-2">Identifier_Active</span>
+            <div class="bg-black/50 p-8 border border-white/10 text-center rounded-xl min-w-[280px] relative z-10">
+                <span class="block text-gray-600 font-mono text-[9px] uppercase mb-2">D-U-N-S_Identifier</span>
                 <span class="text-3xl font-black text-white tracking-widest">545277884</span>
+                <div class="mt-4 flex justify-center gap-4 grayscale opacity-50">
+                    <i class="fa-brands fa-cc-visa text-xl"></i>
+                    <i class="fa-solid fa-shield-halved text-xl"></i>
+                    <i class="fa-solid fa-earth-americas text-xl"></i>
+                </div>
             </div>
         </section>
     </main>
@@ -154,6 +163,7 @@
     </footer>
 
     <script>
+        // [SCRIPTS_LOCKED]
         window.addEventListener('load', () => {
             document.getElementById('bar-fill').style.width = '100%';
             setTimeout(() => {
@@ -167,6 +177,14 @@
             requestAnimationFrame(() => {
                 glow.style.left = e.clientX + 'px';
                 glow.style.top = e.clientY + 'px';
+            });
+        });
+
+        // 仪式感：Hanzi Watermark 动态视差
+        document.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            document.querySelectorAll('.hanzi-watermark').forEach((el, i) => {
+                el.style.transform = `translateY(${scrolled * 0.1 * (i + 1)}px)`;
             });
         });
     </script>
