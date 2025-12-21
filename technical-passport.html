@@ -13,7 +13,7 @@
         :root { --neon-blue: #0ea5e3; --brand-red: #A11219; --deep-space: #010409; --industrial-gray: #1e293b; }
         body { background-color: var(--deep-space); color: #e6edf3; font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
-        /* GPU 加速主权微光 */
+        /* DIGITAL TWIN GLOW - GPU 优化渲染 */
         #cursor-glow {
             position: fixed; width: 600px; height: 600px;
             background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
@@ -21,7 +21,7 @@
             will-change: transform; mix-blend-mode: screen;
         }
 
-        /* CYBER SCAN 动漫扫描线动效 - 象征主权验证 */
+        /* CYBER SCAN 数字化扫描终端 */
         .main-scanner {
             position: relative; overflow: hidden; background: #000;
             border: 1px solid var(--industrial-gray); min-height: 500px;
@@ -34,16 +34,20 @@
         }
         @keyframes scanLine { 0% { top: 0% } 50% { top: 100% } 100% { top: 0% } }
 
-        /* 技术参数表 - 数字化对撞风格 */
+        /* 技术参数表对撞风格 */
         .passport-table { width: 100%; border-collapse: collapse; }
         .passport-table td { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .label-mono { font-family: 'JetBrains Mono'; font-size: 0.65rem; color: #64748b; text-transform: uppercase; letter-spacing: 2px; }
         .value-bold { color: #fff; font-weight: 700; text-align: right; font-family: 'JetBrains Mono'; }
 
-        /* 物理防挤压页脚 */
-        footer a { flex: 0 0 auto !important; }
-        footer img { max-width: none !important; min-width: 80px; }
-        
+        /* 纯代码勋章样式 */
+        .sovereign-tag {
+            padding: 4px 12px; border: 1px solid rgba(255, 255, 255, 0.1);
+            font-family: 'JetBrains Mono', monospace; font-size: 9px;
+            text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
+        }
+        .sovereign-tag:hover { border-color: var(--neon-blue); color: var(--neon-blue); background: rgba(14, 165, 233, 0.05); }
+
         @media (max-width: 768px) {
             .hero-pt { padding-top: 140px !important; }
             .mobile-items-center { align-items: center !important; text-align: center !important; width: 100% !important; }
@@ -83,9 +87,15 @@
 
     <main class="py-12 px-[8%] max-w-[1440px] mx-auto">
         <div class="grid lg:grid-cols-2 gap-20">
+            
             <div class="space-y-10">
-                <div class="main-scanner">
-                    <img id="sku-primary-img" src="https://yishenglobal.net/assets/mesh.webp" alt="Physical Architecture Spec" class="w-4/5 h-4/5 object-contain grayscale hover:grayscale-0 transition-all duration-700">
+                <div class="main-scanner bg-black flex items-center justify-center p-20">
+                    <div class="relative w-full h-full border border-white/5 flex items-center justify-center min-h-[300px]">
+                        <div id="sku-id-display" class="text-[clamp(1rem,4vw,2.5rem)] font-black text-white/20 font-mono uppercase tracking-[15px] animate-pulse text-center">
+                            NODE_ACTIVE
+                        </div>
+                        <div class="absolute top-0 left-0 w-full h-[2px] bg-[#0ea5e3] shadow-[0_0_15px_#0ea5e3] animate-scan"></div>
+                    </div>
                 </div>
                 
                 <div class="p-10 bg-[#A11219]/5 border border-[#A11219]/20">
@@ -123,43 +133,45 @@
         </div>
     </main>
 
-    <footer class="bg-[#000] py-24 border-t border-white/5">
+    <footer class="bg-[#000] py-24 border-t border-white/5 font-inter">
         <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-12">
             <div class="mobile-items-center">
                 <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Passport_Verified</div>
+                <div class="flex gap-6 mt-4 text-[9px] font-mono text-gray-800 uppercase tracking-widest">
+                    <a href="site-architecture.html" class="hover:text-white transition">Blueprint_Map</a> / 
+                    <a href="sitemap.xml" target="_blank" class="hover:text-white transition">XML_Index</a>
+                </div>
             </div>
-            <div class="flex gap-10 grayscale hover:grayscale-0 transition-all duration-700 opacity-40">
-                <a href="https://www.bifma.org" target="_blank"><img src="https://yishenglobal.net/assets/bifma-badge.png" class="h-6 w-auto"></a>
-                <a href="https://ista.org" target="_blank"><img src="https://yishenglobal.net/assets/ista-badge.png" class="h-6 w-auto"></a>
-                <a href="https://www.iso.org" target="_blank"><img src="https://yishenglobal.net/assets/iso9001.png" class="h-6 w-auto"></a>
+            
+            <div class="flex flex-wrap items-center gap-6 mobile-items-center opacity-60">
+                <div class="sovereign-tag">BIFMA_X5.1_VERIFIED</div>
+                <div class="sovereign-tag">ISTA_6A_CERTIFIED</div>
+                <div class="sovereign-tag">ISO9001_SYSTEM</div>
             </div>
         </div>
     </footer>
 
     <script>
-        // 数据库扩展：集成办公、航天、长虹制链、建材
+        // 全品类工业资产数据库
         const PASSPORT_DB = {
             "OFFICE_MESH": {
                 sector: "OFFICE_SOVEREIGNTY",
                 title: "High-End Mesh Terminal",
                 desc: "集成 2026 物理主权：针对北美大型办公空间，提供 BIFMA 顶配验证与 ISTA 零破损物流方案。",
-                img: "https://yishenglobal.net/assets/mesh.webp",
                 specs: { "Actuation": "Kinetic Sync-Tilt", "Mesh_Density": "Industrial 1200D", "Load_Rating": "350 LBS Certified", "HS_CODE": "9401.31.00" },
                 logistics: { cbm: "97.8%", fail: "0.01%" }
             },
             "CHAIN_7315": {
-                sector: "CHANGHONG_INDUSTRIAL",
-                title: "Tensile Chain Node G80",
-                desc: "长虹制链核心资产：G80 级结构钢，针对重型起重与牵引系统设计的确定性工业节点。",
-                img: "https://yishenglobal.net/assets/mesh.webp",
-                specs: { "Material": "Grade 80 Steel", "Breaking_Force": "12,000 KG", "HS_CODE": "7315.82.00", "Coating": "Hot-Dip Galv" },
+                sector: "INDUSTRIAL_NODES",
+                title: "Long-Link Tensile Matrix",
+                desc: "长虹制链核心资产：针对重型起重与牵引系统设计的确定性工业节点。",
+                specs: { "Grade": "G80 Structural Steel", "Breaking_Force": "12,000 KG", "HS_CODE": "7315.82.00", "Coating": "Hot-Dip Galv" },
                 logistics: { cbm: "99.4%", fail: "0.00%" }
             },
             "BAMBOO_FLOOR": {
                 sector: "BIO_MATERIALS",
                 title: "Carbon-Negative Bamboo",
-                desc: "户外重竹地板：应对 CBAM 碳关税的先锋材料，具备极致的尺寸稳定性与 LEED 点数集成。",
-                img: "https://yishenglobal.net/assets/mesh.webp",
+                desc: "户外重竹地板：应对 CBAM 碳关税的先锋材料，具备极致尺寸稳定性。",
                 specs: { "Density": "1.15 g/cm³", "Janka_Hardness": "3500+", "HS_CODE": "4418.75.00", "Fire_Rating": "Class B1" },
                 logistics: { cbm: "96.5%", fail: "0.02%" }
             }
@@ -174,7 +186,7 @@
             document.getElementById('sku-sector-tag').innerText = `[ SECTOR: ${data.sector} ]`;
             document.getElementById('sku-main-title').innerText = data.title;
             document.getElementById('sku-desc').innerText = data.desc;
-            document.getElementById('sku-primary-img').src = data.img;
+            document.getElementById('sku-id-display').innerText = nodeID; // 核心：显示节点 ID 替代图片
             document.getElementById('sku-cbm').innerText = data.logistics.cbm;
             document.getElementById('sku-fail').innerText = data.logistics.fail;
 
