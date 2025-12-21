@@ -1,21 +1,28 @@
-name: "Sitemap Auto-Sync Protocol V5.0"
+name: "Sitemap Auto-Sync Protocol V5.0 MASTER"
+
+# =========================================================
+# 逻辑集成：[LEDGER_COLLISION], [PDF_INDEXING], [SEARCH_PING]
+# 权限：Strategic Architecture Group / Yishen HQ
+# =========================================================
 
 on:
   push:
     branches:
-      - main  # 仅在主分支 Commit 时触发全球索引更新
+      - main
     paths:
-      - "**.html"            # 网页架构变动
-      - "sku-database.json"   # 产品智库变动
+      - "**.html"           # 网页架构变动
+      - "asset-ledger.json"  # 核心资产账本变动 (V5.0)
+      - "sku-database.json"  # 兼容旧版数据库变动
+      - "assets/docs/**.pdf" # 避税与合规协议变动
       - "generate_sitemap.py" # 逻辑脚本变动
-  workflow_dispatch:          # 支持统帅手动强行发射索引
+  workflow_dispatch:         # 支持统帅手动强行发射索引
 
 jobs:
   sitemap_job:
     runs-on: ubuntu-latest
     name: "Generate and Notify Sovereign Index"
     permissions:
-      contents: write         # 赋予机器人写回仓库的权力
+      contents: write         # 赋予 Bot 写回仓库的物理主权
 
     steps:
       - name: "01_Checkout_Sovereign_Code"
@@ -30,8 +37,8 @@ jobs:
 
       - name: "03_Execute_Custom_Generator"
         run: |
-          # 如果统帅有特定的 generate_sitemap.py 逻辑，在此执行
-          # 否则该步骤将同步更新 sku-database 映射关系
+          # 执行 V5.0 脚本，将 asset-ledger.json 动态映射至 sitemap
+          echo ">>> [SYSTEM_V5]: COLLIDING_ASSET_LEDGER_WITH_SITEMAP..."
           if [ -f "generate_sitemap.py" ]; then
             python generate_sitemap.py
           fi
@@ -43,21 +50,27 @@ jobs:
           base-url-path: https://yishenglobal.net/
           sitemap-format: xml
           path-to-root: .
-          include-pdf: true  # [CRITICAL] 包含资产/文档下的避税与协议 PDF 索引
-          additional-extensions: php
-          exclude-files: "CNAME, README.md, vercel.json, .gitignore, link_fixer.py"
+          # [CRITICAL] 包含 PDF 协议索引：确保 Form E 和技术规格书能被 Google 嗅探
+          include-pdf: true  
+          additional-extensions: json, php
+          exclude-files: "CNAME, README.md, vercel.json, .gitignore, link_fixer.py, deploy.sh, crawler-engine.js"
 
       - name: "05_Commit_and_Push_Sovereignty_Index"
         run: |
           git config --global user.name "Yishen-Sovereignty-Bot"
           git config --global user.email "bot@yishenglobal.net"
-          git add sitemap.xml
-          # 只有在索引确实发生物理改变时才进行提交，并使用 [skip ci] 防止无限递归构建
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(sync): global sovereignty index updated [skip ci]" && git push)
+          
+          # 对齐两个索引文件：sitemap.xml (全量扫描) 与 sovereign-index.xml (逻辑生成)
+          git add sitemap.xml sovereign-index.xml
+          
+          # 物理检查：仅在索引发生实质改变时推送，[skip ci] 杜绝递归逻辑死循环
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(sync): global sovereignty index V5.0 updated [skip ci]" && git push)
 
       - name: "06_Notify_Search_Engines"
         run: |
-          echo "Sending Sovereign Pulse to Google..."
+          echo ">>> SENDING_SOVEREIGN_PULSE_TO_GLOBAL_NODES..."
+          # 向 Google 和 Bing 强制通报母舰最新的七大维度资产路径
           curl "https://www.google.com/ping?sitemap=https://yishenglobal.net/sitemap.xml"
-          echo "Sending Sovereign Pulse to Bing..."
+          curl "https://www.google.com/ping?sitemap=https://yishenglobal.net/sovereign-index.xml"
           curl "https://www.bing.com/ping?sitemap=https://yishenglobal.net/sitemap.xml"
+          echo ">>> [SUCCESS]: SEARCH_ENGINES_NOTIFIED."
