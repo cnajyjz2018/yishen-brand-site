@@ -18,7 +18,6 @@
         .scan-line { position: absolute; width: 100%; height: 2px; background: var(--brand-blue); opacity: 0.3; animation: scan 4s linear infinite; }
         @keyframes scan { 0% { top: 0%; } 100% { top: 100%; } }
         
-        /* 系统初始化动画补丁 */
         #loading-screen { position: fixed; inset: 0; z-index: 9999; background: #010409; display: flex; flex-direction: column; items: center; justify-content: center; }
         #bar-fill { height: 100%; background: var(--brand-blue); width: 0%; transition: 2s cubic-bezier(0.1, 0.5, 0.1, 1); }
     </style>
@@ -47,46 +46,42 @@
     </nav>
 
     <main class="pt-32 pb-20 px-[8%] max-w-[1440px] mx-auto">
-        
         <header class="mb-16 border-l-4 border-[#A11219] pl-8">
             <span class="font-mono text-[#0ea5e3] tracking-[5px] uppercase text-xs animate-pulse">// ACCESSING_TACTICAL_ASSETS</span>
             <h1 class="text-white text-6xl font-[900] italic uppercase mt-4">Tactical <span class="text-[#0ea5e3]">Vault.</span></h1>
             <p class="text-gray-400 font-mono mt-6 text-sm max-w-3xl leading-relaxed italic">
-                "Orders follow the system. Flipping pages, capturing sovereignty. Here, resources are not just documents, they are tactical fire cover in global trade." [Ref: 《随风一翻都是订单》]
+                "Orders follow the system. Flipping pages, capturing sovereignty. [Ref: 《随风一翻都是订单》]"
             </p>
         </header>
 
-        
         <section class="mb-12 glass-panel p-10 rounded-2xl border-t-4 border-[#0ea5e3] relative overflow-hidden">
             <div class="flex flex-col md:flex-row justify-between items-start gap-8">
                 <div class="max-w-xl">
                     <span class="font-mono text-[#0ea5e3] tracking-[5px] text-[10px] uppercase">// ACTIVE_RECONNAISSANCE_PROTOCOL</span>
                     <h2 class="text-white text-4xl font-black italic uppercase mt-4 tracking-tighter">Targeting <span class="text-[#0ea5e3]">Engine.</span></h2>
                     <p class="text-gray-500 font-mono text-xs mt-4 leading-relaxed">
-                        正在通过 Trademo、ImportGenius 提单与 Apollo 资本画像进行全球扫描。所有 E-ZONE 潜在买家已进入火控范围。
+                        正在拦截 Trademo、ImportGenius 提单。已锁定墨西哥、巴西及加勒比海电竞椅与 WPC 建材买家。
                     </p>
                 </div>
-                
                 <div class="grid grid-cols-3 gap-4">
                     <div onclick="window.open('https://www.apollo.io')" class="p-4 bg-white/5 border border-white/10 rounded hover:border-[#0ea5e3] cursor-pointer transition flex flex-col items-center">
                         <i class="fa-solid fa-satellite-dish text-[#0ea5e3] text-lg mb-2"></i>
-                        <span class="text-[8px] font-mono text-gray-400">APOLLO_API</span>
+                        <span class="text-[8px] font-mono">APOLLO_LATAM</span>
                     </div>
                     <div onclick="window.open('https://www.importgenius.com')" class="p-4 bg-white/5 border border-white/10 rounded hover:border-[#0ea5e3] cursor-pointer transition flex flex-col items-center">
                         <i class="fa-solid fa-ship text-[#A11219] text-lg mb-2"></i>
-                        <span class="text-[8px] font-mono text-gray-400">CUSTOMS_DB</span>
+                        <span class="text-[8px] font-mono">CUSTOMS_INTEL</span>
                     </div>
                     <div onclick="window.open('https://www.zoominfo.com')" class="p-4 bg-white/5 border border-white/10 rounded hover:border-[#0ea5e3] cursor-pointer transition flex flex-col items-center">
                         <i class="fa-solid fa-id-card text-white text-lg mb-2"></i>
-                        <span class="text-[8px] font-mono text-gray-400">ZOOM_INFO</span>
+                        <span class="text-[8px] font-mono">ZOOM_INFO</span>
                     </div>
                 </div>
             </div>
-
             <div class="mt-10 bg-black/60 p-6 rounded border border-white/5 font-mono text-[10px] space-y-2 overflow-hidden shadow-inner">
-                <div class="text-[#0ea5e3]">> [SCANNING_PORT_SAVANNAH] ... MATCH_FOUND: "NORTH_AMERICA_BAMBOO_FLOORING_LLC"</div>
-                <div class="text-gray-500">> [EXTRACTING_CONTACT] ... BUYING_DIRECTOR_EMAIL: EXTRACTED_VIA_APOLLO_V5</div>
-                <div class="text-white animate-pulse">> [SOVEREIGN_STATUS]: READY_FOR_TACTICAL_OUTREACH</div>
+                <div class="text-[#0ea5e3]">> [SCANNING_PORT_SANTOS_BRAZIL] ... MATCH_FOUND: "LATAM_GAMING_DISTRIBUTOR_SA"</div>
+                <div class="text-gray-500">> [EXTRACTING_CONTACT] ... BUYING_DIRECTOR via APOLLO_ENGINE</div>
+                <div class="text-white animate-pulse">> [SOVEREIGN_STATUS]: READY_FOR_LATAM_OUTREACH</div>
             </div>
         </section>
 
@@ -95,112 +90,83 @@
                 <div class="glass-panel rounded-2xl p-8">
                     <div class="flex justify-between items-center mb-6">
                         <h3 class="font-mono text-sm font-bold tracking-widest text-white uppercase italic">// HS_INTEL_DB</h3>
-                        <span class="text-[8px] text-[#0ea5e3] font-mono">LIVE_UPDATE: 2026_Q1</span>
+                        <span class="text-[8px] text-[#0ea5e3] font-mono">LATAM_READY: 2026</span>
                     </div>
-                    <input type="text" id="hs-input" onkeyup="searchHSCode()" placeholder="Search product HS Code (e.g. 3918, 4409, 9403)..." 
+                    <input type="text" id="hs-input" onkeyup="searchHSCode()" placeholder="Search (e.g. 9401.31 Gaming Chair, 3918 WPC)..." 
                            class="w-full bg-black/40 border border-white/10 p-4 text-xs font-mono text-white focus:outline-none focus:border-[#0ea5e3] transition rounded-lg">
                     <div id="hs-results" class="mt-4 space-y-2 max-h-48 overflow-y-auto custom-scrollbar pr-4"></div>
                 </div>
 
                 <div class="glass-panel rounded-2xl p-8 border-b-2 border-b-[#0ea5e3]">
-                    <h3 class="font-mono text-sm font-bold tracking-widest text-white uppercase italic mb-8">// E_ZONE_RESEARCH_REPORT</h3>
+                    <h3 class="font-mono text-sm font-bold tracking-widest text-white uppercase italic mb-8">// SOVEREIGN_ASSET_VAULT</h3>
                     <div class="grid md:grid-cols-2 gap-4">
-                        <div class="p-4 bg-white/5 border border-white/5 rounded-lg">
-                            <h4 class="text-[#0ea5e3] font-mono text-[10px] mb-2">WPC_DURABILITY_ANALYSIS</h4>
-                            <p class="text-[11px] text-gray-500 italic">针对北美高湿环境的 3.0 共挤木塑耐候性研究报告。</p>
-                        </div>
-                        <div class="p-4 bg-white/5 border border-white/5 rounded-lg">
-                            <h4 class="text-[#0ea5e3] font-mono text-[10px] mb-2">BAMBOO_CARBON_SOVEREIGNTY</h4>
-                            <p class="text-[11px] text-gray-500 italic">竹木复合地板在欧洲 ESG 框架下的负碳排放路径分析。</p>
-                        </div>
+                        <button onclick="previewResource('bifma')" class="flex items-center justify-between p-4 bg-white/5 border border-white/5 rounded-lg hover:bg-[#0ea5e3]/10 transition group text-left">
+                            <span class="text-[10px] font-mono text-gray-400 group-hover:text-white uppercase">BIFMA_Validation</span>
+                            <i class="fa-solid fa-eye text-[10px] text-[#0ea5e3]"></i>
+                        </button>
+                        <button onclick="previewResource('ul')" class="flex items-center justify-between p-4 bg-white/5 border border-white/5 rounded-lg hover:bg-[#0ea5e3]/10 transition group text-left">
+                            <span class="text-[10px] font-mono text-gray-400 group-hover:text-white uppercase">UL_Safety_Cert</span>
+                            <i class="fa-solid fa-eye text-[10px] text-[#0ea5e3]"></i>
+                        </button>
                     </div>
                 </div>
             </section>
 
             <aside class="space-y-8">
                 <div class="glass-panel rounded-2xl p-8 border-l-4 border-[#0ea5e3]">
-                    <h3 class="font-mono text-sm font-bold tracking-widest text-white uppercase italic mb-8">// SOVEREIGN_ASSET_VAULT</h3>
-                    <div class="space-y-4">
-                        <button onclick="previewResource('bifma')" class="w-full flex items-center justify-between p-3 bg-white/5 rounded border border-white/5 hover:bg-[#0ea5e3]/10 transition group text-left">
-                            <span class="text-[10px] font-mono text-gray-400 group-hover:text-white uppercase tracking-tighter">BIFMA_Validation_Report</span>
-                            <i class="fa-solid fa-eye text-[8px] text-[#0ea5e3]"></i>
-                        </button>
-                        <button onclick="previewResource('ul')" class="w-full flex items-center justify-between p-3 bg-white/5 rounded border border-white/5 hover:bg-[#0ea5e3]/10 transition group text-left">
-                            <span class="text-[10px] font-mono text-gray-400 group-hover:text-white uppercase tracking-tighter">UL_Safety_Cert</span>
-                            <i class="fa-solid fa-eye text-[8px] text-[#0ea5e3]"></i>
-                        </button>
-                        <button onclick="previewResource('fsc')" class="w-full flex items-center justify-between p-3 bg-white/5 rounded border border-white/5 hover:bg-[#0ea5e3]/10 transition group text-left">
-                            <span class="text-[10px] font-mono text-gray-400 group-hover:text-white uppercase tracking-tighter">FSC_SupplyChain_Docs</span>
-                            <i class="fa-solid fa-leaf text-[8px] text-green-500"></i>
-                        </button>
-                        <button onclick="previewResource('bsci')" class="w-full flex items-center justify-between p-3 bg-white/5 rounded border border-white/5 hover:bg-[#0ea5e3]/10 transition group text-left">
-                            <span class="text-[10px] font-mono text-gray-400 group-hover:text-white uppercase tracking-tighter">BSCI_Social_Audit</span>
-                            <i class="fa-solid fa-shield-halved text-[8px] text-red-500"></i>
-                        </button>
+                    <h3 class="font-mono text-sm font-bold tracking-widest text-white uppercase italic mb-8">// COMPLIANCE_MATRIX</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div onclick="previewResource('ista')" class="cursor-pointer opacity-60 hover:opacity-100 transition"><img src="assets/icons/ista-badge.webp" class="w-full"></div>
+                        <div onclick="previewResource('fsc')" class="cursor-pointer opacity-60 hover:opacity-100 transition"><img src="assets/icons/logo-fsc.webp" class="w-full"></div>
                     </div>
                 </div>
             </aside>
         </div>
     </main>
 
-    <div id="asset-modal" class="fixed inset-0 z-[2000] hidden bg-black/98 flex flex-col items-center justify-center p-6 backdrop-blur-3xl">
+    <div class="fixed bottom-6 right-6 z-[5000] flex flex-col items-end gap-3 group">
+        <div class="opacity-0 group-hover:opacity-100 transition-all duration-500 bg-[#0ea5e3] text-black font-mono text-[9px] px-3 py-1 font-bold italic tracking-widest">// ACCESS_COMPLIANCE_API</div>
+        <div class="glass-panel p-3 rounded-xl border border-white/10 flex flex-wrap max-w-[200px] justify-end gap-4 shadow-2xl">
+            <div onclick="previewResource('bifma')" class="cursor-pointer h-6"><img src="assets/icons/bifma-badge.webp" class="h-full"></div>
+            <div onclick="previewResource('ul')" class="cursor-pointer h-6"><img src="assets/icons/logo-ul.webp" class="h-full"></div>
+            <div onclick="previewResource('fsc')" class="cursor-pointer h-6"><img src="assets/icons/logo-fsc.webp" class="h-full"></div>
+            <div onclick="previewResource('iso9001')" class="cursor-pointer h-6"><img src="assets/icons/iso9001.webp" class="h-full"></div>
+            <div onclick="previewResource('ista')" class="cursor-pointer h-6"><img src="assets/icons/ista-badge.webp" class="h-full"></div>
+            <div onclick="previewResource('visa')" class="cursor-pointer h-6"><img src="assets/icons/visa-mastercard.webp" class="h-full"></div>
+        </div>
+    </div>
+
+    <div id="asset-modal" class="fixed inset-0 z-[6000] hidden bg-black/98 flex flex-col items-center justify-center p-6 backdrop-blur-3xl">
         <div class="w-full max-w-6xl flex justify-between items-center mb-4 px-2">
             <span id="preview-title" class="font-mono text-[10px] text-[#0ea5e3] tracking-[4px] uppercase italic">// LOADING_RESOURCE...</span>
             <button onclick="closePreview()" class="text-white/40 hover:text-white font-mono text-[10px] uppercase transition">Terminate_Link [X]</button>
         </div>
         <div class="w-full max-w-6xl h-[80vh] border border-white/10 relative bg-white/5 rounded-lg overflow-hidden">
-            <iframe id="preview-frame" src="" class="w-full h-full border-none shadow-2xl" loading="lazy"></iframe>
+            <iframe id="preview-frame" src="" class="w-full h-full border-none shadow-2xl"></iframe>
             <div class="scan-line"></div>
         </div>
     </div>
 
-    <div class="fixed bottom-6 right-6 z-[5000] flex flex-col items-end gap-3 group">
-        <div class="opacity-0 group-hover:opacity-100 transition-all duration-500 bg-[#0ea5e3] text-black font-mono text-[9px] px-3 py-1 font-bold italic tracking-widest">// ACCESS_COMPLIANCE_API</div>
-        <div class="glass-panel p-3 rounded-xl border border-white/10 flex flex-wrap max-w-[200px] justify-end gap-4 shadow-2xl">
-            <div onclick="previewResource('bifma')" class="cursor-pointer h-6 opacity-40 hover:opacity-100 transition"><img src="public/assets/icons/bifma.webp" class="h-full"></div>
-            <div onclick="previewResource('ul')" class="cursor-pointer h-6 opacity-40 hover:opacity-100 transition"><img src="public/assets/icons/ul.webp" class="h-full"></div>
-            <div onclick="previewResource('fsc')" class="cursor-pointer h-6 opacity-40 hover:opacity-100 transition"><img src="public/assets/icons/fsc.webp" class="h-full"></div>
-            <div onclick="previewResource('iso9001')" class="cursor-pointer h-6 opacity-40 hover:opacity-100 transition"><img src="public/assets/icons/iso9001.webp" class="h-full"></div>
-        </div>
-    </div>
-
     <script>
-        // HS 情报数据集成 (含 E 品类)
-        const hsDB = [
-            { code: "3918.9090", desc: "WPC Decking & Flooring (Composite)" },
-            { code: "4409.2110", desc: "Bamboo Engineered Flooring" },
-            { code: "5702.2000", desc: "Bamboo Carpets / Mats" },
-            { code: "9405.5000", desc: "Artisanal Bamboo Lanterns / Lighting" },
-            { code: "9401.3100", desc: "Swivel Seats (Bamboo/Hybrid Core)" },
-            { code: "9403.3000", desc: "Wooden Office Furniture" }
-        ];
-
-        function searchHSCode() {
-            const q = document.getElementById('hs-input').value.toLowerCase();
-            const res = hsDB.filter(i => i.code.includes(q) || i.desc.toLowerCase().includes(q));
-            document.getElementById('hs-results').innerHTML = res.map(i => `
-                <div class="p-3 bg-white/5 border border-white/5 flex justify-between items-center hover:bg-white/10 transition cursor-help group">
-                    <span class="text-[#0ea5e3] font-mono text-xs font-bold">${i.code}</span>
-                    <span class="text-[9px] text-gray-500 uppercase group-hover:text-white transition">${i.desc}</span>
-                </div>
-            `).join('') || '<div class="text-xs text-gray-600 font-mono">// NO_RECORDS_IN_SOVEREIGN_DATABASE</div>';
-        }
-
-        // 资产预览路径映射
+        // [PROTOCOL] 资源索引：路径修正
         const certAssets = {
-            bifma: { url: "public/assets/docs/bifma.pdf", title: "BIFMA_STRUCTURAL_PROTOCOL_V5" },
-            ul: { url: "public/assets/docs/ul.pdf", title: "UL_SAFETY_VALIDATION_ACTIVE" },
-            fsc: { url: "public/assets/docs/fsc.pdf", title: "FSC_SUSTAINABILITY_CREDENTIAL" },
-            bsci: { url: "public/assets/docs/bsci.pdf", title: "BSCI_SOCIAL_AUDIT_VERIFIED" },
-            iso9001: { url: "public/assets/docs/iso9001.pdf", title: "ISO_9001_QUALITY_SOVEREIGNTY" }
+            bifma: { url: "assets/docs/bifma.pdf", title: "BIFMA_STRUCTURAL_PROTOCOL" },
+            ul: { url: "assets/docs/ul.pdf", title: "UL_SAFETY_VALIDATED" },
+            fsc: { url: "assets/docs/fsc.pdf", title: "FSC_SUSTAINABILITY_CREDENTIAL" },
+            ista: { url: "assets/docs/ista.pdf", title: "ISTA_TRANSPORT_SAFETY" },
+            iso9001: { url: "assets/docs/iso9001.pdf", title: "ISO_9001_QUALITY_SOVEREIGNTY" },
+            visa: { url: "assets/docs/financial.pdf", title: "FINANCIAL_SOVEREIGNTY" }
         };
 
         function previewResource(key) {
+            if (window.event) window.event.preventDefault();
             const asset = certAssets[key];
-            if(asset) {
-                document.getElementById('preview-frame').src = asset.url;
+            const modal = document.getElementById('asset-modal');
+            const iframe = document.getElementById('preview-frame');
+            if (asset && modal && iframe) {
+                iframe.src = asset.url;
                 document.getElementById('preview-title').innerText = asset.title;
-                document.getElementById('asset-modal').classList.remove('hidden');
+                modal.classList.remove('hidden');
                 document.body.style.overflow = 'hidden';
             }
         }
@@ -211,7 +177,23 @@
             document.body.style.overflow = 'auto';
         }
 
-        // 初始化加载动画
+        const hsDB = [
+            { code: "9401.3100", desc: "Gaming Chair (DTC/B2B Knock-down)" },
+            { code: "3918.9090", desc: "WPC Decking (Tropical Durability)" },
+            { code: "4409.2110", desc: "Bamboo Flooring (Eco-Sovereignty)" }
+        ];
+
+        function searchHSCode() {
+            const q = document.getElementById('hs-input').value.toLowerCase();
+            const res = hsDB.filter(i => i.code.includes(q) || i.desc.toLowerCase().includes(q));
+            document.getElementById('hs-results').innerHTML = res.map(i => `
+                <div class="p-3 bg-white/5 border border-white/5 flex justify-between items-center hover:bg-white/10 transition">
+                    <span class="text-[#0ea5e3] font-mono text-xs font-bold">${i.code}</span>
+                    <span class="text-[9px] text-gray-500 uppercase">${i.desc}</span>
+                </div>
+            `).join('') || '<div class="text-xs text-gray-600 font-mono">// NO_RECORDS</div>';
+        }
+
         window.addEventListener('load', () => {
             document.getElementById('bar-fill').style.width = '100%';
             setTimeout(() => {
