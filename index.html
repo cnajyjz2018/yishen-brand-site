@@ -7,60 +7,18 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap">
-    
+    <link rel="stylesheet" href="styles.css?v=2026.FINAL.MASTER">
+
     <style>
-        :root {
-            --neon-blue: #0ea5e3;
-            --brand-red: #A11219;
-            --navbar-height: 80px;
-            --spring-curve: cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* 框架：GPU 加速微光引擎 (找回一周内核心视觉) */
-        #cursor-glow {
-            position: fixed; width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
-            border-radius: 50%; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%);
-            will-change: transform; mix-blend-mode: screen;
-        }
-
-        /* 补丁：视频背景主权对撞逻辑 (消除 404 与白屏) */
-        .hero-video {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            object-fit: cover; z-index: 0; opacity: 0.5; pointer-events: none;
-        }
-
-        /* 补丁：数字化导航层级增强 */
-        #master-nav {
-            position: fixed; top: 0; left: 0; width: 100%; height: var(--navbar-height);
-            background: rgba(1, 4, 9, 0.95); backdrop-filter: blur(24px);
-            z-index: 100000 !important; border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            display: flex; align-items: center;
-        }
-
-        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--spring-curve); }
-
-        /* 补丁：认证勋章抗锯齿与主权亮起逻辑 */
-        .grayscale-active { filter: grayscale(100%); transition: all 0.5s var(--spring-curve); opacity: 0.4; }
-        .grayscale-active:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.03); }
-
+        /* 权威母版特有内联补丁：确保视频背景与 GPU 追踪层级对撞成功 */
         .hero {
-            display: flex; flex-direction: column; justify-content: center; padding: 0 8%;
-            background: #010409; position: relative; min-height: 100vh; overflow: hidden;
-        }
-
-        /* 框架：AI Agent 获客终端核心样式 */
-        .agent-console {
-            background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px);
-            border: 1px solid rgba(14, 165, 233, 0.2); box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            transition: all 0.3s ease; position: relative; z-index: 10;
-        }
-
-        .terminal-log { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #555; }
-        
-        @media (max-width: 768px) {
-            .hero { padding-top: 140px; }
-            .mobile-center { text-align: center; justify-content: center; align-items: center; }
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            background: #010409;
+            overflow: hidden;
         }
     </style>
 </head>
@@ -69,41 +27,47 @@
     <div id="cursor-glow"></div>
 
     <nav id="master-nav">
-        <div class="max-w-[1440px] mx-auto px-6 w-full flex items-center justify-between">
+        <div class="nav-container">
             <a href="index.html" class="site-logo">
-                <svg width="280" height="32" viewBox="0 0 280 32" fill="none" style="overflow: visible !important;">
-                    <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
-                    <rect x="2" y="29" width="42" height="2" fill="var(--brand-red)"/>
+                <svg width="280" height="32" viewBox="0 0 280 32" fill="none">
+                    <g fill="white">
+                        <path d="M2 14L8 10V24L2 28V14Z"/>
+                        <path d="M17 6L23 2V24L17 28V6Z"/>
+                        <path d="M32 14L38 10V24L32 28V14Z"/>
+                    </g>
+                    <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
                     <text x="56" y="18" fill="white" style="font-family:'Inter'; font-weight:700; font-size:18px;">Yishen Global</text>
                 </svg>
             </a>
 
             <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400">
-                <a href="index.html#genesis" class="hover:text-white transition-colors">01_WHY_YISHEN</a>
+                <a href="#genesis" class="hover:text-white transition-colors">01_WHY_YISHEN</a>
                 <a href="solutions.html" class="hover:text-white transition-colors">02_SOLUTIONS</a>
                 <a href="industries.html" class="hover:text-white transition-colors">03_INDUSTRIES</a>
                 
                 <div class="relative group">
                     <button onclick="toggleSpringMenu('res-menu')" class="hover:text-white uppercase">04_RESOURCES ▼</button>
-                    <div id="res-menu" class="accordion-content absolute top-full right-0 mt-4 w-64 bg-[#010409]/98 border border-white/10 p-5 shadow-2xl">
+                    <div id="res-menu" class="accordion-content absolute top-full right-0 mt-4 w-64 border border-white/10 p-5 shadow-2xl">
                         <a href="resources.html" class="block py-2 hover:text-white border-b border-white/5">HS_CODE_DATA</a>
                         <a href="#compliance-section" class="block py-2 hover:text-white border-b border-white/5">PROTOCOLS</a>
                         <a href="sitemap.xml" target="_blank" class="block py-2 hover:text-white">XML_SITEMAP</a>
                     </div>
                 </div>
                 
-                <a href="contact.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black rounded-sm uppercase italic">Initiate_Briefing</a>
+                <a href="contact.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase">Initiate</a>
             </div>
         </div>
     </nav>
 
     <header class="hero" id="genesis">
-        <video autoplay muted loop playsinline class="hero-video">
-            <source src="https://yishenglobal.net/assets/Video_Prompt_Radiant_Intelligence.mp4" type="video/mp4">
-        </video>
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline poster="https://yishenglobal.net/assets/mesh.webp">
+                <source src="https://yishenglobal.net/assets/Video_Prompt_Radiant_Intelligence.mp4" type="video/mp4">
+            </video>
+        </div>
 
         <div class="max-w-[850px] z-[10]">
-            <span class="font-mono tracking-[4px] text-[#0ea5e3] text-sm uppercase">[ COORDINATED_INDUSTRIAL_ARCHITECTURE ]</span>
+            <span class="font-mono tracking-[4px] text-[#0ea5e3] text-sm uppercase">[ GLOBAL_INDUSTRIAL_ARCHITECTURE ]</span>
             <h1 class="text-white text-[clamp(2.5rem,8vw,5rem)] font-[900] leading-[1.1] my-8 uppercase italic">Architecture Over Sourcing.</h1>
             <p class="text-[#8b949e] text-lg lg:text-xl leading-relaxed mb-12">Fusing structural integrity with mission-critical density protocols.</p>
 
@@ -113,57 +77,29 @@
                     <span class="text-[9px] font-mono text-gray-600 uppercase italic">Encryption: Active</span>
                 </div>
                 <div class="flex flex-col md:flex-row gap-4">
-                    <input type="text" id="user-task" placeholder="输入获客指令 (例: 寻找 10 家北美 ISTA 实验室...)" class="flex-1 bg-black border border-white/10 p-4 text-xs font-mono outline-none text-[#0ea5e3]">
-                    <button onclick="runAgent()" class="bg-[#0ea5e3] px-8 py-4 text-black font-[900] text-xs uppercase hover:bg-white transition-colors duration-300">Deploy</button>
+                    <input type="text" id="user-task" placeholder="输入全球获客指令..." class="flex-1 bg-black border border-white/10 p-4 text-xs font-mono outline-none text-[#0ea5e3]">
+                    <button onclick="runAgent()" class="bg-[#0ea5e3] px-8 py-4 text-black font-[900] text-xs uppercase hover:bg-white transition-colors duration-300 shadow-lg shadow-[#0ea5e3]/20">Deploy</button>
                 </div>
-                <div id="agent-output" class="mt-4 terminal-log min-h-[40px]"> > Ready to harvest global industrial nodes. </div>
+                <div id="agent-output" class="mt-4 terminal-log min-h-[40px]"> > System ready for node harvesting. </div>
             </div>
         </div>
     </header>
 
-    <footer id="compliance-section" class="bg-[#000] pt-24 pb-12 border-t border-white/5 font-inter">
+    <footer id="compliance-section" class="bg-[#000] pt-24 pb-12 border-t border-white/5">
         <div class="max-w-[1440px] mx-auto px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 py-16 border-b border-white/5">
-                <div class="space-y-4 mobile-center">
-                    <h5 class="text-white font-bold text-xs uppercase tracking-widest">Master_Index</h5>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12 py-16 border-b border-white/5">
+                <div class="space-y-4 mobile-items-center">
+                    <h5 class="text-white font-bold text-xs uppercase tracking-widest">Protocol_Index</h5>
                     <div class="flex space-x-4 font-mono text-[9px] text-gray-700 uppercase">
-                        <a href="site-architecture.html" class="hover:text-white">Blueprint</a>
-                        <a href="sitemap.xml" target="_blank" class="hover:text-white">XML_Index</a>
+                        <a href="site-architecture.html">Blueprint</a>
+                        <a href="sitemap.xml">XML_Index</a>
                     </div>
                 </div>
 
-                <div class="flex flex-nowrap items-center gap-8 grayscale-active justify-center md:justify-end">
-                    <a href="https://www.bifma.org" target="_blank"><img src="https://yishenglobal.net/assets/bifma-badge.png" class="h-8 w-auto" alt="BIFMA"></a>
-                    <a href="https://ista.org" target="_blank"><img src="https://yishenglobal.net/assets/ista-badge.png" class="h-8 w-auto" alt="ISTA"></a>
-                    <a href="https://www.iso.org" target="_blank"><img src="https://yishenglobal.net/assets/iso9001.png" class="h-10 w-auto" alt="ISO9001"></a>
+                <div class="flex flex-nowrap items-center gap-8 grayscale justify-center md:justify-end">
+                    <a href="https://www.bifma.org" target="_blank"><img src="https://yishenglobal.net/assets/bifma-badge.png" alt="BIFMA Compliance"></a>
+                    <a href="https://ista.org" target="_blank"><img src="https://yishenglobal.net/assets/ista-badge.png" alt="ISTA Certification"></a>
+                    <a href="https://www.iso.org" target="_blank"><img src="https://yishenglobal.net/assets/iso9001.png" alt="ISO9001 Standard"></a>
                 </div>
             </div>
-            <p class="pt-8 text-[9px] font-mono text-gray-800 tracking-[4px] uppercase text-center">&copy; 2026 YISHEN GLOBAL // COORDINATED_ARCH_VERIFIED.</p>
-        </div>
-    </footer>
-
-    <script>
-        function toggleSpringMenu(id) {
-            const el = document.getElementById(id);
-            el.style.maxHeight = (el.style.maxHeight === '0px' || el.style.maxHeight === '') ? el.scrollHeight + "px" : "0px";
-        }
-
-        function runAgent() {
-            const input = document.getElementById('user-task');
-            const output = document.getElementById('agent-output');
-            if(!input.value) return;
-            const logs = [`> INITIATING_MISSION: ${input.value.toUpperCase()}`, `> ACCESSING_GLOBAL_SOCIETY_NODES...`, `> IDENTIFIED: TARGET LEADS ACQUIRED.`, `> STATUS: AGENT DEPLOYED.`];
-            output.innerHTML = ""; let i = 0;
-            const interval = setInterval(() => {
-                output.innerHTML += logs[i++] + "<br>";
-                if(i === logs.length) clearInterval(interval);
-            }, 700);
-        }
-
-        document.onmousemove = (e) => {
-            const glow = document.getElementById('cursor-glow');
-            requestAnimationFrame(() => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; });
-        };
-    </script>
-</body>
-</html>
+            <p
