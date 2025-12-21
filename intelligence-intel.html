@@ -7,7 +7,7 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
-    <link rel="stylesheet" href="styles.css?v=2026.FINAL.MASTER">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
         :root {
@@ -18,7 +18,9 @@
             --spring-curve: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* DIGITAL TWIN GLOW - GPU 优化渲染 */
+        body { background-color: var(--deep-space); color: #ffffff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+        /* GPU 优化渲染的动态背景 */
         #cursor-glow {
             position: fixed; width: 600px; height: 600px;
             background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
@@ -26,67 +28,78 @@
             will-change: transform; mix-blend-mode: screen;
         }
 
-        /* HERO 视觉架构：透明治理叙事 */
+        /* [PATCH] 系统加载仪式感补丁 */
+        #loading-screen { position: fixed; inset: 0; z-index: 100001; background: #010409; display: flex; flex-direction: column; items: center; justify-content: center; }
+        #bar-fill { height: 100%; background: var(--neon-blue); width: 0%; transition: 2s cubic-bezier(0.1, 0.5, 0.1, 1); }
+
         .page-hero {
             height: 60vh; display: flex; align-items: center;
             background: linear-gradient(90deg, #010409 35%, rgba(1, 4, 9, 0.3) 75%, transparent 100%);
             position: relative; padding: 0 8%; border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* 纯净代码勋章 - 彻底根除碎图 */
+        .arch-card { background: rgba(255, 255, 255, 0.02); padding: 35px; border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.3s var(--spring-curve); }
+        .arch-card:hover { border-color: var(--neon-blue); transform: translateY(-5px); background: rgba(14, 165, 233, 0.05); }
+
+        .intel-node { border: 1px solid rgba(255, 255, 255, 0.1); padding: 10px; text-align: center; font-family: 'JetBrains Mono'; font-size: 0.65rem; color: #94a3b8; transition: 0.3s; cursor: crosshair; }
+        .intel-node:hover { border-color: var(--neon-blue); color: var(--neon-blue); background: rgba(14, 165, 233, 0.05); }
+
         .sovereign-tag {
             padding: 4px 12px; border: 1px solid rgba(255, 255, 255, 0.1);
             font-family: 'JetBrains Mono', monospace; font-size: 9px;
-            text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
+            text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; cursor: pointer;
         }
-        .sovereign-tag:hover { border-color: var(--neon-blue); color: var(--neon-blue); background: rgba(14, 165, 233, 0.05); }
+        .sovereign-tag:hover { border-color: var(--neon-blue); color: var(--neon-blue); }
 
-        .arch-card { background: rgba(0,0,0,0.3); padding: 35px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s var(--spring-curve); }
-        .arch-card:hover { border-color: var(--neon-blue); transform: translateY(-5px); }
-        
-        .intel-node { border: 1px solid rgba(255,255,255,0.1); padding: 10px; text-align: center; font-family: 'JetBrains Mono'; font-size: 0.65rem; color: #94a3b8; transition: 0.3s; cursor: crosshair; }
-        .intel-node:hover { border-color: var(--neon-blue); color: var(--neon-blue); background: rgba(14, 165, 233, 0.05); }
-
-        @media (max-width: 768px) {
-            .page-hero { padding-top: 140px; background: #010409; }
-            .mobile-items-center { align-items: center !important; text-align: center !important; width: 100% !important; }
-        }
+        .scan-line { position: absolute; width: 100%; height: 2px; background: var(--neon-blue); opacity: 0.3; animation: scan 4s linear infinite; }
+        @keyframes scan { 0% { top: 0%; } 100% { top: 100%; } }
     </style>
 </head>
-<body class="bg-[#010409]">
+<body class="selection:bg-[#0ea5e3]">
+
+    <div id="loading-screen">
+        <span class="text-white font-black italic text-2xl uppercase tracking-tighter">Intelligence_Matrix_Sync_V5</span>
+        <div class="w-48 h-[2px] bg-white/10 mt-6"><div id="bar-fill"></div></div>
+        <span class="text-[#0ea5e3] font-mono text-[8px] mt-4 tracking-[4px] animate-pulse">// INTERCEPTING_GLOBAL_TRADE_SIGNALS...</span>
+    </div>
 
     <div id="cursor-glow"></div>
 
-    <nav id="master-nav" class="fixed top-0 left-0 w-full z-[100000] bg-[#010409]/95 backdrop-blur-xl border-b border-white/5 h-20 flex items-center">
-        <div class="max-w-[1440px] mx-auto px-6 w-full flex items-center justify-between">
-            <a href="index.html" class="site-logo">
-                <svg width="280" height="32" viewBox="0 0 280 32" fill="none"><g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g><rect x="2" y="29" width="42" height="2" fill="#A11219"/><text x="56" y="18" fill="white" style="font-family:'Inter'; font-weight:700; font-size:18px;">Yishen Global</text></svg>
+    <nav id="master-nav" class="fixed top-0 left-0 w-full z-[100000] bg-[#010409]/95 backdrop-blur-xl border-b border-white/5 h-20 flex items-center px-8">
+        <div class="max-w-[1440px] mx-auto w-full flex items-center justify-between">
+            <a href="index.html" class="flex flex-col">
+                <span class="text-white font-black italic text-xl tracking-tighter uppercase leading-none">Yishen Global</span>
+                <span class="text-[#0ea5e3] font-mono text-[8px] tracking-[3px]">INTEL_DOMINANCE_V5.0</span>
             </a>
             <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400">
-                <a href="yishen-genesis.html" class="hover:text-white transition">01_GENESIS</a>
-                <a href="sovereign-matrix.html" class="hover:text-white transition">02_MATRIX</a>
-                <a href="intelligence-intel.html" class="text-white border-b border-[#0ea5e3]">03_INTEL</a>
-                <a href="tactical-briefing.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase">Initiate_Audit</a>
+                <a href="genesis.html" class="hover:text-white transition">01_GENESIS</a>
+                <a href="architectures.html" class="hover:text-white transition">02_ARCHITECTURES</a>
+                <a href="clusters.html" class="hover:text-white transition">03_CLUSTERS</a>
+                <a href="intelligence-intel.html" class="text-white border-b border-[#0ea5e3] pb-1">04_INTEL</a>
+                <a href="resources.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase">Access_Vault</a>
             </div>
         </div>
     </nav>
 
     <header class="page-hero">
         <div class="max-w-[1440px]">
-            <span class="font-mono text-[#0ea5e3] tracking-[4px] text-xs uppercase">[ GLOBAL_INTELLIGENCE_CENTER_V4 ]</span>
+            <span class="font-mono text-[#0ea5e3] tracking-[4px] text-xs uppercase animate-pulse">[ DATA_INTERCEPTION_CENTER_V5 ]</span>
             <h1 class="text-white text-[clamp(2.5rem, 8vw, 4.2rem)] font-[900] leading-[1.05] my-8 uppercase italic tracking-tighter">Intelligence<br>Evidence.</h1>
             <p class="text-gray-400 max-w-[700px] text-lg leading-relaxed italic border-l-2 border-[#A11219] pl-10">
-                通过 Reddit 舆情实时对撞与海关数据穿透，建立 100% 透明的工业治理主权。
+                通过 Reddit 舆情实时对撞、海关提单轨迹穿透（ImportGenius）及 ZoomInfo 决策链提取，建立 100% 透明的全球家具主权。
             </p>
         </div>
     </header>
 
+    
+
     <main class="py-24 px-[8%]">
-        <section class="p-10 bg-white/5 border border-white/10 rounded-sm mb-24 shadow-2xl">
+        <section class="p-10 bg-white/5 border border-white/10 rounded-sm mb-24 shadow-2xl relative overflow-hidden">
+            <div class="scan-line"></div>
             <div class="flex items-center justify-between mb-8">
                 <div>
-                    <h3 class="font-mono text-[#0ea5e3] text-sm uppercase tracking-[4px] animate-pulse">// DATA_CRAWLER_TERMINAL</h3>
-                    <p class="text-[10px] text-gray-500 mt-2 uppercase font-mono italic">Panjiva & HS Code 9403 Integrity Sync</p>
+                    <h3 class="font-mono text-[#0ea5e3] text-sm uppercase tracking-[4px]">// DATA_CRAWLER_TERMINAL</h3>
+                    <p class="text-[10px] text-gray-500 mt-2 uppercase font-mono italic">ImportGenius & Trademo Master Sync</p>
                 </div>
                 <div class="flex items-center gap-2">
                     <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
@@ -97,63 +110,63 @@
             <div class="grid lg:grid-cols-3 gap-12 items-start">
                 <div class="lg:col-span-1 space-y-6">
                     <p class="text-xs text-gray-400 leading-relaxed font-mono">
-                        正在同步全球 124 个 Tier-1 生产节点。通过物理参数修正（Lumbar Support Correction）对撞行业痛点。
+                        正在拦截进出美国 Savannah 与智利 San Antonio 港的 Mesh Chair 及电竞椅提单。实时对撞 ZoomInfo，提取采购决策人加密协议。
                     </p>
                     <button onclick="runEngine()" id="engine-btn" class="w-full py-4 bg-[#0ea5e3] text-black font-black italic text-[11px] uppercase hover:bg-white transition-all shadow-lg shadow-[#0ea5e3]/20">
                         Execute_Sovereign_Sync
                     </button>
                 </div>
                 <div class="lg:col-span-2">
-                    <div id="terminal-output" class="h-48 bg-black border border-white/5 p-5 font-mono text-[10px] text-green-500/80 overflow-y-auto rounded-sm">
-                        <span class="text-gray-700">> Awaiting command for node synchronization...</span>
+                    <div id="terminal-output" class="h-48 bg-black border border-white/5 p-5 font-mono text-[10px] text-green-500/80 overflow-y-auto rounded-sm custom-scrollbar">
+                        <span class="text-gray-700">> Awaiting command for global node synchronization...</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="mt-24 p-12 bg-[#FF4500]/5 border border-[#FF4500]/20 rounded-sm">
+        <section class="mb-24 p-12 bg-[#FF4500]/5 border border-[#FF4500]/20 rounded-sm">
             <div class="flex items-center gap-4 mb-8">
                 <svg class="w-8 h-8 fill-[#FF4500]" viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.057 1.597.047.222.069.447.069.675 0 2.212-2.529 4.003-5.646 4.003-3.116 0-5.645-1.791-5.645-4.003 0-.228.022-.453.069-.675a1.75 1.75 0 0 1-1.057-1.597c0-.968.786-1.754 1.754-1.754.483 0 .903.191 1.213.5v-.009c1.2-.845 2.834-1.393 4.636-1.482l.833-3.913a.366.366 0 0 1 .43-.284l2.815.593c.1-.205.309-.343.553-.343z"/></svg>
                 <h4 class="font-mono text-[#FF4500] text-xs uppercase tracking-[4px]">// REDDIT_SENTIMENT_ORACLE</h4>
             </div>
-            <p class="text-gray-400 text-sm italic mb-10 leading-relaxed">
-                实时对撞 r/OfficeChairs 2.4M 活跃节点反馈。承认缺陷并透明化修正，是 Yishen Global 的核心主权原则。
+            <p class="text-gray-400 text-sm italic mb-10 leading-relaxed max-w-3xl">
+                实时同步 r/OfficeChairs 与 r/Esports 2.4M 活跃节点反馈。针对 Mesh 办公椅与电竞椅的疲劳测试主权，我们承认缺陷并透明化物理修正。
             </p>
             <div class="grid md:grid-cols-3 gap-6 font-mono text-[9px]">
-                <div class="p-6 border border-white/10 bg-black/50">TREND: #Mechanical_Fatigue <span class="text-green-500 ml-2">[CORRECTED]</span></div>
-                <div class="p-6 border border-white/10 bg-black/50">NODE: #Ashley_Furniture_Sourcing <span class="text-[#0ea5e3] ml-2">[MATCHED]</span></div>
-                <div class="p-6 border border-white/10 bg-black/50">SENTIMENT: 94.2% POSITIVE <span class="text-[#A11219] ml-2">[SECURED]</span></div>
+                <div class="p-6 border border-white/10 bg-black/50">TREND: #Lumbar_Support_Failure <span class="text-green-500 ml-2">[FIXED_BY_V5]</span></div>
+                <div class="p-6 border border-white/10 bg-black/50">NODE: #Wayfair_High_Return_SKUs <span class="text-[#0ea5e3] ml-2">[INTERCEPTED]</span></div>
+                <div class="p-6 border border-white/10 bg-black/50">MARKET: NORTH_AMERICA_DTC <span class="text-[#A11219] ml-2">[ALIGNED]</span></div>
             </div>
         </section>
 
         <section class="py-32 border-t border-white/5">
-            <h2 class="text-2xl font-black uppercase mb-12 italic tracking-widest">Supply Chain Intelligence Nodes</h2>
+            <h2 class="text-2xl font-black uppercase mb-12 italic tracking-widest text-white">Global Intelligence Nodes</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="arch-card">
                     <h3 class="text-xs font-bold uppercase mb-6 text-[#0ea5e3]">Logistics Sources</h3>
                     <div class="grid grid-cols-2 gap-3">
-                        <span class="intel-node">PANJIVA</span>
-                        <span class="intel-node">IMPORT_YETI</span>
-                        <span class="intel-node">HS_MATRIX</span>
-                        <span class="intel-node">CBAM_DATA</span>
+                        <span class="intel-node" onclick="window.open('https://www.panjiva.com')">PANJIVA_API</span>
+                        <span class="intel-node" onclick="window.open('https://www.importgenius.com')">IMPORT_GENIUS</span>
+                        <span class="intel-node">HS_CODE_9401</span>
+                        <span class="intel-node">CBP_MANIFEST</span>
                     </div>
                 </div>
                 <div class="arch-card">
-                    <h3 class="text-xs font-bold uppercase mb-6 text-[#FF4500]">Community Sources</h3>
+                    <h3 class="text-xs font-bold uppercase mb-6 text-[#FF4500]">Social Sources</h3>
                     <div class="grid grid-cols-2 gap-3">
-                        <span class="intel-node">REDDIT_API</span>
-                        <span class="intel-node">DISCORD_VIBE</span>
+                        <span class="intel-node" onclick="window.open('https://www.zoominfo.com')">ZOOM_INFO</span>
+                        <span class="intel-node">LINKEDIN_LEADS</span>
+                        <span class="intel-node">REDDIT_ORACLE</span>
                         <span class="intel-node">X_SENTIMENT</span>
-                        <span class="intel-node">TECH_DATA</span>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-black py-24 border-t border-white/5 font-inter">
+    <footer class="bg-black py-24 border-t border-white/5">
         <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-12">
-            <div class="mobile-items-center">
+            <div>
                 <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Intel_Sovereignty_Verified</div>
                 <div class="flex gap-6 mt-4 text-[9px] font-mono text-gray-800 uppercase tracking-widest">
                     <a href="site-architecture.html" class="hover:text-white transition">Blueprint_Map</a> / 
@@ -161,17 +174,35 @@
                 </div>
             </div>
             
-            <div class="flex flex-wrap items-center gap-6 mobile-items-center opacity-60">
-                <div class="sovereign-tag">BIFMA_X5.1_VERIFIED</div>
-                <div class="sovereign-tag">ISTA_6A_CERTIFIED</div>
-                <div class="sovereign-tag">ISO9001_SYSTEM</div>
+            <div class="flex flex-wrap items-center gap-6 opacity-60">
+                <div onclick="previewResource('bifma')" class="sovereign-tag">BIFMA_VERIFIED</div>
+                <div onclick="previewResource('ul')" class="sovereign-tag">UL_CERTIFIED</div>
+                <div onclick="previewResource('ista')" class="sovereign-tag">ISTA_6A_SYNC</div>
             </div>
         </div>
     </footer>
 
-    <script src="hq-core-gate.js?v=2026.FINAL"></script>
-    <script src="terminal-logic.js?v=2026.FINAL"></script>
+    <div id="asset-modal" class="fixed inset-0 z-[100002] hidden bg-black/98 flex flex-col items-center justify-center p-6 backdrop-blur-3xl">
+        <div class="w-full max-w-6xl flex justify-between items-center mb-4 px-2">
+            <span id="preview-title" class="font-mono text-[10px] text-[#0ea5e3] tracking-[4px] uppercase italic">// LOADING_RESOURCE...</span>
+            <button onclick="closePreview()" class="text-white/40 hover:text-white font-mono text-[10px] uppercase transition">Terminate_Link [X]</button>
+        </div>
+        <div class="w-full max-w-6xl h-[80vh] border border-white/10 relative bg-white/5 rounded-lg overflow-hidden">
+            <iframe id="preview-frame" src="" class="w-full h-full border-none"></iframe>
+            <div class="scan-line"></div>
+        </div>
+    </div>
+
     <script>
+        // 加载进度
+        window.addEventListener('load', () => {
+            document.getElementById('bar-fill').style.width = '100%';
+            setTimeout(() => {
+                document.getElementById('loading-screen').style.opacity = '0';
+                setTimeout(() => { document.getElementById('loading-screen').style.display = 'none'; }, 700);
+            }, 2500);
+        });
+
         // GPU 追踪补丁同步
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
@@ -181,6 +212,32 @@
             });
         });
 
+        // 资源索引补丁：匹配 assets/icons/ 结构
+        const certAssets = {
+            bifma: { url: "assets/docs/bifma.pdf", title: "BIFMA_STRUCTURAL_PROTOCOL_V5" },
+            ul: { url: "assets/docs/ul.pdf", title: "UL_FIRE_SAFETY_VALIDATED" },
+            ista: { url: "assets/docs/ista.pdf", title: "ISTA_6A_TRANSPORT_PROTOCOL" }
+        };
+
+        function previewResource(key) {
+            if (window.event) window.event.preventDefault();
+            const asset = certAssets[key];
+            const modal = document.getElementById('asset-modal');
+            const iframe = document.getElementById('preview-frame');
+            if (asset && modal && iframe) {
+                iframe.src = asset.url;
+                document.getElementById('preview-title').innerText = asset.title;
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closePreview() {
+            document.getElementById('asset-modal').classList.add('hidden');
+            document.getElementById('preview-frame').src = '';
+            document.body.style.overflow = 'auto';
+        }
+
         // 权威引擎模拟逻辑
         function runEngine() {
             const btn = document.getElementById('engine-btn');
@@ -188,13 +245,13 @@
             terminal.innerHTML = "";
             btn.classList.add('opacity-50', 'pointer-events-none');
             const logs = [
-                "> INITIATING_SOVEREIGN_SYNC...",
-                "> ACCESSING_PANJIVA_TRADE_STREAM...",
-                "> SCANNING_REDDIT_SENTIMENT_NODES...",
-                "> DETECTED: Mechanical_Fatigue_Pain_Point",
-                "> STATUS: ARCHITECTURAL_CORRECTION_APPLIED.",
-                "> RESULT: 94.2% POSITIVE_SENTIMENT_ALIGNED.",
-                "> SUCCESS: SOVEREIGN_INTEL_SECURED."
+                "> INITIATING_SOVEREIGN_SYNC_V5...",
+                "> ACCESSING_IMPORT_GENIUS_TRAJECTORY...",
+                "> MATCHED: Savannah_Port_9401_Incoming",
+                "> EXTRACTING: ZoomInfo_Decision_Maker_Payload",
+                "> STATUS: INTERCEPTION_SEQUENCE_COMPLETE.",
+                "> RESULT: 1200_BUYER_NODES_IDENTIFIED.",
+                "> SUCCESS: GLOBAL_INTEL_ALIGNED."
             ];
             let i = 0;
             const interval = setInterval(() => {
