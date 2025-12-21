@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Industrial Nodes | Multi-Sector Manufacturing Clusters | YISHEN GLOBAL</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap">
+    <link rel="stylesheet" href="styles.css?v=2026.FINAL.MASTER">
+
+    <style>
+        :root {
+            --neon-blue: #0ea5e3;
+            --performance-red: #A11219;
+            --bamboo-green: #10b981;
+            --deep-space: #010409;
+            --spring-curve: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* 节点视觉对撞机 */
+        .node-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+            gap: 1px; 
+            background: rgba(255,255,255,0.05); 
+        }
+        .node-cell { 
+            background: var(--deep-space); 
+            padding: 50px; 
+            transition: 0.4s var(--spring-curve); 
+            border: 1px solid transparent; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .node-cell:hover { 
+            background: rgba(14, 165, 233, 0.03); 
+            border-color: var(--neon-blue); 
+            z-index: 10; 
+            transform: scale(1.02);
+        }
+        
+        .node-id { font-family: 'JetBrains Mono'; font-size: 10px; color: var(--neon-blue); letter-spacing: 2px; }
+        .node-stats { 
+            font-family: 'JetBrains Mono'; 
+            font-size: 9px; 
+            color: #4b5563; 
+            margin-top: 30px; 
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05); 
+        }
+
+        /* GPU 优化微光 */
+        #cursor-glow {
+            position: fixed; width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
+            border-radius: 50%; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%);
+            will-change: transform;
+        }
+
+        @media (max-width: 768px) {
+            .node-cell { padding: 30px; }
+        }
+    </style>
+</head>
+<body class="bg-[#010409] text-white selection:bg-[#0ea5e3]">
+
+    <div id="cursor-glow"></div>
+
+    <header class="pt-40 pb-24 px-[8%] border-b border-white/5 relative overflow-hidden">
+        <div class="relative z-10">
+            <span class="node-id uppercase animate-pulse">// SYSTEM_NODE_ACTIVE: 28_CLUSTERS_DETECTED</span>
+            <h1 class="text-white text-[clamp(2.5rem,8vw,4.8rem)] font-[900] leading-[1.0] my-8 uppercase italic tracking-tighter">
+                Industrial Nodes.
+            </h1>
+            <p class="text-[#8b949e] max-w-3xl text-lg lg:text-xl leading-relaxed italic border-l-2 border-[#A11219] pl-8">
+                Integrating 28 strategic manufacturing clusters—from ergonomic seating architecture to sustainable WPC decking and high-tensile rigging. Validating multi-sector sovereignty through engineering precision.
+            </p>
+        </div>
+    </header>
+
+    <main class="node-grid">
+        
+        <div class="node-cell">
+            <div>
+                <div class="node-id">NODE_ALPHA // SEATING_SYSTEMS</div>
+                <h3 class="text-3xl font-black uppercase my-6 italic">Seating Architecture.</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    Task, Aerospace, and Medical seating clusters. Merging biomechanics with high-performance industrial design under BIFMA X5.1 protocols.
+                </p>
+            </div>
+            <div class="node-stats">
+                HS_CODE: 9401.31 / 9403.10<br>
+                CLUSTERS: OFFICE | HOME | SPECIALIZED
+            </div>
+        </div>
+
+        <div class="node-cell">
+            <div>
+                <div class="node-id">NODE_BETA // INDUSTRIAL_HARDWARE</div>
+                <h3 class="text-3xl font-black uppercase my-6 italic">High-Tensile Chains.</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    Integrated production of G80/G100 chains, rigging systems, and maritime components. The structural backbone of industrial supply chains.
+                </p>
+            </div>
+            <div class="node-stats">
+                HS_CODE: 7315.82 / 8425.11<br>
+                NODES: LONGHONG_MANUFACTURING
+            </div>
+        </div>
+
+        <div class="node-cell border-l-4 border-[#0ea5e3]/30">
+            <div>
+                <div class="node-id">NODE_DELTA // ARCHITECTURAL_SURFACES</div>
+                <h3 class="text-3xl font-black uppercase my-6 italic">Building Materials.</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    Integrating high-performance WPC decking, SPC flooring systems, and architectural panels. Engineered for climatic resilience and heavy traffic.
+                </p>
+            </div>
+            <div class="node-stats">
+                HS_CODE: 3918.90 (WPC) / 4411.14 (Flooring)<br>
+                CLUSTERS: INDOOR & OUTDOOR INFRASTRUCTURE
+            </div>
+        </div>
+
+        <div class="node-cell border-l-4 border-[#10b981]/30">
+            <div>
+                <div class="node-id">NODE_EPSILON // BIO-BASED_CRAFTS</div>
+                <h3 class="text-3xl font-black uppercase my-6 italic">Bamboo & Wood.</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    Precision-crafted bamboo artifacts, carbonized wood premiums, and net-zero timber solutions. Scaling traditional craftsmanship into industrial sovereignty.
+                </p>
+            </div>
+            <div class="node-stats">
+                HS_CODE: 4420.11 (Crafts) / 4421.91 (Structural)<br>
+                STATUS: NET-ZERO SUSTAINABILITY ALIGNED
+            </div>
+        </div>
+
+        <div class="node-cell">
+            <div>
+                <div class="node-id">NODE_GAMMA // MATERIAL_SCIENCE</div>
+                <h3 class="text-3xl font-black uppercase my-6 italic">Technical Textiles.</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    High-performance composites and technical fabrics developed for extreme durability and ergonomic integration across all industrial clusters.
+                </p>
+            </div>
+            <div class="node-stats">
+                HS_CODE: 5407.10 / 5903.20<br>
+                INTEGRATION: CROSS-CLUSTER_SYNC
+            </div>
+        </div>
+
+    </main>
+
+    
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Yishen Global 28 Strategic Industrial Clusters",
+      "description": "Cross-industry manufacturing nodes including seating, industrial chains, flooring (WPC/SPC), and bamboo crafts.",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Global Seating Architecture (HS 9401)" },
+        { "@type": "ListItem", "position": 2, "name": "Industrial Chain & Rigging Node (HS 7315)" },
+        { "@type": "ListItem", "position": 3, "name": "Architectural Surfaces & WPC Flooring (HS 3918)" },
+        { "@type": "ListItem", "position": 4, "name": "Bamboo & Wood Bio-Based Crafts (HS 4420)" },
+        { "@type": "ListItem", "position": 5, "name": "Technical Textiles & Materials (HS 5903)" }
+      ]
+    }
+    </script>
+
+    <script src="hq-core-gate.js?v=2026.FINAL"></script>
+    <script src="terminal-logic.js?v=2026.FINAL"></script>
+
+    <script>
+        // GPU 优化光标追踪
+        const glow = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => {
+            requestAnimationFrame(() => {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top = e.clientY + 'px';
+            });
+        });
+    </script>
+</body>
+</html>
