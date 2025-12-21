@@ -1,43 +1,48 @@
 /**
- * YISHEN_GLOBAL_ASSET_DISTRIBUTOR V4.0.FINAL
- * Logic: Atomically fetch from asset-ledger and manifest onto UI clusters.
- * Authority: Master Distributor for Industries and Sovereign Matrix.
+ * YISHEN_GLOBAL_ASSET_DISTRIBUTOR V5.0.INTEGRATED
+ * 核心补丁：[SKU_RENDER], [DATABASE_COLLISION], [FRACTURE_DEFENSE], [SOVEREIGN_MAPPING]
+ * 功能：自动从 asset-ledger.json 抓取物理主权资产并映射至 UI 集群
  */
 
 class AssetDistributor {
     constructor() {
-        // 统一对接升维后的主权资产账本
+        // 1. 物理路径定义 (匹配物理仓库与 Vercel 缓存协议)
         this.ledgerPath = './asset-ledger.json';
+        this.defaultThumb = 'assets/system/node-active-stub.webp';
         
-        // 自动识别容器：兼容 industries.html (sku-container) 和其他页面
+        // 2. 自动识别 UI 容器：兼容 industries.html (sku-container) 与 matrix.html
         this.container = document.getElementById('sku-container') || document.getElementById('dynamic-sku-grid');
         
-        // 性能监控：记录节点对撞耗时
+        // 3. 数字化孪生 Base64 兜底图 (解决 404 碎图导致的视觉主权受损)
+        this.fallbackSVG = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIyNSIgdmlld0JveD0iMCAwIDQwMCAyMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyMjUiIGZpbGw9IiMwMTA0MDkiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZmlsbD0iIzBlYTVlMyIgZm9udC1mYW1pbHk9Ik1vbm8iIGZvbnQtc2l6ZT0iMTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiPltESUdJVEFMX1RXSU5fQUNUSVZFXTwvdGV4dD48L3N2Zz4=';
+
         this.startTime = Date.now();
+        this.boot();
     }
 
     /**
-     * 启动分发引擎
+     * 启动分发引擎：执行数据库对撞
      */
     async boot() {
         if (!this.container) {
-            console.warn("> [SYSTEM] No distribution target found in DOM. Skipping render.");
+            console.warn("> [SYSTEM] No distribution target found in DOM. Monitoring mode only.");
             return;
         }
 
         try {
-            console.log("> [SYSTEM] Initiating Asset Ledger Sync...");
+            console.log("> [SYSTEM] Initiating Sovereign Ledger Sync...");
             const response = await fetch(this.ledgerPath);
             
             if (!response.ok) throw new Error(`HTTP_STATUS_${response.status}`);
             
-            const assets = await response.json();
-            const assetList = Object.values(assets);
+            const data = await response.json();
+            // 兼容两种数据格式：直接数组或嵌套在 skus 键下
+            const assetList = data.skus || Object.values(data);
 
-            this.render(assetList);
+            this.renderMatrix(assetList);
             
             const duration = Date.now() - this.startTime;
-            console.log(`> [SYSTEM] Distribution Complete: ${assetList.length} Nodes Manifested in ${duration}ms.`);
+            console.log(`%c >> [SYSTEM_V5]: ASSET_COLLISION_SUCCESS | ${assetList.length} Nodes Manifested in ${duration}ms `, "background: #0ea5e3; color: #000; font-weight: bold;");
         } catch (error) {
             this.handleError(error);
         }
@@ -47,41 +52,53 @@ class AssetDistributor {
      * 执行物理渲染：生成具备主权压制力的 UI 卡片
      * @param {Array} assetList 
      */
-    render(assetList) {
+    renderMatrix(assetList) {
         this.container.innerHTML = assetList.map(asset => {
             // 安全处理描述文本，保留前瞻叙事感
-            const shortDesc = asset.tagline || (asset.desc ? asset.desc.substring(0, 60) + '...' : 'Retrieving specifications...');
+            const shortDesc = asset.tagline || (asset.desc ? asset.desc.substring(0, 80) + '...' : 'Retrieving specifications...');
+            const imagePath = asset.image || asset.thumbnail || this.defaultThumb;
             
             return `
-                <div class="sku-card p-8 group cursor-pointer border border-white/5 bg-white/[0.02] hover:border-[#0ea5e3]/30 transition-all duration-500" 
+                <div class="asset-node rounded-2xl group border border-white/5 bg-white/[0.02] hover:border-[#0ea5e3]/30 transition-all duration-500 p-8 cursor-pointer" 
                      onclick="window.location.href='technical-passport.html?id=${asset.id}'">
                     
-                    <div class="mb-6 overflow-hidden bg-black aspect-square flex items-center justify-center border border-white/5 relative">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
-                        <img src="${asset.image || asset.img}" 
+                    <div class="scan-line"></div>
+                    
+                    <div class="mb-6 overflow-hidden bg-black aspect-video flex items-center justify-center border border-white/5 relative rounded-lg">
+                        <img src="${imagePath}" 
                              alt="${asset.title}" 
-                             class="w-4/5 h-4/5 object-contain grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 z-0">
+                             class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                             onerror="this.src='${this.fallbackSVG}'">
                     </div>
 
                     <div class="space-y-4">
                         <div class="flex justify-between items-center">
-                            <span class="font-mono text-[9px] text-[#0ea5e3] tracking-[3px] uppercase">${asset.sector || asset.category}</span>
-                            <span class="text-[8px] font-mono text-gray-700">V4.0_SECURE</span>
+                            <span class="font-mono text-[9px] text-[#0ea5e3] tracking-[3px] uppercase">// ${asset.sector || asset.category || 'GENERAL_ASSET'}</span>
+                            <span class="text-[10px] font-mono text-[#ffd700] border border-[#ffd700]/30 px-2 py-0.5">${asset.hs_code || 'HS_PENDING'}</span>
                         </div>
                         
                         <h3 class="text-xl font-black italic uppercase text-white group-hover:text-[#0ea5e3] transition-colors leading-tight">
                             ${asset.title || asset.name}
                         </h3>
                         
-                        <p class="text-xs text-gray-500 font-inter leading-relaxed">
-                            ${shortDesc}
-                        </p>
+                        <div class="space-y-2 py-4 border-y border-white/5">
+                            ${asset.specs ? Object.entries(asset.specs).slice(0, 2).map(([key, val]) => `
+                                <div class="flex justify-between font-mono text-[8px]">
+                                    <span class="text-gray-600 uppercase">${key}</span>
+                                    <span class="text-gray-400">${val}</span>
+                                </div>
+                            `).join('') : '<span class="text-[8px] text-gray-700 uppercase italic">Awaiting_Specs_Validation</span>'}
+                        </div>
 
-                        <div class="flex justify-between font-mono text-[9px] text-gray-600 border-t border-white/5 pt-4 group-hover:border-[#0ea5e3]/20">
-                            <span>HS: ${asset.hs_code || 'N/A'}</span>
-                            <span class="flex items-center gap-1.5">
+                        <div class="flex justify-between items-center pt-2">
+                            <div class="flex gap-2 opacity-40 group-hover:opacity-100 transition-opacity">
+                                ${asset.compliance ? asset.compliance.map(cert => `
+                                    <img src="assets/icons/${cert.toLowerCase()}-badge.webp" class="h-4" onerror="this.style.display='none'">
+                                `).join('') : ''}
+                            </div>
+                            <span class="flex items-center gap-1.5 font-mono text-[8px] text-gray-700">
                                 <span class="w-1.5 h-1.5 bg-[#A11219] rounded-full animate-pulse"></span>
-                                VALIDATED_NODE
+                                VALIDATED
                             </span>
                         </div>
                     </div>
@@ -91,22 +108,24 @@ class AssetDistributor {
     }
 
     /**
-     * 错误防御逻辑
+     * 致命错误防御逻辑
      */
     handleError(err) {
-        console.error("> [SYSTEM_ERROR] Ledger Sync Failed:", err);
+        console.error("> [FATAL_ERROR] Sovereign Sync Failed:", err);
         if (this.container) {
             this.container.innerHTML = `
-                <div class="col-span-full py-20 text-center font-mono text-[#A11219] uppercase tracking-widest bg-white/[0.02] border border-[#A11219]/20">
-                    > Ledger_Sync_Failure: Access Denied or Missing Assets.
+                <div class="col-span-full py-32 text-center bg-white/[0.01] border border-dashed border-[#A11219]/30 rounded-3xl">
+                    <span class="font-mono text-[#A11219] uppercase tracking-[5px] animate-pulse block mb-4">
+                        [FATAL_ERROR]: ASSET_SYNCHRONIZATION_INTERRUPTED
+                    </span>
+                    <p class="text-[10px] text-gray-600 font-mono italic">>> INITIATING_EMERGENCY_RECOVERY_PROTOCOL_V5...</p>
                 </div>
             `;
         }
     }
 }
 
-// 自动初始化全站分发
+// [INITIALIZE] 启动分发引擎
 document.addEventListener('DOMContentLoaded', () => {
-    const engine = new AssetDistributor();
-    engine.boot();
+    window.YishenDistributor = new AssetDistributor();
 });
