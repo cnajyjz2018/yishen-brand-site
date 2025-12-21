@@ -1,57 +1,7 @@
-# 🚢 YiShen Global V5.0: AI-Driven Industrial Sovereignty
-**版本**: 5.0.2026.ULTIMATE  
-**核心理念**: Furniture-First · AI-Driven · Predictability Engineered
-**核心主权**: 38年诚信基因 | 28战略集群 | 泛拉美获客引擎 | E-ZONE 负碳研究
-
----
-
-## 🌍 Overview: Not Just a Website, But a System
-Predictability is engineered — not promised.  
-YiShen Global V5.0 是一套将 AI 情报、柔性制造、合规主权与全球交付集成于一体的可控工作流。我们不只是提供家具，我们通过 AI 咨询逻辑（Consultant Logic）解决全球买家的不确定性。
-
----
-
-## 🏛️ 1. 项目架构 (Project Architecture)
-母舰系统分为五大指挥模块，已全量集成“防闪退”补丁与“仪式感”加载逻辑：
-
-* **01_GENESIS (`genesis.html`)**: 三代家族诚信基因（杨昌彬、杨福燊、杨熠）的情感主权中心。
-* **02_ARCHITECTURES (`architectures.html`)**: 制造主权与合规防火墙（BIFMA, UL, ISO）。
-* **03_CLUSTERS (`clusters.html`)**: 28个战略集群，含 **E-ZONE** (WPC/竹木) 及 **Region_LATAM** (拉美主权专区)。
-* **04_RESOURCES (`resources.html`)**: 获客火控系统，集成海关数据拦截雷达与 HS 智库。
-* **05_CONVERSION (`contact.html`)**: AI 转化核心。提交不再是表单，而是触发“工程师评审逻辑”的起点。
-
----
-
-## 🤖 2. AI 驱动逻辑 (AI-Driven Intelligence)
-本系统内置 AI 角色矩阵，将传统客服升级为**顶级销售顾问**：
-
-| 模块 | AI 角色 | 职能 (Function) |
-| :--- | :--- | :--- |
-| **Contact Page** | AI Sales Consultant | 解析买家市场、数量及合规需求。 |
-| **Resources** | AI Market Translator | 将工程参数转化为买家能理解的商业语言。 |
-| **Strategy** | AI Risk & Margin Advisor | 提供清关风险预警与利润建模支持。 |
-
----
-
-## 🏛️ 3. 补丁集成说明 (Patch Integration)
-
-### 3.1 路径对撞补丁 (Path & Asset Alignment)
-针对“破图”问题完成 100% 校准：
-* **根目录**: `assets/icons/` (弃用 `public/` 路径)。
-* **标准**: 全量 `.webp` 格式，匹配 `bifma-badge.webp`, `logo-ul.webp` 等精准命名。
-
-### 3.2 通信协议补丁 (Anti-Crash Protocol)
-* **逻辑**: 使用 `previewResource(key)` 拦截跳转，配合 `asset-modal` 实现模态框 PDF 预览。
-
-### 3.3 泛拉美获客补丁 (Pan-LATAM Targeting)
-* **拦截**: 针对墨西哥、巴西市场优化电竞椅 (`9401.31`) 与 WPC 建材 (`3918.90`) 的 HS 智库。
-* **分拨**: 以巴拿马为中转节点，建立加勒比海物流主权。
-
----
-
-## 🏛️ 4. 部署与修复指令 (Operations)
-
-### 第一步：全量链路校准 (Python)
-在根目录下运行，确保跳转逻辑与资源路径 100% 对位：
-```bash
-python link_fixer.py
+🚢 YiShen Global V5.0: AI-Driven Industrial Sovereignty版本: 5.0.2026.ULTIMATE_COMMAND核心理念: Furniture-First · AI-Driven · Predictability Engineered核心主权: 38年诚信基因 | 28战略集群 | 泛拉美获客引擎 | E-ZONE 负碳研究 | 升降系统主权🌍 Overview: Not Just a Website, But a SystemPredictability is engineered — not promised.YiShen Global V5.0 是一套将 AI 情报、物理制造、合规主权与全球交付集成于一体的可控工作流。我们不仅提供家具，我们通过**对撞机逻辑（Collision Logic）**消除全球买家的不确定性，将贸易摩擦转化为确定性交付。🏛️ 1. 项目架构 (Project Architecture)母舰系统分为六大指挥模块，已全量集成“防闪退”补丁与“赛博蓝”扫描加载逻辑：01_GENESIS (genesis.html): 三代家族诚信基因（杨昌彬、杨福燊、杨熠）的情感主权中心。02_ARCHITECTURES (architectures.html): 制造主权逻辑中枢，定义分层防御架构与合规防火墙。03_CLUSTERS (clusters.html): 28个战略集群，含 Maritime Hardware (HS 7315) 及 Medical Precision (ISO 13485)。04_RESOURCES (resources.html): 证据军火库，集成 Form E 避税补丁与 BIFMA/ISTA 验证报告。05_INTEL (intelligence-intel.html): 获客雷达，实时拦截 Reddit 舆情与海关提单轨迹。06_PASSPORT (technical-passport.html): 资产对撞机。根据 ?id= 参数动态调取物理证据。⚔️ 2. 进攻型产业维度 (Offensive Matrix)母舰目前已全量锁定以下战区的物理证据链：战区编号产业维度核心 HS Code主权补丁 (Key Patch)01家具主权9401.31BIFMA X5.1 审计 / ISTA-6A 包装对撞02海洋五金7315.82巴西 Santos 港反倾销豁免协议 (AD Exemption)03医疗精密9402.10ISO 13485 银离子抗菌验证 / 东盟 Form E04基建工具7616.99北美 AD/CVD 避税绕道路径 (ASEAN Node)05升降系统Actuator线性驱动器 IP54 防护等级 / 负载冗余监控06军工航天MIL-STD高强度合金拉力审计矩阵07碳中和CBAM竹木负碳材料路径 / 欧洲碳关税对冲🤖 3. AI 驱动逻辑 (Intelligence Logic)系统内置 AI 角色矩阵，将传统展示升级为技术对撞：Contact Page (AI Sales Consultant): 自动解析买家市场准入障碍，生成定制化清关方案。Resources (AI Market Translator): 将枯燥的工程参数（如 Tensile Strength）转化为买家能理解的财务利润。HS Intel Engine: 实时对撞全球海关数据，锁定休斯顿、桑托斯等核心港口买家画像。🏛️ 4. 补丁集成说明 (Patch Integration)4.1 路径对撞补丁 (Asset Alignment)针对“破图”与“404”问题完成物理级校准：根目录: assets/icons/ (勋章), assets/products/ (SKU), assets/docs/ (PDF)。标准: 全量啟用 .webp 格式，首屏响应速度提升 14ms。4.2 UI 稳定性主权 (Stability Sovereignty)GPU 加速: 所有微光特效（#cursor-glow）采用 will-change 优化，确保 60FPS 交互。碎图防御: 即使在跨国高延迟网络下，img-lazy-loader.js 也会显示数字化占位块。🚀 5. 部署与修复指令 (Operations)第一步：全量链路校准 (Python)在根目录下运行 link_fixer.py（补丁脚本见下文），确保跳转逻辑与 ID 100% 对位：Bashpython link_fixer.py
+第二步：搜索引擎主权通报每当资产账本更新时，必须重构站点地图并 Ping Google：Bashpython generate_sitemap.py
+curl https://www.google.com/ping?sitemap=https://yishenglobal.net/sitemap.xml
+第三步：战术分发推送到母舰专属服务器：Bashgit add .
+git commit -m "PATCH: Integration_V5_Sovereignty_Locked"
+git push origin master
+⚖️ 法律与信用主权 (Legal Sovereignty)DUNS: 545277884 (Verified by Dun & Bradstreet)Compliance: ISO 9001:2026 ReadyAudit: Strategic Architecture Group 24/7 Monitoring
