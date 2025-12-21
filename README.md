@@ -1,238 +1,57 @@
-YiShen Global
-Furniture-First · AI-Driven Global Supply Chain System
+# 🚢 YiShen Global V5.0: AI-Driven Industrial Sovereignty
+**版本**: 5.0.2026.ULTIMATE  
+**核心理念**: Furniture-First · AI-Driven · Predictability Engineered
+**核心主权**: 38年诚信基因 | 28战略集群 | 泛拉美获客引擎 | E-ZONE 负碳研究
 
-Predictability is engineered — not promised.
-YiShen Global is an engineering-first furniture supply system combining AI, manufacturing, compliance, packaging, and global delivery into one controllable workflow.
+---
 
-🌍 Overview
+## 🌍 Overview: Not Just a Website, But a System
+Predictability is engineered — not promised.  
+YiShen Global V5.0 是一套将 AI 情报、柔性制造、合规主权与全球交付集成于一体的可控工作流。我们不只是提供家具，我们通过 AI 咨询逻辑（Consultant Logic）解决全球买家的不确定性。
 
-YiShen Global is not a traditional trading website.
+---
 
-It is a Furniture-First, AI-Driven International Business System designed to help global buyers, distributors, brands, and project contractors source furniture with predictability, not uncertainty.
+## 🏛️ 1. 项目架构 (Project Architecture)
+母舰系统分为五大指挥模块，已全量集成“防闪退”补丁与“仪式感”加载逻辑：
 
-We integrate:
+* **01_GENESIS (`genesis.html`)**: 三代家族诚信基因（杨昌彬、杨福燊、杨熠）的情感主权中心。
+* **02_ARCHITECTURES (`architectures.html`)**: 制造主权与合规防火墙（BIFMA, UL, ISO）。
+* **03_CLUSTERS (`clusters.html`)**: 28个战略集群，含 **E-ZONE** (WPC/竹木) 及 **Region_LATAM** (拉美主权专区)。
+* **04_RESOURCES (`resources.html`)**: 获客火控系统，集成海关数据拦截雷达与 HS 智库。
+* **05_CONVERSION (`contact.html`)**: AI 转化核心。提交不再是表单，而是触发“工程师评审逻辑”的起点。
 
-Furniture manufacturing (OEM / ODM)
+---
 
-Engineering & compliance logic
+## 🤖 2. AI 驱动逻辑 (AI-Driven Intelligence)
+本系统内置 AI 角色矩阵，将传统客服升级为**顶级销售顾问**：
 
-Packaging survivability modeling
+| 模块 | AI 角色 | 职能 (Function) |
+| :--- | :--- | :--- |
+| **Contact Page** | AI Sales Consultant | 解析买家市场、数量及合规需求。 |
+| **Resources** | AI Market Translator | 将工程参数转化为买家能理解的商业语言。 |
+| **Strategy** | AI Risk & Margin Advisor | 提供清关风险预警与利润建模支持。 |
 
-DDP / FOB / CIF execution
+---
 
-AI-assisted sales, marketing, and follow-up systems
+## 🏛️ 3. 补丁集成说明 (Patch Integration)
 
-This repository contains the front-end execution layer of that system.
+### 3.1 路径对撞补丁 (Path & Asset Alignment)
+针对“破图”问题完成 100% 校准：
+* **根目录**: `assets/icons/` (弃用 `public/` 路径)。
+* **标准**: 全量 `.webp` 格式，匹配 `bifma-badge.webp`, `logo-ul.webp` 等精准命名。
 
-🪑 Core Product Focus (Furniture-First)
+### 3.2 通信协议补丁 (Anti-Crash Protocol)
+* **逻辑**: 使用 `previewResource(key)` 拦截跳转，配合 `asset-modal` 实现模态框 PDF 预览。
 
-YiShen Global is furniture-led by design, not a generic supply chain site.
+### 3.3 泛拉美获客补丁 (Pan-LATAM Targeting)
+* **拦截**: 针对墨西哥、巴西市场优化电竞椅 (`9401.31`) 与 WPC 建材 (`3918.90`) 的 HS 智库。
+* **分拨**: 以巴拿马为中转节点，建立加勒比海物流主权。
 
-Primary Categories
+---
 
-Ergonomic / Mesh Office Chairs
+## 🏛️ 4. 部署与修复指令 (Operations)
 
-Gaming Chairs
-
-Standing Desks
-
-Sofa & Lounge Seating
-
-Project / Contract Furniture
-
-All pages, logic, and conversion flows are built around furniture decision-making, not SKU dumping.
-
-🤖 AI-Driven System Architecture
-
-This website is designed to work as an AI-assisted business engine, not just a brochure.
-
-AI Roles Embedded
-Module	AI Role
-Contact Page	AI Sales Consultant
-Form Submission	AI Pre-Sales Analyzer
-Follow-Up	AI Top-Sales Reply Engine
-Social	AI LinkedIn / WhatsApp Bridge
-Content	AI Market Translator
-Strategy	AI Risk & Margin Advisor
-🔁 Conversion Logic (Not Just Forms)
-Contact → Deal System
-
-Buyer submits Contact form
-
-AI interprets:
-
-Market
-
-Quantity
-
-Compliance needs
-
-Delivery model
-
-System triggers:
-
-Engineering Review logic
-
-Consultant-style reply (not客服)
-
-WhatsApp / LinkedIn follow-up path
-
-The goal is response quality, not response speed.
-
-🔗 LinkedIn × WhatsApp × Website Closed Loop
-
-This system is designed to work with real social identities, not bots.
-
-Primary LinkedIn:
-
-https://www.linkedin.com/in/alex-yang-yishen/
-
-WhatsApp:
-
-+86 159 6827 7867
-
-+86 188 5727 7313
-
-Logic
-
-Website builds authority
-
-LinkedIn builds trust
-
-WhatsApp closes deals
-
-🧠 Sales Philosophy (Why This System Works)
-
-Most exporters reply like customer service.
-
-YiShen Global replies like a consultant.
-
-Built-in Sales Intelligence
-
-Localization insight (market-specific)
-
-Price anchoring (range, not dead price)
-
-Value translation (features → buyer language)
-
-Risk reduction (compliance / logistics / packaging)
-
-This philosophy is embedded into:
-
-Contact copy
-
-CTA wording
-
-AI response templates
-
-Follow-up structure
-
-📁 Project Structure
-/
-├─ index.html                  # AI-led brand & authority entry
-├─ why-us.html                 # Engineering & predictability logic
-├─ solutions.html              # Business systems, not SKUs
-├─ industries.html             # Furniture-driven industry logic
-├─ resources.html              # Engineering / compliance / data hub
-├─ home-and-office-furniture.html
-├─ sku-detail.html
-├─ contact.html                # AI conversion core
-├─ styles.css                  # Unified design system
-├─ script.js                   # Minimal, stable UI logic
-├─ assets/
-│  ├─ img/
-│  └─ logo/
-│     ├─ yishen-wordmark-horizontal.svg
-│     ├─ yishen-icon-square.svg
-└─ README.md
-
-🧩 Logo & Brand System
-
-YiShen Global uses a vector-first logo system:
-
-SVG (Path-outlined, font-free)
-
-WEBP fallback
-
-Dark / light safe
-
-AI-render friendly
-
-Logo files are designed for:
-
-Website
-
-LinkedIn banners
-
-AI image/video generation
-
-Print & catalog use
-
-📦 Compliance & Engineering Mindset
-
-This system assumes buyers care about:
-
-BIFMA / EN1335 / UL / CE
-
-Packaging drop tests
-
-Container density
-
-Climate adaptation
-
-DDP risk
-
-These are not add-ons — they are core assumptions.
-
-🚀 How to Use This System
-For Buyers
-
-Use Contact page to request:
-
-Engineering review
-
-SKU feasibility
-
-Delivery modeling
-
-For Sales Teams
-
-Treat website replies as:
-
-Consultant responses
-
-Not price dumping
-
-For Management
-
-This site is:
-
-A training system
-
-A deal-quality filter
-
-A brand authority layer
-
-🔮 Roadmap (Already Designed)
-
-AI Engineering Review PDF automation
-
-CRM & Notion integration
-
-AI Sales Reply Engine (Top-Sales logic)
-
-AI Market Content Generator
-
-Video & visual AI integration
-
-📌 Final Note
-
-YiShen Global is built on one principle:
-
-The future of foreign trade is not cheaper prices —
-it is better thinking, faster learning, and higher response quality.
-
-This website is the front door of that system.
-
-© 2026 YiShen Global
-Furniture-First · AI-Driven · Global Execution
+### 第一步：全量链路校准 (Python)
+在根目录下运行，确保跳转逻辑与资源路径 100% 对位：
+```bash
+python link_fixer.py
