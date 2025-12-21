@@ -26,6 +26,10 @@
   ],
   "rewrites": [
     {
+      "source": "/solutions",
+      "destination": "/solutions.html"
+    },
+    {
       "source": "/passport/:id",
       "destination": "/technical-passport.html?id=:id"
     },
@@ -56,12 +60,6 @@
       "source": "/home",
       "destination": "/",
       "permanent": true
-    }
-  ],
-  "errorPages": [
-    {
-      "status": 404,
-      "src": "/404.html"
     }
   ]
 }
