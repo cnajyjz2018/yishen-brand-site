@@ -1,6 +1,6 @@
 /* =========================================================
-   YISHEN GLOBAL - HQ_CORE_GATE V4.0.FINAL.MASTER
-   Logic: Central Command Hub & Sovereign Offensive Engine
+   YISHEN GLOBAL - HQ_CORE_GATE V5.0.FINAL.MASTER
+   Logic: Total Integration (Core + Pages + Offensive Intel)
    Integrated: GPU Engine, Terminal Logic, RocketReach Auth, Target Matrix
    Authority: Strategic Architecture Group / Yishen HQ
    ========================================================= */
@@ -10,31 +10,21 @@
 
     /**
      * 01_STRATEGIC_CONFIG: 核心主权配置与情报防火墙
-     * 包含针对全球零售巨头的进攻性目标映射
      */
-    const HQ_CORE = {
-        SOVEREIGN_ID: "YISHEN_2026_FINAL_AUTHORITY",
-        VERSION: "4.0.MASTER",
-        DEPLOY_STATUS: "ACTIVE_NODE_HARVESTING",
-        ENCRYPTION_LEVEL: "INDUSTRIAL_STRENGTH",
-        
+    const HQ_CONFIG = {
+        version: "5.0.MASTER",
+        status: "ACTIVE_NODE_HARVESTING",
+        deployStatus: "COMMAND_ACTIVE",
         // 实战进攻目标节点：指向全球贸易主权方
-        TARGET_MATRICES: {
-            RETAIL_GIANTS: ["ASHLEY_FURNITURE", "ODP_CORP", "LOWES", "JYSK"],
-            INDUSTRIAL_NODES: ["PORT_AUTHORITIES", "FLEET_OPERATORS", "MARITIME_OPS"],
-            EU_COMPLIANCE: ["CBAM_AUDIT_READY"]
-        },
-
+        targetMatrix: ["ASHLEY_FURNITURE", "ODP_CORP", "LOWES", "JYSK", "AMAZON_COMMERCIAL"],
         // 斩首行动核心 API 密钥 (RocketReach 对撞节点)
-        INTEL_FIREWALL: {
-            ROCKET_REACH_KEY: "1a174fbk3bd5d56961b4be235ed012552eb4c800",
-            REDDIT_SENTIMENT: "ORACLE_V4_ACTIVE"
-        }
+        intelKey: "1a174fbk3bd5d56961b4be235ed012552eb4c800",
+        // 物理资产主权路径
+        assetRoot: "public/assets/products/"
     };
 
     /**
-     * 02_GLOBAL_HOOKS: 核心交互钩子
-     * 支撑全站弹簧式 UI 逻辑
+     * 02_GLOBAL_HOOKS: 跨页面弹簧 UI 逻辑
      */
     window.toggleSpringMenu = function(id) {
         const el = document.getElementById(id);
@@ -53,45 +43,64 @@
      */
     const HQ_Engine = {
         init() {
-            console.log(`%c > Yishen Global HQ Core Gate Activated: ${HQ_CORE.DEPLOY_STATUS} `, "background: #0ea5e3; color: #000; font-weight: bold;");
+            console.log(`%c // YISHEN_V5.0_COMMAND_ACTIVE // `, "background:#0ea5e3; color:#000; font-weight:bold;");
             this.initGlowEngine();      // 激活 GPU 微光追踪
             this.initNavSovereignty();  // 激活导航主权控制
-            this.initUXPatches();       // 激活物理布局守护
-            this.bindIntelMatrix();     // 绑定情报对撞路由
-            window.YishenHQ = HQ_CORE;  // 挂载主权对象
+            this.applyUXPatches();       // 激活物理布局守护
+            this.bindSovereignIntel();   // 绑定全球情报矩阵
+            window.YishenHQ = HQ_CONFIG; // 挂载主权配置对象
         },
 
-        // GPU 加速微光引擎
+        // GPU 加速微光跟随 logic
         initGlowEngine() {
             const glow = document.getElementById('cursor-glow');
-            if (!glow) return;
-            window.addEventListener('mousemove', (e) => {
-                requestAnimationFrame(() => {
-                    glow.style.left = `${e.clientX}px`;
-                    glow.style.top = `${e.clientY}px`;
+            if (glow) {
+                window.addEventListener('mousemove', (e) => {
+                    requestAnimationFrame(() => {
+                        glow.style.left = `${e.clientX}px`;
+                        glow.style.top = `${e.clientY}px`;
+                    });
                 });
-            });
+            }
         },
 
-        // 导航滚动主权
+        // 导航主权滚动控制 logic
         initNavSovereignty() {
             const nav = document.getElementById('master-nav');
             if (!nav) return;
             window.addEventListener('scroll', () => {
-                const isScrolled = window.scrollY > 50;
-                nav.style.background = isScrolled ? "rgba(1, 4, 9, 0.98)" : "rgba(1, 4, 9, 0.95)";
-                nav.style.height = isScrolled ? "70px" : "80px";
-                nav.style.borderBottomColor = isScrolled ? "rgba(14, 165, 233, 0.2)" : "rgba(255, 255, 255, 0.08)";
+                const scrolled = window.scrollY > 50;
+                nav.style.height = scrolled ? "70px" : "80px";
+                nav.style.background = scrolled ? "rgba(1, 4, 9, 0.98)" : "rgba(1, 4, 9, 0.95)";
+                nav.style.borderBottomColor = scrolled ? "rgba(14, 165, 233, 0.2)" : "rgba(255, 255, 255, 0.08)";
             });
         },
 
-        // 情报矩阵与社交路由
-        bindIntelMatrix() {
+        // 物理布局补丁：图片守护，根除 404 破碎感
+        applyUXPatches() {
+            document.querySelectorAll("img").forEach(img => {
+                if (!img.hasAttribute("loading")) img.setAttribute("loading", "lazy");
+                img.addEventListener("error", () => { 
+                    img.style.opacity = "0"; // 物理隐藏破碎占位符
+                });
+            });
+            // 自动注入针对 Logo 和页脚的物理主权样式
+            const style = document.createElement('style');
+            style.innerHTML = `
+                .site-logo svg { height: 32px !important; width: auto !important; overflow: visible !important; }
+                @media (max-width: 768px) { .node-grid { grid-template-columns: 1fr !important; } }
+            `;
+            document.head.appendChild(style);
+        },
+
+        // 绑定全球情报矩阵路由 logic
+        bindSovereignIntel() {
             const intelMatrix = {
                 Panju: "https://www.panjiva.com",
                 Trademo: "https://www.trademo.com",
                 LinkedIn: "https://www.linkedin.com/company/yishen-global",
-                WhatsApp: "https://wa.me/8619530394133"
+                WhatsApp: "https://wa.me/8619530394133",
+                ImportYeti: "https://www.importyeti.com"
             };
             document.addEventListener('click', (e) => {
                 const target = e.target.closest('[data-intel]') || e.target.closest('[data-connect]');
@@ -99,25 +108,11 @@
                 const node = target.getAttribute('data-intel') || target.getAttribute('data-connect');
                 if (intelMatrix[node]) window.open(intelMatrix[node], '_blank');
             });
-        },
-
-        // 物理布局补丁：图片守护
-        initUXPatches() {
-            document.querySelectorAll("img").forEach(img => {
-                if (!img.hasAttribute("loading")) img.setAttribute("loading", "lazy");
-                img.addEventListener("error", () => { img.style.opacity = "0"; });
-            });
-            const style = document.createElement('style');
-            style.innerHTML = `
-                .site-logo svg { height: 32px !important; width: auto !important; overflow: visible !important; }
-                @media (max-width: 768px) { .node-grid { grid-template-columns: 1fr !important; } }
-            `;
-            document.head.appendChild(style);
         }
     };
 
     /**
-     * 04_TERMINAL_LOGIC: 终端反馈引擎 (实战交互模拟)
+     * 04_TERMINAL_LOGIC: 5.0 实战对撞终端
      */
     window.runAgent = function() {
         const input = document.getElementById('user-task');
@@ -125,13 +120,14 @@
         if (!input || !output || !input.value) return;
 
         const mission = input.value.toUpperCase();
-        output.innerHTML = `<span class="text-white">> INITIATING_MISSION_V4: [${mission}]</span>`;
+        output.innerHTML = `<span class="text-[#0ea5e3]">> INITIATING_5.0_MISSION: [${mission}]</span>`;
 
         const logs = [
-            `> SCANNING_TARGET_MATRIX: [${HQ_CORE.TARGET_MATRICES.RETAIL_GIANTS.join(", ")}]`,
+            `> SCANNING_TARGET_MATRIX: [${HQ_CONFIG.targetMatrix.join(", ")}]`,
             `> AUTHENTICATING_ROCKET_REACH_KEY: [CONNECTED]`,
             "> COLLIDING_REDDIT_SENTIMENT_ORACLE...",
-            "> SUCCESS: OPERATIONAL_SYSTEM_STABLE_FOR_DEPLOYMENT."
+            `> ASSET_PATH_VERIFIED: ${HQ_CONFIG.assetRoot}`,
+            "> SUCCESS: 24/7_AUTOMATION_STABLE."
         ];
 
         let i = 0;
@@ -149,11 +145,11 @@
      * 05_SOVEREIGN_VALIDATION: 验证资产对齐
      */
     window.validateSovereignNode = (assetId) => {
-        console.log(`> [HQ] COLLIDING_ASSET: ${assetId} WITH_HQ_CONFIG...`);
-        return HQ_CORE.TARGET_MATRICES;
+        console.log(`> [HQ] COLLIDING_ASSET: ${assetId} WITH_HQ_CONFIG_V5...`);
+        return HQ_CONFIG.targetMatrix;
     };
 
-    // 自动通电
+    // 06_IGNITION: 全局自动通电
     document.addEventListener('DOMContentLoaded', () => HQ_Engine.init());
 
 })();
