@@ -8,20 +8,24 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --brand-blue: #0ea5e3; --brand-red: #A11219; --bg-deep: #010409; }
+        :root { --brand-blue: #0ea5e3; --brand-red: #A11219; --brand-gold: #ffd700; --bg-deep: #010409; }
         body { background-color: var(--bg-deep); font-family: 'Inter', sans-serif; color: #ffffff; margin: 0; overflow-x: hidden; }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
         .topology-bg { background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.03) 1px, transparent 0); background-size: 40px 40px; }
         
-        /* 加载动画补丁 */
+        /* [PATCH] 加载动画补丁 */
         #loading-screen { position: fixed; inset: 0; z-index: 99999; background: #010409; display: flex; flex-direction: column; items: center; justify-content: center; }
         #bar-fill { height: 100%; background: var(--brand-blue); width: 0%; transition: 2s cubic-bezier(0.1, 0.5, 0.1, 1); }
 
-        /* 卡片主权样式 */
-        .cluster-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; height: 100%; }
-        .cluster-card:hover { border-color: var(--brand-blue); background: rgba(14, 165, 227, 0.04); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        /* 集群阵列样式 */
+        .cluster-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); cursor: crosshair; position: relative; overflow: hidden; height: 100%; }
+        .cluster-card:hover { border-color: var(--brand-blue); background: rgba(14, 165, 227, 0.04); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
         .cluster-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--brand-blue); transform: translateX(-100%); transition: 0.6s; }
         .cluster-card:hover::before { transform: translateX(0); }
+
+        /* 标签主权样式 */
+        .tag-sovereignty { font-size: 8px; font-family: 'JetBrains Mono'; padding: 2px 8px; border: 1px solid rgba(255,255,255,0.1); text-transform: uppercase; border-radius: 2px; }
+        .tag-exclusive { color: var(--brand-gold); border-color: var(--brand-gold); background: rgba(255, 215, 0, 0.05); }
 
         .glass-panel { background: rgba(1, 4, 9, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .scan-line { position: absolute; width: 100%; height: 2px; background: var(--brand-blue); opacity: 0.3; animation: scan 4s linear infinite; }
@@ -31,9 +35,9 @@
 <body class="topology-bg selection:bg-[#0ea5e3]">
 
     <div id="loading-screen">
-        <span class="text-white font-black italic text-2xl uppercase tracking-tighter">Cluster_Matrix_Sync</span>
+        <span class="text-white font-black italic text-2xl uppercase tracking-tighter">Cluster_Nodes_Deploying</span>
         <div class="w-48 h-[2px] bg-white/10 mt-6"><div id="bar-fill"></div></div>
-        <span class="text-[#0ea5e3] font-mono text-[8px] mt-4 tracking-[4px] animate-pulse">// MAPPING_28_STRATEGIC_NODES...</span>
+        <span class="text-[#0ea5e3] font-mono text-[8px] mt-4 tracking-[4px] animate-pulse">// MAPPING_GLOBAL_INFRASTRUCTURE_NODES...</span>
     </div>
 
     <nav class="fixed w-full z-[100] border-b border-white/5 bg-[#010409]/80 backdrop-blur-xl h-20 flex items-center px-8 justify-between">
@@ -50,137 +54,100 @@
     </nav>
 
     <main class="pt-48 pb-32 px-[8%] max-w-[1440px] mx-auto">
-        
         <header class="mb-20">
-            <span class="font-mono text-[#0ea5e3] tracking-[8px] text-xs uppercase animate-pulse">// BATTLE_ORDER_2026_MATRIX</span>
+            <span class="font-mono text-[#0ea5e3] tracking-[8px] text-xs uppercase animate-pulse">// MULTI_DIMENSIONAL_ARRAY_V5</span>
             <h1 class="text-white text-[clamp(3rem,8vw,5rem)] font-[900] italic uppercase mt-4 tracking-tighter">Strategic <span class="text-[#0ea5e3]">Clusters.</span></h1>
             <p class="text-gray-400 italic text-lg mt-6 border-l-2 border-[#A11219] pl-8 max-w-3xl">
-                "28个行业分类，28种工业力量。在拉美、北美与全球，我们提供的是经过 38 年验证的场景主权。"
+                将 38 年诚信基因注入 28 个战略节点。从海洋吊装到港口基建，我们不仅提供资产，更通过全球海关数据对撞实现主权合围。
             </p>
         </header>
 
-        <section class="mb-24">
-            <div class="flex items-center gap-4 mb-12">
-                <h2 class="text-3xl font-black italic uppercase italic tracking-tighter">Section_E // <span class="text-[#0ea5e3]">Eco_Material_Sovereignty</span></h2>
-                <div class="h-[1px] flex-grow bg-white/10"></div>
-                <span class="font-mono text-[9px] text-gray-500 uppercase tracking-widest">Research_Active</span>
-            </div>
+        <div class="flex items-center gap-4 mb-10">
+            <h2 class="text-3xl font-black italic uppercase tracking-widest text-[#ffd700]">Cluster_Alpha // Maritime & MRO</h2>
+            <div class="h-[1px] flex-grow bg-white/10"></div>
+        </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="cluster-card p-8 group">
-                    <span class="text-[9px] font-mono text-gray-600 mb-4 block">// GENETIC_STAMP: SHEN_VIGOR</span>
-                    <h4 class="text-xl font-bold italic text-white uppercase mb-4">WPC Systems</h4>
-                    <p class="text-xs text-gray-500 leading-relaxed mb-8">木塑复合材料：永久性户外基建方案。3.0 共挤技术，抗老化物理主权。</p>
-                    <div class="flex justify-between items-center pt-4 border-t border-white/5">
-                        <span class="text-[10px] text-[#0ea5e3] font-mono">HS: 3918.90</span>
-                        <button onclick="window.location.href='resources.html?sector=WPC'" class="text-[8px] uppercase font-mono text-gray-400 hover:text-white">View_Intel_></button>
-                    </div>
-                </div>
-
-                <div class="cluster-card p-8 group border-l-2 border-l-[#A11219]">
-                    <span class="text-[9px] font-mono text-gray-600 mb-4 block">// GENETIC_STAMP: SHEN_VIGOR</span>
-                    <h4 class="text-xl font-bold italic text-white uppercase mb-4">Bamboo Engineering</h4>
-                    <p class="text-xs text-gray-500 leading-relaxed mb-8">竹木复合地板/地毯：提取竹之刚性。高抗拉强度，主导欧洲低碳主权。</p>
-                    <div class="flex justify-between items-center pt-4 border-t border-white/5">
-                        <span class="text-[10px] text-[#0ea5e3] font-mono">HS: 4409.21</span>
-                        <i class="fa-solid fa-leaf text-[#0ea5e3] text-[10px]"></i>
-                    </div>
-                </div>
-
-                <div class="cluster-card p-8 group">
-                    <span class="text-[9px] font-mono text-gray-600 mb-4 block">// GENETIC_STAMP: YI_INTELLIGENCE</span>
-                    <h4 class="text-xl font-bold italic text-white uppercase mb-4">Bamboo Lanterns</h4>
-                    <p class="text-xs text-gray-500 leading-relaxed mb-8">竹制工艺品与灯笼：传统笔墨与现代光影。东方艺术主权与 UL 安全验证。 </p>
-                    <div class="flex justify-between items-center pt-4 border-t border-white/5">
-                        <span class="text-[10px] text-[#0ea5e3] font-mono">HS: 9405.50</span>
-                        <i class="fa-solid fa-lightbulb text-gray-700 group-hover:text-[#ffd700] transition"></i>
-                    </div>
-                </div>
-
-                <div class="cluster-card p-8 group">
-                    <span class="text-[9px] font-mono text-gray-600 mb-4 block">// GENETIC_STAMP: BIN_PROSPERITY</span>
-                    <h4 class="text-xl font-bold italic text-white uppercase mb-4">Outdoor Living</h4>
-                    <p class="text-xs text-gray-500 leading-relaxed mb-8">户外家具系统：集成 WPC 与防腐处理。全场景生活方式，38年品质背书。</p>
-                    <div class="flex justify-between items-center pt-4 border-t border-white/5">
-                        <span class="text-[10px] text-[#0ea5e3] font-mono">HS: 9401.71</span>
-                        <i class="fa-solid fa-umbrella text-gray-600"></i>
-                    </div>
+        <div class="grid lg:grid-cols-3 gap-8 mb-24">
+            <div class="cluster-card p-10 group" onclick="window.location.href='resources.html'">
+                <div class="scan-line"></div>
+                <span class="text-[9px] font-mono text-[#ffd700] mb-4 block uppercase tracking-widest">// GENETIC: SHEN_FIRE</span>
+                <h3 class="text-2xl font-black italic text-white uppercase mb-4">Port & Marine Chains</h3>
+                <p class="text-xs text-gray-500 font-mono leading-relaxed mb-8">
+                    G80/G100 高强度合金链条集群。针对巴西 Santos 港及东南亚基建节点执行定向火力覆盖。100% 材质主权，绕过反倾销红区。
+                </p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                    <span class="tag-sovereignty tag-exclusive">HS_7315.82</span>
+                    <span class="tag-sovereignty">ABS_DNV_SYNC</span>
+                    <span class="tag-sovereignty">TENSILE_SOVEREIGNTY</span>
                 </div>
             </div>
-        </section>
 
-        <section class="mb-24">
-            <div class="flex items-center gap-4 mb-12">
-                <h2 class="text-3xl font-black italic uppercase tracking-tighter">Region_LATAM // <span class="text-[#0ea5e3]">Market_Sovereignty</span></h2>
-                <div class="h-[1px] flex-grow bg-white/5"></div>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="cluster-card p-8 group border-l-2 border-[#A11219]">
-                    <span class="font-mono text-[#A11219] text-[9px] uppercase tracking-widest">// NODE: LOGISTICS_MASTER</span>
-                    <h4 class="text-xl font-bold italic text-white uppercase mt-4 mb-4">Silla Gamer 5.0</h4>
-                    <p class="text-[11px] text-gray-500 leading-relaxed mb-6">针对墨西哥与巴西市场优化的 KD (Knock-Down) 结构，单柜容积率提升 25%，显著对冲海运风险。</p>
-                    <div class="text-[9px] font-mono text-[#0ea5e3]">COMPLIANCE: ISTA-6A</div>
+            <div class="cluster-card p-10 group">
+                <span class="text-[9px] font-mono text-gray-600 mb-4 block uppercase tracking-widest">// GENETIC: BIN_LOYALTY</span>
+                <h3 class="text-2xl font-black italic text-white uppercase mb-4">Rigging & Steel Wire</h3>
+                <p class="text-xs text-gray-500 font-mono leading-relaxed mb-8">
+                    全生命周期吊装方案。同步休斯顿港物理轨迹，拦截北美基建买家画像。钢丝绳与索具节点实现毫秒级提单对撞。
+                </p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                    <span class="tag-sovereignty">HS_7312.10</span>
+                    <span class="tag-sovereignty">MRO_CERTIFIED</span>
                 </div>
             </div>
-        </section>
 
+            <div class="cluster-card p-10 group">
+                <span class="text-[9px] font-mono text-[#0ea5e3] mb-4 block uppercase tracking-widest">// GENETIC: YI_INTELLIGENCE</span>
+                <h3 class="text-2xl font-black italic text-white uppercase mb-4">Aluminum Ladders</h3>
+                <p class="text-xs text-gray-500 font-mono leading-relaxed mb-8">
+                    北美离岸制造集群。通过东南亚 ASEAN 中转规避 AD/CVD 关税墙。ANSI A14.2 标准 100% 物理合规。
+                </p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                    <span class="tag-sovereignty tag-exclusive">HS_7616.99</span>
+                    <span class="tag-sovereignty">ANSI_A14.2</span>
+                    <span class="tag-sovereignty">TARIFF_HACK_V5</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-4 mb-10 text-gray-600">
+            <h2 class="text-3xl font-black italic uppercase tracking-widest">Cluster_Beta // Furniture Sovereignty</h2>
+            <div class="h-[1px] flex-grow bg-white/10"></div>
+        </div>
+
+        <div class="grid lg:grid-cols-4 gap-6">
+            <div class="cluster-card p-8 border-l-2 border-[#0ea5e3]">
+                <h4 class="text-xl font-bold italic text-white uppercase mb-4">Mesh Alpha</h4>
+                <p class="text-[10px] text-gray-500 mb-6 uppercase font-mono">BIFMA Protocol // HS: 9401.31</p>
+                <div class="mt-auto flex gap-2"><span class="tag-sovereignty">OFFICE_SOVEREIGNTY</span></div>
+            </div>
+            <div class="cluster-card p-8 border-l-2 border-[#A11219]">
+                <h4 class="text-xl font-bold italic text-white uppercase mb-4">Gaming Silla</h4>
+                <p class="text-[10px] text-gray-500 mb-6 uppercase font-mono">LATAM Logistics // KD_ALGO</p>
+                <div class="mt-auto flex gap-2"><span class="tag-sovereignty">SANTOS_SYNC</span></div>
+            </div>
+            <div class="cluster-card p-8 border-l-2 border-[#ffd700]">
+                <h4 class="text-xl font-bold italic text-white uppercase mb-4">E-Zone WPC</h4>
+                <p class="text-[10px] text-gray-500 mb-6 uppercase font-mono">Tropical Durable // HS: 3918.90</p>
+                <div class="mt-auto flex gap-2"><span class="tag-sovereignty">ECO_MATERIAL</span></div>
+            </div>
+            <div class="cluster-card p-8 border-l-2 border-[#0ea5e3]">
+                <h4 class="text-xl font-bold italic text-white uppercase mb-4">DTC Sofa</h4>
+                <p class="text-[10px] text-gray-500 mb-6 uppercase font-mono">Compressed Node // HS: 9401.40</p>
+                <div class="mt-auto flex gap-2"><span class="tag-sovereignty">LOGISTICS_ALPHA</span></div>
+            </div>
+        </div>
     </main>
 
     <div class="fixed bottom-6 right-6 z-[5000] flex flex-col items-end gap-3 group">
-        <div class="opacity-0 group-hover:opacity-100 transition-all duration-500 bg-[#0ea5e3] text-black font-mono text-[9px] px-3 py-1 font-bold italic tracking-widest">// ACCESS_COMPLIANCE_API</div>
-        <div class="glass-panel p-3 rounded-xl shadow-2xl flex flex-wrap max-w-[200px] justify-end gap-4">
-            <div onclick="previewResource('bifma')" class="cert-node h-6"><img src="assets/icons/bifma-badge.webp" class="h-full"></div>
-            <div onclick="previewResource('bsci')" class="cert-node h-6"><img src="assets/icons/bsci-badge.webp" class="h-full"></div>
-            <div onclick="previewResource('ul')" class="cert-node h-6"><img src="assets/icons/logo-ul.webp" class="h-full"></div>
-            <div onclick="previewResource('fsc')" class="cert-node h-6"><img src="assets/icons/logo-fsc.webp" class="h-full"></div>
-            <div onclick="previewResource('iso9001')" class="cert-node h-6"><img src="assets/icons/iso9001.webp" class="h-full"></div>
-            <div onclick="previewResource('ista')" class="cert-node h-6"><img src="assets/icons/ista-badge.webp" class="h-full"></div>
-            <div onclick="previewResource('visa')" class="cert-node h-6"><img src="assets/icons/visa-mastercard.webp" class="h-full"></div>
-        </div>
-    </div>
-
-    <div id="asset-modal" class="fixed inset-0 z-[6000] hidden bg-black/98 flex flex-col items-center justify-center p-6 backdrop-blur-3xl">
-        <div class="w-full max-w-6xl flex justify-between items-center mb-4 px-2">
-            <span id="preview-title" class="font-mono text-[10px] text-[#0ea5e3] tracking-[4px] uppercase italic">// LOADING_RESOURCE...</span>
-            <button onclick="closePreview()" class="text-white/40 hover:text-white font-mono text-[10px] uppercase">Terminate_Link [X]</button>
-        </div>
-        <div class="w-full max-w-6xl h-[80vh] border border-white/10 relative bg-white/5 rounded-lg overflow-hidden">
-            <iframe id="preview-frame" src="" class="w-full h-full border-none"></iframe>
-            <div class="scan-line"></div>
+        <div class="opacity-0 group-hover:opacity-100 transition-all duration-500 bg-[#0ea5e3] text-black font-mono text-[9px] px-3 py-1 font-bold italic tracking-widest">// ACCESS_SOVEREIGNTY_DATA</div>
+        <div class="glass-panel p-3 rounded-xl shadow-2xl flex flex-wrap max-w-[200px] justify-end gap-4 transition-all duration-500">
+            <div class="h-6 opacity-60 hover:opacity-100 cursor-pointer" title="HS_7315_INTEL"><img src="assets/icons/ista-badge.webp" class="h-full"></div>
+            <div class="h-6 opacity-60 hover:opacity-100 cursor-pointer" title="ANSI_LADDER_SYNC"><img src="assets/icons/en131-badge.webp" class="h-full"></div>
+            <div class="h-6 opacity-60 hover:opacity-100 cursor-pointer" title="BIFMA_PROTOCOL"><img src="assets/icons/bifma-badge.webp" class="h-full"></div>
+            <div class="h-6 opacity-60 hover:opacity-100 cursor-pointer" title="ABS_CERTIFIED"><img src="assets/icons/iso9001.webp" class="h-full"></div>
         </div>
     </div>
 
     <script>
-        // [PROTOCOL] 精准资源映射：匹配资产截图
-        const certAssets = {
-            bifma: { url: "assets/docs/bifma.pdf", title: "BIFMA_STRUCTURAL_PROTOCOL" },
-            bsci: { url: "assets/docs/bsci.pdf", title: "BSCI_SOCIAL_COMPLIANCE" },
-            ul: { url: "assets/docs/ul.pdf", title: "UL_SAFETY_VALIDATED" },
-            fsc: { url: "assets/docs/fsc.pdf", title: "FSC_SUSTAINABILITY_CREDENTIAL" },
-            iso9001: { url: "assets/docs/iso9001.pdf", title: "ISO_9001_QUALITY_MANAGEMENT" },
-            ista: { url: "assets/docs/ista.pdf", title: "ISTA_TRANSPORT_SAFETY" },
-            visa: { url: "assets/docs/financial.pdf", title: "FINANCIAL_SOVEREIGNTY" }
-        };
-
-        function previewResource(key) {
-            if (window.event) window.event.preventDefault();
-            const asset = certAssets[key];
-            const modal = document.getElementById('asset-modal');
-            const iframe = document.getElementById('preview-frame');
-            if (asset && modal && iframe) {
-                iframe.src = asset.url;
-                document.getElementById('preview-title').innerText = asset.title;
-                modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        function closePreview() {
-            document.getElementById('asset-modal').classList.add('hidden');
-            document.getElementById('preview-frame').src = '';
-            document.body.style.overflow = 'auto';
-        }
-
         window.addEventListener('load', () => {
             document.getElementById('bar-fill').style.width = '100%';
             setTimeout(() => {
