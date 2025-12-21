@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Site Architecture | Industrial Topology | YISHEN GLOBAL</title>
+    <title>Site Architecture | Sovereign System Blueprint | YISHEN GLOBAL</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap">
-    <link rel="stylesheet" href="styles.css?v=2026.FINAL.MASTER">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        :root { --neon-blue: #0ea5e3; --performance-red: #A11219; --deep-space: #010409; --navbar-height: 80px; }
+        :root { 
+            --neon-blue: #0ea5e3; 
+            --performance-red: #A11219; 
+            --brand-gold: #ffd700;
+            --deep-space: #010409; 
+            --navbar-height: 80px; 
+        }
         body { background-color: var(--deep-space); color: #e6edf3; font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
-        /* 数字化微光引擎 - GPU 优化 */
+        /* GPU 加速数字化微光 */
         #cursor-glow {
             position: fixed; width: 600px; height: 600px;
             background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
@@ -21,128 +27,179 @@
             will-change: transform; mix-blend-mode: screen;
         }
 
-        /* 拓扑连线背景逻辑 */
-        .topology-grid {
-            background-image: radial-gradient(rgba(14, 165, 233, 0.15) 1px, transparent 1px);
+        /* 拓扑拓扑连线背景 */
+        .topology-bg {
+            background-image: radial-gradient(rgba(14, 165, 233, 0.1) 1px, transparent 1px);
             background-size: 40px 40px;
         }
 
-        .node-card {
+        /* 架构节点样式：深度对位 V5.0 */
+        .arch-node {
             background: rgba(13, 17, 23, 0.8);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 24px;
+            padding: 30px;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
+            height: 100%;
         }
-        .node-card:hover {
+        .arch-node:hover {
             border-color: var(--neon-blue);
-            background: rgba(14, 165, 233, 0.03);
-            transform: translateY(-5px);
-            box-shadow: 0 0 30px rgba(14,165,233,0.1);
+            background: rgba(14, 165, 233, 0.04);
+            transform: translateX(10px);
+            box-shadow: -10px 0 30px rgba(14,165,233,0.1);
         }
+
+        .layer-label { font-family: 'JetBrains Mono'; font-size: 0.65rem; letter-spacing: 4px; color: var(--neon-blue); text-transform: uppercase; margin-bottom: 2rem; display: block; }
         
-        .cluster-label { font-family: 'JetBrains Mono'; font-size: 0.6rem; letter-spacing: 3px; color: var(--neon-blue); text-transform: uppercase; }
+        /* 状态指示器 */
+        .status-active { width: 6px; height: 6px; background: #10b981; border-radius: 50%; display: inline-block; margin-right: 8px; box-shadow: 0 0 10px #10b981; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
 
-        /* 物理断根补丁：锁定图标防破碎 */
-        footer a { flex: 0 0 auto !important; }
-        footer img { max-width: none !important; min-width: 80px; }
-        .grayscale { filter: grayscale(100%); transition: 0.5s var(--spring-curve); opacity: 0.4; }
-        .grayscale:hover { filter: grayscale(0%); opacity: 1 !important; }
+        /* [PATCH] 加载仪式感补丁 */
+        #loading-screen { position: fixed; inset: 0; z-index: 100001; background: #010409; display: flex; flex-direction: column; items: center; justify-content: center; }
+        #bar-fill { height: 100%; background: var(--neon-blue); width: 0%; transition: 2s cubic-bezier(0.1, 0.5, 0.1, 1); }
 
-        @media (max-width: 768px) {
-            .hero-pt { padding-top: 140px !important; }
-            .mobile-items-center { align-items: center !important; text-align: center !important; width: 100% !important; }
-        }
+        .sovereign-tag { padding: 4px 10px; border: 1px solid rgba(255,255,255,0.1); font-family: 'JetBrains Mono'; font-size: 8px; text-transform: uppercase; color: #8b949e; }
     </style>
 </head>
-<body class="selection:bg-[#0ea5e3]">
+<body class="selection:bg-[#0ea5e3] topology-bg">
+
+    <div id="loading-screen">
+        <span class="text-white font-black italic text-2xl uppercase tracking-tighter">Architecture_Vault_Sync</span>
+        <div class="w-48 h-[2px] bg-white/10 mt-6"><div id="bar-fill"></div></div>
+        <span class="text-[#0ea5e3] font-mono text-[8px] mt-4 tracking-[4px] animate-pulse">// MAPPING_SOVEREIGN_BLUEPRINT_V5...</span>
+    </div>
 
     <div id="cursor-glow"></div>
 
-    <nav id="master-nav" class="fixed top-0 left-0 z-[100000] w-full bg-[#010409]/90 backdrop-blur-xl border-b border-white/5 h-20 flex items-center">
-        <div class="nav-container max-w-[1440px] mx-auto px-6 w-full flex items-center justify-between">
-            <a href="index.html" class="site-logo">
-                <svg width="280" height="32" viewBox="0 0 280 32" fill="none">
-                    <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
-                    <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
-                    <text x="56" y="18" fill="white" style="font-family:'Inter'; font-weight:700; font-size:18px;">Yishen Global</text>
-                </svg>
+    <nav id="master-nav" class="fixed top-0 left-0 z-[100000] w-full bg-[#010409]/95 backdrop-blur-xl border-b border-white/5 h-20 flex items-center px-8">
+        <div class="max-w-[1440px] mx-auto w-full flex items-center justify-between">
+            <a href="index.html" class="flex flex-col">
+                <span class="text-white font-black italic text-xl tracking-tighter uppercase leading-none">Yishen Global</span>
+                <span class="text-[#0ea5e3] font-mono text-[8px] tracking-[3px]">SYSTEM_ARCH_V5.0</span>
             </a>
             <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400">
-                <a href="index.html" class="hover:text-white transition">00_TERMINAL</a>
-                <a href="solutions.html" class="hover:text-white transition">02_SOLUTIONS</a>
-                <a href="industries.html" class="hover:text-white transition">03_INDUSTRIES</a>
+                <a href="genesis.html" class="hover:text-white transition">01_GENESIS</a>
+                <a href="clusters.html" class="hover:text-white transition">03_CLUSTERS</a>
                 <a href="resources.html" class="hover:text-white transition">04_RESOURCES</a>
-                <a href="site-architecture.html" class="text-white border-b border-[#0ea5e3]">06_ARCHITECTURE</a>
+                <a href="site-architecture.html" class="text-white border-b border-[#0ea5e3] pb-1">BLUEPRINT</a>
             </div>
         </div>
     </nav>
 
-    <main class="pt-40 pb-24 px-[8%] topology-grid min-h-screen hero-pt">
-        <div class="max-w-[1440px] mx-auto">
-            <span class="font-mono text-[#0ea5e3] text-sm uppercase tracking-[4px]">[ SYSTEM_TOPOLOGY_V4.0 ]</span>
-            <h1 class="text-white text-[clamp(2.5rem,8vw,5rem)] font-black mt-6 mb-16 uppercase leading-[0.9] italic">Architecture<br>Blueprint.</h1>
+    <main class="pt-48 pb-32 px-[8%] max-w-[1440px] mx-auto">
+        <header class="mb-24 border-l-4 border-[#A11219] pl-10">
+            <span class="font-mono text-[#0ea5e3] tracking-[5px] text-xs uppercase animate-pulse">// SYSTEM_HIERARCHY_VISUALIZATION</span>
+            <h1 class="text-white text-[clamp(3rem,8vw,6.5rem)] font-[900] italic uppercase mt-4 leading-none">Sovereign<br><span class="text-[#0ea5e3]">Architecture.</span></h1>
+            <p class="text-gray-400 font-mono mt-8 text-sm max-w-4xl leading-relaxed italic">
+                "架构即正义。YiShen Global V5.0 的数字化蓝图是针对全球贸易提单流的定向拦截场。每一层架构都为家具主权与海洋基建提供确定性支撑。"
+            </p>
+        </header>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="space-y-8">
-                    <h3 class="cluster-label">// LOGICAL_ROOTS</h3>
-                    <div class="node-card">
-                        <h4 class="font-bold text-xl mb-2 italic">Index Console</h4>
-                        <p class="text-[11px] text-gray-500 font-mono leading-relaxed">Mission Critical Interface for global industrial orchestration.</p>
-                        <a href="index.html" class="inline-block mt-4 text-[10px] text-[#0ea5e3] hover:underline uppercase tracking-widest">Access_Root</a>
+        
+
+        <div class="grid lg:grid-cols-3 gap-12">
+            <div class="space-y-8">
+                <span class="layer-label">// Tier_01: Command & Trust</span>
+                
+                <div class="arch-node rounded-xl" onclick="window.location.href='genesis.html'">
+                    <div class="flex items-center mb-4">
+                        <span class="status-active"></span>
+                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Genesis_Legacy</h4>
+                    </div>
+                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed mb-6">38年三代诚信基因（彬/燊/熠）。建立针对北美与南美采购巨头的心理主权穿透。</p>
+                    <div class="flex gap-2">
+                        <span class="sovereign-tag">Family_Lineage</span>
+                        <span class="sovereign-tag">Credit_Verified</span>
                     </div>
                 </div>
 
-                <div class="space-y-8">
-                    <h3 class="cluster-label">// ASSET_MATRICES</h3>
-                    <div class="node-card border-l-2 border-l-[#0ea5e3]">
-                        <h4 class="font-bold text-xl mb-2 italic">Industries Matrix</h4>
-                        <p class="text-[11px] text-gray-500 font-mono leading-relaxed">Dynamic Cluster Mapping powered by our proprietary SKU logic.</p>
-                        <div class="mt-4 pt-4 border-t border-white/5 space-y-2 text-[9px] font-mono text-gray-400">
-                            <div class="flex justify-between"><span>-> sku-database.json</span> <span class="text-[#0ea5e3]">LINKED</span></div>
-                            <div class="flex justify-between"><span>-> industries.html</span> <span class="text-[#0ea5e3]">SYNCED</span></div>
-                        </div>
+                <div class="arch-node rounded-xl" onclick="window.location.href='index.html'">
+                    <div class="flex items-center mb-4">
+                        <span class="status-active"></span>
+                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Master_Console</h4>
+                    </div>
+                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed">全品类对撞入口。整合办公椅、电竞椅及港口五金的实时分发逻辑。</p>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <span class="layer-label">// Tier_02: Intel & Fire Control</span>
+                
+                <div class="arch-node rounded-xl border-l-2 border-l-[#0ea5e3]" onclick="window.location.href='resources.html'">
+                    <div class="flex items-center mb-4">
+                        <span class="status-active"></span>
+                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Resource_Vault</h4>
+                    </div>
+                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed mb-6">核心火控中心。内置 ImportGenius/Trademo 对撞引擎。集成巴西链条反倾销豁免与北美铝梯避税架构。</p>
+                    <div class="flex gap-2">
+                        <span class="sovereign-tag" style="color:var(--brand-gold)">HS_7315_INTEL</span>
+                        <span class="sovereign-tag">AD_CVD_HACK</span>
                     </div>
                 </div>
 
-                <div class="space-y-8">
-                    <h3 class="cluster-label">// COMPLIANCE_PROTOCOLS</h3>
-                    <div class="node-card">
-                        <h4 class="font-bold text-xl mb-2 italic tracking-tighter uppercase">Bifma_&_Ista_6A</h4>
-                        <p class="text-[11px] text-gray-500 font-mono leading-relaxed">Physical structural integrity validation for global logistics density.</p>
+                <div class="arch-node rounded-xl border-l-2 border-l-[#A11219]" onclick="window.location.href='clusters.html'">
+                    <div class="flex items-center mb-4">
+                        <span class="status-active"></span>
+                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Strategic_Clusters</h4>
                     </div>
-                    <div class="node-card">
-                        <h4 class="font-bold text-xl mb-2 italic tracking-tighter">XML_Index</h4>
-                        <p class="text-[11px] text-gray-500 font-mono leading-relaxed">Deterministic site indexing for sovereign search capture.</p>
-                        <a href="sitemap.xml" target="_blank" class="inline-block mt-4 text-[10px] text-[#0ea5e3] hover:underline uppercase tracking-widest">View_Map</a>
+                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed">28个战略工业集群。涵盖海洋吊装、基建铝梯、电竞主权及全品类家具制造阵列。</p>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <span class="layer-label">// Tier_03: Operation & Radar</span>
+                
+                <div class="arch-node rounded-xl" onclick="window.location.href='operational-systems.html'">
+                    <div class="flex items-center mb-4">
+                        <span class="status-active"></span>
+                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Operational_Systems</h4>
                     </div>
+                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed">数字化主权大脑。ERP/MES实时同步，确保全球124个生产节点的确定性交付效率。</p>
+                </div>
+
+                <div class="arch-node rounded-xl" onclick="window.location.href='intelligence-intel.html'">
+                    <div class="flex items-center mb-4">
+                        <span class="status-active"></span>
+                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Interception_Radar</h4>
+                    </div>
+                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed">外部舆情对撞。Reddit & LinkedIn 全球拦截算法，针对行业痛点进行物理参数修正。</p>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer class="bg-[#000] py-20 border-t border-white/5 font-inter">
-        <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-12">
-            <div class="space-y-4 mobile-items-center">
-                <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Architecture_Verified</div>
-                <div class="flex gap-4 text-[9px] font-mono text-gray-800 uppercase tracking-widest">
+    <footer class="bg-black py-24 border-t border-white/5 font-inter">
+        <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="mobile-items-center">
+                <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Architecture_Sovereignty_Verified</div>
+                <div class="flex gap-6 mt-4 text-[9px] font-mono text-gray-800 uppercase tracking-widest">
                     <a href="site-architecture.html" class="hover:text-white transition">Blueprint_Map</a> / 
-                    <a href="sitemap.xml" target="_blank" class="hover:text-white transition">XML_Sitemap</a>
+                    <a href="sovereign-index.xml" target="_blank" class="hover:text-white transition">XML_Index</a>
                 </div>
             </div>
             
-            <div class="flex flex-col items-end gap-6 mobile-items-center">
-                <div style="display: flex !important; flex-wrap: nowrap !important; align-items: center; gap: 32px; width: auto;" class="grayscale hover:grayscale-0 transition-all duration-500">
-                    <a href="https://www.bifma.org" target="_blank"><img src="https://yishenglobal.net/assets/bifma-badge.png" style="height: 24px; width: auto;" alt="BIFMA"></a>
-                    <a href="https://ista.org" target="_blank"><img src="https://yishenglobal.net/assets/ista-badge.png" style="height: 24px; width: auto;" alt="ISTA"></a>
-                    <a href="https://www.iso.org" target="_blank"><img src="https://yishenglobal.net/assets/iso9001.png" style="height: 32px; width: auto;" alt="ISO9001"></a>
-                </div>
+            <div class="flex flex-wrap items-center gap-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+                <img src="assets/icons/bifma-badge.webp" class="h-6" alt="BIFMA">
+                <img src="assets/icons/en131-badge.webp" class="h-6" alt="EN131">
+                <img src="assets/icons/ista-badge.webp" class="h-6" alt="ISTA">
+                <img src="assets/icons/logo-ul.webp" class="h-6" alt="UL">
+                <img src="assets/icons/iso9001.webp" class="h-6" alt="ISO9001">
             </div>
         </div>
     </footer>
 
     <script>
-        // GPU 加速鼠标追踪引擎
+        // 加载进度
+        window.addEventListener('load', () => {
+            document.getElementById('bar-fill').style.width = '100%';
+            setTimeout(() => {
+                document.getElementById('loading-screen').style.opacity = '0';
+                setTimeout(() => { document.getElementById('loading-screen').style.display = 'none'; }, 700);
+            }, 2500);
+        });
+
+        // GPU 鼠标追踪
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             requestAnimationFrame(() => {
