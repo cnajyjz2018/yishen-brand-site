@@ -164,24 +164,24 @@
     </footer>
 
     <script>
-        // [01] 优先级加载引擎 (SOVEREIGN_LOADER)
+        // [01] 资产预加载逻辑
         const priorityAssets = [
-            'public/assets/system/engineering-lab-v5.webp',
             'public/assets/system/global-ops-monitor-v5.webp',
+            'public/assets/industries/medical-clinical-lab.webp',
             'public/assets/branding/avatar-MichaelT.webp',
             'public/assets/branding/avatar-SarahJ.webp'
         ];
 
         function initializeSovereignLoader() {
-            console.log("// SOVEREIGN_LOADER: STARTING_DEPLOYMENT...");
+            console.log("// SOVEREIGN_LOADER: SYNCING_PRIORITY_ASSETS...");
             priorityAssets.forEach(src => {
                 const img = new Image();
                 img.src = src;
-                img.onload = () => console.log(`// ASSET_SYNCED: ${src}`);
+                img.onload = () => console.log(`// SYNC_COMPLETE: ${src}`);
             });
         }
 
-        // [02] 核心数据模型 (AMBASSADOR_DATA_V5)
+        // [02] AMBASSADOR_PROTOCOL_DATA
         const data = {
             michael: {
                 img: "public/assets/system/global-ops-monitor-v5.webp",
@@ -205,7 +205,7 @@
             }
         };
 
-        // [03] 导航与动态交互
+        // [03] 交互逻辑控制
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             requestAnimationFrame(() => {
@@ -219,18 +219,22 @@
             document.getElementById('perspective-img').src = p.img;
             
             const tag = document.getElementById('perspective-tag');
-            tag.innerText = p.tag; tag.style.backgroundColor = p.color;
+            tag.innerText = p.tag; 
+            tag.style.backgroundColor = p.color;
             
             document.getElementById('perspective-name').innerText = p.name;
             const title = document.getElementById('perspective-title');
-            title.innerText = p.title; title.style.color = p.color;
+            title.innerText = p.title; 
+            title.style.color = p.color;
             
             document.getElementById('perspective-text').innerText = p.text;
             
+            // 头像实时切换
             const avContainer = document.getElementById('perspective-avatar');
             avContainer.style.borderColor = p.color;
             avContainer.innerHTML = `<img src="${p.avatar}" alt="${p.name}" class="w-full h-full object-cover">`;
             
+            // 按钮状态切换
             const btnM = document.getElementById('btn-michael');
             const btnS = document.getElementById('btn-sarah');
             if(node === 'michael') {
@@ -242,18 +246,20 @@
             }
         }
 
-        // [04] 视频播放系统
+        // [04] 视频宣言控制
         function playManifesto() {
             const modal = document.getElementById('video-modal');
             const player = document.getElementById('manifesto-player');
             const source = player.querySelector('source');
+            
+            // 智能判定当前活跃节点
             const isMichael = document.getElementById('btn-michael').classList.contains('bg-[#0ea5e3]');
             const currentNode = isMichael ? 'michael' : 'sarah';
             
             source.src = data[currentNode].video;
             player.load();
             modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden'; // 锁定滚动
             player.play();
         }
 
@@ -262,7 +268,7 @@
             const player = document.getElementById('manifesto-player');
             modal.classList.add('hidden');
             player.pause();
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = 'auto'; // 恢复滚动
         }
 
         document.addEventListener('DOMContentLoaded', initializeSovereignLoader);
