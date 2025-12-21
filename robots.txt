@@ -2,33 +2,35 @@
 # YISHEN GLOBAL - HARVESTER_PROTOCOL (robots.txt) V4.0.MASTER
 # Logic: Compliance-First SEO & Deterministic B2B Indexing
 # Principles: Legality, Compliance, Authenticity, Reliability
+# Update: Integrated Master Architect CSS Sovereignty
 # =========================================================
 
 User-agent: *
 # 1. 物理渲染完整性 (Authenticity Defense)
-# 确保合法合规的渲染资产被索引，防止因缺失 CSS/JS 导致的抓取降权
+# 允许抓取渲染所需的视觉与样式逻辑，确保爬虫眼中的站点 100% 完整且高保真
 Allow: /assets/*.webp$
 Allow: /assets/*.mp4$
-Allow: /master-architect.css
-Allow: /terminal-logic.js
-Allow: /hq-core-gate.js
+Allow: /master-architect.css    # 核心资产：首席架构师样式表
+Allow: /terminal-logic.js       # 终端反馈逻辑
+Allow: /hq-core-gate.js         # 指挥部核心门控
 
 # 2. 合规资产对撞 (Compliance-Centric Indexing)
 # 核心：将真实可靠的工程证据（BIM/ISTA/HS Code）向权威机器人开放
-Allow: /sovereign-matrix.html   
-Allow: /technical-passport.html 
-Allow: /intelligence-intel.html 
-Allow: /yishen-genesis.html     
-Allow: /asset-ledger.json      
+Allow: /sovereign-matrix.html   # 物理资产主权矩阵
+Allow: /industrial-nodes.html   # 28大跨行业工业节点
+Allow: /technical-passport.html # 数字化合规护照 (BIM/ISTA/Schema)
+Allow: /intelligence-intel.html # Reddit 舆情及贸易智库
+Allow: /yishen-genesis.html     # 家族代际信用背书
+Allow: /asset-ledger.json       # 核心物理资产元数据账本
 
 # 3. 系统防御屏障 (System Shield)
-# 物理隔离未脱敏、未授权或处于开发状态的非正式内容
+# 物理隔离未脱敏、开发碎片及非正式内容，确保全站 100% 合法合规运行
 Disallow: /tmp/
 Disallow: /dev/
 Disallow: /private/
 Disallow: /temp/
 Disallow: /README.md
-Disallow: /i18n-engine.js
+Disallow: /i18n-engine.js       # 核心多语言逻辑内部化
 
 # ---------------------------------------------------------
 # 权威爬虫加速 (Search Integrity Protocol)
@@ -36,21 +38,22 @@ Disallow: /i18n-engine.js
 
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1                  
+Crawl-delay: 1                  # 极致响应，确立 Google 核心索引主权
 
 User-agent: Bingbot
 Allow: /
 
-# B2B 战术对撞：针对 Panjiva、ImportGenius 等全球合规调查爬虫
+# B2B 战术对撞：针对专业贸易调查爬虫 (验证 Yishen 真实供应链实力)
 User-agent: PanjivaBot
 Allow: /intelligence-intel.html
+Allow: /industrial-nodes.html
 Allow: /asset-ledger.json
 Allow: /sovereign-matrix.html
 
 # ---------------------------------------------------------
-# 真实性索引地图 (Authentic Sitemap)
+# 主权索引地图 (Sitemap) 指向
 # ---------------------------------------------------------
-# 指向我们最新的主权索引地图文件名
+# 统一指向 Yishen Global 认证的唯一主权索引节点
 Sitemap: https://yishenglobal.net/sovereign-index.xml
 
 # =========================================================
