@@ -7,10 +7,16 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
-    <link rel="stylesheet" href="styles.css?v=2026.FINAL.MASTER">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        :root { --neon-blue: #0ea5e3; --performance-red: #A11219; --deep-space: #010409; --navbar-height: 80px; }
+        :root { 
+            --neon-blue: #0ea5e3; 
+            --performance-red: #A11219; 
+            --brand-gold: #ffd700;
+            --deep-space: #010409; 
+            --navbar-height: 80px; 
+        }
         body { background-color: var(--deep-space); color: #e6edf3; font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
         /* DIGITAL TWIN GLOW - GPU 优化渲染 */
@@ -21,11 +27,18 @@
             will-change: transform; mix-blend-mode: screen;
         }
 
-        /* 碎图防御补丁：用纯代码节点块替代图片 */
+        /* 矩阵动态背景补丁 */
+        .matrix-bg {
+            background-image: linear-gradient(rgba(14, 165, 227, 0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(14, 165, 227, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        /* [PATCH] 碎图防御：数字化孪生节点块 */
         .node-visual-stub {
-            width: 100%; aspect-ratio: 1/1; 
-            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%);
-            border: 1px solid rgba(255,255,255,0.1); margin-bottom: 30px;
+            width: 100%; aspect-ratio: 16/9; 
+            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 100%);
+            border: 1px solid rgba(255,255,255,0.08); margin-bottom: 25px;
             display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;
         }
         .node-visual-stub::before {
@@ -33,112 +46,138 @@
             color: var(--neon-blue); letter-spacing: 4px; animation: pulse 2s infinite;
         }
 
-        /* 纯代码主权认证标签 */
+        .asset-node {
+            background: rgba(255, 255, 255, 0.01); border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px; transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); position: relative;
+        }
+        .asset-node:hover { border-color: var(--neon-blue); background: rgba(14, 165, 227, 0.04); transform: translateY(-5px); }
+
         .sovereign-tag {
-            padding: 4px 12px; border: 1px solid rgba(255, 255, 255, 0.1);
-            font-family: 'JetBrains Mono', monospace; font-size: 9px;
+            padding: 4px 10px; border: 1px solid rgba(255, 255, 255, 0.1);
+            font-family: 'JetBrains Mono', monospace; font-size: 8px;
             text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
         }
-        .sovereign-tag:hover { border-color: var(--neon-blue); color: var(--neon-blue); background: rgba(14, 165, 233, 0.05); }
+        .sovereign-tag:hover { border-color: var(--neon-blue); color: var(--neon-blue); }
 
-        .matrix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 30px; }
-        
-        .asset-node {
-            background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 50px; transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); position: relative;
-        }
-        .asset-node:hover { border-color: var(--neon-blue); background: rgba(14, 165, 233, 0.04); transform: translateY(-10px); }
+        .scan-line { position: absolute; width: 100%; height: 2px; background: var(--neon-blue); opacity: 0.2; animation: scan 4s linear infinite; }
+        @keyframes scan { 0% { top: 0%; } 100% { top: 100%; } }
 
-        @media (max-width: 768px) {
-            .hero-pt { padding-top: 140px !important; }
-            .mobile-items-center { align-items: center !important; text-align: center !important; width: 100% !important; }
-        }
+        @media (max-width: 768px) { .hero-pt { padding-top: 140px !important; } }
     </style>
 </head>
-<body class="bg-[#010409]">
+<body class="matrix-bg selection:bg-[#0ea5e3]">
 
     <div id="cursor-glow"></div>
 
-    <nav id="master-nav" class="fixed top-0 left-0 w-full z-[100000] bg-[#010409]/95 backdrop-blur-xl border-b border-white/5 h-20 flex items-center">
-        <div class="max-w-[1440px] mx-auto px-6 w-full flex items-center justify-between">
-            <a href="index.html" class="site-logo">
-                <svg width="280" height="32" viewBox="0 0 280 32" fill="none">
-                    <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
-                    <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
-                    <text x="56" y="18" fill="white" style="font-family:'Inter'; font-weight:700; font-size:18px;">Yishen Global</text>
-                </svg>
+    <nav id="master-nav" class="fixed top-0 left-0 w-full z-[100000] bg-[#010409]/95 backdrop-blur-xl border-b border-white/5 h-20 flex items-center px-8">
+        <div class="max-w-[1440px] mx-auto w-full flex items-center justify-between">
+            <a href="index.html" class="flex flex-col">
+                <span class="text-white font-black italic text-xl tracking-tighter uppercase leading-none">Yishen Global</span>
+                <span class="text-[#0ea5e3] font-mono text-[8px] tracking-[3px]">SOVEREIGN_MATRIX_V5.0</span>
             </a>
             <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400">
-                <a href="index.html" class="hover:text-white transition">00_CONSOLE</a>
-                <a href="sovereign-matrix.html" class="text-white border-b border-[#0ea5e3]">01_MATRIX</a>
-                <a href="intelligence-intel.html" class="hover:text-white transition">02_INTEL</a>
-                <a href="tactical-briefing.html" class="hover:text-white transition">03_BRIEFING</a>
-                <a href="tactical-briefing.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase">Deploy_Sovereignty</a>
+                <a href="genesis.html" class="hover:text-white transition">01_GENESIS</a>
+                <a href="sovereign-matrix.html" class="text-white border-b border-[#0ea5e3] pb-1">02_MATRIX</a>
+                <a href="clusters.html" class="hover:text-white transition">03_CLUSTERS</a>
+                <a href="resources.html" class="hover:text-white transition">04_RESOURCES</a>
+                <a href="tactical-briefing.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase">Access_Vault</a>
             </div>
         </div>
     </nav>
 
     <header class="hero-pt" style="padding: 220px 8% 100px; border-bottom: 1px solid rgba(255,255,255,0.05);">
         <div class="max-w-[1200px]">
-            <span class="font-mono tracking-[8px] text-[#0ea5e3] text-sm uppercase">[ SOVEREIGN_ASSET_MATRIX_V4.0 ]</span>
+            <span class="font-mono tracking-[8px] text-[#0ea5e3] text-sm uppercase animate-pulse">[ SOVEREIGN_ASSET_MATRIX_ACTIVE ]</span>
             <h1 class="text-white text-[clamp(3.5rem,10vw,7rem)] font-[900] leading-[0.9] my-12 uppercase italic tracking-tighter">Deterministic<br>Assets.</h1>
             <p class="text-gray-400 text-xl max-w-[850px] leading-relaxed italic border-l-2 border-[#A11219] pl-10">
-                科学集成：我们将全品类家具由“寻源”转向“主权确定性”。涵盖办公、特种、长虹工业链条及碳中和材料。
+                科学集成：我们将全品类资产由“寻源”转向“确定性交付”。涵盖办公主权、海洋五金吊装及碳中和材料体系。
             </p>
         </div>
     </header>
 
     <main class="py-24 px-[8%]">
         <div class="mb-24 p-10 bg-[#A11219]/5 border border-[#A11219]/20">
-            <h4 class="font-mono text-[#A11219] text-xs uppercase tracking-[4px] mb-6">// 2026_INDUSTRIAL_FORECAST</h4>
+            <h4 class="font-mono text-[#A11219] text-xs uppercase tracking-[4px] mb-6">// 2026_INDUSTRIAL_FORECAST_V5</h4>
             <div class="grid md:grid-cols-2 gap-12 text-sm leading-relaxed text-gray-400">
-                <p>研究指出：2026 全球家具供应链将进入“物理主权”时代。大型买家（Ashley, ODP）将强制要求 100% 的 BIM 数据对撞和 ISTA-6A 生存验证。</p>
-                <p>预测方向：主权材料将向 Carbon-Negative 倾斜。Yishen 碳中和竹材与长虹高强度制链现已全面并入资产账本。</p>
+                <p>研究指出：全球供应链已进入“物理主权”时代。Fortune 500 买家将强制要求 100% 的 BIM 数据对撞。Yishen Architecture 已完成对 HS 9401/9403/7315 核心协议的物理验证。</p>
+                <p>碳中和补丁：我们的 Bamboo-Negative 方案与高强度海洋制链现已全面并入资产账本，对撞欧洲 CBAM 碳关税主权。</p>
             </div>
         </div>
 
-        <div id="sku-container" class="matrix-grid">
-            <div class="asset-node">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="asset-node rounded-2xl group">
+                <div class="scan-line"></div>
                 <div class="node-visual-stub"></div>
-                <div class="h-4 w-2/3 bg-white/5 animate-pulse mb-4"></div>
-                <div class="h-8 w-full bg-white/5 animate-pulse"></div>
+                <h3 class="text-2xl font-black italic text-white uppercase mb-4">Ergo & Gaming Alpha</h3>
+                <p class="text-[11px] text-gray-500 font-mono leading-relaxed mb-8">
+                    全流程 BIFMA 认证节点。针对北美/南美市场优化的 KD 结构。单柜容积率对撞提升 25%。
+                </p>
+                <div class="flex gap-2">
+                    <span class="sovereign-tag" style="color:var(--neon-blue)">HS_9401.31</span>
+                    <span class="sovereign-tag">ISTA_6A_SYNC</span>
+                </div>
+            </div>
+
+            <div class="asset-node rounded-2xl group">
+                <div class="node-visual-stub"></div>
+                <h3 class="text-2xl font-black italic text-white uppercase mb-4">Maritime & Port Rigging</h3>
+                <p class="text-[11px] text-gray-500 font-mono leading-relaxed mb-8">
+                    G80/G100 高强度合金链条与索具。内置巴西反倾销豁免逻辑。实时提单数据对撞拦截。
+                </p>
+                <div class="flex gap-2">
+                    <span class="sovereign-tag" style="color:var(--brand-gold)">HS_7315.82</span>
+                    <span class="sovereign-tag">ABS_VERIFIED</span>
+                </div>
+            </div>
+
+            <div class="asset-node rounded-2xl group">
+                <div class="node-visual-stub"></div>
+                <h3 class="text-2xl font-black italic text-white uppercase mb-4">Aluminum Sovereignty</h3>
+                <p class="text-[11px] text-gray-500 font-mono leading-relaxed mb-8">
+                    离岸避税铝梯集群。针对美国 AD/CVD 执行 ASEAN 中转中转路径。ANSI 标准 100% 覆盖。
+                </p>
+                <div class="flex gap-2">
+                    <span class="sovereign-tag" style="color:var(--performance-red)">HS_7616.99</span>
+                    <span class="sovereign-tag">TARIFF_HACK</span>
+                </div>
             </div>
         </div>
 
         <div class="mt-32 p-12 bg-[#0ea5e3]/5 border-2 border-[#0ea5e3]/20 backdrop-blur-3xl">
-            <h4 class="font-mono text-[#0ea5e3] text-sm uppercase tracking-[4px] mb-8">// TOP_TIER_RETAIL_PROTOCOL</h4>
-            <p class="text-gray-400 italic mb-8 text-lg leading-relaxed">
-                针对 Fortune 500 级采购决策者：我们已完成与 Panjiva/ImportGenius 数据库的深度对撞。您的供应稳定性指标（HS 9401/9403/7315）已通过 Yishen Architecture 物理验证。
+            <h4 class="font-mono text-[#0ea5e3] text-sm uppercase tracking-[4px] mb-8">// TOP_TIER_BUYER_INTERCEPTION</h4>
+            <p class="text-gray-400 italic mb-10 text-lg leading-relaxed max-w-4xl">
+                针对 Fortune 500 级决策者：我们已完成与 Panjiva/ImportGenius 数据库的深度对撞。通过物理参数修正（Lumbar Support/Tensile Strength），为您的供应链建立 100% 信任主权。
             </p>
-            <div class="flex flex-wrap gap-12 opacity-50 font-mono text-[10px]">
-                <span class="border-r border-white/10 pr-12">TARGET: ASHLEY_FURNITURE</span>
-                <span class="border-r border-white/10 pr-12">TARGET: ODP_CORP</span>
-                <span class="border-r border-white/10 pr-12">TARGET: LOWES_COMPANIES</span>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-50 font-mono text-[9px]">
+                <div class="border-l border-white/10 pl-6 uppercase">Target: Ashley_Contract</div>
+                <div class="border-l border-white/10 pl-6 uppercase">Target: ODP_Sourcing</div>
+                <div class="border-l border-white/10 pl-6 uppercase">Target: Santos_Port_Ops</div>
+                <div class="border-l border-white/10 pl-6 uppercase">Target: Home_Depot_MRO</div>
             </div>
         </div>
     </main>
 
-    <footer class="bg-[#000] py-24 border-t border-white/5 font-inter">
-        <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-12">
+    <footer class="bg-black py-24 border-t border-white/5 font-inter">
+        <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-12">
             <div class="mobile-items-center">
                 <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Sovereign_Matrix_Verified</div>
-                <div class="flex gap-6 mt-4 text-[9px] font-mono text-gray-800 uppercase tracking-widest">
+                <div class="flex gap-6 mt-4 text-[9px] font-mono text-gray-800 uppercase tracking-widest text-gray-500">
                     <a href="site-architecture.html" class="hover:text-white transition">Blueprint_Map</a> / 
-                    <a href="sitemap.xml" target="_blank" class="hover:text-white transition">XML_Index</a>
+                    <a href="sovereign-index.xml" target="_blank" class="hover:text-white transition">XML_Index</a>
                 </div>
             </div>
             
-            <div class="flex flex-wrap items-center gap-6 mobile-items-center opacity-60">
-                <div class="sovereign-tag">BIFMA_X5.1_VERIFIED</div>
-                <div class="sovereign-tag">ISTA_6A_CERTIFIED</div>
-                <div class="sovereign-tag">ISO9001_SYSTEM</div>
+            <div class="flex flex-wrap items-center gap-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+                <img src="assets/icons/bifma-badge.webp" class="h-6" alt="BIFMA">
+                <img src="assets/icons/en131-badge.webp" class="h-6" alt="EN131">
+                <img src="assets/icons/ista-badge.webp" class="h-6" alt="ISTA">
+                <img src="assets/icons/logo-ul.webp" class="h-6" alt="UL">
             </div>
         </div>
     </footer>
 
-    <script src="asset-distributor.js"></script>
     <script>
-        // GPU 追踪补丁同步
+        // GPU 鼠标追踪引擎同步
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             requestAnimationFrame(() => {
