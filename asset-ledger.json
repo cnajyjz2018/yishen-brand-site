@@ -5,16 +5,21 @@
     "title": "High-End Mesh Terminal",
     "hs_code": "9401.31.00",
     "tagline": "The Gold Standard of Ergonomic Architecture",
-    "compliance": ["BIFMA G1-2013", "ANSI Certified", "ISTA-6A Ready"],
+    "desc": "针对北美大宗采购商优化的物理结构，集成动力学同步底盘，单柜容积率对撞提升 25%。",
+    "thumbnail": "assets/products/mesh-v4.webp",
+    "specs": {
+      "Material": "Reinforced Glass Fiber Nylon",
+      "Load_Rating": "300 lbs (136 kg) Certified",
+      "Actuation": "Kinetic Sync-Tilt Matrix"
+    },
+    "compliance": ["BIFMA", "ANSI", "ISTA", "ISO9001"],
+    "market_logic": "NORTH_AMERICA_CONTRACT",
     "stats": {
-      "material": "Reinforced Glass Fiber Nylon + PA High-Density Mesh",
-      "load_capacity": "300 lbs (136 kg) Structural Integrity",
       "cbm": "97.8%",
       "fail_rate": "0.01%",
       "logistics_protocol": "Cubic-Max Flat-Pack Optimization"
     },
     "warranty": "10-Year Industrial Sovereignty Warranty",
-    "image": "https://yishenglobal.net/assets/mesh.webp",
     "url": "technical-passport.html?id=OFFICE_MESH_V4"
   },
   "CHAIN_G80_MASTER": {
@@ -23,16 +28,21 @@
     "title": "Tensile Chain Node G80",
     "hs_code": "7315.82.00",
     "tagline": "Deterministic Heavy-Duty Tensile Matrix",
-    "compliance": ["ASTM A391", "G80 Structural Grade", "ISO 1704"],
+    "desc": "长虹制链核心资产。符合海事认证，内置巴西 Santos 港反倾销豁免技术路径。",
+    "thumbnail": "assets/products/chain-g80.webp",
+    "specs": {
+      "Grade": "Alloy Steel Grade 80",
+      "Breaking_Force": "12,000 KG Node",
+      "Coating": "Hot-Dip Galvanized Armor"
+    },
+    "compliance": ["ASTM", "ISO1704", "ABS", "CE"],
+    "market_logic": "LATAM_INFRASTRUCTURE_AD_EXEMPT",
     "stats": {
-      "material": "Alloy Steel Grade 80 / Hot-Dip Galv",
-      "load_capacity": "12,000 KG Breaking Force",
       "cbm": "99.4%",
       "fail_rate": "0.00%",
       "logistics_protocol": "Steel-Pail Reinforced Armor"
     },
     "warranty": "Lifetime Heavy-Duty Integrity Warranty",
-    "image": "https://yishenglobal.net/assets/mesh.webp",
     "url": "technical-passport.html?id=CHAIN_G80_MASTER"
   },
   "AERO_COMMAND_A01": {
@@ -41,16 +51,21 @@
     "title": "Tactical Command Hub",
     "hs_code": "9401.10.00",
     "tagline": "Mission-Critical Command Architecture",
-    "compliance": ["MIL-STD-810H", "9G Shockproof", "FR UL94-V0"],
+    "desc": "专为高负载指挥环境设计，符合 MIL-STD 军规抗震标准，集成 9G 冲击防护主权。",
+    "thumbnail": "assets/products/aero-command.webp",
+    "specs": {
+      "Chassis": "Aerospace Aluminum Alloy",
+      "Dynamic_Load": "180kg Stability Node",
+      "Protection": "Anti-Static / Fire-Resistant"
+    },
+    "compliance": ["MIL-STD-810H", "UL94-V0", "ANSI", "BIFMA"],
+    "market_logic": "GOVERNMENT_DEFENSE_MRO",
     "stats": {
-      "material": "Aerospace Aluminum Alloy + Anti-Static Chassis",
-      "load_capacity": "450kg Static / 180kg Dynamic",
       "cbm": "97.4%",
       "fail_rate": "0.00%",
       "logistics_protocol": "ISTA-6A Military Grade"
     },
     "warranty": "Lifetime Tactical Integrity Warranty",
-    "image": "https://yishenglobal.net/assets/mesh.webp",
     "url": "technical-passport.html?id=AERO_COMMAND_A01"
   },
   "BAMBOO_CBAM_READY": {
@@ -59,16 +74,21 @@
     "title": "Carbon-Negative Bamboo",
     "hs_code": "4418.75.00",
     "tagline": "Sovereign Sustainable Architecture",
-    "compliance": ["LEED Gold Certified", "CBAM Ready", "FSC Source"],
+    "desc": "户外重竹高压地板：应对欧洲 CBAM 碳税补丁，具备极致尺寸稳定性与生物主权。",
+    "thumbnail": "assets/products/bamboo-cbam.webp",
+    "specs": {
+      "Hardness": "Janka 3500+ Grade",
+      "Process": "Deep-Thermal High-Density",
+      "Carbon_Index": "Negative Footprint Node"
+    },
+    "compliance": ["LEED", "CBAM", "FSC", "ISO14001"],
+    "market_logic": "EUROPE_GREEN_SOVEREIGNTY",
     "stats": {
-      "material": "Deep-Thermal High-Density Bamboo",
-      "load_capacity": "Janka Hardness 3500+",
       "cbm": "96.5%",
       "fail_rate": "0.02%",
       "logistics_protocol": "Bio-Degradable Moisture Shield"
     },
     "warranty": "25-Year Dimension Stability Warranty",
-    "image": "https://yishenglobal.net/assets/mesh.webp",
     "url": "technical-passport.html?id=BAMBOO_CBAM_READY"
   },
   "MED_BIOMECH_9002": {
@@ -77,16 +97,21 @@
     "title": "Clinical Biomechanical Seating",
     "hs_code": "9402.10.00",
     "tagline": "Antimicrobial Biomechanical Architecture",
-    "compliance": ["Silver-Ion Shield", "FDA Class I", "ISO 22196"],
+    "desc": "临床级抗菌生物力学控制终端，集成银离子护盾技术，针对高无菌环境对撞。",
+    "thumbnail": "assets/products/med-biomech.webp",
+    "specs": {
+      "Shield": "Silver-Ion Antimicrobial Polymer",
+      "Base": "Medical-Grade Stainless Steel",
+      "Control": "Precision Dynamic Control"
+    },
+    "compliance": ["FDA", "ISO22196", "CE", "ISO13485"],
+    "market_logic": "HEALTHCARE_PRECISION_NODES",
     "stats": {
-      "material": "Silver-Ion Polymer + Stainless Steel Chassis",
-      "load_capacity": "150kg Precision Dynamic Control",
       "cbm": "98.1%",
       "fail_rate": "0.01%",
       "logistics_protocol": "Medical-Grade Sterile Packaging"
     },
     "warranty": "15-Year Clinical Reliability Warranty",
-    "image": "https://yishenglobal.net/assets/mesh.webp",
     "url": "technical-passport.html?id=MED_BIOMECH_9002"
   },
   "DUAL_X1_WORKSTATION": {
@@ -95,16 +120,21 @@
     "title": "D-UAL X1 Power Node",
     "hs_code": "9403.10.00",
     "tagline": "Precision Height-Adjustment System",
-    "compliance": ["CE Certified", "UL 962", "BIFMA Standards"],
+    "desc": "高精度升降系统架构。集成 E0 级主权材料，针对 Fortune 500 总部办公空间的确定性交付。",
+    "thumbnail": "assets/products/dual-x1.webp",
+    "specs": {
+      "Stability": "Carbon Steel Dual-Motor Matrix",
+      "Material": "E0 Sustainability Top",
+      "Lift_Range": "650mm - 1250mm Dynamic"
+    },
+    "compliance": ["CE", "UL962", "BIFMA", "RoHS"],
+    "market_logic": "OFFICE_INFRASTRUCTURE_SYNC",
     "stats": {
-      "material": "Carbon Steel Framework + E0 Grade Top",
-      "load_capacity": "120 kg Dynamic Stability",
       "cbm": "94.2%",
       "fail_rate": "0.05%",
       "logistics_protocol": "Flat-Pack Cubic-Max Density"
     },
     "warranty": "5-Year Electronic System Warranty",
-    "image": "https://yishenglobal.net/assets/mesh.webp",
     "url": "technical-passport.html?id=DUAL_X1_WORKSTATION"
   }
 }
