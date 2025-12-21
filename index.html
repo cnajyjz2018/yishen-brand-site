@@ -21,12 +21,11 @@
             margin: 0;
             overflow-x: hidden;
         }
-        .font-mono { font-family: 'JetBrains+Mono', monospace; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
 
         /* V5.0 布局主权补丁 */
         .topology-bg {
-            background-image: 
-                radial-gradient(circle at 2px 2px, rgba(255,255,255,0.03) 1px, transparent 0);
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.03) 1px, transparent 0);
             background-size: 40px 40px;
         }
         .hero-assets {
@@ -48,26 +47,19 @@
             padding: 8px 16px;
         }
         .badge-label {
-            font-family: 'JetBrains+Mono';
+            font-family: 'JetBrains Mono';
             font-size: 10px;
             color: #4b5563;
             text-transform: uppercase;
             margin-right: 8px;
         }
-        .badge-value {
-            font-weight: 900;
-            font-style: italic;
-            font-size: 14px;
-        }
+        .badge-value { font-weight: 900; font-style: italic; font-size: 14px; }
+        
         #cursor-glow {
-            position: fixed;
-            width: 600px;
-            height: 600px;
+            position: fixed; width: 600px; height: 600px;
             background: radial-gradient(circle, rgba(14, 165, 233, 0.05) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 0;
-            transform: translate(-50%, -50%);
+            border-radius: 50%; pointer-events: none; z-index: 0;
+            transform: translate(-50%, -50%); will-change: transform;
         }
     </style>
 </head>
@@ -78,14 +70,12 @@
     <nav id="master-nav" class="fixed w-full z-[100] transition-all duration-300 border-b border-white/5 bg-[#010409]/80 backdrop-blur-xl">
         <div class="max-w-[1440px] mx-auto h-20 flex items-center justify-between px-8">
             <a href="index.html" class="flex items-center gap-4">
-                <div class="relative">
-                    <svg width="45" height="32" viewBox="0 0 45 32" fill="none">
-                        <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
-                        <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
-                    </svg>
-                </div>
+                <svg width="45" height="32" viewBox="0 0 45 32" fill="none">
+                    <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
+                    <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
+                </svg>
                 <div class="flex flex-col">
-                    <span class="text-white font-black italic text-xl tracking-tighter leading-none">Yishen Global</span>
+                    <span class="text-white font-black italic text-xl tracking-tighter leading-none uppercase">Yishen Global</span>
                     <span class="text-[#0ea5e3] font-mono text-[8px] tracking-[3px] uppercase">Sovereignty_V5.0</span>
                 </div>
             </a>
@@ -101,22 +91,13 @@
     <header class="pt-48 pb-24 px-[8%] relative overflow-hidden hero-assets">
         <div class="max-w-[1440px] mx-auto relative z-10">
             <span class="font-mono text-[#0ea5e3] tracking-[5px] uppercase text-xs animate-pulse">// SYSTEM_IGNITION_ACTIVE</span>
-            <h1 class="text-white text-[clamp(2.5rem,8vw,5.5rem)] font-[900] leading-[0.9] my-8 uppercase italic tracking-tighter">
-                Sovereign<br>Integration.
-            </h1>
-            
+            <h1 class="text-white text-[clamp(2.5rem,8vw,5.5rem)] font-[900] leading-[0.9] my-8 uppercase italic tracking-tighter">Sovereign<br>Integration.</h1>
             <div class="mt-12 flex flex-col md:flex-row gap-12 items-center">
                 <div class="w-full md:w-1/2 border border-white/10 p-4 bg-black/40 node-skeleton group overflow-hidden rounded-xl">
-                    <img src="public/assets/products/seating-node-01.webp" 
-                         alt="Flagship Asset" 
-                         class="w-full h-auto opacity-0 transition-all duration-700 group-hover:scale-105"
-                         onload="this.style.opacity='1'; this.parentElement.classList.remove('node-skeleton')">
+                    <img src="public/assets/products/seating-node-01.webp" alt="Flagship" class="w-full h-auto opacity-0 transition-all duration-700 group-hover:scale-105" onload="this.style.opacity='1'; this.parentElement.classList.remove('node-skeleton')">
                 </div>
                 <div class="md:w-1/2 space-y-8">
-                    <p class="text-[#8b949e] text-lg lg:text-xl italic border-l-2 border-[#A11219] pl-8 leading-relaxed">
-                        28 Strategic clusters synchronized via V5.0 architecture. 
-                        Physical assets mapped in public/assets/ for 24/7 autonomous harvesting.
-                    </p>
+                    <p class="text-[#8b949e] text-lg lg:text-xl italic border-l-2 border-[#A11219] pl-8 leading-relaxed">28 Strategic clusters synchronized via V5.0 architecture. Physical assets mapped in public/assets/ for 24/7 autonomous harvesting.</p>
                     <div class="flex gap-4">
                         <div class="sov-badge"><span class="badge-label">PROTOCOL</span><span class="badge-value">BIFMA</span></div>
                         <div class="sov-badge" style="border-left-color: #A11219;"><span class="badge-label">TEST</span><span class="badge-value">ISTA-6A</span></div>
@@ -129,79 +110,113 @@
     <section class="py-24 bg-[#010409] border-t border-white/5">
         <div class="container mx-auto px-[8%]">
             <div class="grid lg:grid-cols-12 gap-8 items-stretch">
-                
                 <div class="lg:col-span-7 relative group rounded-2xl overflow-hidden border border-white/10 bg-black min-h-[500px]">
-                    <img src="public/assets/system/engineering-lab-v5.webp" 
-                         alt="Engineering Lab Protocol"
-                         class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-110">
+                    <img src="public/assets/system/engineering-lab-v5.webp" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                     <div class="absolute top-8 left-8">
-                        <div class="flex items-center gap-2 mb-4">
-                            <span class="w-2 h-2 bg-[#0ea5e3] rounded-full animate-ping"></span>
-                            <span class="font-mono text-[#0ea5e3] text-[10px] uppercase tracking-[4px]">Live_Testing_Active</span>
-                        </div>
+                        <div class="flex items-center gap-2 mb-4"><span class="w-2 h-2 bg-[#0ea5e3] rounded-full animate-ping"></span><span class="font-mono text-[#0ea5e3] text-[10px] uppercase tracking-[4px]">Live_Testing_Active</span></div>
                         <h3 class="text-white text-5xl font-black italic uppercase leading-tight">R&D <br><span class="text-[#0ea5e3]">Sovereignty</span></h3>
-                        <p class="text-gray-500 font-mono text-[10px] mt-4 tracking-widest">// ASSET_LOCATION: public/assets/system/</p>
                     </div>
                 </div>
-
                 <div class="lg:col-span-5 flex flex-col gap-8">
-                    <div class="flex-1 bg-white/5 p-8 rounded-2xl border border-white/5 hover:border-[#A11219]/50 transition-all duration-500 group">
+                    <div class="bg-white/5 p-8 rounded-2xl border border-white/5 hover:border-[#A11219]/50 transition-all duration-500">
                         <p class="text-[#A11219] font-mono text-[10px] uppercase tracking-widest mb-2">Selected_Flagship</p>
                         <h4 class="text-white text-3xl font-black italic uppercase tracking-tighter">Seating Node 01</h4>
-                        <div class="relative py-6">
-                            <img src="public/assets/products/seating-node-01.webp" 
-                                 class="h-56 w-auto mx-auto drop-shadow-[0_20px_60px_rgba(14,165,227,0.2)] group-hover:scale-110 transition-transform duration-700">
-                        </div>
-                        <div class="flex justify-between border-t border-white/10 pt-4">
-                            <span class="text-gray-500 font-mono text-[9px] uppercase">Component_ID: SN-01-V5</span>
-                            <span class="text-[#0ea5e3] font-mono text-[9px] uppercase tracking-tighter">Ready_For_Deployment</span>
-                        </div>
+                        <img src="public/assets/products/seating-node-01.webp" class="h-48 w-auto mx-auto my-4 drop-shadow-[0_20px_60px_rgba(14,165,227,0.2)]">
                     </div>
-                    
-                    <div class="bg-[#0ea5e3]/10 p-8 rounded-2xl border border-[#0ea5e3]/20 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 p-2 opacity-10">
-                            <svg width="100" height="100" viewBox="0 0 100 100" fill="white">
-                                <path d="M10 10h80v80H10z" fill="none" stroke="currentColor" stroke-dasharray="4 4"/>
-                            </svg>
-                        </div>
-                        <p class="text-white text-base font-light italic leading-relaxed relative z-10">
-                            "每一件产品在交付给 Michael (USA) 或 Sarah (Europe) 之前，都必须在 Engineering Lab 经历 <span class="text-[#0ea5e3] font-bold">120,000次</span> 压力测试，确保物理性能在全生命周期内绝对稳定。"
-                        </p>
-                        <div class="mt-6 flex gap-4 opacity-60">
-                            <img src="public/assets/branding/bifma-badge.png" class="h-8 w-auto grayscale brightness-200">
-                            <img src="public/assets/branding/iso9001.png" class="h-8 w-auto grayscale brightness-200">
-                        </div>
+                    <div class="bg-[#0ea5e3]/10 p-8 rounded-2xl border border-[#0ea5e3]/20">
+                        <p class="text-white text-base font-light italic leading-relaxed">"每一件产品在交付给 Michael (USA) 或 Sarah (Europe) 之前，都必须在 Engineering Lab 经历 <span class="text-[#0ea5e3] font-bold">120,000次</span> 压力测试。"</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <footer class="py-12 px-[8%] border-t border-white/5 bg-black text-center">
-        <p class="text-gray-600 font-mono text-[10px] tracking-widest uppercase">
-            &copy; 2025 Yishen Global Sovereignty. All Assets Encrypted via V5.0 Protocol.
-        </p>
+    <section class="py-24 bg-[#010409] border-t border-white/5 relative overflow-hidden">
+        <div class="container mx-auto px-[8%] relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+                <div>
+                    <h2 class="text-white text-5xl font-black italic uppercase tracking-tighter">Global <span class="text-[#0ea5e3]">Perspectives</span></h2>
+                    <p class="text-gray-500 font-mono mt-4 tracking-widest">// SELECT_REGIONAL_COMMAND_NODE</p>
+                </div>
+                <div class="flex bg-white/5 p-1 rounded-full border border-white/10">
+                    <button onclick="switchPerspective('michael')" id="btn-michael" class="px-8 py-3 rounded-full font-mono text-xs tracking-widest transition-all bg-[#0ea5e3] text-black font-bold">NODE_USA: MICHAEL</button>
+                    <button onclick="switchPerspective('sarah')" id="btn-sarah" class="px-8 py-3 rounded-full font-mono text-xs tracking-widest transition-all text-gray-500 hover:text-white">NODE_EU: SARAH</button>
+                </div>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative rounded-2xl overflow-hidden border border-white/10 aspect-video bg-slate-900">
+                    <img id="perspective-img" src="public/assets/system/global-ops-monitor-v5.webp" class="w-full h-full object-cover transition-all duration-700">
+                    <div id="perspective-tag" class="absolute bottom-6 left-6 px-4 py-1 bg-[#0ea5e3] text-black font-mono text-[10px] font-bold uppercase tracking-widest">Predictability_Protocol</div>
+                </div>
+                <div class="space-y-8">
+                    <div class="flex items-center gap-4">
+                        <div id="perspective-avatar" class="w-16 h-16 rounded-full border-2 border-[#0ea5e3] bg-gray-800 flex items-center justify-center text-white font-black text-xl italic">M</div>
+                        <div>
+                            <h4 id="perspective-name" class="text-white text-2xl font-black italic uppercase">Michael T.</h4>
+                            <p id="perspective-title" class="text-[#0ea5e3] font-mono text-[10px] tracking-widest uppercase">North America Operations</p>
+                        </div>
+                    </div>
+                    <p id="perspective-text" class="text-gray-400 text-xl italic leading-relaxed border-l-4 border-[#A11219] pl-8">"在北美市场，延迟就是自杀。YiShen V5.0 系统不是在‘发货’，而是在‘同步’。通过我们的 Global Ops Monitor，您看到的不是物流，是确定性。"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 px-[8%] border-t border-white/5 bg-black text-center text-gray-600 font-mono text-[10px] tracking-widest uppercase">
+        &copy; 2025 Yishen Global Sovereignty. All Assets Encrypted via V5.0 Protocol.
     </footer>
 
     <script>
-        // 动态光效脚本
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
-            glow.style.left = e.clientX + 'px';
-            glow.style.top = e.clientY + 'px';
+            requestAnimationFrame(() => {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top = e.clientY + 'px';
+            });
         });
 
-        // 导航栏滚动交互
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('master-nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('py-2', 'bg-black/95');
-            } else {
-                nav.classList.remove('py-2', 'bg-black/95');
+        const data = {
+            michael: {
+                img: "public/assets/system/global-ops-monitor-v5.webp",
+                tag: "Predictability_Protocol",
+                name: "Michael T.",
+                title: "North America Operations",
+                text: "\"在北美市场，延迟就是自杀。YiShen V5.0 系统不是在‘发货’，而是在‘同步’。通过我们的 Global Ops Monitor，您看到的不是物流，是确定性。\"",
+                color: "#0ea5e3", avatar: "M"
+            },
+            sarah: {
+                img: "public/assets/industries/medical-clinical-lab.webp",
+                tag: "Precision_Compliance",
+                name: "Sarah J.",
+                title: "European Market Strategy",
+                text: "\"欧洲市场对品质的挑剔近乎偏执。ISO 9001 与 BIFMA 只是我们的底线，而非上限。我们的制造主权确保了每一件产品都符合严苛的欧洲实验室标准。\"",
+                color: "#A11219", avatar: "S"
             }
-        });
+        };
+
+        function switchPerspective(node) {
+            const p = data[node];
+            document.getElementById('perspective-img').src = p.img;
+            const tag = document.getElementById('perspective-tag');
+            tag.innerText = p.tag; tag.style.backgroundColor = p.color;
+            document.getElementById('perspective-name').innerText = p.name;
+            const title = document.getElementById('perspective-title');
+            title.innerText = p.title; title.style.color = p.color;
+            document.getElementById('perspective-text').innerText = p.text;
+            const av = document.getElementById('perspective-avatar');
+            av.innerText = p.avatar; av.style.borderColor = p.color;
+            
+            const btnM = document.getElementById('btn-michael');
+            const btnS = document.getElementById('btn-sarah');
+            if(node === 'michael') {
+                btnM.className = "px-8 py-3 rounded-full font-mono text-xs tracking-widest transition-all bg-[#0ea5e3] text-black font-bold";
+                btnS.className = "px-8 py-3 rounded-full font-mono text-xs tracking-widest transition-all text-gray-500 hover:text-white";
+            } else {
+                btnS.className = "px-8 py-3 rounded-full font-mono text-xs tracking-widest transition-all bg-[#A11219] text-white font-bold";
+                btnM.className = "px-8 py-3 rounded-full font-mono text-xs tracking-widest transition-all text-gray-500 hover:text-white";
+            }
+        }
     </script>
 </body>
 </html>
