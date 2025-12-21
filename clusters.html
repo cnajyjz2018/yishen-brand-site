@@ -1,159 +1,218 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>03_CLUSTERS | 28 Strategic Industrial Nodes | YISHEN GLOBAL</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
-        :root { --brand-blue: #0ea5e3; --brand-red: #A11219; --brand-gold: #ffd700; --bg-deep: #010409; }
-        body { background-color: var(--bg-deep); font-family: 'Inter', sans-serif; color: #ffffff; margin: 0; overflow-x: hidden; }
+        :root { --neon-blue: #0ea5e3; --perf-red: #A11219; --brand-gold: #ffd700; --deep-space: #010409; }
+        body { background-color: var(--deep-space); color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
-        .topology-bg { background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.03) 1px, transparent 0); background-size: 40px 40px; }
-        
-        /* [PATCH] 加载动画补丁 */
-        #loading-screen { position: fixed; inset: 0; z-index: 99999; background: #010409; display: flex; flex-direction: column; items: center; justify-content: center; }
-        #bar-fill { height: 100%; background: var(--brand-blue); width: 0%; transition: 2s cubic-bezier(0.1, 0.5, 0.1, 1); }
 
-        /* 集群阵列样式 */
-        .cluster-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); cursor: crosshair; position: relative; overflow: hidden; height: 100%; }
-        .cluster-card:hover { border-color: var(--brand-blue); background: rgba(14, 165, 227, 0.04); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
-        .cluster-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--brand-blue); transform: translateX(-100%); transition: 0.6s; }
-        .cluster-card:hover::before { transform: translateX(0); }
+        /* [PATCH] 数字化拓扑连线底纹 */
+        .topo-grid {
+            background-image: radial-gradient(rgba(14, 165, 233, 0.08) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
 
-        /* 标签主权样式 */
-        .tag-sovereignty { font-size: 8px; font-family: 'JetBrains Mono'; padding: 2px 8px; border: 1px solid rgba(255,255,255,0.1); text-transform: uppercase; border-radius: 2px; }
-        .tag-exclusive { color: var(--brand-gold); border-color: var(--brand-gold); background: rgba(255, 215, 0, 0.05); }
+        /* 节点卡片：工业对撞风格 */
+        .node-card {
+            background: rgba(13, 17, 23, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 35px; transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative; overflow: hidden; height: 100%; cursor: pointer;
+        }
+        .node-card:hover {
+            border-color: var(--neon-blue);
+            background: rgba(14, 165, 227, 0.04);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        .node-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--neon-blue); transform: translateX(-100%); transition: 0.6s; }
+        .node-card:hover::before { transform: translateX(0); }
 
-        .glass-panel { background: rgba(1, 4, 9, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .scan-line { position: absolute; width: 100%; height: 2px; background: var(--brand-blue); opacity: 0.3; animation: scan 4s linear infinite; }
+        /* [PATCH] 主权进度条补丁 */
+        .sov-bar { height: 2px; background: rgba(255,255,255,0.05); position: relative; margin-top: 20px; }
+        .sov-fill { height: 100%; background: var(--neon-blue); position: absolute; left: 0; top: 0; box-shadow: 0 0 10px var(--neon-blue); transition: 1.5s cubic-bezier(0.1, 0.5, 0.1, 1); width: 0; }
+
+        /* [PATCH] 加载仪式感 */
+        #loading-screen { position: fixed; inset: 0; z-index: 10000; background: #010409; display: flex; flex-direction: column; items: center; justify-content: center; }
+        #bar-fill { height: 100%; background: var(--neon-blue); width: 0%; transition: 2s cubic-bezier(0.1, 0.5, 0.1, 1); }
+
+        #cursor-glow {
+            position: fixed; width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(14, 165, 223, 0.08) 0%, transparent 70%);
+            border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%);
+            will-change: transform; mix-blend-mode: screen;
+        }
+
+        .scan-line { position: absolute; width: 100%; height: 2px; background: var(--neon-blue); opacity: 0.3; animation: scan 4s linear infinite; }
         @keyframes scan { 0% { top: 0%; } 100% { top: 100%; } }
     </style>
 </head>
-<body class="topology-bg selection:bg-[#0ea5e3]">
+<body class="topo-grid selection:bg-[#0ea5e3]">
 
     <div id="loading-screen">
-        <span class="text-white font-black italic text-2xl uppercase tracking-tighter">Cluster_Nodes_Deploying</span>
+        <span class="text-white font-black italic text-2xl uppercase tracking-tighter">Cluster_Matrix_Sync</span>
         <div class="w-48 h-[2px] bg-white/10 mt-6"><div id="bar-fill"></div></div>
-        <span class="text-[#0ea5e3] font-mono text-[8px] mt-4 tracking-[4px] animate-pulse">// MAPPING_GLOBAL_INFRASTRUCTURE_NODES...</span>
+        <span class="text-[#0ea5e3] font-mono text-[8px] mt-4 tracking-[4px] animate-pulse">// MAPPING_28_GLOBAL_INDUSTRIAL_NODES...</span>
     </div>
 
-    <nav class="fixed w-full z-[100] border-b border-white/5 bg-[#010409]/80 backdrop-blur-xl h-20 flex items-center px-8 justify-between">
-        <a href="index.html" class="flex flex-col">
-            <span class="text-white font-black italic text-xl tracking-tighter uppercase leading-none">Yishen Global</span>
-            <span class="text-[#0ea5e3] font-mono text-[8px] tracking-[3px]">INDUSTRIAL_CLUSTERS_V5.0</span>
-        </a>
-        <div class="hidden lg:flex gap-8 font-mono text-[10px] text-gray-400">
-            <a href="genesis.html" class="hover:text-white transition">01_GENESIS</a>
-            <a href="architectures.html" class="hover:text-white transition">02_ARCHITECTURES</a>
-            <a href="clusters.html" class="text-white border-b border-[#0ea5e3] pb-1">03_CLUSTERS</a>
-            <a href="resources.html" class="hover:text-white transition">04_RESOURCES</a>
+    <div id="cursor-glow"></div>
+
+    <nav class="fixed top-0 left-0 w-full z-[1000] border-b border-white/5 bg-[#010409]/90 backdrop-blur-xl h-20 flex items-center px-8">
+        <div class="max-w-[1440px] mx-auto w-full flex items-center justify-between">
+            <a href="index.html" class="flex flex-col">
+                <span class="text-white font-black italic text-xl tracking-tighter uppercase leading-none">Yishen Global</span>
+                <span class="text-[#0ea5e3] font-mono text-[8px] tracking-[3px]">STRATEGIC_CLUSTERS_V5.0</span>
+            </a>
+            <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400 uppercase">
+                <a href="genesis.html" class="hover:text-white transition">01_GENESIS</a>
+                <a href="sovereign-matrix.html" class="hover:text-white transition">02_MATRIX</a>
+                <a href="clusters.html" class="text-white border-b border-[#0ea5e3] pb-1">03_CLUSTERS</a>
+                <a href="resources.html" class="hover:text-white transition">04_RESOURCES</a>
+                <a href="tactical-briefing.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm hover:bg-white transition-all">Access_Vault</a>
+            </div>
         </div>
     </nav>
 
     <main class="pt-48 pb-32 px-[8%] max-w-[1440px] mx-auto">
-        <header class="mb-20">
-            <span class="font-mono text-[#0ea5e3] tracking-[8px] text-xs uppercase animate-pulse">// MULTI_DIMENSIONAL_ARRAY_V5</span>
-            <h1 class="text-white text-[clamp(3rem,8vw,5rem)] font-[900] italic uppercase mt-4 tracking-tighter">Strategic <span class="text-[#0ea5e3]">Clusters.</span></h1>
-            <p class="text-gray-400 italic text-lg mt-6 border-l-2 border-[#A11219] pl-8 max-w-3xl">
-                将 38 年诚信基因注入 28 个战略节点。从海洋吊装到港口基建，我们不仅提供资产，更通过全球海关数据对撞实现主权合围。
+        <header class="mb-24 border-l-4 border-[#perf-red] pl-10">
+            <span class="font-mono text-[#0ea5e3] tracking-[10px] text-xs uppercase animate-pulse">// 28_CORE_INDUSTRIAL_NODES</span>
+            <h1 class="text-white text-[clamp(3rem,8vw,6.5rem)] font-[900] italic uppercase mt-4 leading-none">Strategic<br><span class="text-[#0ea5e3]">Clusters.</span></h1>
+            <p class="text-gray-400 font-mono mt-8 text-sm max-w-4xl leading-relaxed italic">
+                “我们不是在寻找供应商，我们是在定义物理主权。YiShen Global 的 28 个工业集群覆盖了从重型海洋吊装到精密医疗环境的全生命周期标准。”
             </p>
         </header>
 
-        <div class="flex items-center gap-4 mb-10">
-            <h2 class="text-3xl font-black italic uppercase tracking-widest text-[#ffd700]">Cluster_Alpha // Maritime & MRO</h2>
-            <div class="h-[1px] flex-grow bg-white/10"></div>
-        </div>
-
-        <div class="grid lg:grid-cols-3 gap-8 mb-24">
-            <div class="cluster-card p-10 group" onclick="window.location.href='resources.html'">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="node-card rounded-sm" onclick="window.location.href='technical-passport.html?id=MARINE_CHAIN'">
                 <div class="scan-line"></div>
-                <span class="text-[9px] font-mono text-[#ffd700] mb-4 block uppercase tracking-widest">// GENETIC: SHEN_FIRE</span>
-                <h3 class="text-2xl font-black italic text-white uppercase mb-4">Port & Marine Chains</h3>
-                <p class="text-xs text-gray-500 font-mono leading-relaxed mb-8">
-                    G80/G100 高强度合金链条集群。针对巴西 Santos 港及东南亚基建节点执行定向火力覆盖。100% 材质主权，绕过反倾销红区。
+                <span class="font-mono text-[#brand-gold] text-[9px] uppercase tracking-widest block mb-4">// NODE_07: MARITIME_HARDWARE</span>
+                <h3 class="text-white font-bold text-2xl italic uppercase mb-6">Marine Chains & Rigging</h3>
+                <p class="text-gray-500 text-xs leading-relaxed mb-6 font-mono italic">
+                    HS Code: 7315.82 | G80/G100 Alloy Matrix. <br>针对巴西 Santos 港反倾销豁免优化的物理路径，确保 100% 清关主权。
                 </p>
-                <div class="flex flex-wrap gap-2 mt-auto">
-                    <span class="tag-sovereignty tag-exclusive">HS_7315.82</span>
-                    <span class="tag-sovereignty">ABS_DNV_SYNC</span>
-                    <span class="tag-sovereignty">TENSILE_SOVEREIGNTY</span>
+                <div class="sov-bar"><div class="sov-fill" data-width="94%"></div></div>
+                <div class="mt-4 flex justify-between text-[8px] font-mono text-gray-600 uppercase">
+                    <span>Structural Integrity</span>
+                    <span class="text-[#brand-gold]">94% Sovereign</span>
                 </div>
             </div>
 
-            <div class="cluster-card p-10 group">
-                <span class="text-[9px] font-mono text-gray-600 mb-4 block uppercase tracking-widest">// GENETIC: BIN_LOYALTY</span>
-                <h3 class="text-2xl font-black italic text-white uppercase mb-4">Rigging & Steel Wire</h3>
-                <p class="text-xs text-gray-500 font-mono leading-relaxed mb-8">
-                    全生命周期吊装方案。同步休斯顿港物理轨迹，拦截北美基建买家画像。钢丝绳与索具节点实现毫秒级提单对撞。
+            <div class="node-card rounded-sm border-l-2 border-l-[#0ea5e3]" onclick="window.location.href='technical-passport.html?id=MEDICAL_CHAIR'">
+                <span class="font-mono text-[#0ea5e3] text-[9px] uppercase tracking-widest block mb-4">// NODE_14: MEDICAL_PRECISION</span>
+                <h3 class="text-white font-bold text-2xl italic uppercase mb-6">Sterile Hub Systems</h3>
+                <p class="text-gray-500 text-xs leading-relaxed mb-6 font-mono italic">
+                    HS Code: 9402.10 | ISO 13485 Certified. <br>集成东盟（ASEAN）Form E 零关税协议。针对精密护理环境的抗菌主权验证。
                 </p>
-                <div class="flex flex-wrap gap-2 mt-auto">
-                    <span class="tag-sovereignty">HS_7312.10</span>
-                    <span class="tag-sovereignty">MRO_CERTIFIED</span>
+                <div class="sov-bar"><div class="sov-fill" data-width="88%"></div></div>
+                <div class="mt-4 flex justify-between text-[8px] font-mono text-gray-600 uppercase">
+                    <span>Clinical Compliance</span>
+                    <span class="text-[#0ea5e3]">88% Sovereign</span>
                 </div>
             </div>
 
-            <div class="cluster-card p-10 group">
-                <span class="text-[9px] font-mono text-[#0ea5e3] mb-4 block uppercase tracking-widest">// GENETIC: YI_INTELLIGENCE</span>
-                <h3 class="text-2xl font-black italic text-white uppercase mb-4">Aluminum Ladders</h3>
-                <p class="text-xs text-gray-500 font-mono leading-relaxed mb-8">
-                    北美离岸制造集群。通过东南亚 ASEAN 中转规避 AD/CVD 关税墙。ANSI A14.2 标准 100% 物理合规。
+            <div class="node-card rounded-sm border-l-2 border-l-[#perf-red]" onclick="window.location.href='technical-passport.html?id=INDUSTRIAL_LADDER'">
+                <span class="font-mono text-[#perf-red] text-[9px] uppercase tracking-widest block mb-4">// NODE_21: INFRASTRUCTURE_MRO</span>
+                <h3 class="text-white font-bold text-2xl italic uppercase mb-6">Aluminum Alpha Clusters</h3>
+                <p class="text-gray-500 text-xs leading-relaxed mb-6 font-mono italic">
+                    HS Code: 7616.99 | ANSI/EN131 Standard. <br>针对北美基建渠道的避税绕道架构（ASEAN Node），规避 200%+ 反倾销税。
                 </p>
-                <div class="flex flex-wrap gap-2 mt-auto">
-                    <span class="tag-sovereignty tag-exclusive">HS_7616.99</span>
-                    <span class="tag-sovereignty">ANSI_A14.2</span>
-                    <span class="tag-sovereignty">TARIFF_HACK_V5</span>
+                <div class="sov-bar"><div class="sov-fill" data-width="92%"></div></div>
+                <div class="mt-4 flex justify-between text-[8px] font-mono text-gray-600 uppercase">
+                    <span>Tariff Defense</span>
+                    <span class="text-[#perf-red]">92% Sovereign</span>
                 </div>
             </div>
+
+            <div class="node-card rounded-sm" onclick="window.location.href='technical-passport.html?id=OFFICE_MESH_V4'">
+                <span class="font-mono text-[#0ea5e3] text-[9px] uppercase tracking-widest block mb-4">// NODE_01: OFFICE_ERGO</span>
+                <h3 class="text-white font-bold text-2xl italic uppercase mb-6">Mesh & Gaming Matrix</h3>
+                <p class="text-gray-500 text-xs leading-relaxed mb-6 font-mono italic">
+                    HS Code: 9401.31 | BIFMA X5.1. <br>针对北美大宗采购商优化的 97.2% CBM 容积效率。实现从生产到交付的确定性闭环。
+                </p>
+                <div class="sov-bar"><div class="sov-fill" data-width="98%"></div></div>
+                <div class="mt-4 flex justify-between text-[8px] font-mono text-gray-600 uppercase">
+                    <span>Delivery Certainty</span>
+                    <span class="text-[#0ea5e3]">98% Sovereign</span>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2 grid grid-cols-4 gap-4">
+                <div class="p-6 border border-white/5 bg-white/[0.01] text-center group hover:border-[#0ea5e3] transition">
+                    <span class="text-[8px] font-mono text-gray-700 uppercase group-hover:text-white transition">Aero_Military</span>
+                </div>
+                <div class="p-6 border border-white/5 bg-white/[0.01] text-center group hover:border-[#0ea5e3] transition">
+                    <span class="text-[8px] font-mono text-gray-700 uppercase group-hover:text-white transition">Bio_Materials</span>
+                </div>
+                <div class="p-6 border border-white/5 bg-white/[0.01] text-center group hover:border-[#0ea5e3] transition">
+                    <span class="text-[8px] font-mono text-gray-700 uppercase group-hover:text-white transition">Actuation_Systems</span>
+                </div>
+                <div class="p-6 border border-white/5 bg-white/[0.01] text-center group hover:border-[#0ea5e3] transition">
+                    <span class="text-[8px] font-mono text-gray-700 uppercase group-hover:text-white transition">Carbon_Neutral</span>
+                </div>
+            </div>
+
         </div>
 
-        <div class="flex items-center gap-4 mb-10 text-gray-600">
-            <h2 class="text-3xl font-black italic uppercase tracking-widest">Cluster_Beta // Furniture Sovereignty</h2>
-            <div class="h-[1px] flex-grow bg-white/10"></div>
-        </div>
-
-        <div class="grid lg:grid-cols-4 gap-6">
-            <div class="cluster-card p-8 border-l-2 border-[#0ea5e3]">
-                <h4 class="text-xl font-bold italic text-white uppercase mb-4">Mesh Alpha</h4>
-                <p class="text-[10px] text-gray-500 mb-6 uppercase font-mono">BIFMA Protocol // HS: 9401.31</p>
-                <div class="mt-auto flex gap-2"><span class="tag-sovereignty">OFFICE_SOVEREIGNTY</span></div>
+        <section class="mt-32 p-16 border border-white/5 rounded-3xl bg-white/[0.01] flex flex-col md:flex-row justify-between items-center gap-12 relative overflow-hidden">
+            <div class="max-w-2xl relative z-10">
+                <h4 class="text-[#brand-gold] font-mono text-xs uppercase tracking-[5px] mb-6">// CLUSTER_INTEGRITY_AUDIT</h4>
+                <p class="text-gray-400 text-sm leading-relaxed italic">
+                    所有 28 个工业集群节点均通过 DUNS: 545277884 实地审计。YiShen Global 确保每一个物理产出节点均挂载了最新的合规补丁（BIM/ISTA/Form E），为全球大宗采购提供物理级的确定性。
+                </p>
             </div>
-            <div class="cluster-card p-8 border-l-2 border-[#A11219]">
-                <h4 class="text-xl font-bold italic text-white uppercase mb-4">Gaming Silla</h4>
-                <p class="text-[10px] text-gray-500 mb-6 uppercase font-mono">LATAM Logistics // KD_ALGO</p>
-                <div class="mt-auto flex gap-2"><span class="tag-sovereignty">SANTOS_SYNC</span></div>
+            <div class="bg-black/50 p-10 border border-white/10 text-center rounded-xl min-w-[300px] relative z-10">
+                <span class="block text-gray-600 font-mono text-[9px] uppercase mb-2">Audit_Standard</span>
+                <span class="text-3xl font-black text-white tracking-widest uppercase italic">Verified_V5</span>
             </div>
-            <div class="cluster-card p-8 border-l-2 border-[#ffd700]">
-                <h4 class="text-xl font-bold italic text-white uppercase mb-4">E-Zone WPC</h4>
-                <p class="text-[10px] text-gray-500 mb-6 uppercase font-mono">Tropical Durable // HS: 3918.90</p>
-                <div class="mt-auto flex gap-2"><span class="tag-sovereignty">ECO_MATERIAL</span></div>
-            </div>
-            <div class="cluster-card p-8 border-l-2 border-[#0ea5e3]">
-                <h4 class="text-xl font-bold italic text-white uppercase mb-4">DTC Sofa</h4>
-                <p class="text-[10px] text-gray-500 mb-6 uppercase font-mono">Compressed Node // HS: 9401.40</p>
-                <div class="mt-auto flex gap-2"><span class="tag-sovereignty">LOGISTICS_ALPHA</span></div>
-            </div>
-        </div>
+        </section>
     </main>
 
-    <div class="fixed bottom-6 right-6 z-[5000] flex flex-col items-end gap-3 group">
-        <div class="opacity-0 group-hover:opacity-100 transition-all duration-500 bg-[#0ea5e3] text-black font-mono text-[9px] px-3 py-1 font-bold italic tracking-widest">// ACCESS_SOVEREIGNTY_DATA</div>
-        <div class="glass-panel p-3 rounded-xl shadow-2xl flex flex-wrap max-w-[200px] justify-end gap-4 transition-all duration-500">
-            <div class="h-6 opacity-60 hover:opacity-100 cursor-pointer" title="HS_7315_INTEL"><img src="assets/icons/ista-badge.webp" class="h-full"></div>
-            <div class="h-6 opacity-60 hover:opacity-100 cursor-pointer" title="ANSI_LADDER_SYNC"><img src="assets/icons/en131-badge.webp" class="h-full"></div>
-            <div class="h-6 opacity-60 hover:opacity-100 cursor-pointer" title="BIFMA_PROTOCOL"><img src="assets/icons/bifma-badge.webp" class="h-full"></div>
-            <div class="h-6 opacity-60 hover:opacity-100 cursor-pointer" title="ABS_CERTIFIED"><img src="assets/icons/iso9001.webp" class="h-full"></div>
+    <footer class="py-24 border-t border-white/5 bg-black">
+        <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">
+                © 2026 Yishen Global // Industrial_Sovereignty_Matrix
+            </div>
+            <div class="flex flex-wrap items-center gap-10 grayscale opacity-40 hover:grayscale-0 transition-all duration-1000">
+                <img src="assets/icons/bifma-badge.webp" class="h-6" alt="BIFMA">
+                <img src="assets/icons/iso9001.webp" class="h-6" alt="ISO9001">
+                <img src="assets/icons/ista-badge.webp" class="h-6" alt="ISTA">
+                <img src="assets/icons/logo-ul.webp" class="h-6" alt="UL">
+            </div>
         </div>
-    </div>
+    </footer>
 
     <script>
+        // 加载动画与进度条激活补丁
         window.addEventListener('load', () => {
             document.getElementById('bar-fill').style.width = '100%';
             setTimeout(() => {
                 document.getElementById('loading-screen').style.opacity = '0';
-                setTimeout(() => { document.getElementById('loading-screen').style.display = 'none'; }, 700);
+                setTimeout(() => { 
+                    document.getElementById('loading-screen').style.display = 'none'; 
+                    // 激活节点主权进度条
+                    document.querySelectorAll('.sov-fill').forEach(bar => {
+                        bar.style.width = bar.getAttribute('data-width');
+                    });
+                }, 700);
             }, 2500);
+        });
+
+        // GPU 鼠标追踪引擎
+        const glow = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => {
+            requestAnimationFrame(() => {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top = e.clientY + 'px';
+            });
         });
     </script>
 </body>
