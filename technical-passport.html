@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Technical Passport | Industrial Intelligence Matrix | YISHEN GLOBAL</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="styles.css?v=2026.FINAL.MASTER">
+
+    <style>
+        :root { --neon-blue: #0ea5e3; --brand-red: #A11219; --deep-space: #010409; --industrial-gray: #1e293b; }
+        body { background-color: var(--deep-space); color: #e6edf3; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+        /* GPU 加速主权微光 */
+        #cursor-glow {
+            position: fixed; width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
+            border-radius: 50%; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%);
+            will-change: transform; mix-blend-mode: screen;
+        }
+
+        /* CYBER SCAN 动漫扫描线动效 - 象征主权验证 */
+        .main-scanner {
+            position: relative; overflow: hidden; background: #000;
+            border: 1px solid var(--industrial-gray); min-height: 500px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .main-scanner::after {
+            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
+            background: var(--neon-blue); opacity: 0.6; box-shadow: 0 0 20px var(--neon-blue);
+            animation: scanLine 3s infinite ease-in-out;
+        }
+        @keyframes scanLine { 0% { top: 0% } 50% { top: 100% } 100% { top: 0% } }
+
+        /* 技术参数表 - 数字化对撞风格 */
+        .passport-table { width: 100%; border-collapse: collapse; }
+        .passport-table td { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .label-mono { font-family: 'JetBrains Mono'; font-size: 0.65rem; color: #64748b; text-transform: uppercase; letter-spacing: 2px; }
+        .value-bold { color: #fff; font-weight: 700; text-align: right; font-family: 'JetBrains Mono'; }
+
+        /* 物理防挤压页脚 */
+        footer a { flex: 0 0 auto !important; }
+        footer img { max-width: none !important; min-width: 80px; }
+        
+        @media (max-width: 768px) {
+            .hero-pt { padding-top: 140px !important; }
+            .mobile-items-center { align-items: center !important; text-align: center !important; width: 100% !important; }
+        }
+    </style>
+</head>
+<body class="bg-[#010409]">
+
+    <div id="cursor-glow"></div>
+
+    <nav id="master-nav" class="fixed top-0 left-0 w-full z-[100000] bg-[#010409]/95 backdrop-blur-xl border-b border-white/5 h-20 flex items-center">
+        <div class="max-w-[1440px] mx-auto px-6 w-full flex items-center justify-between">
+            <a href="index.html" class="site-logo">
+                <svg width="280" height="32" viewBox="0 0 280 32" fill="none">
+                    <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
+                    <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
+                    <text x="56" y="18" fill="white" style="font-family:'Inter'; font-weight:700; font-size:18px;">Yishen Global</text>
+                </svg>
+            </a>
+            <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400">
+                <a href="index.html" class="hover:text-white transition">SYSTEM_ROOT</a>
+                <a href="sovereign-matrix.html" class="hover:text-white transition">ASSET_MATRIX</a>
+                <a href="contact.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase">INITIATE_AUDIT</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-pt" style="padding: 180px 8% 60px; background: linear-gradient(90deg, #010409 40%, transparent 100%);">
+        <div class="max-w-[1440px]">
+            <span class="font-mono text-[#0ea5e3] tracking-[6px] text-xs uppercase" id="sku-sector-tag">[ LOADING_TECHNICAL_PASSPORT ]</span>
+            <h1 id="sku-main-title" class="text-white text-[clamp(2.5rem, 8vw, 4.5rem)] font-black my-6 uppercase italic tracking-tighter">—— ——</h1>
+            <p id="sku-desc" class="text-gray-400 max-w-[700px] text-lg leading-relaxed italic border-l-2 border-[#0ea5e3] pl-8">
+                正在从全球主权数据库检索工程证据：包含 BIM 建模数据、海关 HS 规格及 ISTA 生存概率。
+            </p>
+        </div>
+    </header>
+
+    <main class="py-12 px-[8%] max-w-[1440px] mx-auto">
+        <div class="grid lg:grid-cols-2 gap-20">
+            <div class="space-y-10">
+                <div class="main-scanner">
+                    <img id="sku-primary-img" src="https://yishenglobal.net/assets/mesh.webp" alt="Physical Architecture Spec" class="w-4/5 h-4/5 object-contain grayscale hover:grayscale-0 transition-all duration-700">
+                </div>
+                
+                <div class="p-10 bg-[#A11219]/5 border border-[#A11219]/20">
+                    <h4 class="font-mono text-[#A11219] text-[10px] tracking-[4px] uppercase mb-4">// 2026_PREDICTIVE_MAINTENANCE</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed font-inter">
+                        预测方向：该 SKU 已通过“数字化双胞胎”压力测试。预计在北美高频率商用环境下，其物理结构主权可保持 15 年以上，优于行业标准 34%。符合即将到来的 **CBAM 碳交易审计**。
+                    </p>
+                </div>
+            </div>
+
+            <div class="space-y-12">
+                <div class="p-10 bg-white/[0.02] border border-white/5">
+                    <h3 class="text-xl font-black mb-8 italic uppercase text-[#0ea5e3]">Deterministic Specifications</h3>
+                    <table class="passport-table" id="sku-spec-table">
+                        </table>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-8 border border-white/10 bg-white/[0.01]">
+                        <span class="font-mono text-gray-600 text-[9px] tracking-[2px] uppercase">Transit_Survival</span>
+                        <div id="sku-fail" class="text-3xl font-black text-white mt-4">--%</div>
+                        <p class="text-[9px] text-gray-600 mt-2">ISTA-6A Physical Validation</p>
+                    </div>
+                    <div class="p-8 border border-white/10 bg-white/[0.01]">
+                        <span class="font-mono text-gray-600 text-[9px] tracking-[2px] uppercase">CBM_Efficiency</span>
+                        <div id="sku-cbm" class="text-3xl font-black text-[#0ea5e3] mt-4">--%</div>
+                        <p class="text-[9px] text-gray-600 mt-2">Container Load Optimization</p>
+                    </div>
+                </div>
+
+                <button onclick="window.location.href='contact.html'" class="w-full py-6 bg-white text-black font-black uppercase tracking-[6px] hover:bg-[#0ea5e3] hover:text-white transition-all shadow-2xl">
+                    Request_Sovereign_Audit
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#000] py-24 border-t border-white/5">
+        <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="mobile-items-center">
+                <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Passport_Verified</div>
+            </div>
+            <div class="flex gap-10 grayscale hover:grayscale-0 transition-all duration-700 opacity-40">
+                <a href="https://www.bifma.org" target="_blank"><img src="https://yishenglobal.net/assets/bifma-badge.png" class="h-6 w-auto"></a>
+                <a href="https://ista.org" target="_blank"><img src="https://yishenglobal.net/assets/ista-badge.png" class="h-6 w-auto"></a>
+                <a href="https://www.iso.org" target="_blank"><img src="https://yishenglobal.net/assets/iso9001.png" class="h-6 w-auto"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 数据库扩展：集成办公、航天、长虹制链、建材
+        const PASSPORT_DB = {
+            "OFFICE_MESH": {
+                sector: "OFFICE_SOVEREIGNTY",
+                title: "High-End Mesh Terminal",
+                desc: "集成 2026 物理主权：针对北美大型办公空间，提供 BIFMA 顶配验证与 ISTA 零破损物流方案。",
+                img: "https://yishenglobal.net/assets/mesh.webp",
+                specs: { "Actuation": "Kinetic Sync-Tilt", "Mesh_Density": "Industrial 1200D", "Load_Rating": "350 LBS Certified", "HS_CODE": "9401.31.00" },
+                logistics: { cbm: "97.8%", fail: "0.01%" }
+            },
+            "CHAIN_7315": {
+                sector: "CHANGHONG_INDUSTRIAL",
+                title: "Tensile Chain Node G80",
+                desc: "长虹制链核心资产：G80 级结构钢，针对重型起重与牵引系统设计的确定性工业节点。",
+                img: "https://yishenglobal.net/assets/mesh.webp",
+                specs: { "Material": "Grade 80 Steel", "Breaking_Force": "12,000 KG", "HS_CODE": "7315.82.00", "Coating": "Hot-Dip Galv" },
+                logistics: { cbm: "99.4%", fail: "0.00%" }
+            },
+            "BAMBOO_FLOOR": {
+                sector: "BIO_MATERIALS",
+                title: "Carbon-Negative Bamboo",
+                desc: "户外重竹地板：应对 CBAM 碳关税的先锋材料，具备极致的尺寸稳定性与 LEED 点数集成。",
+                img: "https://yishenglobal.net/assets/mesh.webp",
+                specs: { "Density": "1.15 g/cm³", "Janka_Hardness": "3500+", "HS_CODE": "4418.75.00", "Fire_Rating": "Class B1" },
+                logistics: { cbm: "96.5%", fail: "0.02%" }
+            }
+        };
+
+        function renderPassport() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const nodeID = urlParams.get('id') || "OFFICE_MESH";
+            const data = PASSPORT_DB[nodeID];
+            if (!data) return;
+
+            document.getElementById('sku-sector-tag').innerText = `[ SECTOR: ${data.sector} ]`;
+            document.getElementById('sku-main-title').innerText = data.title;
+            document.getElementById('sku-desc').innerText = data.desc;
+            document.getElementById('sku-primary-img').src = data.img;
+            document.getElementById('sku-cbm').innerText = data.logistics.cbm;
+            document.getElementById('sku-fail').innerText = data.logistics.fail;
+
+            document.getElementById('sku-spec-table').innerHTML = Object.entries(data.specs).map(([key, val]) => 
+                `<tr><td class="label-mono">${key}</td><td class="value-bold">${val}</td></tr>`
+            ).join('');
+        }
+
+        window.onload = renderPassport;
+
+        const glow = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => {
+            requestAnimationFrame(() => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; });
+        });
+    </script>
+</body>
+</html>
