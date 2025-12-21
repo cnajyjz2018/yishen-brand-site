@@ -6,108 +6,97 @@
 
     <url>
         <loc>https://yishenglobal.net/</loc>
-        <lastmod>2026-01-01</lastmod>
+        <lastmod>2026-01-20</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
     </url>
-    <url>
-        <loc>https://yishenglobal.net/index.html</loc>
-        <lastmod>2026-01-01</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.00</priority>
-    </url>
-
     <url>
         <loc>https://yishenglobal.net/genesis.html</loc>
-        <lastmod>2026-01-01</lastmod>
+        <lastmod>2026-01-20</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.90</priority>
-    </url>
-    <url>
-        <loc>https://yishenglobal.net/yishen-genesis.html</loc>
-        <lastmod>2026-01-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.90</priority>
-    </url>
-
-    <url>
-        <loc>https://yishenglobal.net/resources.html</loc>
-        <lastmod>2026-01-01</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.95</priority>
-    </url>
-    <url>
-        <loc>https://yishenglobal.net/intelligence-intel.html</loc>
-        <lastmod>2026-01-01</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.90</priority>
-    </url>
-
-    <url>
-        <loc>https://yishenglobal.net/clusters.html</loc>
-        <lastmod>2026-01-01</lastmod>
-        <changefreq>weekly</changefreq>
         <priority>0.90</priority>
     </url>
     <url>
         <loc>https://yishenglobal.net/sovereign-matrix.html</loc>
-        <lastmod>2026-01-01</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.95</priority>
-    </url>
-
-    <url>
-        <loc>https://yishenglobal.net/operational-systems.html</loc>
-        <lastmod>2026-01-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://yishenglobal.net/technical-passport.html</loc>
-        <lastmod>2026-01-01</lastmod>
+        <lastmod>2026-01-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
     </url>
     <url>
         <loc>https://yishenglobal.net/tactical-briefing.html</loc>
-        <lastmod>2026-01-01</lastmod>
-        <changefreq>monthly</changefreq>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>daily</changefreq>
         <priority>0.95</priority>
     </url>
-
     <url>
-        <loc>https://yishenglobal.net/duns.html</loc>
-        <lastmod>2026-01-01</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.80</priority>
+        <loc>https://yishenglobal.net/resources.html</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
     </url>
 
     <url>
-        <loc>https://yishenglobal.net/assets/docs/brazil-exemption-guide.pdf</loc>
-        <lastmod>2026-01-01</lastmod>
+        <loc>https://yishenglobal.net/technical-passport.html?id=MARINE_CHAIN</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://yishenglobal.net/technical-passport.html?id=MEDICAL_CHAIR</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://yishenglobal.net/technical-passport.html?id=INDUSTRIAL_LADDER</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://yishenglobal.net/technical-passport.html?id=OFFICE_MESH_V4</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <url>
+        <loc>https://yishenglobal.net/assets/docs/brazil-exemption-cert.pdf</loc>
+        <lastmod>2026-01-20</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://yishenglobal.net/assets/docs/form-e-origin-proof.pdf</loc>
+        <lastmod>2026-01-20</lastmod>
         <priority>0.70</priority>
     </url>
     <url>
         <loc>https://yishenglobal.net/assets/docs/ladder-tariff-solution.pdf</loc>
-        <lastmod>2026-01-01</lastmod>
+        <lastmod>2026-01-20</lastmod>
         <priority>0.70</priority>
     </url>
     <url>
-        <loc>https://yishenglobal.net/assets/docs/bifma.pdf</loc>
-        <lastmod>2026-01-01</lastmod>
-        <priority>0.60</priority>
+        <loc>https://yishenglobal.net/assets/docs/bifma-report.pdf</loc>
+        <lastmod>2026-01-20</lastmod>
+        <priority>0.65</priority>
     </url>
     <url>
-        <loc>https://yishenglobal.net/assets/docs/en131.pdf</loc>
-        <lastmod>2026-01-01</lastmod>
-        <priority>0.60</priority>
+        <loc>https://yishenglobal.net/assets/docs/iso13485-medical.pdf</loc>
+        <lastmod>2026-01-20</lastmod>
+        <priority>0.65</priority>
     </url>
 
     <url>
-        <loc>https://yishenglobal.net/site-architecture.html</loc>
-        <lastmod>2026-01-01</lastmod>
+        <loc>https://yishenglobal.net/duns.html</loc>
+        <lastmod>2026-01-20</lastmod>
         <changefreq>yearly</changefreq>
-        <priority>0.70</priority>
+        <priority>0.50</priority>
+    </url>
+    <url>
+        <loc>https://yishenglobal.net/site-architecture.html</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.50</priority>
     </url>
 
 </urlset>
