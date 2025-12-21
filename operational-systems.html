@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Operational Systems | Logistics & Manufacturing Sovereignty | YISHEN GLOBAL</title>
+    
+    <meta name="description" content="Yishen Global provides coordinated industrial systems. Transitioning from fragmented sourcing to integrated vertical sovereignty.">
+    <meta name="theme-color" content="#010409">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="master-architect.css?v=2026.MASTER">
+
+    <style>
+        /* 页面特有拓扑背景对撞逻辑 */
+        .page-hero {
+            height: 70vh; display: flex; align-items: center;
+            background: linear-gradient(90deg, #010409 35%, rgba(1, 4, 9, 0.4) 75%, transparent 100%), 
+                        url('https://yishenglobal.net/assets/mesh.webp');
+            background-size: cover; background-position: center right; position: relative; padding: 0 8%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .system-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+            gap: 1px; 
+            background: rgba(255,255,255,0.05); 
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .system-card { 
+            background: #010409; 
+            padding: 80px 60px; 
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .system-card:hover { background: rgba(14, 165, 233, 0.03); transform: translateY(-5px); }
+
+        @media (max-width: 768px) {
+            .page-hero { height: auto; padding: 160px 8% 80px; }
+            .system-card { padding: 40px; }
+        }
+    </style>
+</head>
+<body class="bg-[#010409] text-white selection:bg-[#0ea5e3] topology-bg">
+
+    <div id="cursor-glow"></div>
+
+    <nav id="master-nav">
+        <div class="nav-container">
+            <a href="index.html" class="site-logo">
+                <svg width="280" height="32" viewBox="0 0 280 32" fill="none">
+                    <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
+                    <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
+                    <text x="56" y="18" fill="white" style="font-family:'Inter'; font-weight:700; font-size:18px;">Yishen Global</text>
+                </svg>
+            </a>
+            <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400">
+                <a href="yishen-genesis.html" class="hover:text-white transition">01_GENESIS</a>
+                <a href="industrial-nodes.html" class="hover:text-white transition">02_NODES</a>
+                <a href="operational-systems.html" class="text-white border-b border-[#0ea5e3]">03_SYSTEMS</a>
+                <a href="tactical-briefing.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase tracking-tighter">04_COMMAND</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="max-w-[1200px] z-10">
+            <span class="font-mono text-[#0ea5e3] tracking-[5px] uppercase text-xs animate-pulse">// SYSTEM_OPERATIONAL_LOGIC_V4</span>
+            <h1 class="text-white text-[clamp(2.5rem,8vw,5rem)] font-[900] leading-[1.0] my-8 uppercase italic tracking-tighter">
+                Operational Systems.
+            </h1>
+            <p class="text-gray-400 max-w-2xl text-lg leading-relaxed italic border-l-2 border-[#A11219] pl-8">
+                Beyond service provision: We deploy integrated ecosystems for global inventory security. Converging manufacturing nodes with logistics sovereignty.
+            </p>
+        </div>
+    </header>
+
+    <main class="py-24 px-[8%]">
+        <div class="max-w-[1440px] mx-auto">
+            
+            <div class="system-grid">
+                <div class="system-card">
+                    <div>
+                        <div class="flex justify-between items-start mb-12">
+                            <div class="sov-badge"><span class="badge-label">SYSTEM</span><span class="badge-value">VERTICAL_INTEGRATION</span></div>
+                            <div class="sov-badge" style="border-left-color: var(--performance-red);"><span class="badge-label">NODE</span><span class="badge-value">TIER-1_DIRECT</span></div>
+                        </div>
+                        <h3 class="text-3xl font-black uppercase italic mb-6">Manufacturing Sovereignty</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-10">
+                            从原材料（竹木、钢材、高分子材料）的源头控制到 28 个集群节点的精密生产。我们通过物理主权消灭所有中介变量，确保 100% 的质量穿透力。
+                        </p>
+                    </div>
+                    <div class="font-mono text-[10px] text-[#0ea5e3] tracking-widest uppercase">Status: Core_Operational</div>
+                </div>
+
+                <div class="system-card">
+                    <div>
+                        <div class="flex justify-between items-start mb-12">
+                            <div class="sov-badge"><span class="badge-label">SYSTEM</span><span class="badge-value">LOGISTICS_SOVEREIGNTY</span></div>
+                            <div class="sov-badge" style="border-left-color: #f59e0b;"><span class="badge-label">RISK</span><span class="badge-value">ZERO_VOLATILITY</span></div>
+                        </div>
+                        <h3 class="text-3xl font-black uppercase italic mb-6">Fulfillment Systems</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-10">
+                            通过全球物流中枢集成 DDP/LDP 协议。锁定到岸价格与交期变量，为大型进口商提供从工厂端到指定仓库的无缝、高确定性履约路径。
+                        </p>
+                    </div>
+                    <div class="font-mono text-[10px] text-[#0ea5e3] tracking-widest uppercase">Status: Global_Reach_Verified</div>
+                </div>
+            </div>
+
+            
+
+            <div class="agent-console p-12 mt-32 border border-white/10 relative">
+                <div class="absolute top-0 right-0 p-4 font-mono text-[8px] text-white/10 uppercase tracking-[2px]">Auth: YIS_HQ_ACCESS</div>
+                <div class="flex items-center justify-between mb-8">
+                    <h4 class="text-[#0ea5e3] font-mono text-[10px] tracking-[4px] uppercase animate-pulse">// SYSTEM_AGENT_READY</h4>
+                    <span class="text-[9px] font-mono text-gray-600 uppercase italic">Reddit_Pulse: Active</span>
+                </div>
+                <div class="flex flex-col md:flex-row gap-4 mb-8">
+                    <input type="text" id="user-task" placeholder="下达系统指令，例如：优化北美 LDP 履约成本映射..." class="flex-1 bg-black border border-white/10 p-5 text-xs font-mono outline-none text-[#0ea5e3] focus:border-[#0ea5e3]">
+                    <button onclick="runAgent()" class="execute-btn px-10 py-5 text-xs">Execute_Briefing</button>
+                </div>
+                <div id="agent-output" class="terminal-log min-h-[80px] bg-black/50 p-5 border-l-2 border-[#0ea5e3]">
+                    > System ready for operational mapping.
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-black py-24 border-t border-white/5 font-inter">
+        <div class="max-w-[1440px] mx-auto px-8">
+            <div class="flex flex-wrap gap-4 mb-16 justify-center md:justify-start">
+                <div class="sov-badge"><span class="badge-label">PROTOCOL</span><span class="badge-value">BIFMA X5.1</span></div>
+                <div class="sov-badge" style="border-left-color: var(--performance-red);"><span class="badge-label">TEST_SYNC</span><span class="badge-value">ISTA 6A</span></div>
+                <div class="sov-badge"><span class="badge-label">GOVERNANCE</span><span class="badge-value">ISO 9001</span></div>
+                <div class="sov-badge pay-sov"><span class="badge-label">FINANCE</span><span class="badge-value">VISA_SECURED</span></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-12 border-t border-white/5 pt-12">
+                <div class="mobile-items-center">
+                    <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Command_Center_Sovereign</div>
+                    <div class="flex gap-6 mt-4 text-[9px] font-mono text-gray-800 uppercase tracking-widest">
+                        <a href="site-architecture.html" class="hover:text-white transition">Blueprint_Map</a> / 
+                        <a href="sovereign-index.xml" target="_blank" class="hover:text-white transition">XML_Index</a>
+                    </div>
+                </div>
+                <div class="font-mono text-[8px] uppercase tracking-[3px] text-gray-600 italic">
+                    Sovereignty through engineering precision.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="global-mapping-gate.js?v=2026.FINAL"></script>
+    <script src="hq-core-gate.js?v=2026.FINAL"></script>
+    <script src="terminal-logic.js?v=2026.FINAL"></script>
+
+    <script>
+        // GPU 渲染引擎同步
+        const glow = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => {
+            requestAnimationFrame(() => {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top = e.clientY + 'px';
+            });
+        });
+
+        // AI Agent 实战模拟
+        function runAgent() {
+            const input = document.getElementById('user-task');
+            const output = document.getElementById('agent-output');
+            if(!input.value) return;
+            const steps = [
+                `> INITIATING_OPERATIONAL_SYNC: [${input.value.toUpperCase()}]`,
+                "> ANALYZING_TIER-1_NODE_CAPACITY...",
+                "> MAPPING_LDP_CUSTOMS_PROTOCOLS...",
+                "> SUCCESS: OPERATIONAL_SYSTEM_STABLE_FOR_DEPLOYMENT."
+            ];
+            output.innerHTML = ""; let i = 0;
+            const interval = setInterval(() => {
+                output.innerHTML += `<div class="mb-1">${steps[i]}</div>`;
+                i++;
+                if(i === steps.length) clearInterval(interval);
+            }, 600);
+        }
+    </script>
+</body>
+</html>
