@@ -1,56 +1,116 @@
 {
-  "OFFICE_MESH_V4": {
-    "sector": "OFFICE_INFRASTRUCTURE",
-    "title": "Architectural Task System A1",
-    "target_persona": "Ecommerce Giants / Corporate Procurement / VP of Sourcing",
-    "battle_hook": "Eliminating furniture delivery noise for Fortune 500 clusters via BIFMA X5.1-2026 deterministic structural integrity.",
-    "competitor_clash": ["Herman Miller", "Steelcase", "Haworth"],
-    "rocketreach_keywords": ["VP Sourcing", "Category Manager Office Furniture", "Director of Global Procurement"],
-    "logistics_edge": "97.2% CBM Efficiency / 0.01% Transit Failure Probability"
+  "strategic_metadata": {
+    "version": "5.0.MASTER",
+    "last_collision": "2026-01-20T HQ_SIGNAL_SYNC",
+    "authority": "Strategic Architecture Group",
+    "global_status": "OPERATIONAL"
   },
-  "MED_BIOMECH_9002": {
-    "sector": "MEDICAL_HEALTHCARE",
-    "title": "Sterile Clinical Hub Node",
-    "target_persona": "Hospital Facility Managers / Clinical Operations Directors",
-    "battle_hook": "Sovereign sterility via Silver-Ion Shield Polymer. ISO 22196 verified antimicrobial seating architecture.",
-    "competitor_clash": ["Stryker", "Steelcase Health", "Hillrom"],
-    "rocketreach_keywords": ["Director of Clinical Operations", "Hospital Facility Manager", "Healthcare Procurement Lead"],
-    "logistics_edge": "Medical-Grade Sterile Packaging / 96.5% CBM Density"
+  "market_sectors": {
+    "OFFICE_SOVEREIGNTY": {
+      "hs_code": "9401.31",
+      "target_region": "NORTH_AMERICA",
+      "sovereign_patch": "BIFMA_ANSI_SYNERGY",
+      "title": "Architectural Task System A1",
+      "target_persona": "Ecommerce Giants / Corporate Procurement / VP of Sourcing",
+      "battle_hook": "Eliminating furniture delivery noise for Fortune 500 clusters via BIFMA X5.1-2026 deterministic structural integrity.",
+      "pain_points": ["Ergonomic Failures", "High Return Rates", "Lead Time Volatility"],
+      "competitor_clash": ["Herman Miller", "Steelcase", "Haworth"],
+      "rocketreach_keywords": ["VP Sourcing", "Category Manager Office Furniture", "Director of Global Procurement"],
+      "top_targets": [
+        {"name": "ODP Corporation", "priority": "CRITICAL"},
+        {"name": "Amazon Commercial Sourcing", "priority": "HIGH"},
+        {"name": "Steelcase Partner Network", "priority": "MEDIUM"}
+      ],
+      "logistics_edge": "97.2% CBM Efficiency / 0.01% Transit Failure Probability"
+    },
+    "MEDICAL_PRECISION": {
+      "hs_code": "9402.10",
+      "target_region": "ASEAN",
+      "sovereign_patch": "FORM_E_DUTY_FREE",
+      "title": "Sterile Clinical Hub Node",
+      "target_persona": "Hospital Facility Managers / Clinical Operations Directors",
+      "battle_hook": "Sovereign sterility via Silver-Ion Shield Polymer. ISO 22196 verified antimicrobial seating architecture.",
+      "pain_points": ["Hygiene Compliance", "Duty Costs", "Cross-Contamination Risks"],
+      "competitor_clash": ["Stryker", "Steelcase Health", "Hillrom"],
+      "rocketreach_keywords": ["Director of Clinical Operations", "Hospital Facility Manager", "Healthcare Procurement Lead"],
+      "top_targets": [
+        {"name": "B. Braun Melsungen AG (ASEAN Node)", "priority": "CRITICAL"},
+        {"name": "Silas Medical Thailand", "priority": "HIGH"},
+        {"name": "Kalbe Farma Indonesia", "priority": "HIGH"}
+      ],
+      "logistics_edge": "Medical-Grade Sterile Packaging / 96.5% CBM Density"
+    },
+    "MILITARY_AERO": {
+      "hs_code": "9401.10",
+      "target_region": "GLOBAL",
+      "sovereign_patch": "MIL_STD_HARDENING",
+      "title": "Tactical Command Seating",
+      "target_persona": "Gov Contractors / Defense Infrastructure Architects",
+      "battle_hook": "Deterministic 9G shockproof resistance for mission-critical nodes. MIL-STD-810H compliant command terminal.",
+      "pain_points": ["Tactical Reliability", "Static Discharge", "9G Shock Impact"],
+      "competitor_clash": ["Martin-Baker", "Recaro Aircraft Seating", "Iacobucci HF"],
+      "rocketreach_keywords": ["Defense Contractor Procurement", "Military Infrastructure Lead", "Command Center Architect"],
+      "top_targets": [
+        {"name": "Lockheed Martin (Supply Chain)", "priority": "CRITICAL"},
+        {"name": "NATO Procurement Node", "priority": "HIGH"}
+      ],
+      "logistics_edge": "95.8% Survival Modeling / ISTA-6A Military Grade"
+    },
+    "BIO_MATERIALS": {
+      "hs_code": "4418.75",
+      "target_region": "EUROPE",
+      "sovereign_patch": "CBAM_READY_NODE",
+      "title": "Structural Bamboo Decking",
+      "target_persona": "EU Real Estate Developers / Sustainability Officers (CSO)",
+      "battle_hook": "Carbon-negative architectural sovereignty. FSC & CBAM certified hedge against EU Carbon Border taxes.",
+      "pain_points": ["Carbon Tax (CBAM)", "FSC Certification", "Dimensional Stability"],
+      "competitor_clash": ["Moso Bamboo", "Dasso Group", "Composite Decking OEMs"],
+      "rocketreach_keywords": ["Chief Sustainability Officer", "Director of Construction", "Real Estate Developer EU"],
+      "top_targets": [
+        {"name": "IKEA Sustainability Group", "priority": "HIGH"},
+        {"name": "Vinci Construction France", "priority": "MEDIUM"}
+      ],
+      "logistics_edge": "Dimension Stability < 0.04% / 98.5% Load Optimization"
+    },
+    "MARINE_LOGISTICS": {
+      "hs_code": "7315.82",
+      "target_region": "LATAM",
+      "sovereign_patch": "BRAZIL_AD_EXEMPTION",
+      "title": "Heavy-Node Anchor Chain G80",
+      "target_persona": "Port Authorities / Maritime Supply Chain Directors",
+      "battle_hook": "G80 deterministic tensile matrix (850 KN). 120μm Hot-Dip Galvanized armor for high-corrosive maritime rigging.",
+      "pain_points": ["Anti-Dumping Duties", "Corrosion Resistance", "Tensile Reliability"],
+      "competitor_clash": ["Peerless Chain", "Columbus McKinnon", "Crosby Group"],
+      "rocketreach_keywords": ["Director of Port Operations", "Maritime Supply Chain Manager", "Lifting Specialty Buyer"],
+      "top_targets": [
+        {"name": "Santos Port Operations", "priority": "CRITICAL"},
+        {"name": "Petrobras Logistics", "priority": "HIGH"},
+        {"name": "Wilson Sons Brazil", "priority": "MEDIUM"}
+      ],
+      "logistics_edge": "99.2% Packing Density / ABS & DNV Certified Node"
+    },
+    "INDUSTRIAL_HARDWARE": {
+      "hs_code": "7616.99",
+      "target_region": "ASEAN_REEXPORT",
+      "sovereign_patch": "ANSI_DUTY_SHIELD",
+      "title": "High-Security Modular Node",
+      "target_persona": "Security System Integrators / Global Hardware Distributors",
+      "battle_hook": "Anti-intrusion locking architecture with Grade 5 corrosion resistance. 500,000 cycle industrial life-cycle.",
+      "pain_points": ["Intrusion Risks", "Component Wear", "Tariff Vulnerability"],
+      "competitor_clash": ["Assa Abloy", "Allegion", "Dormakaba"],
+      "rocketreach_keywords": ["Category Manager Hardware", "Security Solutions Director", "Wholesale Lock Distributor"],
+      "top_targets": [
+        {"name": "Allegion PLC (Global Sourcing)", "priority": "HIGH"},
+        {"name": "Grainger Industrial Supply", "priority": "MEDIUM"}
+      ],
+      "logistics_edge": "98.9% Cubic Efficiency / 0.02% Failure Rate"
+    }
   },
-  "AERO_COMMAND_A01": {
-    "sector": "AERO_MILITARY",
-    "title": "Tactical Command Seating",
-    "target_persona": "Gov Contractors / Defense Infrastructure Architects",
-    "battle_hook": "Deterministic 9G shockproof resistance for mission-critical nodes. MIL-STD-810H compliant command terminal.",
-    "competitor_clash": ["Martin-Baker", "Recaro Aircraft Seating", "Iacobucci HF"],
-    "rocketreach_keywords": ["Defense Contractor Procurement", "Military Infrastructure Lead", "Command Center Architect"],
-    "logistics_edge": "95.8% Survival Modeling / ISTA-6A Military Grade"
-  },
-  "BAMBOO_CBAM_READY": {
-    "sector": "BIO_BUILDING_MATERIALS",
-    "title": "Structural Bamboo Decking",
-    "target_persona": "EU Real Estate Developers / Sustainability Officers (CSO)",
-    "battle_hook": "Carbon-negative architectural sovereignty. FSC & CBAM certified hedge against EU Carbon Border taxes.",
-    "competitor_clash": ["Moso Bamboo", "Dasso Group", "Composite Decking OEMs"],
-    "rocketreach_keywords": ["Chief Sustainability Officer", "Director of Construction", "Real Estate Developer EU"],
-    "logistics_edge": "Dimension Stability < 0.04% / 98.5% Load Optimization"
-  },
-  "CHAIN_G80_MASTER": {
-    "sector": "MARINE_LOGISTICS",
-    "title": "Heavy-Node Anchor Chain G80",
-    "target_persona": "Port Authorities / Maritime Supply Chain Directors",
-    "battle_hook": "G80 deterministic tensile matrix (850 KN). 120μm Hot-Dip Galvanized armor for high-corrosive maritime rigging.",
-    "competitor_clash": ["Peerless Chain", "Columbus McKinnon", "Crosby Group"],
-    "rocketreach_keywords": ["Director of Port Operations", "Maritime Supply Chain Manager", "Lifting Specialty Buyer"],
-    "logistics_edge": "99.2% Packing Density / ABS & DNV Certified Node"
-  },
-  "LOCK_ULTRA_S1": {
-    "sector": "INDUSTRIAL_HARDWARE",
-    "title": "High-Security Modular Lock",
-    "target_persona": "Security System Integrators / Global Hardware Distributors",
-    "battle_hook": "Anti-intrusion locking architecture with Grade 5 corrosion resistance. 500,000 cycle industrial life-cycle.",
-    "competitor_clash": ["Assa Abloy", "Allegion", "Dormakaba"],
-    "rocketreach_keywords": ["Category Manager Hardware", "Security Solutions Director", "Wholesale Lock Distributor"],
-    "logistics_edge": "98.9% Cubic Efficiency / 0.02% Failure Rate"
+  "auto_responder_templates": {
+    "ASEAN_MEDICAL": {
+      "trigger": "MEDICAL_PRECISION_SUBMISSION",
+      "dispatch_delay": "180s",
+      "attachments": ["iso13485_cert.pdf", "form_e_draft.pdf", "biotech_report.pdf"]
+    }
   }
 }
