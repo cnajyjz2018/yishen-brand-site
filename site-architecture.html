@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Site Architecture | Sovereign System Blueprint | YISHEN GLOBAL</title>
+    <title>Blueprint | Sovereign System Architecture | YISHEN GLOBAL</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
@@ -15,7 +15,6 @@
             --performance-red: #A11219; 
             --brand-gold: #ffd700;
             --deep-space: #010409; 
-            --navbar-height: 80px; 
         }
         body { background-color: var(--deep-space); color: #e6edf3; font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
@@ -27,47 +26,45 @@
             will-change: transform; mix-blend-mode: screen;
         }
 
-        /* 拓扑拓扑连线背景 */
+        /* 拓扑连线背景 */
         .topology-bg {
-            background-image: radial-gradient(rgba(14, 165, 233, 0.1) 1px, transparent 1px);
+            background-image: radial-gradient(rgba(14, 165, 233, 0.08) 1.5px, transparent 1.5px);
             background-size: 40px 40px;
         }
 
         /* 架构节点样式：深度对位 V5.0 */
         .arch-node {
-            background: rgba(13, 17, 23, 0.8);
+            background: rgba(13, 17, 23, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 30px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 35px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             height: 100%;
         }
         .arch-node:hover {
             border-color: var(--neon-blue);
             background: rgba(14, 165, 233, 0.04);
-            transform: translateX(10px);
-            box-shadow: -10px 0 30px rgba(14,165,233,0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
 
-        .layer-label { font-family: 'JetBrains Mono'; font-size: 0.65rem; letter-spacing: 4px; color: var(--neon-blue); text-transform: uppercase; margin-bottom: 2rem; display: block; }
+        .layer-label { font-family: 'JetBrains Mono'; font-size: 0.65rem; letter-spacing: 4px; color: var(--neon-blue); text-transform: uppercase; margin-bottom: 1.5rem; display: block; }
         
-        /* 状态指示器 */
-        .status-active { width: 6px; height: 6px; background: #10b981; border-radius: 50%; display: inline-block; margin-right: 8px; box-shadow: 0 0 10px #10b981; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+        /* 逻辑连接线补丁 */
+        .flow-line { height: 1px; background: linear-gradient(90deg, var(--neon-blue), transparent); width: 100%; margin: 20px 0; opacity: 0.2; }
 
-        /* [PATCH] 加载仪式感补丁 */
+        .status-active { width: 6px; height: 6px; background: #10b981; border-radius: 50%; display: inline-block; margin-right: 10px; box-shadow: 0 0 10px #10b981; }
+
         #loading-screen { position: fixed; inset: 0; z-index: 100001; background: #010409; display: flex; flex-direction: column; items: center; justify-content: center; }
         #bar-fill { height: 100%; background: var(--neon-blue); width: 0%; transition: 2s cubic-bezier(0.1, 0.5, 0.1, 1); }
-
-        .sovereign-tag { padding: 4px 10px; border: 1px solid rgba(255,255,255,0.1); font-family: 'JetBrains Mono'; font-size: 8px; text-transform: uppercase; color: #8b949e; }
     </style>
 </head>
 <body class="selection:bg-[#0ea5e3] topology-bg">
 
     <div id="loading-screen">
-        <span class="text-white font-black italic text-2xl uppercase tracking-tighter">Architecture_Vault_Sync</span>
+        <span class="text-white font-black italic text-2xl uppercase tracking-tighter">Blueprint_Vault_Sync</span>
         <div class="w-48 h-[2px] bg-white/10 mt-6"><div id="bar-fill"></div></div>
-        <span class="text-[#0ea5e3] font-mono text-[8px] mt-4 tracking-[4px] animate-pulse">// MAPPING_SOVEREIGN_BLUEPRINT_V5...</span>
+        <span class="text-[#0ea5e3] font-mono text-[8px] mt-4 tracking-[4px] animate-pulse">// AUTHORIZING_SYSTEM_AUDIT_V5...</span>
     </div>
 
     <div id="cursor-glow"></div>
@@ -76,12 +73,12 @@
         <div class="max-w-[1440px] mx-auto w-full flex items-center justify-between">
             <a href="index.html" class="flex flex-col">
                 <span class="text-white font-black italic text-xl tracking-tighter uppercase leading-none">Yishen Global</span>
-                <span class="text-[#0ea5e3] font-mono text-[8px] tracking-[3px]">SYSTEM_ARCH_V5.0</span>
+                <span class="text-[#0ea5e3] font-mono text-[8px] tracking-[3px]">ARCHITECTURE_BLUEPRINT_V5.0</span>
             </a>
             <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400">
                 <a href="genesis.html" class="hover:text-white transition">01_GENESIS</a>
-                <a href="clusters.html" class="hover:text-white transition">03_CLUSTERS</a>
-                <a href="resources.html" class="hover:text-white transition">04_RESOURCES</a>
+                <a href="sovereign-matrix.html" class="hover:text-white transition">02_MATRIX</a>
+                <a href="tactical-briefing.html" class="hover:text-white transition">03_COMMAND</a>
                 <a href="site-architecture.html" class="text-white border-b border-[#0ea5e3] pb-1">BLUEPRINT</a>
             </div>
         </div>
@@ -90,101 +87,112 @@
     <main class="pt-48 pb-32 px-[8%] max-w-[1440px] mx-auto">
         <header class="mb-24 border-l-4 border-[#A11219] pl-10">
             <span class="font-mono text-[#0ea5e3] tracking-[5px] text-xs uppercase animate-pulse">// SYSTEM_HIERARCHY_VISUALIZATION</span>
-            <h1 class="text-white text-[clamp(3rem,8vw,6.5rem)] font-[900] italic uppercase mt-4 leading-none">Sovereign<br><span class="text-[#0ea5e3]">Architecture.</span></h1>
+            <h1 class="text-white text-[clamp(3rem,8vw,6.5rem)] font-[900] italic uppercase mt-4 leading-none">Master<br><span class="text-[#0ea5e3]">Blueprint.</span></h1>
             <p class="text-gray-400 font-mono mt-8 text-sm max-w-4xl leading-relaxed italic">
-                "架构即正义。YiShen Global V5.0 的数字化蓝图是针对全球贸易提单流的定向拦截场。每一层架构都为家具主权与海洋基建提供确定性支撑。"
+                "架构即正义。YiShen Global V5.0 的数字化蓝图是针对全球贸易流量的定向拦截场。每一层架构都为家具主权、医疗精密与海洋基建提供确定性支撑。"
             </p>
         </header>
 
         
 
         <div class="grid lg:grid-cols-3 gap-12">
+            
             <div class="space-y-8">
-                <span class="layer-label">// Tier_01: Command & Trust</span>
+                <span class="layer-label">// Tier_01: Entrance & Routing</span>
                 
-                <div class="arch-node rounded-xl" onclick="window.location.href='genesis.html'">
+                <div class="arch-node rounded-sm">
                     <div class="flex items-center mb-4">
                         <span class="status-active"></span>
-                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Genesis_Legacy</h4>
+                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Global Mapping Gate</h4>
                     </div>
-                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed mb-6">38年三代诚信基因（彬/燊/熠）。建立针对北美与南美采购巨头的心理主权穿透。</p>
-                    <div class="flex gap-2">
-                        <span class="sovereign-tag">Family_Lineage</span>
-                        <span class="sovereign-tag">Credit_Verified</span>
-                    </div>
+                    <div class="flow-line"></div>
+                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed mb-6">物理层探测：识别 IP Geolocation，自动分流至 [NORTH_AMERICA/ASEAN/LATAM] 战区逻辑。支持 RTL 阿拉伯语补丁。</p>
+                    <div class="text-[#0ea5e3] font-mono text-[9px]">SOURCE: global-mapping-gate.js</div>
                 </div>
 
-                <div class="arch-node rounded-xl" onclick="window.location.href='index.html'">
+                <div class="arch-node rounded-sm">
                     <div class="flex items-center mb-4">
                         <span class="status-active"></span>
-                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Master_Console</h4>
+                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Vercel Edge Rewrites</h4>
                     </div>
-                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed">全品类对撞入口。整合办公椅、电竞椅及港口五金的实时分发逻辑。</p>
+                    <div class="flow-line"></div>
+                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed">云端路径重映射：将 /passport/:id 物理映射至动态对撞机，确保 SEO 路径主权。</p>
+                    <div class="text-[#0ea5e3] font-mono text-[9px] mt-4">SOURCE: vercel.json</div>
                 </div>
             </div>
 
             <div class="space-y-8">
-                <span class="layer-label">// Tier_02: Intel & Fire Control</span>
+                <span class="layer-label">// Tier_02: Engine & Intelligence</span>
                 
-                <div class="arch-node rounded-xl border-l-2 border-l-[#0ea5e3]" onclick="window.location.href='resources.html'">
+                <div class="arch-node rounded-sm border-l-2 border-l-[#0ea5e3]">
                     <div class="flex items-center mb-4">
                         <span class="status-active"></span>
-                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Resource_Vault</h4>
+                        <h4 class="text-white font-bold italic uppercase tracking-tighter">HQ Core Logic</h4>
                     </div>
-                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed mb-6">核心火控中心。内置 ImportGenius/Trademo 对撞引擎。集成巴西链条反倾销豁免与北美铝梯避税架构。</p>
-                    <div class="flex gap-2">
-                        <span class="sovereign-tag" style="color:var(--brand-gold)">HS_7315_INTEL</span>
-                        <span class="sovereign-tag">AD_CVD_HACK</span>
-                    </div>
+                    <div class="flow-line"></div>
+                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed mb-6">母舰大脑：集成 GPU 微光渲染、RocketReach 身份核验接口及实时任务对撞终端。</p>
+                    <div class="text-[#0ea5e3] font-mono text-[9px]">SOURCE: hq-core-gate.js / terminal-logic.js</div>
                 </div>
 
-                <div class="arch-node rounded-xl border-l-2 border-l-[#A11219]" onclick="window.location.href='clusters.html'">
+                <div class="arch-node rounded-sm">
                     <div class="flex items-center mb-4">
                         <span class="status-active"></span>
-                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Strategic_Clusters</h4>
+                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Marketing Intel Ledger</h4>
                     </div>
-                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed">28个战略工业集群。涵盖海洋吊装、基建铝梯、电竞主权及全品类家具制造阵列。</p>
+                    <div class="flow-line"></div>
+                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed">进攻目标矩阵：定义针对 Ashley, ODP, Amazon Commercial 的“斩首”话术与 HS Code 拦截参数。</p>
+                    <div class="text-[#0ea5e3] font-mono text-[9px] mt-4">SOURCE: marketing-intel.json</div>
                 </div>
             </div>
 
             <div class="space-y-8">
-                <span class="layer-label">// Tier_03: Operation & Radar</span>
+                <span class="layer-label">// Tier_03: Assets & Verification</span>
                 
-                <div class="arch-node rounded-xl" onclick="window.location.href='operational-systems.html'">
+                <div class="arch-node rounded-sm border-l-2 border-l-[#ffd700]">
                     <div class="flex items-center mb-4">
                         <span class="status-active"></span>
-                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Operational_Systems</h4>
+                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Technical Passport</h4>
                     </div>
-                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed">数字化主权大脑。ERP/MES实时同步，确保全球124个生产节点的确定性交付效率。</p>
+                    <div class="flow-line"></div>
+                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed mb-6">物理证据对撞机：动态加载 SKU 规格、BIFMA/ISO 测试报告及 Form E 原产地主权补丁。</p>
+                    <div class="text-[#brand-gold] font-mono text-[9px]">SOURCE: technical-passport.html</div>
                 </div>
 
-                <div class="arch-node rounded-xl" onclick="window.location.href='intelligence-intel.html'">
+                <div class="arch-node rounded-sm">
                     <div class="flex items-center mb-4">
                         <span class="status-active"></span>
-                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Interception_Radar</h4>
+                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Cyber Loader V5</h4>
                     </div>
-                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed">外部舆情对撞。Reddit & LinkedIn 全球拦截算法，针对行业痛点进行物理参数修正。</p>
+                    <div class="flow-line"></div>
+                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed">视觉防御系统：赛博蓝扫描线动画 + 碎图防御占位逻辑，确保工业完成度。</p>
+                    <div class="text-[#0ea5e3] font-mono text-[9px] mt-4">SOURCE: img-lazy-loader.js</div>
                 </div>
             </div>
+
         </div>
+
+        <section class="mt-32 p-12 bg-white/[0.01] border border-white/5 rounded-3xl flex flex-col items-center text-center">
+            <h4 class="font-mono text-[#ffd700] text-xs uppercase tracking-[8px] mb-6">// ARCHITECTURE_INTEGRITY_SHIELD</h4>
+            <p class="text-gray-500 text-sm max-w-3xl italic leading-relaxed">
+                母舰架构蓝图已通过 V5.0 指令全量校准。任何针对核心维度（家具、海洋、军工、医疗、基建、升降、碳中和）的逻辑变动将自动触发 Link_Fixer 链路校验。主权由 Strategic Architecture Group 物理锁定。
+            </p>
+        </section>
     </main>
 
     <footer class="bg-black py-24 border-t border-white/5 font-inter">
         <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-12">
-            <div class="mobile-items-center">
+            <div>
                 <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Architecture_Sovereignty_Verified</div>
-                <div class="flex gap-6 mt-4 text-[9px] font-mono text-gray-800 uppercase tracking-widest">
+                <div class="flex gap-6 mt-4 text-[9px] font-mono text-gray-800 uppercase tracking-widest text-gray-500">
                     <a href="site-architecture.html" class="hover:text-white transition">Blueprint_Map</a> / 
                     <a href="sovereign-index.xml" target="_blank" class="hover:text-white transition">XML_Index</a>
                 </div>
             </div>
-            
             <div class="flex flex-wrap items-center gap-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
                 <img src="assets/icons/bifma-badge.webp" class="h-6" alt="BIFMA">
                 <img src="assets/icons/en131-badge.webp" class="h-6" alt="EN131">
                 <img src="assets/icons/ista-badge.webp" class="h-6" alt="ISTA">
                 <img src="assets/icons/logo-ul.webp" class="h-6" alt="UL">
-                <img src="assets/icons/iso9001.webp" class="h-6" alt="ISO9001">
             </div>
         </div>
     </footer>
