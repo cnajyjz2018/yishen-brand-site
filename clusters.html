@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_CLUSTERS | 28 Strategic Industrial Nodes | YISHEN GLOBAL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --brand-blue: #0ea5e3; --brand-red: #A11219; --bg-deep: #010409; }
+        body { background-color: var(--bg-deep); font-family: 'Inter', sans-serif; color: #ffffff; margin: 0; overflow-x: hidden; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .topology-bg { background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.03) 1px, transparent 0); background-size: 40px 40px; }
+        
+        /* 加载动画补丁 */
+        #loading-screen { position: fixed; inset: 0; z-index: 99999; background: #010409; display: flex; flex-direction: column; items: center; justify-content: center; }
+        #bar-fill { height: 100%; background: var(--brand-blue); width: 0%; transition: 2s cubic-bezier(0.1, 0.5, 0.1, 1); }
+
+        /* 卡片主权样式 */
+        .cluster-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; }
+        .cluster-card:hover { border-color: var(--brand-blue); background: rgba(14, 165, 227, 0.04); transform: translateY(-5px); shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .cluster-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--brand-blue); transform: translateX(-100%); transition: 0.6s; }
+        .cluster-card:hover::before { transform: translateX(0); }
+
+        .glass-panel { background: rgba(1, 4, 9, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body class="topology-bg selection:bg-[#0ea5e3]">
+
+    <div id="loading-screen">
+        <span class="text-white font-black italic text-2xl uppercase tracking-tighter">Cluster_Matrix_Sync</span>
+        <div class="w-48 h-[2px] bg-white/10 mt-6"><div id="bar-fill"></div></div>
+        <span class="text-[#0ea5e3] font-mono text-[8px] mt-4 tracking-[4px] animate-pulse">// MAPPING_28_STRATEGIC_NODES...</span>
+    </div>
+
+    <nav class="fixed w-full z-[100] border-b border-white/5 bg-[#010409]/80 backdrop-blur-xl h-20 flex items-center px-8 justify-between">
+        <a href="index.html" class="flex flex-col">
+            <span class="text-white font-black italic text-xl tracking-tighter uppercase leading-none">Yishen Global</span>
+            <span class="text-[#0ea5e3] font-mono text-[8px] tracking-[3px]">INDUSTRIAL_CLUSTERS_V5.0</span>
+        </a>
+        <div class="hidden lg:flex gap-8 font-mono text-[10px] text-gray-400">
+            <a href="genesis.html" class="hover:text-white">01_GENESIS</a>
+            <a href="architectures.html" class="hover:text-white">02_ARCHITECTURES</a>
+            <a href="clusters.html" class="text-white border-b border-[#0ea5e3]">03_CLUSTERS</a>
+            <a href="resources.html" class="hover:text-white">04_RESOURCES</a>
+        </div>
+    </nav>
+
+    <main class="pt-48 pb-32 px-[8%] max-w-[1440px] mx-auto">
+        
+        <header class="mb-20">
+            <span class="font-mono text-[#0ea5e3] tracking-[8px] text-xs uppercase">// BATTLE_ORDER_2026_MATRIX</span>
+            <h1 class="text-white text-[clamp(3rem,8vw,5rem)] font-[900] italic uppercase mt-4 tracking-tighter">Strategic <span class="text-[#0ea5e3]">Clusters.</span></h1>
+            <p class="text-gray-400 italic text-lg mt-6 border-l-2 border-[#A11219] pl-8 max-w-3xl">
+                "28个行业分类，28种工业力量。我们不只是提供产品，我们提供的是经过 38 年验证的场景主权。"
+            </p>
+        </header>
+
+        
+
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-black italic uppercase italic tracking-tighter">Section_E // <span class="text-[#0ea5e3]">Eco_Material_Sovereignty</span></h2>
+                <div class="h-[1px] flex-grow bg-white/10"></div>
+                <span class="font-mono text-[9px] text-gray-500 uppercase tracking-widest">Research_Active</span>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="cluster-card p-8 group">
+                    <span class="text-[9px] font-mono text-gray-600 mb-4 block">// GENETIC_STAMP: SHEN_VIGOR</span>
+                    <h4 class="text-xl font-bold italic text-white uppercase mb-4">WPC Systems</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed mb-8">木塑复合材料：永久性户外基建方案。3.0 共挤技术，抗老化物理主权。</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-white/5">
+                        <span class="text-[10px] text-[#0ea5e3] font-mono">HS: 3918.90</span>
+                        <button onclick="window.location.href='resources.html?sector=WPC'" class="text-[8px] uppercase font-mono text-gray-400 hover:text-white">View_Intel_></button>
+                    </div>
+                </div>
+
+                <div class="cluster-card p-8 group border-l-2 border-l-[#A11219]">
+                    <span class="text-[9px] font-mono text-gray-600 mb-4 block">// GENETIC_STAMP: SHEN_VIGOR</span>
+                    <h4 class="text-xl font-bold italic text-white uppercase mb-4">Bamboo Engineering</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed mb-8">竹木复合地板/地毯：提取竹之刚性。高抗拉强度，主导欧洲低碳主权。</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-white/5">
+                        <span class="text-[10px] text-[#0ea5e3] font-mono">HS: 4409.21</span>
+                        <i class="fa-solid fa-leaf text-[#0ea5e3] text-[10px]"></i>
+                    </div>
+                </div>
+
+                <div class="cluster-card p-8 group">
+                    <span class="text-[9px] font-mono text-gray-600 mb-4 block">// GENETIC_STAMP: YI_INTELLIGENCE</span>
+                    <h4 class="text-xl font-bold italic text-white uppercase mb-4">Bamboo Lanterns</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed mb-8">竹制工艺品与灯笼：传统笔墨与现代光影。东方艺术主权与 UL 安全验证。 </p>
+                    <div class="flex justify-between items-center pt-4 border-t border-white/5">
+                        <span class="text-[10px] text-[#0ea5e3] font-mono">HS: 9405.50</span>
+                        <i class="fa-solid fa-lightbulb text-gray-700 group-hover:text-[#ffd700] transition"></i>
+                    </div>
+                </div>
+
+                <div class="cluster-card p-8 group">
+                    <span class="text-[9px] font-mono text-gray-600 mb-4 block">// GENETIC_STAMP: BIN_PROSPERITY</span>
+                    <h4 class="text-xl font-bold italic text-white uppercase mb-4">Outdoor Living</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed mb-8">户外家具系统：集成 WPC 与防腐处理。全场景生活方式，38年品质背书。</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-white/5">
+                        <span class="text-[10px] text-[#0ea5e3] font-mono">HS: 9401.71</span>
+                        <i class="fa-solid fa-umbrella text-gray-600"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-24 opacity-80">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-black italic uppercase italic tracking-tighter">Section_A // <span class="text-gray-500">Corporate_Sovereignty</span></h2>
+                <div class="h-[1px] flex-grow bg-white/5"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="cluster-card p-8 group">
+                    <h4 class="text-xl font-bold italic text-white uppercase mb-4">Seating Systems</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed mb-8">Ergonomic nodes for high-density corporate environments. BIFMA certified.</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-white/5">
+                        <span class="text-[10px] text-[#0ea5e3] font-mono">HS: 9401.30</span>
+                    </div>
+                </div>
+                </div>
+        </section>
+
+    </main>
+
+    <div class="fixed bottom-6 right-6 z-[5000] flex flex-col items-end gap-3 group">
+        <div class="opacity-0 group-hover:opacity-100 transition-all duration-500 bg-[#0ea5e3] text-black font-mono text-[9px] px-3 py-1 font-bold italic tracking-widest">// ACCESS_COMPLIANCE_API</div>
+        <div class="glass-panel p-3 rounded-xl shadow-2xl flex flex-wrap max-w-[200px] justify-end gap-4">
+            <div onclick="previewResource('bifma')" class="cursor-pointer h-6 opacity-40 hover:opacity-100 transition"><img src="public/assets/icons/bifma-badge.png" class="h-full"></div>
+            <div onclick="previewResource('ul')" class="cursor-pointer h-6 opacity-40 hover:opacity-100 transition"><img src="public/assets/icons/ul-badge.png" class="h-full"></div>
+            <div onclick="previewResource('fsc')" class="cursor-pointer h-6 opacity-40 hover:opacity-100 transition"><img src="public/assets/icons/fsc-badge.png" class="h-full"></div>
+        </div>
+    </div>
+
+    <div id="asset-modal" class="fixed inset-0 z-[6000] hidden bg-black/98 flex flex-col items-center justify-center p-6 backdrop-blur-3xl">
+        <div class="w-full max-w-6xl flex justify-between items-center mb-4 px-2">
+            <span id="preview-title" class="font-mono text-[10px] text-[#0ea5e3] tracking-[4px] uppercase italic">// LOADING_RESOURCE...</span>
+            <button onclick="closePreview()" class="text-white/40 hover:text-white font-mono text-[10px] uppercase">Terminate_Link [X]</button>
+        </div>
+        <div class="w-full max-w-6xl h-[80vh] border border-white/10 relative bg-white/5 rounded-lg overflow-hidden">
+            <iframe id="preview-frame" src="" class="w-full h-full border-none"></iframe>
+            <div class="scan-line"></div>
+        </div>
+    </div>
+
+    <script>
+        // 加载进度
+        window.addEventListener('load', () => {
+            document.getElementById('bar-fill').style.width = '100%';
+            setTimeout(() => {
+                document.getElementById('loading-screen').style.opacity = '0';
+                setTimeout(() => { document.getElementById('loading-screen').style.display = 'none'; }, 700);
+            }, 2500);
+        });
+
+        // 通信协议：预览 PDF
+        const certAssets = {
+            bifma: { url: "public/assets/docs/bifma.pdf", title: "BIFMA_STRUCTURAL_PROTOCOL" },
+            ul: { url: "public/assets/docs/ul.pdf", title: "UL_FIRE_SAFETY_VALIDATED" },
+            fsc: { url: "public/assets/docs/fsc.pdf", title: "FSC_SUSTAINABILITY_CREDENTIAL" }
+        };
+
+        function previewResource(key) {
+            if (window.event) window.event.preventDefault();
+            const asset = certAssets[key];
+            const modal = document.getElementById('asset-modal');
+            const iframe = document.getElementById('preview-frame');
+            if (asset && modal && iframe) {
+                iframe.src = asset.url;
+                document.getElementById('preview-title').innerText = asset.title;
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closePreview() {
+            document.getElementById('asset-modal').classList.add('hidden');
+            document.getElementById('preview-frame').src = '';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>
