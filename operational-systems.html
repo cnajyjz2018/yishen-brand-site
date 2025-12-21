@@ -1,193 +1,189 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Operational Systems | Logistics & Manufacturing Sovereignty | YISHEN GLOBAL</title>
-    
-    <meta name="description" content="Yishen Global provides coordinated industrial systems. Transitioning from fragmented sourcing to integrated vertical sovereignty.">
-    <meta name="theme-color" content="#010409">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operational Systems | AI-Driven Global Intelligence | YISHEN GLOBAL</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
-    <link rel="stylesheet" href="master-architect.css?v=2026.MASTER">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* 页面特有拓扑背景对撞逻辑 */
-        .page-hero {
-            height: 70vh; display: flex; align-items: center;
-            background: linear-gradient(90deg, #010409 35%, rgba(1, 4, 9, 0.4) 75%, transparent 100%), 
-                        url('https://yishenglobal.net/assets/mesh.webp');
-            background-size: cover; background-position: center right; position: relative; padding: 0 8%;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
+        :root { --brand-blue: #0ea5e3; --brand-red: #A11219; --bg-deep: #010409; }
+        body { background-color: var(--bg-deep); font-family: 'Inter', sans-serif; color: #ffffff; margin: 0; overflow-x: hidden; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .topology-bg { background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.03) 1px, transparent 0); background-size: 40px 40px; }
+        
+        /* [PATCH] 加载仪式感动画 */
+        #loading-screen { position: fixed; inset: 0; z-index: 99999; background: #010409; display: flex; flex-direction: column; items: center; justify-content: center; }
+        #bar-fill { height: 100%; background: var(--brand-blue); width: 0%; transition: 2s cubic-bezier(0.1, 0.5, 0.1, 1); }
 
-        .system-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
-            gap: 1px; 
-            background: rgba(255,255,255,0.05); 
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        .system-card { 
-            background: #010409; 
-            padding: 80px 60px; 
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .system-card:hover { background: rgba(14, 165, 233, 0.03); transform: translateY(-5px); }
+        .sys-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; }
+        .sys-card:hover { border-color: var(--brand-blue); background: rgba(14, 165, 227, 0.04); transform: translateY(-10px); }
+        .scan-line { position: absolute; width: 100%; height: 2px; background: var(--brand-blue); opacity: 0.3; animation: scan 4s linear infinite; }
+        @keyframes scan { 0% { top: 0%; } 100% { top: 100%; } }
 
-        @media (max-width: 768px) {
-            .page-hero { height: auto; padding: 160px 8% 80px; }
-            .system-card { padding: 40px; }
-        }
+        .cert-node { filter: grayscale(100%); opacity: 0.4; transition: 0.5s; cursor: pointer; }
+        .cert-node:hover { filter: grayscale(0%); opacity: 1; transform: translateY(-3px); }
+        .glass-panel { background: rgba(1, 4, 9, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
     </style>
 </head>
-<body class="bg-[#010409] text-white selection:bg-[#0ea5e3] topology-bg">
+<body class="topology-bg selection:bg-[#0ea5e3]">
 
-    <div id="cursor-glow"></div>
+    <div id="loading-screen">
+        <span class="text-white font-black italic text-2xl uppercase tracking-tighter">Operational_Algo_Sync</span>
+        <div class="w-48 h-[2px] bg-white/10 mt-6"><div id="bar-fill"></div></div>
+        <span class="text-[#0ea5e3] font-mono text-[8px] mt-4 tracking-[4px] animate-pulse">// MOUNTING_GLOBAL_INTEL_NODES...</span>
+    </div>
 
-    <nav id="master-nav">
-        <div class="nav-container">
-            <a href="index.html" class="site-logo">
-                <svg width="280" height="32" viewBox="0 0 280 32" fill="none">
-                    <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
-                    <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
-                    <text x="56" y="18" fill="white" style="font-family:'Inter'; font-weight:700; font-size:18px;">Yishen Global</text>
-                </svg>
-            </a>
-            <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400">
-                <a href="yishen-genesis.html" class="hover:text-white transition">01_GENESIS</a>
-                <a href="industrial-nodes.html" class="hover:text-white transition">02_NODES</a>
-                <a href="operational-systems.html" class="text-white border-b border-[#0ea5e3]">03_SYSTEMS</a>
-                <a href="tactical-briefing.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase tracking-tighter">04_COMMAND</a>
-            </div>
+    <nav class="fixed w-full z-[100] border-b border-white/5 bg-[#010409]/85 backdrop-blur-xl h-20 flex items-center px-8 justify-between">
+        <a href="index.html" class="flex flex-col">
+            <span class="text-white font-black italic text-xl tracking-tighter uppercase leading-none">Yishen Global</span>
+            <span class="text-[#0ea5e3] font-mono text-[8px] tracking-[3px]">OPERATIONAL_V5.0_COMMAND</span>
+        </a>
+        <div class="hidden lg:flex gap-8 font-mono text-[10px] text-gray-400 uppercase tracking-widest">
+            <a href="genesis.html" class="hover:text-white transition">01_GENESIS</a>
+            <a href="architectures.html" class="hover:text-white transition">02_ARCHITECTURES</a>
+            <a href="clusters.html" class="hover:text-white transition">03_CLUSTERS</a>
+            <a href="resources.html" class="hover:text-white transition">04_RESOURCES</a>
         </div>
     </nav>
 
-    <header class="page-hero">
-        <div class="max-w-[1200px] z-10">
-            <span class="font-mono text-[#0ea5e3] tracking-[5px] uppercase text-xs animate-pulse">// SYSTEM_OPERATIONAL_LOGIC_V4</span>
-            <h1 class="text-white text-[clamp(2.5rem,8vw,5rem)] font-[900] leading-[1.0] my-8 uppercase italic tracking-tighter">
-                Operational Systems.
-            </h1>
-            <p class="text-gray-400 max-w-2xl text-lg leading-relaxed italic border-l-2 border-[#A11219] pl-8">
-                Beyond service provision: We deploy integrated ecosystems for global inventory security. Converging manufacturing nodes with logistics sovereignty.
+    <main class="pt-48 pb-32 px-[8%] max-w-[1440px] mx-auto">
+        <header class="mb-24 border-l-4 border-[#0ea5e3] pl-10">
+            <span class="font-mono text-[#0ea5e3] tracking-[8px] text-xs uppercase animate-pulse">// SYSTEM_COGNITION_PROTOCOL</span>
+            <h1 class="text-white text-[clamp(3rem,8vw,6rem)] font-[900] italic uppercase mt-4 tracking-tighter leading-none">Operational<br>Sovereignty.</h1>
+            <p class="text-gray-400 italic text-lg mt-8 max-w-4xl">
+                整合磐聚网、Trademo 与 ImportGenius 全球海关数据。针对美加墨 Mesh Chair 与南美电竞主权，执行毫秒级买家对撞拦截。
             </p>
-        </div>
-    </header>
+        </header>
 
-    <main class="py-24 px-[8%]">
-        <div class="max-w-[1440px] mx-auto">
-            
-            <div class="system-grid">
-                <div class="system-card">
-                    <div>
-                        <div class="flex justify-between items-start mb-12">
-                            <div class="sov-badge"><span class="badge-label">SYSTEM</span><span class="badge-value">VERTICAL_INTEGRATION</span></div>
-                            <div class="sov-badge" style="border-left-color: var(--performance-red);"><span class="badge-label">NODE</span><span class="badge-value">TIER-1_DIRECT</span></div>
-                        </div>
-                        <h3 class="text-3xl font-black uppercase italic mb-6">Manufacturing Sovereignty</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed mb-10">
-                            从原材料（竹木、钢材、高分子材料）的源头控制到 28 个集群节点的精密生产。我们通过物理主权消灭所有中介变量，确保 100% 的质量穿透力。
-                        </p>
-                    </div>
-                    <div class="font-mono text-[10px] text-[#0ea5e3] tracking-widest uppercase">Status: Core_Operational</div>
-                </div>
+        
 
-                <div class="system-card">
-                    <div>
-                        <div class="flex justify-between items-start mb-12">
-                            <div class="sov-badge"><span class="badge-label">SYSTEM</span><span class="badge-value">LOGISTICS_SOVEREIGNTY</span></div>
-                            <div class="sov-badge" style="border-left-color: #f59e0b;"><span class="badge-label">RISK</span><span class="badge-value">ZERO_VOLATILITY</span></div>
-                        </div>
-                        <h3 class="text-3xl font-black uppercase italic mb-6">Fulfillment Systems</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed mb-10">
-                            通过全球物流中枢集成 DDP/LDP 协议。锁定到岸价格与交期变量，为大型进口商提供从工厂端到指定仓库的无缝、高确定性履约路径。
-                        </p>
+        <section class="grid lg:grid-cols-2 gap-12 mb-32">
+            <div class="sys-card p-10 rounded-2xl">
+                <div class="scan-line"></div>
+                <h3 class="text-2xl font-black italic text-white uppercase mb-6">// Global_Interception_Matrix</h3>
+                <p class="text-xs text-gray-500 font-mono mb-8 leading-relaxed">
+                    同步美国 (CBP)、加拿大及南美核心港口提单。锁定北美 1200 家 Mesh/Leather Chair 进口商画像。针对墨西哥 Manzanillo 港电竞椅节点，实时推送 KD 容积率优化方案。
+                </p>
+                <div class="grid grid-cols-2 gap-4 text-[9px] font-mono">
+                    <div onclick="window.open('https://www.zoominfo.com')" class="p-3 bg-white/5 border border-white/5 rounded hover:border-[#0ea5e3] cursor-pointer transition">
+                        <span class="text-[#0ea5e3]">ZOOMINFO_LEAD_GEN</span>
                     </div>
-                    <div class="font-mono text-[10px] text-[#0ea5e3] tracking-widest uppercase">Status: Global_Reach_Verified</div>
+                    <div onclick="window.open('https://www.importgenius.com')" class="p-3 bg-white/5 border border-white/5 rounded hover:border-[#0ea5e3] cursor-pointer transition">
+                        <span class="text-[#A11219]">IMPORT_GENIUS_FLOW</span>
+                    </div>
                 </div>
             </div>
 
-            
-
-            <div class="agent-console p-12 mt-32 border border-white/10 relative">
-                <div class="absolute top-0 right-0 p-4 font-mono text-[8px] text-white/10 uppercase tracking-[2px]">Auth: YIS_HQ_ACCESS</div>
-                <div class="flex items-center justify-between mb-8">
-                    <h4 class="text-[#0ea5e3] font-mono text-[10px] tracking-[4px] uppercase animate-pulse">// SYSTEM_AGENT_READY</h4>
-                    <span class="text-[9px] font-mono text-gray-600 uppercase italic">Reddit_Pulse: Active</span>
-                </div>
-                <div class="flex flex-col md:flex-row gap-4 mb-8">
-                    <input type="text" id="user-task" placeholder="下达系统指令，例如：优化北美 LDP 履约成本映射..." class="flex-1 bg-black border border-white/10 p-5 text-xs font-mono outline-none text-[#0ea5e3] focus:border-[#0ea5e3]">
-                    <button onclick="runAgent()" class="execute-btn px-10 py-5 text-xs">Execute_Briefing</button>
-                </div>
-                <div id="agent-output" class="terminal-log min-h-[80px] bg-black/50 p-5 border-l-2 border-[#0ea5e3]">
-                    > System ready for operational mapping.
+            <div class="sys-card p-10 rounded-2xl border-l-2 border-l-[#A11219]">
+                <h3 class="text-2xl font-black italic text-white uppercase mb-6">// Product_Algo_Nodes</h3>
+                <p class="text-xs text-gray-500 font-mono mb-8 leading-relaxed">
+                    跨品类主权同步：办公转椅、压缩沙发、户外桌椅、Recliner 及 Standing Chair。基于 Trademo 的资本画像，为全球分销商提供 2026 利润预测模型。
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-2 py-1 bg-white/5 text-[8px] border border-white/10 uppercase">Mesh_Alpha</span>
+                    <span class="px-2 py-1 bg-white/5 text-[8px] border border-white/10 uppercase">Sofa_Compressed</span>
+                    <span class="px-2 py-1 bg-white/5 text-[8px] border border-white/10 uppercase">Gaming_Sovereignty</span>
                 </div>
             </div>
+        </section>
 
-        </div>
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-black italic uppercase tracking-tighter">Sovereign // <span class="text-[#0ea5e3]">Operational_Proof</span></h2>
+                <div class="h-[1px] flex-grow bg-white/10"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
+                <div onclick="previewResource('bifma')" class="cert-node flex flex-col items-center gap-4">
+                    <img src="assets/icons/bifma-badge.webp" class="h-10">
+                    <span class="text-[8px] font-mono text-gray-600">BIFMA_ENGINEERING</span>
+                </div>
+                <div onclick="previewResource('ul')" class="cert-node flex flex-col items-center gap-4">
+                    <img src="assets/icons/logo-ul.webp" class="h-10">
+                    <span class="text-[8px] font-mono text-gray-600">UL_SAFETY</span>
+                </div>
+                <div onclick="previewResource('fsc')" class="cert-node flex flex-col items-center gap-4">
+                    <img src="assets/icons/logo-fsc.webp" class="h-10">
+                    <span class="text-[8px] font-mono text-gray-600">FSC_ECOLOGY</span>
+                </div>
+                <div onclick="previewResource('ista')" class="cert-node flex flex-col items-center gap-4">
+                    <img src="assets/icons/ista-badge.webp" class="h-10">
+                    <span class="text-[8px] font-mono text-gray-600">ISTA_TRANSIT</span>
+                </div>
+                <div onclick="previewResource('iso9001')" class="cert-node flex flex-col items-center gap-4">
+                    <img src="assets/icons/iso9001.webp" class="h-10">
+                    <span class="text-[8px] font-mono text-gray-600">ISO_9001</span>
+                </div>
+                <div onclick="previewResource('bsci')" class="cert-node flex flex-col items-center gap-4">
+                    <img src="assets/icons/bsci-badge.webp" class="h-10">
+                    <span class="text-[8px] font-mono text-gray-600">BSCI_SOCIAL</span>
+                </div>
+                <div onclick="previewResource('visa')" class="cert-node flex flex-col items-center gap-4">
+                    <img src="assets/icons/visa-mastercard.webp" class="h-10">
+                    <span class="text-[8px] font-mono text-gray-600">FINANCIAL_SYNC</span>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="bg-black py-24 border-t border-white/5 font-inter">
-        <div class="max-w-[1440px] mx-auto px-8">
-            <div class="flex flex-wrap gap-4 mb-16 justify-center md:justify-start">
-                <div class="sov-badge"><span class="badge-label">PROTOCOL</span><span class="badge-value">BIFMA X5.1</span></div>
-                <div class="sov-badge" style="border-left-color: var(--performance-red);"><span class="badge-label">TEST_SYNC</span><span class="badge-value">ISTA 6A</span></div>
-                <div class="sov-badge"><span class="badge-label">GOVERNANCE</span><span class="badge-value">ISO 9001</span></div>
-                <div class="sov-badge pay-sov"><span class="badge-label">FINANCE</span><span class="badge-value">VISA_SECURED</span></div>
-            </div>
-
-            <div class="flex flex-col md:flex-row justify-between items-center gap-12 border-t border-white/5 pt-12">
-                <div class="mobile-items-center">
-                    <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Command_Center_Sovereign</div>
-                    <div class="flex gap-6 mt-4 text-[9px] font-mono text-gray-800 uppercase tracking-widest">
-                        <a href="site-architecture.html" class="hover:text-white transition">Blueprint_Map</a> / 
-                        <a href="sovereign-index.xml" target="_blank" class="hover:text-white transition">XML_Index</a>
-                    </div>
-                </div>
-                <div class="font-mono text-[8px] uppercase tracking-[3px] text-gray-600 italic">
-                    Sovereignty through engineering precision.
-                </div>
-            </div>
+    <div class="fixed bottom-6 right-6 z-[5000] flex flex-col items-end gap-3 group">
+        <div class="opacity-0 group-hover:opacity-100 transition-all duration-500 bg-[#0ea5e3] text-black font-mono text-[9px] px-3 py-1 font-bold italic tracking-widest">// ACCESS_COMPLIANCE_API</div>
+        <div class="glass-panel p-3 rounded-xl shadow-2xl flex flex-wrap max-w-[200px] justify-end gap-4 transition-all">
+            <div onclick="previewResource('bifma')" class="cert-node h-6"><img src="assets/icons/bifma-badge.webp" class="h-full"></div>
+            <div onclick="previewResource('ul')" class="cert-node h-6"><img src="assets/icons/logo-ul.webp" class="h-full"></div>
+            <div onclick="previewResource('ista')" class="cert-node h-6"><img src="assets/icons/ista-badge.webp" class="h-full"></div>
         </div>
-    </footer>
+    </div>
 
-    <script src="global-mapping-gate.js?v=2026.FINAL"></script>
-    <script src="hq-core-gate.js?v=2026.FINAL"></script>
-    <script src="terminal-logic.js?v=2026.FINAL"></script>
+    <div id="asset-modal" class="fixed inset-0 z-[6000] hidden bg-black/98 flex flex-col items-center justify-center p-6 backdrop-blur-3xl">
+        <div class="w-full max-w-6xl flex justify-between items-center mb-4 px-2">
+            <span id="preview-title" class="font-mono text-[10px] text-[#0ea5e3] tracking-[4px] uppercase italic">// LOADING_RESOURCE...</span>
+            <button onclick="closePreview()" class="text-white/40 hover:text-white font-mono text-[10px] uppercase transition">Terminate_Link [X]</button>
+        </div>
+        <div class="w-full max-w-6xl h-[80vh] border border-white/10 relative bg-white/5 rounded-lg overflow-hidden">
+            <iframe id="preview-frame" src="" class="w-full h-full border-none shadow-2xl"></iframe>
+            <div class="scan-line"></div>
+        </div>
+    </div>
 
     <script>
-        // GPU 渲染引擎同步
-        const glow = document.getElementById('cursor-glow');
-        document.addEventListener('mousemove', (e) => {
-            requestAnimationFrame(() => {
-                glow.style.left = e.clientX + 'px';
-                glow.style.top = e.clientY + 'px';
-            });
-        });
+        const certAssets = {
+            bifma: { url: "assets/docs/bifma.pdf", title: "BIFMA_STRUCTURAL_PROTOCOL_V5" },
+            ul: { url: "assets/docs/ul.pdf", title: "UL_FIRE_SAFETY_VALIDATED" },
+            fsc: { url: "assets/docs/fsc.pdf", title: "FSC_SUSTAINABILITY_CREDENTIAL" },
+            ista: { url: "assets/docs/ista.pdf", title: "ISTA_TRANSPORT_SURVIVABILITY" },
+            iso9001: { url: "assets/docs/iso9001.pdf", title: "ISO_9001_QUALITY_MANAGEMENT" },
+            bsci: { url: "assets/docs/bsci.pdf", title: "BSCI_SOCIAL_COMPLIANCE_VAULT" },
+            visa: { url: "assets/docs/financial.pdf", title: "FINANCIAL_SOVEREIGNTY_MC" }
+        };
 
-        // AI Agent 实战模拟
-        function runAgent() {
-            const input = document.getElementById('user-task');
-            const output = document.getElementById('agent-output');
-            if(!input.value) return;
-            const steps = [
-                `> INITIATING_OPERATIONAL_SYNC: [${input.value.toUpperCase()}]`,
-                "> ANALYZING_TIER-1_NODE_CAPACITY...",
-                "> MAPPING_LDP_CUSTOMS_PROTOCOLS...",
-                "> SUCCESS: OPERATIONAL_SYSTEM_STABLE_FOR_DEPLOYMENT."
-            ];
-            output.innerHTML = ""; let i = 0;
-            const interval = setInterval(() => {
-                output.innerHTML += `<div class="mb-1">${steps[i]}</div>`;
-                i++;
-                if(i === steps.length) clearInterval(interval);
-            }, 600);
+        function previewResource(key) {
+            if (window.event) window.event.preventDefault();
+            const asset = certAssets[key];
+            const modal = document.getElementById('asset-modal');
+            const iframe = document.getElementById('preview-frame');
+            if (asset && modal && iframe) {
+                iframe.src = asset.url;
+                document.getElementById('preview-title').innerText = asset.title;
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
         }
+
+        function closePreview() {
+            document.getElementById('asset-modal').classList.add('hidden');
+            document.getElementById('preview-frame').src = '';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.addEventListener('load', () => {
+            document.getElementById('bar-fill').style.width = '100%';
+            setTimeout(() => {
+                document.getElementById('loading-screen').style.opacity = '0';
+                setTimeout(() => { document.getElementById('loading-screen').style.display = 'none'; }, 700);
+            }, 2500);
+        });
     </script>
 </body>
 </html>
