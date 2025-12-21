@@ -61,6 +61,11 @@
             border-radius: 50%; pointer-events: none; z-index: 0;
             transform: translate(-50%, -50%); will-change: transform;
         }
+
+        /* 头像框平滑过渡 */
+        #perspective-avatar img {
+            transition: opacity 0.5s ease-in-out;
+        }
     </style>
 </head>
 <body class="topology-bg selection:bg-[#0ea5e3]">
@@ -151,13 +156,22 @@
                 </div>
                 <div class="space-y-8">
                     <div class="flex items-center gap-4">
-                        <div id="perspective-avatar" class="w-16 h-16 rounded-full border-2 border-[#0ea5e3] bg-gray-800 flex items-center justify-center text-white font-black text-xl italic">M</div>
+                        <div id="perspective-avatar" class="w-16 h-16 rounded-full border-2 border-[#0ea5e3] bg-gray-800 flex items-center justify-center overflow-hidden">
+                            <img src="public/assets/branding/avatar-MichaelT.webp" class="w-full h-full object-cover">
+                        </div>
                         <div>
                             <h4 id="perspective-name" class="text-white text-2xl font-black italic uppercase">Michael T.</h4>
                             <p id="perspective-title" class="text-[#0ea5e3] font-mono text-[10px] tracking-widest uppercase">North America Operations</p>
                         </div>
                     </div>
                     <p id="perspective-text" class="text-gray-400 text-xl italic leading-relaxed border-l-4 border-[#A11219] pl-8">"在北美市场，延迟就是自杀。YiShen V5.0 系统不是在‘发货’，而是在‘同步’。通过我们的 Global Ops Monitor，您看到的不是物流，是确定性。"</p>
+                    
+                    <div class="pt-4">
+                        <button class="group flex items-center gap-3 text-white/40 hover:text-[#0ea5e3] transition-colors font-mono text-[10px] uppercase tracking-widest">
+                            <span class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:border-[#0ea5e3]">▶</span>
+                            Play_Node_Manifesto
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -176,6 +190,7 @@
             });
         });
 
+        // 集成代言人协议的数据模型
         const data = {
             michael: {
                 img: "public/assets/system/global-ops-monitor-v5.webp",
@@ -183,7 +198,9 @@
                 name: "Michael T.",
                 title: "North America Operations",
                 text: "\"在北美市场，延迟就是自杀。YiShen V5.0 系统不是在‘发货’，而是在‘同步’。通过我们的 Global Ops Monitor，您看到的不是物流，是确定性。\"",
-                color: "#0ea5e3", avatar: "M"
+                color: "#0ea5e3", 
+                avatar: "public/assets/branding/avatar-MichaelT.webp",
+                video: "public/assets/videos/michael-manifesto.mp4"
             },
             sarah: {
                 img: "public/assets/industries/medical-clinical-lab.webp",
@@ -191,22 +208,34 @@
                 name: "Sarah J.",
                 title: "European Market Strategy",
                 text: "\"欧洲市场对品质的挑剔近乎偏执。ISO 9001 与 BIFMA 只是我们的底线，而非上限。我们的制造主权确保了每一件产品都符合严苛的欧洲实验室标准。\"",
-                color: "#A11219", avatar: "S"
+                color: "#A11219", 
+                avatar: "public/assets/branding/avatar-SarahJ.webp",
+                video: "public/assets/videos/sarah-manifesto.mp4"
             }
         };
 
         function switchPerspective(node) {
             const p = data[node];
             document.getElementById('perspective-img').src = p.img;
-            const tag = document.getElementById('perspective-tag');
-            tag.innerText = p.tag; tag.style.backgroundColor = p.color;
-            document.getElementById('perspective-name').innerText = p.name;
-            const title = document.getElementById('perspective-title');
-            title.innerText = p.title; title.style.color = p.color;
-            document.getElementById('perspective-text').innerText = p.text;
-            const av = document.getElementById('perspective-avatar');
-            av.innerText = p.avatar; av.style.borderColor = p.color;
             
+            const tag = document.getElementById('perspective-tag');
+            tag.innerText = p.tag; 
+            tag.style.backgroundColor = p.color;
+            
+            document.getElementById('perspective-name').innerText = p.name;
+            
+            const title = document.getElementById('perspective-title');
+            title.innerText = p.title; 
+            title.style.color = p.color;
+            
+            document.getElementById('perspective-text').innerText = p.text;
+            
+            // 头像动态渲染逻辑
+            const avContainer = document.getElementById('perspective-avatar');
+            avContainer.style.borderColor = p.color;
+            avContainer.innerHTML = `<img src="${p.avatar}" class="w-full h-full object-cover">`;
+            
+            // 按钮状态切换
             const btnM = document.getElementById('btn-michael');
             const btnS = document.getElementById('btn-sarah');
             if(node === 'michael') {
