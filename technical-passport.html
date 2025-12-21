@@ -3,190 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Technical Passport | Industrial Intelligence Matrix | YISHEN GLOBAL</title>
+    <title>Technical Passport | Global Compliance Sovereignty | YISHEN GLOBAL</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
-    <link rel="stylesheet" href="styles.css?v=2026.FINAL.MASTER">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        :root { --neon-blue: #0ea5e3; --brand-red: #A11219; --deep-space: #010409; --industrial-gray: #1e293b; }
-        body { background-color: var(--deep-space); color: #e6edf3; font-family: 'Inter', sans-serif; overflow-x: hidden; }
-
-        /* DIGITAL TWIN GLOW - GPU 优化渲染 */
-        #cursor-glow {
-            position: fixed; width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
-            border-radius: 50%; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%);
-            will-change: transform; mix-blend-mode: screen;
+        :root { --neon-blue: #0ea5e3; --performance-red: #A11219; --brand-gold: #ffd700; --deep-space: #010409; }
+        body { background-color: var(--deep-space); color: #fff; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
+        
+        /* 拓扑底纹背景 */
+        .topology-grid { 
+            background-image: radial-gradient(rgba(14, 165, 223, 0.05) 1px, transparent 1px); 
+            background-size: 30px 30px; 
+        }
+        
+        /* [PATCH] 数字化微光 - GPU 优化渲染 */
+        #cursor-glow { 
+            position: fixed; width: 500px; height: 500px; 
+            background: radial-gradient(circle, rgba(14, 165, 223, 0.08) 0%, transparent 70%); 
+            border-radius: 50%; pointer-events: none; z-index: 9999; 
+            transform: translate(-50%, -50%); will-change: transform; mix-blend-mode: screen;
         }
 
-        /* CYBER SCAN 数字化扫描终端 */
+        /* 数字化扫描仪：用纯代码节点块替代碎图风险 */
         .main-scanner {
             position: relative; overflow: hidden; background: #000;
-            border: 1px solid var(--industrial-gray); min-height: 500px;
+            border: 1px solid rgba(255,255,255,0.05); min-height: 400px;
             display: flex; align-items: center; justify-content: center;
         }
         .main-scanner::after {
             content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
             background: var(--neon-blue); opacity: 0.6; box-shadow: 0 0 20px var(--neon-blue);
-            animation: scanLine 3s infinite ease-in-out;
+            animation: scanLine 4s infinite linear;
         }
         @keyframes scanLine { 0% { top: 0% } 50% { top: 100% } 100% { top: 0% } }
 
-        /* 技术参数表对撞风格 */
+        /* 技术参数表样式 */
         .passport-table { width: 100%; border-collapse: collapse; }
-        .passport-table td { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .label-mono { font-family: 'JetBrains Mono'; font-size: 0.65rem; color: #64748b; text-transform: uppercase; letter-spacing: 2px; }
+        .passport-table td { padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .label-mono { font-family: 'JetBrains Mono'; font-size: 0.7rem; color: #64748b; text-transform: uppercase; letter-spacing: 2px; }
         .value-bold { color: #fff; font-weight: 700; text-align: right; font-family: 'JetBrains Mono'; }
 
-        /* 纯代码勋章样式 */
+        /* 纯代码主权认证标签 */
         .sovereign-tag {
             padding: 4px 12px; border: 1px solid rgba(255, 255, 255, 0.1);
             font-family: 'JetBrains Mono', monospace; font-size: 9px;
             text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
         }
-        .sovereign-tag:hover { border-color: var(--neon-blue); color: var(--neon-blue); background: rgba(14, 165, 233, 0.05); }
+        .sovereign-tag:hover { border-color: var(--neon-blue); color: var(--neon-blue); background: rgba(14, 165, 223, 0.05); }
 
-        @media (max-width: 768px) {
-            .hero-pt { padding-top: 140px !important; }
-            .mobile-items-center { align-items: center !important; text-align: center !important; width: 100% !important; }
-        }
+        #loading-screen { position: fixed; inset: 0; z-index: 100001; background: #010409; display: flex; flex-direction: column; items: center; justify-content: center; }
+        #bar-fill { height: 100%; background: var(--neon-blue); width: 0%; transition: 2s cubic-bezier(0.1, 0.5, 0.1, 1); }
     </style>
 </head>
-<body class="bg-[#010409]">
+<body class="topology-grid selection:bg-[#0ea5e3]">
+
+    <div id="loading-screen">
+        <span class="text-white font-black italic text-2xl uppercase tracking-tighter">Technical_Passport_Sync</span>
+        <div class="w-48 h-[2px] bg-white/10 mt-6"><div id="bar-fill"></div></div>
+        <span class="text-[#0ea5e3] font-mono text-[8px] mt-4 tracking-[4px] animate-pulse">// AUTHORIZING_TECHNICAL_SOVEREIGNTY...</span>
+    </div>
 
     <div id="cursor-glow"></div>
 
-    <nav id="master-nav" class="fixed top-0 left-0 w-full z-[100000] bg-[#010409]/95 backdrop-blur-xl border-b border-white/5 h-20 flex items-center">
-        <div class="max-w-[1440px] mx-auto px-6 w-full flex items-center justify-between">
-            <a href="index.html" class="site-logo">
-                <svg width="280" height="32" viewBox="0 0 280 32" fill="none">
-                    <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
-                    <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
-                    <text x="56" y="18" fill="white" style="font-family:'Inter'; font-weight:700; font-size:18px;">Yishen Global</text>
-                </svg>
+    <nav class="fixed w-full z-[10000] bg-[#010409]/90 backdrop-blur-xl border-b border-white/5 h-20 flex items-center px-8">
+        <div class="max-w-[1440px] mx-auto w-full flex items-center justify-between">
+            <a href="index.html" class="flex flex-col">
+                <span class="text-white font-black italic text-xl tracking-tighter uppercase leading-none">Yishen Global</span>
+                <span class="text-[#0ea5e3] font-mono text-[8px] tracking-[3px]">TECHNICAL_PASSPORT_V5.0</span>
             </a>
             <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400">
-                <a href="index.html" class="hover:text-white transition">SYSTEM_ROOT</a>
-                <a href="sovereign-matrix.html" class="hover:text-white transition">ASSET_MATRIX</a>
-                <a href="contact.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase">INITIATE_AUDIT</a>
+                <a href="genesis.html" class="hover:text-white transition">01_GENESIS</a>
+                <a href="clusters.html" class="hover:text-white transition">02_CLUSTERS</a>
+                <a href="resources.html" class="hover:text-white transition">03_RESOURCES</a>
+                <a href="technical-passport.html" class="text-white border-b border-[#0ea5e3] pb-1">PASSPORT</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero-pt" style="padding: 180px 8% 60px; background: linear-gradient(90deg, #010409 40%, transparent 100%);">
-        <div class="max-w-[1440px]">
-            <span class="font-mono text-[#0ea5e3] tracking-[6px] text-xs uppercase" id="sku-sector-tag">[ LOADING_TECHNICAL_PASSPORT ]</span>
-            <h1 id="sku-main-title" class="text-white text-[clamp(2.5rem, 8vw, 4.5rem)] font-black my-6 uppercase italic tracking-tighter">—— ——</h1>
-            <p id="sku-desc" class="text-gray-400 max-w-[700px] text-lg leading-relaxed italic border-l-2 border-[#0ea5e3] pl-8">
-                正在从全球主权数据库检索工程证据：包含 BIM 建模数据、海关 HS 规格及 ISTA 生存概率。
+    <header class="pt-48 pb-12 px-[8%] max-w-[1440px] mx-auto">
+        <div class="max-w-[1200px]">
+            <span class="font-mono text-[#0ea5e3] tracking-[6px] text-xs uppercase" id="sku-sector-tag">[ LOADING_SOVEREIGN_DATA ]</span>
+            <h1 id="sku-main-title" class="text-white text-[clamp(2.5rem,8vw,5.5rem)] font-black my-8 uppercase italic tracking-tighter leading-none">—— ——</h1>
+            <p id="sku-desc" class="text-gray-400 max-w-[800px] text-lg leading-relaxed italic border-l-2 border-[#A11219] pl-10">
+                正在从全球智库检索主权工程证据：涵盖 BIM 建模、海关 HS 规格对撞及 ISTA 生存率预测。
             </p>
         </div>
     </header>
 
+    [Image of an industrial technical data sheet showing CAD drawings and engineering load test results for a heavy-duty maritime chain link.]
+
     <main class="py-12 px-[8%] max-w-[1440px] mx-auto">
-        <div class="grid lg:grid-cols-2 gap-20">
+        <div class="grid lg:grid-cols-2 gap-24">
             
-            <div class="space-y-10">
-                <div class="main-scanner bg-black flex items-center justify-center p-20">
-                    <div class="relative w-full h-full border border-white/5 flex items-center justify-center min-h-[300px]">
-                        <div id="sku-id-display" class="text-[clamp(1rem,4vw,2.5rem)] font-black text-white/20 font-mono uppercase tracking-[15px] animate-pulse text-center">
-                            NODE_ACTIVE
-                        </div>
-                        <div class="absolute top-0 left-0 w-full h-[2px] bg-[#0ea5e3] shadow-[0_0_15px_#0ea5e3] animate-scan"></div>
+            <div class="space-y-12">
+                <div class="main-scanner rounded-3xl">
+                    <div id="sku-id-display" class="text-[clamp(1rem,5vw,3rem)] font-black text-white/10 font-mono uppercase tracking-[20px] animate-pulse">
+                        NODE_ACTIVE
                     </div>
                 </div>
                 
                 <div class="p-10 bg-[#A11219]/5 border border-[#A11219]/20">
-                    <h4 class="font-mono text-[#A11219] text-[10px] tracking-[4px] uppercase mb-4">// 2026_PREDICTIVE_MAINTENANCE</h4>
-                    <p class="text-xs text-gray-500 leading-relaxed font-inter">
-                        预测方向：该 SKU 已通过“数字化双胞胎”压力测试。预计在北美高频率商用环境下，其物理结构主权可保持 15 年以上，优于行业标准 34%。符合即将到来的 **CBAM 碳交易审计**。
+                    <h4 class="font-mono text-[#A11219] text-[10px] tracking-[4px] uppercase mb-6">// 2026_PREDICTIVE_MAINTENANCE</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed font-inter italic">
+                        物理主权审计结果：该资产已通过“数字化双胞胎”压力测试。预计在北美高频率作业环境下，其物理结构主权保持率优于行业基准 34%。符合 **CBAM 碳交易审计协议**。
                     </p>
                 </div>
             </div>
 
             <div class="space-y-12">
-                <div class="p-10 bg-white/[0.02] border border-white/5">
-                    <h3 class="text-xl font-black mb-8 italic uppercase text-[#0ea5e3]">Deterministic Specifications</h3>
+                <div class="p-10 bg-white/[0.02] border border-white/5 rounded-sm">
+                    <h3 class="text-xl font-black mb-10 italic uppercase text-[#0ea5e3] tracking-widest">Sovereign Specifications</h3>
                     <table class="passport-table" id="sku-spec-table">
                         </table>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="p-8 border border-white/10 bg-white/[0.01]">
-                        <span class="font-mono text-gray-600 text-[9px] tracking-[2px] uppercase">Transit_Survival</span>
-                        <div id="sku-fail" class="text-3xl font-black text-white mt-4">--%</div>
-                        <p class="text-[9px] text-gray-600 mt-2">ISTA-6A Physical Validation</p>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="p-8 border border-white/10 bg-white/[0.01] rounded-sm">
+                        <span class="font-mono text-gray-600 text-[9px] tracking-[3px] uppercase block mb-4">Transit_Survival</span>
+                        <div id="sku-fail" class="text-4xl font-black text-white">--%</div>
+                        <p class="text-[9px] text-gray-600 mt-4 font-mono uppercase tracking-widest">ISTA-6A VALIDATED</p>
                     </div>
-                    <div class="p-8 border border-white/10 bg-white/[0.01]">
-                        <span class="font-mono text-gray-600 text-[9px] tracking-[2px] uppercase">CBM_Efficiency</span>
-                        <div id="sku-cbm" class="text-3xl font-black text-[#0ea5e3] mt-4">--%</div>
-                        <p class="text-[9px] text-gray-600 mt-2">Container Load Optimization</p>
+                    <div class="p-8 border border-white/10 bg-white/[0.01] rounded-sm">
+                        <span class="font-mono text-gray-600 text-[9px] tracking-[3px] uppercase block mb-4">Load_Efficiency</span>
+                        <div id="sku-cbm" class="text-4xl font-black text-[#0ea5e3]">--%</div>
+                        <p class="text-[9px] text-gray-600 mt-4 font-mono uppercase tracking-widest">Container Load Max</p>
                     </div>
                 </div>
 
-                <button onclick="window.location.href='contact.html'" class="w-full py-6 bg-white text-black font-black uppercase tracking-[6px] hover:bg-[#0ea5e3] hover:text-white transition-all shadow-2xl">
-                    Request_Sovereign_Audit
+                <button onclick="window.location.href='tactical-briefing.html'" class="w-full py-8 bg-white text-black font-black uppercase tracking-[8px] hover:bg-[#0ea5e3] hover:text-white transition-all shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                    Initiate_Sovereign_Audit
                 </button>
             </div>
         </div>
     </main>
 
-    <footer class="bg-[#000] py-24 border-t border-white/5 font-inter">
+    <footer class="py-24 border-t border-white/5 bg-black">
         <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-12">
             <div class="mobile-items-center">
-                <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Passport_Verified</div>
-                <div class="flex gap-6 mt-4 text-[9px] font-mono text-gray-800 uppercase tracking-widest">
-                    <a href="site-architecture.html" class="hover:text-white transition">Blueprint_Map</a> / 
-                    <a href="sitemap.xml" target="_blank" class="hover:text-white transition">XML_Index</a>
+                <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Passport_Verified_System</div>
+                <div class="flex gap-6 mt-4">
+                    <a href="site-architecture.html" class="text-[9px] font-mono text-gray-800 uppercase tracking-widest hover:text-white transition">Blueprint_Map</a>
+                    <span class="text-gray-800">/</span>
+                    <a href="sovereign-index.xml" target="_blank" class="text-[9px] font-mono text-gray-800 uppercase tracking-widest hover:text-white transition">XML_Index</a>
                 </div>
             </div>
             
-            <div class="flex flex-wrap items-center gap-6 mobile-items-center opacity-60">
-                <div class="sovereign-tag">BIFMA_X5.1_VERIFIED</div>
-                <div class="sovereign-tag">ISTA_6A_CERTIFIED</div>
-                <div class="sovereign-tag">ISO9001_SYSTEM</div>
+            <div class="flex flex-wrap items-center gap-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-1000">
+                <img src="assets/icons/bifma-badge.webp" class="h-6" alt="BIFMA">
+                <img src="assets/icons/en131-badge.webp" class="h-6" alt="EN131">
+                <img src="assets/icons/ista-badge.webp" class="h-6" alt="ISTA">
+                <img src="assets/icons/logo-ul.webp" class="h-6" alt="UL">
             </div>
         </div>
     </footer>
 
     <script>
-        // 全品类工业资产数据库
+        // 全品类工业主权资产智库
         const PASSPORT_DB = {
-            "OFFICE_MESH": {
+            "MARINE_CHAIN": {
+                sector: "MARITIME_HARDWARE",
+                title: "G80 Tensile Node",
+                desc: "集成 2026 物理主权：针对重型港口作业设计，支持巴西 Santos 港反倾销豁免协议（AD Exemption）。",
+                specs: { 
+                    "Material": "Alloy Steel Grade 80", 
+                    "Safety_Factor": "4:1 Structural Node", 
+                    "Coating": "Hot-Dip Galvanized", 
+                    "HS_CODE": "7315.82.00" 
+                },
+                logistics: { cbm: "99.8%", fail: "0.00%" }
+            },
+            "INDUSTRIAL_LADDER": {
+                sector: "MRO_INFRASTRUCTURE",
+                title: "ANSI Aluminum Sovereignty",
+                desc: "针对美加市场铝梯避税架构（ASEAN Node）：规避对华反倾销税，符合 ANSI A14.2 工业级标准。",
+                specs: { 
+                    "Standard": "ANSI A14.2 / EN131", 
+                    "Origin": "Vietnam/Thailand Node", 
+                    "Material": "6061-T6 Aluminum", 
+                    "HS_CODE": "7616.99.10" 
+                },
+                logistics: { cbm: "94.5%", fail: "0.02%" }
+            },
+            "OFFICE_CHAIR": {
                 sector: "OFFICE_SOVEREIGNTY",
-                title: "High-End Mesh Terminal",
-                desc: "集成 2026 物理主权：针对北美大型办公空间，提供 BIFMA 顶配验证与 ISTA 零破损物流方案。",
-                specs: { "Actuation": "Kinetic Sync-Tilt", "Mesh_Density": "Industrial 1200D", "Load_Rating": "350 LBS Certified", "HS_CODE": "9401.31.00" },
-                logistics: { cbm: "97.8%", fail: "0.01%" }
-            },
-            "CHAIN_7315": {
-                sector: "INDUSTRIAL_NODES",
-                title: "Long-Link Tensile Matrix",
-                desc: "长虹制链核心资产：针对重型起重与牵引系统设计的确定性工业节点。",
-                specs: { "Grade": "G80 Structural Steel", "Breaking_Force": "12,000 KG", "HS_CODE": "7315.82.00", "Coating": "Hot-Dip Galv" },
-                logistics: { cbm: "99.4%", fail: "0.00%" }
-            },
-            "BAMBOO_FLOOR": {
-                sector: "BIO_MATERIALS",
-                title: "Carbon-Negative Bamboo",
-                desc: "户外重竹地板：应对 CBAM 碳关税的先锋材料，具备极致尺寸稳定性。",
-                specs: { "Density": "1.15 g/cm³", "Janka_Hardness": "3500+", "HS_CODE": "4418.75.00", "Fire_Rating": "Class B1" },
-                logistics: { cbm: "96.5%", fail: "0.02%" }
+                title: "Ergo Mesh Matrix",
+                desc: "针对北美大宗采购商（ODP/Ashley）：BIFMA X5.1 全项验证，物理结构冗余提升 20%。",
+                specs: { 
+                    "Actuation": "Synchronized Tilt Matrix", 
+                    "Lumbar": "Active Sovereignty Support", 
+                    "Load_Rating": "350 LBS Certified", 
+                    "HS_CODE": "9401.31.00" 
+                },
+                logistics: { cbm: "98.2%", fail: "0.01%" }
             }
         };
 
         function renderPassport() {
             const urlParams = new URLSearchParams(window.location.search);
-            const nodeID = urlParams.get('id') || "OFFICE_MESH";
+            const nodeID = urlParams.get('id') || "MARINE_CHAIN"; // 默认为海洋五金节点
             const data = PASSPORT_DB[nodeID];
+            
             if (!data) return;
 
             document.getElementById('sku-sector-tag').innerText = `[ SECTOR: ${data.sector} ]`;
             document.getElementById('sku-main-title').innerText = data.title;
             document.getElementById('sku-desc').innerText = data.desc;
-            document.getElementById('sku-id-display').innerText = nodeID; // 核心：显示节点 ID 替代图片
+            document.getElementById('sku-id-display').innerText = nodeID;
             document.getElementById('sku-cbm').innerText = data.logistics.cbm;
             document.getElementById('sku-fail').innerText = data.logistics.fail;
 
@@ -197,9 +222,22 @@
 
         window.onload = renderPassport;
 
+        // 加载进度
+        window.addEventListener('load', () => {
+            document.getElementById('bar-fill').style.width = '100%';
+            setTimeout(() => {
+                document.getElementById('loading-screen').style.opacity = '0';
+                setTimeout(() => { document.getElementById('loading-screen').style.display = 'none'; }, 700);
+            }, 2500);
+        });
+
+        // GPU 渲染光效
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
-            requestAnimationFrame(() => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; });
+            requestAnimationFrame(() => {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top = e.clientY + 'px';
+            });
         });
     </script>
 </body>
