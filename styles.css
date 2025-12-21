@@ -1,20 +1,28 @@
 /* =========================================================
-   YiShen Global — Integrated Master Styles (2026.FINAL)
-   Logic: Layout Sovereignty, Anti-Clipping, GPU Glow, Mobile-Fit
-   Version: 2026.FINAL.MASTER (All Patches Integrated)
+   YiShen Global — Integrated Master Styles (v4.0.FINAL.MASTER)
+   Logic: Layout Sovereignty, Anti-Clipping, GPU Glow, AI Agent Terminal
+   Version: 4.0.FINAL.MASTER (All Historical Patches Integrated)
    ========================================================= */
 
 :root {
+    /* 品牌主权色标与核心变量 */
     --neon-blue: #0ea5e3;
     --performance-red: #A11219;
     --deep-space: #010409;
+    --glass-bg: rgba(1, 4, 9, 0.95);
     --surface: rgba(255, 255, 255, 0.03);
     --navbar-height: 80px;
     --spring-curve: cubic-bezier(0.4, 0, 0.2, 1);
+    --terminal-green: #00ff41;
 }
 
-/* 01_Core_Reset & Base */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* 01_Core_Reset & Global Architecture */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    -webkit-font-smoothing: antialiased;
+}
 
 body { 
     background-color: var(--deep-space); 
@@ -22,118 +30,176 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
 }
 
-/* 02_Digital_Glow (GPU Accelerated) */
+/* 02_Digital_Glow: GPU Accelerated Engine */
 #cursor-glow {
-    position: fixed; width: 600px; height: 600px;
+    position: fixed; 
+    width: 600px; 
+    height: 600px;
     background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
-    pointer-events: none; z-index: 99999; transform: translate(-50%, -50%);
-    will-change: transform; mix-blend-mode: screen;
+    pointer-events: none; 
+    z-index: 99999; 
+    transform: translate(-50%, -50%);
+    will-change: transform; 
+    mix-blend-mode: screen;
 }
 
 /* 03_Universal_Navbar_Sovereignty */
 #master-nav {
-    position: fixed; top: 0; left: 0; width: 100%; height: var(--navbar-height);
-    background: rgba(1, 4, 9, 0.95);
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: var(--navbar-height);
+    background: var(--glass-bg);
     backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px);
     z-index: 100000 !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    display: flex; align-items: center;
+    display: flex; 
+    align-items: center;
+    transition: all 0.3s var(--spring-curve);
 }
 
 .nav-container {
-    width: 100%; max-width: 1440px; margin: 0 auto;
-    padding: 0 40px; display: flex; 
-    justify-content: space-between; align-items: center;
+    width: 100%; 
+    max-width: 1440px; 
+    margin: 0 auto;
+    padding: 0 40px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
 }
 
-/* 04_Navigation_Interaction (Spring Core) */
+/* 04_Video_Infrastructure & Interaction */
+.hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hero-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.55;
+    pointer-events: none;
+}
+
 .accordion-content {
-    max-height: 0; overflow: hidden;
+    max-height: 0; 
+    overflow: hidden;
     transition: max-height 0.4s var(--spring-curve);
     background: rgba(255, 255, 255, 0.02);
 }
 
 .site-logo svg {
-    height: 32px !important; width: auto !important;
-    display: block !important; overflow: visible !important;
+    height: 32px !important; 
+    width: auto !important;
+    display: block !important; 
+    overflow: visible !important;
     filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.3));
 }
 
-/* 05_Footer_Graphics_Defense (Integrated Anti-Clipping Patch) */
-/* 集成了最新的 2026 物理防破碎指令 */
+/* 05_Graphics_Defense: Anti-Clipping & Grayscale */
+.grayscale-active, .grayscale { 
+    filter: grayscale(100%) contrast(1.1); 
+    transition: all 0.5s var(--spring-curve); 
+    opacity: 0.45;
+}
+
+.grayscale-active:hover, .grayscale:hover { 
+    filter: grayscale(0%) contrast(1); 
+    opacity: 1;
+    transform: translateY(-2px) scale(1.03);
+}
+
 footer .flex-shrink-0, 
 footer a[style*="flex-shrink: 0"] {
-    flex-shrink: 0 !important;   /* 核心锁定：禁止任何压缩 */
-    white-space: nowrap !important; /* 核心锁定：禁止折行 */
+    flex-shrink: 0 !important;   /* 禁止压缩 */
+    white-space: nowrap !important; 
     display: inline-block !important;
 }
 
 footer img {
-    max-width: none !important;      /* 撤销容器宽度限制，防止挤压变形 */
+    max-width: none !important;      /* 撤销宽度限制防止变形 */
     height: auto;
-    display: block !important;       /* 消除基线偏移 */
-    backface-visibility: hidden;     /* 解决 GPU 渲染锯齿 */
+    display: block !important;
+    backface-visibility: hidden;
     -webkit-user-drag: none;
-    -webkit-font-smoothing: antialiased;
 }
 
-/* 06_Global_Intelligence_Matrix (Grayscale Filter) */
-.grayscale { 
-    filter: grayscale(100%); 
-    transition: filter 0.5s var(--spring-curve); 
+/* 06_AI_Agent_Terminal_Framework */
+.agent-console {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(14, 165, 233, 0.2);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    border-radius: 2px;
+    transition: all 0.4s var(--spring-curve);
 }
 
-.grayscale:hover { 
-    filter: grayscale(0%); 
+.agent-console:focus-within {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 30px rgba(14, 165, 233, 0.15);
 }
 
-/* 07_Mobile_Responsive_Engine (Huawei/iOS Optimization) */
+.terminal-log {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #666;
+    letter-spacing: 0.5px;
+}
+
+/* 07_Mobile_Responsive_Engine */
 @media (max-width: 768px) {
-    /* 彻底解决手机端视觉重叠 Bug */
-    .hero, .page-hero { 
-        height: auto !important; 
-        min-height: 100vh; 
-        padding: 140px 5% 60px !important; 
-    }
+    :root { --navbar-height: 70px; }
     
+    .hero, .page-hero { 
+        padding: 140px 5% 60px !important;
+        min-height: 100vh;
+        height: auto !important;
+    }
+
     .nav-container { padding: 0 20px; }
 
-    /* 页脚响应式物理补丁 */
-    footer .items-end,
-    .mobile-items-center {
-        align-items: center !important;    /* 手机端强制居中防止靠右截断 */
-        text-align: center !important;
-        width: 100% !important;
-    }
-    
-    footer .flex-nowrap {
-        justify-content: center !important; /* 图标矩阵手机端居中排布 */
-    }
-
-    /* 解决窄屏文字溢出 */
-    footer span.whitespace-nowrap {
-        font-size: 7px;
-        letter-spacing: 1px;
-    }
-
-    /* 页脚矩阵降维对齐 */
-    footer .grid-cols-5, footer .grid-cols-4, footer .grid-cols-2 { 
+    footer .grid-cols-5, 
+    footer .grid-cols-4, 
+    footer .grid-cols-2 { 
         grid-template-columns: repeat(2, 1fr) !important; 
         gap: 24px !important; 
     }
 
-    footer .aspect-[21/9] { aspect-ratio: 4/3 !important; }
+    .mobile-items-center {
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    footer .flex-nowrap {
+        justify-content: center !important;
+    }
+
+    footer span.whitespace-nowrap {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
 }
 
-/* 08_Utility_Link_Matrix */
+/* 08_Utility_Typography */
 .nav-link {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem; letter-spacing: 0.1em;
+    font-size: 0.7rem; 
+    letter-spacing: 0.1em;
     color: rgba(255, 255, 255, 0.6);
-    text-decoration: none; transition: 0.3s;
+    text-decoration: none; 
+    transition: 0.3s;
 }
+
 .nav-link:hover { color: var(--neon-blue); }
 .nav-link.active { color: #fff; border-bottom: 2px solid var(--performance-red); }
