@@ -1,40 +1,62 @@
-<!-- =========================
-     Navbar · YiShen Global
-     System Version: 2026
-     Stable / Reusable / No-Disappear
-========================= -->
-<header class="site-header">
-  <nav class="navbar">
-    <div class="nav-inner">
+<nav id="master-nav" class="fixed top-0 left-0 w-full z-[100000] bg-[#010409]/90 backdrop-blur-xl border-b border-white/5 h-20 flex items-center px-8 transition-all duration-500">
+    <div class="max-w-[1440px] mx-auto w-full flex items-center justify-between">
+        
+        <a href="index.html" class="flex flex-col group">
+            <div class="flex items-center">
+                <img src="/assets/img/logo-yishen-global.svg" alt="YiShen Global" class="h-8 w-auto mr-3 opacity-90 group-hover:opacity-100 transition-opacity">
+                <span class="text-white font-black italic text-xl tracking-tighter uppercase leading-none group-hover:text-[#0ea5e3] transition-colors">Yishen Global</span>
+            </div>
+            <div class="flex items-center mt-1">
+                <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse mr-2 shadow-[0_0_8px_#10b981]"></span>
+                <span class="text-[#0ea5e3] font-mono text-[7px] tracking-[3px] uppercase">Sovereign_V5_Active</span>
+            </div>
+        </a>
 
-      <!-- Brand -->
-      <a href=" " class="nav-brand">
-        < img src="/assets/img/logo-yishen-global.svg"
-             alt="YiShen Global"
-             class="nav-logo">
-      </a >
+        <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-[widest] text-gray-400 uppercase">
+            <a href="genesis.html" class="hover:text-white transition relative group">
+                01_Genesis
+                <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#0ea5e3] transition-all group-hover:w-full"></span>
+            </a>
+            <a href="industrial-nodes.html" class="hover:text-white transition relative group">
+                02_Clusters
+                <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#0ea5e3] transition-all group-hover:w-full"></span>
+            </a>
+            <a href="resources.html" class="hover:text-white transition relative group">
+                03_Resources
+                <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#0ea5e3] transition-all group-hover:w-full"></span>
+            </a>
+            <a href="intelligence-intel.html" class="hover:text-white transition relative group text-[#ffd700]">
+                04_Intel_Interception
+                <span class="absolute -bottom-1 left-0 w-full h-[1px] bg-[#ffd700]/30 shadow-[0_0_8px_rgba(255,215,0,0.2)]"></span>
+            </a>
+        </div>
 
-      <!-- Toggle (Mobile) -->
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+        <div class="flex items-center space-x-6">
+            
+            <div class="hidden xl:flex items-center bg-white/5 border border-white/10 rounded-sm px-3 py-1.5 group focus-within:border-[#0ea5e3] transition-all">
+                <i class="fas fa-search text-[10px] text-gray-600 mr-2"></i>
+                <input type="text" id="nav-hs-sniffer" placeholder="Search HS_CODE..." 
+                       class="bg-transparent border-none outline-none text-[9px] font-mono text-white w-28 placeholder:text-gray-700"
+                       onkeyup="if(event.key==='Enter') window.location.href='resources.html?q='+this.value">
+                <span class="text-[7px] font-mono text-gray-800 ml-2 border border-white/5 px-1">CMD+K</span>
+            </div>
 
-      <!-- Navigation -->
-      <ul class="nav-menu">
-        <li><a href="/index.html">Home</a ></li>
-        <li><a href="/solutions.html">Solutions</a ></li>
-        <li><a href="/industries.html">Industries</a ></li>
-        <li><a href="/resources.html">Resources</a ></li>
-        <li><a href="/why-us.html">Why Us</a ></li>
-        <li>
-          <a href="/contact.html" class="nav-cta">
-            Contact
-          </a >
-        </li>
-      </ul>
+            <div class="flex items-center gap-2 px-4 py-2 border-l border-white/10 ml-4">
+                <div class="flex flex-col items-end">
+                    <span id="nav-geo-tag" class="text-[8px] font-mono text-[#0ea5e3] uppercase tracking-tighter">Detecting_Node...</span>
+                    <span class="text-[7px] font-mono text-gray-600">MAPPING_GATE_V5</span>
+                </div>
+                <button onclick="window.location.href='tactical-briefing.html'" 
+                        class="ml-4 px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm text-[10px] uppercase hover:bg-white transition-all shadow-[0_0_15px_rgba(14,165,227,0.3)] hover:scale-105 active:scale-95">
+                    Access_Vault
+                </button>
+            </div>
 
+            <button class="lg:hidden text-white text-xl ml-4 hover:text-[#0ea5e3] transition-colors" aria-label="Toggle Menu">
+                <i class="fas fa-bars-staggered"></i>
+            </button>
+        </div>
     </div>
-  </nav>
-</header>
+</nav>
+
+<div id="nav-mask" class="fixed top-0 left-0 w-full h-20 bg-black z-[99999] pointer-events-none opacity-0 transition-opacity duration-300"></div>
