@@ -8,206 +8,154 @@
     <meta name="description" content="Yishen Global provides coordinated industrial solutions. Moving from individual SKU sourcing to integrated system stability.">
     <meta name="theme-color" content="#010409">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
-    <link rel="stylesheet" href="styles.css?v=2026">
-
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="styles.css?v=2026.FINAL.MASTER">
 
     <style>
-        :root {
-            --performance-red: #A11219;
-            --neon-blue: #0ea5e3;
-            --deep-space: #010409;
-            --surface: rgba(255, 255, 255, 0.03);
-            --text-dim: #94a3b8;
-        }
-
-        body { background-color: var(--deep-space); color: white; font-family: 'Inter', sans-serif; }
-
-        /* 数字化微光补丁 */
-        #cursor-glow {
-            position: fixed; width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
-            border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%);
-            will-change: transform;
-        }
-
-        /* LOGO 物理防御 */
-        .site-logo {
-            display: flex !important; align-items: center !important; height: 32px !important;
-            width: auto !important; text-decoration: none !important; overflow: visible !important;
-        }
-
-        /* HERO 视觉遮罩 */
+        /* 权威母版特有内联补丁：确保视频背景与 GPU 追踪层级对撞成功 */
         .page-hero {
             height: 65vh; display: flex; align-items: center;
-            background: linear-gradient(90deg, var(--deep-space) 35%, rgba(1, 4, 9, 0.3) 75%, transparent 100%), 
-                        url('Yishen-Global-Hero-Banner-2026.webp');
+            background: linear-gradient(90deg, #010409 35%, rgba(1, 4, 9, 0.3) 75%, transparent 100%), 
+                        url('https://yishenglobal.net/assets/mesh.webp');
             background-size: cover; background-position: center right; position: relative; padding: 0 8%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* 解决方案卡片 */
-        .solution-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2px; background: #1e293b; margin-top: 60px; border: 1px solid #1e293b; }
-        .solution-card { background: var(--deep-space); padding: 60px; transition: all 0.4s ease; }
+        .solution-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1px; background: rgba(255,255,255,0.1); margin-top: 60px; border: 1px solid rgba(255,255,255,0.1); }
+        .solution-card { background: #010409; padding: 60px; transition: all 0.4s var(--spring-curve); }
         .solution-card:hover { background: rgba(14, 165, 233, 0.05); }
 
-        /* AI Agent 终端专属样式 [对齐跨境魔方] */
-        .agent-console {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(14, 165, 233, 0.3);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 40px rgba(0,0,0,0.5);
-        }
-        .terminal-log { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #475569; }
-        
+        /* 补丁：风险矩阵交互感 */
         .risk-item { padding: 20px; border-left: 2px solid var(--neon-blue); background: rgba(14, 165, 233, 0.02); margin-bottom: 15px; transition: 0.3s; }
         .risk-item:hover { background: rgba(14, 165, 233, 0.08); transform: translateX(10px); }
     </style>
 </head>
-<body>
+<body class="bg-[#010409] text-white selection:bg-[#0ea5e3]">
 
-<div id="cursor-glow"></div>
+    <div id="cursor-glow"></div>
 
-<nav id="master-nav" style="position:fixed; width:100%; top:0; left:0; z-index:10000; background:rgba(1,4,9,0.9); backdrop-filter:blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05);">
-    <div style="display:flex; justify-content:space-between; align-items:center; max-width:1440px; margin:0 auto; padding:15px 5%;">
-        <a href="index.html" class="site-logo">
-            <svg width="280" height="32" viewBox="0 0 280 32" fill="none">
-                <g fill="white">
-                    <path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/>
-                </g>
-                <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
-                <text x="56" y="18" fill="white" style="font-family:'Inter'; font-weight:700; font-size:18px;">Yishen Global</text>
-            </svg>
-        </a>
-        <div style="display:flex; gap:25px; align-items:center;">
-            <a href="index.html" style="color:white; text-decoration:none; font-family:'JetBrains Mono'; font-size:0.75rem;">SYSTEM</a>
-            <a href="solutions.html" style="color:var(--neon-blue); text-decoration:none; font-family:'JetBrains Mono'; font-size:0.75rem;">SOLUTIONS</a>
-            <a href="contact.html" style="color:var(--neon-blue); border:1px solid rgba(14,165,233,0.3); padding:6px 12px; font-family:'JetBrains Mono'; font-size:0.7rem; text-decoration:none;">INITIATE_BRIEFING</a>
-        </div>
-    </div>
-</nav>
-
-<header class="page-hero">
-    <div class="container">
-        <span style="color:var(--neon-blue); font-family:'JetBrains Mono'; text-transform:uppercase; letter-spacing:4px;">[ SOLUTION_ARCHITECTURE_V1 ]</span>
-        <h1 style="font-size: clamp(2.5rem, 8vw, 4.2rem); font-weight:900; line-height:1.05; margin: 25px 0;">Coordinated<br>Stability.</h1>
-        <p style="color:var(--text-dim); max-width:700px; font-size:1.15rem; line-height: 1.7;">
-            Applying engineering logic to fragmented supply chains. We convert global furniture volatility into predictable performance.
-        </p>
-    </div>
-</header>
-
-<main style="padding: 100px 8%;">
-    <div class="container">
-        <span class="tag" style="color:var(--neon-blue); font-family:'JetBrains Mono'; font-size:0.7rem;">01_SYSTEM_LOGIC</span>
-        <h2 style="font-size:2.5rem; margin: 20px 0 40px; font-weight:900;">The Furniture-First Methodology</h2>
-        
-        <div class="solution-grid">
-            <div class="solution-card">
-                <span style="font-family:'JetBrains Mono'; color:var(--neon-blue); font-size:0.7rem; letter-spacing:2px;">STEP_01</span>
-                <h3>Risk Mapping</h3>
-                <p>Analyzing material volatility and customs bottlenecks before production.</p>
-            </div>
-            <div class="solution-card">
-                <span style="font-family:'JetBrains Mono'; color:var(--neon-blue); font-size:0.7rem; letter-spacing:2px;">STEP_02</span>
-                <h3>Node Selection</h3>
-                <p>Deploying production to verified industrial clusters (Tier-1 Direct).</p>
-            </div>
-            <div class="solution-card">
-                <span style="font-family:'JetBrains Mono'; color:var(--neon-blue); font-size:0.7rem; letter-spacing:2px;">STEP_03</span>
-                <h3>Integrity Audit</h3>
-                <p>ISTA-6A survival modeling and BIFMA structural validation.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="container" style="margin-top: 120px;">
-        <div class="agent-console p-8 md:p-12">
-            <div class="flex items-center justify-between mb-8 border-b border-white/10 pb-4">
-                <h4 class="text-[#0ea5e3] font-mono text-xs tracking-[4px]">// YISHEN_AI_AGENT_V1.0</h4>
-                <div class="flex items-center gap-2">
-                    <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
-                    <span class="text-[9px] font-mono text-gray-500">READY_TO_HARVEST</span>
-                </div>
-            </div>
-            
-            <div class="flex flex-col md:flex-row gap-4 mb-8">
-                <input type="text" id="user-task" 
-                       placeholder="下达获客指令，例如：寻找10家需要ISTA-6A标准的物流商..." 
-                       class="flex-1 bg-black border border-white/20 p-4 text-sm font-mono outline-none text-[#0ea5e3] focus:border-[#0ea5e3] transition">
-                <button onclick="runAgent()" 
-                        class="bg-[#0ea5e3] px-8 py-4 text-black font-black text-xs uppercase hover:bg-white transition">
-                    Deploy_Agent
-                </button>
-            </div>
-
-            <div id="agent-output" class="terminal-log min-h-[60px] bg-black/40 p-4 rounded border border-white/5">
-                > System initialized. Waiting for instruction...
-            </div>
-        </div>
-    </div>
-</main>
-
-<footer style="padding: 100px 8% 50px; background: #000; border-top: 1px solid rgba(255,255,255,0.05);">
-    <div class="container">
-        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:60px;">
-            <div>
-                <svg width="280" height="32" viewBox="0 0 280 32" fill="none" style="margin-bottom:20px;">
-                    <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
+    <nav id="master-nav">
+        <div class="nav-container">
+            <a href="index.html" class="site-logo">
+                <svg width="280" height="32" viewBox="0 0 280 32" fill="none">
+                    <g fill="white">
+                        <path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/>
+                    </g>
                     <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
                     <text x="56" y="18" fill="white" style="font-family:'Inter'; font-weight:700; font-size:18px;">Yishen Global</text>
                 </svg>
-                <p style="font-size: 0.85rem; color: #475569; line-height:1.7;">Engineering-led furniture supply chain systems.<br>Integrated Architecture · Delivered Worldwide</p>
-            </div>
-            <div>
-                <h4 style="color:white; margin-bottom:25px; font-family:'JetBrains Mono'; font-size: 0.9rem;">Intelligence Matrix</h4>
-                <p style="color:#475569; font-size:0.85rem;">Main Hotline: +86 19530394133</p>
-                <p style="color:#475569; font-size:0.85rem; margin-top:10px;">Email: alex.yang@yishenglobal.net</p>
+            </a>
+            <div class="hidden lg:flex items-center gap-10">
+                <a href="index.html" class="nav-link">SYSTEM</a>
+                <a href="solutions.html" class="nav-link active">SOLUTIONS</a>
+                <a href="contact.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase text-[0.7rem] font-mono tracking-widest">Initiate</a>
             </div>
         </div>
-        <div style="margin-top: 80px; text-align: center; font-size: 0.65rem; color: #334155; letter-spacing: 3px; text-transform: uppercase;">
-            &copy; 2026 Yishen Global // DATA ENCRYPTED // MISSION SECURED.
+    </nav>
+
+    <header class="page-hero">
+        <div class="max-w-[1440px]">
+            <span class="font-mono text-[#0ea5e3] tracking-[4px] text-xs uppercase">[ SOLUTION_ARCHITECTURE_V1 ]</span>
+            <h1 class="text-white text-[clamp(2.5rem,8vw,4.2rem)] font-[900] leading-[1.05] my-8 uppercase italic">Coordinated<br>Stability.</h1>
+            <p class="text-gray-400 max-w-[700px] text-lg leading-relaxed">
+                Applying engineering logic to fragmented supply chains. We convert global furniture volatility into predictable performance.
+            </p>
         </div>
-    </div>
-</footer>
+    </header>
 
+    <main class="py-24 px-[8%]">
+        <div class="max-w-[1440px] mx-auto">
+            <span class="font-mono text-[#0ea5e3] text-xs">01_SYSTEM_LOGIC</span>
+            <h2 class="text-4xl font-[900] my-6 italic uppercase">The Furniture-First Methodology</h2>
+            
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <span class="font-mono text-[#0ea5e3] text-[10px] tracking-[2px]">STEP_01</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2">Risk Mapping</h3>
+                    <p class="text-gray-500 text-sm">Analyzing material volatility and customs bottlenecks before production.</p>
+                </div>
+                <div class="solution-card">
+                    <span class="font-mono text-[#0ea5e3] text-[10px] tracking-[2px]">STEP_02</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2">Node Selection</h3>
+                    <p class="text-gray-500 text-sm">Deploying production to verified industrial clusters (Tier-1 Direct).</p>
+                </div>
+                <div class="solution-card">
+                    <span class="font-mono text-[#0ea5e3] text-[10px] tracking-[2px]">STEP_03</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2">Integrity Audit</h3>
+                    <p class="text-gray-500 text-sm">ISTA-6A survival modeling and BIFMA structural validation.</p>
+                </div>
+            </div>
 
+            <div class="agent-console p-10 mt-32">
+                <div class="flex items-center justify-between mb-8 border-b border-white/10 pb-4">
+                    <h4 class="text-[#0ea5e3] font-mono text-[10px] tracking-[4px] uppercase animate-pulse">// YISHEN_AI_AGENT_V1.0</h4>
+                    <span class="text-[9px] font-mono text-gray-600 uppercase italic">Ready_to_harvest</span>
+                </div>
+                <div class="flex flex-col md:flex-row gap-4 mb-6">
+                    <input type="text" id="user-task" 
+                           placeholder="下达获客指令，例如：寻找北美ISTA-6A标准采购商..." 
+                           class="flex-1 bg-black border border-white/10 p-4 text-xs font-mono outline-none text-[#0ea5e3]">
+                    <button onclick="runAgent()" 
+                            class="bg-[#0ea5e3] px-8 py-4 text-black font-[900] text-xs uppercase hover:bg-white transition-all duration-300">
+                        Deploy_Agent
+                    </button>
+                </div>
+                <div id="agent-output" class="terminal-log min-h-[60px] bg-black/50 p-4">
+                    > System initialized. Awaiting briefing.
+                </div>
+            </div>
+        </div>
+    </main>
 
-<script>
-    // AI Agent 模拟执行逻辑
-    function runAgent() {
-        const input = document.getElementById('user-task');
-        const output = document.getElementById('agent-output');
-        
-        if(!input.value) return;
+    <footer id="compliance-section" class="bg-black pt-24 pb-12 border-t border-white/5">
+        <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="mobile-items-center">
+                <svg width="200" height="24" viewBox="0 0 280 32" fill="none" class="mb-6">
+                    <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
+                    <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
+                </svg>
+                <p class="text-[9px] font-mono text-gray-700 tracking-[3px] uppercase">
+                    &copy; 2026 YISHEN GLOBAL // MISSION_SECURED.
+                </p>
+            </div>
 
-        const steps = [
-            `> INITIATING_MISSION: [${input.value.toUpperCase()}]`,
-            "> SCANNING_GLOBAL_TRADE_DATABASE (PANJIVA_API)...",
-            "> FILTERING_NODES: [Compliance=ISTA-6A, Region=North_America]",
-            "> ANALYZING_DECISION_MAKER_PROFILES (ZOOMINFO_SYNC)...",
-            "> GENERATING_STRATEGIC_OUTREACH_CLONE...",
-            "> SUCCESS: 12 HIGH-VALUE LEADS SECURED. SYNCING_TO_CRM..."
-        ];
+            <div class="flex flex-nowrap items-center gap-8 grayscale-active">
+                <a href="https://www.bifma.org" target="_blank"><img src="https://yishenglobal.net/assets/bifma-badge.png" class="h-8 w-auto" alt="BIFMA Compliance"></a>
+                <a href="https://ista.org" target="_blank"><img src="https://yishenglobal.net/assets/ista-badge.png" class="h-8 w-auto" alt="ISTA Certification"></a>
+                <a href="https://www.iso.org" target="_blank"><img src="https://yishenglobal.net/assets/iso9001.png" class="h-10 w-auto" alt="ISO9001 Standards"></a>
+            </div>
+        </div>
+    </footer>
 
-        output.innerHTML = "";
-        let i = 0;
-        const interval = setInterval(() => {
-            output.innerHTML += `<div style="margin-bottom:5px; color:${i === steps.length-1 ? '#0ea5e3' : '#475569'}">${steps[i]}</div>`;
-            i++;
-            if(i === steps.length) clearInterval(interval);
-        }, 800);
-    }
-
-    // 数字化微光随动
-    const glow = document.getElementById('cursor-glow');
-    document.addEventListener('mousemove', (e) => {
-        requestAnimationFrame(() => {
-            glow.style.left = e.clientX + 'px';
-            glow.style.top = e.clientY + 'px';
+    <script>
+        // GPU 追踪补丁同步
+        const glow = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => {
+            requestAnimationFrame(() => {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top = e.clientY + 'px';
+            });
         });
-    });
-</script>
 
+        // AI Agent 执行模拟
+        function runAgent() {
+            const input = document.getElementById('user-task');
+            const output = document.getElementById('agent-output');
+            if(!input.value) return;
+            const steps = [
+                `> MISSION: [${input.value.toUpperCase()}]`,
+                "> SCANNING_PANJIVA_TRADE_STREAMS...",
+                "> FILTERING_NODES_BY_ISTA6A_INTEGRITY...",
+                "> SUCCESS: 12 HIGH-VALUE LEADS ENCRYPTED."
+            ];
+            output.innerHTML = ""; let i = 0;
+            const interval = setInterval(() => {
+                output.innerHTML += `<div class="mb-1">${steps[i]}</div>`;
+                i++;
+                if(i === steps.length) clearInterval(interval);
+            }, 800);
+        }
+    </script>
 </body>
 </html>
