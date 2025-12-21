@@ -29,7 +29,6 @@
         }
         .asset-node:hover { border-color: var(--neon-blue); background: rgba(14, 165, 233, 0.04); transform: translateY(-10px); }
 
-        /* 前瞻前瞻预测标签样式 */
         .forecast-badge {
             font-family: 'JetBrains Mono'; font-size: 0.55rem; color: #fff;
             background: var(--performance-red); padding: 2px 8px; margin-bottom: 20px; display: inline-block;
@@ -43,6 +42,9 @@
         /* 物理防挤压补丁 */
         footer a { flex: 0 0 auto !important; }
         footer img { max-width: none !important; min-width: 80px; }
+        
+        .grayscale-active { filter: grayscale(100%); transition: 0.5s; opacity: 0.4; }
+        .grayscale-active:hover { filter: grayscale(0%); opacity: 1; }
     </style>
 </head>
 <body class="bg-[#010409]">
@@ -66,12 +68,12 @@
         </div>
     </nav>
 
-    <header style="padding: 220px 8% 100px; background: radial-gradient(circle at 0% 0%, rgba(14, 165, 233, 0.05) 0%, transparent 50%); border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <header style="padding: 220px 8% 100px; border-bottom: 1px solid rgba(255,255,255,0.05);">
         <div class="max-w-[1200px]">
             <span class="font-mono tracking-[8px] text-[#0ea5e3] text-sm uppercase">[ SOVEREIGN_ASSET_MATRIX_V4.0 ]</span>
             <h1 class="text-white text-[clamp(3.5rem,10vw,7rem)] font-[900] leading-[0.9] my-12 uppercase italic tracking-tighter">Deterministic<br>Assets.</h1>
             <p class="text-gray-400 text-xl max-w-[850px] leading-relaxed italic border-l-2 border-[#A11219] pl-10">
-                科学集成：我们将所有家具品类由“寻源（Sourcing）”转向“资产确定性（Asset Determinism）”。涵盖高密度办公、特种航天及碳中和建材。
+                主权资产对撞：我们将办公、特种、户外及九大工业族群（长虹制链）统一并入资产矩阵。每一个 SKU 都是一个确定性的工业节点。
             </p>
         </div>
     </header>
@@ -79,84 +81,51 @@
     <main class="py-24 px-[8%]">
         <div class="mb-24 p-10 bg-[#A11219]/5 border border-[#A11219]/20">
             <h4 class="font-mono text-[#A11219] text-xs uppercase tracking-[4px] mb-6">// 2026_INDUSTRIAL_FORECAST</h4>
-            <div class="grid md:grid-cols-2 gap-12 text-sm leading-relaxed text-gray-400">
-                <p>研究指出：2026 年全球家具供应链将向 **“物理主权（Physical Sovereignty）”** 迁移。这意味着大型买家如 JYSK、Ashley 将不再接受不可预测的交付波动，而是要求 100% 的 BIM 数据对撞和 ISTA-6A 生存模型。</p>
-                <p>预测方向：材料主权将向 **Carbon-Negative (碳负性)** 倾斜。Yishen Global 正在将竹制工艺与建筑板材整合进大宗供应链，以应对欧盟即将到来的碳边境调节机制（CBAM）。</p>
+            <div class="grid md:grid-cols-2 gap-12 text-sm leading-relaxed text-gray-400 font-inter">
+                <p>研究指出：2026 年全球家具供应链将向 **“物理主权（Physical Sovereignty）”** 迁移。大型买家（Ashley, JYSK）将要求 100% 的 BIM 数据对撞和 ISTA-6A 生存模型。</p>
+                <p>预测方向：材料主权将向 **Carbon-Negative (碳负性)** 倾斜。Yishen Global 的竹制工艺与长虹制链体系已全面整合，以应对欧盟即将到来的碳关税（CBAM）。</p>
             </div>
         </div>
 
         <div class="matrix-grid">
             <div class="asset-node">
-                <div class="forecast-badge">GROWTH_PREDICTION: +12.4% CAGR</div>
+                <div class="forecast-badge">GROWTH: +12.4% CAGR</div>
                 <h3 class="text-3xl font-black mb-8 text-[#0ea5e3] uppercase italic">Ergonomic Hub</h3>
-                <div class="mb-8 font-mono text-xs text-gray-500 space-y-2">
-                    <span class="sku-tag">Mesh_Chair</span> <span class="sku-tag">Gaming_Chair</span> <span class="sku-tag">Standing_Desk_Nodes</span>
+                <div class="mb-8 font-mono text-xs text-gray-500">
+                    <span class="sku-tag">Mesh_Chair</span> <span class="sku-tag">Gaming_Node</span> <span class="sku-tag">Swivel_Active</span>
                 </div>
-                <p class="text-sm text-gray-400 leading-relaxed mb-10">
-                    面向北美 10 亿美金级零售巨头。集成 BIFMA X5.1 验证与高强度人体工学架构，旨在消除大型办公空间中的交付变量。
-                </p>
+                <p class="text-sm text-gray-400 leading-relaxed mb-10">面向 10 亿美金级零售巨头。集成 BIFMA 机械验证，旨在消除北美大型集采中的交付变量。</p>
                 <div class="border-t border-white/5 pt-8">
-                    <p class="text-[9px] font-mono text-gray-600 uppercase tracking-[2px]">Primary_Persona: Fortune 500 Procurement / Facility Leads</p>
+                    <p class="text-[9px] font-mono text-gray-600 uppercase">Target: Fortune 500 Procurement / Ecommerce Giants</p>
                 </div>
             </div>
 
             <div class="asset-node">
-                <div class="forecast-badge">TECH_DIRECTION: 9G_IMPACT_STABILITY</div>
-                <h3 class="text-3xl font-black mb-8 text-[#A11219] uppercase italic">Mission_Critical</h3>
-                <div class="mb-8 font-mono text-xs text-gray-500 space-y-2">
-                    <span class="sku-tag">Aerospace_Seating</span> <span class="sku-tag">Casino_Sovereignty</span> <span class="sku-tag">Automotive_Nodes</span>
+                <div class="forecast-badge">TECH: TENSILE_PROTOCOL</div>
+                <h3 class="text-3xl font-black mb-8 text-white uppercase italic">Industrial Chain Matrix</h3>
+                <div class="mb-8 font-mono text-xs text-gray-500">
+                    <span class="sku-tag">HS_7315_CHAIN</span> <span class="sku-tag">HS_8425_LIFTING</span> <span class="sku-tag">HS_8301_LOCK</span>
                 </div>
-                <p class="text-sm text-gray-400 leading-relaxed mb-10">
-                    针对 24/7 高负载环境。航天级减震与博彩业极端疲劳测试，每一台节点均具备独立的“主权护照”，追踪材料全生命周期。
-                </p>
+                <p class="text-sm text-gray-400 leading-relaxed mb-10">集成长虹链条、钢丝绳、起重吊装及汽车配件系统。核心力矩：极致张紧与物理生存防御。</p>
                 <div class="border-t border-white/5 pt-8">
-                    <p class="text-[9px] font-mono text-gray-600 uppercase tracking-[2px]">Primary_Persona: Gov Contractors / Strategic Infrastructure Developers</p>
+                    <p class="text-[9px] font-mono text-gray-600 uppercase">Target: Industrial Distributors / Port Ops / Fleet Maintenance</p>
                 </div>
             </div>
 
             <div class="asset-node">
-                <div class="forecast-badge">FORECAST: CBAM_COMPLIANCE_LOCK</div>
-                <h3 class="text-3xl font-black mb-8 text-white uppercase italic">Industrial Infrastructure</h3>
-                <div class="mb-8 font-mono text-xs text-gray-500 space-y-2">
-                    <span class="sku-tag">Carbon_Neg_Bamboo</span> <span class="sku-tag">Mech_Chains</span> <span class="sku-tag">Architectural_Panels</span>
+                <div class="forecast-badge">FORECAST: CBAM_LOCK</div>
+                <h3 class="text-3xl font-black mb-8 text-[#0ea5e3] uppercase italic">Outdoor & Bamboo</h3>
+                <div class="mb-8 font-mono text-xs text-gray-500">
+                    <span class="sku-tag">Pet_Survival</span> <span class="sku-tag">Carbon_Neg_Bamboo</span> <span class="sku-tag">Tent_Nodes</span>
                 </div>
-                <p class="text-sm text-gray-400 leading-relaxed mb-10">
-                    长虹制链与建筑板材的大宗集成。通过可持续竹材取代高耗能组建，为欧洲建筑商提供符合未来碳关税政策的“避风港”主权供应链。
-                </p>
+                <p class="text-sm text-gray-400 leading-relaxed mb-10">从狗桩牵引系统到 LEED 级竹制地板。通过可持续材料取代高耗能组件，建立欧盟准入主权。</p>
                 <div class="border-t border-white/5 pt-8">
-                    <p class="text-[9px] font-mono text-gray-600 uppercase tracking-[2px]">Primary_Persona: EU Real Estate Developers / Global Logistics Architects</p>
+                    <p class="text-[9px] font-mono text-gray-600 uppercase">Target: Pet Chain Retailers / EU Real Estate Developers</p>
                 </div>
             </div>
         </div>
-    </main>
 
-    <footer class="bg-[#000] py-24 border-t border-white/5 font-inter">
-        <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-12">
-            <div class="mobile-items-center">
-                <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Architecture_Verified</div>
-                <div class="flex gap-6 mt-4 text-[9px] font-mono text-gray-800 uppercase tracking-widest">
-                    <a href="site-architecture.html" class="hover:text-white transition">Blueprint_Map</a> / 
-                    <a href="sitemap.xml" target="_blank" class="hover:text-white transition">XML_Index</a>
-                </div>
-            </div>
-            
-            <div class="flex flex-nowrap items-center gap-10 grayscale hover:grayscale-0 transition-all duration-700">
-                <a href="https://www.bifma.org" target="_blank"><img src="https://yishenglobal.net/assets/bifma-badge.png" style="height:24px; width:auto;" alt="BIFMA"></a>
-                <a href="https://ista.org" target="_blank"><img src="https://yishenglobal.net/assets/ista-badge.png" style="height:24px; width:auto;" alt="ISTA"></a>
-                <a href="https://www.iso.org" target="_blank"><img src="https://yishenglobal.net/assets/iso9001.png" style="height:32px; width:auto;" alt="ISO9001"></a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // GPU 加速鼠标追踪引擎
-        const glow = document.getElementById('cursor-glow');
-        document.addEventListener('mousemove', (e) => {
-            requestAnimationFrame(() => {
-                glow.style.left = e.clientX + 'px';
-                glow.style.top = e.clientY + 'px';
-            });
-        });
-    </script>
-</body>
-</html>
+        <div class="mt-32 p-12 bg-[#0ea5e3]/5 border-2 border-[#0ea5e3]/20 backdrop-blur-3xl">
+            <h4 class="font-mono text-[#0ea5e3] text-sm uppercase tracking-[4px] mb-8">// TOP_TIER_RETAIL_PROTOCOL</h4>
+            <p class="text-gray-400 italic mb-8 text-lg">
+                针对 Fortune 500
