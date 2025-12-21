@@ -26,20 +26,20 @@
             will-change: transform; mix-blend-mode: screen;
         }
 
-        /* HERO 视觉架构：视频或网格背景逻辑 */
+        /* HERO 视觉架构：透明治理叙事 */
         .page-hero {
             height: 60vh; display: flex; align-items: center;
             background: linear-gradient(90deg, #010409 35%, rgba(1, 4, 9, 0.3) 75%, transparent 100%);
             position: relative; padding: 0 8%; border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* 纯代码主权标签 */
+        /* 纯净代码勋章 - 彻底根除碎图 */
         .sovereign-tag {
             padding: 4px 12px; border: 1px solid rgba(255, 255, 255, 0.1);
             font-family: 'JetBrains Mono', monospace; font-size: 9px;
             text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
         }
-        .sovereign-tag:hover { border-color: var(--neon-blue); color: var(--neon-blue); }
+        .sovereign-tag:hover { border-color: var(--neon-blue); color: var(--neon-blue); background: rgba(14, 165, 233, 0.05); }
 
         .arch-card { background: rgba(0,0,0,0.3); padding: 35px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s var(--spring-curve); }
         .arch-card:hover { border-color: var(--neon-blue); transform: translateY(-5px); }
@@ -53,24 +53,20 @@
         }
     </style>
 </head>
-<body class="bg-[#010409] text-white selection:bg-[#0ea5e3]">
+<body class="bg-[#010409]">
 
     <div id="cursor-glow"></div>
 
-    <nav id="master-nav">
-        <div class="nav-container">
+    <nav id="master-nav" class="fixed top-0 left-0 w-full z-[100000] bg-[#010409]/95 backdrop-blur-xl border-b border-white/5 h-20 flex items-center">
+        <div class="max-w-[1440px] mx-auto px-6 w-full flex items-center justify-between">
             <a href="index.html" class="site-logo">
-                <svg width="280" height="32" viewBox="0 0 280 32" fill="none">
-                    <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
-                    <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
-                    <text x="56" y="18" fill="white" style="font-family:'Inter'; font-weight:700; font-size:18px;">Yishen Global</text>
-                </svg>
+                <svg width="280" height="32" viewBox="0 0 280 32" fill="none"><g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g><rect x="2" y="29" width="42" height="2" fill="#A11219"/><text x="56" y="18" fill="white" style="font-family:'Inter'; font-weight:700; font-size:18px;">Yishen Global</text></svg>
             </a>
-            <div class="hidden lg:flex items-center gap-10">
-                <a href="why-us.html" class="nav-link">GENESIS</a>
-                <a href="sovereign-matrix.html" class="nav-link">MATRIX</a>
-                <a href="intelligence-intel.html" class="nav-link active border-b border-[#0ea5e3]">INTEL</a>
-                <a href="tactical-briefing.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase text-[0.7rem] font-mono tracking-widest transition-all">Initiate</a>
+            <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400">
+                <a href="yishen-genesis.html" class="hover:text-white transition">01_GENESIS</a>
+                <a href="sovereign-matrix.html" class="hover:text-white transition">02_MATRIX</a>
+                <a href="intelligence-intel.html" class="text-white border-b border-[#0ea5e3]">03_INTEL</a>
+                <a href="tactical-briefing.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase">Initiate_Audit</a>
             </div>
         </div>
     </nav>
@@ -78,9 +74,9 @@
     <header class="page-hero">
         <div class="max-w-[1440px]">
             <span class="font-mono text-[#0ea5e3] tracking-[4px] text-xs uppercase">[ GLOBAL_INTELLIGENCE_CENTER_V4 ]</span>
-            <h1 class="text-white text-[clamp(2.5rem, 8vw, 4.2rem)] font-[900] leading-[1.05] my-8 uppercase italic">Intelligence<br>Evidence.</h1>
-            <p class="text-gray-400 max-w-[700px] text-lg leading-relaxed italic">
-                Cross-referencing global trade nodes with real-time sentiment analysis. Mapping the future of industrial sovereignty.
+            <h1 class="text-white text-[clamp(2.5rem, 8vw, 4.2rem)] font-[900] leading-[1.05] my-8 uppercase italic tracking-tighter">Intelligence<br>Evidence.</h1>
+            <p class="text-gray-400 max-w-[700px] text-lg leading-relaxed italic border-l-2 border-[#A11219] pl-10">
+                通过 Reddit 舆情实时对撞与海关数据穿透，建立 100% 透明的工业治理主权。
             </p>
         </div>
     </header>
@@ -90,7 +86,7 @@
             <div class="flex items-center justify-between mb-8">
                 <div>
                     <h3 class="font-mono text-[#0ea5e3] text-sm uppercase tracking-[4px] animate-pulse">// DATA_CRAWLER_TERMINAL</h3>
-                    <p class="text-[10px] text-gray-500 mt-2 uppercase font-mono italic">Automated HS Code & Panjiva Data Stream Sync</p>
+                    <p class="text-[10px] text-gray-500 mt-2 uppercase font-mono italic">Panjiva & HS Code 9403 Integrity Sync</p>
                 </div>
                 <div class="flex items-center gap-2">
                     <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
@@ -101,7 +97,7 @@
             <div class="grid lg:grid-cols-3 gap-12 items-start">
                 <div class="lg:col-span-1 space-y-6">
                     <p class="text-xs text-gray-400 leading-relaxed font-mono">
-                        Initiate physical sync with global maritime indices. Validating 124 verified Tier-1 production nodes within Yishen Architecture.
+                        正在同步全球 124 个 Tier-1 生产节点。通过物理参数修正（Lumbar Support Correction）对撞行业痛点。
                     </p>
                     <button onclick="runEngine()" id="engine-btn" class="w-full py-4 bg-[#0ea5e3] text-black font-black italic text-[11px] uppercase hover:bg-white transition-all shadow-lg shadow-[#0ea5e3]/20">
                         Execute_Sovereign_Sync
@@ -121,12 +117,12 @@
                 <h4 class="font-mono text-[#FF4500] text-xs uppercase tracking-[4px]">// REDDIT_SENTIMENT_ORACLE</h4>
             </div>
             <p class="text-gray-400 text-sm italic mb-10 leading-relaxed">
-                正在实时监测 r/OfficeChairs 和 r/Workspaces 的 2.4M 活跃节点。我们的架构设计根据社区反馈（Reddit Sentiment）进行每周一次的原子级修正。
+                实时对撞 r/OfficeChairs 2.4M 活跃节点反馈。承认缺陷并透明化修正，是 Yishen Global 的核心主权原则。
             </p>
             <div class="grid md:grid-cols-3 gap-6 font-mono text-[9px]">
-                <div class="p-6 border border-white/10 bg-black/50">TREND: #Lumbar_Support_Failure <span class="text-green-500 ml-2">[CORRECTED]</span></div>
-                <div class="p-6 border border-white/10 bg-black/50">DEMAND: #Sustainable_Chain_G80 <span class="text-[#0ea5e3] ml-2">[SCALING]</span></div>
-                <div class="p-6 border border-white/10 bg-black/50">SENTIMENT: 94.2% POSITIVE <span class="text-[#A11219] ml-2">[SOVEREIGN]</span></div>
+                <div class="p-6 border border-white/10 bg-black/50">TREND: #Mechanical_Fatigue <span class="text-green-500 ml-2">[CORRECTED]</span></div>
+                <div class="p-6 border border-white/10 bg-black/50">NODE: #Ashley_Furniture_Sourcing <span class="text-[#0ea5e3] ml-2">[MATCHED]</span></div>
+                <div class="p-6 border border-white/10 bg-black/50">SENTIMENT: 94.2% POSITIVE <span class="text-[#A11219] ml-2">[SECURED]</span></div>
             </div>
         </section>
 
@@ -138,8 +134,8 @@
                     <div class="grid grid-cols-2 gap-3">
                         <span class="intel-node">PANJIVA</span>
                         <span class="intel-node">IMPORT_YETI</span>
-                        <span class="intel-node">PORT_LOGS</span>
                         <span class="intel-node">HS_MATRIX</span>
+                        <span class="intel-node">CBAM_DATA</span>
                     </div>
                 </div>
                 <div class="arch-card">
@@ -148,25 +144,23 @@
                         <span class="intel-node">REDDIT_API</span>
                         <span class="intel-node">DISCORD_VIBE</span>
                         <span class="intel-node">X_SENTIMENT</span>
-                        <span class="intel-node">TECH_CRUNCH</span>
+                        <span class="intel-node">TECH_DATA</span>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer id="compliance-section" class="bg-black pt-24 pb-12 border-t border-white/5 font-inter">
+    <footer class="bg-black py-24 border-t border-white/5 font-inter">
         <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-12">
-            <div class="mobile-items-center text-center md:text-left">
-                <svg width="200" height="24" viewBox="0 0 280 32" fill="none" class="mb-6 opacity-80">
-                    <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
-                    <rect x="2" y="29" width="42" height="2" fill="#A11219"/>
-                </svg>
-                <p class="text-[9px] font-mono text-gray-700 tracking-[3px] uppercase">
-                    &copy; 2026 YISHEN GLOBAL // INTEL_SOVEREIGNTY_SECURED.
-                </p>
+            <div class="mobile-items-center">
+                <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Intel_Sovereignty_Verified</div>
+                <div class="flex gap-6 mt-4 text-[9px] font-mono text-gray-800 uppercase tracking-widest">
+                    <a href="site-architecture.html" class="hover:text-white transition">Blueprint_Map</a> / 
+                    <a href="sovereign-index.xml" target="_blank" class="hover:text-white transition">XML_Index</a>
+                </div>
             </div>
-
+            
             <div class="flex flex-wrap items-center gap-6 mobile-items-center opacity-60">
                 <div class="sovereign-tag">BIFMA_X5.1_VERIFIED</div>
                 <div class="sovereign-tag">ISTA_6A_CERTIFIED</div>
@@ -175,6 +169,8 @@
         </div>
     </footer>
 
+    <script src="hq-core-gate.js?v=2026.FINAL"></script>
+    <script src="terminal-logic.js?v=2026.FINAL"></script>
     <script>
         // GPU 追踪补丁同步
         const glow = document.getElementById('cursor-glow');
@@ -185,7 +181,7 @@
             });
         });
 
-        // 权威集成：数据引擎模拟逻辑
+        // 权威引擎模拟逻辑
         function runEngine() {
             const btn = document.getElementById('engine-btn');
             const terminal = document.getElementById('terminal-output');
@@ -194,12 +190,11 @@
             const logs = [
                 "> INITIATING_SOVEREIGN_SYNC...",
                 "> ACCESSING_PANJIVA_TRADE_STREAM...",
-                "> DECRYPTING_HS_CODE_9403_PROTOCOLS...",
-                "> SCANNING_REDDIT_r/OFFICECHAIRS_VIBE...",
-                "> DETECTED: #Lumbar_Support_Failure_Trend",
-                "> APPLYING_ARCHITECTURAL_CORRECTION...",
-                "> STATUS: YISHEN_INTEL_DENSITY_VERIFIED.",
-                "> SUCCESS: SOVEREIGN_INTEL_ALIGNED."
+                "> SCANNING_REDDIT_SENTIMENT_NODES...",
+                "> DETECTED: Mechanical_Fatigue_Pain_Point",
+                "> STATUS: ARCHITECTURAL_CORRECTION_APPLIED.",
+                "> RESULT: 94.2% POSITIVE_SENTIMENT_ALIGNED.",
+                "> SUCCESS: SOVEREIGN_INTEL_SECURED."
             ];
             let i = 0;
             const interval = setInterval(() => {
