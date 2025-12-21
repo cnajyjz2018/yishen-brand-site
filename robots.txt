@@ -1,41 +1,58 @@
 # =========================================================
-# YiShen Global — Search Engine Protocol
-# Version: 2026.MASTER
+# YISHEN GLOBAL - HARVESTER_PROTOCOL (robots.txt) V4.0.MASTER
+# Logic: Compliance-First SEO & Deterministic B2B Indexing
+# Principles: Legality, Compliance, Authenticity, Reliability
 # =========================================================
 
 User-agent: *
-Allow: /
+# 1. 物理渲染完整性 (Authenticity Defense)
+# 确保合法合规的渲染资产被索引，防止因缺失 CSS/JS 导致的抓取降权
+Allow: /assets/*.webp$
+Allow: /assets/*.mp4$
+Allow: /master-architect.css
+Allow: /terminal-logic.js
+Allow: /hq-core-gate.js
 
-# ---------------------------------------------------------
-# ASSET INDEXING (SEO-SAFE PROTOCOL)
-# Explicitly allowing crawlers to access visual and logic assets 
-# to ensure high-fidelity rendering (Critical for Architecture Sites)
-# ---------------------------------------------------------
-Allow: /assets/
-Allow: /images/
-Allow: /css/
-Allow: /js/
-Allow: /*.webp$
-Allow: /*.css$
-Allow: /*.js$
+# 2. 合规资产对撞 (Compliance-Centric Indexing)
+# 核心：将真实可靠的工程证据（BIM/ISTA/HS Code）向权威机器人开放
+Allow: /sovereign-matrix.html   
+Allow: /technical-passport.html 
+Allow: /intelligence-intel.html 
+Allow: /yishen-genesis.html     
+Allow: /asset-ledger.json      
 
-# ---------------------------------------------------------
-# SYSTEM SHIELD (BLOCKING SENSITIVE/NON-CONTENT NODES)
-# Prevent indexing of temporary or development fragments
-# ---------------------------------------------------------
+# 3. 系统防御屏障 (System Shield)
+# 物理隔离未脱敏、未授权或处于开发状态的非正式内容
 Disallow: /tmp/
 Disallow: /dev/
 Disallow: /private/
-Disallow: /components/  # Block if components are just fragments
+Disallow: /temp/
 Disallow: /README.md
-Disallow: /i18n-engine.js # Optional: keep logic internal
+Disallow: /i18n-engine.js
 
 # ---------------------------------------------------------
-# DEEP LINKING NODES (SITEMAP INTEGRATION)
-# Directing AI crawlers to the hierarchical logic blueprint
+# 权威爬虫加速 (Search Integrity Protocol)
 # ---------------------------------------------------------
-Sitemap: https://yishenglobal.net/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1                  
+
+User-agent: Bingbot
+Allow: /
+
+# B2B 战术对撞：针对 Panjiva、ImportGenius 等全球合规调查爬虫
+User-agent: PanjivaBot
+Allow: /intelligence-intel.html
+Allow: /asset-ledger.json
+Allow: /sovereign-matrix.html
+
+# ---------------------------------------------------------
+# 真实性索引地图 (Authentic Sitemap)
+# ---------------------------------------------------------
+# 指向我们最新的主权索引地图文件名
+Sitemap: https://yishenglobal.net/sovereign-index.xml
 
 # =========================================================
-# END OF PROTOCOL
+# END OF PROTOCOL // YISHEN_GLOBAL_SECURED
 # =========================================================
