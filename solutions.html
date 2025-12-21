@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Solutions | YiShen Global - Industrial Sovereignty</title>
-    <meta name="description" content="AI-Driven industrial solutions for Ergo Furniture, Marine Hardware, and Medical Precision.">
+    <title>Global Solutions Matrix | YiShen Global</title>
+    <meta name="description" content="Sovereign industrial solutions for Ergo Furniture, Medical Precision, and Carbon Neutral materials.">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -12,38 +12,62 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
         
-        body { font-family: 'Inter', sans-serif; background-color: #010409; color: #e6edf3; }
+        body { font-family: 'Inter', sans-serif; background-color: #010409; color: #e6edf3; overflow-x: hidden; }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
-        .cyber-glow { box-shadow: 0 0 20px rgba(14, 165, 227, 0.2); }
-        .bg-mesh { background-image: radial-gradient(at 0% 0%, rgba(14, 165, 227, 0.1) 0, transparent 50%), radial-gradient(at 100% 100%, rgba(255, 215, 0, 0.05) 0, transparent 50%); }
         
-        /* 碎图防御补丁 */
-        img { filter: brightness(0.8) contrast(1.2); transition: all 0.5s ease; }
-        img:hover { filter: brightness(1); }
+        /* 赛博蓝网格背景渲染 */
+        .bg-mesh { 
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(14, 165, 227, 0.12) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, rgba(255, 215, 0, 0.04) 0, transparent 50%); 
+        }
+
+        /* 工业级交互反馈补丁 */
+        .card-glow { 
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .card-glow:hover { 
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(14, 165, 227, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(14, 165, 227, 0.1);
+        }
+
+        /* 文本主权：选择文本颜色 */
+        ::selection { background: #0ea5e3; color: white; }
     </style>
 </head>
 <body class="bg-mesh min-h-screen">
 
-    <nav id="master-nav" class="fixed top-0 left-0 w-full z-[100000] bg-[#010409]/90 backdrop-blur-xl border-b border-white/5 h-20 flex items-center px-8">
+    <nav id="master-nav" class="fixed top-0 left-0 w-full z-[100000] bg-[#010409]/90 backdrop-blur-xl border-b border-white/5 h-20 flex items-center px-8 transition-all duration-500">
         <div class="max-w-[1440px] mx-auto w-full flex items-center justify-between">
+            
             <a href="index.html" class="flex flex-col group">
                 <span class="text-white font-black italic text-xl tracking-tighter uppercase group-hover:text-[#0ea5e3] transition-colors">Yishen Global</span>
                 <div class="flex items-center mt-1">
-                    <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse mr-2"></span>
-                    <span class="text-[#0ea5e3] font-mono text-[7px] tracking-[3px] uppercase">Solutions_Gate_Active</span>
+                    <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse mr-2 shadow-[0_0_8px_#10b981]"></span>
+                    <span class="text-[#0ea5e3] font-mono text-[7px] tracking-[3px] uppercase">Sovereign_V5_Active</span>
                 </div>
             </a>
+
             <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-[widest] text-gray-400 uppercase">
-                <a href="genesis.html" class="hover:text-white transition">01_Genesis</a>
-                <a href="industrial-nodes.html" class="hover:text-white transition">02_Clusters</a>
-                <a href="resources.html" class="hover:text-white transition">03_Resources</a>
-                <a href="intelligence-intel.html" class="hover:text-[#ffd700] transition">04_Intel</a>
+                <a href="index.html" class="hover:text-white transition relative group">Home</a>
+                <a href="solutions.html" class="text-white relative group">
+                    Solutions
+                    <span class="absolute -bottom-1 left-0 w-full h-[1px] bg-[#0ea5e3]"></span>
+                </a>
+                <a href="resources.html" class="hover:text-white transition relative group">Resources</a>
+                <a href="contact.html" class="hover:text-[#ffd700] transition relative group">Intelligence</a>
             </div>
+
             <div class="flex items-center space-x-6">
-                <div class="hidden xl:flex items-center bg-white/5 border border-white/10 rounded-sm px-3 py-1.5 focus-within:border-[#0ea5e3]">
+                <div class="hidden xl:flex items-center bg-white/5 border border-white/10 rounded-sm px-3 py-1.5 focus-within:border-[#0ea5e3] transition-all">
                     <i class="fas fa-search text-[10px] text-gray-600 mr-2"></i>
-                    <input type="text" placeholder="Search HS_CODE..." class="bg-transparent border-none outline-none text-[9px] font-mono text-white w-28">
+                    <input type="text" placeholder="Search HS_CODE..." class="bg-transparent border-none outline-none text-[9px] font-mono text-white w-28 placeholder:text-gray-700">
                 </div>
+                
                 <button onclick="window.location.href='contact.html'" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm text-[10px] uppercase hover:bg-white transition-all shadow-[0_0_15px_rgba(14,165,227,0.3)]">
                     Access_Vault
                 </button>
@@ -51,58 +75,94 @@
         </div>
     </nav>
 
-    <main class="pt-32 pb-20 px-8 max-w-[1440px] mx-auto">
-        <header class="mb-20">
-            <h1 class="text-6xl font-black italic tracking-tighter uppercase mb-4 leading-none">
-                Industrial <span class="text-[#0ea5e3]">Solutions</span> Matrix
+    <main class="pt-40 pb-24 px-8 max-w-[1440px] mx-auto">
+        
+        <header class="mb-24 relative">
+            <div class="absolute -left-12 top-0 w-1 h-32 bg-gradient-to-b from-[#0ea5e3] to-transparent opacity-50"></div>
+            <h2 class="text-[#0ea5e3] font-mono text-xs tracking-[0.4em] mb-6 uppercase">Predictability Engineered</h2>
+            <h1 class="text-6xl md:text-8xl font-black italic tracking-tighter uppercase mb-6 leading-none">
+                Industrial <br><span class="text-white/10">Solutions</span> <span class="text-white">Matrix</span>
             </h1>
-            <p class="text-gray-500 font-mono text-sm max-w-2xl uppercase tracking-widest">
-                Predictability Engineered. HS-Code Driven Compliance. Global Sovereignty.
+            <p class="text-gray-500 font-mono text-xs max-w-2xl uppercase tracking-[0.2em] leading-loose">
+                Integrating AI-driven compliance, multi-generational reliability, and carbon-negative manufacturing nodes into a singular global delivery system.
             </p>
         </header>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <div class="border border-white/5 bg-white/5 p-8 group hover:border-[#0ea5e3]/50 transition-all">
-                <div class="flex justify-between items-start mb-12">
-                    <span class="text-[10px] font-mono text-[#0ea5e3]">HS_CODE: 9401.31</span>
-                    <i class="fas fa-chair text-2xl text-gray-700 group-hover:text-white transition-colors"></i>
+            <div class="p-8 card-glow flex flex-col justify-between min-h-[400px]">
+                <div>
+                    <div class="flex justify-between items-center mb-12">
+                        <span class="text-[10px] font-mono text-[#0ea5e3] border border-[#0ea5e3]/30 px-2 py-0.5">HS: 9401.31</span>
+                        <i class="fas fa-chair text-xl text-gray-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-black italic uppercase mb-4 tracking-tighter">Ergo-Sovereignty</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed font-light">BIFMA-Certified ergonomic seating solutions. Integrated ISTA-6A packaging sovereignty to eliminate trans-Pacific shipping damage.</p>
                 </div>
-                <h3 class="text-2xl font-bold italic uppercase mb-4">Ergo-Sovereignty</h3>
-                <p class="text-gray-400 text-sm leading-relaxed mb-8">BIFMA-Certified ergonomic seating solutions optimized for North American compliance and ISTA-6A shipping safety.</p>
-                <a href="technical-passport.html?id=ERGO" class="text-[10px] font-mono text-[#ffd700] uppercase tracking-widest hover:underline">View Evidence_Report →</a>
+                <div class="mt-8">
+                    <a href="technical-passport.html?id=ERGO" class="text-[9px] font-mono text-[#ffd700] uppercase tracking-[0.2em] hover:text-white transition-colors group">
+                        Evidence_Report <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
             </div>
 
-            <div class="border border-white/5 bg-white/5 p-8 group hover:border-[#0ea5e3]/50 transition-all">
-                <div class="flex justify-between items-start mb-12">
-                    <span class="text-[10px] font-mono text-[#0ea5e3]">ISO: 13485_CERTIFIED</span>
-                    <i class="fas fa-microscope text-2xl text-gray-700 group-hover:text-white transition-colors"></i>
+            <div class="p-8 card-glow flex flex-col justify-between min-h-[400px]">
+                <div>
+                    <div class="flex justify-between items-center mb-12">
+                        <span class="text-[10px] font-mono text-[#0ea5e3] border border-[#0ea5e3]/30 px-2 py-0.5">ISO 13485</span>
+                        <i class="fas fa-microscope text-xl text-gray-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-black italic uppercase mb-4 tracking-tighter">Medical Hub</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed font-light">Precision linear actuation. IP66 ingress protection and antimicrobial surface sovereignty for mission-critical surgical environments.</p>
                 </div>
-                <h3 class="text-2xl font-bold italic uppercase mb-4">Medical Hub</h3>
-                <p class="text-gray-400 text-sm leading-relaxed mb-8">Precision linear actuators and medical-grade materials. IP66 ingress protection and antimicrobial surface sovereignty.</p>
-                <a href="technical-passport.html?id=MED_HUB" class="text-[10px] font-mono text-[#ffd700] uppercase tracking-widest hover:underline">Access Med_Vault →</a>
+                <div class="mt-8">
+                    <a href="technical-passport.html?id=MED_HUB" class="text-[9px] font-mono text-[#ffd700] uppercase tracking-[0.2em] hover:text-white transition-colors group">
+                        Compliance_Docs <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
             </div>
 
-            <div class="border border-white/5 bg-[#0ea5e3]/5 p-8 group border-[#0ea5e3]/20 hover:border-[#0ea5e3]/50 transition-all">
-                <div class="flex justify-between items-start mb-12">
-                    <span class="text-[10px] font-mono text-[#10b981]">CBAM_COMPLIANT</span>
-                    <i class="fas fa-leaf text-2xl text-gray-700 group-hover:text-white transition-colors"></i>
+            <div class="p-8 card-glow flex flex-col justify-between min-h-[400px] bg-[#0ea5e3]/5 border-[#0ea5e3]/20">
+                <div>
+                    <div class="flex justify-between items-center mb-12">
+                        <span class="text-[10px] font-mono text-[#10b981] border border-[#10b981]/30 px-2 py-0.5 uppercase tracking-tighter">CBAM_Compliant</span>
+                        <i class="fas fa-leaf text-xl text-[#10b981]"></i>
+                    </div>
+                    <h3 class="text-2xl font-black italic uppercase mb-4 tracking-tighter text-[#0ea5e3]">Carbon Zero Node</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed font-light italic">Negative carbon footprint WPC and bamboo composites. Designed specifically for EU Green Deal and CBAM tax-offset paths.</p>
                 </div>
-                <h3 class="text-2xl font-bold italic uppercase mb-4 text-[#0ea5e3]">Carbon Zero Node</h3>
-                <p class="text-gray-400 text-sm leading-relaxed mb-8">Negative carbon footprint WPC and bamboo composites. Designed for EU Green Deal and CBAM tax-offset paths.</p>
-                <a href="technical-passport.html?id=CARBON_ZERO" class="text-[10px] font-mono text-[#ffd700] uppercase tracking-widest hover:underline">Get Carbon_LCA →</a>
+                <div class="mt-8">
+                    <a href="technical-passport.html?id=CARBON_ZERO" class="text-[9px] font-mono text-[#ffd700] uppercase tracking-[0.2em] hover:text-white transition-colors group">
+                        LCA_Sovereignty_Report <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
             </div>
 
         </div>
     </main>
 
+    <footer class="border-t border-white/5 py-12 px-8">
+        <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="opacity-30 font-mono text-[8px] uppercase tracking-[0.3em]">
+                © 2026 YiShen Global Sovereignty | Systems Version: 2026.V5
+            </div>
+            <div class="flex items-center gap-8 opacity-40">
+                <span class="font-mono text-[8px] uppercase tracking-widest">DUNS: 545277884</span>
+                <span class="font-mono text-[8px] uppercase tracking-widest text-[#0ea5e3]">Mapping_Gate_Active</span>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        console.log("YiShen Global V5.0: Solutions Node Active.");
-        // 如果访问时带有错误 ID，SarahJ 的自动欢迎逻辑
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('error')) {
-            console.warn("Recovering from NOT_FOUND state. Redirecting to sovereign backup.");
-        }
+        window.addEventListener('load', () => {
+            console.log("YiShen Global Solutions Hub: Atomic Integration Successful.");
+            
+            // 路由自愈检测
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('status')) {
+                console.info("System reborn from status: " + urlParams.get('status'));
+            }
+        });
     </script>
 </body>
 </html>
