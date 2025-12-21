@@ -1,27 +1,30 @@
 /**
  * YISHEN GLOBAL COMMAND TERMINAL LOGIC V5.0
- * 核心补丁：[MARITIME_HARDWARE_SYNC], [DUTY_HACK_ALGO], [CROSS_PLATFORM_COLLISION]
- * 集成逻辑：UI Stability Sovereignty + AI Terminal Engine
+ * 核心集成：[MARITIME_HARDWARE], [MEDICAL_PRECISION], [DUTY_HACK_ALGO]
+ * 逻辑属性：UI Stability Sovereignty + AI Terminal Engine
+ * 权限：Strategic Architecture Group / Yishen HQ (2026)
  */
 
 // ==========================================
-// 1. [PROTOCOL] 物理资产与 HS 智库映射
+// 1. [PROTOCOL] 跨维度物理资产与 HS 智库映射
 // ==========================================
 
 const ASSET_CERT_MAP = {
-    bifma: { url: "assets/docs/bifma.pdf", title: "BIFMA_STRUCTURAL_PROTOCOL_V5", icon: "assets/icons/bifma-badge.webp" },
-    ul: { url: "assets/docs/ul.pdf", title: "UL_FIRE_SAFETY_VALIDATED", icon: "assets/icons/logo-ul.webp" },
-    ista: { url: "assets/docs/ista.pdf", title: "ISTA_TRANSPORT_SURVIVABILITY", icon: "assets/icons/ista-badge.webp" },
-    en131: { url: "assets/docs/en131.pdf", title: "EN131_LADDER_SAFETY_STANDARD", icon: "assets/icons/en131-badge.webp" },
-    iso9001: { url: "assets/docs/iso9001.pdf", title: "ISO_9001_QUALITY_SOVEREIGNTY", icon: "assets/icons/iso9001.webp" }
+    bifma: { url: "assets/docs/bifma-test-report.pdf", title: "BIFMA_STRUCTURAL_PROTOCOL_V5", sector: "OFFICE" },
+    ul: { url: "assets/docs/ul-safety-cert.pdf", title: "UL_FIRE_SAFETY_VALIDATED", sector: "SAFETY" },
+    ista: { url: "assets/docs/ista-6a-report.pdf", title: "ISTA_TRANSPORT_SURVIVABILITY", sector: "LOGISTICS" },
+    en131: { url: "assets/docs/en131-ladder-cert.pdf", title: "EN131_LADDER_SAFETY_STANDARD", sector: "INFRA" },
+    iso13485: { url: "assets/docs/iso13485-medical.pdf", title: "ISO_13485_MEDICAL_PRECISION", sector: "MEDICAL" },
+    form_e: { url: "assets/docs/form-e-asean.pdf", title: "ASEAN_FORM_E_DUTY_EXEMPTION", sector: "GLOBAL_TRADE" }
 };
 
 const GLOBAL_HS_DB = [
-    { code: "7315.8200", desc: "Marine Chains (G80/G100) - Brazil Exemption Ready", market: "LATAM" },
-    { code: "7312.1000", desc: "Steel Wire Ropes & Rigging - Houston Port Sync", market: "NORTH_AMERICA" },
+    { code: "9402.1000", desc: "Medical Precision Seating - ISO 13485 Certified", market: "ASEAN/GLOBAL" },
+    { code: "7315.8200", desc: "Marine Chains (G80/G100) - Brazil AD Exemption Ready", market: "LATAM" },
     { code: "7616.9910", desc: "Aluminum Ladders - US AD/CVD Offset Protocol", market: "NORTH_AMERICA" },
-    { code: "9401.3100", desc: "Mesh & Ergo Seating - BIFMA X5.1 Protocol", market: "GLOBAL" },
-    { code: "9401.4000", desc: "Sleeper Sofas & Compressed Seating - DTC Optimized", market: "GLOBAL" }
+    { code: "9401.3100", desc: "Ergo Seating - BIFMA X5.1 Kinetic Matrix", market: "GLOBAL" },
+    { code: "9403.1000", desc: "Dual-Motor Lifting Systems - UL 962 Logic", market: "EUROPE/NA" },
+    { code: "4418.7500", desc: "Carbon-Negative Bamboo - CBAM Hedge Ready", market: "EUROPE" }
 ];
 
 // ==========================================
@@ -30,39 +33,40 @@ const GLOBAL_HS_DB = [
 
 class SovereignTerminal {
     constructor() {
+        // UI 节点句柄
         this.barFill = document.getElementById('bar-fill');
         this.loadingScreen = document.getElementById('loading-screen');
         this.hsInput = document.getElementById('hs-input');
         this.hsResults = document.getElementById('hs-results');
-        
-        // AI 终端属性
         this.taskInput = document.getElementById('user-task');
         this.agentOutput = document.getElementById('agent-output');
-        this.isProcessing = false;
         
+        this.isProcessing = false;
         this.init();
     }
 
     init() {
+        // 1. 启动序列监听
         window.addEventListener('load', () => this.executeBootSequence());
         
-        // HS 搜索监听
+        // 2. HS Code 实时拦截
         if (this.hsInput) {
-            this.hsInput.addEventListener('keyup', (e) => this.searchHSCode(e.target.value));
+            this.hsInput.addEventListener('input', (e) => this.searchHSCode(e.target.value));
         }
 
-        // AI 任务监听
+        // 3. AI 任务指令执行
         if (this.taskInput) {
             this.taskInput.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') this.executeTask();
             });
         }
 
+        // 4. 环境补丁
         this.initGlowEngine();
-        this.applyImageProtection();
+        this.applyFractureDefense();
     }
 
-    // [PATCH] 启动序列：模拟全球数据对撞
+    // [PATCH] 模拟全球节点数据对撞启动
     executeBootSequence() {
         if (this.barFill) this.barFill.style.width = '100%';
         setTimeout(() => {
@@ -70,54 +74,61 @@ class SovereignTerminal {
                 this.loadingScreen.style.opacity = '0';
                 setTimeout(() => { 
                     this.loadingScreen.style.display = 'none';
-                    console.log("%c > YISHEN_CORE_SYSTEM_V5_ONLINE ", "background: #0ea5e3; color: #000; font-weight: bold;");
+                    console.log("%c > YISHEN_V5_MASTER_COMMAND_LINK_ESTABLISHED ", "background: #0ea5e3; color: #000; font-weight: bold;");
                 }, 700);
             }
-        }, 2500);
+        }, 2000);
     }
 
-    // [PATCH] HS Code 智能拦截逻辑
+    // [PATCH] HS Code 智库实时检索
     searchHSCode(query) {
         if (!this.hsResults) return;
+        if (!query) { this.hsResults.innerHTML = ''; return; }
+
         const q = query.toLowerCase();
         const filtered = GLOBAL_HS_DB.filter(i => i.code.includes(q) || i.desc.toLowerCase().includes(q));
         
         this.hsResults.innerHTML = filtered.map(i => `
-            <div class="p-3 bg-white/5 border border-white/5 flex justify-between items-center hover:bg-white/10 transition group cursor-pointer" 
+            <div class="p-3 bg-white/5 border-b border-white/5 flex justify-between items-center hover:bg-[#0ea5e3]/10 transition-all group cursor-pointer" 
                  onclick="window.location.href='technical-passport.html?id=${i.code}'">
                 <div class="flex flex-col">
                     <span class="text-[#0ea5e3] font-mono text-xs font-bold group-hover:tracking-widest transition-all">${i.code}</span>
-                    <span class="text-[9px] text-gray-500 uppercase mt-1">${i.desc}</span>
+                    <span class="text-[9px] text-gray-400 uppercase mt-1">${i.desc}</span>
                 </div>
-                <span class="text-[8px] font-mono text-gray-600 bg-white/5 px-2 py-1">${i.market}</span>
+                <div class="flex items-center gap-2">
+                    <span class="text-[8px] font-mono text-gray-500 bg-white/5 px-2 py-1">${i.market}</span>
+                    <i class="fas fa-chevron-right text-[10px] text-[#0ea5e3] opacity-0 group-hover:opacity-100"></i>
+                </div>
             </div>
-        `).join('') || `<div class="text-[10px] font-mono text-gray-700 p-4 border border-dashed border-white/10">// NO_RECORDS_IN_SOVEREIGN_DATABASE</div>`;
+        `).join('') || `<div class="p-4 text-[10px] font-mono text-gray-600 italic">// NO_MATCH_IN_SOVEREIGN_DATABASE</div>`;
     }
 
-    // [PATCH] AI 任务执行：模拟 RocketReach & Reddit 对撞
+    // [PATCH] AI 任务执行：模拟 RocketReach/Trademo 情报拦截
     async executeTask() {
-        if (!this.taskInput || !this.taskInput.value || this.isProcessing) return;
+        if (!this.taskInput.value || this.isProcessing) return;
 
         const cmd = this.taskInput.value.toUpperCase();
         this.isProcessing = true;
-        this.agentOutput.innerHTML = `<span class="text-white animate-pulse">> INITIATING_MISSION: ${cmd}</span>`;
+        this.agentOutput.innerHTML = `<span class="text-[#0ea5e3] animate-pulse">> INITIATING_V5_STRIKE: [${cmd}]</span>`;
 
+        // 模拟指令流水线
+        await this.delay(600);
+        this.print("> PINGING_SANTOS_PORT_AUTHORITY... [SUCCESS]");
         await this.delay(800);
-        this.print("> ACCESSING_HQ_CORE_GATE: SUCCESS.");
-        
+        this.print("> SCANNING_ASEAN_MEDICAL_CLUSTERS...");
         await this.delay(1000);
-        this.print("> SCANNING_REDDIT_SENTIMENT_ORACLE...");
+        this.print("> INTERCEPTING_COMPETITOR_BIM_MODEL...");
         
         await this.delay(1200);
-        this.print("> STATUS: #DUMPING_DUTY_FRICTION DETECTED IN SANTOS_PORT.");
-
-        await this.delay(1500);
         this.agentOutput.innerHTML = `
-            <div class="text-[#0ea5e3] border-l-2 border-[#0ea5e3] pl-4 mt-4 font-mono text-[10px]">
-                > MISSION_STATUS: DEPLOYED_SUCCESSFULLY<br>
-                > TARGET: VP_PROCUREMENT_LATAM<br>
-                > ACTION: BRAZIL_EXEMPTION_PROTOCOL_SENT<br>
-                > RESULT: SOVEREIGN_INTERCEPTION_ACTIVE
+            <div class="mt-4 p-3 border-l-2 border-[#ffd700] bg-[#ffd700]/5">
+                <div class="text-[#ffd700] font-bold text-[10px] mb-1">>> MISSION_RECAP: ${cmd}</div>
+                <div class="text-gray-400 text-[9px] font-mono leading-relaxed">
+                    TARGET: Global Sourcing VP [Interpreted]<br>
+                    ACTION: Form E Duty-Free Protocol Dispatched<br>
+                    STATUS: 24/7_AUTOMATION_STABLE<br>
+                    RESULT: Market Friction Neutralized.
+                </div>
             </div>
         `;
         
@@ -125,22 +136,29 @@ class SovereignTerminal {
         this.taskInput.value = "";
     }
 
-    // [PATCH] UI 交互与主权护卫
+    // [PATCH] 技术护照资源预览
     previewResource(key) {
         const asset = ASSET_CERT_MAP[key];
         const modal = document.getElementById('asset-modal');
         const iframe = document.getElementById('preview-frame');
+        
         if (asset && modal && iframe) {
             iframe.src = asset.url;
-            document.getElementById('preview-title').innerText = `// SOURCE: ${asset.title}`;
+            document.getElementById('preview-title').innerText = `// TECHNICAL_PASSPORT: ${asset.title}`;
             modal.classList.remove('hidden');
+            modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
     }
 
-    applyImageProtection() {
+    // [PATCH] 图片碎裂守护逻辑
+    applyFractureDefense() {
         document.querySelectorAll("img").forEach(img => {
-            img.addEventListener("error", () => { img.style.display = "none"; });
+            img.addEventListener("error", () => {
+                img.src = 'assets/products/placeholder-node.webp';
+                img.style.opacity = "0.5";
+                img.classList.add('grayscale');
+            });
         });
     }
 
@@ -149,15 +167,15 @@ class SovereignTerminal {
         if (!glow) return;
         document.addEventListener('mousemove', (e) => {
             requestAnimationFrame(() => {
-                glow.style.left = e.clientX + 'px';
-                glow.style.top = e.clientY + 'px';
+                glow.style.left = `${e.clientX}px`;
+                glow.style.top = `${e.clientY}px`;
             });
         });
     }
 
     print(msg) {
         const div = document.createElement('div');
-        div.className = 'mt-1 opacity-70 font-mono text-[9px]';
+        div.className = 'mt-1 opacity-60 font-mono text-[9px] text-white';
         div.innerText = msg;
         this.agentOutput.appendChild(div);
         this.agentOutput.scrollTop = this.agentOutput.scrollHeight;
@@ -166,24 +184,39 @@ class SovereignTerminal {
     delay(ms) { return new Promise(res => setTimeout(res, ms)); }
 }
 
-// [INITIALIZE] 实例化指挥控制层
-const Terminal = new SovereignTerminal();
+// ==========================================
+// 3. [EXPOSURE] 实例化与全局接口绑定
+// ==========================================
 
-// 暴露全局接口
-window.previewResource = (key) => Terminal.previewResource(key);
+const TerminalEngine = new SovereignTerminal();
+
+window.previewResource = (key) => TerminalEngine.previewResource(key);
 window.closePreview = () => {
-    document.getElementById('asset-modal').classList.add('hidden');
-    document.getElementById('preview-frame').src = '';
-    document.body.style.overflow = 'auto';
+    const modal = document.getElementById('asset-modal');
+    if (modal) {
+        modal.classList.add('hidden');
+        modal.style.display = 'none';
+        document.getElementById('preview-frame').src = '';
+        document.body.style.overflow = 'auto';
+    }
 };
-window.runAgent = () => Terminal.executeTask();
+window.runAgent = () => TerminalEngine.executeTask();
 
 /**
- * 3. 伸缩菜单与导航逻辑
+ * [UTILITY] 伸缩菜单对撞逻辑
  */
-function toggleSpringMenu(id) {
+window.toggleSpringMenu = function(id) {
     const el = document.getElementById(id);
     if (!el) return;
     const isExpanded = el.style.maxHeight !== '0px' && el.style.maxHeight !== '';
-    el.style.maxHeight = isExpanded ? '0px' : el.scrollHeight + "px";
-}
+    
+    // 关闭其他同级菜单 (Accordion 效果)
+    if (!isExpanded) {
+        document.querySelectorAll('.accordion-content').forEach(menu => {
+            menu.style.maxHeight = '0px';
+        });
+        el.style.maxHeight = el.scrollHeight + "px";
+    } else {
+        el.style.maxHeight = "0px";
+    }
+};
