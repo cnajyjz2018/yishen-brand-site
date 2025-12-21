@@ -1,29 +1,98 @@
-name: Generate XML Sitemap
+name: "Sovereign Sitemap Auto-Sync V5"
 
+# [CONTROL_GATE]: 仅在核心资产或逻辑变动时触发，确保算力主权
 on:
   push:
-    branches: [ main ]
-    paths: [ '**.html', 'sku-database.json' ]
+    branches:
+      - master
+      - main
+    paths:
+      - '**.html'                # 静态主权页面
+      - 'asset-ledger.json'      # 28个工业节点账本
+      - 'assets/docs/**.pdf'     # 合规证据链 (BIFMA/Form E/ISO)
+  schedule:
+    - cron: '0 0 * * *'          # 每天 UTC 00:00 执行全球资产重校准
 
 jobs:
-  sitemap_job:
+  sitemap_generator:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
+      - name: "Step 01: Extract Sovereign Codebase"
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
+      - name: "Step 02: Setup Python Intel Engine"
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-    - name: Run Sitemap Generator
-      run: python generate_sitemap.py
+      - name: "Step 03: Execute Parametric Sitemap Collision"
+        # [PATCH]: 核心补丁集成：同步静态页面 + 动态 SKU ID + PDF 证据主权
+        run: |
+          python <<EOF
+          import os
+          import json
+          from datetime import datetime
 
-    - name: Commit and Push Sitemap
-      run: |
-        git config --global user.name 'Yishen-Bot'
-        git config --global user.email 'bot@yishenglobal.net'
-        git add sitemap.xml
-        git commit -m "Automated Sitemap Update [System Sync]"
-        git push
+          # 1. 基础配置对位
+          base_url = "https://yishenglobal.net/"
+          lastmod = datetime.now().strftime('%Y-%m-%d')
+          
+          # 2. 扫描静态物理节点
+          static_pages = [f for f in os.listdir('.') if f.endswith('.html')]
+          
+          # 3. 解析资产账本 (针对 V5.0 Technical Passport 动态节点)
+          sku_paths = []
+          if os.path.exists('asset-ledger.json'):
+              with open('asset-ledger.json', 'r') as f:
+                  data = json.load(f)
+                  # 提取 28 个工业集群的物理 ID
+                  for item in data.get('assets', []):
+                      sku_paths.append(f"technical-passport.html?id={item['id']}")
+          
+          # 4. 扫描 PDF 证据库 (针对 HS Code 避税证据拦截)
+          pdf_paths = []
+          doc_dir = 'assets/docs'
+          if os.path.exists(doc_dir):
+              pdf_paths = [f"{doc_dir}/{f}" for f in os.listdir(doc_dir) if f.endswith('.pdf')]
+
+          # 5. 构建 XML 主权索引
+          xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+          xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+          
+          # 对撞优先级逻辑
+          all_nodes = static_pages + sku_paths + pdf_paths
+          for path in all_nodes:
+              # 权重矩阵：首页(1.0) > 技术护照(0.9) > 避税PDF(0.7)
+              priority = "1.0" if path == "index.html" else "0.9" if "?" in path else "0.7"
+              changefreq = "daily" if "?" in path else "weekly"
+              
+              xml += f'  <url>\n'
+              xml += f'    <loc>{base_url}{path}</loc>\n'
+              xml += f'    <lastmod>{lastmod}</lastmod>\n'
+              xml += f'    <changefreq>{changefreq}</changefreq>\n'
+              xml += f'    <priority>{priority}</priority>\n'
+              xml += f'  </url>\n'
+          
+          xml += '</urlset>'
+          
+          with open('sitemap.xml', 'w') as f:
+              f.write(xml)
+          print(f"SUCCESS: Sitemap.xml synchronized with {len(all_nodes)} sovereign nodes.")
+          EOF
+
+      - name: "Step 04: Deploy Updated Index to Master"
+        run: |
+          git config --global user.name "Yishen-Sovereign-Bot"
+          git config --global user.email "bot@yishenglobal.net"
+          git add sitemap.xml
+          # 仅在有变动时提交，防止冗余链路
+          git diff --quiet && git diff --staged --quiet || (git commit -m "AUTO: Update Sovereign Sitemap V5 (Parametric Sync)" && git push)
+
+      - name: "Step 05: Global Search Engine Ping (Active Interception)"
+        run: |
+          # 强制 Google 与 Bing 节点更新母舰资产视图
+          curl "https://www.google.com/ping?sitemap=https://yishenglobal.net/sitemap.xml"
+          curl "https://www.bing.com/ping?sitemap=https://yishenglobal.net/sitemap.xml"
+          echo "PROTOCOL_COMPLETE: Global search nodes notified."
