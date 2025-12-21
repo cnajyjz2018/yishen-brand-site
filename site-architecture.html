@@ -7,13 +7,13 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap">
-    <link rel="stylesheet" href="styles.css?v=2026.FINAL">
+    <link rel="stylesheet" href="styles.css?v=2026.FINAL.MASTER">
 
     <style>
         :root { --neon-blue: #0ea5e3; --performance-red: #A11219; --deep-space: #010409; --navbar-height: 80px; }
-        body { background-color: var(--deep-space); color: #e6edf3; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--deep-space); color: #e6edf3; font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
-        /* 数字化微光追踪 */
+        /* 数字化微光引擎 - GPU 优化 */
         #cursor-glow {
             position: fixed; width: 600px; height: 600px;
             background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
@@ -46,7 +46,7 @@
         /* 物理断根补丁：锁定图标防破碎 */
         footer a { flex: 0 0 auto !important; }
         footer img { max-width: none !important; min-width: 80px; }
-        .grayscale { filter: grayscale(100%); transition: 0.5s; }
+        .grayscale { filter: grayscale(100%); transition: 0.5s var(--spring-curve); opacity: 0.4; }
         .grayscale:hover { filter: grayscale(0%); opacity: 1 !important; }
 
         @media (max-width: 768px) {
@@ -60,7 +60,7 @@
     <div id="cursor-glow"></div>
 
     <nav id="master-nav" class="fixed top-0 left-0 z-[100000] w-full bg-[#010409]/90 backdrop-blur-xl border-b border-white/5 h-20 flex items-center">
-        <div class="max-w-[1440px] mx-auto px-6 w-full flex items-center justify-between">
+        <div class="nav-container max-w-[1440px] mx-auto px-6 w-full flex items-center justify-between">
             <a href="index.html" class="site-logo">
                 <svg width="280" height="32" viewBox="0 0 280 32" fill="none">
                     <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
@@ -70,31 +70,26 @@
             </a>
             <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400">
                 <a href="index.html" class="hover:text-white transition">00_TERMINAL</a>
-                <a href="why-us.html" class="hover:text-white transition">01_GENESIS</a>
                 <a href="solutions.html" class="hover:text-white transition">02_SOLUTIONS</a>
                 <a href="industries.html" class="hover:text-white transition">03_INDUSTRIES</a>
+                <a href="resources.html" class="hover:text-white transition">04_RESOURCES</a>
+                <a href="site-architecture.html" class="text-white border-b border-[#0ea5e3]">06_ARCHITECTURE</a>
             </div>
         </div>
     </nav>
 
     <main class="pt-40 pb-24 px-[8%] topology-grid min-h-screen hero-pt">
         <div class="max-w-[1440px] mx-auto">
-            <span class="font-mono text-[#0ea5e3] text-sm uppercase tracking-[4px]">[ SYSTEM_TOPOLOGY_V2.6 ]</span>
-            <h1 class="text-white text-[clamp(2.5rem,8vw,5rem)] font-black mt-6 mb-16 uppercase leading-[0.9]">Architecture<br>Blueprint.</h1>
+            <span class="font-mono text-[#0ea5e3] text-sm uppercase tracking-[4px]">[ SYSTEM_TOPOLOGY_V4.0 ]</span>
+            <h1 class="text-white text-[clamp(2.5rem,8vw,5rem)] font-black mt-6 mb-16 uppercase leading-[0.9] italic">Architecture<br>Blueprint.</h1>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                
                 <div class="space-y-8">
                     <h3 class="cluster-label">// LOGICAL_ROOTS</h3>
                     <div class="node-card">
                         <h4 class="font-bold text-xl mb-2 italic">Index Console</h4>
                         <p class="text-[11px] text-gray-500 font-mono leading-relaxed">Mission Critical Interface for global industrial orchestration.</p>
-                        <a href="index.html" class="inline-block mt-4 text-[10px] text-[#0ea5e3] hover:underline">ACCESS_ROOT</a>
-                    </div>
-                    <div class="node-card">
-                        <h4 class="font-bold text-xl mb-2 italic">Industrial Sovereignty</h4>
-                        <p class="text-[11px] text-gray-500 font-mono leading-relaxed">The "Yishen Genesis" narrative—converting family honor into commercial credit.</p>
-                        <a href="why-us.html" class="inline-block mt-4 text-[10px] text-[#0ea5e3] hover:underline">VIEW_GENESIS</a>
+                        <a href="index.html" class="inline-block mt-4 text-[10px] text-[#0ea5e3] hover:underline uppercase tracking-widest">Access_Root</a>
                     </div>
                 </div>
 
@@ -105,53 +100,42 @@
                         <p class="text-[11px] text-gray-500 font-mono leading-relaxed">Dynamic Cluster Mapping powered by our proprietary SKU logic.</p>
                         <div class="mt-4 pt-4 border-t border-white/5 space-y-2 text-[9px] font-mono text-gray-400">
                             <div class="flex justify-between"><span>-> sku-database.json</span> <span class="text-[#0ea5e3]">LINKED</span></div>
-                            <div class="flex justify-between"><span>-> sku-list-renderer.js</span> <span class="text-[#0ea5e3]">ACTIVE</span></div>
-                            <div class="flex justify-between"><span>-> sku-detail.html</span> <span class="text-[#0ea5e3]">SYNCED</span></div>
+                            <div class="flex justify-between"><span>-> industries.html</span> <span class="text-[#0ea5e3]">SYNCED</span></div>
                         </div>
-                    </div>
-                    <div class="node-card">
-                        <h4 class="font-bold text-xl mb-2 italic">Intelligence DB</h4>
-                        <p class="text-[11px] text-gray-500 font-mono leading-relaxed">High-density HS Code resources and customs clearance protocols.</p>
-                        <a href="resources.html" class="inline-block mt-4 text-[10px] text-[#0ea5e3] hover:underline">SEARCH_DATABASE</a>
                     </div>
                 </div>
 
                 <div class="space-y-8">
                     <h3 class="cluster-label">// COMPLIANCE_PROTOCOLS</h3>
                     <div class="node-card">
-                        <h4 class="font-bold text-xl mb-2 italic tracking-tighter">BIFMA_Standards</h4>
-                        <p class="text-[11px] text-gray-500 font-mono leading-relaxed">Physical structural integrity validation for mission-critical seating.</p>
-                    </div>
-                    <div class="node-card">
-                        <h4 class="font-bold text-xl mb-2 italic tracking-tighter">ISTA_6A_Ready</h4>
-                        <p class="text-[11px] text-gray-500 font-mono leading-relaxed">Logistical density stability protocols for global drop-shipping.</p>
+                        <h4 class="font-bold text-xl mb-2 italic tracking-tighter uppercase">Bifma_&_Ista_6A</h4>
+                        <p class="text-[11px] text-gray-500 font-mono leading-relaxed">Physical structural integrity validation for global logistics density.</p>
                     </div>
                     <div class="node-card">
                         <h4 class="font-bold text-xl mb-2 italic tracking-tighter">XML_Index</h4>
-                        <p class="text-[11px] text-gray-500 font-mono leading-relaxed">Deterministic site indexing for sovereign search engine capture.</p>
-                        <a href="sitemap.xml" target="_blank" class="inline-block mt-4 text-[10px] text-[#0ea5e3] hover:underline">XML_VIEW</a>
+                        <p class="text-[11px] text-gray-500 font-mono leading-relaxed">Deterministic site indexing for sovereign search capture.</p>
+                        <a href="sitemap.xml" target="_blank" class="inline-block mt-4 text-[10px] text-[#0ea5e3] hover:underline uppercase tracking-widest">View_Map</a>
                     </div>
                 </div>
-
             </div>
         </div>
     </main>
 
     <footer class="bg-[#000] py-20 border-t border-white/5 font-inter">
         <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-12">
-            <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">
-                © 2026 Yishen Global // Architecture_Verified // Deterministic_Path
+            <div class="space-y-4 mobile-items-center">
+                <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Architecture_Verified</div>
+                <div class="flex gap-4 text-[9px] font-mono text-gray-800 uppercase tracking-widest">
+                    <a href="site-architecture.html" class="hover:text-white transition">Blueprint_Map</a> / 
+                    <a href="sitemap.xml" target="_blank" class="hover:text-white transition">XML_Sitemap</a>
+                </div>
             </div>
             
             <div class="flex flex-col items-end gap-6 mobile-items-center">
-                <div style="display: flex !important; flex-wrap: nowrap !important; align-items: center; gap: 32px; width: auto;" class="opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-                    <a href="https://www.bifma.org" target="_blank" style="flex: 0 0 auto !important; min-width: 80px !important;"><img src="./bifma-badge.png" style="height: 24px; width: auto; max-width: none !important;" alt="BIFMA"></a>
-                    <a href="https://ista.org" target="_blank" style="flex: 0 0 auto !important; min-width: 80px !important;"><img src="./ista-badge.png" style="height: 24px; width: auto; max-width: none !important;" alt="ISTA"></a>
-                    <a href="https://www.iso.org/iso-9001-quality-management.html" target="_blank" style="flex: 0 0 auto !important; min-width: 100px !important;"><img src="./iso9001.png" style="height: 32px; width: auto; max-width: none !important;" alt="ISO9001"></a>
-                </div>
-                <div class="flex items-center gap-4 opacity-30 grayscale hover:grayscale-0">
-                    <img src="./visa-mastercard.png" style="height: 16px; width: auto; max-width: none !important; flex: 0 0 auto !important;">
-                    <span class="text-[8px] font-mono text-gray-500 uppercase tracking-widest">Encrypted_Settlement</span>
+                <div style="display: flex !important; flex-wrap: nowrap !important; align-items: center; gap: 32px; width: auto;" class="grayscale hover:grayscale-0 transition-all duration-500">
+                    <a href="https://www.bifma.org" target="_blank"><img src="https://yishenglobal.net/assets/bifma-badge.png" style="height: 24px; width: auto;" alt="BIFMA"></a>
+                    <a href="https://ista.org" target="_blank"><img src="https://yishenglobal.net/assets/ista-badge.png" style="height: 24px; width: auto;" alt="ISTA"></a>
+                    <a href="https://www.iso.org" target="_blank"><img src="https://yishenglobal.net/assets/iso9001.png" style="height: 32px; width: auto;" alt="ISO9001"></a>
                 </div>
             </div>
         </div>
