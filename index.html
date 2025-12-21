@@ -3,56 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Index Console | Global Industrial Orchestration | YISHEN GLOBAL</title>
+    <title>COMMAND CENTER | Global Industrial Sovereignty | YISHEN GLOBAL</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
-    <link rel="stylesheet" href="styles.css?v=2026.FINAL.MASTER">
+    <link rel="stylesheet" href="master-architect.css?v=2026.MASTER">
 
-    <style>
-        :root {
-            --neon-blue: #0ea5e3;
-            --brand-red: #A11219;
-            --deep-space: #010409;
-            --spring-curve: cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* DIGITAL TWIN GLOW - GPU 优化渲染 */
-        #cursor-glow {
-            position: fixed; width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
-            border-radius: 50%; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%);
-            will-change: transform; mix-blend-mode: screen;
-        }
-
-        /* 英雄区：视频背景与层级对撞 */
-        .hero {
-            position: relative; min-height: 100vh; display: flex; align-items: center;
-            padding: 0 8%; background: var(--deep-space); overflow: hidden;
-        }
-
-        /* 纯净代码勋章样式 - 彻底根除碎图 */
-        .sovereign-tag {
-            padding: 4px 12px; border: 1px solid rgba(255, 255, 255, 0.1);
-            font-family: 'JetBrains Mono', monospace; font-size: 9px;
-            text-transform: uppercase; letter-spacing: 2px; transition: 0.3s var(--spring-curve);
-            cursor: help;
-        }
-        .sovereign-tag:hover { border-color: var(--neon-blue); color: var(--neon-blue); background: rgba(14, 165, 233, 0.05); }
-        .tag-active { border-color: var(--neon-blue); color: var(--neon-blue); }
-
-        @media (max-width: 768px) {
-            .mobile-items-center { align-items: center !important; text-align: center !important; width: 100% !important; }
-            .hero { padding-top: 120px; }
-        }
-    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Corporation",
+      "name": "Yishen Global",
+      "alternateName": "Yishen Industrial Command",
+      "description": "The command center for 28 manufacturing clusters including seating architecture, industrial chains, and architectural surfaces.",
+      "url": "https://yishenglobal.net",
+      "logo": "https://yishenglobal.net/assets/logo-sovereign.svg",
+      "sameAs": ["https://www.linkedin.com/company/yishen-global"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+86-195-3039-4133",
+        "contactType": "Global Procurement Command"
+      }
+    }
+    </script>
 </head>
-<body class="bg-[#010409] text-white selection:bg-[#0ea5e3]">
+<body class="topology-bg selection:bg-[#0ea5e3]">
 
     <div id="cursor-glow"></div>
 
-    <nav id="master-nav" class="fixed top-0 left-0 w-full z-[100000] bg-[#010409]/95 backdrop-blur-xl border-b border-white/5 h-20 flex items-center">
-        <div class="max-w-[1440px] mx-auto px-6 w-full flex items-center justify-between">
+    <nav id="master-nav">
+        <div class="nav-container">
             <a href="index.html" class="site-logo">
                 <svg width="280" height="32" viewBox="0 0 280 32" fill="none">
                     <g fill="white"><path d="M2 14L8 10V24L2 28V14Z"/><path d="M17 6L23 2V24L17 28V6Z"/><path d="M32 14L38 10V24L32 28V14Z"/></g>
@@ -62,73 +42,86 @@
             </a>
             <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400">
                 <a href="yishen-genesis.html" class="hover:text-white transition">01_GENESIS</a>
-                <a href="sovereign-matrix.html" class="hover:text-white transition">02_MATRIX</a>
+                <a href="industrial-nodes.html" class="hover:text-white transition">02_NODES</a>
                 <a href="intelligence-intel.html" class="hover:text-white transition">03_INTEL</a>
-                <a href="tactical-briefing.html" class="hover:text-white transition">04_BRIEFING</a>
-                <a href="tactical-briefing.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase">Deploy_Sovereignty</a>
+                <a href="tactical-briefing.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase tracking-tighter">04_COMMAND</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero" id="genesis">
+    <header class="relative h-screen flex items-center px-[8%] overflow-hidden">
         <div class="hero-video-container">
-            <video autoplay muted loop playsinline poster="https://yishenglobal.net/assets/mesh.webp">
+            <video autoplay muted loop playsinline poster="assets/hero-fallback.webp">
                 <source src="https://yishenglobal.net/assets/Video_Prompt_Radiant_Intelligence.mp4" type="video/mp4">
             </video>
         </div>
 
-        <div class="max-w-[850px] z-[10]">
-            <span class="font-mono tracking-[4px] text-[#0ea5e3] text-sm uppercase">[ GLOBAL_INDUSTRIAL_ARCHITECTURE_V4 ]</span>
-            <h1 class="text-white text-[clamp(2.5rem,8vw,5rem)] font-[900] leading-[1.1] my-8 uppercase italic tracking-tighter">Architecture Over Sourcing.</h1>
-            <p class="text-[#8b949e] text-lg lg:text-xl leading-relaxed mb-12">Fusing structural integrity with mission-critical density protocols.</p>
-
+        <div class="relative z-10 max-w-5xl">
+            <span class="font-mono text-[#0ea5e3] tracking-[6px] text-xs uppercase animate-pulse">// SYSTEM_OPERATIONAL: COMMAND_CENTER_V4.0</span>
+            <h1 class="text-white text-[clamp(2.5rem,8vw,5.5rem)] font-[900] leading-[0.95] my-8 uppercase italic tracking-tighter">
+                Architecture<br>Over Sourcing.
+            </h1>
+            <p class="text-[#8b949e] max-w-2xl text-lg lg:text-xl leading-relaxed italic border-l-2 border-[#A11219] pl-8">
+                三代制造遗产的数字化集成。通过 28 个工业集群节点，为全球 500 强企业提供可验证、真实可靠的供应链主权。
+            </p>
+            
             <div class="agent-console p-6 mt-12 max-w-[700px]">
                 <div class="flex items-center justify-between mb-4">
-                    <h4 class="text-[#0ea5e3] font-mono text-[10px] tracking-[2px] uppercase animate-pulse">// SYSTEM_AGENT_V4.0_READY</h4>
-                    <span class="text-[9px] font-mono text-gray-600 uppercase italic">Reddit_Pulse: Active</span>
+                    <h4 class="text-[#0ea5e3] font-mono text-[10px] tracking-[2px] uppercase animate-pulse">// SYSTEM_AGENT_READY</h4>
+                    <span class="text-[9px] font-mono text-gray-600 uppercase italic">Sentiment_Pulse: Synchronized</span>
                 </div>
                 <div class="flex flex-col md:flex-row gap-4">
-                    <input type="text" id="user-task" placeholder="输入全球获客指令..." class="flex-1 bg-black border border-white/10 p-4 text-xs font-mono outline-none text-[#0ea5e3]">
-                    <button onclick="runAgent()" class="bg-[#0ea5e3] px-8 py-4 text-black font-[900] text-xs uppercase hover:bg-white transition-colors shadow-lg shadow-[#0ea5e3]/20">Deploy</button>
+                    <input type="text" id="user-task" placeholder="下达全球获客或供应链对撞指令..." class="flex-1 bg-black border border-white/10 p-4 text-xs font-mono outline-none text-[#0ea5e3] focus:border-[#0ea5e3]">
+                    <button onclick="runAgent()" class="execute-btn px-8 py-4 text-xs">Deploy</button>
                 </div>
-                <div id="agent-output" class="mt-4 terminal-log min-h-[40px] text-[10px] font-mono text-gray-500"> > System ready for node harvesting. </div>
+                <div id="agent-output" class="mt-4 terminal-log min-h-[40px]"> > System ready for node harvesting. </div>
             </div>
         </div>
     </header>
 
-    <footer id="compliance-section" class="bg-[#000] pt-24 pb-12 border-t border-white/5">
-        <div class="max-w-[1440px] mx-auto px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-12 py-16 border-b border-white/5">
-                <div class="space-y-4 mobile-items-center">
-                    <h5 class="text-white font-bold text-xs uppercase tracking-widest">Protocol_Index</h5>
-                    <div class="flex space-x-4 font-mono text-[9px] text-gray-700 uppercase">
-                        <a href="site-architecture.html" class="hover:text-white transition">Blueprint</a>
-                        <a href="sitemap.xml" class="hover:text-white transition">XML_Index</a>
-                    </div>
-                </div>
+    <main class="py-32 px-[8%] bg-[#010409]">
+        <div class="grid lg:grid-cols-3 gap-1px bg-white/5 border border-white/5">
+            <div class="bg-[#010409] p-12 hover:bg-white/[0.02] transition-all group">
+                <div class="text-[#0ea5e3] font-mono text-xs mb-6 tracking-widest">[ 01_REALITY ]</div>
+                <h3 class="text-2xl font-black uppercase italic mb-4 group-hover:text-[#0ea5e3] transition-colors">Authentic.</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">基于真实工程参数与海关数据验证的物理资产，确保每一份交付均可回溯至 28 个核心制造节点。</p>
+            </div>
+            <div class="bg-[#010409] p-12 hover:bg-white/[0.02] transition-all group border-x border-white/5">
+                <div class="text-[#0ea5e3] font-mono text-xs mb-6 tracking-widest">[ 02_INTEGRITY ]</div>
+                <h3 class="text-2xl font-black uppercase italic mb-4 group-hover:text-[#0ea5e3] transition-colors">Reliable.</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">代际信用背书。通过 BIFMA 与 ISTA 协议锁定的工程精度，为全球供应链提供零变量的主权保障。</p>
+            </div>
+            <div class="bg-[#010409] p-12 hover:bg-white/[0.02] transition-all group">
+                <div class="text-[#0ea5e3] font-mono text-xs mb-6 tracking-widest">[ 03_GOVERNANCE ]</div>
+                <h3 class="text-2xl font-black uppercase italic mb-4 group-hover:text-[#0ea5e3] transition-colors">Transparent.</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">主动对撞 Reddit 舆情。以透明治理驱动制造工艺的原子级修正，消除市场终端的最后一道痛点。</p>
+            </div>
+        </div>
+    </main>
 
-                <div class="flex flex-wrap items-center gap-6 mobile-items-center opacity-60">
-                    <div class="sovereign-tag tag-active">BIFMA_X5.1_VERIFIED</div>
-                    <div class="sovereign-tag">ISTA_6A_CERTIFIED</div>
-                    <div class="sovereign-tag">ISO9001_SYSTEM</div>
+    <footer class="bg-black py-24 border-t border-white/5 font-inter">
+        <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="mobile-items-center">
+                <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Command_Center_Sovereign</div>
+                <div class="flex gap-6 mt-4 text-[9px] font-mono text-gray-800 uppercase tracking-widest">
+                    <a href="site-architecture.html" class="hover:text-white transition">Blueprint_Map</a> / 
+                    <a href="sovereign-index.xml" target="_blank" class="hover:text-white transition">XML_Index</a>
                 </div>
             </div>
             
-            <div class="flex flex-col md:flex-row justify-between items-center mt-12 gap-8">
-                <p class="text-[9px] font-mono text-gray-800 tracking-[4px] mobile-items-center uppercase">
-                    &copy; 2026 YISHEN GLOBAL // ARCHITECTURAL_IP_SECURED.
-                </p>
-                <div class="flex items-center gap-6 opacity-30 grayscale font-mono text-[8px] uppercase tracking-widest">
-                    <span>Visa_Mastercard_Encrypted</span>
-                    <div class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
-                    <span>Global_Logistics_Sovereignty</span>
-                </div>
+            <div class="flex flex-wrap items-center gap-6 mobile-items-center opacity-60">
+                <div class="sovereign-tag">BIFMA_X5.1_MASTER</div>
+                <div class="sovereign-tag">ISTA_6A_CERTIFIED</div>
+                <div class="sovereign-tag">HS_CODE_9401_AUDIT</div>
             </div>
         </div>
     </footer>
 
+    <script src="hq-core-gate.js?v=2026.FINAL"></script>
+    <script src="terminal-logic.js?v=2026.FINAL"></script>
+
     <script>
-        // GPU 加速鼠标追踪同步
+        // GPU 加速鼠标追踪引擎
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             requestAnimationFrame(() => {
@@ -137,12 +130,10 @@
             });
         });
 
-        // AI Agent 模拟逻辑：集成 Reddit 舆情
+        // AI Agent 实战逻辑：Reddit 舆情模拟
         function runAgent() {
-            const input = document.getElementById('user-task');
             const output = document.getElementById('agent-output');
-            if(!input.value) return;
-            output.innerHTML = "> INITIATING_HARVEST_PROTOCOL...<br>> SCANNING_REDDIT_SENTIMENT...<br>> CROSS_REFERENCING_ROCKETREACH_API...<br>> SUCCESS: TARGET_LIST_ENCRYPTED.";
+            output.innerHTML = "> INITIATING_SOVEREIGN_SYNC...<br>> SCANNING_REDDIT_R/OFFICECHAIRS...<br>> CROSS_REFERENCING_PANJIVA_HS9401...<br>> SUCCESS: INDUSTRIAL_NODES_ALIGNED.";
         }
     </script>
 </body>
