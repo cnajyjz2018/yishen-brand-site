@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_RESOURCES | Yishen Global Tactical Vault</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --brand-blue: #0ea5e3; --bg-deep: #010409; }
+        body { background-color: var(--bg-deep); font-family: 'Inter', sans-serif; color: #ffffff; overflow-x: hidden; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .topology-bg { background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.03) 1px, transparent 0); background-size: 40px 40px; }
+        .glass-panel { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: var(--brand-blue); border-radius: 2px; }
+        .scan-line { position: absolute; width: 100%; height: 2px; background: var(--brand-blue); opacity: 0.3; animation: scan 4s linear infinite; }
+        @keyframes scan { 0% { top: 0%; } 100% { top: 100%; } }
+    </style>
+</head>
+<body class="topology-bg min-h-screen">
+
+    <nav class="fixed w-full z-[100] border-b border-white/5 bg-[#010409]/80 backdrop-blur-xl">
+        <div class="max-w-[1440px] mx-auto h-20 flex items-center justify-between px-8">
+            <div class="flex flex-col">
+                <span class="text-white font-black italic text-xl uppercase tracking-tighter">Yishen Global</span>
+                <span class="text-[#0ea5e3] font-mono text-[8px] tracking-[3px]">COMMAND_VAULT_V5.0</span>
+            </div>
+            <a href="index.html" class="font-mono text-[10px] text-gray-400 hover:text-[#0ea5e3] transition uppercase tracking-widest">
+                <i class="fa-solid fa-arrow-left mr-2"></i> Return_to_Main_Deck
+            </a>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20 px-[8%] max-w-[1440px] mx-auto">
+        <header class="mb-16">
+            <span class="font-mono text-[#0ea5e3] tracking-[5px] uppercase text-xs animate-pulse">// ACCESSING_TACTICAL_ASSETS</span>
+            <h1 class="text-white text-6xl font-black italic uppercase mt-4">Sovereign <span class="text-[#0ea5e3]">Resources.</span></h1>
+            <p class="text-gray-500 font-mono mt-4 text-sm max-w-2xl italic leading-relaxed">
+                "每一页资产的翻动，都是通往主权的阶梯。在这里，所有资源不再是文档，而是实战中的火力掩护。" [Ref: 《随风一翻都是订单》]
+            </p>
+        </header>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <section class="lg:col-span-2 space-y-8">
+                <div class="glass-panel rounded-2xl p-8 relative overflow-hidden">
+                    <div class="flex justify-between items-center mb-8">
+                        <h3 class="font-mono text-sm font-bold tracking-widest text-white uppercase italic">// 01_HS_INTEL_DB</h3>
+                        <span class="text-[8px] border border-[#0ea5e3] text-[#0ea5e3] px-2 py-0.5 rounded">REALTIME_SEARCH</span>
+                    </div>
+                    <input type="text" id="hs-input" onkeyup="searchHSCode()" placeholder="Search product intelligence (e.g. 9403, Swivel)..." 
+                           class="w-full bg-black/40 border border-white/10 p-4 text-sm font-mono text-white focus:outline-none focus:border-[#0ea5e3] transition rounded-lg">
+                    <div id="hs-results" class="mt-4 space-y-2 max-h-60 overflow-y-auto custom-scrollbar pr-4"></div>
+                </div>
+
+                <div class="glass-panel rounded-2xl p-8">
+                    <h3 class="font-mono text-sm font-bold tracking-widest text-white uppercase italic mb-8">// 02_TECHNICAL_BLUEPRINTS</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div class="p-6 bg-white/5 border border-white/5 rounded-xl hover:border-[#0ea5e3]/30 transition group cursor-pointer">
+                            <i class="fa-solid fa-layer-group text-3xl text-gray-700 group-hover:text-[#0ea5e3] mb-4"></i>
+                            <div class="text-[8px] font-mono text-gray-500">SPEC_NODE_01</div>
+                        </div>
+                        <div class="p-6 bg-white/5 border border-white/5 rounded-xl hover:border-[#0ea5e3]/30 transition group cursor-pointer">
+                            <i class="fa-solid fa-compass-drafting text-3xl text-gray-700 group-hover:text-[#0ea5e3] mb-4"></i>
+                            <div class="text-[8px] font-mono text-gray-500">CAD_BLUEPRINT_X</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="space-y-8">
+                <div class="glass-panel rounded-2xl p-8 border-l-4 border-[#0ea5e3]">
+                    <h3 class="font-mono text-sm font-bold tracking-widest text-white uppercase italic mb-8">// 03_CERT_PREVIEW_VAULT</h3>
+                    <div class="space-y-4">
+                        <button onclick="previewResource('bifma')" class="w-full flex items-center justify-between p-3 bg-white/5 rounded border border-white/5 hover:bg-[#0ea5e3]/10 transition group text-left">
+                            <span class="text-[10px] font-mono text-gray-400 group-hover:text-white">BIFMA_VALIDATION_PDF</span>
+                            <i class="fa-solid fa-eye text-[8px] text-[#0ea5e3]"></i>
+                        </button>
+                        <button onclick="previewResource('ul')" class="w-full flex items-center justify-between p-3 bg-white/5 rounded border border-white/5 hover:bg-[#0ea5e3]/10 transition group text-left">
+                            <span class="text-[10px] font-mono text-gray-400 group-hover:text-white">UL_FIRE_CERT_PDF</span>
+                            <i class="fa-solid fa-eye text-[8px] text-[#0ea5e3]"></i>
+                        </button>
+                        <button onclick="previewResource('iso9001')" class="w-full flex items-center justify-between p-3 bg-white/5 rounded border border-white/5 hover:bg-[#0ea5e3]/10 transition group text-left">
+                            <span class="text-[10px] font-mono text-gray-400 group-hover:text-white">ISO9001_MGMT_PDF</span>
+                            <i class="fa-solid fa-eye text-[8px] text-[#0ea5e3]"></i>
+                        </button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <div id="asset-modal" class="fixed inset-0 z-[2000] hidden bg-black/98 flex flex-col items-center justify-center p-6 backdrop-blur-2xl">
+        <div class="w-full max-w-6xl flex justify-between items-center mb-4 px-2">
+            <span id="preview-title" class="font-mono text-[10px] text-[#0ea5e3] tracking-[4px] uppercase italic">// LOADING_RESOURCE...</span>
+            <button onclick="closePreview()" class="text-white/40 hover:text-white font-mono text-[10px] uppercase">Terminate_Link [X]</button>
+        </div>
+        <div class="w-full max-w-6xl h-[80vh] border border-white/10 relative bg-white/5 rounded-lg overflow-hidden">
+            <iframe id="preview-frame" src="" class="w-full h-full border-none shadow-2xl" loading="lazy"></iframe>
+            <div class="scan-line"></div>
+        </div>
+    </div>
+
+    <script>
+        // HS 数据对撞库
+        const hsDB = [
+            { code: "9403.3000", desc: "Wooden Office Furniture", region: "Global" },
+            { code: "9401.3000", desc: "Swivel Seats (Variable Height)", region: "Global" },
+            { code: "9403.1000", desc: "Metal Office Furniture", region: "Global" }
+        ];
+
+        function searchHSCode() {
+            const q = document.getElementById('hs-input').value.toLowerCase();
+            const res = hsDB.filter(i => i.code.includes(q) || i.desc.toLowerCase().includes(q));
+            document.getElementById('hs-results').innerHTML = res.map(i => `
+                <div class="p-3 bg-white/5 border border-white/5 flex justify-between items-center hover:bg-white/10 transition">
+                    <span class="text-[#0ea5e3] font-mono text-xs font-bold">${i.code}</span>
+                    <span class="text-[9px] text-gray-500 uppercase">${i.desc}</span>
+                </div>
+            `).join('') || '<div class="text-xs text-gray-600 font-mono">// NO_RECORDS_MATCHED</div>';
+        }
+
+        // 资产预览协议
+        const certs = {
+            bifma: { url: "public/assets/docs/bifma-report.pdf", title: "BIFMA_STRUCTURAL_PROTOCOL" },
+            ul: { url: "public/assets/docs/ul-fire-safety.pdf", title: "UL_FIRE_CERT_VALIDATED" },
+            iso9001: { url: "public/assets/docs/iso9001-cert.pdf", title: "ISO_9001_QUALITY_SOVEREIGNTY" }
+        };
+
+        function previewResource(key) {
+            const asset = certs[key];
+            if(asset) {
+                document.getElementById('preview-frame').src = asset.url;
+                document.getElementById('preview-title').innerText = asset.title;
+                document.getElementById('asset-modal').classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closePreview() {
+            document.getElementById('asset-modal').classList.add('hidden');
+            document.getElementById('preview-frame').src = '';
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('DOMContentLoaded', searchHSCode);
+    </script>
+</body>
+</html>
