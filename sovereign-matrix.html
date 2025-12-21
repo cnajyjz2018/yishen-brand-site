@@ -45,6 +45,7 @@
             content: "DIGITAL_TWIN_ACTIVE"; font-family: 'JetBrains Mono'; font-size: 8px; 
             color: var(--neon-blue); letter-spacing: 4px; animation: pulse 2s infinite;
         }
+        @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.8; } }
 
         .asset-node {
             background: rgba(255, 255, 255, 0.01); border: 1px solid rgba(255, 255, 255, 0.05);
@@ -61,8 +62,6 @@
 
         .scan-line { position: absolute; width: 100%; height: 2px; background: var(--neon-blue); opacity: 0.2; animation: scan 4s linear infinite; }
         @keyframes scan { 0% { top: 0%; } 100% { top: 100%; } }
-
-        @media (max-width: 768px) { .hero-pt { padding-top: 140px !important; } }
     </style>
 </head>
 <body class="matrix-bg selection:bg-[#0ea5e3]">
@@ -90,7 +89,7 @@
             <span class="font-mono tracking-[8px] text-[#0ea5e3] text-sm uppercase animate-pulse">[ SOVEREIGN_ASSET_MATRIX_ACTIVE ]</span>
             <h1 class="text-white text-[clamp(3.5rem,10vw,7rem)] font-[900] leading-[0.9] my-12 uppercase italic tracking-tighter">Deterministic<br>Assets.</h1>
             <p class="text-gray-400 text-xl max-w-[850px] leading-relaxed italic border-l-2 border-[#A11219] pl-10">
-                科学集成：我们将全品类资产由“寻源”转向“确定性交付”。涵盖办公主权、海洋五金吊装及碳中和材料体系。
+                “我们正在将 28 个工业集群对位至全球避税补丁与物理合规标准。每一张图片都是一份主权护照。”
             </p>
         </div>
     </header>
@@ -99,74 +98,69 @@
         <div class="mb-24 p-10 bg-[#A11219]/5 border border-[#A11219]/20">
             <h4 class="font-mono text-[#A11219] text-xs uppercase tracking-[4px] mb-6">// 2026_INDUSTRIAL_FORECAST_V5</h4>
             <div class="grid md:grid-cols-2 gap-12 text-sm leading-relaxed text-gray-400">
-                <p>研究指出：全球供应链已进入“物理主权”时代。Fortune 500 买家将强制要求 100% 的 BIM 数据对撞。Yishen Architecture 已完成对 HS 9401/9403/7315 核心协议的物理验证。</p>
-                <p>碳中和补丁：我们的 Bamboo-Negative 方案与高强度海洋制链现已全面并入资产账本，对撞欧洲 CBAM 碳关税主权。</p>
+                <p>全球供应链已进入“物理主权”时代。针对 HS 9401/9403/7315 核心协议的物理验证，Yishen Architecture 实现了从“寻源”转向“确定性交付”的跨越。</p>
+                <p>医疗精密与海洋五金节点现已挂载 ASEAN Form E 零关税协议，为印尼、泰国及巴西买家提供毫秒级的避税对撞优势。</p>
             </div>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="asset-node rounded-2xl group">
                 <div class="scan-line"></div>
-                <div class="node-visual-stub"></div>
+                <div class="node-visual-stub">
+                    <img data-src="assets/products/office-matrix-v5.webp" alt="Office Chair" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 group-hover:opacity-100">
+                </div>
                 <h3 class="text-2xl font-black italic text-white uppercase mb-4">Ergo & Gaming Alpha</h3>
-                <p class="text-[11px] text-gray-500 font-mono leading-relaxed mb-8">
-                    全流程 BIFMA 认证节点。针对北美/南美市场优化的 KD 结构。单柜容积率对撞提升 25%。
-                </p>
+                <p class="text-[11px] text-gray-500 font-mono leading-relaxed mb-8">针对北美市场优化的 BIFMA X5.1 节点。集成 ISTA-6A 包装生存率协议，单柜容积率对撞提升 25%。</p>
                 <div class="flex gap-2">
                     <span class="sovereign-tag" style="color:var(--neon-blue)">HS_9401.31</span>
-                    <span class="sovereign-tag">ISTA_6A_SYNC</span>
+                    <a href="technical-passport.html?id=OFFICE_CHAIR" class="sovereign-tag hover:bg-[#0ea5e3] hover:text-black">View_Passport</a>
                 </div>
             </div>
 
-            <div class="asset-node rounded-2xl group">
-                <div class="node-visual-stub"></div>
+            <div class="asset-node rounded-2xl group border-l-[#ffd700]/20">
+                <div class="node-visual-stub">
+                    <img data-src="assets/products/marine-node-v5.webp" alt="Maritime Hardware" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 group-hover:opacity-100">
+                </div>
                 <h3 class="text-2xl font-black italic text-white uppercase mb-4">Maritime & Port Rigging</h3>
-                <p class="text-[11px] text-gray-500 font-mono leading-relaxed mb-8">
-                    G80/G100 高强度合金链条与索具。内置巴西反倾销豁免逻辑。实时提单数据对撞拦截。
-                </p>
+                <p class="text-[11px] text-gray-500 font-mono leading-relaxed mb-8">G80/G100 高强度合金链条。内置巴西反倾销豁免逻辑（AD Exemption）。支持圣多斯港物流对撞。</p>
                 <div class="flex gap-2">
                     <span class="sovereign-tag" style="color:var(--brand-gold)">HS_7315.82</span>
-                    <span class="sovereign-tag">ABS_VERIFIED</span>
+                    <a href="technical-passport.html?id=MARINE_CHAIN" class="sovereign-tag hover:bg-[#ffd700] hover:text-black">View_Passport</a>
                 </div>
             </div>
 
-            <div class="asset-node rounded-2xl group">
-                <div class="node-visual-stub"></div>
-                <h3 class="text-2xl font-black italic text-white uppercase mb-4">Aluminum Sovereignty</h3>
-                <p class="text-[11px] text-gray-500 font-mono leading-relaxed mb-8">
-                    离岸避税铝梯集群。针对美国 AD/CVD 执行 ASEAN 中转中转路径。ANSI 标准 100% 覆盖。
-                </p>
+            <div class="asset-node rounded-2xl group border-l-[#0ea5e3]/20">
+                <div class="node-visual-stub">
+                    <img data-src="assets/products/medical-hub-v5.webp" alt="Medical Precision" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 group-hover:opacity-100">
+                </div>
+                <h3 class="text-2xl font-black italic text-white uppercase mb-4">Sterile Clinical Hub</h3>
+                <p class="text-[11px] text-gray-500 font-mono leading-relaxed mb-8">集成银离子抗菌主权。针对东盟医疗基建项目设计，支持 Form E 零关税协议。ISO 13485 认证挂载。</p>
                 <div class="flex gap-2">
-                    <span class="sovereign-tag" style="color:var(--performance-red)">HS_7616.99</span>
-                    <span class="sovereign-tag">TARIFF_HACK</span>
+                    <span class="sovereign-tag" style="color:var(--neon-blue)">HS_9402.10</span>
+                    <a href="technical-passport.html?id=MEDICAL_CHAIR" class="sovereign-tag hover:bg-[#0ea5e3] hover:text-black">View_Passport</a>
                 </div>
             </div>
         </div>
 
-        <div class="mt-32 p-12 bg-[#0ea5e3]/5 border-2 border-[#0ea5e3]/20 backdrop-blur-3xl">
+        <div class="mt-32 p-12 bg-[#0ea5e3]/5 border-2 border-[#0ea5e3]/20 backdrop-blur-3xl rounded-sm">
             <h4 class="font-mono text-[#0ea5e3] text-sm uppercase tracking-[4px] mb-8">// TOP_TIER_BUYER_INTERCEPTION</h4>
-            <p class="text-gray-400 italic mb-10 text-lg leading-relaxed max-w-4xl">
-                针对 Fortune 500 级决策者：我们已完成与 Panjiva/ImportGenius 数据库的深度对撞。通过物理参数修正（Lumbar Support/Tensile Strength），为您的供应链建立 100% 信任主权。
-            </p>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-50 font-mono text-[9px]">
+            <div class="grid md:grid-cols-4 gap-8 opacity-50 font-mono text-[9px]">
                 <div class="border-l border-white/10 pl-6 uppercase">Target: Ashley_Contract</div>
                 <div class="border-l border-white/10 pl-6 uppercase">Target: ODP_Sourcing</div>
                 <div class="border-l border-white/10 pl-6 uppercase">Target: Santos_Port_Ops</div>
-                <div class="border-l border-white/10 pl-6 uppercase">Target: Home_Depot_MRO</div>
+                <div class="border-l border-white/10 pl-6 uppercase">Target: B.Braun_Medical</div>
             </div>
         </div>
     </main>
 
     <footer class="bg-black py-24 border-t border-white/5 font-inter">
         <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-12">
-            <div class="mobile-items-center">
+            <div>
                 <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Sovereign_Matrix_Verified</div>
                 <div class="flex gap-6 mt-4 text-[9px] font-mono text-gray-800 uppercase tracking-widest text-gray-500">
-                    <a href="site-architecture.html" class="hover:text-white transition">Blueprint_Map</a> / 
                     <a href="sovereign-index.xml" target="_blank" class="hover:text-white transition">XML_Index</a>
                 </div>
             </div>
-            
             <div class="flex flex-wrap items-center gap-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
                 <img src="assets/icons/bifma-badge.webp" class="h-6" alt="BIFMA">
                 <img src="assets/icons/en131-badge.webp" class="h-6" alt="EN131">
@@ -176,8 +170,9 @@
         </div>
     </footer>
 
+    <script src="img-lazy-loader.js"></script>
+    <script src="hq-core-gate.js"></script>
     <script>
-        // GPU 鼠标追踪引擎同步
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             requestAnimationFrame(() => {
