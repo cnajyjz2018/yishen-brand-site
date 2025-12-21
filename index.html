@@ -19,12 +19,12 @@
         .progress-bar { width: 240px; height: 2px; background: rgba(255,255,255,0.05); margin-top: 25px; }
         #bar-fill { height: 100%; background: var(--brand-blue); width: 0%; transition: 2.2s cubic-bezier(0.1, 0.5, 0.1, 1); }
 
-        /* V5.0 拓扑背景 */
+        /* V5.0 拓扑背景与光效 */
         .topology-bg { background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.03) 1px, transparent 0); background-size: 40px 40px; }
         .hero-assets { background: radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.1) 0%, transparent 50%); }
-        
         #cursor-glow { position: fixed; width: 600px; height: 600px; background: radial-gradient(circle, rgba(14, 165, 233, 0.05) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 0; transform: translate(-50%, -50%); will-change: transform; }
 
+        /* 勋章节点样式：匹配 screenshots 逻辑 */
         .cert-node { filter: grayscale(100%); opacity: 0.4; transition: 0.5s; cursor: pointer; }
         .cert-node:hover { filter: grayscale(0%); opacity: 1; transform: translateY(-3px); }
 
@@ -58,8 +58,8 @@
                 <a href="clusters.html" class="hover:text-white transition">03_CLUSTERS</a>
                 <a href="resources.html" class="hover:text-white transition border-b-2 border-[#0ea5e3] pb-1">04_RESOURCES</a>
                 <div class="flex items-center gap-4 border-l border-white/10 pl-6 ml-4">
-                    <button onclick="connectNode('whatsapp')" class="hover:text-[#25D366] transition-colors"><i class="fab fa-whatsapp text-lg"></i></button>
-                    <button onclick="connectNode('linkedin')" class="hover:text-[#0077B5] transition-colors"><i class="fab fa-linkedin text-lg"></i></button>
+                    <button onclick="window.open('https://wa.me/yournumber')" class="hover:text-[#25D366] transition-colors"><i class="fab fa-whatsapp text-lg"></i></button>
+                    <button onclick="window.open('https://linkedin.com')" class="hover:text-[#0077B5] transition-colors"><i class="fab fa-linkedin text-lg"></i></button>
                 </div>
             </div>
         </div>
@@ -92,7 +92,7 @@
                 <div class="max-w-xl">
                     <span class="font-mono text-[#0ea5e3] tracking-[5px] text-[10px] uppercase animate-pulse">// ACTIVE_RECONNAISSANCE_PROTOCOL</span>
                     <h2 class="text-white text-3xl font-black italic uppercase mt-4 tracking-tighter">Targeting <span class="text-[#0ea5e3]">Engine.</span></h2>
-                    <p class="text-gray-500 font-mono text-[10px] mt-4 leading-relaxed">基于 Trademo/Apollo 数据对撞，实时扫描 E-ZONE 潜在买家。</p>
+                    <p class="text-gray-500 font-mono text-[10px] mt-4 leading-relaxed">基于 Trademo/Apollo 数据对撞，实时扫描全球买家与拉美电竞专区潜力商机。</p>
                 </div>
                 <div class="grid grid-cols-3 gap-4">
                     <div onclick="window.open('https://www.apollo.io')" class="p-3 bg-white/5 border border-white/10 rounded hover:border-[#0ea5e3] cursor-pointer text-center">
@@ -103,9 +103,9 @@
                         <i class="fa-solid fa-ship text-[#A11219] mb-2"></i>
                         <div class="text-[8px] font-mono">CUSTOMS</div>
                     </div>
-                    <div onclick="window.open('https://www.zoominfo.com')" class="p-3 bg-white/5 border border-white/10 rounded hover:border-[#0ea5e3] cursor-pointer text-center">
+                    <div onclick="window.open('https://www.crunchbase.com')" class="p-3 bg-white/5 border border-white/10 rounded hover:border-[#0ea5e3] cursor-pointer text-center">
                         <i class="fa-solid fa-id-card text-white mb-2"></i>
-                        <div class="text-[8px] font-mono">ZOOM_INFO</div>
+                        <div class="text-[8px] font-mono">CRUNCHBASE</div>
                     </div>
                 </div>
             </div>
@@ -115,10 +115,13 @@
     <div class="fixed bottom-6 right-6 z-[5000] flex flex-col items-end gap-3 group">
         <div class="opacity-0 group-hover:opacity-100 transition-all duration-500 bg-[#0ea5e3] text-black font-mono text-[9px] px-3 py-1 font-bold italic tracking-widest">// ACCESS_COMPLIANCE_API</div>
         <div class="glass-panel p-3 rounded-xl shadow-2xl flex flex-wrap max-w-[200px] justify-end gap-4">
-            <div onclick="previewResource('bifma')" class="cert-node h-6"><img src="public/assets/icons/bifma.webp" class="h-full"></div>
-            <div onclick="previewResource('ul')" class="cert-node h-6"><img src="public/assets/icons/ul.webp" class="h-full"></div>
-            <div onclick="previewResource('fsc')" class="cert-node h-6"><img src="public/assets/icons/fsc.webp" class="h-full"></div>
-            <div onclick="previewResource('iso9001')" class="cert-node h-6"><img src="public/assets/icons/iso9001.webp" class="h-full"></div>
+            <div onclick="previewResource('bifma')" class="cert-node h-6" title="BIFMA"><img src="assets/icons/bifma-badge.webp" class="h-full"></div>
+            <div onclick="previewResource('bsci')" class="cert-node h-6" title="BSCI"><img src="assets/icons/bsci-badge.webp" class="h-full"></div>
+            <div onclick="previewResource('ul')" class="cert-node h-6" title="UL"><img src="assets/icons/logo-ul.webp" class="h-full"></div>
+            <div onclick="previewResource('fsc')" class="cert-node h-6" title="FSC"><img src="assets/icons/logo-fsc.webp" class="h-full"></div>
+            <div onclick="previewResource('iso9001')" class="cert-node h-6" title="ISO 9001"><img src="assets/icons/iso9001.webp" class="h-full"></div>
+            <div onclick="previewResource('ista')" class="cert-node h-6" title="ISTA"><img src="assets/icons/ista-badge.webp" class="h-full"></div>
+            <div onclick="previewResource('visa')" class="cert-node h-6" title="VISA/MC"><img src="assets/icons/visa-mastercard.webp" class="h-full"></div>
         </div>
     </div>
 
@@ -134,15 +137,18 @@
     </div>
 
     <script>
-        // [PROTOCOL] 资源索引
+        // [PROTOCOL] 精准资源映射：匹配资产截图
         const certAssets = {
-            bifma: { url: "public/assets/docs/bifma.pdf", title: "BIFMA_STRUCTURAL_PROTOCOL" },
-            ul: { url: "public/assets/docs/ul.pdf", title: "UL_SAFETY_VALIDATED" },
-            fsc: { url: "public/assets/docs/fsc.pdf", title: "FSC_SUSTAINABILITY_CREDENTIAL" },
-            iso9001: { url: "public/assets/docs/iso9001.pdf", title: "ISO_9001_QUALITY_MANAGEMENT" }
+            bifma: { url: "assets/docs/bifma.pdf", title: "BIFMA_STRUCTURAL_PROTOCOL" },
+            bsci: { url: "assets/docs/bsci.pdf", title: "BSCI_SOCIAL_COMPLIANCE" },
+            ul: { url: "assets/docs/ul.pdf", title: "UL_SAFETY_VALIDATED" },
+            fsc: { url: "assets/docs/fsc.pdf", title: "FSC_SUSTAINABILITY_CREDENTIAL" },
+            iso9001: { url: "assets/docs/iso9001.pdf", title: "ISO_9001_QUALITY_MANAGEMENT" },
+            ista: { url: "assets/docs/ista.pdf", title: "ISTA_TRANSPORT_SAFETY" },
+            visa: { url: "assets/docs/financial.pdf", title: "FINANCIAL_SOVEREIGNTY" }
         };
 
-        // [FIX] 防闪退预览协议
+        // [FIX] 防闪退通信补丁
         function previewResource(key) {
             if (window.event) window.event.preventDefault();
             const asset = certAssets[key];
@@ -164,15 +170,20 @@
             document.body.style.overflow = 'auto';
         }
 
-        // [ENGINE] HS Intel
-        const hsDB = [ { code: "9403.3000", desc: "Wooden Office Furniture" }, { code: "3918.9000", desc: "WPC Decking" }, { code: "4409.2100", desc: "Bamboo Flooring" } ];
+        // [ENGINE] HS Intel 集成
+        const hsDB = [ 
+            { code: "9403.3000", desc: "Wooden Office Furniture" }, 
+            { code: "3918.9000", desc: "WPC Decking (Ecological)" }, 
+            { code: "4409.2100", desc: "Bamboo Flooring" },
+            { code: "9401.3100", desc: "Gaming Chair (Knock-down)" } 
+        ];
         function searchHSCode() {
             const q = document.getElementById('hs-input').value.toLowerCase();
             const res = hsDB.filter(i => i.code.includes(q) || i.desc.toLowerCase().includes(q));
             document.getElementById('hs-results').innerHTML = res.map(i => `<div class="p-2 border-b border-white/5 flex justify-between items-center"><span class="text-[#0ea5e3] font-bold">${i.code}</span><span class="text-gray-500 uppercase">${i.desc}</span></div>`).join('');
         }
 
-        // [INIT] 加载控制
+        // [INIT] 加载仪式控制
         window.addEventListener('load', () => {
             document.getElementById('bar-fill').style.width = '100%';
             setTimeout(() => {
