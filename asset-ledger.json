@@ -1,0 +1,110 @@
+{
+  "OFFICE_MESH_V4": {
+    "id": "OFFICE_MESH_V4",
+    "sector": "OFFICE_SOVEREIGNTY",
+    "title": "High-End Mesh Terminal",
+    "hs_code": "9401.31.00",
+    "tagline": "The Gold Standard of Ergonomic Architecture",
+    "compliance": ["BIFMA G1-2013", "ANSI Certified", "ISTA-6A Ready"],
+    "stats": {
+      "material": "Reinforced Glass Fiber Nylon + PA High-Density Mesh",
+      "load_capacity": "300 lbs (136 kg) Structural Integrity",
+      "cbm": "97.8%",
+      "fail_rate": "0.01%",
+      "logistics_protocol": "Cubic-Max Flat-Pack Optimization"
+    },
+    "warranty": "10-Year Industrial Sovereignty Warranty",
+    "image": "https://yishenglobal.net/assets/mesh.webp",
+    "url": "technical-passport.html?id=OFFICE_MESH_V4"
+  },
+  "CHAIN_G80_MASTER": {
+    "id": "CHAIN_G80_MASTER",
+    "sector": "CHANGHONG_INDUSTRIAL",
+    "title": "Tensile Chain Node G80",
+    "hs_code": "7315.82.00",
+    "tagline": "Deterministic Heavy-Duty Tensile Matrix",
+    "compliance": ["ASTM A391", "G80 Structural Grade", "ISO 1704"],
+    "stats": {
+      "material": "Alloy Steel Grade 80 / Hot-Dip Galv",
+      "load_capacity": "12,000 KG Breaking Force",
+      "cbm": "99.4%",
+      "fail_rate": "0.00%",
+      "logistics_protocol": "Steel-Pail Reinforced Armor"
+    },
+    "warranty": "Lifetime Heavy-Duty Integrity Warranty",
+    "image": "https://yishenglobal.net/assets/mesh.webp",
+    "url": "technical-passport.html?id=CHAIN_G80_MASTER"
+  },
+  "AERO_COMMAND_A01": {
+    "id": "AERO_COMMAND_A01",
+    "sector": "AERO_MILITARY",
+    "title": "Tactical Command Hub",
+    "hs_code": "9401.10.00",
+    "tagline": "Mission-Critical Command Architecture",
+    "compliance": ["MIL-STD-810H", "9G Shockproof", "FR UL94-V0"],
+    "stats": {
+      "material": "Aerospace Aluminum Alloy + Anti-Static Chassis",
+      "load_capacity": "450kg Static / 180kg Dynamic",
+      "cbm": "97.4%",
+      "fail_rate": "0.00%",
+      "logistics_protocol": "ISTA-6A Military Grade"
+    },
+    "warranty": "Lifetime Tactical Integrity Warranty",
+    "image": "https://yishenglobal.net/assets/mesh.webp",
+    "url": "technical-passport.html?id=AERO_COMMAND_A01"
+  },
+  "BAMBOO_CBAM_READY": {
+    "id": "BAMBOO_CBAM_READY",
+    "sector": "BIO_MATERIALS",
+    "title": "Carbon-Negative Bamboo",
+    "hs_code": "4418.75.00",
+    "tagline": "Sovereign Sustainable Architecture",
+    "compliance": ["LEED Gold Certified", "CBAM Ready", "FSC Source"],
+    "stats": {
+      "material": "Deep-Thermal High-Density Bamboo",
+      "load_capacity": "Janka Hardness 3500+",
+      "cbm": "96.5%",
+      "fail_rate": "0.02%",
+      "logistics_protocol": "Bio-Degradable Moisture Shield"
+    },
+    "warranty": "25-Year Dimension Stability Warranty",
+    "image": "https://yishenglobal.net/assets/mesh.webp",
+    "url": "technical-passport.html?id=BAMBOO_CBAM_READY"
+  },
+  "MED_BIOMECH_9002": {
+    "id": "MED_BIOMECH_9002",
+    "sector": "MEDICAL_PRECISION",
+    "title": "Clinical Biomechanical Seating",
+    "hs_code": "9402.10.00",
+    "tagline": "Antimicrobial Biomechanical Architecture",
+    "compliance": ["Silver-Ion Shield", "FDA Class I", "ISO 22196"],
+    "stats": {
+      "material": "Silver-Ion Polymer + Stainless Steel Chassis",
+      "load_capacity": "150kg Precision Dynamic Control",
+      "cbm": "98.1%",
+      "fail_rate": "0.01%",
+      "logistics_protocol": "Medical-Grade Sterile Packaging"
+    },
+    "warranty": "15-Year Clinical Reliability Warranty",
+    "image": "https://yishenglobal.net/assets/mesh.webp",
+    "url": "technical-passport.html?id=MED_BIOMECH_9002"
+  },
+  "DUAL_X1_WORKSTATION": {
+    "id": "DUAL_X1_WORKSTATION",
+    "sector": "ARCHITECTURAL_DESKS",
+    "title": "D-UAL X1 Power Node",
+    "hs_code": "9403.10.00",
+    "tagline": "Precision Height-Adjustment System",
+    "compliance": ["CE Certified", "UL 962", "BIFMA Standards"],
+    "stats": {
+      "material": "Carbon Steel Framework + E0 Grade Top",
+      "load_capacity": "120 kg Dynamic Stability",
+      "cbm": "94.2%",
+      "fail_rate": "0.05%",
+      "logistics_protocol": "Flat-Pack Cubic-Max Density"
+    },
+    "warranty": "5-Year Electronic System Warranty",
+    "image": "https://yishenglobal.net/assets/mesh.webp",
+    "url": "technical-passport.html?id=DUAL_X1_WORKSTATION"
+  }
+}
