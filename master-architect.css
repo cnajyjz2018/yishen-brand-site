@@ -1,0 +1,228 @@
+/* =========================================================
+   YiShen Global — Integrated Master Styles (v4.0.FINAL.MASTER)
+   Logic: Layout Sovereignty, Anti-Clipping, GPU Glow, AI Agent Terminal
+   Version: 4.0.FINAL.MASTER (All Historical Patches Integrated)
+   Authority: Strategic Architecture Group
+   ========================================================= */
+
+:root {
+    /* 品牌主权色标与核心变量 */
+    --neon-blue: #0ea5e3;
+    --performance-red: #A11219;
+    --deep-space: #010409;
+    --glass-bg: rgba(1, 4, 9, 0.95);
+    --surface: rgba(255, 255, 255, 0.03);
+    --logic-grid: rgba(255, 255, 255, 0.03);
+    --navbar-height: 80px;
+    --spring-curve: cubic-bezier(0.4, 0, 0.2, 1);
+    --terminal-green: #00ff41;
+}
+
+/* 01_Core_Reset & Global Architecture */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body { 
+    background-color: var(--deep-space); 
+    color: #e6edf3; 
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+}
+
+/* 02_Digital_Glow: GPU Accelerated Engine */
+#cursor-glow {
+    position: fixed; 
+    width: 600px; 
+    height: 600px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
+    pointer-events: none; 
+    z-index: 99999; 
+    transform: translate(-50%, -50%);
+    will-change: transform; 
+    mix-blend-mode: screen;
+}
+
+/* 03_Universal_Navbar_Sovereignty */
+#master-nav {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: var(--navbar-height);
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px);
+    z-index: 100000 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex; 
+    align-items: center;
+    transition: all 0.3s var(--spring-curve);
+}
+
+.nav-container {
+    width: 100%; 
+    max-width: 1440px; 
+    margin: 0 auto;
+    padding: 0 40px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+/* 04_Topology_Infrastructure: 拓扑网格底座 */
+.topology-bg {
+    background-image: radial-gradient(var(--logic-grid) 1px, transparent 1px);
+    background-size: 32px 32px;
+}
+
+/* Video Infrastructure & Interaction */
+.hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hero-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+.accordion-content {
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.4s var(--spring-curve);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.site-logo svg {
+    height: 32px !important; 
+    width: auto !important;
+    display: block !important; 
+    overflow: visible !important;
+    filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.3));
+}
+
+/* 05_Graphics_Defense: Anti-Clipping & Grayscale */
+.grayscale-active, .grayscale { 
+    filter: grayscale(100%) contrast(1.1); 
+    transition: all 0.5s var(--spring-curve); 
+    opacity: 0.45;
+}
+
+.grayscale-active:hover, .grayscale:hover { 
+    filter: grayscale(0%) contrast(1); 
+    opacity: 1;
+    transform: translateY(-2px) scale(1.03);
+}
+
+/* Footer Image Integrity: 强制禁止压缩与变形 */
+footer .flex-shrink-0, 
+footer a[style*="flex-shrink: 0"] {
+    flex-shrink: 0 !important; 
+    white-space: nowrap !important; 
+    display: inline-block !important;
+}
+
+footer img {
+    max-width: none !important; 
+    height: auto;
+    display: block !important;
+    backface-visibility: hidden;
+    -webkit-user-drag: none;
+}
+
+/* 06_AI_Agent_Terminal_Framework: 终端态交互 */
+.agent-console {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(14, 165, 233, 0.2);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    border-radius: 2px;
+    transition: all 0.4s var(--spring-curve);
+}
+
+.execute-btn {
+    transition: all 0.4s var(--spring-curve);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    background: var(--neon-blue);
+    color: #000;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+}
+
+.execute-btn:hover {
+    background: #fff;
+    box-shadow: 0 0 30px rgba(14, 165, 233, 0.4);
+}
+
+.terminal-log {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--terminal-green);
+    opacity: 0.8;
+    letter-spacing: 0.5px;
+}
+
+/* 07_Mobile_Responsive_Engine */
+@media (max-width: 768px) {
+    :root { --navbar-height: 70px; }
+    
+    .hero, .page-hero { 
+        padding: 140px 5% 60px !important;
+        min-height: 100vh;
+        height: auto !important;
+    }
+
+    .nav-container { padding: 0 20px; }
+
+    footer .grid-cols-5, 
+    footer .grid-cols-4, 
+    footer .grid-cols-2 { 
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 24px !important; 
+    }
+
+    .mobile-items-center {
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    footer .flex-nowrap {
+        justify-content: center !important;
+    }
+
+    footer span.whitespace-nowrap {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+}
+
+/* 08_Utility_Typography */
+.nav-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem; 
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none; 
+    transition: 0.3s;
+}
+
+.nav-link:hover { color: var(--neon-blue); }
+.nav-link.active { color: #fff; border-bottom: 2px solid var(--performance-red); }
