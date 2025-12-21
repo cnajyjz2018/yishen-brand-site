@@ -8,31 +8,31 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --brand-blue: #0ea5e3; --brand-red: #A11219; --bg-deep: #010409; }
+        :root { --brand-blue: #0ea5e3; --brand-red: #A11219; --brand-gold: #ffd700; --bg-deep: #010409; }
         body { background-color: var(--bg-deep); font-family: 'Inter', sans-serif; color: #ffffff; overflow-x: hidden; }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
         .topology-bg { background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.03) 1px, transparent 0); background-size: 40px 40px; }
-        .glass-panel { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); }
-        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: var(--brand-blue); border-radius: 2px; }
+        .glass-panel { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .glass-panel:hover { background: rgba(255, 255, 255, 0.05); border-color: var(--brand-blue); transform: translateY(-2px); }
         .scan-line { position: absolute; width: 100%; height: 2px; background: var(--brand-blue); opacity: 0.3; animation: scan 4s linear infinite; }
         @keyframes scan { 0% { top: 0%; } 100% { top: 100%; } }
-        
         #loading-screen { position: fixed; inset: 0; z-index: 9999; background: #010409; display: flex; flex-direction: column; items: center; justify-content: center; }
         #bar-fill { height: 100%; background: var(--brand-blue); width: 0%; transition: 2s cubic-bezier(0.1, 0.5, 0.1, 1); }
+        .cert-node { filter: grayscale(100%); opacity: 0.4; transition: 0.5s; cursor: pointer; }
+        .cert-node:hover { filter: grayscale(0%); opacity: 1; transform: translateY(-3px); }
     </style>
 </head>
 <body class="topology-bg min-h-screen">
 
     <div id="loading-screen">
-        <span class="text-white font-black italic text-2xl uppercase tracking-tighter">RESOURCE_VAULT_SYNC_V5</span>
+        <span class="text-white font-black italic text-2xl uppercase tracking-tighter">RESOURCE_VAULT_SYNC_V5.0</span>
         <div class="w-48 h-[2px] bg-white/10 mt-6"><div id="bar-fill"></div></div>
-        <span class="text-[#0ea5e3] font-mono text-[8px] mt-4 tracking-[4px] animate-pulse">// INTEGRATING_GLOBAL_CUSTOMS_DATA...</span>
+        <span class="text-[#0ea5e3] font-mono text-[8px] mt-4 tracking-[4px] animate-pulse">// INTEGRATING_GLOBAL_CUSTOMS_&_MRO_DATA...</span>
     </div>
 
     <nav class="fixed w-full z-[100] border-b border-white/5 bg-[#010409]/80 backdrop-blur-xl h-20 flex items-center px-8 justify-between">
         <div class="flex flex-col">
-            <span class="text-white font-black italic text-xl uppercase tracking-tighter">Yishen Global</span>
+            <span class="text-white font-black italic text-xl uppercase tracking-tighter leading-none">Yishen Global</span>
             <span class="text-[#0ea5e3] font-mono text-[8px] tracking-[3px]">COMMAND_VAULT_V5.0</span>
         </div>
         <div class="hidden lg:flex items-center space-x-8 font-mono text-[0.7rem] tracking-widest text-gray-400">
@@ -43,45 +43,59 @@
         </div>
     </nav>
 
-    <main class="pt-32 pb-20 px-[8%] max-w-[1440px] mx-auto">
+    <main class="pt-40 pb-20 px-[8%] max-w-[1440px] mx-auto">
         <header class="mb-16 border-l-4 border-[#A11219] pl-8">
             <span class="font-mono text-[#0ea5e3] tracking-[5px] uppercase text-xs animate-pulse">// ACCESSING_GLOBAL_TACTICAL_ASSETS</span>
             <h1 class="text-white text-6xl font-[900] italic uppercase mt-4">Tactical <span class="text-[#0ea5e3]">Vault.</span></h1>
-            <p class="text-gray-400 font-mono mt-6 text-sm max-w-3xl leading-relaxed italic">
-                "Orders follow the system. 从北美 Mesh 到南美电竞主权，此处集成的每一项情报都是收割全球市场的火力支援。 [Ref: 《随风一翻都是订单》]"
+            <p class="text-gray-400 font-mono mt-6 text-sm max-w-4xl leading-relaxed italic">
+                "Orders follow the system. 从北美铝梯绕道方案到巴西链条豁免协议，此处集成的每一项情报都是收割全球市场的火力支援。"
             </p>
         </header>
 
-        <div class="glass-panel p-8 border-l-2 border-[#0ea5e3] mb-12 relative overflow-hidden">
-            <span class="font-mono text-[#0ea5e3] text-[9px] uppercase tracking-widest">// REGION: NORTH_AMERICA_HUB</span>
-            <h4 class="text-white text-xl font-black italic mt-2 uppercase">Customs & Compliance Sync</h4>
-            <p class="text-gray-400 text-xs mt-4 leading-relaxed max-w-2xl">
-                实时同步美国海关 (CBP) 提单数据。已通过 ImportGenius 与 Trademo 锁定加州、萨凡纳等核心港口买家轨迹，为 Top 50 家具电商提供 100% 合规避险路径。
-            </p>
-            <div class="mt-6 flex gap-4">
-                <span class="text-[9px] font-mono bg-[#A11219]/20 text-[#A11219] px-3 py-1 border border-[#A11219]/30">HS_9401.31 (MESH_SOVEREIGNTY)</span>
-                <span class="text-[9px] font-mono bg-[#0ea5e3]/20 text-[#0ea5e3] px-3 py-1 border border-[#0ea5e3]/30">BIFMA_CERTIFIED_PROTOCOL</span>
+        <div class="grid lg:grid-cols-2 gap-8 mb-12">
+            <div class="glass-panel p-8 border-l-2 border-[#0ea5e3] relative overflow-hidden bg-blue-900/5">
+                <span class="font-mono text-[#0ea5e3] text-[9px] uppercase tracking-widest">// SECTOR: NORTH_AMERICA_MRO_SOVEREIGNTY</span>
+                <h4 class="text-white text-xl font-black italic mt-2 uppercase">Ladder Compliance & Duty Offset</h4>
+                <p class="text-gray-400 text-xs mt-4 leading-relaxed">
+                    针对美国对华铝梯 AD/CVD 反倾销税。通过东南亚中转节点（ASEAN Origin）与 ANSI A14.2 标准对撞，为 Home Depot 及 Grainger 渠道商提供 100% 避税路径。
+                </p>
+                <div class="mt-6 flex gap-3">
+                    <span class="text-[8px] font-mono bg-[#0ea5e3]/10 text-[#0ea5e3] px-2 py-1 border border-[#0ea5e3]/30">HS_7616.99</span>
+                    <button onclick="previewResource('ladder_exemption')" class="text-[8px] font-mono text-white underline hover:text-[#0ea5e3]">Analyze_Tariff_Offset_></button>
+                </div>
+                <div class="scan-line"></div>
             </div>
-            <div class="scan-line"></div>
+
+            <div class="glass-panel p-8 border-l-2 border-[#ffd700] relative overflow-hidden bg-yellow-900/5">
+                <span class="font-mono text-[#ffd700] text-[9px] uppercase tracking-widest">// SECTOR: BRAZIL_PORT_&_MARINE_HARDWARE</span>
+                <h4 class="text-white text-xl font-black italic mt-2 uppercase">Marine Chain Exemption Protocol</h4>
+                <p class="text-gray-400 text-xs mt-4 leading-relaxed">
+                    针对巴西 Santos 港链条（7315.82）反倾销。利用 G80/G100 高强度合金材质主权，绕过常规碳钢贸易壁垒。已通过 Trademo 验证 100% 清关确定性。
+                </p>
+                <div class="mt-6 flex gap-3">
+                    <span class="text-[8px] font-mono bg-[#ffd700]/10 text-[#ffd700] px-2 py-1 border border-[#ffd700]/30">HS_7315.82</span>
+                    <button onclick="previewResource('brazil_cert')" class="text-[8px] font-mono text-white underline hover:text-[#ffd700]">Exemption_Logic_></button>
+                </div>
+            </div>
         </div>
 
         <section class="mb-12 glass-panel p-10 rounded-2xl border-t-4 border-[#0ea5e3] relative overflow-hidden">
             <div class="flex flex-col md:flex-row justify-between items-start gap-8">
                 <div class="max-w-xl">
                     <span class="font-mono text-[#0ea5e3] tracking-[5px] text-[10px] uppercase">// ACTIVE_RECONNAISSANCE_PROTOCOL</span>
-                    <h2 class="text-white text-4xl font-black italic uppercase mt-4 tracking-tighter">Targeting <span class="text-[#0ea5e3]">Engine.</span></h2>
+                    <h2 class="text-white text-4xl font-black italic uppercase mt-4 tracking-tighter">Intel <span class="text-[#0ea5e3]">Interception.</span></h2>
                     <p class="text-gray-500 font-mono text-xs mt-4 leading-relaxed">
-                        整合磐聚网、LinkedIn、ZoomInfo 及 Trademo 核心数据对撞。实时扫描拉美 Silla Gamer 与北美全品类家具潜在买家。
+                        整合磐聚网、LinkedIn、Trademo、ImportGenius 及 ZoomInfo。实时拦截进出休斯顿、萨凡纳、桑托斯港的钢丝绳、索具与家具原始提单。
                     </p>
                 </div>
                 <div class="grid grid-cols-3 gap-4">
-                    <div onclick="window.open('https://www.apollo.io')" class="p-4 bg-white/5 border border-white/10 rounded hover:border-[#0ea5e3] cursor-pointer transition flex flex-col items-center">
-                        <i class="fa-solid fa-satellite-dish text-[#0ea5e3] text-lg mb-2"></i>
-                        <span class="text-[8px] font-mono uppercase">Apollo_API</span>
+                    <div onclick="window.open('https://www.trademo.com')" class="p-4 bg-white/5 border border-white/10 rounded hover:border-[#ffd700] cursor-pointer transition flex flex-col items-center">
+                        <i class="fa-solid fa-satellite-dish text-[#ffd700] text-lg mb-2"></i>
+                        <span class="text-[8px] font-mono uppercase">Trademo</span>
                     </div>
-                    <div onclick="window.open('https://www.importgenius.com')" class="p-4 bg-white/5 border border-white/10 rounded hover:border-[#0ea5e3] cursor-pointer transition flex flex-col items-center">
+                    <div onclick="window.open('https://www.importgenius.com')" class="p-4 bg-white/5 border border-white/10 rounded hover:border-[#A11219] cursor-pointer transition flex flex-col items-center">
                         <i class="fa-solid fa-ship text-[#A11219] text-lg mb-2"></i>
-                        <span class="text-[8px] font-mono uppercase">Customs_DB</span>
+                        <span class="text-[8px] font-mono uppercase">ImportGenius</span>
                     </div>
                     <div onclick="window.open('https://www.zoominfo.com')" class="p-4 bg-white/5 border border-white/10 rounded hover:border-[#0ea5e3] cursor-pointer transition flex flex-col items-center">
                         <i class="fa-solid fa-id-card text-white text-lg mb-2"></i>
@@ -90,9 +104,9 @@
                 </div>
             </div>
             <div class="mt-10 bg-black/60 p-6 rounded border border-white/5 font-mono text-[10px] space-y-2">
-                <div class="text-[#0ea5e3]">> [SCANNING_GLOBAL_TRADE_HUBS] ... MATCH_FOUND: "NORTH_AMERICA_CONTRACT_BUYER"</div>
-                <div class="text-gray-500">> [EXTRACTING_DECISION_MAKER] ... via TRADEMO_SOVEREIGN_ENGINE</div>
-                <div class="text-white animate-pulse">> [SOVEREIGN_STATUS]: READY_FOR_SYNCED_OUTREACH</div>
+                <div class="text-[#ffd700]">> [SCANNING_PORT_HOUSTON] ... HS:7312.10 (STEEL_ROPE) MATCHED</div>
+                <div class="text-[#0ea5e3]">> [BYPASSING_USA_AD_CVD] ... HS:7616.99 (LADDERS) ASEAN_PATH_ACTIVE</div>
+                <div class="text-white animate-pulse">> [STATUS]: READY_FOR_SOVEREIGN_OUTREACH</div>
             </div>
         </section>
 
@@ -101,9 +115,9 @@
                 <div class="glass-panel rounded-2xl p-8">
                     <div class="flex justify-between items-center mb-6">
                         <h3 class="font-mono text-sm font-bold tracking-widest text-white uppercase italic">// GLOBAL_HS_INTEL_DB</h3>
-                        <span class="text-[8px] text-[#0ea5e3] font-mono">2026_Q1_UPDATE</span>
+                        <span class="text-[8px] text-[#0ea5e3] font-mono">LIVE_UPDATE: 2026</span>
                     </div>
-                    <input type="text" id="hs-input" onkeyup="searchHSCode()" placeholder="Search HS Code (e.g. 9401.31 Mesh Chair, 9401.3100 Gaming)..." 
+                    <input type="text" id="hs-input" onkeyup="searchHSCode()" placeholder="Search (e.g. 7315 Chain, 7616 Ladder, 9401 Chair, 7312 Rope)..." 
                            class="w-full bg-black/40 border border-white/10 p-4 text-xs font-mono text-white focus:outline-none focus:border-[#0ea5e3] transition rounded-lg">
                     <div id="hs-results" class="mt-4 space-y-2 max-h-48 overflow-y-auto custom-scrollbar pr-4"></div>
                 </div>
@@ -125,12 +139,12 @@
 
             <aside class="space-y-8">
                 <div class="glass-panel rounded-2xl p-8 border-l-4 border-[#0ea5e3]">
-                    <h3 class="font-mono text-sm font-bold tracking-widest text-white uppercase italic mb-8">// COMPLIANCE_FIREWALL</h3>
+                    <h3 class="font-mono text-sm font-bold text-white uppercase italic mb-8">// COMPLIANCE_FIREWALL</h3>
                     <div class="grid grid-cols-2 gap-6">
                         <div onclick="previewResource('ista')" class="cursor-pointer opacity-60 hover:opacity-100 transition"><img src="assets/icons/ista-badge.webp" class="w-full"></div>
                         <div onclick="previewResource('fsc')" class="cursor-pointer opacity-60 hover:opacity-100 transition"><img src="assets/icons/logo-fsc.webp" class="w-full"></div>
                         <div onclick="previewResource('iso9001')" class="cursor-pointer opacity-60 hover:opacity-100 transition"><img src="assets/icons/iso9001.webp" class="w-full"></div>
-                        <div onclick="previewResource('visa')" class="cursor-pointer opacity-60 hover:opacity-100 transition"><img src="assets/icons/visa-mastercard.webp" class="w-full"></div>
+                        <div onclick="previewResource('en131')" class="cursor-pointer opacity-60 hover:opacity-100 transition"><img src="assets/icons/en131-badge.webp" class="w-full"></div>
                     </div>
                 </div>
             </aside>
@@ -141,12 +155,9 @@
         <div class="opacity-0 group-hover:opacity-100 transition-all duration-500 bg-[#0ea5e3] text-black font-mono text-[9px] px-3 py-1 font-bold italic tracking-widest">// ACCESS_COMPLIANCE_API</div>
         <div class="glass-panel p-3 rounded-xl shadow-2xl flex flex-wrap max-w-[200px] justify-end gap-4 transition-all duration-500">
             <div onclick="previewResource('bifma')" class="cert-node h-6"><img src="assets/icons/bifma-badge.webp" class="h-full"></div>
-            <div onclick="previewResource('bsci')" class="cert-node h-6"><img src="assets/icons/bsci-badge.webp" class="h-full"></div>
             <div onclick="previewResource('ul')" class="cert-node h-6"><img src="assets/icons/logo-ul.webp" class="h-full"></div>
-            <div onclick="previewResource('fsc')" class="cert-node h-6"><img src="assets/icons/logo-fsc.webp" class="h-full"></div>
-            <div onclick="previewResource('iso9001')" class="cert-node h-6"><img src="assets/icons/iso9001.webp" class="h-full"></div>
+            <div onclick="previewResource('en131')" class="cert-node h-6"><img src="assets/icons/en131-badge.webp" class="h-full"></div>
             <div onclick="previewResource('ista')" class="cert-node h-6"><img src="assets/icons/ista-badge.webp" class="h-full"></div>
-            <div onclick="previewResource('visa')" class="cert-node h-6"><img src="assets/icons/visa-mastercard.webp" class="h-full"></div>
         </div>
     </div>
 
@@ -162,15 +173,15 @@
     </div>
 
     <script>
-        // [PROTOCOL] 资源索引：100% 匹配截图路径与文件格式
+        // [PROTOCOL] 100% 物理匹配 GitHub 资产路径
         const certAssets = {
             bifma: { url: "assets/docs/bifma.pdf", title: "BIFMA_STRUCTURAL_PROTOCOL_V5" },
-            bsci: { url: "assets/docs/bsci.pdf", title: "BSCI_SOCIAL_COMPLIANCE_VAULT" },
             ul: { url: "assets/docs/ul.pdf", title: "UL_FIRE_SAFETY_VALIDATED" },
-            fsc: { url: "assets/docs/fsc.pdf", title: "FSC_SUSTAINABILITY_CREDENTIAL" },
             ista: { url: "assets/docs/ista.pdf", title: "ISTA_TRANSPORT_SURVIVABILITY" },
             iso9001: { url: "assets/docs/iso9001.pdf", title: "ISO_9001_QUALITY_SOVEREIGNTY" },
-            visa: { url: "assets/docs/financial.pdf", title: "FINANCIAL_SOVEREIGNTY_MC" }
+            en131: { url: "assets/docs/en131.pdf", title: "EN131_LADDER_SAFETY_STANDARD" },
+            brazil_cert: { url: "assets/docs/brazil-exemption-guide.pdf", title: "BRAZIL_DUTY_EXEMPTION_PROTOCOL" },
+            ladder_exemption: { url: "assets/docs/ladder-tariff-solution.pdf", title: "USA_LADDER_ANTI_DUMPING_HACK" }
         };
 
         function previewResource(key) {
@@ -193,11 +204,11 @@
         }
 
         const hsDB = [
-            { code: "9401.3100", desc: "Mesh & Office Seating (North America Protocol)" },
-            { code: "9401.3100", desc: "Silla Gamer / Gaming Seating (LATAM optimized)" },
-            { code: "9401.4000", desc: "Compressed Sofa & Sleeper Seating" },
-            { code: "9403.2000", desc: "Metal Outdoor Furniture & Table Systems" },
-            { code: "3918.9090", desc: "WPC Decking (Ecological Sovereignty)" }
+            { code: "7315.8200", desc: "Marine Chains & Industrial Links (Brazil AD Exemption)" },
+            { code: "7312.1000", desc: "Steel Wire Ropes & Port Rigging (Houston Protocol)" },
+            { code: "7616.9910", desc: "Aluminum Ladders (US AD/CVD Duty Offset)" },
+            { code: "9401.3100", desc: "Mesh & Gaming Seating (North America BIFMA)" },
+            { code: "9401.4000", desc: "Compressed Sofa & Sleeper Seating (DTC)" }
         ];
 
         function searchHSCode() {
