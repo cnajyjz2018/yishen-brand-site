@@ -59,6 +59,9 @@
             background: var(--brand-blue); opacity: 0.5;
             animation: video-scan 4s linear infinite;
         }
+        
+        /* 平滑显示补丁 */
+        .asset-fade-in { transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out; }
     </style>
 </head>
 <body class="topology-bg selection:bg-[#0ea5e3]">
@@ -92,7 +95,7 @@
             <h1 class="text-white text-[clamp(2.5rem,8vw,5.5rem)] font-[900] leading-[0.9] my-8 uppercase italic tracking-tighter">Sovereign<br>Integration.</h1>
             <div class="mt-12 flex flex-col md:flex-row gap-12 items-center">
                 <div class="w-full md:w-1/2 border border-white/10 p-4 bg-black/40 node-skeleton group overflow-hidden rounded-xl">
-                    <img src="public/assets/products/seating-node-01.webp" alt="Flagship" class="w-full h-auto opacity-0 transition-all duration-700 group-hover:scale-105" onload="this.style.opacity='1'; this.parentElement.classList.remove('node-skeleton')">
+                    <img src="public/assets/products/seating-node-01.webp" alt="Flagship" class="w-full h-auto opacity-0 asset-fade-in group-hover:scale-105" onload="this.style.opacity='1'; this.parentElement.classList.remove('node-skeleton')">
                 </div>
                 <div class="md:w-1/2 space-y-8">
                     <p class="text-[#8b949e] text-lg lg:text-xl italic border-l-2 border-[#A11219] pl-8 leading-relaxed">28 Strategic clusters synchronized via V5.0 architecture. Physical assets mapped in public/assets/ for 24/7 autonomous harvesting.</p>
@@ -161,16 +164,24 @@
     </footer>
 
     <script>
-        // 01_CURSOR_SYSTEM
-        const glow = document.getElementById('cursor-glow');
-        document.addEventListener('mousemove', (e) => {
-            requestAnimationFrame(() => {
-                glow.style.left = e.clientX + 'px';
-                glow.style.top = e.clientY + 'px';
-            });
-        });
+        // [01] 优先级加载引擎 (SOVEREIGN_LOADER)
+        const priorityAssets = [
+            'public/assets/system/engineering-lab-v5.webp',
+            'public/assets/system/global-ops-monitor-v5.webp',
+            'public/assets/branding/avatar-MichaelT.webp',
+            'public/assets/branding/avatar-SarahJ.webp'
+        ];
 
-        // 02_AMBASSADOR_DATA_PROTOCOL
+        function initializeSovereignLoader() {
+            console.log("// SOVEREIGN_LOADER: STARTING_DEPLOYMENT...");
+            priorityAssets.forEach(src => {
+                const img = new Image();
+                img.src = src;
+                img.onload = () => console.log(`// ASSET_SYNCED: ${src}`);
+            });
+        }
+
+        // [02] 核心数据模型 (AMBASSADOR_DATA_V5)
         const data = {
             michael: {
                 img: "public/assets/system/global-ops-monitor-v5.webp",
@@ -194,7 +205,15 @@
             }
         };
 
-        // 03_COMMAND_LOGIC
+        // [03] 导航与动态交互
+        const glow = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => {
+            requestAnimationFrame(() => {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top = e.clientY + 'px';
+            });
+        });
+
         function switchPerspective(node) {
             const p = data[node];
             document.getElementById('perspective-img').src = p.img;
@@ -223,12 +242,11 @@
             }
         }
 
-        // 04_MANIFESTO_PLAYBACK_SYSTEM
+        // [04] 视频播放系统
         function playManifesto() {
             const modal = document.getElementById('video-modal');
             const player = document.getElementById('manifesto-player');
             const source = player.querySelector('source');
-            
             const isMichael = document.getElementById('btn-michael').classList.contains('bg-[#0ea5e3]');
             const currentNode = isMichael ? 'michael' : 'sarah';
             
@@ -246,6 +264,8 @@
             player.pause();
             document.body.style.overflow = 'auto';
         }
+
+        document.addEventListener('DOMContentLoaded', initializeSovereignLoader);
     </script>
 </body>
 </html>
