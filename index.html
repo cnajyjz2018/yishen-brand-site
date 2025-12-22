@@ -2,28 +2,181 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Redirecting...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- 核心跳转（0 秒） -->
-  <meta http-equiv="refresh" content="0; url=/index1.html" />
+  <!-- SEO -->
+  <title>YiShen Global | Furniture & Industrial Supply Chain Partner</title>
+  <meta name="description" content="YiShen Global provides furniture, building materials, and industrial supply chain solutions with global execution and reliability." />
+  <meta name="keywords" content="YiShen Global, furniture supplier, industrial supply chain, building materials, B2B sourcing" />
+  <meta name="robots" content="index, follow" />
 
-  <!-- SEO & 兼容性兜底 -->
-  <link rel="canonical" href="/index1.html" />
-
+  <!-- Simple Reset -->
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
-      height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    header {
+      border-bottom: 1px solid #e5e7eb;
+      background: #ffffff;
+    }
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px 24px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
-      background: #0b0f1a;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+    }
+    .menu ul {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+    }
+    .menu a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      max-width: 1200px;
+      margin: auto;
+      padding: 96px 24px 72px;
+    }
+    .hero h1 {
+      font-size: 42px;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 680px;
+      color: #334155;
+      margin-bottom: 40px;
+    }
+    .cta {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #0f172a;
       color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 6px;
+    }
+    .cta:hover {
+      background: #020617;
+    }
+
+    .sections {
+      max-width: 1200px;
+      margin: auto;
+      padding: 48px 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+    }
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 24px;
+    }
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+    .card p {
+      font-size: 14px;
+      color: #475569;
+    }
+
+    footer {
+      border-top: 1px solid #e5e7eb;
+      margin-top: 72px;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 24px;
+      font-size: 13px;
+      color: #64748b;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
     }
   </style>
 </head>
+
 <body>
-  Redirecting to homepage…
+
+<!-- Header / Navigation -->
+<header>
+  <nav class="nav">
+    <div class="logo">YiShen Global</div>
+    <div class="menu">
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/solutions.html">Solutions</a></li>
+        <li><a href="/resources.html">Resources</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Global Supply Chain.<br>Built on Execution & Integrity.</h1>
+  <p>
+    YiShen Global partners with international buyers across furniture,
+    building materials, and industrial products — delivering predictable
+    execution from sourcing to final delivery.
+  </p>
+  <a class="cta" href="/solutions.html">Explore Our Solutions</a>
+</section>
+
+<!-- Core Sections -->
+<section class="sections">
+  <div class="card">
+    <h3>Furniture Manufacturing</h3>
+    <p>
+      Office chairs, gaming chairs, recliners, and modular furniture —
+      built with scalable capacity and export compliance.
+    </p>
+  </div>
+  <div class="card">
+    <h3>Building Materials</h3>
+    <p>
+      Bamboo, panels, flooring, and structural materials aligned with
+      international standards and long-term sourcing stability.
+    </p>
+  </div>
+  <div class="card">
+    <h3>Industrial Supply Chain</h3>
+    <p>
+      Chains, hardware, and industrial components supported by
+      documentation control and logistics coordination.
+    </p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div>© YiShen Global</div>
+    <div>Intelligence defines the path · Integrity forges the structure</div>
+  </div>
+</footer>
+
 </body>
 </html>
