@@ -63,3 +63,21 @@
     }
   ]
 }
+{
+  "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/solutions", "destination": "/solutions.html" },
+    { "source": "/passport/:id", "destination": "/technical-passport.html?id=:id" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Sovereignty-Engine", "value": "YiShen_V5_Active" },
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    }
+  ]
+}
