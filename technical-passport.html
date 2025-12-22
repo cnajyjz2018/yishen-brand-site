@@ -10,27 +10,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        :root { --neon-blue: #0ea5e3; --performance-red: #A11219; --brand-gold: #ffd700; --deep-space: #010409; }
+        :root { --neon-blue: #0ea5e3; --brand-gold: #ffd700; --deep-space: #010409; }
         body { background-color: var(--deep-space); color: #fff; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
         
-        /* 拓扑底纹背景 */
+        /* 拓扑底纹背景 - 增加工业纹理感 */
         .topology-grid { 
             background-image: radial-gradient(rgba(14, 165, 223, 0.05) 1px, transparent 1px); 
             background-size: 30px 30px; 
         }
         
-        /* [PATCH] 数字化微光 - GPU 优化渲染 */
+        /* [PATCH] 数字化微光渲染 */
         #cursor-glow { 
-            position: fixed; width: 500px; height: 500px; 
-            background: radial-gradient(circle, rgba(14, 165, 223, 0.08) 0%, transparent 70%); 
+            position: fixed; width: 600px; height: 600px; 
+            background: radial-gradient(circle, rgba(14, 165, 223, 0.07) 0%, transparent 70%); 
             border-radius: 50%; pointer-events: none; z-index: 9999; 
             transform: translate(-50%, -50%); will-change: transform; mix-blend-mode: screen;
         }
 
-        /* 数字化扫描仪：用纯代码节点块替代碎图风险 */
+        /* 数字化扫描仪逻辑 */
         .main-scanner {
             position: relative; overflow: hidden; background: #000;
-            border: 1px solid rgba(255,255,255,0.05); min-height: 400px;
+            border: 1px solid rgba(255,255,255,0.05); min-height: 450px;
             display: flex; align-items: center; justify-content: center;
         }
         .main-scanner::after {
@@ -40,205 +40,181 @@
         }
         @keyframes scanLine { 0% { top: 0% } 50% { top: 100% } 100% { top: 0% } }
 
-        /* 技术参数表样式 */
+        /* 技术参数表 - 保持极简且权威 */
         .passport-table { width: 100%; border-collapse: collapse; }
-        .passport-table td { padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .label-mono { font-family: 'JetBrains Mono'; font-size: 0.7rem; color: #64748b; text-transform: uppercase; letter-spacing: 2px; }
-        .value-bold { color: #fff; font-weight: 700; text-align: right; font-family: 'JetBrains Mono'; }
+        .passport-table td { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .label-mono { font-family: 'JetBrains Mono'; font-size: 0.65rem; color: #64748b; text-transform: uppercase; letter-spacing: 2px; }
+        .value-bold { color: #fff; font-weight: 700; text-align: right; font-family: 'JetBrains Mono'; font-size: 0.9rem; }
 
-        /* [PATCH] PDF 预览器补丁 */
-        #preview-frame { background: #1a1a1a; border: 1px solid rgba(255,255,255,0.05); }
-
-        #loading-screen { position: fixed; inset: 0; z-index: 100001; background: #010409; display: flex; flex-direction: column; items: center; justify-content: center; }
+        /* 加载动画 */
+        #loading-screen { position: fixed; inset: 0; z-index: 100001; background: #010409; display: flex; flex-direction: column; items: center; justify-content: center; transition: opacity 0.8s ease; }
         #bar-fill { height: 100%; background: var(--neon-blue); width: 0%; transition: 2s cubic-bezier(0.1, 0.5, 0.1, 1); }
         
-        .duty-shield { background: rgba(255, 215, 0, 0.05); border: 1px solid rgba(255, 215, 0, 0.2); }
+        .duty-shield { background: rgba(255, 215, 0, 0.03); border: 1px solid rgba(255, 215, 0, 0.15); }
     </style>
 </head>
 <body class="topology-grid selection:bg-[#0ea5e3]">
 
     <div id="loading-screen">
         <span class="text-white font-black italic text-2xl uppercase tracking-tighter">Technical_Passport_Sync</span>
-        <div class="w-48 h-[2px] bg-white/10 mt-6"><div id="bar-fill"></div></div>
-        <span class="text-[#0ea5e3] font-mono text-[8px] mt-4 tracking-[4px] animate-pulse">// AUTHORIZING_TECHNICAL_SOVEREIGNTY...</span>
+        <div class="w-64 h-[1px] bg-white/10 mt-6"><div id="bar-fill"></div></div>
+        <span class="text-[#0ea5e3] font-mono text-[8px] mt-4 tracking-[4px] animate-pulse">// ACCESSING_ENCRYPTED_EVIDENCE...</span>
     </div>
 
     <div id="cursor-glow"></div>
 
     <nav class="fixed w-full z-[10000] bg-[#010409]/90 backdrop-blur-xl border-b border-white/5 h-20 flex items-center px-8">
         <div class="max-w-[1440px] mx-auto w-full flex items-center justify-between">
-            <a href="index.html" class="flex flex-col">
-                <span class="text-white font-black italic text-xl tracking-tighter uppercase leading-none">Yishen Global</span>
+            <a href="index.html" class="flex flex-col group">
+                <span class="text-white font-black italic text-xl tracking-tighter uppercase leading-none group-hover:text-[#0ea5e3] transition-colors">Yishen Global</span>
                 <span class="text-[#0ea5e3] font-mono text-[8px] tracking-[3px]">TECHNICAL_PASSPORT_V5.0</span>
             </a>
             <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400">
-                <a href="genesis.html" class="hover:text-white transition">01_GENESIS</a>
-                <a href="clusters.html" class="hover:text-white transition">02_CLUSTERS</a>
-                <a href="resources.html" class="hover:text-white transition">03_RESOURCES</a>
-                <button onclick="window.history.back()" class="text-white border-b border-[#0ea5e3] pb-1 uppercase">[ EXIT_VAULT ]</button>
+                <a href="solutions.html" class="hover:text-white transition">← [ BACK_TO_MATRIX ]</a>
+                <span class="text-white/20">|</span>
+                <span id="node-status-tag" class="text-green-500">NODE_VERIFIED</span>
             </div>
         </div>
     </nav>
 
     <header class="pt-48 pb-12 px-[8%] max-w-[1440px] mx-auto">
         <div class="max-w-[1200px]">
-            <span class="font-mono text-[#0ea5e3] tracking-[6px] text-xs uppercase" id="sku-sector-tag">[ LOADING_SOVEREIGN_DATA ]</span>
-            <h1 id="sku-main-title" class="text-white text-[clamp(2.5rem,8vw,5.5rem)] font-black my-8 uppercase italic tracking-tighter leading-none">—— ——</h1>
-            <p id="sku-desc" class="text-gray-400 max-w-[800px] text-lg leading-relaxed italic border-l-2 border-[#A11219] pl-10">
-                Synchronizing physical metrics with global trade intelligence...
+            <span class="font-mono text-[#0ea5e3] tracking-[6px] text-xs uppercase" id="sku-sector-tag">[ LOADING_SECTOR ]</span>
+            <h1 id="sku-main-title" class="text-white text-[clamp(2.5rem,7vw,5rem)] font-black my-8 uppercase italic tracking-tighter leading-none">Initializing...</h1>
+            <p id="sku-desc" class="text-gray-400 max-w-[800px] text-lg leading-relaxed italic border-l-2 border-[#A11219] pl-10 font-light">
+                Decrypting sovereign data packet...
             </p>
         </div>
     </header>
-
-    
 
     <main class="py-12 px-[8%] max-w-[1440px] mx-auto">
         <div class="grid lg:grid-cols-2 gap-24">
             
             <div class="space-y-12">
-                <div class="main-scanner rounded-3xl">
-                    <div id="sku-id-display" class="text-[clamp(1rem,5vw,3rem)] font-black text-white/10 font-mono uppercase tracking-[20px] animate-pulse">
-                        NODE_ACTIVE
+                <div class="main-scanner rounded-sm">
+                    <div id="sku-id-display" class="text-[clamp(1rem,5vw,2.5rem)] font-black text-white/10 font-mono uppercase tracking-[20px]">
+                        SCANNING
                     </div>
                 </div>
                 
                 <div class="p-8 bg-[#0ea5e3]/5 border-l-2 border-[#0ea5e3]">
-                    <h4 class="font-mono text-white text-[10px] tracking-[4px] uppercase mb-4">>> Intelligence_Pulse</h4>
-                    <div id="intel-log" class="space-y-3 font-mono text-[11px] text-gray-400">
+                    <h4 class="font-mono text-white text-[10px] tracking-[4px] uppercase mb-4">>> Intelligence_Log</h4>
+                    <div id="intel-log" class="space-y-3 font-mono text-[10px] text-gray-500">
                         <div class="flex gap-4">
-                            <span class="text-[#0ea5e3]">[RADAR]</span>
-                            <span id="intel-status">Scanning global supply chain nodes...</span>
+                            <span class="text-[#0ea5e3]">[SYSTEM]</span>
+                            <span id="intel-status">Calibration complete. Displaying evidence.</span>
                         </div>
                     </div>
-                </div>
-
-                <div id="duty-shield" class="p-10 duty-shield hidden">
-                    <h4 class="font-mono text-[#ffd700] text-[10px] tracking-[4px] uppercase mb-6">// SOVEREIGN_PATCH_ACTIVE</h4>
-                    <p id="patch-msg" class="text-xs text-gray-500 leading-relaxed font-inter italic">
-                        该节点已挂载主权避税协议。
-                    </p>
                 </div>
             </div>
 
             <div class="space-y-12">
-                <div class="p-10 bg-white/[0.02] border border-white/5 rounded-sm">
-                    <h3 class="text-xl font-black mb-10 italic uppercase text-[#0ea5e3] tracking-widest">Sovereign Specifications</h3>
+                <div class="p-10 bg-white/[0.01] border border-white/5 rounded-sm">
+                    <h3 class="text-xl font-black mb-10 italic uppercase text-[#0ea5e3] tracking-widest">Sovereign Specs</h3>
                     <table class="passport-table" id="sku-spec-table"></table>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div class="p-8 border border-white/10 bg-white/[0.01] rounded-sm">
-                        <span class="font-mono text-gray-600 text-[9px] tracking-[3px] uppercase block mb-4">Transit_Survival</span>
+                    <div class="p-8 border border-white/5 bg-white/[0.01]">
+                        <span class="font-mono text-gray-600 text-[9px] tracking-[3px] uppercase block mb-4">Durability_Index</span>
                         <div id="sku-fail" class="text-4xl font-black text-white">--%</div>
-                        <p class="text-[9px] text-gray-600 mt-4 font-mono uppercase tracking-widest">ISTA-6A VALIDATED</p>
+                        <p class="text-[9px] text-gray-500 mt-4 font-mono uppercase">Full Cycle Integrity</p>
                     </div>
-                    <div class="p-8 border border-white/10 bg-white/[0.01] rounded-sm">
-                        <span class="font-mono text-gray-600 text-[9px] tracking-[3px] uppercase block mb-4">Load_Efficiency</span>
-                        <div id="sku-cbm" class="text-4xl font-black text-[#0ea5e3]">--%</div>
-                        <p class="text-[9px] text-gray-600 mt-4 font-mono uppercase tracking-widest">Container Load Max</p>
+                    <div class="p-8 border border-white/5 bg-white/[0.01]">
+                        <span class="font-mono text-gray-600 text-[9px] tracking-[3px] uppercase block mb-4">Compliance_Node</span>
+                        <div id="sku-cbm" class="text-4xl font-black text-[#0ea5e3]">--</div>
+                        <p class="text-[9px] text-gray-500 mt-4 font-mono uppercase">Global Standard Mapping</p>
                     </div>
                 </div>
 
                 <div class="flex flex-col gap-4">
-                    <button id="download-btn" class="w-full py-6 bg-white text-black font-black uppercase tracking-[8px] hover:bg-[#0ea5e3] hover:text-white transition-all">
-                        Download_Full_Evidence
+                    <button id="download-btn" class="w-full py-6 bg-white text-black font-black uppercase tracking-[8px] hover:bg-[#0ea5e3] hover:text-white transition-all duration-500">
+                        View_Full_Evidence
                     </button>
-                    <button onclick="window.location.href='tactical-briefing.html'" class="w-full py-4 border border-white/10 text-white font-mono text-[10px] uppercase tracking-[4px] hover:bg-white/5 transition">
-                        Request_Custom_Audit
-                    </button>
+                    <div id="duty-shield" class="p-6 duty-shield hidden">
+                        <h4 class="font-mono text-[#ffd700] text-[9px] tracking-[4px] uppercase mb-3">// AD_EXEMPTION_PATH</h4>
+                        <p id="patch-msg" class="text-[10px] text-gray-500 leading-relaxed font-mono italic">
+                            Sovereign tax-offset protocols integrated.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer class="py-24 border-t border-white/5 bg-black">
-        <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-12">
-            <div>
-                <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Passport_Verified_System</div>
-                <div class="flex gap-6 mt-4">
-                    <a href="sovereign-index.xml" target="_blank" class="text-[9px] font-mono text-gray-800 uppercase tracking-widest hover:text-white transition">XML_Index</a>
-                </div>
-            </div>
-            <div class="flex flex-wrap items-center gap-10 grayscale opacity-40 hover:grayscale-0 transition-all duration-1000">
-                <img src="assets/icons/bifma-badge.webp" class="h-6" alt="BIFMA">
-                <img src="assets/icons/en131-badge.webp" class="h-6" alt="EN131">
-                <img src="assets/icons/ista-badge.webp" class="h-6" alt="ISTA">
-                <img src="assets/icons/logo-ul.webp" class="h-6" alt="UL">
-            </div>
-        </div>
-    </footer>
-
     <script>
-        // [INTEGRATED_PASSPORT_DATABASE]
+        /* [INTEGRATED_DATABASE] - 对撞您的 28 个集群逻辑 */
         const PASSPORT_DB = {
-            "MARINE_CHAIN": {
-                sector: "MARITIME_HARDWARE",
-                title: "G80 Tensile Node",
-                desc: "集成 2026 物理主权：针对重型港口作业设计，支持巴西 Santos 港反倾销豁免协议（AD Exemption）。",
-                patch: "巴西反倾销豁免路径已激活。针对 HS 7315.82 提供全量原产地追溯证据。",
-                specs: { "Material": "Alloy Steel Grade 80", "Safety_Factor": "4:1 Structural Node", "Coating": "Hot-Dip Galvanized", "HS_CODE": "7315.82.00" },
-                logistics: { cbm: "99.8%", fail: "0.00%" },
-                doc: "assets/docs/brazil-exemption-cert.pdf"
+            'ERGO': {
+                sector: 'ERGO_FURNITURE',
+                title: 'Ergo-Sovereignty Node',
+                desc: 'BIFMA X5.1 认证。集成 ISTA-6A 包装主权，确保针对北美长线物流的 0% 破损率预期。',
+                specs: { "HS_CODE": "9401.31", "STD": "BIFMA X5.1", "PKG": "ISTA-6A", "DUTY": "MTN_EXEMPT" },
+                metrics: { fail: "99.9%", cbm: "ANSI" },
+                patch: "北美市场准入路径已校准。反倾销税避让逻辑已挂载至越南/泰国节点。",
+                doc: "assets/docs/ergo-compliance.pdf"
             },
-            "INDUSTRIAL_LADDER": {
-                sector: "MRO_INFRASTRUCTURE",
-                title: "ANSI Aluminum Sovereignty",
-                desc: "针对美加市场铝梯避税架构（ASEAN Node）：规避对华反倾销税，符合 ANSI A14.2 工业级标准。",
-                patch: "东盟原产地节点（Form E）验证通过。可实现美加市场 200%+ 关税对冲。",
-                specs: { "Standard": "ANSI A14.2 / EN131", "Origin": "Vietnam/Thailand Node", "Material": "6061-T6 Aluminum", "HS_CODE": "7616.99.10" },
-                logistics: { cbm: "94.5%", fail: "0.02%" },
-                doc: "assets/docs/form-e-origin-proof.pdf"
+            'MED_HUB': {
+                sector: 'MEDICAL_PRECISION',
+                title: 'Medical Clinical Hub',
+                desc: 'ISO 13485 医疗级线性驱动。集成银离子抗菌涂层与 IP66 密封主权，适配极端无菌环境。',
+                specs: { "HS_CODE": "9402.10", "ISO": "13485:2016", "IP_RATING": "IP66", "ANTIMIC": "Ag+ Ion" },
+                metrics: { fail: "100%", cbm: "ISO" },
+                patch: "医疗器械主权证书已挂载。支持全球 180+ 医疗采购节点的数字化溯源。",
+                doc: "assets/docs/medical-iso.pdf"
             },
-            "MEDICAL_CHAIR": {
-                sector: "MEDICAL_PRECISION",
-                title: "Sterile Clinical Hub",
-                desc: "集成银离子抗菌主权。针对东盟医疗基建项目设计，支持 Form E 零关税协议。",
-                patch: "医疗器械 ISO 13485 认证已挂载。东盟 0% 进口关税准入路径就绪。",
-                specs: { "Certification": "ISO 13485 / CE", "Antibacterial": "Silver-Ion Shield", "Standard": "Clinical Grade V5", "HS_CODE": "9402.10.00" },
-                logistics: { cbm: "96.5%", fail: "0.01%" },
-                doc: "assets/docs/iso13485-medical.pdf"
+            'CARBON_ZERO': {
+                sector: 'E-ZONE_COMPOSITE',
+                title: 'Carbon Neutral Node',
+                desc: '负碳竹塑材料。针对欧盟 CBAM 政策设计的 2026 避税路径，实现从森林到成品的全程绿色主权。',
+                specs: { "CBAM": "COMPLIANT", "RECYCLED": "95%", "LCA": "CERTIFIED", "HS_CODE": "3918.90" },
+                metrics: { fail: "98.5%", cbm: "CBAM" },
+                patch: "欧盟 CBAM 碳足迹报告已集成。可抵消欧洲进口商 12% 以上的碳关税成本。",
+                doc: "assets/docs/carbon-lca.pdf"
             }
         };
 
         function renderPassport() {
             const urlParams = new URLSearchParams(window.location.search);
-            const nodeID = urlParams.get('id') || "MARINE_CHAIN";
-            const data = PASSPORT_DB[nodeID];
-            
-            if (!data) return;
+            const nodeID = (urlParams.get('id') || "ERGO").toUpperCase();
+            const data = PASSPORT_DB[nodeID] || PASSPORT_DB['ERGO'];
 
+            // 物理填充
             document.getElementById('sku-sector-tag').innerText = `[ SECTOR: ${data.sector} ]`;
             document.getElementById('sku-main-title').innerText = data.title;
             document.getElementById('sku-desc').innerText = data.desc;
             document.getElementById('sku-id-display').innerText = nodeID;
-            document.getElementById('sku-cbm').innerText = data.logistics.cbm;
-            document.getElementById('sku-fail').innerText = data.logistics.fail;
-            
-            // 渲染主权补丁
-            const shield = document.getElementById('duty-shield');
-            if(data.patch) {
-                shield.classList.remove('hidden');
-                document.getElementById('patch-msg').innerText = data.patch;
-                document.getElementById('intel-status').innerText = `Node: ${nodeID} collision verified.`;
-            }
+            document.getElementById('sku-fail').innerText = data.metrics.fail;
+            document.getElementById('sku-cbm').innerText = data.metrics.cbm;
 
-            document.getElementById('sku-spec-table').innerHTML = Object.entries(data.specs).map(([key, val]) => 
-                `<tr><td class="label-mono">${key}</td><td class="value-bold">${val}</td></tr>`
+            // 渲染 Specs
+            document.getElementById('sku-spec-table').innerHTML = Object.entries(data.specs).map(([k, v]) => 
+                `<tr><td class="label-mono">${k}</td><td class="value-bold">${v}</td></tr>`
             ).join('');
 
+            // 渲染主权补丁
+            if (data.patch) {
+                const shield = document.getElementById('duty-shield');
+                shield.classList.remove('hidden');
+                document.getElementById('patch-msg').innerText = data.patch;
+            }
+
+            // 下载动作
             document.getElementById('download-btn').onclick = () => window.open(data.doc, '_blank');
         }
 
-        window.onload = renderPassport;
-
+        // 生命周期与加载逻辑
         window.addEventListener('load', () => {
+            renderPassport();
             document.getElementById('bar-fill').style.width = '100%';
             setTimeout(() => {
-                document.getElementById('loading-screen').style.opacity = '0';
-                setTimeout(() => { document.getElementById('loading-screen').style.display = 'none'; }, 700);
-            }, 2500);
+                const loader = document.getElementById('loading-screen');
+                loader.style.opacity = '0';
+                setTimeout(() => loader.style.display = 'none', 800);
+            }, 1800);
         });
 
+        // 数字化微光随动
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             requestAnimationFrame(() => {
